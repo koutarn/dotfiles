@@ -1,2 +1,2 @@
 # dotfiles
-mydotfiles
+dotfile関係をまとめています。
