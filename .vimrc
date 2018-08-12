@@ -1,92 +1,92 @@
 "================================
-"ÈÆÍÑ
+"æ±ç”¨
 "================================
-syntax enable 							"¹½Ê¸¥Ï¥¤¥é¥¤¥È¤òÍ­¸ú¤Ë¤¹¤ë
-colorscheme molokai 					"¥«¥é¡¼¥¹¥­¡¼¥à¤Î»ØÄê
-set title								"ÊÔ½¸Ãæ¤Î¥Õ¥¡¥¤¥ëÌ¾¤ÎÉ½¼¨
-set showcmd								"ÆşÎÏÃæ¤Î¥³¥Ş¥ó¥É¤ò¥¹¥Æ¡¼¥¿¥¹¤ËÉ½¼¨¤¹¤ë
-set number								"¹ÔÈÖ¹æ¤òÉ½¼¨
-set cursorline							"¸½ºß¤Î¹Ô¤ò¶¯Ä´É½¼¨
-set showmatch 							"³ç¸ÌÆşÎÏ»ş¤ËÂĞ±ş¤¹¤ë³ç¸Ì¤òÉ½¼¨
-set laststatus=2 						"¥¹¥Æ¡¼¥¿¥¹¥é¥¤¥ó¤ò¾ï¤ËÉ½¼¨
-set wildmode=list:longest 				"¥³¥Ş¥ó¥É¥é¥¤¥ó¤ÎÊä´°
-set nohlsearch 							"¸¡º÷»ş¤Î¶¨Ä´É½¼¨¤ò¤ä¤á¤ë
-set matchpairs& matchpairs+=<:>" 		"ÂĞ±ş³ç¸Ì¤Ë<¤È>¤Î¥Ú¥¢¤òÄÉ²Ã
-set wildmenu                            "¥³¥Ş¥ó¥É¥â¡¼¥É¤ÎÊä´°
+syntax enable 							"æ§‹æ–‡ãƒã‚¤ãƒ©ã‚¤ãƒˆã‚’æœ‰åŠ¹ã«ã™ã‚‹
+colorscheme molokai 					"ã‚«ãƒ©ãƒ¼ã‚¹ã‚­ãƒ¼ãƒ ã®æŒ‡å®š
+set title								"ç·¨é›†ä¸­ã®ãƒ•ã‚¡ã‚¤ãƒ«åã®è¡¨ç¤º
+set showcmd								"å…¥åŠ›ä¸­ã®ã‚³ãƒãƒ³ãƒ‰ã‚’ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã«è¡¨ç¤ºã™ã‚‹
+set number								"è¡Œç•ªå·ã‚’è¡¨ç¤º
+set cursorline							"ç¾åœ¨ã®è¡Œã‚’å¼·èª¿è¡¨ç¤º
+set showmatch 							"æ‹¬å¼§å…¥åŠ›æ™‚ã«å¯¾å¿œã™ã‚‹æ‹¬å¼§ã‚’è¡¨ç¤º
+set laststatus=2 						"ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ãƒ©ã‚¤ãƒ³ã‚’å¸¸ã«è¡¨ç¤º
+set wildmode=list:longest 				"ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã®è£œå®Œ
+set nohlsearch 							"æ¤œç´¢æ™‚ã®å”èª¿è¡¨ç¤ºã‚’ã‚„ã‚ã‚‹
+set matchpairs& matchpairs+=<:>" 		"å¯¾å¿œæ‹¬å¼§ã«<ã¨>ã®ãƒšã‚¢ã‚’è¿½åŠ 
+set wildmenu                            "ã‚³ãƒãƒ³ãƒ‰ãƒ¢ãƒ¼ãƒ‰ã®è£œå®Œ
 "================================
-"Ê¸»ú¡¢Tab·Ï
+"æ–‡å­—ã€Tabç³»
 "================================
-set noexpandtab							"¥¿¥ÖÊ¸»ú¤ò¥¹¥Ú¡¼¥¹¤Ë¤·¤Ê¤¤
-set tabstop=4							"¥¿¥ÖÉı¤ò4Ê¸»ú¤Ë¤¹¤ë
-set autoindent							"¼«Æ°¥¤¥ó¥Ç¥ó¥È
-set smartindent							"¥ª¡¼¥È¥¤¥ó¥Ç¥ó¥È
-set shiftround 							"¥¤¥ó¥Ç¥ó¥È¤òshiftwidth¤ÎÇÜ¿ô¤Ë´İ¤á¤ë
-set shiftwidth=4						"¼«Æ°¤ÇÁŞÆş¤µ¤ì¤ë¥¿¥ÖÉı¡¡
-set softtabstop=0 						"¥¿¥ÖÉı¤òtabstop¤ÎÃÍ¤ËÇ¤¤»¤ë
-set virtualedit=all  					"Ê¸»ú¤¬¤Ê¤¤¾ì½ê¤Ë¤â¥«¡¼¥½¥ë¤ò°ÜÆ°¤Ç¤­¤ë¤è¤¦¤Ë¤¹¤ë
-set ai 									"¼«Æ°»ú²¼¤²
-set backspace=indent,eol,start 			"Backspace¥­¡¼¤Î±Æ¶ÁÈÏ°Ï¤ËÀ©¸Â¤òÀß¤±¤Ê¤¤
-set whichwrap=b,s,h,l,<,>,[,]  			"¹ÔÆ¬¹ÔËö¤Îº¸±¦°ÜÆ°¤Ç¹Ô¤ò¤Ş¤¿¤°
-set scrolloff=8                			"¾å²¼8¹Ô¤Î»ë³¦¤ò³ÎÊİ
-set sidescrolloff=16           			"º¸±¦¥¹¥¯¥í¡¼¥ë»ş¤Î»ë³¦¤ò³ÎÊİ
-set sidescroll=1               			"º¸±¦¥¹¥¯¥í¡¼¥ë¤Ï°ìÊ¸»ú¤Å¤Ä¹Ô¤¦
-set ambiwidth=double					"Á´³ÑÊ¸»ú¤òvim¤ÇÀµ¤·¤¯Ç§¼±¤µ¤»¤ëÀßÄê
-set matchtime=1 						"¥«¡¼¥½¥ë¤¬Èô¤Ö»ş´Ö¤òÊÑ¹¹
-set pumheight=10						"Êä´°¤ÎÉı¤ò10¤Ë¤¹¤ë
-set infercase  							"Êä´°¤Îºİ¤ÎÂçÊ¸»ú¾®Ê¸»ú¤Î¶èÊÌ¤·¤Ê¤¤
-set list								"¥¿¥Ö¡¢¶õÇò¡¢²ş¹Ô¤ò²Ä»ë²½
+set noexpandtab							"ã‚¿ãƒ–æ–‡å­—ã‚’ã‚¹ãƒšãƒ¼ã‚¹ã«ã—ãªã„
+set tabstop=4							"ã‚¿ãƒ–å¹…ã‚’4æ–‡å­—ã«ã™ã‚‹
+set autoindent							"è‡ªå‹•ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆ
+set smartindent							"ã‚ªãƒ¼ãƒˆã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆ
+set shiftround 							"ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆã‚’shiftwidthã®å€æ•°ã«ä¸¸ã‚ã‚‹
+set shiftwidth=4						"è‡ªå‹•ã§æŒ¿å…¥ã•ã‚Œã‚‹ã‚¿ãƒ–å¹…ã€€
+set softtabstop=0 						"ã‚¿ãƒ–å¹…ã‚’tabstopã®å€¤ã«ä»»ã›ã‚‹
+set virtualedit=all  					"æ–‡å­—ãŒãªã„å ´æ‰€ã«ã‚‚ã‚«ãƒ¼ã‚½ãƒ«ã‚’ç§»å‹•ã§ãã‚‹ã‚ˆã†ã«ã™ã‚‹
+set ai 									"è‡ªå‹•å­—ä¸‹ã’
+set backspace=indent,eol,start 			"Backspaceã‚­ãƒ¼ã®å½±éŸ¿ç¯„å›²ã«åˆ¶é™ã‚’è¨­ã‘ãªã„
+set whichwrap=b,s,h,l,<,>,[,]  			"è¡Œé ­è¡Œæœ«ã®å·¦å³ç§»å‹•ã§è¡Œã‚’ã¾ãŸã
+set scrolloff=8                			"ä¸Šä¸‹8è¡Œã®è¦–ç•Œã‚’ç¢ºä¿
+set sidescrolloff=16           			"å·¦å³ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«æ™‚ã®è¦–ç•Œã‚’ç¢ºä¿
+set sidescroll=1               			"å·¦å³ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã¯ä¸€æ–‡å­—ã¥ã¤è¡Œã†
+set ambiwidth=double					"å…¨è§’æ–‡å­—ã‚’vimã§æ­£ã—ãèªè­˜ã•ã›ã‚‹è¨­å®š
+set matchtime=1 						"ã‚«ãƒ¼ã‚½ãƒ«ãŒé£›ã¶æ™‚é–“ã‚’å¤‰æ›´
+set pumheight=10						"è£œå®Œã®å¹…ã‚’10ã«ã™ã‚‹
+set infercase  							"è£œå®Œã®éš›ã®å¤§æ–‡å­—å°æ–‡å­—ã®åŒºåˆ¥ã—ãªã„
+set list								"ã‚¿ãƒ–ã€ç©ºç™½ã€æ”¹è¡Œã‚’å¯è¦–åŒ–
 set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<,eol:<
 
 "================================
-"¥Õ¥¡¥¤¥ë½èÍı´ØÏ¢¤ÎÀßÄê
+"ãƒ•ã‚¡ã‚¤ãƒ«å‡¦ç†é–¢é€£ã®è¨­å®š
 "================================
- set confirm    						"ÊİÂ¸¤µ¤ì¤Æ¤¤¤Ê¤¤¥Õ¥¡¥¤¥ë¤¬¤¢¤ë¤È¤­¤Ï½ªÎ»Á°¤ËÊİÂ¸³ÎÇ§
- set hidden     						"ÊİÂ¸¤µ¤ì¤Æ¤¤¤Ê¤¤¥Õ¥¡¥¤¥ë¤¬¤¢¤ë¤È¤­¤Ç¤âÊÌ¤Î¥Õ¥¡¥¤¥ë¤ò³«¤¯¤³¤È¤¬½ĞÍè¤ë
- set autoread   						"³°Éô¤Ç¥Õ¥¡¥¤¥ë¤ËÊÑ¹¹¤¬¤µ¤ì¤¿¾ì¹ç¤ÏÆÉ¤ß¤Ê¤ª¤¹
- set nobackup   						"¥Õ¥¡¥¤¥ëÊİÂ¸»ş¤Ë¥Ğ¥Ã¥¯¥¢¥Ã¥×¥Õ¥¡¥¤¥ë¤òºî¤é¤Ê¤¤
- set noswapfile 						"¥Õ¥¡¥¤¥ëÊÔ½¸Ãæ¤Ë¥¹¥ï¥Ã¥×¥Õ¥¡¥¤¥ë¤òºî¤é¤Ê¤¤
+ set confirm    						"ä¿å­˜ã•ã‚Œã¦ã„ãªã„ãƒ•ã‚¡ã‚¤ãƒ«ãŒã‚ã‚‹ã¨ãã¯çµ‚äº†å‰ã«ä¿å­˜ç¢ºèª
+ set hidden     						"ä¿å­˜ã•ã‚Œã¦ã„ãªã„ãƒ•ã‚¡ã‚¤ãƒ«ãŒã‚ã‚‹ã¨ãã§ã‚‚åˆ¥ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ãã“ã¨ãŒå‡ºæ¥ã‚‹
+ set autoread   						"å¤–éƒ¨ã§ãƒ•ã‚¡ã‚¤ãƒ«ã«å¤‰æ›´ãŒã•ã‚ŒãŸå ´åˆã¯èª­ã¿ãªãŠã™
+ set nobackup   						"ãƒ•ã‚¡ã‚¤ãƒ«ä¿å­˜æ™‚ã«ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œã‚‰ãªã„
+ set noswapfile 						"ãƒ•ã‚¡ã‚¤ãƒ«ç·¨é›†ä¸­ã«ã‚¹ãƒ¯ãƒƒãƒ—ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œã‚‰ãªã„
 
 "================================
-"¥Ş¥¦¥¹ÀßÄê
+"ãƒã‚¦ã‚¹è¨­å®š
 "================================
 set mouse=a
 set ttymouse=xterm2
 
 "================================
-"¥­¡¼¥Ğ¥¤¥ó¥É
+"ã‚­ãƒ¼ãƒã‚¤ãƒ³ãƒ‰
 "================================
-"¥â¡¼¥É	ºÆ³äÅöÌµ¤·	ºÆ³äÅöÍ­¤ê
-"¥Î¡¼¥Ş¥ë¥â¡¼¥É¡Ü¥Ó¥¸¥å¥¢¥ë¥â¡¼¥É	noremap	map
-"¥³¥Ş¥ó¥É¥é¥¤¥ó¥â¡¼¥É¡Ü¥¤¥ó¥µ¡¼¥È¥â¡¼¥É	noremap!	map!
-"¥Î¡¼¥Ş¥ë¥â¡¼¥É	nnoremapnmap
-"¥Ó¥¸¥å¥¢¥ë(ÁªÂò)¥â¡¼¥É	vnoremapvmap
-"¥³¥Ş¥ó¥É¥é¥¤¥ó¥â¡¼¥É	cnoremap	cmap
-"¥¤¥ó¥µ¡¼¥È(ÁŞÆş)¥â¡¼¥É	inoremapimap))  
+"ãƒ¢ãƒ¼ãƒ‰	å†å‰²å½“ç„¡ã—	å†å‰²å½“æœ‰ã‚Š
+"ãƒãƒ¼ãƒãƒ«ãƒ¢ãƒ¼ãƒ‰ï¼‹ãƒ“ã‚¸ãƒ¥ã‚¢ãƒ«ãƒ¢ãƒ¼ãƒ‰	noremap	map
+"ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ãƒ¢ãƒ¼ãƒ‰ï¼‹ã‚¤ãƒ³ã‚µãƒ¼ãƒˆãƒ¢ãƒ¼ãƒ‰	noremap!	map!
+"ãƒãƒ¼ãƒãƒ«ãƒ¢ãƒ¼ãƒ‰	nnoremapnmap
+"ãƒ“ã‚¸ãƒ¥ã‚¢ãƒ«(é¸æŠ)ãƒ¢ãƒ¼ãƒ‰	vnoremapvmap
+"ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ãƒ¢ãƒ¼ãƒ‰	cnoremap	cmap
+"ã‚¤ãƒ³ã‚µãƒ¼ãƒˆ(æŒ¿å…¥)ãƒ¢ãƒ¼ãƒ‰	inoremapimap))  
 
 
-let mapleader = "\<Space>"				"Leader¤òspace¤ËÊÑ¹¹
-nnoremap == gg=G  						"=¤òÆó²óÏ¢Â³ÆşÎÏ¤Ç¥Ğ¥Ã¥Õ¥¡Á´ÂÎ¤ò¥¤¥ó¥Ç¥ó¥ÈÀ°Íı
-vnoremap v $h 							"v¤òÆó²ó¤Ç¹ÔËö¤Ş¤ÇÁªÂò
-nnoremap <Space>h  ^					"ÀèÆ¬¹Ô°ÜÆ°
-nnoremap <Space>l  $					"¹ÔËö°ÜÆ°
+let mapleader = "\<Space>"				"Leaderã‚’spaceã«å¤‰æ›´
+nnoremap == gg=G  						"=ã‚’äºŒå›é€£ç¶šå…¥åŠ›ã§ãƒãƒƒãƒ•ã‚¡å…¨ä½“ã‚’ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆæ•´ç†
+vnoremap v $h 							"vã‚’äºŒå›ã§è¡Œæœ«ã¾ã§é¸æŠ
+nnoremap <Space>h  ^					"å…ˆé ­è¡Œç§»å‹•
+nnoremap <Space>l  $					"è¡Œæœ«ç§»å‹•
 
-"Ê£¿ô¹Ô¤ò¤Ş¤È¤á¤Æ¥³¥á¥ó¥È¥¢¥¦¥È¤¹¤ë
+"è¤‡æ•°è¡Œã‚’ã¾ã¨ã‚ã¦ã‚³ãƒ¡ãƒ³ãƒˆã‚¢ã‚¦ãƒˆã™ã‚‹
 vmap # <c-V>0I#<esc>
 vmap C :s/^#//<cr>
 vmap // <C-V>0I//<Esc>
 vmap c :s/^////<CR>:noh<cr>K
 
-"j¥­¡¼¤òÆóÅÙ²¡¤·¤ÇESC¥­¡¼
+"jã‚­ãƒ¼ã‚’äºŒåº¦æŠ¼ã—ã§ESCã‚­ãƒ¼
 inoremap <silent> jj <Esc><Left>
-inoremap <silent> ¤Ãj <Esc><Left>
+inoremap <silent> ã£j <Esc><Left>
 
-" Ctrl + hjkl ¤Ç¥¦¥£¥ó¥É¥¦´Ö¤ò°ÜÆ°
+" Ctrl + hjkl ã§ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦é–“ã‚’ç§»å‹•
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l"
 
-"¥«¥Ã¥³¤È¥³¥á¥ó¥È¤ò¼«Æ°¤ÇÁŞÆş
+"ã‚«ãƒƒã‚³ã¨ã‚³ãƒ¡ãƒ³ãƒˆã‚’è‡ªå‹•ã§æŒ¿å…¥
 inoremap { {}<LEFT>
 inoremap [ []<LEFT>
 inoremap ( ()<LEFT>
@@ -95,12 +95,12 @@ inoremap '' ''<LEFT>
 inoremap <> <><LEFT>
 inoremap /* /**/<LEFT><LEFT>
 
-"ÆüÉÕÆşÎÏ
+"æ—¥ä»˜å…¥åŠ›
 inoremap <Leader>date <C-R>=strftime('%Y.%m.%d')<CR>
 inoremap <Leader>time <C-R>=strftime('%H:%M')<CR>
 inoremap <Leader>w3cd <C-R>=strftime('%Y-%m-%dT%H:%M:%S+09:00')<CR>
 
-"ÄÌ¾ï¤Î°ÜÆ°¤È¹Ô´Ö°ÜÆ°¤òÀÚ¤êÂØ¤¨
+"é€šå¸¸ã®ç§»å‹•ã¨è¡Œé–“ç§»å‹•ã‚’åˆ‡ã‚Šæ›¿ãˆ
 nnoremap k   gk
 nnoremap j   gj
 vnoremap k   gk
@@ -110,7 +110,7 @@ nnoremap gj  j
 vnoremap gk  k
 vnoremap gj  j
 
-"Ìğ°õ¥­¡¼¤Î°ÜÆ°¤ò¶Ø»ß¤¹¤ë¡£
+"çŸ¢å°ã‚­ãƒ¼ã®ç§»å‹•ã‚’ç¦æ­¢ã™ã‚‹ã€‚
 "map <Up> <Nop>
 "map <Down> <Nop>
 "map <Left> <Nop>
@@ -120,24 +120,26 @@ vnoremap gj  j
 "inoremap <Left> <Nop>
 "inoremap <Right> <Nop>
 
-"ÊİÂ¸´Ø·¸
+"ä¿å­˜é–¢ä¿‚
 nnoremap <Space>w  :<C-u>wa<CR>
 nnoremap <Space>q  :<C-u>qa<CR>
+nnoremap bo  :%!xxd<CR>
+nnoremap <Space>bw  :%!xxd -r<CR>
 
-"ÃÖ´¹
+"ç½®æ›
 nnoremap gs  :<C-u>%s///g<Left><Left><Left>
 vnoremap gs  :s///g<Left><Left><Left>
 
-"¹Ô¤òÁŞÆş(¥¤¥ó¥µ¡¼¥È¥â¡¼¥É¤Ë¤ÏÆş¤é¤Ê¤¤)
+"è¡Œã‚’æŒ¿å…¥(ã‚¤ãƒ³ã‚µãƒ¼ãƒˆãƒ¢ãƒ¼ãƒ‰ã«ã¯å…¥ã‚‰ãªã„)
 nnoremap <Space>o  :<C-u>for i in range(v:count1) \| call append(line('.'), '') \| endfor<CR>
 nnoremap <Space>O  :<C-u>for i in range(v:count1) \| call append(line('.')-1, '') \| endfor<CR>
 
-"¥¿¥ÖÁàºî
+"ã‚¿ãƒ–æ“ä½œ
 nnoremap <C-Tab> gt
 nnoremap <C-S-Tab> gT
 nnoremap gn :tabnew<CR>
 
-"²èÌÌÊ¬³ä
+"ç”»é¢åˆ†å‰²
 nnoremap s <Nop>
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
@@ -153,17 +155,17 @@ nnoremap sv :<C-u>vs<CR>
 
 
 "================================
-"¥¹¥¯¥ê¥×¥È
+"ã‚¹ã‚¯ãƒªãƒ—ãƒˆ
 "================================
 
-"¼«Æ°¥³¥ó¥×¥ê¡¼¥È"
+"è‡ªå‹•ã‚³ãƒ³ãƒ—ãƒªãƒ¼ãƒˆ"
 set completeopt=menuone
 for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
  exec "imap " . k . " " . k . "<C-N><C-P>"
 endfor
 imap <expr> <TAB> pumvisible() ? "\<Down>" : "\<Tab>"
 
-"F5¤Ç¥³¥ó¥Ñ¥¤¥ë(²¾)
+"F5ã§ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«(ä»®)
 function! Run()
     :w
     :!gcc -Wall % -o  %:r
