@@ -73,10 +73,10 @@ set ttymouse=xterm2
 "カラースキームの指定
 if filereadable(expand("~/.vim/colors/molokai.vim"))
     colorscheme molokai 					
-    highlight Normal ctermbg=NONE guibg=NONE
-    highlight NonText ctermbg=NONE guibg=NONE
-    highlight SpecialKey ctermbg=NONE guibg=NONE
-    highlight EndOfBuffer ctermbg=NONE guibg=NONE
+    "highlight Normal ctermbg=NONE guibg=NONE
+    "highlight NonText ctermbg=NONE guibg=NONE
+    "highlight SpecialKey ctermbg=NONE guibg=NONE
+    "highlight EndOfBuffer ctermbg=NONE guibg=NONE
     let g:molokai_original = 1
 end
 
@@ -94,6 +94,7 @@ imap <expr> <TAB> pumvisible() ? "\<Down>" : "\<Tab>"
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
 
 if has('syntax')
+
   augroup InsertHook
     autocmd!
     autocmd InsertEnter * call s:StatusLine('Enter')

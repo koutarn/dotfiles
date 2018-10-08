@@ -22,7 +22,6 @@ vmap c :s/^////<CR>:noh<cr>K
 inoremap <silent> jj <Esc><Left>
 inoremap <silent> っj <Esc><Left>
 
-
 "カッコとコメントを自動で挿入
 "pluginを入れたのでコメントにした
 "inoremap { {}<LEFT>
@@ -57,6 +56,8 @@ nnoremap <C-l> <C-w>l"
 "保存関係
 nnoremap <Space>w  :<C-u>wa<CR>
 nnoremap <Space>q  :<C-u>qa<CR>
+
+"バイナリで開く
 nnoremap bo  :%!xxd<CR> 				
 
 "置換
