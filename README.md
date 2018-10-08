@@ -1,5 +1,5 @@
 # dotfiles
 dotfile関係をまとめています。
 
-# AboutMe
+# About Me
 twitter:https://twitter.com/define_kouta?lang=ja
