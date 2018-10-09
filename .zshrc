@@ -1,7 +1,20 @@
+# 日本語を使用
+export LANG=ja_JP.UTF-8
+
+
 #補完機能 
 autoload -Uz promptinit
 promptinit
 prompt adam1
+
+#自動でpushdを実行
+setopt auto_pushd
+
+#pushdから重複を削除
+setopt pushd_ignore_dups
+
+#コマンドミスを修正
+setopt correct
 
 #vim風バインドキー
 bindkey -v
@@ -11,8 +24,22 @@ setopt AUTO_CD
 
 setopt histignorealldups sharehistory
 
-#プロンプトの設定
-PROMPT="[%u]%d%# "
+# 色を使用
+autoload -Uz colors
+colors
+
+#他のターミナルとヒストリーを共有
+setopt share_history
+
+#プロンプトを2行で表示、時刻を表示
+PROMPT="%(?.%{${fg[green]}%}.%{${fg[red]}%})%n${reset_color}@${fg[blue]}%m${reset_color}(%*%) %~
+%# "
+
+#補完後、メニュー選択モードになり左右キーで移動が出来る
+zstyle ':completion:*:default' menu select=2
+
+#補完で大文字にもマッチ
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 #履歴の保存
 HISTFILE=~/.zsh_history
@@ -54,8 +81,25 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 #alias
-alias ll='ls -l'                    #一覧表示
-alias lla='ls -la'"                 #全てのファイルを一覧表示"
+
+# グローバルエイリアス
+alias -g L='| less'
+alias -g H='| head'
+alias -g T='| tails'
+alias -g G='| grep'
+
+# エイリアス
+alias lst='ls -ltr --color=auto'
+alias l='ls -ltr --color=auto'
+alias la='ls -la --color=auto'
+alias ll='ls -l --color=auto'
+alias so='source'
+alias v='vim'
+alias vi='vim'
+alias vz='vim ~/.zshrc'
+
+#Ctrl+sのロック, Ctrl+qのロック解除を無効にする
+setopt no_flow_control
 
 # 初回シェル時のみ tmux実行
 if [ $SHLVL = 1 ]; then
