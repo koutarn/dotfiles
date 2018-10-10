@@ -17,6 +17,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
         Plug 'rhysd/accelerated-jk'                         "カーソル移動の加速
         Plug 'tomtom/tcomment_vim'                          "選択行のコメント化を簡単にする
         Plug 'szw/vim-tags'                                 "Ctagsの拡張プラグイン
+        Plug 'mattn/sonictemplate-vim'                      "Template入力補助
 
         "git関係
         Plug 'airblade/vim-gitgutter'                       "signの領域にgitのstatusを表示する

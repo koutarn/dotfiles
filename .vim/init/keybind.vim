@@ -54,8 +54,8 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l"
 
 "保存関係
-nnoremap <Space>w  :<C-u>wa<CR>
-nnoremap <Space>q  :<C-u>qa<CR>
+nnoremap <Leader>w  :<C-u>wa<CR>
+nnoremap <Leader>q  :<C-u>qa<CR>
 
 "バイナリで開く
 nnoremap bo  :%!xxd<CR> 				
@@ -65,8 +65,8 @@ nnoremap gs  :<C-u>%s///g<Left><Left><Left>
 vnoremap gs  :s///g<Left><Left><Left>
 
 "行を挿入(インサートモードには入らない)
-nnoremap <Space>o  :<C-u>for i in range(v:count1) \| call append(line('.'), '') \| endfor<CR>
-nnoremap <Space>O  :<C-u>for i in range(v:count1) \| call append(line('.')-1, '') \| endfor<CR>
+nnoremap <Leader>o  :<C-u>for i in range(v:count1) \| call append(line('.'), '') \| endfor<CR>
+nnoremap <Leader>O  :<C-u>for i in range(v:count1) \| call append(line('.')-1, '') \| endfor<CR>
 
 "タブ操作
 nnoremap <Leader>y gt
