@@ -117,8 +117,14 @@ if ! shopt -oq posix; then
 fi
 
 #rbenv
-"export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)" 
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 #alias
 alias='ls-hl'
+
+# If not running interactively, don't do anything
+case $- in
+     *i*) exec fish;;
+     *) return;;
+esac
