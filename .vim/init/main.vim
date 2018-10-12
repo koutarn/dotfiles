@@ -68,11 +68,11 @@ set splitright                                                      "新しい�
 "マウス設定
 "================================
 set mouse=a                                                         "mouseを使えるようにする"
-set ttymouse=xterm2                                                 
+set ttymouse=xterm2
 
 "カラースキームの指定
 if filereadable(expand("~/.vim/colors/molokai.vim"))
-    colorscheme molokai 					
+    colorscheme molokai
     "highlight Normal ctermbg=NONE guibg=NONE
     "highlight NonText ctermbg=NONE guibg=NONE
     "highlight SpecialKey ctermbg=NONE guibg=NONE
