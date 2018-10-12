@@ -8,7 +8,7 @@ my dotfiles
 .gdbinit  
 .tmux.conf  
 .vimrc  
-.config(fish setting)
+.config(any settings)
 
 ## about
 twitter:https://twitter.com/define_kouta
