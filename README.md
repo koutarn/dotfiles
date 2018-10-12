@@ -1,5 +1,5 @@
 # dotfiles
-my dotfile  
+my dotfiles  
 
 ## files
 .bashrc  
@@ -8,7 +8,7 @@ my dotfile
 .gdbinit  
 .tmux.conf  
 .vimrc  
-config(fish setting)
+.config(fish setting)
 
 ## about
-twitter:https://twitter.com/define_kouta?lang=ja
+twitter:https://twitter.com/define_kouta
