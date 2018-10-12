@@ -4,7 +4,7 @@ my dotfile
 ## files
 .bashrc  
 .vim  
-.zshrc  
+.zshrc (non update) 
 .gdbinit  
 .tmux.conf  
 .vimrc  
