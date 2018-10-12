@@ -3,12 +3,14 @@
 "================================
 if filereadable(expand("~/.vim/autoload/plug.vim"))
     call plug#begin()
+
         "表示補助
         Plug 'tomasr/molokai'                               "molokai
         Plug 'bronson/vim-trailing-whitespace'              "無駄な空白を可視化する
         Plug 'gko/vim-coloresque'                           "色を視覚化にする
         Plug 'scrooloose/nerdtree'                          "fileTree
         Plug 'jistr/vim-nerdtree-tabs'                      "Nerdtreeをtabで扱いやすいようにする
+        Plug 'myrobo/smart_tabline.vim'                     "tabを見やすくする
 
         "コーディング補助
         Plug 'tpope/vim-surround'                           "シングルクオートとダブルクオートを入れ替える
@@ -18,6 +20,8 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
         Plug 'tomtom/tcomment_vim'                          "選択行のコメント化を簡単にする
         Plug 'szw/vim-tags'                                 "Ctagsの拡張プラグイン
         Plug 'mattn/sonictemplate-vim'                      "Template入力補助
+        Plug 'thinca/vim-quickrun'                          "その場で実行してくれる
+        Plug 'suan/vim-instant-markdown'                    "markdown作成補助
 
         "git関係
         Plug 'airblade/vim-gitgutter'                       "signの領域にgitのstatusを表示する

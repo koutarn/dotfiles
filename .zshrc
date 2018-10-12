@@ -1,20 +1,20 @@
 # 日本語を使用
 export LANG=ja_JP.UTF-8
 
-
 #補完機能 
 autoload -Uz promptinit
 promptinit
 prompt adam1
+
+# Use modern completion system
+autoload -Uz compinit
+compinit
 
 #自動でpushdを実行
 setopt auto_pushd
 
 #pushdから重複を削除
 setopt pushd_ignore_dups
-
-#コマンドミスを修正
-setopt correct
 
 #vim風バインドキー
 bindkey -v
@@ -35,9 +35,6 @@ setopt share_history
 PROMPT="%(?.%{${fg[green]}%}.%{${fg[red]}%})%n${reset_color}@${fg[blue]}%m${reset_color}(%*%) %~
 %# "
 
-#補完後、メニュー選択モードになり左右キーで移動が出来る
-zstyle ':completion:*:default' menu select=2
-
 #補完で大文字にもマッチ
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
@@ -56,9 +53,6 @@ setopt hist_no_store  # historyコマンドは履歴に登録しない
 setopt hist_expand  # 補完時にヒストリを自動的に展開          
 setopt inc_append_history # 履歴をインクリメンタルに追加 
 
-# Use modern completion system
-autoload -Uz compinit
-compinit
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
@@ -97,6 +91,7 @@ alias so='source'
 alias v='vim'
 alias vi='vim'
 alias vz='vim ~/.zshrc'
+alias pwsh='pwsh'
 
 #Ctrl+sのロック, Ctrl+qのロック解除を無効にする
 setopt no_flow_control
@@ -105,7 +100,3 @@ setopt no_flow_control
 if [ $SHLVL = 1 ]; then
   tmux
 fi
-
-# インクリメンタルからの検索
-bindkey "^R" history-incremental-search-backward
-bindkey "^S" history-incremental-search-forward
