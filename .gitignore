@@ -1,2 +1,3 @@
 #pluginを読み込まないようにする
-.vim/plugged
+./.vim/plugged
+./get.sh
