@@ -1,3 +1,6 @@
+#fishへようこそを消す
+set fish_greeting
+
 #powerlineの設定
 function fish_prompt
     ~/.local/bin/powerline-shell --shell bare $status
@@ -15,3 +18,7 @@ alias fs-reload='fish_update_completions'
 
 #rbenv
 status --is-interactive; and . (rbenv init -|psub)
+
+#tmux呼び出し
+init_tmux
+
