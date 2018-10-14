@@ -4,8 +4,11 @@
 if filereadable(expand("~/.vim/autoload/plug.vim"))
     call plug#begin()
 
-        "表示補助
+        "color scheme
         Plug 'tomasr/molokai'                                               "molokai
+
+
+        "表示補助
         Plug 'bronson/vim-trailing-whitespace'                              "無駄な空白を可視化する
         Plug 'gko/vim-coloresque'                                           "色を視覚化にする
         Plug 'scrooloose/nerdtree'                                          "fileTree

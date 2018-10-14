@@ -6,7 +6,7 @@ set notitle                                                         "vimを使�
 set title                                                           "編集中のファイル名の表示
 set showcmd                                                         "入力中のコマンドをステータスに表示する
 set number                                                          "行番号を表示
-set cursorline                                                      "現在の行を強調表示
+"set cursorline                                                      "現在の行を強調表示
 set showmatch                                                       "括弧入力時に対応する括弧を表示
 set laststatus=2                                                    "ステータスラインを常に表示
 set ruler                                                           "ルーラーを表示する
@@ -69,16 +69,6 @@ set splitright                                                      "新しい�
 "================================
 set mouse=a                                                         "mouseを使えるようにする"
 set ttymouse=xterm2
-
-"カラースキームの指定
-if filereadable(expand("~/.vim/colors/molokai.vim"))
-    colorscheme molokai
-    "highlight Normal ctermbg=NONE guibg=NONE
-    "highlight NonText ctermbg=NONE guibg=NONE
-    "highlight SpecialKey ctermbg=NONE guibg=NONE
-    "highlight EndOfBuffer ctermbg=NONE guibg=NONE
-    let g:molokai_original = 1
-end
 
 "自動コンプリート"
 set completeopt=menuone
