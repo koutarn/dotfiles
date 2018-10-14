@@ -1,6 +1,6 @@
 "================================
 "vim plug settings
-"================================
+================================
 if filereadable(expand("~/.vim/autoload/plug.vim"))
     call plug#begin()
 
@@ -17,7 +17,6 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
         Plug 'tpope/vim-surround'                                           "シングルクオートとダブルクオートを入れ替える
         Plug 'Yggdroot/indentLine'                                          "インデントの可視化
         Plug 'Townk/vim-autoclose'                                          "自動でカッコを閉じてくれる
-        Plug 'rhysd/accelerated-jk'                                         "カーソル移動の加速
         Plug 'tomtom/tcomment_vim'                                          "選択行のコメント化を簡単にする
         Plug 'szw/vim-tags'                                                 "Ctagsの拡張プラグイン
         Plug 'mattn/sonictemplate-vim'                                      "Template入力補助
