@@ -1,1 +1,0 @@
-/home/kouta/.config/fish
