@@ -22,7 +22,6 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
         Plug 'Townk/vim-autoclose'                                          "自動でカッコを閉じてくれる
         Plug 'tomtom/tcomment_vim'                                          "選択行のコメント化を簡単にする
         Plug 'szw/vim-tags'                                                 "Ctagsの拡張プラグイン
-        Plug 'mattn/sonictemplate-vim'                                      "Template入力補助
         Plug 'thinca/vim-quickrun'                                          "その場で実行してくれる
         Plug 'suan/vim-instant-markdown'                                    "markdown作成補助
 
