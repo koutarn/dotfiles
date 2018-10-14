@@ -7,7 +7,6 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
         "color scheme
         Plug 'tomasr/molokai'                                               "molokai
 
-
         "表示補助
         Plug 'bronson/vim-trailing-whitespace'                              "無駄な空白を可視化する
         Plug 'gko/vim-coloresque'                                           "色を視覚化にする
@@ -24,6 +23,8 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
         Plug 'szw/vim-tags'                                                 "Ctagsの拡張プラグイン
         Plug 'thinca/vim-quickrun'                                          "その場で実行してくれる
         Plug 'suan/vim-instant-markdown'                                    "markdown作成補助
+        Plug 'haya14busa/vim-edgemotion'                                    "端に移動出来るようにする
+        Plug 'AndrewRadev/switch.vim'                                       "文字列のtoggleを行う(faleseとtrueを変換出来たりする)
 
         "git関係
         Plug 'airblade/vim-gitgutter'                                       "signの領域にgitのstatusを表示する

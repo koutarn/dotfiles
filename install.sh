@@ -4,7 +4,12 @@ set -eu
 cwd=`dirname "${0}"`
 DOTFILES_PATH=`(cd "${cwd}" && pwd)`
 
-echo "cwd = ${cwd}"
+echo "                __          __     ____    _     __                   "
+echo "           ____/ /  ____   / /_   / __/   (_)   / /  ___    _____     "
+echo "         / __   /  / __ \ / __/  / /_    / /   / /  / _ \  / ___/      "
+echo "        / /_/  /  / /_/ // /_   / __/   / /   / /  /  __/ (__  )      "
+echo "         \__,_/   \____/ \__/  /_/     /_/   /_/   \___/ /____/       "
+
 echo "dotfile_path = ${DOTFILES_PATH}"
 
 for f in .??*
