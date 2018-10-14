@@ -1,4 +1,4 @@
 function init_tmux
-    tmux new -s local -n first-window
+    tmux new -s local
 end
 

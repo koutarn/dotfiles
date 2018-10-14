@@ -7,7 +7,6 @@ function code_mode
     tmux select-window -t CODE_MODE
 
     #画面を分割
-
     tmux split-window -c $HOME -v -l 20
     tmux split-window -c $HOME -h -p 50
 
