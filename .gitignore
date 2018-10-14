@@ -1,3 +1,6 @@
+.netwhist
+.DS_Store
+
 #pluginを読み込まないようにする
 .vim/plugged/
 
