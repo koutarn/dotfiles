@@ -1,6 +1,6 @@
 "================================
 "vim plug settings
-================================
+"================================
 if filereadable(expand("~/.vim/autoload/plug.vim"))
     call plug#begin()
 
