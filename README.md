@@ -1,5 +1,4 @@
 # dotfiles
-my dotfiles
 
 ## files
 .bashrc
