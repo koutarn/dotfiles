@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# are we in a git repo?
+git rev-parse --is-inside-work-tree &>/dev/null
+
+if [[ $? != 0 ]]; then
+  echo "Not a git repository." 1>&2
+  exit 1
+fi
+
+#instant
+git add -A
+git status
+git commit -m "instant commit"
+git push origin master
+
