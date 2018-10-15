@@ -1,20 +1,20 @@
 #!/usr/bin/env bash
 
-# are we in a git repo?
+# are we in a git repository?
 git rev-parse --is-inside-work-tree &>/dev/null
-
 if [[ $? != 0 ]]; then
   echo "Error:Not a git repository." 1>&2
   exit 1
 fi
 
+#confierm working directory
 if [ -z "$(git status --porcelain)" ]; then
   # Working directory clean
   echo "Error:Working directory is clean" 1>&2
   exit 1
 fi
 
-#instant
+#instant commit is Now
 git add -A
 git status
 git commit -m "instant commit"
