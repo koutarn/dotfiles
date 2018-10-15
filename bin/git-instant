@@ -12,5 +12,6 @@ fi
 git add -A
 git status
 git commit -m "instant commit"
+
 git push origin master
 
