@@ -20,3 +20,14 @@ do
 
     ln -snfv ${DOTFILES_PATH}/"${f}" ~/"${f}"
 done
+
+
+#バイナリファイルのリンクを作成する
+MY_BIN_DIR = "bin"
+BIN_PATH = "/local/bin"
+do f in ${MY_BIN_DIR}.*
+    ln -snfv ${MY_BIN_DIR}/"${f}" ${BIN_PATH}/"${f}"
+done
+
+
+echo ""
