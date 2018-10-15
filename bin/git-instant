@@ -8,10 +8,14 @@ if [[ $? != 0 ]]; then
   exit 1
 fi
 
+if [ -z "$(git status --porcelain)" ]; then
+  # Working directory clean
+  echo "Working directory is clean" 1>&2
+  exit 1
+fi
+
 #instant
 git add -A
 git status
 git commit -m "instant commit"
-
 git push origin master
-
