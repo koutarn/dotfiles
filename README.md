@@ -9,7 +9,6 @@
 .tmux.conf
 .vimrc
 .config(any settings)
-
 bin(command)
 ````
 
