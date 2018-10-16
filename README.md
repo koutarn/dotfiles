@@ -1,5 +1,11 @@
 # dotfiles
 
+## instal
+
+```
+sudo bash install.sh
+```
+
 ## files
 
 ````
@@ -12,11 +18,6 @@
 bin(command)
 ````
 
-## instal
-
-```
-sudo bash install.sh
-*```
 
 ## about
 twitter:https://twitter.com/define_kouta
