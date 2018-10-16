@@ -21,9 +21,7 @@ done
 
 
 #バイナリファイルのリンクを作成する
-MY_BIN_DIR="bin"
-BIN_PATH="/local/bin"
-for f in ${MY_BIN_DIR}/*
+for f in bin/*
 do
     echo $f
     ln -snfv "$PWD/${f}" "/usr/local/${f}"
