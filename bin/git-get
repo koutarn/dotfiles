@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Check arguments
+if [[ -z $1 ]]; then
+    echo "too few argument" 1>&2
+    exit 1
+elif [[ ! $1 =~ ^(((https?|git)://)?github.com/)?[A-Za-z0-9_-]+/[A-Za-z0-9_-]+(\.git)?$ ]]; then
+    echo "$1: invalid github.com URL" 1>&2
+    exit 1
+fi
+
+# Format username/reponame
+uri="$(echo "$1" | perl -pe "s/^((https?|git):\/\/)?(github\.com\/)?//;s/\.git$//")"
+username="${uri%/*}"
+reponame="${uri#*/}"
+
+# Destination
+dest="${2:-$HOME/src/github.com/$username}"
+if [ -d "$dest" ]; then
+    dest="$dest/$reponame"
+fi
+
+# Make dir
+mkdir -p "$dest" 2>/dev/null
+if [ $? -ne 0 ]; then
+    echo "$dest: cannot create directory" 1>&2
+    exit 1
+fi
+
+# Run
+git clone "https://github.com/${uri}.git" "$dest"]]")"]]]]
