@@ -10,6 +10,9 @@ echo "         / __   /  / __ \ / __/  / /_    / /   / /  / _ \  / ___/     "
 echo "        / /_/  /  / /_/ // /_   / __/   / /   / /  /  __/ (__  )      "
 echo "         \__,_/   \____/ \__/  /_/     /_/   /_/   \___/ /____/       "
 
+echo "========================================="
+echo "dotfiles install to $HOME"
+echo "========================================="
 for f in .??*
 do
     [[ "$f" == ".git" ]] && continue
@@ -19,11 +22,12 @@ do
     ln -snfv ${DOTFILES_PATH}/${f} ~/${f}
 done
 
-
+echo "========================================="
+echo "dotfile bin/ install to /usr/local/bin/"
+echo "========================================="
 #バイナリファイルのリンクを作成する
 for f in bin/*
 do
-    echo $f
     ln -snfv "$PWD/${f}" "/usr/local/${f}"
 done
 
