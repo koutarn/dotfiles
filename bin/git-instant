@@ -17,19 +17,5 @@ fi
 #instant commit is Now
 git status
 git add -A
-
-#do you instant commit?
-read -p "do you instant commit? y/n: " -n 1 key > /dev/null 2>&1
-if ! [ $key="y" ]; then
-    exit 1
-fi
-
 git commit -m "instant commit"
-
-#do you instant push?
-read -p "do you instant push? y/n: " -n 1 key > /dev/null 2>&1
-if ! [ $key="y" ]; then
-    exit 1
-fi
-
 git push origin master
