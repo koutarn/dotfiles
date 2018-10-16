@@ -19,8 +19,7 @@ git status
 git add -A
 
 #do you instant commit?
-echo "do you instant commit? y/n: "
-read -n 1 key
+read -p "do you instant commit? y/n: " -n 1 key
 if ! [ $key="y" ]; then
     exit 1
 fi
@@ -28,8 +27,7 @@ fi
 git commit -m "instant commit"
 
 #do you instant push?
-read -n 1 key
-echo "do you instant push for origin master ?: "
+read -p "do you instant push? y/n: " -n 1 key
 if ! [ $key="y" ]; then
     exit 1
 fi
