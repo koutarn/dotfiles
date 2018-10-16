@@ -15,10 +15,7 @@ username="${uri%/*}"
 reponame="${uri#*/}"
 
 # Destination
-dest="${2:-$HOME/src/github.com/$username}"
-if [ -d "$dest" ]; then
-    dest="$dest/$reponame"
-fi
+dest="${2:-$HOME/Project/github/$username/$reponame}"
 
 # Make dir
 mkdir -p "$dest" 2>/dev/null
@@ -28,4 +25,4 @@ if [ $? -ne 0 ]; then
 fi
 
 # Run
-git clone "https://github.com/${uri}.git" "$dest"]]")"]]]]
+git clone "https://github.com/${uri}.git" "$dest"
