@@ -11,11 +11,12 @@ sudo bash install.sh
 ````
 .bashrc
 .vim
-.zshrc (non update)
+.zshrc
 .tmux.conf
 .vimrc
-.config(any settings)
+.config
 bin(command)
+etc(setting files)
 ````
 
 
