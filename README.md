@@ -4,7 +4,7 @@
 
 ```
 git clone https://github.com/koutakun/dotfile.git $HOME/dotfiles
-sudo bash $HOME/install.sh
+sudo bash $HOME/dotfiles/install.sh
 ```
 
 ## files
