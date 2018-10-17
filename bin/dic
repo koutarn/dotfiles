@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 #
 #[USAGE]
 #dic [PATTERN]
@@ -10,5 +10,7 @@ if [[ -z $1 ]]; then
 fi
 
 #serch for ag
-DICTIONARY_PATH="$PWD/../etc/ejdic-hand-utf8.txt"
-ag --no-numbers --pager 'less -X' "$@" "${DICTIONARY_PATH}"er
+DICTIONARY_PATH="$(find $HOME -name "dotfiles")/etc/ejdic.txt"
+ag --no-numbers -C 0 -s -w --nocolor "$@" "${DICTIONARY_PATH}"
+#ag --no-numbers -C 0 -s --nocolor --pager 'less -s' "$@" "${DICTIONARY_PATH}"
+exit 0

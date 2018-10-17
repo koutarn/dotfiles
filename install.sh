@@ -21,12 +21,3 @@ do
 
     ln -snfv ${DOTFILES_PATH}/${f} ~/${f}
 done
-
-echo "========================================="
-echo "dotfile bin/ install to /usr/local/bin/"
-echo "========================================="
-#バイナリファイルのリンクを作成する
-#for f in bin/*
-#do
-        #ln -snfv "$PWD/${f}" "/usr/local/${f}"
-#done
