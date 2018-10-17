@@ -3,7 +3,8 @@
 ## instal
 
 ```
-sudo bash install.sh
+git clone https://github.com/koutakun/dotfile.git $HOME/dotfiles
+sudo bash $HOME/install.sh
 ```
 
 ## files

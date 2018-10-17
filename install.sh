@@ -2,7 +2,7 @@
 set -eu
 
 cwd=`dirname "${0}"`
-DOTFILES_PATH=`(cd "${cwd}" && pwd)`
+DOTFILES_PATH=${ find $HOME/ -name "dotfiles" }
 
 echo "                __          __     ____    _     __                   "
 echo "           ____/ /  ____   / /_   / __/   (_)   / /  ___    _____     "
