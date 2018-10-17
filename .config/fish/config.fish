@@ -37,5 +37,5 @@ set -g theme_display_git_ahead_verbose yes
 set -U fish_user_paths $HOME/dotfiles/bin $fish_user_paths
 
 #tmux呼び出し
-init_tmux
+#init_tmux
 
