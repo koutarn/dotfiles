@@ -1,0 +1,14 @@
+#!bin/bash
+#
+#[USAGE]
+#dic [PATTERN]
+
+#no argument
+if [[ -z $1 ]]; then
+    echo "too few argument" 1>&2
+    exit 1
+fi
+
+#serch for ag
+DICTIONARY_PATH="$PWD/../etc/ejdic-hand-utf8.txt"
+ag --no-numbers --pager 'less -X' "$@" "${DICTIONARY_PATH}"er

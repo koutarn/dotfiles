@@ -1,1 +1,0 @@
-/home/kouta/.fzf/shell/key-bindings.fish

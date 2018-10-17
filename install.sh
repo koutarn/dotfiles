@@ -28,6 +28,5 @@ echo "========================================="
 #バイナリファイルのリンクを作成する
 for f in bin/*
 do
-    ln -snfv "$PWD/${f}" "/usr/local/${f}"
+        ln -snfv "$PWD/${f}" "/usr/local/${f}"
 done
-
