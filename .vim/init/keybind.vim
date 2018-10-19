@@ -61,8 +61,8 @@ nnoremap <Leader>q  :<C-u>qa<CR>   "閉じる
 nnoremap bo  :%!xxd<CR>            "バイナリで開く
 
 "置換
-nnoremap gs  :<C-u>%s///g<Left><Left><Left>
-vnoremap gs  :s///g<Left><Left><Left>
+nnoremap sg  :<C-u>%s///g<Left><Left><Left>
+vnoremap sg  :s///g<Left><Left><Left>
 
 "行を挿入(インサートモードには入らない)
 nnoremap <Leader>o  :<C-u>for i in range(v:count1) \| call append(line('.'), '') \| endfor<CR>

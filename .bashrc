@@ -126,6 +126,19 @@ eval "$(rbenv init -)"
 #alias
 alias='ls-hl'
 
+
+cat <<"EOF"
+
+  `7MMF'  `7MMF'         `7MM  `7MM                                                     `7MM       `7MM
+    MM      MM             MM    MM                                                       MM         MM
+    MM      MM   .gP"Ya    MM    MM   ,pW"Wq.      `7M'    ,A    `MF' ,pW"Wq.  `7Mb,od8   MM    ,M""bMM
+    MMmmmmmmMM  ,M'   Yb   MM    MM  6W'   `Wb       VA   ,VAA   ,V  6W'   `Wb   MM' "'   MM  ,AP    MM
+    MM      MM  8M""""""   MM    MM  8M     M8        VA ,V  VA ,V   8M     M8   MM       MM  8MI    MM
+    MM      MM  YM.    ,   MM    MM  YA.   ,A9         VVV    VVV    YA.   ,A9   MM       MM  `Mb    MM
+  .JMML.  .JMML. `Mbmmd' .JMML..JMML. `Ybmd9'           W      W      `Ybmd9'  .JMML.   .JMML. `Wbmd"MML.
+
+EOF
+
 # If not running interactively, don't do anything
 case $- in
      *i*) exec fish;;
