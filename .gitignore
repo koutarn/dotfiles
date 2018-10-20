@@ -5,9 +5,9 @@
 .vim/plugged/
 
 #fishだけ
-.config/
+.config/*
 !.config/fish
 
 #w3mのkeymapだけ
-.w3m/
+.w3m/*
 !.w3m/keymap

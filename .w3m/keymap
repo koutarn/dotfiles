@@ -1,0 +1,61 @@
+# Ctrl  : C-, ^
+# Escape: ESC-, M-, ^[
+# Space : SPC, ' '
+# Tab   : TAB, ^i, ^I
+# Delete: DEL, ^?
+# Up    : UP, ^[[A
+# Down  : DOWN, ^[[B
+# Right : RIGHT, ^[[C
+# Left  : LEFT, ^[[D
+
+#TAB関係
+keymap    C-t   NEW_TAB
+keymap    C-x   CLOSE_TAB
+keymap    C-y   PREV_TAB
+keymap    C-u   NEXT_TAB
+
+#ヘルプ
+keymap 0 HELP
+
+#基本操作
+
+#終了
+keymap    q    EXIT
+
+#移動
+keymap    H    MOVE_LEFT
+keymap    J    MOVE_DOWN
+keymap    K    MOVE_UP
+keymap    L    MOVE_RIGHT
+
+#リンク移動
+keymap LEFT     NEXT_LEFT_UP
+keymap DOWN     NEXT_DOWN
+keymap UP       NEXT_UP
+keymap RIGHT    NEXT_RIGHT_DOWN
+keymap TAB      NEXT_LINK
+
+#単語移動
+keymap    W     NEXT_WORD
+keymap    B     PREV_WORD
+
+#リロード
+keymap    R     RELOAD
+
+#次に移動、過去に戻る
+keymap C-l SELECT
+keymap C-h BACK
+
+#検索
+keymap    / SEARCH
+keymap    N SEARCH_NEXT
+keymap    ? SEARCH_PREV
+
+#履歴
+keymap    9 HISTORY
+
+#タブで開く
+keymap t TAB_LINK
+
+#chromeで開く
+keymap O EXTERN
