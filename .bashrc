@@ -127,6 +127,7 @@ eval "$(rbenv init -)"
 alias='ls-hl'
 
 
+#AA表示
 cat <<"EOF"
 
   `7MMF'  `7MMF'         `7MM  `7MM                                                     `7MM       `7MM

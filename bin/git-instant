@@ -17,5 +17,13 @@ fi
 #instant
 git status
 git add -A
-git commit -m "instant commit for git-instant"
+
+echo "commit messge:" > /dev/null/ > 2
+read MSG
+if [ -z "$MSG" ]; then
+    git commit -m "instant commit for git-instant"
+else
+    git commit -m "$MSG"
+fi
+
 git push origin master

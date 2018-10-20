@@ -6,15 +6,21 @@ function fish_prompt
     ~/.local/bin/powerline-shell --shell bare $status
 end
 
+function cd
+    builtin cd $argv[1]
+    #ls -C -a --color=always | cat
+    ls -p -v -w 150 -A --color=always
+end
+
 #alias
-alias lst='ls -ltr --color=auto'
-alias l='ls -ltr --color=auto'
-alias la='ls -la --color=auto'
-alias ll='ls -l --color=auto'
+alias l='ls -vptr --color=auto'             #簡易表示
+alias ll='ls -vlp --color=auto'             #詳細表示
+alias la='ls -vlpA --color=auto'            #詳細表示(隠しファイル含む)
 alias so='source'
 alias vi='vim'
 alias fs='vim ~/.config/fish/config.fish'
 alias fs-reload='fish_update_completions'
+
 
 #rbenv
 status --is-interactive; and . (rbenv init -|psub)
@@ -35,7 +41,7 @@ set -g theme_show_exit_status yes
 set -g theme_display_git_ahead_verbose yes
 
 set -U fish_user_paths $HOME/dotfiles/bin $fish_user_paths
+set -U fish_user_paths $ENHANCD_DIR $fish_user_paths
 
 #tmux呼び出し
 init_tmux
-
