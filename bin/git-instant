@@ -19,7 +19,7 @@ git status
 git add -A
 
 #input commit message
-read -p "git:commit message" MSG
+read -p "commit message:" MSG
 if [ -z "$MSG" ]; then
     git commit -m "instant commit"
 else
