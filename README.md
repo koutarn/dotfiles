@@ -19,11 +19,13 @@ sudo bash ./install.sh
 .bashrc
 .zshrc
 .vimrc
-.vim
-.config
-.w3m
+.gitignore_g
+.gitattributes_g
 .tmux.conf
 .gitconfig
+.config/
+.vim/
+.w3m/
 bin/(command)
 etc/(setting files)
 ````
