@@ -1,9 +1,9 @@
 # ------ prefix ------
-# feat: A new feature
-# fix: A bug fix
-# docs: Documentation only changes
-# style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-# refactor: A code change that neither fixes a bug nor adds a feature
-# perf: A code change that improves performance
-# test: Adding missing or correcting existing tests
-# chore: Changes to the build process or auxiliary tools and libraries such as documentation generation
+# feat:新しい機能 A new feature
+# fix:バグ修正 A bug fix
+# docs:ドキュメントのみ変更  Documentation only changes
+# style:コードの意味に影響を与えない変更（空白、フォーマット、セミコロンの欠落など） Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+# refactor:バグを修正したり、機能を追加したりしないコード変更 A code change that neither fixes a bug nor adds a feature
+# perf:パフォーマンスを向上させるコード変更 A code change that improves performance
+# test:既存のテストの欠落または修正の追加 Adding missing or correcting existing tests
+# chore:ビルドプロセスやドキュメント作成などの補助ツールやライブラリの変更 Changes to the build process or auxiliary tools and libraries such as documentation generation
