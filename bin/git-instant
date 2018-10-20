@@ -26,4 +26,4 @@ else
     git commit -m "${MSG}"
 fi
 
-git push origin master
+git push origin HEAD
