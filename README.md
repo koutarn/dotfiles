@@ -17,17 +17,23 @@ sudo bash ./install.sh
 
 ````
 .bashrc
-.zshrc
-.vimrc
-.gitignore_g
+.config
+.git
 .gitattributes_g
-.tmux.conf
 .gitconfig
-.config/
-.vim/
-.w3m/
-bin/(command)
-etc/(setting files)
+.gitignore
+.gitignore_g
+.gitmessage
+.tmux.conf
+.vim
+.vimrc
+.w3m
+.xinitrc
+.zshrc
+README.md
+bin
+etc
+install.sh
 ````
 
 
