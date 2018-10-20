@@ -18,12 +18,12 @@ fi
 git status
 git add -A
 
-echo "commit messge:" > /dev/null/ > 2
+echo "commit messge:"
 read MSG
 if [ -z "$MSG" ]; then
     git commit -m "instant commit for git-instant"
 else
-    git commit -m "$MSG"
+    git commit -m "${MSG}"
 fi
 
 git push origin master
