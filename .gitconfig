@@ -20,6 +20,7 @@
 
 [core]
 attributesfile = $HOME/.gitattributes_g
-excludesfile = $HOME/.gitignore_g
+#excludesfile = $HOME/.gitignore_g
+
 [color]
 	ui = auto
