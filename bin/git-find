@@ -13,6 +13,4 @@ if [ -z "$(git status --porcelain)" ]; then
   exit 1
 fi
 
-#fix gitignore?
-git status
-if
+#find log
