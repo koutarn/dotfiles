@@ -73,6 +73,9 @@ nnoremap <C-u> gt
 nnoremap <C-y> gT
 nnoremap gn :tabnew<CR>
 
+"ファイルを閉じる
+nnoremap <C-x> :<C-u>q<CR>
+
 "画面分割
 nnoremap s <Nop>
 

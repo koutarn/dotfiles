@@ -18,8 +18,10 @@ alias ll='ls -vlp --color=auto'             #詳細表示
 alias la='ls -vlpA --color=auto'            #詳細表示(隠しファイル含む)
 alias so='source'
 alias vi='vim'
-alias fs='vim ~/.config/fish/config.fish'
-alias fs-reload='fish_update_completions'
+alias vi-key-config='vim ~/.vim/init/keybind.vim'
+alias vi-plug-config='vim ~/.vim/init/plugins.vim'
+alias fish-config='vim ~/.config/fish/config.fish'
+alias fish-reload='fish_update_completions'
 
 
 #rbenv

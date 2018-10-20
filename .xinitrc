@@ -1,1 +1,1 @@
-xset r rate 200 30
+xset r rate 199 30
