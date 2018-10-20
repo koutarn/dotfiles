@@ -21,6 +21,7 @@ sudo bash ./install.sh
 .vimrc
 .vim
 .config
+.w3m
 .tmux.conf
 .gitconfig
 bin/(command)
