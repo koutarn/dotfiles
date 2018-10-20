@@ -9,6 +9,9 @@
 "ビジュアル(選択)モード                     vnoremap     vmap
 "コマンドラインモード                       cnoremap     cmap
 
+"unbined
+nnoremap s <Nop>
+
 let mapleader = "\<Space>"				"Leaderをspaceに変更
 nnoremap == gg=G  						"=を二回連続入力でバッファ全体をインデント整理
 vnoremap v $h 							"vを二回で行末まで選択
@@ -77,7 +80,5 @@ nnoremap gn :tabnew<CR>
 nnoremap <C-x> :<C-u>q<CR>
 
 "画面分割
-nnoremap s <Nop>
-
 nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>
