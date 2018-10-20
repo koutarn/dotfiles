@@ -17,11 +17,11 @@ sudo bash ~/dotfiles/install.sh
 
 ````
 .bashrc
-.vim
 .zshrc
-.tmux.conf
 .vimrc
+.vim
 .config
+.tmux.conf
 .gitconfig
 bin/(command)
 etc/(setting files)
