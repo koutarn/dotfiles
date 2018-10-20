@@ -9,7 +9,7 @@
 ## instal
 
 ```
-git clone https://github.com/koutakun/dotfile.git ~/dotfiles | cd ~/dotfile
+git clone https://github.com/koutakun/dotfile.git ~/dotfiles && cd ~/dotfiles
 sudo bash ~/dotfiles/install.sh
 ```
 
