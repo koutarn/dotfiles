@@ -10,7 +10,7 @@ fi
 #confierm working directory
 if [ -z "$(git status --porcelain)" ]; then
   # Working directory clean
-  echo "git:Error Working directory is clean" 1>&2
+  echo "working tree is clean" 1>&2
   exit 1
 fi
 
