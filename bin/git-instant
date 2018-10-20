@@ -19,7 +19,7 @@ git status
 git add -A
 
 
-echo < ~/.gitmessage
+cat < ~/.gitmessage
 
 #input commit message
 read -p "commit message:" MSG
