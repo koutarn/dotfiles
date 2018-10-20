@@ -16,8 +16,8 @@ sudo bash $HOME/dotfiles/install.sh
 .tmux.conf
 .vimrc
 .config
-bin(command)
-etc(setting files)
+/bin(command)
+/etc(setting files)
 .gitconfig
 ````
 
