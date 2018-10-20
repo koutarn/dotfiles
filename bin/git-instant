@@ -18,6 +18,8 @@ fi
 git status
 git add -A
 
+echo < ~/.gitmessage
+
 #input commit message
 read -p "commit message:" MSG
 if [ -z "$MSG" ]; then
