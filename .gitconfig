@@ -26,4 +26,5 @@ excludesfile = ~/.gitignore_g
 ui = auto
 
 [commit]
+#template
 template = ~/.gitmessage
