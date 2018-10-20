@@ -22,9 +22,9 @@ sudo bash ~/dotfiles/install.sh
 .tmux.conf
 .vimrc
 .config
+.gitconfig
 bin/(command)
 etc/(setting files)
-.gitconfig
 ````
 
 
