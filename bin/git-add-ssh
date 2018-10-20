@@ -8,6 +8,7 @@ if [[ $? != 0 ]]; then
 fi
 
 #setting remote ssh-url
+
 read -p "user name:" USER_NAME
 read -p "repository name:" REPO_NAME
 git remote set-url origin "git@github.com:${USER_NAME}/${REPO_NAME}.git"
