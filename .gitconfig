@@ -1,17 +1,17 @@
 [user]
-	email = fuse.kanrinin@gmail.com
-	name = koutakun
+email = fuse.kanrinin@gmail.com
+name = koutakun
 
 [color "diff"]
-  meta = 242 238
-  frag = 239 236
-  old = 167 normal
-  new = 030 normal
-  context = 240
-  commit = 246 024
+meta = 242 238
+frag = 239 236
+old = 167 normal
+new = 030 normal
+context = 240
+commit = 246 024
 
 [diff]
-  compactionHeuristic = true
+compactionHeuristic = true
 
 #[pager]
 #  log = diff-highlight | less
@@ -23,4 +23,4 @@ attributesfile = $HOME/.gitattributes_g
 excludesfile = $HOME/.gitignore_g
 
 [color]
-	ui = auto
+ui = auto
