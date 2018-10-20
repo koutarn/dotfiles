@@ -2,7 +2,7 @@
 set -eu
 
 cwd=`dirname "${0}"`
-DOTFILES_PATH="$HOME/dotfiles"
+DOTFILES_PATH="dotfiles"
 
 echo "                __          __     ____    _     __                   "
 echo "           ____/ /  ____   / /_   / __/   (_)   / /  ___    _____     "
@@ -19,5 +19,5 @@ do
     [[ "$f" == ".gitignore" ]] && continue
     [[ "$f" == ".DS_Store" ]] && continue
 
-    ln -snfv ${DOTFILES_PATH}/${f} ~/${f}
+    ln -snfv "$DOTFILES_PATH/${f}" "$HOME/${f}"
 done

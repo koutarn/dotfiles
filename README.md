@@ -9,8 +9,8 @@
 ## instal
 
 ```
-git clone https://github.com/koutakun/dotfile.git $HOME/dotfiles
-sudo bash $HOME/dotfiles/install.sh
+git clone https://github.com/koutakun/dotfile.git ~/dotfiles | cd ~/dotfile
+sudo bash ~/dotfiles/install.sh
 ```
 
 ## files
@@ -22,8 +22,8 @@ sudo bash $HOME/dotfiles/install.sh
 .tmux.conf
 .vimrc
 .config
-/bin(command)
-/etc(setting files)
+bin/(command)
+etc/(setting files)
 .gitconfig
 ````
 

@@ -15,7 +15,6 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
         Plug 'myrobo/smart_tabline.vim'                                     "tabを見やすくする
         Plug 'Xuyuanp/nerdtree-git-plugin'                                  "nerdtreeで変更があったら表示する
         Plug 'ko2ic/nerdtree-plugin-ag'                                     "nerdtreeでagを使えるようにする
-        Plug 'osyo-manga/vim-brightest'                                     "ハイライト表示
 
         "検索
         Plug 'rking/ag.vim'                                                 "agを使えるようにする
