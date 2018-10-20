@@ -19,8 +19,11 @@ compactionHeuristic = true
 #  diff = diff-highlight | less
 
 [core]
-attributesfile = $HOME/.gitattributes_g
-excludesfile = $HOME/.gitignore_g
+attributesfile = ~/.gitattributes_g
+excludesfile = ~/.gitignore_g
 
 [color]
 ui = auto
+
+[commit]
+template = ~/.gitmessage
