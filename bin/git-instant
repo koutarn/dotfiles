@@ -18,6 +18,7 @@ fi
 git status
 git add -A
 
+
 echo < ~/.gitmessage
 
 #input commit message
