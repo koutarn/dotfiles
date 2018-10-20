@@ -18,6 +18,7 @@ sudo bash $HOME/dotfiles/install.sh
 .config
 bin(command)
 etc(setting files)
+.gitconfig
 ````
 
 
