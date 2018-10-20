@@ -21,6 +21,10 @@ compactionHeuristic = true
 [core]
 attributesfile = ~/.gitattributes_g
 excludesfile = ~/.gitignore_g
+#true = チェックアウト時にLF⇛CRLF
+#input = コミット時にCRLF⇛LF
+#false 無効
+#autocrlf = input
 
 [color]
 ui = auto

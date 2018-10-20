@@ -3,9 +3,7 @@
 
 #fishだけ
 .config/*
-!.config/fish/functions/*
-!.config/fish/config.fish
-!.config/fish/fishfile
+!.config/fish
 
 
 #w3mのkeymapだけ
