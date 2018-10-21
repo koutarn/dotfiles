@@ -10,9 +10,5 @@
 
 ```
 git clone https://github.com/koutakun/dotfile.git ~/dotfiles && cd ~/dotfiles
-sudo bash ./dot-install.sh
+sudo bash ./install.sh
 ```
-
-## future
-we can install apps for app-instal.sh
-
