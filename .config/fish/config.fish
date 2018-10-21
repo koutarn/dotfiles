@@ -23,6 +23,7 @@ alias vi-plug-config='vim ~/.vim/init/plugins.vim'
 alias fish-config='vim ~/.config/fish/config.fish'
 alias fish-reload='fish_update_completions'
 alias net='w3m -m -B https://google.com'
+alias ag='ag -S --stats --hidden'
 
 
 #rbenv
