@@ -12,5 +12,4 @@ fi
 #serch for ag
 DICTIONARY_PATH="$(find $HOME -name "dotfiles")/etc/ejdic.txt"
 ag --no-numbers -C 0 -s -w --nocolor "$@" "${DICTIONARY_PATH}"
-#ag --no-numbers -C 0 -s --nocolor --pager 'less -s' "$@" "${DICTIONARY_PATH}"
 exit 0
