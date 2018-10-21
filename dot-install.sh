@@ -21,3 +21,10 @@ do
 
     ln -snfv "$DOTFILES_PATH/${f}" "$HOME/${f}"
 done
+
+cat <<END
+
+dotfiles setup finished!
+bye!
+
+END
