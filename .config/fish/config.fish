@@ -12,19 +12,19 @@ function cd
     ls -p -v -w 150 -A --color=always
 end
 
-#alias
-alias l='ls -vptr --color=auto'             #簡易表示
-alias ll='ls -vlp --color=auto'             #詳細表示
-alias la='ls -vlpA --color=auto'            #詳細表示(隠しファイル含む)
-alias so='source'
-alias vi='vim'
-alias vi-key-config='vim ~/.vim/init/keybind.vim'
-alias vi-plug-config='vim ~/.vim/init/plugins.vim'
-alias fish-config='vim ~/.config/fish/config.fish'
-alias fish-reload='fish_update_completions'
-alias net='w3m -m -B https://google.com'
-alias ag='ag -S --hidden'
-alias agf='ag -S -g'
+#balias
+balias l 'ls -vptr --color=auto'             #簡易表示
+balias ll 'ls -vlp --color=auto'             #詳細表示
+balias la 'ls -vlpA --color=auto'            #詳細表示(隠しファイル含む)
+balias so 'source'
+balias vi 'vim'
+balias vi-key-config 'vim ~/.vim/init/keybind.vim'
+balias vi-plug-config 'vim ~/.vim/init/plugins.vim'
+balias fish-config 'vim ~/.config/fish/config.fish'
+balias fish-reload 'fish_update_completions'
+balias net 'w3m -m -B https://google.com'
+balias ag 'ag -S --hidden'
+balias agf 'ag -S -g'
 
 #rbenv
 status --is-interactive; and . (rbenv init -|psub)
@@ -47,5 +47,6 @@ set -g theme_display_git_ahead_verbose yes
 set -U fish_user_paths $HOME/dotfiles/bin $fish_user_paths
 set -U fish_user_paths $ENHANCD_DIR $fish_user_paths
 
-#tmuxの呼び出し
-init_tmux
+if [ $SHLVL = 1 ]
+ tmux
+end
