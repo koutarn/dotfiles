@@ -12,30 +12,3 @@
 git clone https://github.com/koutakun/dotfile.git ~/dotfiles && cd ~/dotfiles
 sudo bash ./install.sh
 ```
-
-## files
-
-````
-.bashrc
-.config
-.git
-.gitattributes_g
-.gitconfig
-.gitignore
-.gitignore_g
-.gitmessage
-.tmux.conf
-.vim
-.vimrc
-.w3m
-.xinitrc
-.zshrc
-README.md
-bin
-etc
-install.sh
-````
-
-
-## about
-twitter:https://twitter.com/define_kouta
