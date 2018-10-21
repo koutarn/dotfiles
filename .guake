@@ -1,0 +1,42 @@
+#dconf settings for guake
+
+[apps/guake/general]
+prompt-on-quit=true
+window-height=48
+mouse-display=true
+window-width=100
+window-valignment=1
+max-tab-name-length=100
+window-losefocus=false
+infinite-history=true
+history-size=1000
+start-fullscreen=true
+open-tab-cwd=true
+window-tabbar=false
+window-halignment=0
+quick-open-command-line='gedit %(file_path)s'
+compat-delete='delete-sequence'
+default-shell='/bin/bash'
+abbreviate-tab-names=true
+display-n=0
+scroll-keystroke=true
+use-default-font=false
+use-trayicon=true
+use-scrollbar=true
+window-refocus=false
+set-window-title=true
+use-popup=true
+use-vte-titles=false
+
+[apps/guake/style]
+cursor-blink-mode=0
+
+[apps/guake/style/background]
+transparency=94
+
+[apps/guake/style/font]
+allow-bold=true
+style='MyricaM M for Powerline 11'
+palette='#000027273131:#d0d01b1b2424:#6b6bbebe6c6c:#a5a577770505:#20207575c7c7:#c6c61b1b6e6e:#252591918585:#e9e9e2e2cbcb:#000063638888:#f4f415153b3b:#5050eeee8484:#b1b17e7e2828:#17178d8dc7c7:#e1e14d4d8e8e:#0000b2b29e9e:#fcfcf4f4dcdc:#9b9bc1c1c2c2:#00001e1e2626'
+palette-name='Custom'
+

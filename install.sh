@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu
 
-cwd=`dirname "${0}"`
+#cwd=$(dirname "${0}")
 DOTFILES_PATH="dotfiles"
 
 echo "          __          __     ____    _     __                "
