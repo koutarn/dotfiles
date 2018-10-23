@@ -1,3 +1,4 @@
 #全てに適用されるgit_ignore
 .netwhist
 .DS_Store
+tags
