@@ -22,7 +22,7 @@ git add -A
 cat < ~/.gitmessage
 
 read -p "do you want commit? y/n:"
-if [ $? -eq "n" ]; then
+if [ $? = "n" ]; then
     exit 0
 fi
 
