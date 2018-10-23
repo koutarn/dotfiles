@@ -21,8 +21,8 @@ git add -A
 #preview template message
 cat < ~/.gitmessage
 
-read -p "do you want commit? y/n:"
-if [ $? = "n" ]; then
+read -p "do you want commit? y/n:" ANSWER
+if [ $ANSWER = [Nn] ]; then
     exit 0
 fi
 
