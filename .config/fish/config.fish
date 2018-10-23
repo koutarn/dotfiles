@@ -48,5 +48,6 @@ set -U fish_user_paths $HOME/dotfiles/bin $fish_user_paths
 set -U fish_user_paths $ENHANCD_DIR $fish_user_paths
 
 if [ $SHLVL = 1 ]
+ figlet hello world! 2>/dev/null
  tmux
 end
