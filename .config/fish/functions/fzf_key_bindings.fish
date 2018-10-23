@@ -1,1 +1,1 @@
-/home/kouta/Project/github/junegunn/fzf/shell/key-bindings.fish
+/home/kouta/.fzf/shell/key-bindings.fish
