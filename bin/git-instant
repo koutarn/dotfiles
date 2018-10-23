@@ -18,11 +18,16 @@ fi
 git status
 git add -A
 
-#preview temlate message
+#preview template message
 cat < ~/.gitmessage
 
+read -p "do you want commit? y/n"
+if [ $? -eq [Nn] ]; then
+    exit 0
+fi
+
 #input commit message
-read -p "commit message:" MSG
+read -n 1 -p "commit message:" MSG
 if [ -z "$MSG" ]; then
     git commit -m "instant commit"
 else
