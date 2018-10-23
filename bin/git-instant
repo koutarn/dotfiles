@@ -34,4 +34,3 @@ else
     git commit -m "${MSG}"
 fi
 
-git push origin HEAD
