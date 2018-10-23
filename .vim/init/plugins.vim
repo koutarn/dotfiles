@@ -30,6 +30,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
         Plug 'suan/vim-instant-markdown'                                    "markdown作成補助
         Plug 'haya14busa/vim-edgemotion'                                    "端に移動出来るようにする
         Plug 'AndrewRadev/switch.vim'                                       "文字列のtoggleを行う(faleseとtrueを変換出来たりする)
+        Plug 'majutsushi/tagbar'                                            "tagbar表示
 
         "git関係
         Plug 'airblade/vim-gitgutter'                                       "signの領域にgitのstatusを表示する
