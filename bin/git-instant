@@ -21,7 +21,7 @@ git add -A
 #preview template message
 cat < ~/.gitmessage
 
-read -n 2 -p "do you want commit? y/n:" ANSWER
+read -n 2 -p "do you want commit?(y/n): " ANSWER
 if [ $ANSWER = 'n' ]; then
     exit 0
 fi
@@ -29,7 +29,7 @@ fi
 #input commit message
 read -p "commit message:" MSG
 if [ -z "$MSG" ]; then
-    git commit -m "instant commit"
+    git commit -m "instant commit "
 else
     git commit -m "${MSG}"
 fi
