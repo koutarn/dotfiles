@@ -31,6 +31,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
         Plug 'haya14busa/vim-edgemotion'                                    "端に移動出来るようにする
         Plug 'AndrewRadev/switch.vim'                                       "文字列のtoggleを行う(faleseとtrueを変換出来たりする)
         Plug 'majutsushi/tagbar'                                            "tagbar表示
+        Plug 'sheerun/vim-polyglot'                                         "vimの言語サポートを行う
 
         "git関係
         Plug 'airblade/vim-gitgutter'                                       "signの領域にgitのstatusを表示する
