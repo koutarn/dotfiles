@@ -42,6 +42,11 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
         Plug 'thinca/vim-ref'                                               "Rubyのリファレンスマニュアルをvimで読めるようにする(ref gemを入れる必要あり)
         Plug 'osyo-manga/vim-monster',{'for':'Ruby'}                        "Rubyのコード補完機能を提供
 
+        "HTML
+        Plug 'othree/html5.vim'                                             "HTML Syntax
+        Plug 'hail2u/vim-css3-syntax'                                       "CSS Syntax
+        Plug 'mattn/emmet-vim'                                              "Emmet
+
         "rails
         Plug 'tpope/vim-rails'                                              "railsコマンドをvimでも使えるようにする
 
@@ -49,6 +54,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
         Plug 'dag/vim-fish'                                                 "Fish Scriptのシンタックスハイライト
         Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }   "fzf
         Plug 'junegunn/fzf.vim'                                             "fzfのvim用コード
+        Plug 'junegunn/goyo.vim'                                            "vimで文章を書く
 
     call plug#end()
 end

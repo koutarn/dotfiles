@@ -18,6 +18,7 @@ balias ll 'ls -vlp --color=auto'             #詳細表示
 balias la 'ls -vlpA --color=auto'            #詳細表示(隠しファイル含む)
 balias so 'source'
 balias vi 'vim'
+balias vi-main-config 'vim ~/.vim/init/main.vim'
 balias vi-key-config 'vim ~/.vim/init/keybind.vim'
 balias vi-plug-config 'vim ~/.vim/init/plugins.vim'
 balias fish-config 'vim ~/.config/fish/config.fish'

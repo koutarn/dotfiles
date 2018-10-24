@@ -82,3 +82,9 @@ nnoremap <C-x> :<C-u>q<CR>
 "画面分割
 nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>
+
+" 検索結果を画面中央に
+nmap n nzz
+nmap N Nzz
+nmap * *zz
+nmap # #zz
