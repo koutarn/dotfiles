@@ -6,6 +6,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
 
         "color scheme
         Plug 'tomasr/molokai'                                               "molokai
+        Plug 'junegunn/seoul256.vim'                                        "seoul256
 
         "表示補助
         Plug 'bronson/vim-trailing-whitespace'                              "無駄な空白を可視化する
