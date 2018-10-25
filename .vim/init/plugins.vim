@@ -57,6 +57,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
         Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }   "fzf
         Plug 'junegunn/fzf.vim'                                             "fzfのvim用コード
         Plug 'junegunn/goyo.vim'                                            "vimで文章を書く
+        Plug 'junegunn/limelight.vim'                                       "周りを光らせる
 
     call plug#end()
 end
