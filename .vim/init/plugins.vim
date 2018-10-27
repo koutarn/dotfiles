@@ -40,13 +40,13 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
        "Ruby
         Plug 'tpope/vim-endwise'                                            "自動でendを補完してくれる
         Plug 'todesking/ruby_hl_lvar.vim' , {'for':'Ruby'}                  "Rubyのローカル変数をハイライト
-        Plug 'vim-scripts/ruby-matchit'                                     "Rubyのendも%で移動出来るようにする
-        Plug 'thinca/vim-ref'                                               "Rubyのリファレンスマニュアルをvimで読めるようにする(ref gemを入れる必要あり)
+        Plug 'vim-scripts/ruby-matchit', {'for':'Ruby'}                     "Rubyのendも%で移動出来るようにする
+        Plug 'thinca/vim-ref' , {'for':'Ruby'}                              "Rubyのリファレンスマニュアルをvimで読めるようにする(ref gemを入れる必要あり)
         Plug 'osyo-manga/vim-monster',{'for':'Ruby'}                        "Rubyのコード補完機能を提供
 
         "HTML
-        Plug 'othree/html5.vim'                                             "HTML Syntax
-        Plug 'hail2u/vim-css3-syntax'                                       "CSS Syntax
+        Plug 'othree/html5.vim', {'for':'html'}                             "HTML Syntax
+        Plug 'hail2u/vim-css3-syntax', {'for':'css'}                        "CSS Syntax
         Plug 'mattn/emmet-vim'                                              "Emmet
 
         "rails
@@ -58,6 +58,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
         Plug 'junegunn/fzf.vim'                                             "fzfのvim用コード
         Plug 'junegunn/goyo.vim'                                            "vimで文章を書く
         Plug 'junegunn/limelight.vim'                                       "周りを光らせる
+        Plug 'vim-jp/vimdoc-ja'                                             "vimhelp jpfile
 
     call plug#end()
 end

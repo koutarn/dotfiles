@@ -8,6 +8,7 @@ set showcmd                                                         "入力中�
 set number                                                          "行番号を表示
 "set cursorline                                                      "現在の行を強調表示
 set showmatch                                                       "括弧入力時に対応する括弧を表示
+set display=lastline                                                "テキスト表示の方法を変える(長いテキストを省略せず最後まで表示する) "
 set laststatus=2                                                    "ステータスラインを常に表示
 set ruler                                                           "ルーラーを表示する
 set showtabline=2                                                   "tabバーを常に表示する
@@ -15,7 +16,7 @@ set laststatus=2                                                    "ステー�
 set list                                                            "タブ、空白、改行を可視化にする
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%"     "タブ、空白、改行を可視化の文字を設定
 set ambiwidth=double                                                "全角文字をvimで正しく認識させる設定
-syntax enable 							                            "構文ハイライトを有効にする
+syntax enable                                                       "構文ハイライトを有効にする
 "================================
 "検索設定
 "================================
@@ -23,7 +24,6 @@ set nohlsearch                                                      "検索時�
 set smartcase                                                       "検索文字に大文字が含まれる場合は区別して検索する
 set wrapscan                                                        "検索時に最後まで移動したら最初に戻る
 set incsearch                                                       "インクリメンタルサーチを有効にする
-set ignorecase                                                      "大文字と小文字を区別せず検索する
 set matchtime=1                                                     "カーソルが飛ぶ時間を変更
 "================================
 "Tab
@@ -69,6 +69,48 @@ set splitright                                                      "新しい�
 "================================
 set mouse=a                                                         "mouseを使えるようにする"
 set ttymouse=xterm2
+"================================
+"その他
+"================================
+set helplang=ja,en                                                   "ヘルプファイルを日本語優先にする
+set encoding=utf-8                                                   "カレントバッファのファイルの文字エンコーディング
+scriptencoding utf-8                                                 "カレントバッファのファイルの文字エンコーディング
+set fileencoding=uft-8                                               "カレントバッファのファイルの文字エンコーディング
+set fileencodings=uft-8                                              "既存のファイルの編集を開始するときに考慮される文字エンコーディングのリスト "
+set lazyredraw                                                       "マクロやコマンドを実行する間、画面を再描画しない(スクロールが重くなる対策)
+set ttyfast                                                          "高速ターミナル接続を行う(スクロールが重くなる対策) "
+set shortmess+="                                                     "shortメッセージを無効化
+set foldenable                                                       "foldingを有効化
+set foldlevelstart=10
+set foldnestmax=10
+
+"ファイルタイプでタブの設定を変える
+augroup vimrc
+    filetype on
+    autocmd!
+    autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
+    autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
+    autocmd BufNewFile,BufRead *.fish setlocal filetype=fish
+    autocmd FileType markdown   setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+    autocmd FileType sh         setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+    autocmd FileType apache     setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+    autocmd FileType css        setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+    autocmd FileType diff       setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
+    autocmd FileType html       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+    autocmd FileType java       setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+    autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+    autocmd FileType ruby       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+    autocmd FileType eruby      setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+    autocmd FileType sql        setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+    autocmd FileType tex        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+    autocmd FileType vim        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+    autocmd FileType xml        setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
+    autocmd FileType yaml       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+    autocmd FileType zsh        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+    autocmd FileType fish       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+    autocmd FileType coffee     setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+    autocmd FileType sql        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+augroup END
 
 "自動コンプリート"
 set completeopt=menuone
@@ -77,35 +119,3 @@ for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
 endfor
 imap <expr> <TAB> pumvisible() ? "\<Down>" : "\<Tab>"
 
-""""""""""""""""""""""""""""""
-" 挿入モード時、ステータスラインの色を変更
-""""""""""""""""""""""""""""""
-let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
-
-if has('syntax')
-  augroup InsertHook
-    autocmd!
-    autocmd InsertEnter * call s:StatusLine('Enter')
-    autocmd InsertLeave * call s:StatusLine('Leave')
-  augroup END
-endif
-
-let s:slhlcmd = ''
-function! s:StatusLine(mode)
-  if a:mode == 'Enter'
-    silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
-    silent exec g:hi_insert
-  else
-    highlight clear StatusLine
-    silent exec s:slhlcmd
-  endif
-endfunction
-
-function! s:GetHighlight(hi)
-  redir => hl
-  exec 'highlight '.a:hi
-  redir END
-  let hl = substitute(hl, '[\r\n]', '', 'g')
-  let hl = substitute(hl, 'xxx', '', '')
-  return hl
-endfunction

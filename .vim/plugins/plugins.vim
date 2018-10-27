@@ -1,3 +1,10 @@
+"Vim Plug auto load
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 "scrooloose/nerdtree
 "
 "" 不可視ファイルを表示する
@@ -35,7 +42,7 @@ map <Leader>k <Plug>(edgemotion-k)
 
 "Yggdroot/indentLine
 let g:indentline_enabled = 1                    "indentLineを有効にする
-let g:indentline_setcolors = 0                  "indentlineを強調表示
+let g:indentline_setcolors = 1                  "indentlineを強調表示
 let g:indentline_color_term = 222               "indentlineの色を変更
 let g:indentline_char = '|'                     "indentlineの文字を変更
 
@@ -73,9 +80,8 @@ nnoremap <Leader>m  :<C-u>Switch<CR>
 autocmd BufWritePre * :FixWhitespace
 
 "複数の候補から選べるようにする
-nnoremap <F10> g<C-]>
-nnoremap v<F10> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
-nnoremap s<F10> :split<CR> :exe("tjump ".expand('<cword>'))<CR>
-nnoremap <Leader>t :Tags<CR>
-nnoremap <Leader>G :TagsGenerate<CR>
-
+nnoremap ] g<C-]>
+nnoremap ]v :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
+nnoremap ]s :split<CR> :exe("tjump ".expand('<cword>'))<CR>
+nnoremap ]t :Tags<CR>
+nnoremap ]G :TagsGenerate<CR>
