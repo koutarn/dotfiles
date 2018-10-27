@@ -46,8 +46,7 @@ set -g theme_show_exit_status yes
 # Gitのahead情報を細かく表示する
 set -g theme_display_git_ahead_verbose yes
 
-set -U fish_user_paths $HOME/dotfiles/bin $fish_user_paths
-set -U fish_user_paths $ENHANCD_DIR $fish_user_paths
+set PATH $HOME/dotfiles/bin $PATH
 
 if [ $SHLVL = 1 ]
  figlet hello world! 2>/dev/null
