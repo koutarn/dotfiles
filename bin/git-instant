@@ -20,16 +20,17 @@ git add -A
 
 while :
 do
-  #preview template message
-  cat < ~/.gitmessage
-
-  read -n 2 -p "do you want commit?(y/n): " ANSWER
+  echo "do you want commit?(y/n)"
+  read -n 2 ANSWER
   case "$ANSWER"  in
     y)  break ;;
     n)  exit 0 ;;
     *)  : ;;
   esac
 done
+
+#preview template message
+cat < ~/.gitmessage
 
 #input commit message
 read -p "commit message:" MSG
@@ -38,5 +39,16 @@ if [ -z "$MSG" ]; then
 else
     git commit -m "${MSG}"
 fi
+
+while :
+do
+  echo "do you want push?(y/n)"
+  read -n 2 ANSWER
+  case "$ANSWER"  in
+    y)  break ;;
+    n)  exit 0 ;;
+    *)  : ;;
+  esac
+done
 
 git push origin HEAD
