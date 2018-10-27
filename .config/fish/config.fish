@@ -3,13 +3,13 @@ set fish_greeting
 
 #powerlineの設定
 function fish_prompt
-    ~/.local/bin/powerline-shell --shell bare $status
+  ~/.local/bin/powerline-shell --shell bare $status
 end
 
 function cd
-    builtin cd $argv[1]
-    #ls -C -a --color=always | cat
-    ls -p -v -w 150 -A --color=always
+  builtin cd $argv[1]
+  #ls -C -a --color=always | cat
+  ls -p -v -w 150 -A --color=always
 end
 
 #balias
@@ -27,18 +27,14 @@ balias fish-reload 'fish_update_completions'
 balias net 'w3m -m -B https://google.com'
 balias ag 'ag -S --hidden'
 balias agf 'ag -S -g'
+balias configs 'vim ~/.vim/init/main.vim ~/.vim/init/keybind.vim ~/.vim/init/plugins.vim ~/.vim/plugins/plugins.vim ~/.config/fish/config.fish' #all configs open
 
 #rbenv
 status --is-interactive; and . (rbenv init -|psub)
 
-# 一覧の上を最新として、境目をボーダーに
-set -x FZF_DEFAULT_OPTS "--reverse --border"
-
-# ディレクトリ検索で選択した項目の配下の構成をプレビューに表示する
-set -x FZF_ALT_C_OPTS   "--preview 'tree -C {} | head -200'"
-
-# ファイル検索で選択した項目の中身をプレビューに表示する
-set -x FZF_CTRL_T_OPTS  "--preview 'head -100 {}'"
+#FZF
+set FZF_DEFAULT_COMMAND 'ag --nocolor --hidden -g'
+set FZF_DEFAULT_OPTS '--color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108 --color info:108,prompt:109,spinner:108,pointer:168,marker:168 --reverse --border'
 
 # エラーコードは番号で表示する
 set -g theme_show_exit_status yes
@@ -49,6 +45,6 @@ set -g theme_display_git_ahead_verbose yes
 set PATH $HOME/dotfiles/bin $PATH
 
 if [ $SHLVL = 1 ]
- figlet hello world! 2>/dev/null
- tmux
+  figlet hello world! 2>/dev/null
+  tmux
 end

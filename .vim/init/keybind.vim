@@ -1,4 +1,3 @@
-"keybind
 "素の状態のkeybindを記載
 "plugin毎のkeybindは、.vim/plugins/各プラグイン名に書いてる
 
@@ -56,10 +55,10 @@ nnoremap <leader>q  :<c-u>qa<cr>   "閉じる
 nnoremap bo  :%!xxd<cr>            "バイナリで開く
 
 "タブ操作
-nnoremap su gt
-nnoremap sy gT
-nnoremap sn :tabnew<CR>
-nnoremap sx :<c-u>q<CR> "タブを閉じる
+nnoremap su gt                "タブを移動
+nnoremap sy gT                "タブを移動
+nnoremap sn :tabnew<CR>       "タブを開く
+nnoremap sx :<c-u>q<CR>       "タブを閉じる
 
 "画面分割
 nnoremap ss :<C-u>sp<CR>

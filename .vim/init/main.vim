@@ -84,7 +84,9 @@ set foldenable                                                       "foldingを
 set foldlevelstart=10
 set foldnestmax=10
 
-"ファイルタイプでタブの設定を変える
+"================================
+"File Type
+"================================
 augroup vimrc
   filetype on
   autocmd!
@@ -92,26 +94,25 @@ augroup vimrc
   autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
   autocmd BufNewFile,BufRead *.fish setlocal filetype=fish
   autocmd FileType markdown   setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
-  autocmd FileType sh         setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-  autocmd FileType vim        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
   autocmd FileType apache     setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
   autocmd FileType css        setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
   autocmd FileType diff       setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
-  autocmd FileType html       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+  autocmd FileType xml        setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
   autocmd FileType java       setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+  autocmd FileType sql        setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
   autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
   autocmd FileType ruby       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
   autocmd FileType eruby      setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-  autocmd FileType sql        setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
-  autocmd FileType tex        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-  autocmd FileType vim        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-  autocmd FileType xml        setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
   autocmd FileType yaml       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+  autocmd FileType coffee     setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+  autocmd FileType tex        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+  autocmd FileType html       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+  autocmd FileType sql        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+  autocmd FileType sh         setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+  autocmd FileType vim        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+  autocmd FileType bash       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
   autocmd FileType zsh        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
   autocmd FileType fish       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-  autocmd FileType bash       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-  autocmd FileType coffee     setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-  autocmd FileType sql        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 augroup END
 
 "自動コンプリート"

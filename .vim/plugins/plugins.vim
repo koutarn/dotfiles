@@ -6,7 +6,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 "scrooloose/nerdtree
-"
 "" 不可視ファイルを表示する
 let NERDTreeShowHidden = 1
 map <C-e> :NERDTreeTabsToggle<CR>
@@ -37,8 +36,8 @@ call NERDTreeHighlightFile('php',    'Magenta', 'none', '#ff00ff','#151515')
 let g:sonictemplate_vim_template_dir = ['~/.vim/Template']
 
 "edgemotion.vim
-map <Leader>j <Plug>(edgemotion-j)
-map <Leader>k <Plug>(edgemotion-k)
+map sj <Plug>(edgemotion-j)
+map sk <Plug>(edgemotion-k)
 
 "Yggdroot/indentLine
 let g:indentline_enabled = 1                    "indentLineを有効にする
@@ -51,17 +50,17 @@ let g:molokai_original = 1
 
 "Xuyuanp/nerdtree-git-plugin
 let g:NERDTreeIndicatorMapCustom = {
-  \ "Modified"  : "✹",
-  \ "Staged"    : "✚",
-  \ "Untracked" : "✭",
-  \ "Renamed"   : "➜",
-  \ "Unmerged"  : "═",
-  \ "Deleted"   : "✖",
-  \ "Dirty"     : "✗",
-  \ "Clean"     : "✔︎",
-  \ 'Ignored'   : '☒',
-  \ "Unknown"   : "?"
-  \ }
+      \ "Modified"  : "✹",
+      \ "Staged"    : "✚",
+      \ "Untracked" : "✭",
+      \ "Renamed"   : "➜",
+      \ "Unmerged"  : "═",
+      \ "Deleted"   : "✖",
+      \ "Dirty"     : "✗",
+      \ "Clean"     : "✔︎",
+      \ 'Ignored'   : '☒',
+      \ "Unknown"   : "?"
+      \ }
 
 "Vimのpluginではない,一応外部のものなのでここに記載
 "powerline表示用
@@ -83,5 +82,22 @@ autocmd BufWritePre * :FixWhitespace
 nnoremap ] g<C-]>
 nnoremap ]v :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap ]s :split<CR> :exe("tjump ".expand('<cword>'))<CR>
-nnoremap ]t :Tags<CR>
 nnoremap ]G :TagsGenerate<CR>
+
+"vim-fzf
+nmap ; :Buffers<CR>
+nmap t :Files<CR>
+
+"散文モード
+function! ProseMode()
+  "LimeLight で暗い場所の文字色を指定
+  let g:limelight_conceal_ctermfg = 'DarkGray'
+  colorscheme seoul256
+  Goyo 60%x60%
+  Limelight
+  NERDTreeClose
+  :LimeLight 0.9
+endfunction
+
+command! ProseMode call ProseMode()
+nmap \p :ProseMode
