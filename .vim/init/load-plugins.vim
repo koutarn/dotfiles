@@ -49,6 +49,9 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'hail2u/vim-css3-syntax', {'for':'css'}                        "CSS Syntax
   Plug 'mattn/emmet-vim'                                              "Emmet
 
+  "mark-down
+  Plug 'plasticboy/vim-markdown'                                      "vimのmarkdownファイル
+
   "rails
   Plug 'tpope/vim-rails'                                              "railsコマンドをvimでも使えるようにする
 
@@ -59,6 +62,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'junegunn/goyo.vim'                                            "vimで文章を書く
   Plug 'junegunn/limelight.vim'                                       "周りを光らせる
   Plug 'vim-jp/vimdoc-ja'                                             "vimhelp jpfile
+  Plug 'qpkorr/vim-bufkill'                                           "buff削除用"
 
   call plug#end()
 end

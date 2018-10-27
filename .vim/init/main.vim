@@ -83,7 +83,6 @@ set shortmess+="                                                     "shortメ�
 set foldenable                                                       "foldingを有効化
 set foldlevelstart=10
 set foldnestmax=10
-
 "================================
 "File Type
 "================================

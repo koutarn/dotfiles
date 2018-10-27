@@ -122,7 +122,6 @@ function! ProseMode()
   Goyo 60%x60%
   Limelight
   NERDTreeClose
-  :LimeLight 0.9
 endfunction
 
 command! ProseMode call ProseMode()

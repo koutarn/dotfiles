@@ -1,6 +1,5 @@
 "素の状態のkeybindを記載
-"plugin毎のkeybindは、.vim/plugins/各プラグイン名に書いてる
-
+"plugin毎のkeybindは、.vim/advance/setting-plugins.vimに書いてる
 "===========================================================
 "settings
 "===========================================================
@@ -48,8 +47,8 @@ vnoremap <space> zf
 "二度押しでコマンドモードへ
 inoremap <silent> jj <Esc>:echo "canceled input mode"<CR>
 inoremap <silent> っj <esc>:echo "canceled input mode"<CR>
-vnoremap <silent>ss <ESC>:echo "canceled visual mode"<CR>
-vnoremap <silent>っｓ <Esc>:echo "canceled visual mode"<CR>
+vnoremap <silent>ff <ESC>:echo "canceled visual mode"<CR>
+vnoremap <silent>っｆ <Esc>:echo "canceled visual mode"<CR>
 nnoremap <leader>w  :<c-u>wa<cr>   "保存
 nnoremap <leader>q  :<c-u>qa<cr>   "閉じる
 nnoremap bo  :%!xxd<cr>            "バイナリで開く
