@@ -130,3 +130,7 @@ endfunction
 
 command! ProseMode call ProseMode()
 nmap \p :ProseMode
+
+"reireias/vim-cheatsheet
+let g:cheatsheet#cheat_file = '~/.cheatsheet.md'
+let g:cheatsheet#vsplit = 1

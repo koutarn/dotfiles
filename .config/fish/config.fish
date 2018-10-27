@@ -8,7 +8,6 @@ end
 
 function cd
   builtin cd $argv[1]
-  #ls -C -a --color=always | cat
   ls -p -v -w 150 -A --color=always
 end
 
@@ -51,6 +50,7 @@ set -g theme_show_exit_status yes
 # Gitのahead情報を細かく表示する
 set -g theme_display_git_ahead_verbose yes
 
+#PATHの設定
 set PATH $HOME/dotfiles/bin $PATH
 
 if [ $SHLVL = 1 ]

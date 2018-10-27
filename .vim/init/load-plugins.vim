@@ -11,8 +11,6 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   "表示補助
   Plug 'bronson/vim-trailing-whitespace'                              "無駄な空白を可視化する
   Plug 'gko/vim-coloresque'                                           "色を視覚化にする
-  Plug 'myrobo/smart_tabline.vim'                                     "tabを見やすくする
-
   Plug 'scrooloose/nerdtree'                                          "fileTree
   Plug 'jistr/vim-nerdtree-tabs'                                      "Nerdtreeをtabで扱いやすいようにする
   Plug 'Xuyuanp/nerdtree-git-plugin'                                  "nerdtreeで変更があったら表示する
@@ -63,6 +61,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'junegunn/limelight.vim'                                       "周りを光らせる
   Plug 'vim-jp/vimdoc-ja'                                             "vimhelp jpfile
   Plug 'qpkorr/vim-bufkill'                                           "buff削除用
+  Plug 'reireias/vim-cheatsheet'                                      "自作チートシートの表示を行う
 
   "neovim
   if has('nvim')

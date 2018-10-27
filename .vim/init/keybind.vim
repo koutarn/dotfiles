@@ -3,6 +3,8 @@
 "===========================================================
 "settings
 "===========================================================
+nnoremap q <Nop>
+nnoremap qq <Nop>
 nnoremap s <Nop>
 nnoremap S <Nop>
 nnoremap <C-z> <Nop>
@@ -21,12 +23,12 @@ vnoremap gj  j
 nnoremap sh ^
 nnoremap sl $
 vnoremap v $h
-
 "===========================================================
 "入力
 "===========================================================
-nnoremap <ESC><ESC> :noh<CR> "検索後のハイライトを消す
-
+nnoremap / /\v
+vnoremap / /\v
+nnoremap <ESC><ESC> :noh<CR>
 nnoremap <Leader>o  :<C-u>for i in range(v:count1) \| call append(line('.'), '') \| endfor<CR>
 nnoremap <Leader>O  :<C-u>for i in range(v:count1) \| call append(line('.')-1, '') \| endfor<CR>
 vmap # <c-V>0I#<Esc>
@@ -44,14 +46,14 @@ nnoremap bo  :%!xxd<cr>
 "===========================================================
 "ウィンドウ
 "===========================================================
-nnoremap <Leader>u gt             "次のタブへ
-nnoremap <Leader>y gT             "前のタブへ
-nnoremap <Leader>n :tabnew<CR>    "新しいタブを開く
-nnoremap <Leader>s :<C-u>sp<CR>   "縦に分割
-nnoremap <Leader>v :<C-u>vs<CR>   "水平に分割
-nnoremap <Leader>x :q<CR>         "ウィンドウを閉じる
-nnoremap <leader>w  :<c-u>wa<cr>  "ウィンドウを全て保存
-nnoremap <leader>q  :<c-u>qa<cr>  "ウィンドウを全て閉じる
+nnoremap <Leader>u gt
+nnoremap <Leader>y gT
+nnoremap <Leader>n :tabnew<CR>
+nnoremap <Leader>s :<C-u>sp<CR>
+nnoremap <Leader>v :<C-u>vs<CR>
+nnoremap <Leader>x :q<CR>
+nnoremap <leader>w  :<c-u>wa<cr>
+nnoremap <leader>q  :<c-u>qa<cr>
 
 "ウィンドウ間を移動
 nnoremap <Leader>h <C-w>h
