@@ -18,13 +18,18 @@ fi
 git status
 git add -A
 
-#preview template message
-cat < ~/.gitmessage
+while :
+do
+  #preview template message
+  cat < ~/.gitmessage
 
-read -n 2 -p "do you want commit?(y/n): " ANSWER
-if [ $ANSWER = 'n' ]; then
-    exit 0
-fi
+  read -n 2 -p "do you want commit?(y/n): " ANSWER
+  case "$ANSWER"  in
+    y)  break ;;
+    n)  exit 0 ;;
+    *)  : ;;
+  esac
+done
 
 #input commit message
 read -p "commit message:" MSG
