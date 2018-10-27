@@ -105,17 +105,17 @@ nnoremap ] g<C-]>
 nnoremap ]v :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap ]s :split<CR> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap ]G :TagsGenerate<CR>
-
+nmap <F10> :TagbarToggle<CR>
 "====================================================================
 "vim-fzf
 "====================================================================
 nmap ; :Buffers<CR>
 nmap t :Files<CR>
-
 "====================================================================
 "vim-bufkill
 "====================================================================
-nnoremap sx :BD<cr>:bnext<cr>     "バッファを削除して次へ
+"バッファを削除して次へ
+nnoremap sx :BD<cr>:bnext<cr>
 "====================================================================
 "散文モード
 "====================================================================
@@ -134,3 +134,7 @@ nmap \p :ProseMode
 "reireias/vim-cheatsheet
 let g:cheatsheet#cheat_file = '~/.cheatsheet.md'
 let g:cheatsheet#vsplit = 1
+
+"alvan/vim-closetag
+let g:closetag_filenames = '*.html,*.vue,*.erb,*.php'
+

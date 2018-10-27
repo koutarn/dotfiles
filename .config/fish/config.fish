@@ -57,3 +57,4 @@ if [ $SHLVL = 1 ]
   tmux
   figlet hello world! 2>/dev/null
 end
+
