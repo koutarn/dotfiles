@@ -6,6 +6,7 @@
 "===========================================================
 nnoremap s <Nop>
 nnoremap S <Nop>
+nnoremap <C-z> <Nop>
 let mapleader = "\<Space>"				"Leaderをspaceに変更
 "===========================================================
 "移動
@@ -27,7 +28,6 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l"
-
 "===========================================================
 "入力
 "===========================================================
@@ -61,8 +61,8 @@ nnoremap sn :tabnew<CR>       "タブを開く
 nnoremap sx :<c-u>q<CR>       "タブを閉じる
 
 "画面分割
-nnoremap ss :<C-u>sp<CR>
-nnoremap sv :<C-u>vs<CR>
+nnoremap <C-s>s :<C-u>sp<CR>
+nnoremap <C-s>v :<C-u>vs<CR>
 
 "検索結果を画面中央に
 nmap n nzz

@@ -1,14 +1,24 @@
+"====================================================================
+"molokai.vim
+"====================================================================
+colorscheme molokai
+let g:molokai_original = 1
+
+"====================================================================
 "Vim Plug auto load
+"====================================================================
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+"====================================================================
 "scrooloose/nerdtree
+"====================================================================
 "" 不可視ファイルを表示する
-let NERDTreeShowHidden = 1
-map <C-e> :NERDTreeTabsToggle<CR>
+let nerdtreeshowhidden = 1
+map <c-e> :nerdtreetabstoggle<cr>
 
 "NERDtreeを自動で有効にする
 let g:nerdtree_tabs_open_on_console_startup = 1
@@ -32,23 +42,28 @@ call NERDTreeHighlightFile('rb',     'Red',     'none', 'red','#151515')
 call NERDTreeHighlightFile('js',     'Red',     'none', '#ffa500','#151515')
 call NERDTreeHighlightFile('php',    'Magenta', 'none', '#ff00ff','#151515')
 
+"====================================================================
 "mattn/sonictemplate-vim
+"====================================================================
 let g:sonictemplate_vim_template_dir = ['~/.vim/Template']
 
+"====================================================================
 "edgemotion.vim
+"====================================================================
 map sj <Plug>(edgemotion-j)
 map sk <Plug>(edgemotion-k)
 
+"====================================================================
 "Yggdroot/indentLine
+"====================================================================
 let g:indentline_enabled = 1                    "indentLineを有効にする
 let g:indentline_setcolors = 1                  "indentlineを強調表示
 let g:indentline_color_term = 222               "indentlineの色を変更
 let g:indentline_char = '|'                     "indentlineの文字を変更
 
-"molokai.vim
-let g:molokai_original = 1
-
+"====================================================================
 "Xuyuanp/nerdtree-git-plugin
+"====================================================================
 let g:NERDTreeIndicatorMapCustom = {
       \ "Modified"  : "✹",
       \ "Staged"    : "✚",
@@ -62,8 +77,10 @@ let g:NERDTreeIndicatorMapCustom = {
       \ "Unknown"   : "?"
       \ }
 
+"====================================================================
 "Vimのpluginではない,一応外部のものなのでここに記載
 "powerline表示用
+"====================================================================
 set laststatus=2
 set showtabline=2
 set t_Co=256
@@ -71,24 +88,33 @@ python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
 python3 del powerline_setup
 
+"====================================================================
 "switch.vim
+"====================================================================
 nnoremap <Leader>m  :<C-u>Switch<CR>
 
+"====================================================================
 "bronson/vim-trailing-whitespace
 "ファイル保存時に余分なスペースを削除する
+"====================================================================
 autocmd BufWritePre * :FixWhitespace
 
-"複数の候補から選べるようにする
+"====================================================================
+"vim-tags
+"====================================================================
 nnoremap ] g<C-]>
 nnoremap ]v :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap ]s :split<CR> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap ]G :TagsGenerate<CR>
 
+"====================================================================
 "vim-fzf
+"====================================================================
 nmap ; :Buffers<CR>
 nmap t :Files<CR>
-
+"====================================================================
 "散文モード
+"====================================================================
 function! ProseMode()
   "LimeLight で暗い場所の文字色を指定
   let g:limelight_conceal_ctermfg = 'DarkGray'

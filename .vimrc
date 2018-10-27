@@ -11,6 +11,5 @@
 set runtimepath+=~/.vim/
 
 runtime! init/*.vim             "初期化設定
-runtime! plugins/*.vim          "pluginの個別設定
-runtime! advance_init/*.vim"    "環境依存の設定
+runtime! advance/*.vim          "pluginの個別設定
 

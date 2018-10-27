@@ -18,16 +18,17 @@ balias ll 'ls -vlp --color=auto'             #詳細表示
 balias la 'ls -vlpA --color=auto'            #詳細表示(隠しファイル含む)
 balias so 'source'
 balias vi 'vim'
+balias vi-rc 'vim ~/.vimrc'
 balias vi-main-config 'vim ~/.vim/init/main.vim'
 balias vi-key-config 'vim ~/.vim/init/keybind.vim'
-balias vi-plug-config 'vim ~/.vim/init/plugins.vim'
-balias vi-plug-key-config 'vim ~/.vim/plugins/plugins.vim'
+balias vi-plug-config 'vim ~/.vim/init/load-plugins.vim'
+balias vi-plug-key-config 'vim ~/.vim/advance/setting-plugins.vim'
 balias fish-config 'vim ~/.config/fish/config.fish'
 balias fish-reload 'fish_update_completions'
 balias net 'w3m -m -B https://google.com'
 balias ag 'ag -S --hidden'
 balias agf 'ag -S -g'
-balias configs 'vim ~/.vim/init/main.vim ~/.vim/init/keybind.vim ~/.vim/init/plugins.vim ~/.vim/plugins/plugins.vim ~/.config/fish/config.fish' #all configs open
+balias configs 'vim ~/.vim/init/main.vim ~/.vim/init/keybind.vim ~/.vim/init/load-plugins.vim ~/.vim/advance/setting-plugins.vim ~/.config/fish/config.fish' #all configs open
 
 #rbenv
 status --is-interactive; and . (rbenv init -|psub)
