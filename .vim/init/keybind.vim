@@ -18,64 +18,70 @@ nnoremap gk  k
 nnoremap gj  j
 vnoremap gk  k
 vnoremap gj  j
-nnoremap sh ^		  "先頭行移動
-nnoremap sl $		  "行末移動
-vnoremap v $h 		  "vを二回で行末まで選択
+nnoremap sh ^
+nnoremap sl $
+vnoremap v $h
 
-" Ctrl + hjkl でウィンドウ間を移動
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l"
 "===========================================================
 "入力
 "===========================================================
+nnoremap <ESC><ESC> :noh<CR> "検索後のハイライトを消す
+
 nnoremap <Leader>o  :<C-u>for i in range(v:count1) \| call append(line('.'), '') \| endfor<CR>
 nnoremap <Leader>O  :<C-u>for i in range(v:count1) \| call append(line('.')-1, '') \| endfor<CR>
-
-vmap # <c-V>0I#<Esc>                         "visual modeで一気にコメントにする
-vmap " <c-V>0I"<Esc>                         "visual modeで一気にコメントにする
-vmap // <C-V>0I//<Esc>                       "visual modeで一気にコメントにする
-nnoremap == gg=G  			                     "=を二回連続入力でバッファ全体をインデント整理
-nnoremap sg  :<C-u>%s///g<Left><Left><Left>  "置換
-vnoremap sg  :s///g<Left><Left><Left>        "置換
-
-"spaceを折りたたみに利用
-nnoremap <space> za
-vnoremap <space> zf
+vmap # <c-V>0I#<Esc>
+vmap " <c-V>0I"<Esc>
+vmap // <C-V>0I//<Esc>
+nnoremap sg  :<C-u>%s///g<Left><Left><Left>
+vnoremap sg  :s///g<Left><Left><Left>
 
 "二度押しでコマンドモードへ
-inoremap <silent> jj <Esc>:echo "canceled input mode"<CR>
-inoremap <silent> っj <esc>:echo "canceled input mode"<CR>
-vnoremap <silent>ff <ESC>:echo "canceled visual mode"<CR>
-vnoremap <silent>っｆ <Esc>:echo "canceled visual mode"<CR>
-nnoremap <leader>w  :<c-u>wa<cr>   "保存
-nnoremap <leader>q  :<c-u>qa<cr>   "閉じる
-nnoremap bo  :%!xxd<cr>            "バイナリで開く
+inoremap <silent> jj <Esc>
+inoremap <silent> っj <ESc>
+vnoremap <silent>ff <ESC>
+vnoremap <silent>っｆ <Esc>
+nnoremap bo  :%!xxd<cr>
+"===========================================================
+"ウィンドウ
+"===========================================================
+nnoremap <Leader>u gt             "次のタブへ
+nnoremap <Leader>y gT             "前のタブへ
+nnoremap <Leader>n :tabnew<CR>    "新しいタブを開く
+nnoremap <Leader>s :<C-u>sp<CR>   "縦に分割
+nnoremap <Leader>v :<C-u>vs<CR>   "水平に分割
+nnoremap <Leader>x :q<CR>         "ウィンドウを閉じる
+nnoremap <leader>w  :<c-u>wa<cr>  "ウィンドウを全て保存
+nnoremap <leader>q  :<c-u>qa<cr>  "ウィンドウを全て閉じる
 
-"タブ操作
-nnoremap su gt                "タブを移動
-nnoremap sy gT                "タブを移動
-nnoremap sn :tabnew<CR>       "タブを開く
-nnoremap sx :<c-u>q<CR>       "タブを閉じる
+"ウィンドウ間を移動
+nnoremap <Leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k  <C-w>k
+nnoremap <Leader>l <C-w>l
 
-"画面分割
-nnoremap <C-s>s :<C-u>sp<CR>
-nnoremap <C-s>v :<C-u>vs<CR>
+"===========================================================
+"バッファ
+"===========================================================
+nnoremap <silent> sy :bprev<CR>
+nnoremap <silent> su :bnext<CR>
 
+"===========================================================
+"その他
+"===========================================================
 "検索結果を画面中央に
 nmap n nzz
 nmap N Nzz
 nmap * *zz
 nmap # #zz
 
-"選択中のインデント整形をずっと選択していることに変更する
+"インデント整形
 nnoremap <Tab> v>
 nnoremap <S-Tab> v<
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 vnoremap > >gv
 vnoremap < <gv
+nnoremap == gg=G
 
 "日付入力
 inoremap <Leader>date <C-R>=strftime('%Y.%m.%d')<CR>

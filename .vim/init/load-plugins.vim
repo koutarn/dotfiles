@@ -1,6 +1,6 @@
 "================================
 "vim plug settings
-"================================
+"===============================
 if filereadable(expand("~/.vim/autoload/plug.vim"))
   call plug#begin()
 
@@ -62,7 +62,17 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'junegunn/goyo.vim'                                            "vimで文章を書く
   Plug 'junegunn/limelight.vim'                                       "周りを光らせる
   Plug 'vim-jp/vimdoc-ja'                                             "vimhelp jpfile
-  Plug 'qpkorr/vim-bufkill'                                           "buff削除用"
+  Plug 'qpkorr/vim-bufkill'                                           "buff削除用
+
+  "neovim
+  if has('nvim')
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  else
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+  endif
+  let g:deoplete#enable_at_startup = 1
 
   call plug#end()
 end

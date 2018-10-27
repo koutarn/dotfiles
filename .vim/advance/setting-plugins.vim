@@ -23,7 +23,7 @@ map <c-e> :nerdtreetabstoggle<cr>
 "NERDtreeを自動で有効にする
 let g:nerdtree_tabs_open_on_console_startup = 1
 
-"" NERDTress File highlighting
+"NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
   exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='.a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
   exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'.a:extension .'$#'
@@ -95,9 +95,8 @@ nnoremap <Leader>m  :<C-u>Switch<CR>
 
 "====================================================================
 "bronson/vim-trailing-whitespace
-"ファイル保存時に余分なスペースを削除する
 "====================================================================
-autocmd BufWritePre * :FixWhitespace
+autocmd BufWritePre * :FixWhitespace "ファイル保存時に余分なスペースを削除する
 
 "====================================================================
 "vim-tags
@@ -112,6 +111,11 @@ nnoremap ]G :TagsGenerate<CR>
 "====================================================================
 nmap ; :Buffers<CR>
 nmap t :Files<CR>
+
+"====================================================================
+"vim-bufkill
+"====================================================================
+nnoremap sx :BD<cr>:bnext<cr>     "バッファを削除して次へ
 "====================================================================
 "散文モード
 "====================================================================
