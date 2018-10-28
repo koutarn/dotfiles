@@ -43,6 +43,9 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'thinca/vim-ref' , {'for':'Ruby'}                              "Rubyのリファレンスマニュアルをvimで読めるようにする(ref gemを入れる必要あり)
   Plug 'osyo-manga/vim-monster',{'for':'Ruby'}                        "Rubyのコード補完機能を提供
 
+  "rails
+  Plug 'tpope/vim-rails'                                              "railsコマンドをvimでも使えるようにする
+
   "HTML
   Plug 'othree/html5.vim', {'for':'html'}                             "HTML Syntax
   Plug 'hail2u/vim-css3-syntax', {'for':'css'}                        "CSS Syntax
@@ -50,9 +53,6 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
 
   "mark-down
   Plug 'plasticboy/vim-markdown'                                      "vimのmarkdownファイル
-
-  "rails
-  Plug 'tpope/vim-rails'                                              "railsコマンドをvimでも使えるようにする
 
   "その他
   Plug 'dag/vim-fish'                                                 "Fish Scriptのシンタックスハイライト
