@@ -80,34 +80,13 @@ nmap c, ci<
 nmap c[ ci[
 nmap c[[ ci{
 
-"nmap ca8 ca(
-"nmap ca2 ca"
-"nmap ca7 ca'
-"nmap ca, ca<
-"nmap ca[ ca[
-"nmap ca[[ ca{
-
 "delete
-"nmap d8 di(
-"nmap d2 di"
-"nmap d7 di'
-"nmap d, di<
-"nmap d[ di[
-"nmap d[[ di{
-
 nmap d8 da(
 nmap d2 da"
 nmap d7 da'
 nmap d, da<
 nmap d[ da[
 nmap d[[ da{
-
-"nmap da8 da(
-"nmap da2 da"
-"nmap da7 da'
-"nmap da, da<
-"nmap da[ da[
-"nmap da[[ da{
 
 "yank
 nmap y8 yi(
@@ -160,10 +139,10 @@ nmap * *zz
 nmap # #zz
 
 "インデント整形
-nnoremap <Tab> v>
-nnoremap <S-Tab> v<
-vnoremap <Tab> >gv
-vnoremap <S-Tab> <gv
+"nnoremap <Tab> v>
+"nnoremap <S-Tab> v<
+"vnoremap <Tab> >gv
+"vnoremap <S-Tab> <gv
 vnoremap > >gv
 vnoremap < <gv
 nnoremap == gg=G
@@ -189,4 +168,3 @@ nnoremap ・ /
 
 "spaceを二度押しで単語を光らせる
 nnoremap <silent> <Space><Space> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>"
-
