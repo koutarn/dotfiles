@@ -14,7 +14,7 @@ end
 #setting variables
 set VIMRC '~/.vimrc'
 set VI_MAIN_CFG '~/.vim/init/main.vim'
-set VI_KEY_CFG '~/.vim/init/keybin.vim'
+set VI_KEY_CFG '~/.vim/init/keybind.vim'
 set VI_PLUG_CFG '~/.vim/init/load-plugins.vim'
 set VI_PLUG_KEY_CFG '~/.vim/advance/setting-plugins.vim'
 set FISH_CFG '~/.config/fish/config.fish'
