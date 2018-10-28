@@ -7,6 +7,10 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   "color scheme
   Plug 'tomasr/molokai'                                               "molokai
   Plug 'junegunn/seoul256.vim'                                        "seoul256
+  Plug 'tyrannicaltoucan/vim-quantum'                                 "quantum
+  Plug 'altercation/vim-colors-solarized'                             "solarized
+  Plug 'sickill/vim-monokai'                                          "monokai
+  Plug 'w0ng/vim-hybrid'                                              "hybrid
 
   "表示補助
   Plug 'bronson/vim-trailing-whitespace'                              "無駄な空白を可視化する
@@ -15,6 +19,8 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'jistr/vim-nerdtree-tabs'                                      "Nerdtreeをtabで扱いやすいようにする
   Plug 'Xuyuanp/nerdtree-git-plugin'                                  "nerdtreeで変更があったら表示する
   Plug 'ko2ic/nerdtree-plugin-ag'                                     "nerdtreeでagを使えるようにする
+  Plug 'ryanoasis/vim-devicons'                                       "nerdtreeにアイコンを表示する
+  Plug 'itchyny/lightline.vim'                                        "powerlineみたいな奴
 
   "検索
   Plug 'rking/ag.vim'                                                 "agを使えるようにする

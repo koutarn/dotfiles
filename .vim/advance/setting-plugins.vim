@@ -1,10 +1,4 @@
 "====================================================================
-"molokai.vim
-"====================================================================
-colorscheme molokai
-let g:molokai_original = 1
-
-"====================================================================
 "Vim Plug auto load
 "====================================================================
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -16,10 +10,6 @@ endif
 "====================================================================
 "scrooloose/nerdtree
 "====================================================================
-"" 不可視ファイルを表示する
-let nerdtreeshowhidden = 1
-map <c-e> :nerdtreetabstoggle<cr>
-
 "NERDtreeを自動で有効にする
 let g:nerdtree_tabs_open_on_console_startup = 1
 
@@ -41,13 +31,24 @@ call NERDTreeHighlightFile('css',    'cyan',    'none', 'cyan', '#151515')
 call NERDTreeHighlightFile('rb',     'Red',     'none', 'red','#151515')
 call NERDTreeHighlightFile('js',     'Red',     'none', '#ffa500','#151515')
 call NERDTreeHighlightFile('php',    'Magenta', 'none', '#ff00ff','#151515')
+call NERDTreeHighlightFile('vim',    'Magenta', 'none', '#ff00ff','#151515')
 
-"====================================================================
-"mattn/sonictemplate-vim
-"====================================================================
-let g:sonictemplate_vim_template_dir = ['~/.vim/Template']
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeDirArrows = 1
+let NERDTreeWinSize=35
 
+" 不可視ファイルを表示する
+let NERDTreeShowHidden=1
 "====================================================================
+"ryanoasis/vim-devicons
+"====================================================================
+let g:webdevicons_conceal_nerdtree_brackets = 1
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:DevIconsEnableFoldersOpenClose = 1
+
+"===================================================================
 "edgemotion.vim
 "====================================================================
 map sj <Plug>(edgemotion-j)
@@ -64,7 +65,7 @@ let g:indentline_char = '|'                     "indentlineの文字を変更
 "====================================================================
 "Xuyuanp/nerdtree-git-plugin
 "====================================================================
-let g:NERDTreeIndicatorMapCustom = {
+"let g:NERDTreeIndicatorMapCustom = {
       \ "Modified"  : "✹",
       \ "Staged"    : "✚",
       \ "Untracked" : "✭",
@@ -81,9 +82,6 @@ let g:NERDTreeIndicatorMapCustom = {
 "Vimのpluginではない,一応外部のものなのでここに記載
 "powerline表示用
 "====================================================================
-set laststatus=2
-set showtabline=2
-set t_Co=256
 python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
 python3 del powerline_setup
@@ -138,3 +136,97 @@ let g:cheatsheet#vsplit = 1
 "alvan/vim-closetag
 let g:closetag_filenames = '*.html,*.vue,*.erb,*.php'
 
+"-----------------------Color Scheme--------------------------------
+"====================================================================
+"monokai.vim
+"====================================================================
+"colorscheme monokai
+"====================================================================
+"molokai.vim
+"====================================================================
+colorscheme molokai
+let g:molokai_original = 1
+"====================================================================
+"altercation/vim-colors-solarized
+"====================================================================
+"set background=dark
+"let g:solarized_termcolors=256
+"let g:solarized_termtrans=1
+"colorscheme solarized
+"====================================================================
+"tyrannicaltoucan/vim-quantum
+"====================================================================
+"set background=dark
+"set termguicolors
+"colorscheme quantum
+
+"====================================================================
+"w0ng/vim-hybrid
+"====================================================================
+"set background=dark
+"colorscheme hybrid
+"
+"====================================================================
+"lightline
+"====================================================================
+let g:lightline = {
+      \ 'colorscheme': 'molokai',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'filename' ] ]
+      \ },
+      \ 'component_function': {
+      \   'fugitive': 'LightLineFugitive',
+      \   'readonly': 'LightLineReadonly',
+      \   'modified': 'LightLineModified',
+      \   'filename': 'LightLineFilename',
+      \   'filetype': 'LightLineFiletype',
+      \   'fileformat': 'LightLineFileformat',
+      \ },
+      \ 'separator': { 'left': ' ', 'right': ' ' },
+      \ 'subseparator': { 'left': ' ', 'right': ' ' }
+      \ }
+
+function! LightLineModified()
+  if &filetype == "help"
+    return ""
+  elseif &modified
+    return "+"
+  elseif &modifiable
+    return ""
+  else
+    return ""
+  endif
+endfunction
+
+function! LightLineReadonly()
+  if &filetype == "help"
+    return ""
+  elseif &readonly
+    return ""
+  else
+    return ""
+  endif
+endfunction
+
+function! LightLineFugitive()
+  if exists("*fugitive#head")
+    let _ = fugitive#head()
+    return strlen(_) ? ''._ : ''
+  endif
+  return ''
+endfunction
+
+function! LightLineFilename()
+  return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
+        \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
+        \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
+endfunction
+
+function! LightLineFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+
+function! LightLineFileformat()
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) :  ''
+endfunction

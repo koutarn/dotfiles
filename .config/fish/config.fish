@@ -1,5 +1,5 @@
 #fishへようこそを消す
-set fish_greeting
+set fish_greetinm
 
 #powerlineの設定
 function fish_prompt
@@ -57,4 +57,5 @@ if [ $SHLVL = 1 ]
   tmux
   figlet hello world! 2>/dev/null
 end
+
 
