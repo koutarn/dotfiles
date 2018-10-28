@@ -38,6 +38,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'majutsushi/tagbar'                                            "tagbar表示
   Plug 'sheerun/vim-polyglot'                                         "vimの言語サポートを行う
   Plug 'alvan/vim-closetag'                                           "閉じタグの自動化
+  Plug 'junegunn/vim-easy-align'                                      "整形用
 
   "git関係
   Plug 'airblade/vim-gitgutter'                                       "signの領域にgitのstatusを表示する

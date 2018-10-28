@@ -18,6 +18,7 @@ set VI_KEY_CFG '~/.vim/init/keybind.vim'
 set VI_PLUG_CFG '~/.vim/init/load-plugins.vim'
 set VI_PLUG_KEY_CFG '~/.vim/advance/setting-plugins.vim'
 set FISH_CFG '~/.config/fish/config.fish'
+set TMUX_CFG '~/.tmux.conf'
 
 balias la 'ls -vlpA --color=auto'            #詳細表示(隠しファイル含む)
 balias so 'source'
@@ -27,15 +28,16 @@ balias vi-main-config "vi $VI_MAIN_CFG"
 #alias
 balias l 'ls -vptr --color=auto'             #簡易表示
 balias ll 'ls -vlp --color=auto'             #詳細表示
-balias vi-key-config "vi $VI_KEY_CFG"
-balias vi-plug-config "vi $VI_PLUG_CFG"
-balias vi-plug-key-config "vi $VI_PLUG_KEY_CFG"
-balias fish-config "vi $FISH_CFG"
+balias tmux-cfg "vi $TMUX_CFG"
+balias vi-key-cfg "vi $VI_KEY_CFG"
+balias vi-plug-cfg "vi $VI_PLUG_CFG"
+balias vi-plug-key-cfg "vi $VI_PLUG_KEY_CFG"
+balias fish-cfg "vi $FISH_CFG"
 balias fish-reload 'fish_update_completions'
 balias net 'w3m -m -B https://google.com'
 balias ag 'ag -S --hidden'
 balias agf 'ag -S -g'
-balias configs "vi $FISH_CFG $VIMRC $VI_MAIN_CFG $VI_KEY_CFG $VI_PLUG_CFG $VI_PLUG_KEY_CFG" #all configs open
+balias configs "vi $FISH_CFG $VIMRC $VI_MAIN_CFG $VI_KEY_CFG $VI_PLUG_CFG $VI_PLUG_KEY_CFG $TMUX_CFG" #all configs open
 
 #rbenv
 status --is-interactive; and . (rbenv init -|psub)

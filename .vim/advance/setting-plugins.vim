@@ -82,9 +82,9 @@ let g:indentline_char = '|'                     "indentlineの文字を変更
 "Vimのpluginではない,一応外部のものなのでここに記載
 "powerline表示用
 "====================================================================
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
+"python3 from powerline.vim import setup as powerline_setup
+"python3 powerline_setup()
+"python3 del powerline_setup
 
 "====================================================================
 "switch.vim
@@ -108,7 +108,12 @@ nmap <F10> :TagbarToggle<CR>
 "vim-fzf
 "====================================================================
 nmap ; :Buffers<CR>
-nmap t :Files<CR>
+nmap t :Tags<CR>
+nmap q :Files<CR>
+nnoremap \h :History<CR>
+nnoremap \c :Commands<CR>
+nnoremap \m :Maps<CR>
+nnoremap \C :Colors<CR>
 "====================================================================
 "vim-bufkill
 "====================================================================

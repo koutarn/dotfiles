@@ -68,6 +68,64 @@ vnoremap <C-j> "zx"zp`[V`]
 
 "タイポを修正
 inoremap <C-t> <Esc><Left>"zx"zpa
+
+"text object ty skanehira
+"https://github.com/skanehira/dotfiles/blob/master/vim/vimrc
+
+"cat
+nmap c8 ci(
+nmap c2 ci"
+nmap c7 ci'
+nmap c, ci<
+nmap c[ ci[
+nmap c[[ ci{
+
+"nmap ca8 ca(
+"nmap ca2 ca"
+"nmap ca7 ca'
+"nmap ca, ca<
+"nmap ca[ ca[
+"nmap ca[[ ca{
+
+"delete
+"nmap d8 di(
+"nmap d2 di"
+"nmap d7 di'
+"nmap d, di<
+"nmap d[ di[
+"nmap d[[ di{
+
+nmap d8 da(
+nmap d2 da"
+nmap d7 da'
+nmap d, da<
+nmap d[ da[
+nmap d[[ da{
+
+"nmap da8 da(
+"nmap da2 da"
+"nmap da7 da'
+"nmap da, da<
+"nmap da[ da[
+"nmap da[[ da{
+
+"yank
+nmap y8 yi(
+nmap y2 yi"
+nmap y7 yi'
+nmap y, y<
+nmap da[ da[
+nmap y[ yi[
+nmap y[[ yi{
+
+nmap ya8 ya(
+nmap ya2 ya"
+nmap ya7 ya'
+nmap ya, ya<
+nmap da[ da[
+nmap ya[ ya[
+nmap ya[[ ya{
+
 "===========================================================
 "ウィンドウ
 "===========================================================
