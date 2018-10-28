@@ -27,8 +27,10 @@ set wrapscan                                                        "検索時�
 set incsearch                                                       "インクリメンタルサーチを有効にする
 set matchtime=1                                                     "カーソルが飛ぶ時間を変更
 "================================
-"Tab
+"インデント
 "================================
+set breakindent                                                     "折り返すときにインデントも考慮する
+set showbreak=>\                                                    "折返したときに表示する
 set autoindent                                                      "自動インデント
 set expandtab                                                       "タブ文字をスペースにする
 set tabstop=4                                                       "タブ幅を4文字にする
@@ -66,6 +68,7 @@ set noswapfile                                                      "ファイ�
 set splitbelow                                                      "新しいウィンドウを下に開く
 set splitright                                                      "新しいウィンドウを右に開く
 au FocusLost * :wa                                                  "focusが外れたら自動保存
+set tags+=tags;                                                     "tagの作成を親ディレクトリまで行う
 "================================
 "マウス設定
 "================================

@@ -3,12 +3,25 @@
 "===========================================================
 "settings
 "===========================================================
+nnoremap ZZ <Nop>
+nnoremap ZQ <Nop>
 nnoremap q <Nop>
 nnoremap qq <Nop>
 nnoremap s <Nop>
 nnoremap S <Nop>
 nnoremap <C-z> <Nop>
 let mapleader = "\<Space>"				"Leaderをspaceに変更
+
+"xで削除してもヤンクされないようにする
+nnoremap x "_x
+vnoremap x "_x
+nnoremap X "_X
+vnoremap X "_X
+
+"コマンドライン履歴を見る
+cnoremap <C-n> <Down>
+cnoremap <C-p> <Up>
+cnoremap <C-e> <End>
 "===========================================================
 "移動
 "===========================================================
@@ -36,6 +49,7 @@ vmap " <c-V>0I"<Esc>
 vmap // <C-V>0I//<Esc>
 nnoremap sg  :<C-u>%s///g<Left><Left><Left>
 vnoremap sg  :s///g<Left><Left><Left>
+nnoremap Y y$
 
 "二度押しでコマンドモードへ
 inoremap <silent> jj <Esc>
@@ -43,6 +57,17 @@ inoremap <silent> っj <ESc>
 vnoremap <silent>ff <ESC>
 vnoremap <silent>っｆ <Esc>
 nnoremap bo  :%!xxd<cr>
+
+"行を移動
+nnoremap <C-k> "zdd<Up>"zP
+nnoremap <C-j> "zdd"zp
+
+"複数行を移動
+vnoremap <C-k> "zx<Up>"zP`[V`]
+vnoremap <C-j> "zx"zp`[V`]
+
+"タイポを修正
+inoremap <C-t> <Esc><Left>"zx"zpa
 "===========================================================
 "ウィンドウ
 "===========================================================
@@ -103,3 +128,7 @@ nnoremap で de
 inoremap <silent> っｊ <ESC>
 nnoremap っz zz
 nnoremap ・ /
+
+"spaceを二度押しで単語を光らせる
+nnoremap <silent> <Space><Space> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>"
+

@@ -19,14 +19,14 @@ set VI_PLUG_CFG '~/.vim/init/load-plugins.vim'
 set VI_PLUG_KEY_CFG '~/.vim/advance/setting-plugins.vim'
 set FISH_CFG '~/.config/fish/config.fish'
 
-#alias
-balias l 'ls -vptr --color=auto'             #簡易表示
-balias ll 'ls -vlp --color=auto'             #詳細表示
 balias la 'ls -vlpA --color=auto'            #詳細表示(隠しファイル含む)
 balias so 'source'
 balias vi 'vim'
 balias vi-rc "vi $VIMRC"
 balias vi-main-config "vi $VI_MAIN_CFG"
+#alias
+balias l 'ls -vptr --color=auto'             #簡易表示
+balias ll 'ls -vlp --color=auto'             #詳細表示
 balias vi-key-config "vi $VI_KEY_CFG"
 balias vi-plug-config "vi $VI_PLUG_CFG"
 balias vi-plug-key-config "vi $VI_PLUG_KEY_CFG"
