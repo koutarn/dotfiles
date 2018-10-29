@@ -6,7 +6,7 @@ set notitle                                                         "vimを使�
 set title                                                           "編集中のファイル名の表示
 set showcmd                                                         "入力中のコマンドをステータスに表示する
 set number                                                          "行番号を表示
-"set cursorline                                                     "現在の行を強調表示
+set cursorline                                                     "現在の行を強調表示
 set showmatch                                                       "括弧入力時に対応する括弧を表示
 set display=lastline                                                "テキスト表示の方法を変える(長いテキストを省略せず最後まで表示する)
 set laststatus=2                                                    "ステータスラインを常に表示

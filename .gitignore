@@ -4,6 +4,7 @@
 #fishだけ
 .config/*
 !.config/fish
+!.config/alacritty
 
 
 #w3mのkeymapだけ

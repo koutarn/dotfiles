@@ -19,6 +19,7 @@ set VI_PLUG_CFG '~/.vim/init/load-plugins.vim'
 set VI_PLUG_KEY_CFG '~/.vim/advance/setting-plugins.vim'
 set FISH_CFG '~/.config/fish/config.fish'
 set TMUX_CFG '~/.tmux.conf'
+set ALA_CFG '~/.config/alacritty/alacritty.yml'
 
 balias la 'ls -vlpA --color=auto'            #詳細表示(隠しファイル含む)
 balias so 'source'
@@ -34,6 +35,7 @@ balias vi-plug-cfg "vi $VI_PLUG_CFG"
 balias vi-plug-key-cfg "vi $VI_PLUG_KEY_CFG"
 balias fish-cfg "vi $FISH_CFG"
 balias fish-reload 'fish_update_completions'
+balias ala-cfg "vi $ALA_CFG"
 balias net 'w3m -m -B https://google.com'
 balias ag 'ag -S --hidden'
 balias agf 'ag -S -g'
@@ -54,6 +56,7 @@ set -g theme_display_git_ahead_verbose yes
 
 #PATHの設定
 set PATH $HOME/dotfiles/bin $PATH
+set PATH $HOME/.cargo/bin $PATH
 
 if [ $SHLVL = 1 ]
   tmux
