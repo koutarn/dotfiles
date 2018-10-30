@@ -23,11 +23,11 @@ set ALA_CFG '~/.alacritty.yml'
 
 balias la 'ls -vlpA --color=auto'            #詳細表示(隠しファイル含む)
 balias so 'source'
-balias vi 'vim'
+balias v 'vim'
 balias vi-rc "vi $VIMRC"
 balias vi-main-config "vi $VI_MAIN_CFG"
 
-#alias
+#balias
 balias l 'ls -vptr --color=auto'             #簡易表示
 balias ll 'ls -vlp --color=auto'             #詳細表示
 balias tmux-cfg "vi $TMUX_CFG"
