@@ -57,12 +57,10 @@ map sk <Plug>(edgemotion-k)
 "====================================================================
 "Yggdroot/indentLine
 "====================================================================
-let g:indentLine_setColors = 1
-let g:indentline_enabled = 1                    "indentLineを有効にする
-let g:indentline_color_term = 222               "indentlineの色を変更
-let g:indentline_char = "▏"                     "indentlineの文字を変更
-let g:indentLine_bgcolor_term = 202
-let g:indentLine_bgcolor_gui = "#b0c4de"
+let g:indentLine_enabled = 1
+let g:indentLine_faster = 1
+let g:indentLine_char = '⎸'
+let g:indentLine_color_term = 244
 "====================================================================
 "Xuyuanp/nerdtree-git-plugin
 "====================================================================

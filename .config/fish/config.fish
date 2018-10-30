@@ -19,13 +19,14 @@ set VI_PLUG_CFG '~/.vim/init/load-plugins.vim'
 set VI_PLUG_KEY_CFG '~/.vim/advance/setting-plugins.vim'
 set FISH_CFG '~/.config/fish/config.fish'
 set TMUX_CFG '~/.tmux.conf'
-set ALA_CFG '~/.config/alacritty/alacritty.yml'
+set ALA_CFG '~/.alacritty.yml'
 
 balias la 'ls -vlpA --color=auto'            #詳細表示(隠しファイル含む)
 balias so 'source'
 balias vi 'vim'
 balias vi-rc "vi $VIMRC"
 balias vi-main-config "vi $VI_MAIN_CFG"
+
 #alias
 balias l 'ls -vptr --color=auto'             #簡易表示
 balias ll 'ls -vlp --color=auto'             #詳細表示
@@ -39,7 +40,7 @@ balias ala-cfg "vi $ALA_CFG"
 balias net 'w3m -m -B https://google.com'
 balias ag 'ag -S --hidden'
 balias agf 'ag -S -g'
-balias configs "vi $FISH_CFG $VIMRC $VI_MAIN_CFG $VI_KEY_CFG $VI_PLUG_CFG $VI_PLUG_KEY_CFG $TMUX_CFG" #all configs open
+balias configs "vi $FISH_CFG $VIMRC $VI_MAIN_CFG $VI_KEY_CFG $VI_PLUG_CFG $VI_PLUG_KEY_CFG $TMUX_CFG $ALA_CFG" #all configs open
 
 #rbenv
 status --is-interactive; and . (rbenv init -|psub)
