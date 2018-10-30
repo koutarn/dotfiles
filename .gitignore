@@ -4,8 +4,8 @@
 #fishだけ
 .config/*
 !.config/fish
-!.config/alacritty
-
+.config/fish/fundle
+config/fish/functions/fundle.fish
 
 #w3mのkeymapだけ
 .w3m/*

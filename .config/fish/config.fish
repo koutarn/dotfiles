@@ -76,6 +76,8 @@ set -g theme_display_git_ahead_verbose yes
 set PATH $HOME/dotfiles/bin $PATH
 set PATH $HOME/.cargo/bin $PATH
 
+set -gx ANYFFF__FINDER_APP fzf
+
 if [ $SHLVL = 1 ]
   tmux
   figlet hello world! 2>/dev/null
