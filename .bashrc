@@ -114,4 +114,4 @@ case $- in
      *) return ;;
 esac
 
-#[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
