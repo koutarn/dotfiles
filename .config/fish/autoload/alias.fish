@@ -10,7 +10,7 @@ set -x ALA_CFG '~/.alacritty.yml'
 
 balias la 'ls -vlpA --color=auto'            #詳細表示(隠しファイル含む)
 balias so 'source'
-balias v 'vim'
+balias v "vim"
 balias vi-rc "vi $VIMRC"
 balias vi-main-config "vi $VI_MAIN_CFG"
 

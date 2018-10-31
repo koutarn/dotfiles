@@ -1,4 +1,4 @@
-function default_pane
+function code_mode
 
     #windowの作成
     tmux new-window -n code
