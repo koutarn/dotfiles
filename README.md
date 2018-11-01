@@ -15,7 +15,7 @@ sudo bash ./install.sh
 ## TODO
 
 ```
-space vim compare text objects
+.vim compare space vim 
 add bin/git fish/functions
 delete .guake .xinitrc
 ```
