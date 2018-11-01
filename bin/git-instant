@@ -15,22 +15,22 @@ if [ -z "$(git status --porcelain)" ]; then
 fi
 
 #instant
-git status
 git add -A
+git status
 
 while :
 do
   echo "do you want commit?(y/n)"
   read -n 2 ANSWER
   case "$ANSWER"  in
-    y)  break ;;
-    n)  exit 0 ;;
+    [yY])  break ;;
+    [nN])  exit 0 ;;
     *)  : ;;
   esac
 done
 
 #preview template message
-cat < ~/.git-template
+cat < $HOME/.git-template
 
 #input commit message
 read -p "commit message:" MSG
