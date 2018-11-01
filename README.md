@@ -5,7 +5,6 @@
     | (_| | (_) | |_| | | | |  __/\__ \
      \____|\___/ \__|_| |_|_|\___||___/
 ## instal
-
 ```
 git clone https://github.com/koutakun/dotfile.git ~/dotfiles && cd ~/dotfiles
 sudo bash ./install.sh
@@ -13,7 +12,6 @@ sudo bash ./install.sh
 ## TODO
 
 ```
-.vim compare space vim 
+.vim compare space vim
 add bin/git fish/functions
-delete .guake .xinitrc
 ```
