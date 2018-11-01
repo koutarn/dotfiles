@@ -30,7 +30,7 @@ do
 done
 
 #preview template message
-cat < ~/.gitmessage
+cat < ~/.git-template
 
 #input commit message
 read -p "commit message:" MSG
