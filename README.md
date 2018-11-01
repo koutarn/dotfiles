@@ -12,3 +12,10 @@
 git clone https://github.com/koutakun/dotfile.git ~/dotfiles && cd ~/dotfiles
 sudo bash ./install.sh
 ```
+## TODO
+
+```
+space vim compare text objects
+add bin/git fish/functions
+delete .guake .xinitrc
+```
