@@ -12,7 +12,7 @@ function td -d "td pane-number directory"
   #  tmux display-panes
 
   #select
-    set SELECT_PANE (tmux list-pane | fzf --multi)
-    echo $SELECT_PANE
-    tmux select-pane $SELECT_PANE
+  set SELECT_PANE (tmux list-pane | fzf --multi)
+  echo $SELECT_PANE
+  tmux select-pane $SELECT_PANE
 end
