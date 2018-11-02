@@ -5,12 +5,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   call plug#begin()
 
   "color scheme
-  Plug 'tomasr/molokai'                                               "molokai
-  Plug 'junegunn/seoul256.vim'                                        "seoul256
-  Plug 'tyrannicaltoucan/vim-quantum'                                 "quantum
-  Plug 'altercation/vim-colors-solarized'                             "solarized
-  Plug 'sickill/vim-monokai'                                          "monokai
-  Plug 'w0ng/vim-hybrid'                                              "hybrid
+  Plug 'chriskempson/base16-vim'                                      "base16
 
   "表示補助
   Plug 'bronson/vim-trailing-whitespace'                              "無駄な空白を可視化する
@@ -70,6 +65,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'vim-jp/vimdoc-ja'                                             "vimhelp jpfile
   Plug 'qpkorr/vim-bufkill'                                           "buff削除用
   Plug 'reireias/vim-cheatsheet'                                      "自作チートシートの表示を行う
+  Plug 'Cj-bc/qiita-vim', { 'branch':'feature/v2' }                   "Qiitをvimで使えるようにする
 
   "neovim
   if has('nvim')

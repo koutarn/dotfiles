@@ -141,35 +141,12 @@ let g:cheatsheet#vsplit = 1
 let g:closetag_filenames = '*.html,*.vue,*.erb,*.php'
 
 "-----------------------Color Scheme--------------------------------
-"====================================================================
-"monokai.vim
-"====================================================================
-"colorscheme monokai
-"====================================================================
-"molokai.vim
-"====================================================================
-colorscheme molokai
-let g:molokai_original = 1
-"====================================================================
-"altercation/vim-colors-solarized
-"====================================================================
-"set background=dark
-"let g:solarized_termcolors=256
-"let g:solarized_termtrans=1
-"colorscheme solarized
-"====================================================================
-"tyrannicaltoucan/vim-quantum
-"====================================================================
-"set background=dark
-"set termguicolors
-"colorscheme quantum
+let base16colorspace=256
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
-"====================================================================
-"w0ng/vim-hybrid
-"====================================================================
-"set background=dark
-"colorscheme hybrid
-"
 "====================================================================
 "lightline
 "====================================================================
