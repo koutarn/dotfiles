@@ -103,6 +103,8 @@ nnoremap ]v :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap ]s :split<CR> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap ]G :TagsGenerate<CR>
 nmap <F10> :TagbarToggle<CR>
+let g:tagbar_width = 30
+let g:tagbar_autoshowtag = 1
 "====================================================================
 "vim-fzf
 "====================================================================
@@ -141,6 +143,7 @@ let g:cheatsheet#vsplit = 1
 let g:closetag_filenames = '*.html,*.vue,*.erb,*.php'
 
 "-----------------------Color Scheme--------------------------------
+"base16-vim
 let base16colorspace=256
 if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
@@ -211,3 +214,4 @@ endfunction
 function! LightLineFileformat()
   return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) :  ''
 endfunction
+

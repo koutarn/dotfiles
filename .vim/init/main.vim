@@ -37,18 +37,17 @@ set matchtime=1                                                     "カーソ�
 "================================
 set breakindent                                                     "折り返すときにインデントも考慮する
 set showbreak=>\                                                    "折返したときに表示する
-set autoindent                                                      "自動インデント
 set expandtab                                                       "タブ文字をスペースにする
 set tabstop=4                                                       "タブ幅を4文字にする
 set smarttab                                                        "コンテキストに応じたタブの処理を行う
 set wildmenu                                                        "コマンドモードの補完
 set wildmode=list:longest,full                                      "コマンドラインの補完方法を設定する
 set matchpairs& matchpairs+=<:>                                     "対応括弧に<と>のペアを追加
-set smartindent                                                     "改行入力行の末尾にあわせてインデントを増減する
 set shiftround                                                      "インデントをshiftwidthの倍数に丸める
 set shiftwidth=4                                                    "自動で挿入されるタブ幅　
 set softtabstop=0                                                   "タブ幅をtabstopの値に任せる
 set ai                                                              "自動字下げ
+set si                                                              "改行入力行の末尾にあわせてインデントを増減する
 "================================
 "補完
 "================================
@@ -101,6 +100,7 @@ set novisualbell                                                     "音無効�
 set t_vb=                                                            "音無効化
 set tm=500                                                           "音無効化
 set clipboard+=unnamed"                                              "コピーしたときにどうするか
+set cmdheight=2                                                      "コマンド行の高さ
 "================================
 "File Type
 "================================
