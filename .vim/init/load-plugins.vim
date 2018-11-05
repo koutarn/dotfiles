@@ -10,7 +10,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   "表示補助
   Plug 'bronson/vim-trailing-whitespace'                              "無駄な空白を可視化する
   Plug 'gko/vim-coloresque'                                           "色を視覚化にする
-  Plug 'scrooloose/nerdtree'                                          "fileTree
+  Plug 'scrooloose/nerdtree'                                          "ファイルツリー
   Plug 'jistr/vim-nerdtree-tabs'                                      "Nerdtreeをtabで扱いやすいようにする
   Plug 'Xuyuanp/nerdtree-git-plugin'                                  "nerdtreeで変更があったら表示する
   Plug 'ko2ic/nerdtree-plugin-ag'                                     "nerdtreeでagを使えるようにする
@@ -58,20 +58,17 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
 
   "その他
   Plug 'dag/vim-fish'                                                 "Fish Scriptのシンタックスハイライト
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }   "fzf
-  Plug 'junegunn/fzf.vim'                                             "fzfのvim用コード
+  Plug 'junegunn/fzf.vim', { 'dir': '~/.fzf', 'do': './install --all'}"fzf
   Plug 'junegunn/goyo.vim'                                            "vimで文章を書く
   Plug 'junegunn/limelight.vim'                                       "周りを光らせる
   Plug 'vim-jp/vimdoc-ja'                                             "vimhelp jpfile
   Plug 'qpkorr/vim-bufkill'                                           "buff削除用
   Plug 'reireias/vim-cheatsheet'                                      "自作チートシートの表示を行う
-  Plug 'Cj-bc/qiita-vim', { 'branch':'feature/v2' }                   "Qiitをvimで使えるようにする
 
   "neovim
   if has('nvim')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   else
-    Plug 'Shougo/deoplete.nvim'
     Plug 'roxma/nvim-yarp'
     Plug 'roxma/vim-hug-neovim-rpc'
   endif

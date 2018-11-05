@@ -59,8 +59,8 @@ vnoremap <silent>っｆ <Esc>
 nnoremap bo  :%!xxd<cr>
 
 "行を移動
-nnoremap <C-k> "zdd<Up>"zP
 nnoremap <C-j> "zdd"zp
+nnoremap <C-k> "zdd<Up>"zP
 
 "複数行を移動
 vnoremap <C-k> "zx<Up>"zP`[V`]

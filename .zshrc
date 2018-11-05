@@ -109,3 +109,5 @@ fi
 
 zplug load
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
