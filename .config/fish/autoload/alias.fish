@@ -8,15 +8,15 @@ set -x FISH_CFG '~/.config/fish/config.fish'
 set -x TMUX_CFG '~/.tmux.conf'
 set -x ALA_CFG '~/.alacritty.yml'
 
-balias la 'ls -vlpA --color=auto'            #詳細表示(隠しファイル含む)
+balias la 'ls -vlpA --color=auto'
 balias so 'source'
 balias v "vim"
 balias vi-rc "vi $VIMRC"
 balias vi-main-config "vi $VI_MAIN_CFG"
 
 #balias
-balias l 'ls -vptr --color=auto'             #簡易表示
-balias ll 'ls -vlp --color=auto'             #詳細表示
+balias l 'ls -vptr --color=auto'
+balias ll 'ls -vlp --color=auto'
 balias tmux-cfg "vi $TMUX_CFG"
 balias vi-key-cfg "vi $VI_KEY_CFG"
 balias vi-plug-cfg "vi $VI_PLUG_CFG"

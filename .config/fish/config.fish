@@ -8,6 +8,3 @@ source "$HOME/.config/fish/autoload/util.fish"
 if [ $SHLVL = 1 ]
   tmux
 end
-
-
-

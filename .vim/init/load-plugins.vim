@@ -58,12 +58,14 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
 
   "その他
   Plug 'dag/vim-fish'                                                 "Fish Scriptのシンタックスハイライト
-  Plug 'junegunn/fzf.vim', { 'dir': '~/.fzf', 'do': './install --all'}"fzf
+  Plug 'junegunn/fzf.vim'                                             "fzf
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }   "fzf
   Plug 'junegunn/goyo.vim'                                            "vimで文章を書く
   Plug 'junegunn/limelight.vim'                                       "周りを光らせる
   Plug 'vim-jp/vimdoc-ja'                                             "vimhelp jpfile
   Plug 'qpkorr/vim-bufkill'                                           "buff削除用
   Plug 'reireias/vim-cheatsheet'                                      "自作チートシートの表示を行う
+  Plug 'b4b4r07/vim-shellutils'                                       "Commandを使いやすくする
 
   "neovim
   if has('nvim')

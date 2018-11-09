@@ -6,6 +6,7 @@ function fish_prompt
   ~/.local/bin/powerline-shell --shell bare $status
 end
 
+#cdを変更
 function cd
   builtin cd $argv[1]
   ls -p -v -w 150 -A --color=always
@@ -19,7 +20,6 @@ set -g theme_show_exit_status yes
 
 # Gitのahead情報を細かく表示する
 set -g theme_display_git_ahead_verbose yes
-
 set -g __done_min_cmd_duration 5000
 
 # Base16 Shell
