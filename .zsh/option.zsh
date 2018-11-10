@@ -37,7 +37,17 @@ setopt hist_verify # `!!`を実行したときにいきなり実行せずコマ�
 
 
 #補完で大文字にもマッチ
-#zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# ../ の後は今いるディレクトリを補完しない
+zstyle ':completion:*' ignore-parents parent pwd ..
+
+#sudo の後ろでコマンド名を補完する
+zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
+                              /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
+
+#psコマンドのプロセス名補完
+zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 
 #補完をする際に選択画面を出す
 zstyle ':completion:*:default' menu select=2
