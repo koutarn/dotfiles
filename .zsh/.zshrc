@@ -12,3 +12,8 @@ PLUG="${ZDOTDIR}/plug.zsh"
 if [ -f "$PLUG" ];then
   source "$PLUG"
 fi
+
+OPTION="${ZDOTDIR}/option.zsh"
+if [ -f "$OPTION" ];then
+  source "$OPTION"
+fi

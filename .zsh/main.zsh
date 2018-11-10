@@ -15,18 +15,22 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=${HISTSIZE}
 
-#補完機能
+#prompt
 autoload -Uz promptinit
 promptinit
 prompt suse
+autoload -Uz colors
+colors
+
+#補完機能
+autoload -Uz compinit
 compinit
+
+#zshの補完候補が画面から溢れ出るとき、それでも表示するかどうか確認する。
+export LISTMAX=0
 
 #vim風バインドキー
 bindkey -v
-
-# 色を使用
-autoload -Uz colors
-colors
 
 #単語の区切り文字を指定する
 autoload -Uz select-word-style
