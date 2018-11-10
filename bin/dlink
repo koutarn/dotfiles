@@ -2,7 +2,7 @@
 
 # Help
 if [ "$1" = "-h" ] || [ "$1" = "--help" ];then
-    echo "usage: dlink [dir(s)" 1>&2
+    echo "usage: dlink [dir(s)]" 1>&2
     exit 0
 fi
 

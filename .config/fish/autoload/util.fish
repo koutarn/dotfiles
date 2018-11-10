@@ -8,7 +8,8 @@ end
 
 #cdを変更
 function cd
-  builtin cd $argv[1]
+  #set DIR (ls -a | fzf)
+  builtin cd $DIR $argv[1]
   ls -p -v -w 150 -A --color=always
 end
 
