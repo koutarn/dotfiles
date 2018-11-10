@@ -7,8 +7,8 @@ ZSH_ALIAS="${ZDOTDIR}/alias.zsh"
 ZSH_PLUG="${ZDOTDIR}/plug.zsh"
 ZSH_UTIL="${ZDOTDIR}/main.zsh"
 ZSH_OPTION="${ZDOTDIR}/option.zsh"
-ZSH_CONFIGS="$ZSHRC $ZSHENV $ZSH_ALIAS $ZSH_PLUG $ZSH_UTIL $ZSH_OPTION"
-
+ZSH_KEY="${ZDOTDIR}/keybind.zsh"
+ZSH_CONFIGS="$ZSHRC $ZSHENV $ZSH_ALIAS $ZSH_PLUG $ZSH_UTIL $ZSH_OPTION $ZSH_KEY"
 
 VIMRC='~/.vimrc'
 VI_MAIN_CFG='~/.vim/init/main.vim'
@@ -49,3 +49,4 @@ alias net='w3m -m -B https://google.com'
 alias ag='ag -S --hidden'
 alias agf='ag -S -g'
 alias configs="vi $ZSH_CONFIGS $VI_CONFIGS $TMUX_CFG $ALA_CFG" #all configs open
+alias treee="tree -alFC -L 2 --dirsfirst"

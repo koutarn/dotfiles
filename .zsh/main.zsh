@@ -12,7 +12,7 @@ export PAGER="less"
 
 #ヒストリの設定
 HISTFILE=~/.zsh_history
-HISTSIZE=1000000
+HISTSIZE=10000
 SAVEHIST=${HISTSIZE}
 
 #prompt
@@ -36,35 +36,11 @@ bindkey -v
 autoload -Uz select-word-style
 select-word-style default
 
-#Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-[ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-eval "$("$BASE16_SHELL/profile_helper.sh")"
-
-
-#初回シェル時のみ tmux実行
-if [ $SHLVL = 1 ]; then
-  tmux
-fi
-
 #FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-do_enter() {
-  if [[ -n $BUFFER ]]; then
-    zle accept-line
-    return $status
-  fi
+#cdしたときにlsする
+[ -z "$ENHANCD_ROOT" ] && function chpwd { tree -L 1 } # enhancdがない場合
+[ -z "$ENHANCD_ROOT" ] || export ENHANCD_HOOK_AFTER_CD="ls -p -v -w 150 -A --color=always"  #enhancdがあるときはそのHook機構を使う ]]
 
-  echo
-  if [[ -d .git ]]; then
-    if [[ -n "$(git status --short)" ]]; then
-      git status
-    fi
-  fi
-  zle reset-prompt
-}
 
-zle -N do_enter
-bindkey '^m' do_enter]]]]]]}
