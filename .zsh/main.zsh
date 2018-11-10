@@ -36,14 +36,6 @@ bindkey -v
 autoload -Uz select-word-style
 select-word-style default
 
-#ここで指定した文字は単語区切りとみなされる
-#/ も区切りと扱うので、^W でディレクトリ１つ分を削除できる
-zstyle ':zle:*' word-chars " /=;@:{},|"
-zstyle ':zle:*' word-style unspecified
-
-#補完で大文字にもマッチ
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
 #Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
@@ -58,3 +50,21 @@ fi
 
 #FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+do_enter() {
+  if [[ -n $BUFFER ]]; then
+    zle accept-line
+    return $status
+  fi
+
+  echo
+  if [[ -d .git ]]; then
+    if [[ -n "$(git status --short)" ]]; then
+      git status
+    fi
+  fi
+  zle reset-prompt
+}
+
+zle -N do_enter
+bindkey '^m' do_enter]]]]]]}

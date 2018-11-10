@@ -16,13 +16,19 @@ setopt auto_menu             #補完キー連打で順に補完候補を自動�
 setopt auto_param_keys       #カッコの対応などを自動的に補完
 setopt interactive_comments  #コマンドラインでも # 以降をコメントと見なす
 setopt magic_equal_subst     #コマンドラインの引数で --prefix=/usr などの = 以降でも補完できる
-
-setopt complete_in_word      #語の途中でもカーソル位置で補完
+setopt complete_in_word      #単語の途中でもカーソル位置で補完
 setopt always_last_prompt    #カーソル位置は保持したままファイル名一覧を順次その場で表示
-
 setopt print_eight_bit       #日本語ファイル名等8ビットを通す
 setopt extended_glob         #拡張グロブで補完(~とか^とか。例えばless *.txt~memo.txt ならmemo.txt 以外の *.txt にマッチ)
 setopt globdots              #明確なドットの指定なしで.から始まるファイルをマッチ
 
-bindkey "^I" menu-complete   # 展開する前に補完候補を出させる(Ctrl-iで補完するようにする)
+#補完で大文字にもマッチ
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+#補完をする際に選択画面を出す
 zstyle ':completion:*:default' menu select=2
+
+#ここで指定した文字は単語区切りとみなされる
+#/ も区切りと扱うので、^W でディレクトリ１つ分を削除できる
+zstyle ':zle:*' word-chars " /=;@:{},|"
+zstyle ':zle:*' word-style unspecified

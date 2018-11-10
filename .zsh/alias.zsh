@@ -1,3 +1,6 @@
+#まずはデフォルトのエイリアスを全消し
+unalias -m \*
+
 ZSHRC="${ZDOTDIR}/.zshrc"
 ZSHENV="~/.zshenv"
 ZSH_ALIAS="${ZDOTDIR}/alias.zsh"
@@ -24,6 +27,7 @@ alias -g G='| grep'
 
 #aliasting variables
 alias c="cd"
+alias cdd="cd .."
 alias rezsh="source $ZSHRC"
 alias la='ls -a'
 alias fish-config="vi $FISH_CFG"
