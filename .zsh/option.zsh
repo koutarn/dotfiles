@@ -10,6 +10,7 @@ local WHITE=$'%{^[[1;37m%}'$
 
 #補完に関するオプション
 setopt correct                #入力しているコマンド名が間違っている場合にもしかして：を出す。
+setopt correct_all            #コマンド補完を全てで出す
 setopt auto_list              #補完候補を一覧表示にする
 setopt auto_param_slash       #ディレクトリ名の補完で末尾の / を自動的に付加し、次の補完に備える
 setopt mark_dirs              #ファイル名の展開でディレクトリにマッチした場合 末尾に / を付加
@@ -24,16 +25,24 @@ setopt print_eight_bit        #日本語ファイル名等8ビットを通す
 setopt extended_glob          #拡張グロブで補完(~とか^とか。例えばless *.txt~memo.txt ならmemo.txt 以外の *.txt にマッチ)
 setopt globdots               #明確なドットの指定なしで.から始まるファイルをマッチ
 
-setopt auto_cd # ディレクトリ名を入力するだけでcdできるようにする
-setopt nobeep # ビープを鳴らさない
+setopt auto_cd                #ディレクトリ名を入力するだけでcdできるようにする
+setopt nobeep                 #ビープを鳴らさない
+setopt no_list_beep           #ビープを鳴らさない
+setopt no_hist_beep           #ビープを鳴らさない
+setopt sh_word_split          #展開をbashに合わせる
+setopt brace_ccl              #brace展開の拡張　{abc} => a b c
+setopt no_flow_control        #Ctrl-s,Ctrl-qを無効化
+setopt print_exit_value       #戻り値が0以外の場合戻り値を表示
+setopt rm_star_wait           #rmするときに確認してくれる
 
 #history
-setopt hist_ignore_dups # 直前と同じコマンドをヒストリに追加しない
-setopt hist_ignore_all_dups # 重複するコマンドは古い法を削除する
-setopt share_history # 異なるウィンドウでコマンドヒストリを共有する
-setopt hist_no_store # historyコマンドは履歴に登録しない
-setopt hist_reduce_blanks # 余分な空白は詰めて記録
-setopt hist_verify # `!!`を実行したときにいきなり実行せずコマンドを見せる
+setopt hist_ignore_dups             #直前と同じコマンドをヒストリに追加しない
+setopt hist_ignore_all_dups         #重複するコマンドは古い法を削除する
+setopt share_history                #異なるウィンドウでコマンドヒストリを共有する
+setopt hist_no_store                #historyコマンドは履歴に登録しない
+setopt hist_reduce_blanks           #余分な空白は詰めて記録
+setopt hist_expire_dups_first       #履歴がいっぱいの時は最も古いものを先ず削除
+setopt hist_verify                  #`!!`を実行したときにいきなり実行せずコマンドを見せる
 
 
 #補完で大文字にもマッチ

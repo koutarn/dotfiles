@@ -10,8 +10,4 @@ git clone https://github.com/koutakun/dotfile.git ~/dotfiles && cd ~/dotfiles
 sudo bash ./install.sh
 ```
 ## TODO
-
-```
-.vim compare space vim
-add bin/git fish/functions
-```
+add sum .zsh settings```

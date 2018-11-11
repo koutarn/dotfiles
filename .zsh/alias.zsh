@@ -27,7 +27,7 @@ alias -g G='| grep'
 
 #aliasting variables
 alias c="cd"
-alias cdd="cd .."
+alias ..="cd .."
 alias rezsh="source $ZSHRC"
 alias la='ls -a'
 alias fish-config="vi $FISH_CFG"
@@ -50,3 +50,9 @@ alias ag='ag -S --hidden'
 alias agf='ag -S -g'
 alias configs="vi $ZSH_CONFIGS $VI_CONFIGS $TMUX_CFG $ALA_CFG" #all configs open
 alias treee="tree -alFC -L 2 --dirsfirst"
+
+#no correct
+alias cp="${ZSH_VERSION:+nocorrect} cp -i"
+alias mv="${ZSH_VERSION:+nocorrect} mv -i"
+alias mkdir="${ZSH_VERSION:+nocorrect} mkdir"
+alias touch="${ZSH_VERSION:+nocorrect} touch"
