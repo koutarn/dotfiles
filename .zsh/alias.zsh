@@ -36,7 +36,7 @@ alias so='source'
 alias vi='vim'
 alias vi-configs="vi $VI_CONFIGS"
 alias zsh-configs="vi $ZSH_CONFIGS"
-alias l='ls -vptr --color=auto'             #簡易表示
+alias l='ls -avptr --color=auto'             #簡易表示
 alias ll='ls -vlp --color=auto'             #詳細表示
 alias tmux-cfg="vi $TMUX_CFG"
 alias vi-key-cfg="vi $VI_KEY_CFG"

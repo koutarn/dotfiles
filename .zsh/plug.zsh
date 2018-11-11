@@ -12,7 +12,7 @@ zplug "mrowa44/emojify", as:command                                             
 
 zplug "b4b4r07/enhancd", use:init.sh                                                    #cdを強化
 if zplug check "b4b4r07/enhancd"; then
-    export ENHANCD_FILTER="fzf --height 50% --reverse --ansi"
+    export ENHANCD_FILTER="fzf --height 30% --reverse --ansi"
     export ENHANCD_DOT_SHOW_FULLPATH=1
 fi
 
