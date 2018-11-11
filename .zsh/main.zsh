@@ -19,12 +19,11 @@ SAVEHIST=${HISTSIZE}
 autoload -Uz promptinit
 promptinit
 prompt suse
-autoload -Uz colors
-colors
+autoload -Uz colors;colors
+
 
 #補完機能
-autoload -Uz compinit
-compinit
+autoload -Uz compinit;compinit
 
 #zshの補完候補が画面から溢れ出るとき、それでも表示するかどうか確認する。
 export LISTMAX=0

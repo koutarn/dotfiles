@@ -11,6 +11,8 @@ zplug "plugins/git",   from:oh-my-zsh                                           
 zplug "peterhurford/git-aliases.zsh"                                                    #git用alias
 zplug "mrowa44/emojify", as:command                                                     #コマンドライン上の文字リテラルの絵文字を emoji 化するフィルタコマンド。
 
+
+
 if ! zplug check --verbose; then
   printf 'Install? [y/N]:'
   if read -q; then
