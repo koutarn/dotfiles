@@ -7,6 +7,9 @@
 .config/fish/fundle
 config/fish/functions/fundle.fish
 
+#zcompdump
+.zsh/.zcompdump*
+
 #w3mのkeymapだけ
 .w3m/*
 !.w3m/keymap

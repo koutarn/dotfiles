@@ -1,6 +1,7 @@
 #まずはデフォルトのエイリアスを全消し
 unalias -m \*
 
+#variable
 ZSHRC="${ZDOTDIR}/.zshrc"
 ZSHENV="~/.zshenv"
 ZSH_ALIAS="${ZDOTDIR}/alias.zsh"
@@ -19,7 +20,7 @@ VI_CONFIGS="$VIMRC $VI_MAIN_CFG $VI_KEY_CFG $VI_PLUG_CFG $VI_PLUG_KEY_CFG"
 TMUX_CFG='~/.tmux.conf'
 ALA_CFG='~/.alacritty.yml'
 
-# グローバルエイリアス
+#global alias
 alias -g L='| less'
 alias -g H='| head'
 alias -g T='| tails'
@@ -31,13 +32,13 @@ alias ..="cd .."
 alias rezsh="source $ZSHRC"
 alias la='ls -a'
 alias fish-config="vi $FISH_CFG"
-alias la='ls -vlpA --color=auto'            #詳細表示(隠しファイル含む)
+alias la='ls -vlpA --color=auto'
 alias so='source'
 alias vi='vim'
 alias vi-configs="vi $VI_CONFIGS"
 alias zsh-configs="vi $ZSH_CONFIGS"
-alias l='ls -avptr --color=auto'             #簡易表示
-alias ll='ls -vlp --color=auto'             #詳細表示
+alias l='ls -avptr --color=auto'
+alias ll='ls -vlp --color=auto'
 alias tmux-cfg="vi $TMUX_CFG"
 alias vi-key-cfg="vi $VI_KEY_CFG"
 alias vi-plug-cfg="vi $VI_PLUG_CFG"
