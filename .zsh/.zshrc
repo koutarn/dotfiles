@@ -1,3 +1,4 @@
+
 MAIN="${ZDOTDIR}/main.zsh"
 if [ -f "$MAIN" ];then
   source "$MAIN"

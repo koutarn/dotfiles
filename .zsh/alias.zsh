@@ -51,6 +51,8 @@ alias ag='ag -S --hidden'
 alias agf='ag -S -g'
 alias configs="vi $ZSH_CONFIGS $VI_CONFIGS $TMUX_CFG $ALA_CFG" #all configs open
 alias treee="tree -alFC -L 2 --dirsfirst"
+alias materia="base16_materia"
+alias monokai="base16_monokai"
 
 #no correct
 alias cp="${ZSH_VERSION:+nocorrect} cp -i"
