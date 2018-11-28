@@ -19,6 +19,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
 
   "検索
   Plug 'rking/ag.vim'                                                 "agを使えるようにする
+  Plug 'nazo/pt.vim'                                                  "ptを使えるようにする
 
   "コーディング補助
   Plug 'tpope/vim-surround'                                           "シングルクオートとダブルクオートを入れ替える
