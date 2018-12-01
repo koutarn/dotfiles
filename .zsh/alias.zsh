@@ -12,11 +12,11 @@ ZSH_KEY="${ZDOTDIR}/keybind.zsh"
 ZSH_CONFIGS="$ZSHRC $ZSHENV $ZSH_ALIAS $ZSH_PLUG $ZSH_UTIL $ZSH_OPTION $ZSH_KEY"
 
 VIMRC='~/.vimrc'
-VI_MAIN_CFG='~/.vim/init/main.vim'
-VI_KEY_CFG='~/.vim/init/keybind.vim'
-VI_PLUG_CFG='~/.vim/init/load-plugins.vim'
-VI_PLUG_KEY_CFG='~/.vim/advance/setting-plugins.vim'
-VI_CONFIGS="$VIMRC $VI_MAIN_CFG $VI_KEY_CFG $VI_PLUG_CFG $VI_PLUG_KEY_CFG"
+VIM_MAIN_CFG='~/.vim/init/main.vim'
+VIM_KEY_CFG='~/.vim/init/keybind.vim'
+VIM_PLUG_CFG='~/.vim/init/load-plugins.vim'
+VIM_PLUG_KEY_CFG='~/.vim/advance/setting-plugins.vim'
+VIM_CONFIGS="$VIMRC $VIM_MAIN_CFG $VIM_KEY_CFG $VIM_PLUG_CFG $VIM_PLUG_KEY_CFG"
 TMUX_CFG='~/.tmux.conf'
 ALA_CFG='~/.alacritty.yml'
 
@@ -35,26 +35,27 @@ alias fish-config="vi $FISH_CFG"
 alias la='ls -vlpA --color=auto'
 alias so='source'
 alias vi='vim'
-alias vi-configs="vi $VI_CONFIGS"
+alias vim-configs="vi $VIM_CONFIGS"
 alias zsh-configs="vi $ZSH_CONFIGS"
 alias l='ls -avptr --color=auto'
 alias ll='ls -vlp --color=auto'
 alias tmux-cfg="vi $TMUX_CFG"
-alias vi-key-cfg="vi $VI_KEY_CFG"
-alias vi-plug-cfg="vi $VI_PLUG_CFG"
-alias vi-plug-key-cfg="vi $VI_PLUG_KEY_CFG"
+alias vim-key-cfg="vi $VIM_KEY_CFG"
+alias vim-plug-cfg="vi $VIM_PLUG_CFG"
+alias vim-plug-key-cfg="vi $VIM_PLUG_KEY_CFG"
 alias fish-cfg="vi $FISH_CFG"
 alias fish-reload='fish_update_completions'
 alias ala-cfg="vi $ALA_CFG"
 alias net='w3m -m -B https://google.com'
 alias ag='ag -S --hidden'
 alias agf='ag -S -g'
-alias configs="vi $ZSH_CONFIGS $VI_CONFIGS $TMUX_CFG $ALA_CFG" #all configs open
+alias configs="vi $ZSH_CONFIGS $VIM_CONFIGS $TMUX_CFG $ALA_CFG" #all configs open
 alias treee="tree -alFC -L 2 --dirsfirst"
 alias materia="base16_materia"
 alias monokai="base16_monokai"
 
 #no correct
+#nyaみたいなのをださない
 alias cp="${ZSH_VERSION:+nocorrect} cp -i"
 alias mv="${ZSH_VERSION:+nocorrect} mv -i"
 alias mkdir="${ZSH_VERSION:+nocorrect} mkdir"
