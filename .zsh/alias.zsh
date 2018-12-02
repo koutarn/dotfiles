@@ -14,7 +14,7 @@ ZSH_CONFIGS="$ZSHRC $ZSHENV $ZSH_ALIAS $ZSH_PLUG $ZSH_UTIL $ZSH_OPTION $ZSH_KEY"
 VIMRC='~/.vimrc'
 VIM_MAIN_CFG='~/.vim/init/main.vim'
 VIM_KEY_CFG='~/.vim/init/keybind.vim'
-VIM_PLUG_CFG='~/.vim/init/load-plugins.vim'
+VIM_PLUG_CFG='~/.vim/advance/load-plugins.vim'
 VIM_PLUG_KEY_CFG='~/.vim/advance/setting-plugins.vim'
 VIM_CONFIGS="$VIMRC $VIM_MAIN_CFG $VIM_KEY_CFG $VIM_PLUG_CFG $VIM_PLUG_KEY_CFG"
 TMUX_CFG='~/.tmux.conf'
@@ -29,7 +29,7 @@ alias -g G='| grep'
 #aliasting variables
 alias c="cd"
 alias ..="cd .."
-alias rezsh="source $ZSHRC"
+alias reload-zsh="source $ZSHRC"
 alias la='ls -a'
 alias fish-config="vi $FISH_CFG"
 alias la='ls -vlpA --color=auto'
@@ -37,8 +37,8 @@ alias so='source'
 alias vi='vim'
 alias vim-configs="vi $VIM_CONFIGS"
 alias zsh-configs="vi $ZSH_CONFIGS"
-alias l='ls -avptr --color=auto'
-alias ll='ls -vlp --color=auto'
+alias l='ls -vptr --color=auto'
+alias ll='ls -avptr --color=auto'
 alias tmux-cfg="vi $TMUX_CFG"
 alias vim-key-cfg="vi $VIM_KEY_CFG"
 alias vim-plug-cfg="vi $VIM_PLUG_CFG"
@@ -51,6 +51,8 @@ alias ag='ag -S --hidden'
 alias agf='ag -S -g'
 alias configs="vi $ZSH_CONFIGS $VIM_CONFIGS $TMUX_CFG $ALA_CFG" #all configs open
 alias treee="tree -alFC -L 2 --dirsfirst"
+
+#base16
 alias materia="base16_materia"
 alias monokai="base16_monokai"
 

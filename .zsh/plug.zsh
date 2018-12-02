@@ -9,18 +9,19 @@ zplug "plugins/git",   from:oh-my-zsh                                           
 zplug "peterhurford/git-aliases.zsh"                                                    #git用alias
 zplug "mrowa44/emojify", as:command                                                     #コマンドライン上の文字リテラルの絵文字を emoji 化するフィルタコマンド。
 zplug "hlissner/zsh-autopair", defer:2                                                  #カッコを自動で閉じる
+zplug "mollifier/cd-gitroot"                                                            #gitのルートへ飛ぶ
 
 #prompt
 zplug "denysdovhan/spaceship-prompt"
 if zplug check "denysdovhan/spaceship-prompt";then
 
   #シンボル
-  export SPACESHIP_CHAR_SYMBOL="🚀 "                                                    #ロケットを表示
+  export SPACESHIP_CHAR_SYMBOL="→ "                                                   #ロケットを表示
 
   #ユーザー名
   export SPACESHIP_USER_SHOW=always                                                     #ユーザー名を常に表示する
   export SPACESHIP_USER_PREFIX="with "                                                  #ユーザー名の前の文字
-  export SPACESHIP_USER_SUFFIX=" 😻 "                                                   #ユーザー名の後の文字
+  export SPACESHIP_USER_SUFFIX=" 🚀 "                                                   #ユーザー名の後の文字
 
   #time
   export SPACESHIP_TIME_SHOW=true                                                       #時間を表示

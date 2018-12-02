@@ -41,5 +41,3 @@ select-word-style default
 #cdしたときにlsする
 [ -z "$ENHANCD_ROOT" ] && function chpwd { tree -L 1 } # enhancdがない場合
 [ -z "$ENHANCD_ROOT" ] || export ENHANCD_HOOK_AFTER_CD="ls -p -v -w 150 -A --color=always"  #enhancdがあるときはそのHook機構を使う ]]
-
-

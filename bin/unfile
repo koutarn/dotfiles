@@ -7,7 +7,7 @@ if [ -z "$1" ];then
   exit 1
 fi
 
-if [ -f "$$1" ];then
+if [ -f "$1" ];then
   echo "invalid file" 1>&2
   exit 1
 fi

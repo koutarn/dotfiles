@@ -1,4 +1,3 @@
-"====================================================================
 "Vim Plug auto load
 "====================================================================
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -7,6 +6,37 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+"====================================================================
+"honza/vim-snippets
+"====================================================================
+let g:minisnip_trigger = '<C-l>' "keymapの変更
+
+"====================================================================
+"terryma/vim-multiple-cursors
+"====================================================================
+let g:multi_cursor_use_default_mapping=0
+
+let g:multi_cursor_start_word_key      = '<C-n>'
+let g:multi_cursor_select_all_word_key = '<A-n>'
+let g:multi_cursor_start_key           = 'g<C-n>'
+let g:multi_cursor_select_all_key      = 'g<A-n>'
+let g:multi_cursor_next_key            = '<C-n>'
+let g:multi_cursor_prev_key            = '<C-p>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
+
+"====================================================================
+"kannokanno/previm
+"====================================================================
+autocmd BufRead,BufNewFile *.mkd  set filetype=markdown
+autocmd BufRead,BufNewFile *.md  set filetype=markdown
+
+"Ctrl-pでプレビュー
+nnoremap <silent> <C-p> :PrevimOpen<CR>
+
+"自動で折りたたまないようにする
+let g:vim_markdown_folding_disabled=1
+let g:previm_enable_realtime = 1
 "====================================================================
 "scrooloose/nerdtree
 "====================================================================
@@ -40,6 +70,10 @@ let NERDTreeWinSize=35
 
 " 不可視ファイルを表示する
 let NERDTreeShowHidden=1
+
+"bookmarkの表示
+let NERDTreeShowBookmarks=1
+
 "====================================================================
 "ryanoasis/vim-devicons
 "====================================================================

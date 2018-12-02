@@ -28,13 +28,15 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'tomtom/tcomment_vim'                                          "選択行のコメント化を簡単にする
   Plug 'szw/vim-tags'                                                 "Ctagsの拡張プラグイン
   Plug 'thinca/vim-quickrun'                                          "その場で実行してくれる
-  Plug 'suan/vim-instant-markdown'                                    "markdown作成補助
   Plug 'haya14busa/vim-edgemotion'                                    "端に移動出来るようにする
   Plug 'AndrewRadev/switch.vim'                                       "文字列のtoggleを行う(faleseとtrueを変換出来たりする)
   Plug 'majutsushi/tagbar'                                            "tagbar表示
   Plug 'sheerun/vim-polyglot'                                         "vimの言語サポートを行う
   Plug 'alvan/vim-closetag'                                           "閉じタグの自動化
   Plug 'junegunn/vim-easy-align'                                      "整形用
+  Plug 'KeyboardFire/vim-minisnip'                                    "スニペット
+
+  Plug 'terryma/vim-multiple-cursors'                                 "multiple-cursor機能を提供する
 
   "git関係
   Plug 'airblade/vim-gitgutter'                                       "signの領域にgitのstatusを表示する
@@ -55,7 +57,9 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'mattn/emmet-vim'                                              "Emmet
 
   "mark-down
-  Plug 'plasticboy/vim-markdown'                                      "vimのmarkdownファイル
+  Plug 'kannokanno/previm'
+  Plug 'tyru/open-browser.vim'
+  Plug 'violetyk/iikanji-markdown.vim'
 
   "その他
   Plug 'dag/vim-fish'                                                 "Fish Scriptのシンタックスハイライト
