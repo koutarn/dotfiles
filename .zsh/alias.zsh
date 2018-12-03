@@ -51,10 +51,13 @@ alias ag='ag -S --hidden'
 alias agf='ag -S -g'
 alias configs="vi $ZSH_CONFIGS $VIM_CONFIGS $TMUX_CFG $ALA_CFG" #all configs open
 alias treee="tree -alFC -L 2 --dirsfirst"
+alias todo="vim $HOME/Dropbox/Note/01_INBOX/_Todo.md"
 
 #base16
 alias materia="base16_materia"
 alias monokai="base16_monokai"
+alias gruvbox="base16_gruvbox-dark-hard"
+alias solarized="base16_solarized-dark"
 
 #no correct
 #nyaみたいなのをださない

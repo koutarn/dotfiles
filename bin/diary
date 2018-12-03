@@ -1,0 +1,41 @@
+#!/bin/bash
+
+set -e
+
+#日付ファイルの作成
+datetime=$(date '+%Y-%m-%d')
+file="$HOME/Dropbox/Diary/${datetime}.txt"
+
+#ファイルが存在しないなら
+if [ ! -e $file ];then
+  #作成
+  echo "${datetime}の日記を新規に作成します。"
+  sleep 0.5
+  touch "$file";
+  date >> "$file";
+else
+  while :
+  do
+    echo "${datetime}の日記を作り直しますか？(y/n)"
+    read -n 2 ANSWER
+    case "$ANSWER"  in
+      [yY])
+            rm -f "$file";
+            touch "$file";
+            date >> "$file";
+            echo "削除して作り直します。"
+            sleep 0.5
+            break ;;
+      [nN]) echo "そのまま開きます" ;
+            sleep 0.5
+            break ;;
+      *)  : ;;
+    esac
+  done
+fi
+
+#vimで開く
+vim "$file"
+
+#正常終了
+exit 0
