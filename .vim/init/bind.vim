@@ -1,8 +1,8 @@
-"素の状態のkeybindを記載
-"plugin毎のkeybindは、.vim/advance/setting-plugins.vimに書いてる
 "===========================================================
 "settings
 "===========================================================
+
+"unbind
 nnoremap ZZ <Nop>
 nnoremap ZQ <Nop>
 nnoremap q <Nop>
@@ -10,7 +10,6 @@ nnoremap qq <Nop>
 nnoremap s <Nop>
 nnoremap S <Nop>
 nnoremap <C-z> <Nop>
-let mapleader = "\<Space>"				"Leaderをspaceに変更
 
 "xで削除してもヤンクされないようにする
 nnoremap x "_x
@@ -18,10 +17,14 @@ vnoremap x "_x
 nnoremap X "_X
 vnoremap X "_X
 
-"コマンドライン履歴を見る
+"コマンドライン操作
 cnoremap <C-n> <Down>
 cnoremap <C-p> <Up>
 cnoremap <C-e> <End>
+cnoremap <C-a> <Home>
+
+"Leaderをspaceに変更
+let mapleader = "\<Space>"
 "===========================================================
 "移動
 "===========================================================
@@ -36,6 +39,9 @@ vnoremap gj  j
 nnoremap sh ^
 nnoremap sl $
 vnoremap v $h
+
+nnoremap <S-j> 10j
+nnoremap <S-k> 10k
 "===========================================================
 "入力
 "===========================================================
@@ -142,32 +148,12 @@ nmap * *zz
 nmap # #zz
 
 "インデント整形
-"nnoremap <Tab> v>
-"nnoremap <S-Tab> v<
-"vnoremap <Tab> >gv
-"vnoremap <S-Tab> <gv
 vnoremap > >gv
 vnoremap < <gv
 nnoremap == gg=G
 
 "日付入力
 inoremap <Leader>date <C-R>=strftime('%Y.%m.%d')<CR>
-
-"safety lock japanese IME
-nnoremap あ a
-nnoremap い i
-nnoremap う u
-nnoremap え e
-nnoremap お o
-nnoremap っd dd
-nnoremap っy yy
-nnoremap し” ci"
-nnoremap し’ ci'
-nnoremap せ ce
-nnoremap で de
-inoremap <silent> っｊ <ESC>
-nnoremap っz zz
-nnoremap ・ /
 
 "spaceを二度押しで単語を光らせる
 nnoremap <silent> <Space><Space> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>"
