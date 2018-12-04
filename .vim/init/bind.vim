@@ -93,7 +93,6 @@ nmap y8 yi(
 nmap y2 yi"
 nmap y7 yi'
 nmap y, y<
-nmap da[ da[
 nmap y[ yi[
 nmap y[[ yi{
 
@@ -101,7 +100,6 @@ nmap ya8 ya(
 nmap ya2 ya"
 nmap ya7 ya'
 nmap ya, ya<
-nmap da[ da[
 nmap ya[ ya[
 nmap ya[[ ya{
 
@@ -118,6 +116,7 @@ nnoremap <Leader>n :tabnew<CR>
 nnoremap <Leader>s :<C-u>sp<CR>
 nnoremap <Leader>v :<C-u>vs<CR>
 nnoremap <Leader>x :q<CR>
+nnoremap <Leader>d :tabc<CR>
 nnoremap <leader>w  :<c-u>wa<cr>
 nnoremap <leader>q  :<c-u>qa<cr>
 

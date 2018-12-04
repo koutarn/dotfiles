@@ -1,0 +1,13 @@
+while :
+do
+  echo "Yes or No?(y/n)"
+  read -n 2 ANSWER
+  case "$ANSWER"  in
+    [yY]) echo "Yes";
+      break ;;
+    [nN]) echo "No";
+      break ;;
+      *)  : ;;
+  esac
+done
+
