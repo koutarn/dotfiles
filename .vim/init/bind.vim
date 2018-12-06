@@ -18,10 +18,11 @@ nnoremap X "_X
 vnoremap X "_X
 
 "コマンドライン操作
-cnoremap <C-n> <Down>
-cnoremap <C-p> <Up>
-cnoremap <C-e> <End>
-cnoremap <C-a> <Home>
+cnoremap <C-h> <LEFT>
+cnoremap <C-k> <UP>
+cnoremap <C-j> <DOWN>
+cnoremap <C-l> <RIGHT>
+cnoremap <C-p> <C-r>0
 
 "Leaderをspaceに変更
 let mapleader = "\<Space>"
