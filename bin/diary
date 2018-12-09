@@ -2,8 +2,16 @@
 
 set -e
 
-#日付ファイルの作成
-datetime=$(date '+%Y-%m-%d')
+
+#もし午前なら前日の日付で作成
+if [ "$(date '+%p')" = "午前" ];then
+  datetime=$(date -d '1days ago'  '+%Y-%m-%d')
+else
+  #日付ファイルの作成
+  datetime=$(date '+%Y-%m-%d')
+fi
+
+
 file="$HOME/Dropbox/Diary/${datetime}.txt"
 
 #ファイルが存在しないなら
@@ -12,7 +20,7 @@ if [ ! -e $file ];then
   echo "${datetime}の日記を新規に作成します。"
   sleep 0.5
   touch "$file";
-  date >> "$file";
+  echo $datetime >> "$file";
 else
   while :
   do
@@ -22,7 +30,7 @@ else
       [yY])
             rm -f "$file";
             touch "$file";
-            date >> "$file";
+            echo $datetime >> "$file";
             echo "削除して作り直します。"
             sleep 0.5
             break ;;
