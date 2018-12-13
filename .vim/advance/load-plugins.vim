@@ -16,6 +16,9 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'ko2ic/nerdtree-plugin-ag'                                     "nerdtreeでagを使えるようにする
   Plug 'ryanoasis/vim-devicons'                                       "nerdtreeにアイコンを表示する
   Plug 'itchyny/lightline.vim'                                        "powerlineみたいな奴
+  Plug 'simeji/winresizer'                                            "画面をリサイズしやすくす
+  Plug 'Lokaltog/vim-easymotion'                                      "爆速で移動する
+  Plug 'osyo-manga/vim-over'                                          "置換をリアルタイム表示にする
 
   "検索
   Plug 'rking/ag.vim'                                                 "agを使えるようにする

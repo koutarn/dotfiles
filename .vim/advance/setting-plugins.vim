@@ -1,3 +1,4 @@
+"====================================================================
 "Vim Plug auto load
 "====================================================================
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -5,7 +6,34 @@ if empty(glob('~/.vim/autoload/plug.vim'))
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+"====================================================================
+"Lokaltog/vim-easymotion
+"====================================================================
+let g:EasyMotion_do_mapping = 0 " Disale default mappings
 
+map f <Plug>(easymotion-bd-w)
+map sj <Plug>(easymotion-j)
+map sk <Plug>(easymotion-k)
+
+"ホームポジションに近いキーを使う
+let g:EasyMotion_keys='hjklasdfgyuiopwertnmzxcv'
+
+"1 ストローク選択を優先する
+let g:EasyMotion_grouping=1
+
+"Jump to first match with enter & space
+let g:EasyMotion_enter_jump_first = 1
+let g:EasyMotion_space_jump_first = 1
+
+"let g:EasyMotion_use_migemo = 1
+
+"smartcase
+let g:EasyMotion_smartcase = 1
+
+"====================================================================
+"'osyo-manga/vim-over'
+"====================================================================
+"nnoremap <silent>sg :OverCommandLine<CR>%s//<Left>
 "====================================================================
 "honza/vim-snippets
 "====================================================================
@@ -23,7 +51,7 @@ let g:multi_cursor_select_all_key      = 'g<A-n>'
 let g:multi_cursor_next_key            = '<C-n>'
 let g:multi_cursor_prev_key            = '<C-p>'
 let g:multi_cursor_skip_key            = '<C-x>'
-let g:multi_cursor_quit_key            = '<Esc>'
+let g:multi_cursor_uit_key            = '<Esc>'
 "====================================================================
 "kannokanno/previm
 "====================================================================
@@ -81,12 +109,6 @@ let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 
-"===================================================================
-"edgemotion.vim
-"====================================================================
-map sj <Plug>(edgemotion-j)
-map sk <Plug>(edgemotion-k)
-
 "====================================================================
 "Yggdroot/indentLine
 "====================================================================
@@ -142,8 +164,6 @@ let g:tagbar_autoshowtag = 1
 "vim-fzf
 "====================================================================
 nmap ; :Buffers<CR>
-nmap t :Tags<CR>
-nmap q :Files<CR>
 nnoremap \h :History<CR>
 nnoremap \c :Commands<CR>
 nnoremap \m :Maps<CR>
@@ -247,4 +267,3 @@ endfunction
 function! LightLineFileformat()
   return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) :  ''
 endfunction
-
