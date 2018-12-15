@@ -30,15 +30,14 @@ alias -g G='| grep'
 alias c="cd"
 alias ..="cd .."
 alias reload-zsh="source $ZSHRC"
-alias la='ls -a'
 alias fish-config="vi $FISH_CFG"
-alias la='ls -vlpA --color=auto'
 alias so='source'
 alias vi='vim'
 alias vim-configs="vi $VIM_CONFIGS"
 alias zsh-configs="vi $ZSH_CONFIGS"
-alias l='ls -vptr --color=auto'
-alias ll='ls -avptr --color=auto'
+alias l='ls -vptr'
+alias ll='ls -avptr'
+alias la='ls -vlpA'
 alias tmux-cfg="vi $TMUX_CFG"
 alias vim-key-cfg="vi $VIM_KEY_CFG"
 alias vim-plug-cfg="vi $VIM_PLUG_CFG"
