@@ -51,6 +51,7 @@ alias agf='ag -S -g'
 alias configs="vi $ZSH_CONFIGS $VIM_CONFIGS $TMUX_CFG $ALA_CFG" #all configs open
 alias treee="tree -alFC -L 2 --dirsfirst"
 alias todo="vim $HOME/Dropbox/Note/01_INBOX/_Todo.md"
+alias pdf="evince"
 
 #base16
 alias materia="base16_materia"
