@@ -35,8 +35,8 @@ alias so='source'
 alias vi='vim'
 alias vim-configs="vi $VIM_CONFIGS"
 alias zsh-configs="vi $ZSH_CONFIGS"
-alias l='ls -vptr'
-alias ll='ls -avptr'
+alias l="ls -p -v -w 150 -A --color=always"
+alias ll="ls -p -v -w 150 -A --color=always"
 alias la='ls -vlpA'
 alias tmux-cfg="vi $TMUX_CFG"
 alias vim-key-cfg="vi $VIM_KEY_CFG"
@@ -50,7 +50,7 @@ alias ag='ag -S --hidden'
 alias agf='ag -S -g'
 alias configs="vi $ZSH_CONFIGS $VIM_CONFIGS $TMUX_CFG $ALA_CFG" #all configs open
 alias treee="tree -alFC -L 2 --dirsfirst"
-alias todo="vim $HOME/Dropbox/Note/01_INBOX/_Todo.md"
+alias todo="vim $HOME/Dropbox/01_INBOX/_Todo.md"
 alias pdf="evince"
 
 #base16
