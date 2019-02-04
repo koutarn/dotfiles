@@ -1,63 +1,74 @@
 "================================
 "vim plug settings
 "===============================
+"if has('git')
 if filereadable(expand("~/.vim/autoload/plug.vim"))
   call plug#begin()
 
-  Plug 'chriskempson/base16-vim'                                    "base16
-
-  Plug 'bronson/vim-trailing-whitespace'                            "ç„¡é§„ãªç©ºç™½ã‚’å¯è¦–åŒ–ã™ã‚‹
-  Plug 'gko/vim-coloresque'                                         "è‰²ã‚’è¦–è¦šåŒ–ã«ã™ã‚‹
-  Plug 'scrooloose/nerdtree'                                        "ãƒ•ã‚¡ã‚¤ãƒ«ãƒ„ãƒªãƒ¼
-  Plug 'jistr/vim-nerdtree-tabs'                                    "Nerdtreeã‚’tabã§æ‰±ã„ã‚„ã™ã„ã‚ˆã†ã«ã™ã‚‹
-  Plug 'Xuyuanp/nerdtree-git-plugin'                                "nerdtreeã§å¤‰æ›´ãŒã‚ã£ãŸã‚‰è¡¨ç¤ºã™ã‚‹
-  Plug 'ko2ic/nerdtree-plugin-ag'                                   "nerdtreeã§agã‚’ä½¿ãˆã‚‹ã‚ˆã†ã«ã™ã‚‹
-  Plug 'ryanoasis/vim-devicons'                                     "nerdtreeã«ã‚¢ã‚¤ã‚³ãƒ³ã‚’è¡¨ç¤ºã™ã‚‹
-  Plug 'itchyny/lightline.vim'                                      "powerlineã¿ãŸã„ãªå¥´
-  Plug 'simeji/winresizer'                                          "ç”»é¢ã‚’ãƒªã‚µã‚¤ã‚ºã—ã‚„ã™ãã™
-  Plug 'Lokaltog/vim-easymotion'                                    "çˆ†é€Ÿã§ç§»å‹•ã™ã‚‹
-  Plug 'osyo-manga/vim-over'                                        "ç½®æ›ã‚’ãƒªã‚¢ãƒ«ã‚¿ã‚¤ãƒ è¡¨ç¤ºã«ã™ã‚‹
-  Plug 'godlygeek/tabular'                                          "æ•´å½¢ã™ã‚‹
-  Plug 'rking/ag.vim'                                               "agã‚’ä½¿ãˆã‚‹ã‚ˆã†ã«ã™ã‚‹
-  Plug 'nazo/pt.vim'                                                "ptã‚’ä½¿ãˆã‚‹ã‚ˆã†ã«ã™ã‚‹
-  Plug 'Yggdroot/indentLine'                                        "ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆã®å¯è¦–åŒ–
-  Plug 'Townk/vim-autoclose'                                        "è‡ªå‹•ã§ã‚«ãƒƒã‚³ã‚’é–‰ã˜ã¦ãã‚Œã‚‹
-  Plug 'szw/vim-tags'                                               "Ctagsã®æ‹¡å¼µãƒ—ãƒ©ã‚°ã‚¤ãƒ³
-  Plug 'thinca/vim-quickrun'                                        "ãã®å ´ã§å®Ÿè¡Œã—ã¦ãã‚Œã‚‹
-  Plug 'AndrewRadev/switch.vim'                                     "æ–‡å­—åˆ—ã®toggleã‚’è¡Œã†(faleseã¨trueã‚’å¤‰æ›å‡ºæ¥ãŸã‚Šã™ã‚‹)
-  Plug 'majutsushi/tagbar'                                          "tagbarè¡¨ç¤º
-  Plug 'sheerun/vim-polyglot'                                       "vimã®è¨€èªã‚µãƒãƒ¼ãƒˆã‚’è¡Œã†
-  Plug 'alvan/vim-closetag'                                         "é–‰ã˜ã‚¿ã‚°ã®è‡ªå‹•åŒ–
-  Plug 'terryma/vim-multiple-cursors'                               "multiple-cursoræ©Ÿèƒ½ã‚’æä¾›ã™ã‚‹
-  Plug 'airblade/vim-gitgutter'                                     "signã®é ˜åŸŸã«gitã®statusã‚’è¡¨ç¤ºã™ã‚‹
-  Plug 'tpope/vim-endwise'                                          "è‡ªå‹•ã§endã‚’è£œå®Œã—ã¦ãã‚Œã‚‹
-  Plug 'todesking/ruby_hl_lvar.vim' , {'for':'Ruby'}                "Rubyã®ãƒ­ãƒ¼ã‚«ãƒ«å¤‰æ•°ã‚’ãƒã‚¤ãƒ©ã‚¤ãƒˆ
-  Plug 'vim-scripts/ruby-matchit', {'for':'Ruby'}                   "Rubyã®endã‚‚%ã§ç§»å‹•å‡ºæ¥ã‚‹ã‚ˆã†ã«ã™ã‚‹
-  Plug 'thinca/vim-ref' , {'for':'Ruby'}                            "Rubyã®ãƒªãƒ•ã‚¡ãƒ¬ãƒ³ã‚¹ãƒãƒ‹ãƒ¥ã‚¢ãƒ«ã‚’vimã§èª­ã‚ã‚‹ã‚ˆã†ã«ã™ã‚‹(ref gemã‚’å…¥ã‚Œã‚‹å¿…è¦ã‚ã‚Š)
-  Plug 'osyo-manga/vim-monster',{'for':'Ruby'}                      "Rubyã®ã‚³ãƒ¼ãƒ‰è£œå®Œæ©Ÿèƒ½ã‚’æä¾›
-  Plug 'othree/html5.vim', {'for':'html'}                           "HTML Syntax
-  Plug 'hail2u/vim-css3-syntax', {'for':'css'}                      "CSS Syntax
-  Plug 'mattn/emmet-vim'                                            "Emmet
-  Plug 'kannokanno/previm'
-  Plug 'tyru/open-browser.vim'
-  Plug 'violetyk/iikanji-markdown.vim'
-  Plug 'dag/vim-fish'                                               "Fish Scriptã®ã‚·ãƒ³ã‚¿ãƒƒã‚¯ã‚¹ãƒã‚¤ãƒ©ã‚¤ãƒˆ
-  Plug 'junegunn/fzf.vim'                                           "fzf
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } "fzf
-  Plug 'vim-jp/vimdoc-ja'                                           "vimhelp jpfile
-  Plug 'qpkorr/vim-bufkill'                                         "buffå‰Šé™¤ç”¨
-  Plug 'reireias/vim-cheatsheet'                                    "è‡ªä½œãƒãƒ¼ãƒˆã‚·ãƒ¼ãƒˆã®è¡¨ç¤ºã‚’è¡Œã†
-  Plug 'b4b4r07/vim-shellutils'                                     "Commandã‚’ä½¿ã„ã‚„ã™ãã™ã‚‹
-  Plug 'tomtom/tcomment_vim'                                        "ã‚³ãƒ¡ãƒ³ãƒˆãƒˆã‚°ãƒ«
-
-  "neovim
-  if has('nvim')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  else
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
+  "linuxŠÂ‹«‚Ì‚İ
+  if has('unix')
+    Plug 'chriskempson/base16-vim'                                      "base16
+    Plug 'junegunn/fzf.vim'                                             "fzf
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }   "fzf
+    Plug 'mattn/emmet-vim'                                              "Emmet
+    Plug 'Xuyuanp/nerdtree-git-plugin' , {'for':'Git'}                  "nerdtree‚Å•ÏX‚ª‚ ‚Á‚½‚ç•\¦‚·‚é
+    Plug 'airblade/vim-gitgutter'   , {'for':'Git'}                     "sign‚Ì—Ìˆæ‚Égit‚Ìstatus‚ğ•\¦‚·‚é
+    Plug 'b4b4r07/vim-shellutils'                                       "Command‚ğg‚¢‚â‚·‚­‚·‚é
   endif
-  let g:deoplete#enable_at_startup = 1
+
+  "WindowsŠÂ‹«‚Ì‚İ
+  if has('win32') || has('win64')
+    Plug 'haishanh/night-owl.vim'                                       "colorscheme
+  	Plug 'jdkanani/vim-material-theme'                                  "colorscheme
+    Plug 'vim-scripts/wimproved.vim'                                    "windows—pA‰æ–Ê‚ÌØ‚è‘Ö‚¦
+    Plug 'thinca/vim-fontzoom'                                          "windows—pAƒtƒHƒ“ƒgƒTƒCƒYØ‚è‘Ö‚¦
+    Plug 'vim-scripts/AutoComplPop'
+  endif
+
+  "•\¦•â•
+  Plug 'bronson/vim-trailing-whitespace'                              "–³‘Ê‚È‹ó”’‚ğ‰Â‹‰»‚·‚é
+  Plug 'gko/vim-coloresque'                                           "F‚ğ‹Šo‰»‚É‚·‚é
+  Plug 'scrooloose/nerdtree'                                          "ƒtƒ@ƒCƒ‹ƒcƒŠ[
+  Plug 'jistr/vim-nerdtree-tabs'                                      "Nerdtree‚ğtab‚Åˆµ‚¢‚â‚·‚¢‚æ‚¤‚É‚·‚é
+  Plug 'ryanoasis/vim-devicons'                                       "nerdtree‚ÉƒAƒCƒRƒ“‚ğ•\¦‚·‚é
+  Plug 'itchyny/lightline.vim'                                        "powerline‚İ‚½‚¢‚È“z
+  Plug 'simeji/winresizer'                                            "‰æ–Ê‚ğƒŠƒTƒCƒY‚µ‚â‚·‚­‚·
+  Plug 'Lokaltog/vim-easymotion'                                      "”š‘¬‚ÅˆÚ“®‚·‚é
+  Plug 'osyo-manga/vim-over'                                          "’uŠ·‚ğƒŠƒAƒ‹ƒ^ƒCƒ€•\¦‚É‚·‚é
+  Plug 'tomtom/tcomment_vim'                                          "ƒRƒƒ“ƒgƒgƒOƒ‹
+  Plug 'godlygeek/tabular'                                            "®Œ`‚·‚é
+
+  "ƒR[ƒfƒBƒ“ƒO•â•
+  Plug 'tpope/vim-surround'                                           "ƒVƒ“ƒOƒ‹ƒNƒI[ƒg‚Æƒ_ƒuƒ‹ƒNƒI[ƒg‚ğ“ü‚ê‘Ö‚¦‚é
+  Plug 'Townk/vim-autoclose'                                          "©“®‚ÅƒJƒbƒR‚ğ•Â‚¶‚Ä‚­‚ê‚é
+  Plug 'szw/vim-tags'                                                 "Ctags‚ÌŠg’£ƒvƒ‰ƒOƒCƒ“
+  Plug 'majutsushi/tagbar'                                            "tagbar•\¦
+  Plug 'sheerun/vim-polyglot'                                         "vim‚ÌŒ¾ŒêƒTƒ|[ƒg‚ğs‚¤
+  Plug 'alvan/vim-closetag'                                           "•Â‚¶ƒ^ƒO‚Ì©“®‰»
+  Plug 'vim-jp/vimdoc-ja'                                             "vimhelp jpfile
+  Plug 'qpkorr/vim-bufkill'                                           "buffíœ—p
+  Plug 'reireias/vim-cheatsheet'                                      "©ìƒ`[ƒgƒV[ƒg‚Ì•\¦‚ğs‚¤
+  Plug 'KeyboardFire/vim-minisnip'                                    "snipet
+  Plug 'drmingdrmer/vim-toggle-quickfix'                              "QuickFix
+  Plug 'nazo/pt.vim'                                                  "pt
+  Plug 'LeafCage/yankround.vim'                                       "yank‚µ‚â‚·‚­‚·‚é
+  Plug 'AndrewRadev/switch.vim'                                       "Ø‚è‘Ö‚¦
+  "Disable
+  "Plug 'nathanaelkane/vim-indent-guides'                             "ƒCƒ“ƒfƒ“ƒg‚ÉF‚ğ•t‚¯‚é
+  "Plug 'terryma/vim-multiple-cursors'                                 "multiple-cursor‹@”\‚ğ’ñ‹Ÿ‚·‚é
+
+  Plug 'kannokanno/previm'             , {'for':'markdown'}
+  Plug 'tyru/open-browser.vim'         , {'for':'markdown'}
+  Plug 'violetyk/iikanji-markdown.vim' , {'for':'markdown'}
+  Plug 'dag/vim-fish'                  , {'for':'fish'}               "Fish Script‚ÌƒVƒ“ƒ^ƒbƒNƒXƒnƒCƒ‰ƒCƒg
+  Plug 'todesking/ruby_hl_lvar.vim'    , {'for':'Ruby'}               "Ruby‚Ìƒ[ƒJƒ‹•Ï”‚ğƒnƒCƒ‰ƒCƒg
+  Plug 'vim-scripts/ruby-matchit'      , {'for':'Ruby'}               "Ruby‚Ìend‚à%‚ÅˆÚ“®o—ˆ‚é‚æ‚¤‚É‚·‚é
+  Plug 'thinca/vim-ref'                , {'for':'Ruby'}               "Ruby‚ÌƒŠƒtƒ@ƒŒƒ“ƒXƒ}ƒjƒ…ƒAƒ‹‚ğvim‚Å“Ç‚ß‚é‚æ‚¤‚É‚·‚é(ref gem‚ğ“ü‚ê‚é•K—v‚ ‚è)
+  Plug 'osyo-manga/vim-monster'        , {'for':'Ruby'}               "Ruby‚ÌƒR[ƒh•âŠ®‹@”\‚ğ’ñ‹Ÿ
+  Plug 'tpope/vim-endwise'             , {'for':'Ruby'}               "©“®‚Åend‚ğ•âŠ®‚µ‚Ä‚­‚ê‚é
+  Plug 'othree/html5.vim'              , {'for':'html'}               "HTML Syntax
+  Plug 'hail2u/vim-css3-syntax'        , {'for':'css'}                "CSS Syntax
 
   call plug#end()
 end
+"endif

@@ -6,7 +6,7 @@ set notitle                                                         "vimを使�
 set title                                                           "編集中のファイル名の表示
 set showcmd                                                         "入力中のコマンドをステータスに表示する
 set number                                                          "行番号を表示
-"set cursorline                                                     "現在の行を強調表示
+set cursorline                                                     "現在の行を強調表示
 set showmatch                                                       "括弧入力時に対応する括弧を表示
 set display=lastline                                                "テキスト表示の方法を変える(長いテキストを省略せず最後まで表示する)
 set laststatus=2                                                    "ステータスラインを常に表示
@@ -17,13 +17,14 @@ set list                                                            "タブ、�
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%      "タブ、空白、改行を可視化の文字を設定
 set ambiwidth=double                                                "全角文字をvimで正しく認識させる設定
 syntax enable                                                       "構文ハイライトを有効にする
+
 "補完の表示色を変更する
 highlight Pmenu ctermfg=white ctermbg=black
 highlight PmenuSel ctermfg=white ctermbg=gray
 set t_Co=256
+
 "Cicaフォント設定
 set encoding=utf8
-set ambiwidth=double
 "================================
 "検索設定
 "================================
@@ -37,14 +38,14 @@ set matchtime=1                                                     "カーソ�
 "================================
 set breakindent                                                     "折り返すときにインデントも考慮する
 set showbreak=>\                                                    "折返したときに表示する
-set expandtab                                                       "タブ文字をスペースにする
+set noexpandtab                                                     "タブ文字をスペースにする
 set tabstop=4                                                       "タブ幅を4文字にする
 set smarttab                                                        "コンテキストに応じたタブの処理を行う
 set wildmenu                                                        "コマンドモードの補完
 set wildmode=list:longest,full                                      "コマンドラインの補完方法を設定する
 set matchpairs& matchpairs+=<:>                                     "対応括弧に<と>のペアを追加
 set shiftround                                                      "インデントをshiftwidthの倍数に丸める
-set shiftwidth=4                                                    "自動で挿入されるタブ幅　
+set shiftwidth=4                                                    "自動で挿入されるタブ幅
 set softtabstop=0                                                   "タブ幅をtabstopの値に任せる
 set ai                                                              "自動字下げ
 set si                                                              "改行入力行の末尾にあわせてインデントを増減する
@@ -84,9 +85,6 @@ set ttymouse=xterm2
 "その他
 "================================
 set helplang=ja,en                                                   "ヘルプファイルを日本語優先にする
-set encoding=utf-8                                                   "カレントバッファのファイルの文字エンコーディング
-scriptencoding utf-8                                                 "カレントバッファのファイルの文字エンコーディング
-set fileencoding=uft-8                                               "カレントバッファのファイルの文字エンコーディング
 set lazyredraw                                                       "マクロやコマンドを実行する間、画面を再描画しない(スクロールが重くなる対策)
 set ttyfast                                                          "高速ターミナル接続を行う(スクロールが重くなる対策)
 set timeout timeoutlen=1000 ttimeoutlen=50                           "キー操作高速化
@@ -102,13 +100,34 @@ set tm=500                                                           "音無効�
 set clipboard+=unnamed"                                              "コピーしたときにどうするか
 set cmdheight=2                                                      "コマンド行の高さ
 "================================
+"Windows用
+"================================
+if has('win32') || has('win64')
+  let g:rehash256 = 1
+  set noundofile "undoファイルを消す
+  let $PATH .= ';C:\Program Files\Git\usr\bin;$VIM\pt.exe;' "pt用
+  let g:tagbar_ctags_bin = "ctags.exe" "ctags
+  set fileencoding=cp932  "文字コード変換
+endif
+"================================
+"linux用
+"================================
+if has('unix')
+  set encoding=utf-8                                                   "カレントバッファのファイルの文字エンコーディング
+  scriptencoding utf-8                                                 "カレントバッファのファイルの文字エンコーディング
+  set fileencoding=uft-8                                               "カレントバッファのファイルの文字エンコーディング
+endif
+
+"================================
 "File Type
 "================================
 augroup vimrc
   filetype on
   filetype plugin on
   filetype indent on
+
   autocmd!
+  autocmd BufNewFile,BufRead *.c setfiletype c syntax=c
   autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
   autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
   autocmd BufNewFile,BufRead *.fish setlocal filetype=fish
@@ -135,11 +154,11 @@ augroup vimrc
 augroup END
 
 "自動コンプリート
-set completeopt=menuone
-for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
-  exec "imap " . k . " " . k . "<C-N><C-P>"
-endfor
+" set completeopt=menuone
+" for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
+"   exec "imap " . k . " " . k . "<C-N><C-P>"
+" endfor
+"imap <C-Space> <C-p>
 imap <expr> <TAB> pumvisible() ? "\<Down>" : "\<Tab>"
 
 "カッコに飛ぶ機能を強化
-runtime macros/matchit.vim
