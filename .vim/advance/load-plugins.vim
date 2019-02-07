@@ -22,10 +22,10 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   	Plug 'jdkanani/vim-material-theme'                                  "colorscheme
     Plug 'vim-scripts/wimproved.vim'                                    "windows用、画面の切り替え
     Plug 'thinca/vim-fontzoom'                                          "windows用、フォントサイズ切り替え
-    Plug 'vim-scripts/AutoComplPop'
   endif
 
   "表示補助
+  Plug 'vim-scripts/AutoComplPop'
   Plug 'bronson/vim-trailing-whitespace'                              "無駄な空白を可視化する
   Plug 'gko/vim-coloresque'                                           "色を視覚化にする
   Plug 'scrooloose/nerdtree'                                          "ファイルツリー

@@ -13,7 +13,7 @@ ZSH_CONFIGS="$ZSHRC $ZSHENV $ZSH_ALIAS $ZSH_PLUG $ZSH_UTIL $ZSH_OPTION $ZSH_KEY"
 
 VIMRC='~/.vimrc'
 VIM_MAIN_CFG='~/.vim/init/main.vim'
-VIM_KEY_CFG='~/.vim/init/bind.vim'
+VIM_KEY_CFG='~/.vim/init/keybind.vim'
 VIM_PLUG_CFG='~/.vim/advance/load-plugins.vim'
 VIM_PLUG_KEY_CFG='~/.vim/advance/setting-plugins.vim'
 VIM_CONFIGS="$VIMRC $VIM_MAIN_CFG $VIM_KEY_CFG $VIM_PLUG_CFG $VIM_PLUG_KEY_CFG"

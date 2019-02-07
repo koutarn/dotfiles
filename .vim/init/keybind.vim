@@ -211,5 +211,4 @@ elseif has('unix')
 endif
 
 nmap <F6> <ESC>i<C-R>=strftime("%Y/%m/%d (%a) %H:%M")<CR><CR>
-"“ú•t“ü—Í
 inoremap <expr> _day strftime('%Y-%m-%d')

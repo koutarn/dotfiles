@@ -65,8 +65,8 @@ nnoremap sx :BD<cr>:bnext<cr>
 "====================================================================
 "yankround.vim
 "====================================================================
-nmap p <Plug>(yankround-p)
-nmap P <Plug>(yankround-P)
+"nmap p <Plug>(yankround-p)
+"nmap P <Plug>(yankround-P)
 nmap gp <Plug>(yankround-gp)
 nmap gP <Plug>(yankround-gP)
 nmap <S-p> <Plug>(yankround-prev)
