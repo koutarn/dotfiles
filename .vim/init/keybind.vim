@@ -209,3 +209,6 @@ if has('win32') || has('win64')
 elseif has('unix')
   	command! Source source ~/.vimrc
 endif
+
+"“ú•t“ü—Í
+inoremap <expr> _day strftime('%Y-%m-%d')
