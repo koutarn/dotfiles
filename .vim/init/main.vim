@@ -107,15 +107,18 @@ if has('win32') || has('win64')
   set noundofile "undoファイルを消す
   let $PATH .= ';C:\Program Files\Git\usr\bin;$VIM\pt.exe;' "pt用
   let g:tagbar_ctags_bin = "ctags.exe" "ctags
-  set fileencoding=cp932  "文字コード変換
 endif
 "================================
-"linux用
+"文字コード
 "================================
 if has('unix')
-  set encoding=utf-8                                                   "カレントバッファのファイルの文字エンコーディング
-  scriptencoding utf-8                                                 "カレントバッファのファイルの文字エンコーディング
-  set fileencoding=uft-8                                               "カレントバッファのファイルの文字エンコーディング
+  "set encoding=utf-8                                                   "vimの内部文字コード
+  "set fileencoding=uft-8                                               "ファイル書き込み時の文字コード
+  set fileencodings=utf-8,cp932                                        "ファイル読み込み時の文字コード
+else
+  "set encoding=cp932                                                   "vimの内部文字コード
+  "set fileencoding=cp932                                               "ファイル書き込み時の文字コード
+  set fileencodings=utf-8,cp932                                         "ファイル読み込み時の文字コード
 endif
 
 "================================
