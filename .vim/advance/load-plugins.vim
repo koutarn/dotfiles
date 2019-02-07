@@ -12,7 +12,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }   "fzf
     Plug 'mattn/emmet-vim'                                              "Emmet
     Plug 'Xuyuanp/nerdtree-git-plugin' , {'for':'Git'}                  "nerdtreeで変更があったら表示する
-    Plug 'airblade/vim-gitgutter'   , {'for':'Git'}                     "signの領域にgitのstatusを表示する
+    Plug 'airblade/veim-gitgutter'   , {'for':'Git'}                     "signの領域にgitのstatusを表示する
     Plug 'b4b4r07/vim-shellutils'                                       "Commandを使いやすくする
   endif
 

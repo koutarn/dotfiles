@@ -209,3 +209,6 @@ if has('win32') || has('win64')
 elseif has('unix')
   	command! Source source ~/.vimrc
 endif
+
+"¿¿¿¿
+nmap <F6> <ESC>i<C-R>=strftime("%Y/%m/%d (%a) %H:%M")<CR><CR>
