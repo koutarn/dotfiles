@@ -1,12 +1,11 @@
 "====================================================================
 "Vim start up
 "====================================================================
-    autocmd VimEnter *
-                \   if !argc()
-                \ |   NERDTree
-                \ |   wincmd w
-                \ | endif
-
+    " autocmd VimEnter *
+    "             \   if !argc()
+    "             \ |   NERDTree
+    "             \ |   wincmd w
+    "             \ | endif
 
 "====================================================================
 "Vim Plug auto load
@@ -37,15 +36,16 @@ au FileType c call CComment()  " 業務用のコメント
 "====================================================================
 "vim-scripts/wimproved.vim
 "====================================================================
-autocmd GUIEnter * silent! WToggleClean
-autocmd GUIEnter * silent! WCenter 80
+if has('win32') || has('win64')
+  autocmd GUIEnter * silent! WToggleClean
+  autocmd GUIEnter * silent! WCenter 80
+endif
 "autocmd GUIEnter * silent! WToggleFullscreen
 
 "====================================================================
 "yankround.vim
 "====================================================================
-let g:yankround_max_history = 50 "履歴取得数
-
+"let g:yankround_max_history = 50 "履歴取得数
 "====================================================================
 "AutoComplPop
 "====================================================================
@@ -152,10 +152,13 @@ let g:DevIconsEnableFoldersOpenClose        = 1
 "====================================================================
 "Yggdroot/indentLine
 "====================================================================
-let g:indentLine_enabled    = 1
-let g:indentLine_faster     = 1
-let g:indentLine_char       = '⎸'
-let g:indentLine_color_term = 244
+"let g:indentLine_color_term = 244       "terminal
+let g:indentLine_setColors = 1
+let g:indentLine_enabled   = 1
+let g:indentLine_color_gui = '#A4E57E'  "GVim
+let g:indentLine_faster    = 0
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_fileType = ['c', 'cpp']
 "====================================================================
 "Xuyuanp/nerdtree-git-plugin
 "====================================================================
@@ -175,7 +178,7 @@ let g:NERDTreeIndicatorMapCustom = {
 "====================================================================
 "nathanaelkane/vim-indent-guides
 "====================================================================
-let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_enable_on_vim_startup = 0
 let g:indent_guides_color_change_percent = 20
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
@@ -220,7 +223,7 @@ endif
 "lightline
 "====================================================================
 let g:lightline = {
-      \ 'colorscheme': 'material',
+      \ 'colorscheme': 'molokai',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'filename' ] ]
@@ -281,3 +284,80 @@ function! LightLineFileformat()
   return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) :  ''
 endfunction
 
+"====================================================================
+"yonchu/accelerated-smooth-scroll
+"====================================================================
+" let g:ac_smooth_scroll_no_default_key_mappings = 1 "デフォルトマッピングを無効にする (必要なら)
+" let g:ac_smooth_scroll_du_sleep_time_msec      = 1  "小さくするとスクロールスピードが上がる
+
+"====================================================================
+"kien/ctrlp.vim
+"====================================================================
+ " デフォルトのマッピングを無効化(default:'<C-p>')
+let g:ctrlp_map = '<Nop>'
+
+" 対象ファイル最大数(default:10000)
+let g:ctrlp_max_files  = 100000
+
+" キャッシュディレクトリ
+let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
+
+" キャッシュを終了時に削除しない
+let g:ctrlp_clear_cache_on_exit = 0
+
+" 遅延再描画
+"let g:ctrlp_lazy_update = 1
+
+" ルートパスと認識させるためのファイル
+"let g:ctrlp_root_markers = ['Gemfile', 'pom.xml', 'build.xml']
+
+" CtrlPのウィンドウ最大高さ
+let g:ctrlp_match_window = 'max:30'
+
+" 無視するディレクトリ
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll|s|o|obj|make)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+
+
+"====================================================================
+"tacahiroy/ctrlp-funky
+"====================================================================
+let g:ctrlp_funky_matchtype = 'path'
+let g:ctrlp_funky_nudists = [ 'c' ]
+
+"====================================================================
+"nazo/pt.vim
+"====================================================================
+let g:pt_highlight=1
+
+"====================================================================
+"luochen1990/rainbow
+"====================================================================
+let g:rainbow_active = 1
+"au ColorScheme * RainbowToggleOn
+let g:rainbow_conf = {
+	\	'guifgs': ['green','lightmagenta','yellow','Royalblue'],
+	\	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'], 
+  \ 'parentheses': ['start=/(/ end=/)/ fold']
+  \}
+
+"====================================================================
+"pelodelfuego/vim-swoop
+"====================================================================
+let g:swoopUseDefaultKeyMap      = 0
+let g:defaultWinSwoopHeight      = 12
+let g:swoopWindowsVerticalLayout = 0
+
+"====================================================================
+"icymind/NeoSolarized
+"====================================================================
+let g:neosolarized_contrast   = "normal"
+let g:neosolarized_visibility = "low"
+
+"====================================================================
+"jceb/vim-orgmode
+"====================================================================
+let g:org_indent = 1
