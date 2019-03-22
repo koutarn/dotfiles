@@ -14,7 +14,10 @@ set ruler                                                           "ルーラ�
 set showtabline=2                                                   "tabバーを常に表示する
 set laststatus=2                                                    "ステータスバーを常に表示する
 set list                                                            "タブ、空白、改行を可視化にする
-set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%      "タブ、空白、改行を可視化の文字を設定
+"autocmd ColorScheme * hi NonText guibg=NONE guifg=#A4E57E
+autocmd ColorScheme * hi SpecialKey guibg=NONE guifg=DarkGray
+set listchars=tab:\|\ ,trail:-,eol:↲,extends:»,precedes:«,nbsp:%    "タブ、空白、改行を可視化の文字を設定
+
 set ambiwidth=double                                                "全角文字をvimで正しく認識させる設定
 syntax enable                                                       "構文ハイライトを有効にする
 
@@ -25,6 +28,7 @@ set t_Co=256
 
 "Cicaフォント設定
 set encoding=utf8
+
 "================================
 "検索設定
 "================================
@@ -164,4 +168,18 @@ augroup END
 "imap <C-Space> <C-p>
 imap <expr> <TAB> pumvisible() ? "\<Down>" : "\<Tab>"
 
-"カッコに飛ぶ機能を強化
+"vモードの置換連続ペースト用
+function! Put_text_without_override_register()
+  let line_len = strlen(getline('.'))
+  execute "normal! `>"
+  let col_loc = col('.')
+  execute 'normal! gv"_x'
+  if line_len == col_loc
+    execute 'normal! p'
+  else 
+    execute 'normal! P'
+  endif
+endfunction
+xnoremap <silent> p :call Put_text_without_override_register()<CR>
+
+
