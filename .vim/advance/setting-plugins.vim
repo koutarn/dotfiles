@@ -467,11 +467,11 @@ let g:bookmark_show_warning = 0
 let g:bookmark_auto_save_file = $HOME.'\.vim\bookmarks'
 
 "key_mappings
-nmap mm <Plug>BookmarkToggle
-nmap mi <Plug>BookmarkAnnotate
-nmap ma <Plug>BookmarkShowAll
-nmap mw <Plug>BookmarkNext
-nmap mb <Plug>BookmarkPrev
+silent! nmap mm <Plug>BookmarkToggle
+silent! nmap mi <Plug>BookmarkAnnotate
+silent! nmap ma <Plug>BookmarkShowAll
+silent! nmap mw <Plug>BookmarkNext
+silent! nmap mb <Plug>BookmarkPrev
 nmap mx <Plug>BookmarkClear
 nmap md <Plug>BookmarkClearAll
 
@@ -487,3 +487,8 @@ let g:eighties_compute = 1 " Disable this if you just want the minimum + extra
 "osyo-manga/vim-operator-search
 "====================================================================
 nmap F <Plug>(operator-search)
+
+"====================================================================
+"vimtaku/vim-operator-mdurl
+"====================================================================
+map L <Plug>(operator-mdurl)

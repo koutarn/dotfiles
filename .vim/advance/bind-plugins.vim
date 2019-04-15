@@ -64,7 +64,7 @@ nmap <F10> :TagbarToggle<CR>
 "vim-bufkill
 "====================================================================
 "バッファを削除
-nnoremap sx :BD<cr>:bnext<cr>
+nnoremap sx :Sayonara!<cr>:bnext<cr>
 
 "====================================================================
 "yankround.vim
@@ -89,7 +89,7 @@ command! Material colorscheme material-theme
 "====================================================================
 "t9md/vim-quickhl
 "====================================================================
-nmap <Space><Space> <Plug>(quickhl-manual-this)
+nmap <Space>m <Plug>(quickhl-manual-this)
 "xmap <Space><Space> <Plug>(quickhl-manual-this)
 nmap <ESC><ESC> :noh<CR><Plug>(quickhl-manual-reset)
 "xmap <ESC><ESC> <Plug>(quickhl-manual-reset)
@@ -111,11 +111,11 @@ nnoremap <Leader>: :CtrlPBuffer<CR>
 "====================================================================
 "nnoremap <Leader>p :CtrlPFunky<CR>
 
-"====================================================================
-"pelodelfuego/vim-swoop
-"====================================================================
-nmap <Leader>@ :call SwoopMulti()<CR>
-vmap <Leader>@ :call SwoopMultiSelection()<CR>
+" "====================================================================
+" "pelodelfuego/vim-swoop
+" "====================================================================
+" nmap <Leader>@ :call SwoopMulti()<CR>
+" vmap <Leader>@ :call SwoopMultiSelection()<CR>
 
 "====================================================================
 "MaxMEllon/vim-shiny
@@ -177,7 +177,14 @@ let g:session_persist_colors = 0
 "====================================================================
 "t9md/vim-choosewin
 "====================================================================
-nmap <Leader>m <Plug>(choosewin)
+nmap <Leader><Space> <Plug>(choosewin)
 let g:choosewin_overlay_enable          = 1
 let g:choosewin_overlay_clear_multibyte = 1
 let g:choosewin_label = 'asdfhjkl'  "homeポジションで移動できるようにする
+let g:choosewin_blink_on_land = 0
+
+
+"====================================================================
+"mattn/ctrlp-launcher
+"====================================================================
+nnoremap <Leader>@ :<c-u>CtrlPLauncher<cr>
