@@ -142,6 +142,7 @@ augroup vimrc
   autocmd BufNewFile,BufRead *.c setfiletype c syntax=c
   autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
   autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
+  autocmd BufNewFile,BufRead *.txt setlocal filetype=markdown
   autocmd BufNewFile,BufRead *.fish setlocal filetype=fish
   autocmd FileType markdown   setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
   autocmd FileType apache     setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
@@ -187,3 +188,4 @@ function! Put_text_without_override_register()
 endfunction
 xnoremap <silent> p :call Put_text_without_override_register()<CR>
 
+let $DESKTOP="C:/Users/kondou_k/Desktop"

@@ -84,6 +84,14 @@ nnoremap <Up> <C-a>
 "vnoremap <C-j> "zx"zp`[V`]
 "vnoremap <C-k> "zx<Up>"zP`[V`]
 
+"insert mode
+"インサートモードでもhjklで移動
+imap <C-j> <Down>
+imap <C-k> <Up>
+imap <C-h> <Left>
+"imap <C-l> <Right>
+imap <C-a> <HOME>
+imap <C-e> <END>
 "===========================================================
 "text object ty skanehira
 "===========================================================
@@ -202,10 +210,13 @@ endif
 "alias
 "===========================================================
 "Todo
-command! Todo edit ~\Desktop\Memo\TODO.org
+command! Todo edit ~\Desktop\Memo\TODO.txt
 
 "cheetsheet
 command! Cheet edit ~/Desktop/Memo/CheetSheet.txt
+
+"空のバッファ作成
+nnoremap <Leader>b :hide enew<CR>
 
 "一時ファイル
 command! -nargs=1 -complete=filetype Tmp edit ~/Desktop/Memo/tmp.<args>
