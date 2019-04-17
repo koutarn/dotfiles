@@ -16,15 +16,14 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
 
   "Windows環境のみ
   if has('win32') || has('win64')
-    " Plug 'haishanh/night-owl.vim'                                       "colorscheme
-    " Plug 'jdkanani/vim-material-theme'                                  "colorscheme
-    " Plug 'morhetz/gruvbox'                                              "colorscheme
-    " Plug 'w0ng/vim-hybrid'                                              "colorscheme
-    " Plug 'iCyMind/NeoSolarized'                                         "colorscheme
-    " Plug 'mg979/vim-studio-dark'                                        "colorscheme
-    " Plug 'dracula/vim'                                                  "colorscheme
-    "Plug 'ayu-theme/ayu-vim'                                            "colorscheme
+    Plug 'haishanh/night-owl.vim'                                       "colorscheme
+    Plug 'jdkanani/vim-material-theme'                                  "colorscheme
+    Plug 'morhetz/gruvbox'                                              "colorscheme
+    Plug 'w0ng/vim-hybrid'                                              "colorscheme
+    Plug 'icymind/NeoSolarized'                                         "colorscheme
+    Plug 'ayu-theme/ayu-vim'                                            "colorscheme
     Plug 'joshdick/onedark.vim'                                         "colorscheme
+
     Plug 'simeji/winresizer'                                            "画面をリサイズしやすくす
     Plug 'vim-scripts/wimproved.vim'                                    "windows用、画面の切り替え
     Plug 'thinca/vim-fontzoom'                                          "windows用、フォントサイズ切り替え
@@ -71,6 +70,11 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'xolox/vim-session'                                            "sessionを保存したり復元したりする
   Plug 't9md/vim-choosewin'                                           "window移動をグラフィカルにできるようにする
   Plug 'mattn/ctrlp-launcher'                                         "CtrlP拡張 ランチャー機能を提供
+  Plug 'scrooloose/nerdcommenter'                                     "コメント機能拡張
+  Plug 'junegunn/goyo.vim'                                            "散文モードを提供
+  Plug 'junegunn/limelight.vim'                                       "特定の箇所を光らせる
+  Plug 'unkiwii/vim-nerdtree-sync'                                    "NERDTree拡張 現在のファイルをsyntax
+  Plug 'greggerz/nerdtree-svn-plugin'                                 "NERDTree拡張 SVN
 
   "operator
   Plug 'kana/vim-operator-user'                                       "operator強化
@@ -88,8 +92,6 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'rhysd/vim-textobj-anyblock'                                   "text-object 対応ブロックを増やす b
   Plug 'thinca/vim-textobj-between'                                   "text-object 特定の文字に囲まれた範囲 f
   Plug 'deton/textobj-nonblankchars.vim'                              "text-object wordを日本語に対応させる
-
-  "Plug 'pelodelfuego/vim-swoop'                                      "helmの機能を提供する。
 
   call plug#end()
 end

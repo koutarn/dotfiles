@@ -21,8 +21,8 @@ endif
 "====================================================================
 if has('win32') || has('win64')
   autocmd GUIEnter * silent! WToggleClean
-  " autocmd GUIEnter * silent! WCenter 80
-  autocmd GUIEnter * silent! WToggleFullscreen
+  autocmd GUIEnter * silent! WCenter 60
+  "autocmd GUIEnter * silent! WToggleFullscreen
 endif
 
 "====================================================================
@@ -492,3 +492,15 @@ nmap F <Plug>(operator-search)
 "vimtaku/vim-operator-mdurl
 "====================================================================
 map L <Plug>(operator-mdurl)
+
+"====================================================================
+"junegunn/limelight.vim
+"====================================================================
+" require
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_guifg = 'DarkGray'
+
+" お好みで
+let g:limelight_default_coefficient = 0.7
+"let g:limelight_paragraph_span = 1
+let g:limelight_priority = -1
