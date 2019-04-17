@@ -1,0 +1,67 @@
+#Windowsindows CallBack
+<Program>               * Command Prompt						!start cmd
+<Program>               * Task Manager     						!start taskmgr
+
+#Size Change
+<Window>                * Input			call feedkeys(":WCenter ")
+<Window>                * 40%			call feedkeys(":WCenter 40\<CR>")
+<Window>                * 50%			call feedkeys(":WCenter 50\<CR>")
+<Window>                * 60%			call feedkeys(":WCenter 60\<CR>")
+<Window>                * 70%			call feedkeys(":WCenter 70\<CR>")
+<Window>                * 80%			call feedkeys(":WCenter 80\<CR>")
+<Window>                * 90%			call feedkeys(":WCenter 90\<CR>")
+<Window>                * Full Screan	call feedkeys(":WToggleFullscreen\<CR>")
+
+#Alpha
+<Alpha>                 * Input			call feedkeys(":WSetAlpha ")
+<Alpha>                 * 255%			call feedkeys(":WSetAlpha 255\<CR>")
+<Alpha>                 * 245%			call feedkeys(":WSetAlpha 245\<CR>")
+<Alpha>                 * 235%			call feedkeys(":WSetAlpha 235\<CR>")
+<Alpha>                 * 225%			call feedkeys(":WSetAlpha 225\<CR>")
+
+#font
+<Font>                  * Input			call feedkeys(":Fontzoom ")
+<Font>                  * Size 9	    call feedkeys(":Fontzoom 9\<CR>")
+<Font>                  * Size 10	    call feedkeys(":Fontzoom 10\<CR>")
+<Font>                  * Size 11	    call feedkeys(":Fontzoom 11\<CR>")
+
+#Open Directory
+
+#ColorScheme
+<colorscheme>           * molokai					colorscheme molokai
+<colorscheme>           * onedark					colorscheme onedark
+<colorscheme>           * gruvbox					colorscheme gruvbox
+<colorscheme>           * material-theme			colorscheme material-theme
+<colorscheme>           * hybrid					colorscheme hybrid
+<colorscheme>           * night-owl					colorscheme night-owl
+<colorscheme>           * ayu						colorscheme ayu
+<colorscheme>           * NeoSolarized				colorscheme  NeoSolarized
+
+#NERDTree
+NERDTree>               * GSP3	NERDTree GSP3
+<NERDTree>              * pi		NERDTree pi
+<NERDTree>              * vimrc		NERDTree .vim
+
+#Plugins
+<Plug>                  * Install			PlugInstall
+<Plug>                  * Update			PlugUpdate
+<Plug>                  * Upgrade			PlugUpgrade
+<Plug>                  * All				PlugUpgrade || PlugInstall || PlugUpdate
+
+#remember key map
+<Remember Key>          * nmap			call feedkeys(":Capture nmap\<CR>")
+<Remember Key>          * imap			call feedkeys(":Capture imap\<CR>")
+<Remember Key>          * vmap			call feedkeys(":Capture vmap\<CR>")
+
+#Session
+<Session>               * Save	call feedkeys(":SaveSession ")
+<Session>               * Load	call feedkeys(":OpenSession ")
+
+#Vim
+<Vim Settings>          * toggle relative Number	call feedkeys(":set relativenumber!\<CR>")
+<Vim Settings>          * background=dark	set background=dark
+<Vim Settings>          * background=light	set background=light
+
+#Goyo
+<Goyo> * GoyoMode	call GoyoMode()
+<Goyo> * ExitGoyoMode	call LeaveGoyoMode()
