@@ -1,7 +1,7 @@
 "====================================================================
 "vim-scripts/wimproved.vim
 "====================================================================
-map <F1> :WToggleFullscreen<CR>:WCenter 60<CR>
+map <F1> :WToggleFullscreen<CR>
 
 "====================================================================
 "'thinca/vim-fontzoom'
@@ -168,7 +168,7 @@ let g:VM_maps["J"]                  = 'M-j'
 "====================================================================
 "xolox/vim-session
 "====================================================================
-nmap <Leader>] :OpenSession<CR>
+nmap <Leader>[ :OpenSession<CR>
 let g:session_autoload = 'no'
 let g:session_autosave = 'no'
 let g:session_verbose_messages = 0
@@ -188,3 +188,9 @@ let g:choosewin_blink_on_land = 0
 "mattn/ctrlp-launcher
 "====================================================================
 nnoremap <Leader>@ :<c-u>CtrlPLauncher<cr>
+
+
+"====================================================================
+" vim-ctrlp-cmdpalette
+"====================================================================
+nnoremap <Leader>] :CtrlPCmdPalette<CR>

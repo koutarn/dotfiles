@@ -75,6 +75,9 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'junegunn/limelight.vim'                                       "特定の箇所を光らせる
   Plug 'unkiwii/vim-nerdtree-sync'                                    "NERDTree拡張 現在のファイルをsyntax
   Plug 'greggerz/nerdtree-svn-plugin'                                 "NERDTree拡張 SVN
+  Plug 'fisadev/vim-ctrlp-cmdpalette'                                 "CtrlP拡張 コマンド用
+  Plug 'irrationalistic/vim-tasks'                                    "タスク管理
+  Plug 'sheldonirwin/bookmark-switcher'                               "NERDTree拡張 ブックマークの拡張
 
   "operator
   Plug 'kana/vim-operator-user'                                       "operator強化
