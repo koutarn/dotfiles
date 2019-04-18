@@ -1,6 +1,7 @@
 #Windowsindows CallBack
 <Program>               * Command Prompt						!start cmd
 <Program>               * Task Manager     						!start taskmgr
+<Program>               * Google Chrome							!start C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
 
 #Size Change
 <Window>                * Input			call feedkeys(":WCenter ")
@@ -38,9 +39,7 @@
 <colorscheme>           * NeoSolarized				colorscheme  NeoSolarized
 
 #NERDTree
-NERDTree>               * GSP3	NERDTree GSP3
-<NERDTree>              * pi		NERDTree pi
-<NERDTree>              * vimrc		NERDTree .vim
+
 
 #Plugins
 <Plug>                  * Install			PlugInstall
@@ -54,14 +53,19 @@ NERDTree>               * GSP3	NERDTree GSP3
 <Remember Key>          * vmap			call feedkeys(":Capture vmap\<CR>")
 
 #Session
-<Session>               * Save	call feedkeys(":SaveSession ")
-<Session>               * Load	call feedkeys(":OpenSession ")
+<Session>               * Save		call feedkeys(":SaveSession ")
+<Session>               * Load		call feedkeys(":OpenSession ")
+<Session>               * Delete	call feedkeys(":DeleteSession ")
 
 #Vim
 <Vim Settings>          * toggle relative Number	call feedkeys(":set relativenumber!\<CR>")
-<Vim Settings>          * background=dark	set background=dark
-<Vim Settings>          * background=light	set background=light
+<Vim Settings>          * background=dark			set background=dark
+<Vim Settings>          * background=light			set background=light
+<Vim Settings>          * list						set list
+<Vim Settings>          * nolist					set nolist
 
 #Goyo
-<Goyo> * GoyoMode	call GoyoMode()
-<Goyo> * ExitGoyoMode	call LeaveGoyoMode()
+<Goyo>                  * GoyoNormalMode		call GoyoMode(11,66,65,65,245,0,"night-owl","dark")
+<Goyo>                  * GoyoFocusWriteMode	call GoyoMode(12,80,65,65,255,1,"NeoSolarized","light")
+<Goyo>                  * GoyoSubMonitorMode	call GoyoMode(12,80,60,60,220,1,"night-owl","dark")
+<Goyo>                  * GoyoExit				call LeaveGoyoMode()
