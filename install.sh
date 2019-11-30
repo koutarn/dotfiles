@@ -2,7 +2,7 @@
 set -eu
 
 #cwd=$(dirname "${0}")
-DOTFILES_PATH="dotfiles"
+DOTFILES_PATH="dotfile"
 
 echo "          __          __     ____    _     __                "
 echo "     ____/ /  ____   / /_   / __/   (_)   / /  ___    _____  "
@@ -15,9 +15,9 @@ echo "dotfiles install to $HOME"
 echo "========================================="
 for f in .??*
 do
-    [[ "$f" == ".git" ]] && continue
-    [[ "$f" == ".gitignore" ]] && continue
-    [[ "$f" == ".DS_Store" ]] && continue
+    [ "$f" = ".git" ] && continue
+    [ "$f" = ".gitignore" ] && continue
+    [ "$f" = ".DS_Store" ] && continue
 
     ln -isnfv "$DOTFILES_PATH/${f}" "$HOME/${f}"
 done
