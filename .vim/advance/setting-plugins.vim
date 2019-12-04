@@ -28,7 +28,7 @@ endif
 "====================================================================
 "yankround.vim
 "====================================================================
-"let g:yankround_max_history = 50 "履歴取得数
+"let g:yankround_max_history = 50 "ĺąĽć­´ĺĺžć°
 
 "====================================================================
 "AutoComplPop
@@ -38,18 +38,18 @@ endif
 "====================================================================
 "Shougo/neocomplete.vim
 "====================================================================
-let g:acp_enableAtStartup                           = 0  " AutoComplPop無効化
-let g:neocomplete#enable_at_startup                 = 1  " neocompleteの使用
+let g:acp_enableAtStartup                           = 0  " AutoComplPopçĄĺšĺ
+let g:neocomplete#enable_at_startup                 = 1  " neocompleteăŽä˝żç¨
 let g:neocomplete#enable_smart_case                 = 1  " Use smartcase.
-let g:neocomplete#max_list                          = 20 " ポップアップメニューで表示される候補の数
-let g:neocomplete#sources#syntax#min_keyword_length = 3  " シンタックスをキャッシュするときの最小文字長
-let g:neocomplete#auto_completion_start_length      = 2  " 補完を表示する最小文字数
+let g:neocomplete#max_list                          = 20 " ăăăă˘ăăăĄăăĽăźă§čĄ¨ç¤şăăăĺčŁăŽć°
+let g:neocomplete#sources#syntax#min_keyword_length = 3  " ăˇăłăżăăŻăšăă­ăŁăăˇăĽăăă¨ăăŽćĺ°ćĺ­éˇ
+let g:neocomplete#auto_completion_start_length      = 2  " čŁĺŽăčĄ¨ç¤şăăćĺ°ćĺ­ć°
 
-"_(アンダースコア)区切りの補完を有効化
+"_(ă˘ăłăăźăšăłă˘)ĺşĺăăŽčŁĺŽăćĺšĺ
 let g:neocomplete#enable_underbar_completion = 1
 let g:neocomplete#enable_camel_case_completion  =  1
 
-"preview window を閉じない
+"preview window ăéăăŞă
 let g:neocomplete#enable_auto_close_preview = 0
 autocmd InsertLeave * silent! pclose!
 let g:neocomplete#max_keyword_width = 10000
@@ -79,10 +79,10 @@ let g:fontzoom_no_default_key_mappings = 1
 "====================================================================
 let g:EasyMotion_do_mapping = 0 " Disale default mappings
 
-"ホームポジションに近いキーを使う
+"ăăźă ăă¸ăˇă§ăłăŤčżăă­ăźăä˝żă
 let g:EasyMotion_keys='hjklasdfgyuiopwertnmzxcv'
 
-"1 ストローク選択を優先する
+"1 ăšăă­ăźăŻé¸ćăĺŞĺăă
 let g:EasyMotion_grouping=1
 
 "Jump to first match with enter & space
@@ -95,7 +95,7 @@ let g:EasyMotion_smartcase = 1
  "====================================================================
 "honza/vim-snippets
 "====================================================================
-let g:minisnip_trigger = '<C-l>' "keymapの変更
+let g:minisnip_trigger = '<C-l>' "keymapăŽĺ¤ć´
 
 "====================================================================
 "terryma/vim-multiple-cursors
@@ -128,16 +128,16 @@ let g:minisnip_trigger = '<C-l>' "keymapの変更
 autocmd BufRead,BufNewFile *.mkd  set filetype=markdown
 autocmd BufRead,BufNewFile *.md  set filetype=markdown
 
-"Ctrl-pでプレビュー
+"Ctrl-pă§ăăŹăăĽăź
 nnoremap <silent> <C-p> :PrevimOpen<CR>
 
-"自動で折りたたまないようにする
+"čŞĺă§ćăăăăžăŞăăăăŤăă
 let g:vim_markdown_folding_disabled=1
 let g:previm_enable_realtime = 1
 "====================================================================
 "scrooloose/nerdtree
 "====================================================================
-"NERDtreeを自動で有効にする
+"NERDtreeăčŞĺă§ćĺšăŤăă
 let g:nerdtree_tabs_open_on_console_startup = 0
 let g:NERDTreeLimitedSyntax = 1
 
@@ -161,15 +161,15 @@ call NERDTreeHighlightFile('js',     'Red',     'none', '#ffa500','#151515')
 call NERDTreeHighlightFile('php',    'Magenta', 'none', '#ff00ff','#151515')
 call NERDTreeHighlightFile('vim',    'Magenta', 'none', '#ff00ff','#151515')
 
-let g:NERDTreeDirArrowExpandable  = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeDirArrowExpandable  = 'â¸'
+let g:NERDTreeDirArrowCollapsible = 'âž'
 let g:NERDTreeDirArrows           = 1
 let NERDTreeWinSize               = 35
 
-" 不可視ファイルを表示する
+" ä¸ĺŻčŚăăĄă¤ăŤăčĄ¨ç¤şăă
 let NERDTreeShowHidden=1
 
-"bookmarkの表示
+"bookmarkăŽčĄ¨ç¤ş
 let NERDTreeShowBookmarks=1
 
 let g:nerdtree_tabs_focus_on_files=1
@@ -192,7 +192,7 @@ let g:indentLine_setColors = 1
 let g:indentLine_enabled   = 1
 let g:indentLine_color_gui = '#A4E57E'  "GVim
 let g:indentLine_faster    = 0
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_char_list = ['|', 'ÂŚ', 'â', 'â']
 let g:indentLine_fileType = ['c', 'cpp']
 
 "====================================================================
@@ -211,7 +211,7 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#0B615E ctermbg=4
 "====================================================================
 "bronson/vim-trailing-whitespace
 "====================================================================
-"autocmd BufWritePre * :FixWhitespace "ファイル保存時に余分なスペースを削除する
+"autocmd BufWritePre * :FixWhitespace "ăăĄă¤ăŤäżĺ­ćăŤä˝ĺăŞăšăăźăšăĺé¤ăă
 
 "====================================================================
 "vim-tags
@@ -276,7 +276,7 @@ function! LightLineReadonly()
   if &filetype == "help"
     return ""
   elseif &readonly
-    return ""
+    return "î˘"
   else
     return ""
   endif
@@ -285,7 +285,7 @@ endfunction
 function! LightLineFugitive()
   if exists("*fugitive#head")
     let _ = fugitive#head()
-    return strlen(_) ? ''._ : ''
+    return strlen(_) ? 'î '._ : ''
   endif
   return ''
 endfunction
@@ -307,28 +307,28 @@ endfunction
 "====================================================================
 "yonchu/accelerated-smooth-scroll
 "====================================================================
-" let g:ac_smooth_scroll_no_default_key_mappings = 1 "デフォルトマッピングを無効にする (必要なら)
-" let g:ac_smooth_scroll_du_sleep_time_msec      = 1  "小さくするとスクロールスピードが上がる
+" let g:ac_smooth_scroll_no_default_key_mappings = 1 "ăăăŠăŤăăăăăłă°ăçĄĺšăŤăă (ĺżčŚăŞă)
+" let g:ac_smooth_scroll_du_sleep_time_msec      = 1  "ĺ°ăăăăă¨ăšăŻă­ăźăŤăšăăźăăä¸ăă
 
 "====================================================================
 "kien/ctrlp.vim
 "====================================================================
- " デフォルトのマッピングを無効化(default:'<C-p>')
+ " ăăăŠăŤăăŽăăăăłă°ăçĄĺšĺ(default:'<C-p>')
 let g:ctrlp_map = '<Nop>'
 
-" 対象ファイル最大数(default:10000)
+" ĺŻžčąĄăăĄă¤ăŤćĺ¤§ć°(default:10000)
 let g:ctrlp_max_files  = 100000
 
-" キャッシュディレクトリ
+" ă­ăŁăăˇăĽăăŁăŹăŻăăŞ
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
 
-" キャッシュを終了時に削除しない
+" ă­ăŁăăˇăĽăçľäşćăŤĺé¤ăăŞă
 let g:ctrlp_clear_cache_on_exit = 0
 
-" CtrlPのウィンドウ最大高さ
+" CtrlPăŽăŚăŁăłăăŚćĺ¤§éŤă
 let g:ctrlp_match_window = 'max:30'
 
-" 無視するディレクトリ
+" çĄčŚăăăăŁăŹăŻăăŞ
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll|s|o|obj|make)$',
@@ -457,8 +457,8 @@ let g:NERDCreateDefaultMappings  = 1
 "====================================================================
 "mg979/vim-bookmarks
 "====================================================================
-let g:bookmark_sign = '🚩'
-let g:bookmark_annotation_sign = '♥'
+let g:bookmark_sign = 'đŠ'
+let g:bookmark_annotation_sign = 'âĽ'
 let g:bookmark_auto_save = 1
 "let g:bookmark_save_per_working_dir=1
 let g:bookmark_no_default_key_mappings = 1
@@ -500,7 +500,7 @@ map L <Plug>(operator-mdurl)
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_guifg = 'DarkGray'
 
-" お好みで
+" ăĺĽ˝ăżă§
 let g:limelight_default_coefficient = 0.7
 "let g:limelight_paragraph_span = 1
 let g:limelight_priority = -1

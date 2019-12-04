@@ -5,16 +5,16 @@
 if filereadable(expand("~/.vim/autoload/plug.vim"))
   call plug#begin()
 
-  "linuxŠÂ‹«‚Ì‚İ
+  "linuxç’°å¢ƒã®ã¿
   if has('unix')
     Plug 'chriskempson/base16-vim'                                      "base16
     Plug 'mattn/emmet-vim'                                              "Emmet
-    Plug 'Xuyuanp/nerdtree-git-plugin' , {'for':'Git'}                  "nerdtree‚Å•ÏX‚ª‚ ‚Á‚½‚ç•\¦‚·‚é
-    Plug 'airblade/vim-gitgutter'   , {'for':'Git'}                     "sign‚Ì—Ìˆæ‚Égit‚Ìstatus‚ğ•\¦‚·‚é
-    Plug 'b4b4r07/vim-shellutils'                                       "Command‚ğg‚¢‚â‚·‚­‚·‚é
+    Plug 'Xuyuanp/nerdtree-git-plugin' , {'for':'Git'}                  "nerdtreeã§å¤‰æ›´ãŒã‚ã£ãŸã‚‰è¡¨ç¤ºã™ã‚‹
+    Plug 'airblade/vim-gitgutter'   , {'for':'Git'}                     "signã®é ˜åŸŸã«gitã®statusã‚’è¡¨ç¤ºã™ã‚‹
+    Plug 'b4b4r07/vim-shellutils'                                       "Commandã‚’ä½¿ã„ã‚„ã™ãã™ã‚‹
   endif
 
-  "WindowsŠÂ‹«‚Ì‚İ
+  "Windowsç’°å¢ƒã®ã¿
   if has('win32') || has('win64')
     Plug 'haishanh/night-owl.vim'                                       "colorscheme
     Plug 'jdkanani/vim-material-theme'                                  "colorscheme
@@ -22,84 +22,84 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
     Plug 'w0ng/vim-hybrid'                                              "colorscheme
     Plug 'icymind/NeoSolarized'                                         "colorscheme
     Plug 'ayu-theme/ayu-vim'                                            "colorscheme
-    Plug 'joshdick/onedark.vim'                                         "colorscheme
 
-    Plug 'simeji/winresizer'                                            "‰æ–Ê‚ğƒŠƒTƒCƒY‚µ‚â‚·‚­‚·
-    Plug 'vim-scripts/wimproved.vim'                                    "windows—pA‰æ–Ê‚ÌØ‚è‘Ö‚¦
-    Plug 'thinca/vim-fontzoom'                                          "windows—pAƒtƒHƒ“ƒgƒTƒCƒYØ‚è‘Ö‚¦
-    " Plug 'vim-scripts/AutoComplPop'                                    "•âŠ®
-    Plug 'Shougo/neocomplete.vim'                                       "•âŠ®
-    Plug 'Shougo/neco-syntax'                                           "syntax•âŠ®
+    Plug 'simeji/winresizer'                                            "ç”»é¢ã‚’ãƒªã‚µã‚¤ã‚ºã—ã‚„ã™ãã™
+    Plug 'vim-scripts/wimproved.vim'                                    "windowsç”¨ã€ç”»é¢ã®åˆ‡ã‚Šæ›¿ãˆ
+    Plug 'thinca/vim-fontzoom'                                          "windowsç”¨ã€ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºåˆ‡ã‚Šæ›¿ãˆ
+    " Plug 'vim-scripts/AutoComplPop'                                    "è£œå®Œ
+    Plug 'Shougo/neocomplete.vim'                                       "è£œå®Œ
+    Plug 'Shougo/neco-syntax'                                           "syntaxè£œå®Œ
   endif
 
-  Plug 'bronson/vim-trailing-whitespace'                              "–³‘Ê‚È‹ó”’‚ğ‰Â‹‰»‚·‚é
-  Plug 'scrooloose/nerdtree'     , {'on' : 'NERDTreeToggle'}          "ƒtƒ@ƒCƒ‹ƒcƒŠ[
-  Plug 'jistr/vim-nerdtree-tabs' , {'on' : 'NERDTreeToggle'}          "Nerdtree‚ğtab‚Åˆµ‚¢‚â‚·‚¢‚æ‚¤‚É‚·‚é
-  Plug 'ryanoasis/vim-devicons'                                       "nerdtree‚ÉƒAƒCƒRƒ“‚ğ•\¦‚·‚é
-  Plug 'itchyny/lightline.vim'                                        "powerline‚İ‚½‚¢‚È“z
-  Plug 'Lokaltog/vim-easymotion'                                      "”š‘¬‚ÅˆÚ“®‚·‚é
-  Plug 'godlygeek/tabular'                                            "®Œ`‚·‚é
-  Plug 'plasticboy/vim-markdown'                                      "markdown—p‚Ìsyntax
-  Plug 'szw/vim-tags'                                                 "Ctags‚ÌŠg’£ƒvƒ‰ƒOƒCƒ“
-  Plug 'majutsushi/tagbar'                                            "tagbar•\¦
-  Plug 'sheerun/vim-polyglot'                                         "vim‚ÌŒ¾ŒêƒTƒ|[ƒg‚ğs‚¤
+  Plug 'joshdick/onedark.vim'                                         "colorscheme
+  Plug 'bronson/vim-trailing-whitespace'                              "ç„¡é§„ãªç©ºç™½ã‚’å¯è¦–åŒ–ã™ã‚‹
+  Plug 'scrooloose/nerdtree'     , {'on' : 'NERDTreeToggle'}          "ãƒ•ã‚¡ã‚¤ãƒ«ãƒ„ãƒªãƒ¼
+  Plug 'jistr/vim-nerdtree-tabs' , {'on' : 'NERDTreeToggle'}          "Nerdtreeã‚’tabã§æ‰±ã„ã‚„ã™ã„ã‚ˆã†ã«ã™ã‚‹
+  Plug 'ryanoasis/vim-devicons'                                       "nerdtreeã«ã‚¢ã‚¤ã‚³ãƒ³ã‚’è¡¨ç¤ºã™ã‚‹
+  Plug 'itchyny/lightline.vim'                                        "powerlineã¿ãŸã„ãªå¥´
+  Plug 'Lokaltog/vim-easymotion'                                      "çˆ†é€Ÿã§ç§»å‹•ã™ã‚‹
+  Plug 'godlygeek/tabular'                                            "æ•´å½¢ã™ã‚‹
+  Plug 'plasticboy/vim-markdown'                                      "markdownç”¨ã®syntax
+  Plug 'szw/vim-tags'                                                 "Ctagsã®æ‹¡å¼µãƒ—ãƒ©ã‚°ã‚¤ãƒ³
+  Plug 'majutsushi/tagbar'                                            "tagbarè¡¨ç¤º
+  Plug 'sheerun/vim-polyglot'                                         "vimã®è¨€èªã‚µãƒãƒ¼ãƒˆã‚’è¡Œã†
   Plug 'vim-jp/vimdoc-ja'                                             "vimhelp jpfile
-  Plug 'mhinz/vim-sayonara'                                           "buffíœ—p
+  Plug 'mhinz/vim-sayonara'                                           "buffå‰Šé™¤ç”¨
   Plug 'KeyboardFire/vim-minisnip'                                    "snipet
   Plug 'drmingdrmer/vim-toggle-quickfix'                              "QuickFix
   Plug 'nazo/pt.vim'                                                  "pt
-  Plug 'kien/ctrlp.vim'                                               "ƒtƒ@ƒCƒ‹ŒŸõ‚È‚Ç
-  Plug 'luochen1990/rainbow'                                          "Š‡ŒÊ‚ğ“øF‚É‚·‚éB
-  Plug 'tyru/capture.vim'                                             "ƒRƒ}ƒ“ƒhŒ‹‰Ê‚ğV‹Kƒoƒbƒtƒ@‚É‘‚«‚¾‚·
-  Plug 'tyru/restart.vim'                                             "Ä‹N“®‚ğ‚Å‚«‚é‚æ‚¤‚É‚·‚é
-  Plug 't9md/vim-quickhl'                                             "“Á’è‚Ì•¶š‚ğƒnƒCƒ‰ƒCƒg‚·‚éB
-  Plug 'Townk/vim-autoclose'                                          "©“®‚ÅƒJƒbƒR‚ğ•Â‚¶‚Ä‚­‚ê‚é
-  Plug 'jceb/vim-orgmode'  , {'for':'org'}                            "org-mode‚ğ’ñ‹Ÿ‚·‚éB
-  Plug 'tpope/vim-speeddating', {'for':'org'}                         "org-mode‚Ì‚½‚ß‚É“ü‚ê‚é
-  Plug 'vim-scripts/utl.vim', {'for':'org'}                           "org-mode‚Ì‚½‚ß‚É“ü‚ê‚é
-  Plug 'paroxayte/vwm.vim'                                            "ƒŒƒCƒAƒEƒgƒ}ƒl[ƒWƒƒ[
-  Plug 'gko/vim-coloresque'                                           "F‚ğ‹Šo‰»‚É‚·‚é
-  Plug 'ap/vim-buftabline'                                            "buffer‚ğƒ^ƒu‚Æ‚µ‚Ä•\¦
-  Plug 'mg979/vim-visual-multi'                                       "multiple-cursor‹@”\‚ğ’ñ‹Ÿ‚·‚é
-  Plug 'justinmk/vim-gtfo'                                            "ƒtƒ@ƒCƒ‹‚ğŠJ‚­
-  Plug 'mg979/vim-colortweaks'                                        "colorscheme‚Ìİ’è‚ğŠg’£‚·‚éB
-  Plug 'xolox/vim-colorscheme-switcher'                               "colorscheme‚Ìİ’è‚ğŠg’£‚·‚éB
-  Plug 'xolox/vim-misc'                                               "pluginŠJ”­‚Ì‚½‚ß‚ÌƒXƒNƒŠƒvƒgŒQ(‘¼‚Ìƒvƒ‰ƒOƒCƒ“‚Ì‚½‚ß‚Ég—p)
-  Plug 'MattesGroeger/vim-bookmarks'                                  "s‚ÉƒuƒbƒNƒ}[ƒN‚ğ“ü‚ê‚é–‚ªo—ˆ‚é‚æ‚¤‚É‚·‚é
-  Plug 'MaxMEllon/vim-shiny'                                          "ƒy[ƒXƒg‚µ‚½‰ÓŠ‚ğƒnƒCƒ‰ƒCƒg‚·‚é
-  Plug 'xolox/vim-session'                                            "session‚ğ•Û‘¶‚µ‚½‚è•œŒ³‚µ‚½‚è‚·‚é
-  Plug 't9md/vim-choosewin'                                           "windowˆÚ“®‚ğƒOƒ‰ƒtƒBƒJƒ‹‚É‚Å‚«‚é‚æ‚¤‚É‚·‚é
-  Plug 'mattn/ctrlp-launcher'                                         "CtrlPŠg’£ ƒ‰ƒ“ƒ`ƒƒ[‹@”\‚ğ’ñ‹Ÿ
-  Plug 'scrooloose/nerdcommenter'                                     "ƒRƒƒ“ƒg‹@”\Šg’£
-  Plug 'junegunn/goyo.vim'                                            "U•¶ƒ‚[ƒh‚ğ’ñ‹Ÿ
-  Plug 'junegunn/limelight.vim'                                       "“Á’è‚Ì‰ÓŠ‚ğŒõ‚ç‚¹‚é
-  Plug 'unkiwii/vim-nerdtree-sync'                                    "NERDTreeŠg’£ Œ»İ‚Ìƒtƒ@ƒCƒ‹‚ğsyntax
-  Plug 'greggerz/nerdtree-svn-plugin'                                 "NERDTreeŠg’£ SVN
-  Plug 'fisadev/vim-ctrlp-cmdpalette'                                 "CtrlPŠg’£ ƒRƒ}ƒ“ƒh—p
-  Plug 'irrationalistic/vim-tasks'                                    "ƒ^ƒXƒNŠÇ—
-  Plug 'sheldonirwin/bookmark-switcher'                               "NERDTreeŠg’£ ƒuƒbƒNƒ}[ƒN‚ÌŠg’£
+  Plug 'kien/ctrlp.vim'                                               "ãƒ•ã‚¡ã‚¤ãƒ«æ¤œç´¢ãªã©
+  Plug 'luochen1990/rainbow'                                          "æ‹¬å¼§ã‚’è™¹è‰²ã«ã™ã‚‹ã€‚
+  Plug 'tyru/capture.vim'                                             "ã‚³ãƒãƒ³ãƒ‰çµæœã‚’æ–°è¦ãƒãƒƒãƒ•ã‚¡ã«æ›¸ãã ã™
+  Plug 'tyru/restart.vim'                                             "å†èµ·å‹•ã‚’ã§ãã‚‹ã‚ˆã†ã«ã™ã‚‹
+  Plug 't9md/vim-quickhl'                                             "ç‰¹å®šã®æ–‡å­—ã‚’ãƒã‚¤ãƒ©ã‚¤ãƒˆã™ã‚‹ã€‚
+  Plug 'Townk/vim-autoclose'                                          "è‡ªå‹•ã§ã‚«ãƒƒã‚³ã‚’é–‰ã˜ã¦ãã‚Œã‚‹
+  Plug 'jceb/vim-orgmode'  , {'for':'org'}                            "org-modeã‚’æä¾›ã™ã‚‹ã€‚
+  Plug 'tpope/vim-speeddating', {'for':'org'}                         "org-modeã®ãŸã‚ã«å…¥ã‚Œã‚‹
+  Plug 'vim-scripts/utl.vim', {'for':'org'}                           "org-modeã®ãŸã‚ã«å…¥ã‚Œã‚‹
+  Plug 'paroxayte/vwm.vim'                                            "ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆãƒãƒãƒ¼ã‚¸ãƒ£ãƒ¼
+  Plug 'gko/vim-coloresque'                                           "è‰²ã‚’è¦–è¦šåŒ–ã«ã™ã‚‹
+  Plug 'ap/vim-buftabline'                                            "bufferã‚’ã‚¿ãƒ–ã¨ã—ã¦è¡¨ç¤º
+  Plug 'mg979/vim-visual-multi'                                       "multiple-cursoræ©Ÿèƒ½ã‚’æä¾›ã™ã‚‹
+  Plug 'justinmk/vim-gtfo'                                            "ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
+  Plug 'mg979/vim-colortweaks'                                        "colorschemeã®è¨­å®šã‚’æ‹¡å¼µã™ã‚‹ã€‚
+  Plug 'xolox/vim-colorscheme-switcher'                               "colorschemeã®è¨­å®šã‚’æ‹¡å¼µã™ã‚‹ã€‚
+  Plug 'xolox/vim-misc'                                               "pluginé–‹ç™ºã®ãŸã‚ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆç¾¤(ä»–ã®ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã®ãŸã‚ã«ä½¿ç”¨)
+  Plug 'MattesGroeger/vim-bookmarks'                                  "è¡Œã«ãƒ–ãƒƒã‚¯ãƒãƒ¼ã‚¯ã‚’å…¥ã‚Œã‚‹äº‹ãŒå‡ºæ¥ã‚‹ã‚ˆã†ã«ã™ã‚‹
+  Plug 'MaxMEllon/vim-shiny'                                          "ãƒšãƒ¼ã‚¹ãƒˆã—ãŸç®‡æ‰€ã‚’ãƒã‚¤ãƒ©ã‚¤ãƒˆã™ã‚‹
+  Plug 'xolox/vim-session'                                            "sessionã‚’ä¿å­˜ã—ãŸã‚Šå¾©å…ƒã—ãŸã‚Šã™ã‚‹
+  Plug 't9md/vim-choosewin'                                           "windowç§»å‹•ã‚’ã‚°ãƒ©ãƒ•ã‚£ã‚«ãƒ«ã«ã§ãã‚‹ã‚ˆã†ã«ã™ã‚‹
+  Plug 'mattn/ctrlp-launcher'                                         "CtrlPæ‹¡å¼µ ãƒ©ãƒ³ãƒãƒ£ãƒ¼æ©Ÿèƒ½ã‚’æä¾›
+  Plug 'scrooloose/nerdcommenter'                                     "ã‚³ãƒ¡ãƒ³ãƒˆæ©Ÿèƒ½æ‹¡å¼µ
+  Plug 'junegunn/goyo.vim'                                            "æ•£æ–‡ãƒ¢ãƒ¼ãƒ‰ã‚’æä¾›
+  Plug 'junegunn/limelight.vim'                                       "ç‰¹å®šã®ç®‡æ‰€ã‚’å…‰ã‚‰ã›ã‚‹
+  Plug 'unkiwii/vim-nerdtree-sync'                                    "NERDTreeæ‹¡å¼µ ç¾åœ¨ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’syntax
+  Plug 'greggerz/nerdtree-svn-plugin'                                 "NERDTreeæ‹¡å¼µ SVN
+  Plug 'fisadev/vim-ctrlp-cmdpalette'                                 "CtrlPæ‹¡å¼µ ã‚³ãƒãƒ³ãƒ‰ç”¨
+  Plug 'irrationalistic/vim-tasks'                                    "ã‚¿ã‚¹ã‚¯ç®¡ç†
+  Plug 'sheldonirwin/bookmark-switcher'                               "NERDTreeæ‹¡å¼µ ãƒ–ãƒƒã‚¯ãƒãƒ¼ã‚¯ã®æ‹¡å¼µ
 
   "operator
-  Plug 'kana/vim-operator-user'                                       "operator‹­‰»
-  Plug 'kana/vim-operator-replace'                                    "operator “ü‚ê‘Ö‚¦
-  Plug 'rhysd/vim-operator-surround'                                  "operator ˆÍ‚İ
-  Plug 'osyo-manga/vim-operator-search'                               "operator ŒŸõ
-  Plug 'vimtaku/vim-operator-mdurl'                                   "markdown‚ÅurlŒ`®‚É‚·‚é
+  Plug 'kana/vim-operator-user'                                       "operatorå¼·åŒ–
+  Plug 'kana/vim-operator-replace'                                    "operator å…¥ã‚Œæ›¿ãˆ
+  Plug 'rhysd/vim-operator-surround'                                  "operator å›²ã¿
+  Plug 'osyo-manga/vim-operator-search'                               "operator æ¤œç´¢
+  Plug 'vimtaku/vim-operator-mdurl'                                   "markdownã§urlå½¢å¼ã«ã™ã‚‹
 
   "text object
-  Plug 'kana/vim-textobj-user'                                        "text-object‹­‰»
-  Plug 'glts/vim-textobj-comment'                                     "text-object ƒRƒƒ“ƒg c
-  Plug 'kana/vim-textobj-function'                                    "text-object ŠÖ” F
-  Plug 'kana/vim-textobj-indent'                                      "text-object ƒCƒ“ƒfƒ“ƒg i
-  Plug 'kana/vim-textobj-line'                                        "text-object ƒ‰ƒCƒ“ l
-  Plug 'rhysd/vim-textobj-anyblock'                                   "text-object ‘Î‰ƒuƒƒbƒN‚ğ‘‚â‚· b
-  Plug 'thinca/vim-textobj-between'                                   "text-object “Á’è‚Ì•¶š‚ÉˆÍ‚Ü‚ê‚½”ÍˆÍ f
-  Plug 'deton/textobj-nonblankchars.vim'                              "text-object word‚ğ“ú–{Œê‚É‘Î‰‚³‚¹‚é
+  Plug 'kana/vim-textobj-user'                                        "text-objectå¼·åŒ–
+  Plug 'glts/vim-textobj-comment'                                     "text-object ã‚³ãƒ¡ãƒ³ãƒˆ c
+  Plug 'kana/vim-textobj-function'                                    "text-object é–¢æ•° F
+  Plug 'kana/vim-textobj-indent'                                      "text-object ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆ i
+  Plug 'kana/vim-textobj-line'                                        "text-object ãƒ©ã‚¤ãƒ³ l
+  Plug 'rhysd/vim-textobj-anyblock'                                   "text-object å¯¾å¿œãƒ–ãƒ­ãƒƒã‚¯ã‚’å¢—ã‚„ã™ b
+  Plug 'thinca/vim-textobj-between'                                   "text-object ç‰¹å®šã®æ–‡å­—ã«å›²ã¾ã‚ŒãŸç¯„å›² f
+  Plug 'deton/textobj-nonblankchars.vim'                              "text-object wordã‚’æ—¥æœ¬èªã«å¯¾å¿œã•ã›ã‚‹
 
   call plug#end()
 end
 
 " if has('win32') || has('win64')
-"   "kaoriya vim–³Œø‰»
+"   "kaoriya vimç„¡åŠ¹åŒ–
 "   let plugin_hz_ja_disable = 1
 " endif

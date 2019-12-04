@@ -1,6 +1,6 @@
 "=============================================================
-"‘f‚Ìó‘Ô‚Ìkeybind‚ğ‹LÚ
-"plugin–ˆ‚Ìkeybind‚Íadvance/bind-plugins.vim‚É‘‚¢‚Ä‚é
+"ç´ ã®çŠ¶æ…‹ã®keybindã‚’è¨˜è¼‰
+"pluginæ¯ã®keybindã¯advance/bind-plugins.vimã«æ›¸ã„ã¦ã‚‹
 "=============================================================
 "settings
 
@@ -12,15 +12,15 @@ nnoremap qq <Nop>
 nnoremap s <Nop>
 nnoremap S <Nop>
 nnoremap <C-z> <Nop>
-let mapleader = "\<Space>"    "Leader‚ğspace‚É•ÏX
+let mapleader = "\<Space>"    "Leaderã‚’spaceã«å¤‰æ›´
 let maplocalleader = ';'
-"x‚Åíœ‚µ‚Ä‚àƒ„ƒ“ƒN‚³‚ê‚È‚¢‚æ‚¤‚É‚·‚é
+"xã§å‰Šé™¤ã—ã¦ã‚‚ãƒ¤ãƒ³ã‚¯ã•ã‚Œãªã„ã‚ˆã†ã«ã™ã‚‹
 nnoremap x "_x
 vnoremap x "_x
 nnoremap X "_X
 vnoremap X "_X
 
-"ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“
+"ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³
 cnoremap <C-e> <End>
 cnoremap <C-a> <Home>
 
@@ -30,7 +30,7 @@ cnoremap <C-j> <DOWN>
 cnoremap <C-l> <RIGHT>
 cnoremap <C-p> <C-r>0
 "===========================================================
-"ˆÚ“®
+"ç§»å‹•
 "===========================================================
 nnoremap k   gk
 nnoremap j   gj
@@ -50,7 +50,7 @@ vnoremap <S-k> 10gk
 vnoremap <S-j> 10gj
 
 "===========================================================
-"“ü—Í
+"å…¥åŠ›
 "===========================================================
 inoremap /* /*  */<Left><Left><Left>
 "nnoremap / /\v
@@ -65,27 +65,27 @@ nnoremap sg  :<C-u>%s///g<Left><Left><Left>
 vnoremap sg  :s///g<Left><Left><Left>
 nnoremap Y y$
 
-"“ñ“x‰Ÿ‚µ‚ÅƒRƒ}ƒ“ƒhƒ‚[ƒh‚Ö
+"äºŒåº¦æŠ¼ã—ã§ã‚³ãƒãƒ³ãƒ‰ãƒ¢ãƒ¼ãƒ‰ã¸
 inoremap <silent> jj <Esc>
 "nnoremap bo  :%!xxd<cr>
-inoremap <silent> ‚Áj <ESc>
+inoremap <silent> ã£j <ESc>
 vnoremap <silent>ff <ESC>
-vnoremap <silent>‚Á‚† <Esc>
+vnoremap <silent>ã£ï½† <Esc>
 
-"ƒCƒ“ƒNƒŠƒƒ“ƒg
+"ã‚¤ãƒ³ã‚¯ãƒªãƒ¡ãƒ³ãƒˆ
 nnoremap <Down> <C-x>
 nnoremap <Up> <C-a>
 
-""s‚ğˆÚ“®
+""è¡Œã‚’ç§»å‹•
 "nnoremap <C-j> "zdd"zp
 "nnoremap <C-k> "zdd<Up>"zP
 "
-""•¡”s‚ğˆÚ“®
+""è¤‡æ•°è¡Œã‚’ç§»å‹•
 "vnoremap <C-j> "zx"zp`[V`]
 "vnoremap <C-k> "zx<Up>"zP`[V`]
 
 "insert mode
-"ƒCƒ“ƒT[ƒgƒ‚[ƒh‚Å‚àhjkl‚ÅˆÚ“®
+"ã‚¤ãƒ³ã‚µãƒ¼ãƒˆãƒ¢ãƒ¼ãƒ‰ã§ã‚‚hjklã§ç§»å‹•
 imap <C-j> <Down>
 imap <C-k> <Up>
 imap <C-h> <Left>
@@ -130,12 +130,12 @@ nmap ya2 ya"
 nmap ya7 ya'
 nmap ya, ya<
 
-"‘O•ûŒã•ûíœ
+"å‰æ–¹å¾Œæ–¹å‰Šé™¤
 nnoremap dl d$
 nnoremap dh d0
 
 "===========================================================
-"ƒEƒBƒ“ƒhƒE
+"ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦
 "===========================================================
 nnoremap <Leader>s :<C-u>sp<CR>
 nnoremap <Leader>v :<C-u>vs<CR>
@@ -143,65 +143,65 @@ nnoremap <Leader>x :q<CR>
 nnoremap <leader>w  :<c-u>wa<cr>
 nnoremap <leader>q  :<c-u>qa<cr>
 
-"ƒEƒBƒ“ƒhƒEŠÔ‚ğˆÚ“®
+"ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦é–“ã‚’ç§»å‹•
 nnoremap <Leader>h <C-w>h
 nnoremap <leader>j <C-w>j
 nnoremap <leader>k  <C-w>k
 nnoremap <Leader>l <C-w>l
 
-"ƒ^ƒu”p~(ƒoƒbƒtƒ@‚Å‘ã—p‚·‚é)
+"ã‚¿ãƒ–å»ƒæ­¢(ãƒãƒƒãƒ•ã‚¡ã§ä»£ç”¨ã™ã‚‹)
 "nnoremap <Leader>n :tabnew<CR>
 "nnoremap <Leader>d :tabc<CR>
 "nnoremap <Leader>u gt
 "nnoremap <Leader>y gT
 
 "===========================================================
-"ƒoƒbƒtƒ@
+"ãƒãƒƒãƒ•ã‚¡
 "===========================================================
 nnoremap <silent> sy :bprev<CR>
 nnoremap <silent> su :bnext<CR>
 
 "===========================================================
-"‚»‚Ì‘¼
+"ãã®ä»–
 "===========================================================
-"ŒŸõŒ‹‰Ê‚ğ‰æ–Ê’†‰›‚É
+"æ¤œç´¢çµæœã‚’ç”»é¢ä¸­å¤®ã«
 nmap n nzz
 nmap N Nzz
 nmap * *zz
 nmap # #zz
 
-"ƒCƒ“ƒfƒ“ƒg®Œ`
+"ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆæ•´å½¢
 vnoremap > >gv
 vnoremap < <gv
 nnoremap == gg=G
 
-"“ú•t“ü—Í
+"æ—¥ä»˜å…¥åŠ›
 inoremap <Leader>date <C-R>=strftime('%Y.%m.%d')<CR>
 
 "safety lock japanese IME
-nnoremap ‚  a
-nnoremap ‚¢ i
-nnoremap ‚¤ u
-nnoremap ‚¦ e
-nnoremap ‚¨ o
-nnoremap ‚Ád dd
-nnoremap ‚Áy yy
-nnoremap ‚µh ci"
-nnoremap ‚µf ci'
-nnoremap ‚¹ ce
-nnoremap ‚Å de
-inoremap <silent> ‚Á‚Š <ESC>
-nnoremap ‚Áz zz
-nnoremap E /
+nnoremap ã‚ a
+nnoremap ã„ i
+nnoremap ã† u
+nnoremap ãˆ e
+nnoremap ãŠ o
+nnoremap ã£d dd
+nnoremap ã£y yy
+nnoremap ã—â€ ci"
+nnoremap ã—â€™ ci'
+nnoremap ã› ce
+nnoremap ã§ de
+inoremap <silent> ã£ï½Š <ESC>
+nnoremap ã£z zz
+nnoremap ãƒ» /
 
-"space‚ğ“ñ“x‰Ÿ‚µ‚Å’PŒê‚ğŒõ‚ç‚¹‚é
+"spaceã‚’äºŒåº¦æŠ¼ã—ã§å˜èªã‚’å…‰ã‚‰ã›ã‚‹
 "nnoremap <silent> <Space><Space> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>"
 
-"ˆÚ“®‚ğŠy‚É‚·‚éB
+"ç§»å‹•ã‚’æ¥½ã«ã™ã‚‹ã€‚
 nnoremap <CR> G
 nnoremap <BS> gg
 
-"windows—p‚Ìİ’è
+"windowsç”¨ã®è¨­å®š
 if has('win32') || has('win64')
   nnoremap <F12> :set fenc=cp932<CR>
 endif
@@ -215,19 +215,19 @@ command! Todo edit ~\Desktop\Memo\TODO.txt
 "cheetsheet
 command! Cheet edit ~/Desktop/Memo/CheetSheet.txt
 
-"‹ó‚Ìƒoƒbƒtƒ@ì¬
+"ç©ºã®ãƒãƒƒãƒ•ã‚¡ä½œæˆ
 nnoremap <Leader>b :hide enew<CR>
 
-"ˆêƒtƒ@ƒCƒ‹
+"ä¸€æ™‚ãƒ•ã‚¡ã‚¤ãƒ«
 command! -nargs=1 -complete=filetype Tmp edit ~/Desktop/Memo/tmp.<args>
 command! -nargs=1 -complete=filetype Temp edit ~/Desktop/Memo/tmp.<args>
 
-"“Ç‚İ‚İ
+"èª­ã¿è¾¼ã¿
 if has('win32') || has('win64')
   command! Source source ~/_vimrc
 elseif has('unix')
   	command! Source source ~/.vimrc
 endif
 
-"“ú•t“ü—Í
+"æ—¥ä»˜å…¥åŠ›
 inoremap <expr> _day strftime('%Y-%m-%d')

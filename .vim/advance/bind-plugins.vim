@@ -63,7 +63,7 @@ nmap <F10> :TagbarToggle<CR>
 "====================================================================
 "vim-bufkill
 "====================================================================
-"バッファを削除
+"繝舌ャ繝輔ぃ繧貞炎髯､
 nnoremap sx :Sayonara!<cr>:bnext<cr>
 
 "====================================================================
@@ -180,7 +180,7 @@ let g:session_persist_colors = 0
 nmap <Leader><Space> <Plug>(choosewin)
 let g:choosewin_overlay_enable          = 1
 let g:choosewin_overlay_clear_multibyte = 1
-let g:choosewin_label = 'asdfhjkl'  "homeポジションで移動できるようにする
+let g:choosewin_label = 'asdfhjkl'  "home繝昴ず繧ｷ繝ｧ繝ｳ縺ｧ遘ｻ蜍輔〒縺阪ｋ繧医≧縺ｫ縺吶ｋ
 let g:choosewin_blink_on_land = 0
 
 
