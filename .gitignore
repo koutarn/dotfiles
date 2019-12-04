@@ -8,5 +8,5 @@
 config/fish/functions/fundle.fish
 
 #zcompdump
-~/.zsh/.zcompdump
+.zsh/.zcompdump
 
