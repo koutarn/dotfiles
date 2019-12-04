@@ -19,8 +19,8 @@ window:
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
   dimensions:
-    columns: 500
-    lines: 300
+    columns: 900
+    lines: 500
 
   # Window padding (changes require restart)
   #
@@ -35,7 +35,7 @@ window:
   # Values for `decorations`:
   #     - full: Borders and title bar
   #     - none: Neither borders nor title bar
-  decorations: full
+  decorations:none
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -87,9 +87,11 @@ tabspaces: 8
 font:
   # Normal (roman) font face
   normal:
-    family: Cica
-    # The `style` can be specified to pick a specific face.
-    # style: Regular
+    #[    family: Cica
+    #    # The `style` can be specified to pick a specific face.
+    #    ](    family: Cica
+    #        # The `style` can be specified to pick a specific face.
+    #        )style: Regular
 
   # Bold font face
   bold:
@@ -104,7 +106,7 @@ font:
     # style: Italic
 
   # Point size
-  size: 11.5
+  size: 12.5
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -232,7 +234,7 @@ visual_bell:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 1
+background_opacity: 0.95
 
 # Mouse bindings
 #

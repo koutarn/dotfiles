@@ -6,8 +6,6 @@
      \____|\___/ \__|_| |_|_|\___||___/
 ## instal
 ```
-git clone https://github.com/koutakun/dotfile.git ~/dotfiles && cd ~/dotfiles
-sudo bash ./install.sh
+dotbotで管理しとるで
+
 ```
-## TODO
-add sum .zsh settings```

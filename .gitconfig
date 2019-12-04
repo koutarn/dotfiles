@@ -31,4 +31,4 @@ ui = auto
 
 [commit]
 #template
-template = ~/.git-template
+# template = ~/.git-template
