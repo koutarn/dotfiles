@@ -20,8 +20,8 @@ if zplug check "denysdovhan/spaceship-prompt";then
 
   #ユーザー名
   export SPACESHIP_USER_SHOW=always                                                     #ユーザー名を常に表示する
-  export SPACESHIP_USER_PREFIX="with "                                                  #ユーザー名の前の文字
-  export SPACESHIP_USER_SUFFIX=" 🚀 "                                                   #ユーザー名の後の文字
+  #export SPACESHIP_USER_PREFIX="with "                                                  #ユーザー名の前の文字
+  #export SPACESHIP_USER_SUFFIX=" 🚀 "                                                   #ユーザー名の後の文字
 
   #time
   export SPACESHIP_TIME_SHOW=true                                                       #時間を表示
@@ -33,10 +33,10 @@ if zplug check "denysdovhan/spaceship-prompt";then
   export SPACESHIP_EXEC_TIME_PREFIX="exec. "                                            #prefix
 
   #battery
-  SPACESHIP_BATTERY_SHOW=always
+  SPACESHIP_BATTERY_SHOW=true
   SPACESHIP_BATTERY_PREFIX=" "
   SPACESHIP_BATTERY_SUFFIX="⚡ "
-
+  
   #false
   export SPACESHIP_HOST_SHOW=false                                                      #ホスト名
 
@@ -65,7 +65,7 @@ if zplug check "denysdovhan/spaceship-prompt";then
     pyenv         # Pyenv section
     dotnet        # .NET section
     ember         # Ember.js section
-    kubecontext   # Kubectl context section
+    kubectl       # Kubectl context section
     line_sep      # Line break
     vi_mode       # Vi-mode indicator
     jobs          # Background jobs indicator
