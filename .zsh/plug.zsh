@@ -89,7 +89,6 @@ if zplug check "b4b4r07/enhancd"; then
   export ENHANCD_DOT_SHOW_FULLPATH=1
 fi
 
-
 if ! zplug check --verbose; then
   printf 'Install? [y/N]:'
   if read -q; then

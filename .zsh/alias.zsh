@@ -41,7 +41,7 @@ alias ll="ls -p -v -w 150 -A --color=always"
 alias la='ls -vlpA'
 alias e="exa -a --icons"
 alias el="exa -al --icons"
-
+alias et="exa -T --icons"
 
 alias tmux-cfg="vi $TMUX_CFG"
 alias vim-key-cfg="vi $VIM_KEY_CFG"
