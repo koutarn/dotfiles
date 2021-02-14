@@ -34,9 +34,15 @@ alias fish-config="vi $FISH_CFG"
 alias vi='vim'
 alias vim-configs="vi $VIM_CONFIGS"
 alias zsh-configs="vi $ZSH_CONFIGS"
+
+#lsとついでにexaの設定もしておく
 alias l="ls -p -v -w 150 -A --color=always"
 alias ll="ls -p -v -w 150 -A --color=always"
 alias la='ls -vlpA'
+alias e="exa -a --icons"
+alias el="exa -al --icons"
+
+
 alias tmux-cfg="vi $TMUX_CFG"
 alias vim-key-cfg="vi $VIM_KEY_CFG"
 alias vim-plug-cfg="vi $VIM_PLUG_CFG"
