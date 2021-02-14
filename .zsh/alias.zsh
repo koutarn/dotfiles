@@ -31,7 +31,6 @@ alias c="cd"
 alias ..="cd .."
 alias reload-zsh="source $ZSHRC"
 alias fish-config="vi $FISH_CFG"
-alias so='source'
 alias vi='vim'
 alias vim-configs="vi $VIM_CONFIGS"
 alias zsh-configs="vi $ZSH_CONFIGS"
@@ -45,13 +44,7 @@ alias vim-plug-key-cfg="vi $VIM_PLUG_KEY_CFG"
 alias fish-cfg="vi $FISH_CFG"
 alias fish-reload='fish_update_completions'
 alias ala-cfg="vi $ALA_CFG"
-alias net='w3m -m -B https://google.com'
-alias ag='ag -S --hidden'
-alias agf='ag -S -g'
 alias configs="vi $ZSH_CONFIGS $VIM_CONFIGS $TMUX_CFG $ALA_CFG" #all configs open
-alias treee="tree -alFC -L 2 --dirsfirst"
-alias todo="vim $HOME/Dropbox/01_INBOX/_Todo.md"
-alias pdf="evince"
 
 #base16
 alias materia="base16_materia"
