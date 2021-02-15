@@ -3,5 +3,4 @@
 .config/fish/fundle
 config/fish/functions/fundle.fish
 .zsh/.zcompdump
-.zcompdump
 
