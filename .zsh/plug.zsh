@@ -36,7 +36,7 @@ if zplug check "denysdovhan/spaceship-prompt";then
   SPACESHIP_BATTERY_SHOW=true
   SPACESHIP_BATTERY_PREFIX=" "
   SPACESHIP_BATTERY_SUFFIX="⚡ "
-  
+
   #false
   export SPACESHIP_HOST_SHOW=false                                                      #ホスト名
 
