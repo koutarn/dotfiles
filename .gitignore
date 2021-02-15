@@ -1,10 +1,7 @@
 #pluginを読み込まないようにする
 .vim/plugged/
-
 .config/fish/fundle
 config/fish/functions/fundle.fish
-
-#zcompdump
-**/.zcompdump
+.zsh/.zcompdump
 .zcompdump
 

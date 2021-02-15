@@ -1,4 +1,4 @@
-#files: 997	version: 5.8
+#files: 962	version: 5.8
 
 _comps=(
 '-' '_precommand'
@@ -94,8 +94,6 @@ _comps=(
 'Mosaic' '_webbrowser'
 'VBoxHeadless' '_virtualbox'
 'VBoxManage' '_virtualbox'
-'__enhancd::cd' '_cd'
-'_git_log_prettily' '_git'
 'a2ps' '_a2ps'
 'aaaa' '_hosts'
 'aap' '_aap'
@@ -272,7 +270,7 @@ _comps=(
 'clusterdb' '_postgresql'
 'cmake' '_cmake'
 'cmp' '_cmp'
-'co' '_git'
+'co' '_rcs'
 'code' '_code'
 'coffee' '_coffee'
 'column' '_column'
@@ -295,9 +293,7 @@ _comps=(
 'configure' '_configure'
 'console' '_console'
 'convert' '_imagemagick'
-'cop' '_git'
 'coredumpctl' '_coredumpctl'
-'corp' '_git'
 'cowsay' '_cowsay'
 'cowthink' '_cowsay'
 'cp' '_cp'
@@ -428,6 +424,7 @@ _comps=(
 'fc' '_fc'
 'fc-list' '_xft_fonts'
 'fc-match' '_xft_fonts'
+'fd' '_fd'
 'feh' '_feh'
 'fetchmail' '_fetchmail'
 'ffind' '_ffind'
@@ -509,9 +506,7 @@ _comps=(
 'gdd' '_dd'
 'gdf' '_df'
 'gdiff' '_diff'
-'gdnolock' '_git'
 'gdu' '_du'
-'gdv' '_git'
 'geany' '_geany'
 'gegrep' '_grep'
 'gem' '_gem'
@@ -534,13 +529,7 @@ _comps=(
 'gfmt' '_fmt'
 'gfold' '_fold'
 'ggetopt' '_getopt'
-'ggf' '_git'
-'ggfl' '_git'
-'ggl' '_git'
-'ggp' '_git'
-'ggpnp' '_git'
 'ggrep' '_grep'
-'ggu' '_git'
 'ggv' '_gnome-gv'
 'ghc' '_ghc'
 'ghc-pkg' '_ghc'
@@ -1688,21 +1677,9 @@ _services=(
 'Mail' 'mail'
 'VBoxHeadless' 'vboxheadless'
 'VBoxManage' 'vboxmanage'
-'_git_log_prettily' 'git-log'
 'bzcat' 'bunzip2'
-'co' 'git-checkout'
-'cop' 'git-checkout'
-'corp' 'git-checkout'
 'gchgrp' 'chgrp'
 'gchown' 'chown'
-'gdnolock' 'git-diff'
-'gdv' 'git-diff'
-'ggf' 'git-checkout'
-'ggfl' 'git-checkout'
-'ggl' 'git-checkout'
-'ggp' 'git-checkout'
-'ggpnp' 'git-checkout'
-'ggu' 'git-checkout'
 'gnupod_INIT.pl' 'gnupod_INIT'
 'gnupod_addsong.pl' 'gnupod_addsong'
 'gnupod_check.pl' 'gnupod_check'
@@ -1800,8 +1777,8 @@ bindkey '^[,' _history-complete-newer
 bindkey '^[/' _history-complete-older
 bindkey '^[~' _bash_complete-word
 
-autoload -Uz _cd-gitroot _zplug _zplug _alacritty _bootctl \
-            _busctl _coredumpctl _curl _exa _flatpak \
+autoload -Uz _cd-gitroot _zplug _alacritty _bootctl _busctl \
+            _coredumpctl _curl _exa _fd _flatpak \
             _hostnamectl _journalctl _kernel-install _libinput _localectl \
             _loginctl _machinectl _mkinitcpio _mpv _networkctl \
             _pacman _pulseaudio _pulseaudio-ctl _qpdf _resolvectl \

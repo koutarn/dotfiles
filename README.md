@@ -7,7 +7,7 @@
 
 # Read
 * OS:Manjaro Linux
-* Shell:szh
+* Shell:zsh
 * Terminal:Alacritty
-* Editor:Vim 
+* Editor:vim
 * IDE:Visual Studio Code
