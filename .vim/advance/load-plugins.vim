@@ -18,20 +18,14 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'plasticboy/vim-markdown'                                      "markdown用のsyntax
   Plug 'vim-jp/vimdoc-ja'                                             "vimhelp jpfile
   Plug 'mhinz/vim-sayonara'                                           "buff削除用
-  Plug 'drmingdrmer/vim-toggle-quickfix'                              "QuickFix
   Plug 'luochen1990/rainbow'                                          "括弧を虹色にする。
   Plug 'tyru/capture.vim'                                             "コマンド結果を新規バッファに書きだす
-  Plug 'tyru/restart.vim'                                             "再起動をできるようにする
   Plug 't9md/vim-quickhl'                                             "特定の文字をハイライトする。
   Plug 'Townk/vim-autoclose'                                          "自動でカッコを閉じてくれる
-  Plug 'paroxayte/vwm.vim'                                            "レイアウトマネージャー
-  Plug 'gko/vim-coloresque'                                           "色を視覚化にする
   Plug 'ap/vim-buftabline'                                            "bufferをタブとして表示
   Plug 'mg979/vim-visual-multi'                                       "multiple-cursor機能を提供する
-  Plug 'justinmk/vim-gtfo'                                            "ファイルを開く
   Plug 'xolox/vim-misc'                                               "plugin開発のためのスクリプト群(他のプラグインのために使用)
   Plug 'MattesGroeger/vim-bookmarks'                                  "行にブックマークを入れる事が出来るようにする
-  Plug 'xolox/vim-session'                                            "sessionを保存したり復元したりする
   Plug 'scrooloose/nerdcommenter'                                     "コメント機能拡張
 
   "operator
