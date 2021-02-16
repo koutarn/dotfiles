@@ -109,15 +109,6 @@ set tm=500                                                           "音無効�
 set clipboard+=unnamed"                                              "コピーしたときにどうするか
 set cmdheight=2                                                      "コマンド行の高さ
 "================================
-"Windows用
-"================================
-if has('win32') || has('win64')
-  let g:rehash256 = 1
-  set noundofile "undoファイルを消す
-  let $PATH .= ';C:\Program Files\Git\usr\bin;$VIM\pt.exe;' "pt用
-  let g:tagbar_ctags_bin = "ctags.exe" "ctags
-endif
-"================================
 "文字コード
 "================================
 if has('unix')
@@ -166,14 +157,6 @@ augroup vimrc
   autocmd FileType fish       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 augroup END
 
-"自動コンプリート
-" set completeopt=menuone
-" for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
-"   exec "imap " . k . " " . k . "<C-N><C-P>"
-" endfor
-"imap <C-Space> <C-p>
-imap <expr> <TAB> pumvisible() ? "\<Down>" : "\<Tab>"
-
 "vモードの置換連続ペースト用
 function! Put_text_without_override_register()
   let line_len = strlen(getline('.'))
@@ -188,4 +171,4 @@ function! Put_text_without_override_register()
 endfunction
 xnoremap <silent> p :call Put_text_without_override_register()<CR>
 
-let $DESKTOP="C:/Users/kondou_k/Desktop"
+let g:session_autosave = 'no'
