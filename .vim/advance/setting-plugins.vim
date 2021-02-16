@@ -88,3 +88,9 @@ nmap F <Plug>(operator-search)
 "vimtaku/vim-operator-mdurl
 "====================================================================
 map L <Plug>(operator-mdurl)
+
+
+let g:asyncomplete_auto_popup = 0
+let g:asyncomplete_auto_popup_delay = 200
+let g:asyncomplete_auto_completeopt = 0
+
