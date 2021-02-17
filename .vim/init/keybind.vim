@@ -38,12 +38,10 @@ nnoremap gk k
 nnoremap gj j
 vnoremap gk k
 vnoremap gj j
-nnoremap H ^
-nnoremap L $
 vnoremap v $h
 
-nnoremap <S-k> 10gk
-nnoremap <S-j> 10gj
+nnoremap <S-k> <C-U>
+nnoremap <S-j>  <C-D>
 vnoremap <S-k> 10gk
 vnoremap <S-j> 10gj
 

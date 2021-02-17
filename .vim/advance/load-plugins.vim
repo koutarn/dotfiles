@@ -24,6 +24,9 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
 
   Plug 'twitvim/twitvim'                            " Vimでツイッター
 
+  "filer
+  Plug 'mattn/vim-molder'
+
   Plug 'itchyny/lightline.vim'                      " LightLine
   Plug 'bronson/vim-trailing-whitespace'            " 無駄な空白を可視化する
   Plug 'godlygeek/tabular'                          " 整形する
@@ -45,12 +48,12 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'kana/vim-operator-replace'                  " operator 入れ替え
   Plug 'rhysd/vim-operator-surround'                " operator 囲み
   Plug 'osyo-manga/vim-operator-search'             " operator 検索
-  Plug 'vimtaku/vim-operator-mdurl'                 " markdownでurl形式にする
+  " Plug 'vimtaku/vim-operator-mdurl'                 " markdownでurl形式にする
 
   "text object
   Plug 'kana/vim-textobj-user'                      " text-object強化
   Plug 'glts/vim-textobj-comment'                   " text-object コメント c
-  Plug 'kana/vim-textobj-function'                           " text-object 関数 F
+  Plug 'kana/vim-textobj-function'                  " text-object 関数 F
   Plug 'kana/vim-textobj-indent'                    " text-object インデント i
   Plug 'kana/vim-textobj-line'                      " text-object ライン l
   Plug 'rhysd/vim-textobj-anyblock'                 " text-object 対応ブロックを増やす b
