@@ -1,13 +1,4 @@
 "====================================================================
-"Vim start up
-"====================================================================
-    " autocmd VimEnter *
-    "             \   if !argc()
-    "             \ |   NERDTree
-    "             \ |   wincmd w
-    "             \ | endif
-
-"====================================================================
 "Vim Plug auto load
 "====================================================================
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -15,20 +6,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
-
-"====================================================================
-"Lokaltog/vim-easymotion
-"====================================================================
-let g:EasyMotion_do_mapping = 0 " Disale default mappings
-let g:EasyMotion_keys='hjklasdfgyuiopwertnmzxcv'
-let g:EasyMotion_grouping=1
-"Jump to first match with enter & space
-let g:EasyMotion_enter_jump_first = 1
-let g:EasyMotion_space_jump_first = 1
-
-"smartcase
-let g:EasyMotion_smartcase = 1
-
 
 "====================================================================
 "luochen1990/rainbow
@@ -88,8 +65,9 @@ nmap F <Plug>(operator-search)
 "====================================================================
 map L <Plug>(operator-mdurl)
 
-
+"====================================================================
+"prabirshrestha/asyncomplete.vim
+"====================================================================
 let g:asyncomplete_auto_popup = 0
 let g:asyncomplete_auto_popup_delay = 200
 let g:asyncomplete_auto_completeopt = 0
-

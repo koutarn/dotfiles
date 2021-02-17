@@ -26,7 +26,6 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
 
   Plug 'itchyny/lightline.vim'                      " LightLine
   Plug 'bronson/vim-trailing-whitespace'            " 無駄な空白を可視化する
-  Plug 'Lokaltog/vim-easymotion'                    " 爆速で移動する
   Plug 'godlygeek/tabular'                          " 整形する
   Plug 'plasticboy/vim-markdown'                    " markdown用のsyntax
   Plug 'vim-jp/vimdoc-ja'                           " vimhelp jpfile

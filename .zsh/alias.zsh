@@ -47,16 +47,8 @@ alias tmux-cfg="vi $TMUX_CFG"
 alias vim-key-cfg="vi $VIM_KEY_CFG"
 alias vim-plug-cfg="vi $VIM_PLUG_CFG"
 alias vim-plug-key-cfg="vi $VIM_PLUG_KEY_CFG"
-alias fish-cfg="vi $FISH_CFG"
-alias fish-reload='fish_update_completions'
 alias ala-cfg="vi $ALA_CFG"
 alias configs="vi $ZSH_CONFIGS $VIM_CONFIGS $TMUX_CFG $ALA_CFG" #all configs open
-
-#base16
-alias materia="base16_materia"
-alias monokai="base16_monokai"
-alias gruvbox="base16_gruvbox-dark-hard"
-alias solarized="base16_solarized-dark"
 
 #no correct
 #nyaみたいなのをださない

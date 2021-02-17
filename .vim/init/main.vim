@@ -2,19 +2,17 @@
 "表示設定
 "================================
 set stal=0                                                          "tabバーを常に非表示する
-set shell=bash                                                      "標準のshellをbashにする
+set shell=zsh                                                       "標準のshellをbashにする
 set title                                                           "編集中のファイル名の表示
 set showcmd                                                         "入力中のコマンドをステータスに表示する
 set number                                                          "行番号を表示
 set cursorline                                                      "現在の行を強調表示
 set showmatch                                                       "括弧入力時に対応する括弧を表示
 set display=lastline                                                "テキスト表示の方法を変える(長いテキストを省略せず最後まで表示する)
-set laststatus=2                                                    "ステータスラインを常に表示
+set laststatus=1                                                    "ステータスラインを常に表示
 set ruler                                                           "ルーラーを表示する
 set laststatus=2                                                    "ステータスバーを常に表示する
 set list                                                            "タブ、空白、改行を可視化にする
-"autocmd ColorScheme * hi NonText guibg=NONE guifg=#A4E57E
-autocmd ColorScheme * hi SpecialKey guibg=NONE guifg=DarkGray
 set listchars=tab:\|\ ,trail:-,eol:↲,extends:»,precedes:«,nbsp:%    "タブ、空白、改行を可視化の文字を設定
 
 set ambiwidth=double                                                "全角文字をvimで正しく認識させる設定
@@ -24,12 +22,6 @@ syntax enable                                                       "構文ハ�
 highlight Pmenu ctermfg=white ctermbg=black
 highlight PmenuSel ctermfg=white ctermbg=gray
 set t_Co=256
-
-"Cicaフォント設定
-set encoding=utf8
-
-"81桁目以降の色を変える
-"execute "set colorcolumn=" . join(range(81, 9999), ',')
 
 "insertmodeだと
 set iminsert=0
@@ -82,8 +74,6 @@ set nobackup                                                        "ファイ�
 set noswapfile                                                      "ファイル編集中にスワップファイルを作らない
 set splitbelow                                                      "新しいウィンドウを下に開く
 set splitright                                                      "新しいウィンドウを右に開く
-au FocusLost * :wa                                                  "focusが外れたら自動保存
-set tags+=tags;                                                     "tagの作成を親ディレクトリまで行う
 set undolevels=1000"                                                "1000回undo出来るようにする
 "================================
 "マウス設定
@@ -98,9 +88,7 @@ set lazyredraw                                                       "マクロ�
 set ttyfast                                                          "高速ターミナル接続を行う(スクロールが重くなる対策)
 set timeout timeoutlen=1000 ttimeoutlen=50                           "キー操作高速化
 set shortmess+=I                                                     "shortメッセージを無効化
-set foldenable                                                       "foldingを有効化
-set foldlevelstart=10                                                "foldingの開始レベル
-set foldnestmax=10                                                   "foldingの最大ネスト数
+set nofoldenable                                                     "foldingを無効化
 set history=500                                                      "履歴を保存
 set noerrorbells                                                     "音無効化
 set novisualbell                                                     "音無効化
@@ -108,19 +96,6 @@ set t_vb=                                                            "音無効�
 set tm=500                                                           "音無効化
 set clipboard+=unnamed"                                              "コピーしたときにどうするか
 set cmdheight=2                                                      "コマンド行の高さ
-"================================
-"文字コード
-"================================
-if has('unix')
-  "set encoding=utf-8                                                   "vimの内部文字コード
-  "set fileencoding=uft-8                                               "ファイル書き込み時の文字コード
-  set fileencodings=utf-8,cp932                                        "ファイル読み込み時の文字コード
-else
-  "set encoding=cp932                                                   "vimの内部文字コード
-  "set fileencoding=cp932                                               "ファイル書き込み時の文字コード
-  set fileencodings=utf-8,cp932                                         "ファイル読み込み時の文字コード
-endif
-
 "================================
 "File Type
 "================================
@@ -157,18 +132,3 @@ augroup vimrc
   autocmd FileType fish       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 augroup END
 
-"vモードの置換連続ペースト用
-function! Put_text_without_override_register()
-  let line_len = strlen(getline('.'))
-  execute "normal! `>"
-  let col_loc = col('.')
-  execute 'normal! gv"_x'
-  if line_len == col_loc
-    execute 'normal! p'
-  else 
-    execute 'normal! P'
-  endif
-endfunction
-xnoremap <silent> p :call Put_text_without_override_register()<CR>
-
-let g:session_autosave = 'no'
