@@ -22,6 +22,9 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'hrsh7th/vim-vsnip'
   Plug 'hrsh7th/vim-vsnip-integ'
 
+  Plug 'twitvim/twitvim'                            " Vimでツイッター
+
+  Plug 'itchyny/lightline.vim'                      " LightLine
   Plug 'bronson/vim-trailing-whitespace'            " 無駄な空白を可視化する
   Plug 'Lokaltog/vim-easymotion'                    " 爆速で移動する
   Plug 'godlygeek/tabular'                          " 整形する
@@ -48,7 +51,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   "text object
   Plug 'kana/vim-textobj-user'                      " text-object強化
   Plug 'glts/vim-textobj-comment'                   " text-object コメント c
-  "Plug 'kana/vim-textobj-function'                           " text-object 関数 F
+  Plug 'kana/vim-textobj-function'                           " text-object 関数 F
   Plug 'kana/vim-textobj-indent'                    " text-object インデント i
   Plug 'kana/vim-textobj-line'                      " text-object ライン l
   Plug 'rhysd/vim-textobj-anyblock'                 " text-object 対応ブロックを増やす b
