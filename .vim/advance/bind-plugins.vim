@@ -23,7 +23,6 @@ nmap <ESC><ESC> :noh<CR><Plug>(quickhl-manual-reset)
 map <silent>sa <Plug>(operator-surround-append)
 map <silent>sd <Plug>(operator-surround-delete)<Plug>(textobj-anyblock-a)
 map <silent>sr <Plug>(operator-surround-replace)<Plug>(textobj-anyblock-a)
-
 "====================================================================
 " kana/vim-textobj-function
 "====================================================================
@@ -40,7 +39,7 @@ nmap R <Plug>(operator-replace)
 "====================================================================
 "mg979/vim-visual-multi
 "====================================================================
-"let g:VM_default_mappings          = 0
+let g:VM_default_mappings          = 0
 let g:VM_mouse_mappings             = 1
 let g:VM_leader                     = ';'
 let g:VM_theme                      = 'neon'

@@ -12,7 +12,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
     Plug 'b4b4r07/vim-shellutils'                   " Commandを使いやすくする
   endif
 
-  "LSP関連
+  "LSP
   Plug 'prabirshrestha/vim-lsp'                     " LSP設定
   Plug 'prabirshrestha/asyncomplete.vim'            " 入力補完
   Plug 'prabirshrestha/asyncomplete-lsp.vim'        " 入力補完
@@ -22,16 +22,10 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'hrsh7th/vim-vsnip'
   Plug 'hrsh7th/vim-vsnip-integ'
 
-  Plug 'twitvim/twitvim'                            " Vimでツイッター
-
-  "filer
-  Plug 'mattn/vim-molder'
-
-  Plug 'itchyny/lightline.vim'                      " LightLine
+  "Coding
   Plug 'bronson/vim-trailing-whitespace'            " 無駄な空白を可視化する
   Plug 'godlygeek/tabular'                          " 整形する
   Plug 'plasticboy/vim-markdown'                    " markdown用のsyntax
-  Plug 'vim-jp/vimdoc-ja'                           " vimhelp jpfile
   Plug 'mhinz/vim-sayonara'                         " buff削除用
   Plug 'luochen1990/rainbow'                        " 括弧を虹色にする。
   Plug 'tyru/capture.vim'                           " コマンド結果を新規バッファに書きだす
@@ -39,15 +33,27 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'Townk/vim-autoclose'                        " 自動でカッコを閉じてくれる
   Plug 'ap/vim-buftabline'                          " bufferをタブとして表示
   Plug 'mg979/vim-visual-multi'                     " multiple-cursor機能を提供する
-  Plug 'xolox/vim-misc'                             " plugin開発のためのスクリプト群(他のプラグインのために使用)
-  Plug 'MattesGroeger/vim-bookmarks'                " 行にブックマークを入れる事が出来るようにする
   Plug 'scrooloose/nerdcommenter'                   " コメント機能拡張
+
+  "Rooting
+  Plug 'itchyny/lightline.vim'                      " LightLine
+  Plug 'mattn/vim-findroot'
+  Plug 'MattesGroeger/vim-bookmarks'                " 行にブックマークを入れる事が出来るようにする
+  Plug 'mattn/vim-molder'
+
+  "Joke
+  Plug 'monaqa/vim-duzzle'
+
+  "ather
+  Plug 'twitvim/twitvim'                            " Vimでツイッター
+  Plug 'vim-jp/vimdoc-ja'                           " vimhelp jpfile
+  Plug 'xolox/vim-misc'                             " plugin開発のためのスクリプト群(他のプラグインのために使用)
 
   "operator
   Plug 'kana/vim-operator-user'                     " operator強化
   Plug 'kana/vim-operator-replace'                  " operator 入れ替え
   Plug 'rhysd/vim-operator-surround'                " operator 囲み
-  Plug 'osyo-manga/vim-operator-search'             " operator 検索
+  " Plug 'osyo-manga/vim-operator-search'             " operator 検索
   " Plug 'vimtaku/vim-operator-mdurl'                 " markdownでurl形式にする
 
   "text object
