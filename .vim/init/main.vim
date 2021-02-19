@@ -2,7 +2,13 @@
 "表示設定
 "================================
 set stal=0                                                          "tabバーを常に非表示する
-set shell=zsh                                                       "標準のshellをbashにする
+
+if has('unix')
+  set shell=zsh                                                       "標準のshellをbashにする
+elseif has('win64')
+  set shell=cmd
+endif
+
 set title                                                           "編集中のファイル名の表示
 set showcmd                                                         "入力中のコマンドをステータスに表示する
 set number                                                          "行番号を表示

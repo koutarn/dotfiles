@@ -1,0 +1,8 @@
+"VIMCONFIG
+let $VIMCONF='~/.vim/'
+
+
+
+
+
+

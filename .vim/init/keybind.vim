@@ -45,6 +45,11 @@ nnoremap <silent><Leader>o  :<C-u>for i in range(v:count1) \| call append(line('
 nnoremap <silent><Leader>O  :<C-u>for i in range(v:count1) \| call append(line('.')-1, '') \| endfor<CR>
 inoremap <silent>jj <ESC>
 
+" 補完表示時のEnterで改行をしない
+inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-j>"
+inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-k>"" " " "
+
+
 "window
 nnoremap <Leader>s :<C-u>sp<CR>
 nnoremap <Leader>v :<C-u>vs<CR>
