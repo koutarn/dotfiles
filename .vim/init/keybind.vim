@@ -44,6 +44,9 @@ vnoremap <S-j> 10gj
 nnoremap <silent><Leader>o  :<C-u>for i in range(v:count1) \| call append(line('.'), '') \| endfor<CR>
 nnoremap <silent><Leader>O  :<C-u>for i in range(v:count1) \| call append(line('.')-1, '') \| endfor<CR>
 inoremap <silent>jj <ESC>
+inoremap <C-a> <HOME>
+inoremap <C-e> <END>
+inoremap <C-l> <DEL>
 
 " 補完表示時のEnterで改行をしない
 inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-j>"

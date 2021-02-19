@@ -103,7 +103,16 @@ set noerrorbells                                                     "音無効�
 set novisualbell                                                     "音無効化
 set t_vb=                                                            "音無効化
 set tm=500                                                           "音無効化
-set clipboard+=unnamed"                                              "コピーしたときにどうするか
+
+if has('unix')
+  set clipboard&
+  set clipboard^=unnamedplus
+endif
+
+if has('win64')
+  set clipboard+=unnamed"                                              "コピーしたときにどうするか
+endif
+
 set cmdheight=2                                                      "コマンド行の高さ
 
 
