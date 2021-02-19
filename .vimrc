@@ -10,5 +10,4 @@
 "読み込みファイル設定
 set runtimepath+=~/.vim/
 
-runtime! init/*.vim             "初期化設定
-runtime! advance/*.vim          "追加設定
+runtime! _config/*.vim             "初期化設定

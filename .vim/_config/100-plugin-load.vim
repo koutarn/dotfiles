@@ -1,7 +1,14 @@
 "================================
 "vim plug settings
 "===============================
-"if has('git')
+
+"Vim Plug auto load
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 if filereadable(expand("~/.vim/autoload/plug.vim"))
   call plug#begin()
 
@@ -34,6 +41,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'ap/vim-buftabline'                          " bufferをタブとして表示
   Plug 'mg979/vim-visual-multi'                     " multiple-cursor機能を提供する
   Plug 'scrooloose/nerdcommenter'                   " コメント機能拡張
+  Plug 'simeji/winresizer'
 
   "Rooting
   Plug 'itchyny/lightline.vim'                      " LightLine
@@ -68,3 +76,10 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
 
   call plug#end()
 end
+
+"Are you using plugins?
+let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
+function! FindPlugin(name) abort
+  return has_key(s:plugs, a:name) ? isdirectory(s:plugs[a:name].dir) : 0
+endfunction
+command! -nargs=1 UsePlugin if !FindPlugin(<args>) | finish | endif
