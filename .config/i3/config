@@ -146,6 +146,7 @@ bar {
         inactive_workspace #9a878f #191919
         urgent_workspace #2e3436 #9a878f
     }
+	height 15
 }
 
 #assign application to workspace
@@ -153,6 +154,7 @@ assign [class="Google-chrome"] → 1: main
 assign [class="Alacritty"] → 1: main
 assign [class="Spotify"] → 2: sub
 assign [class="notion-nativefier-46aee8"] → 3: back
+assign [class="ticktick-nativefier-a173fa"] → 3: back
 
 # Startup apps
 exec --no-startup-id dunst
