@@ -2,11 +2,11 @@
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
-font pango:monospace 10
+font pango:HackGen35Nerd Console 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+font pango:HackGen35Nerd Console 8
 
 #============================================
 # Window config
@@ -16,7 +16,14 @@ for_window [class="mpv"] floating enable
 #タイトルバーを無効化
 for_window [class="^.*"] border pixel 1
 
-#Gapをあけるようにする
+
+#============================================
+#Gap
+#============================================
+# gaps inner all set 20
+# gaps outer current plus 5
+# gaps horizontal current plus 40
+# gaps outer current toggle 60
 smart_borders on
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -54,13 +61,13 @@ bindsym $mod+e layout toggle split
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-
-bindsym $mod+y workspace prev
-bindsym $mod+u workspace next
-
 #============================================
 #WorkSpace
 #============================================
+#switch prev or next
+bindsym $mod+y workspace prev
+bindsym $mod+u workspace next
+
 # switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
@@ -122,8 +129,9 @@ bindsym $mod+r mode "resize"
 bindsym button2 kill
 
 # Startup apps
+# exec --no-startup-id dunst
+exec --no-startup-id xfce4-panel --disable-wm-check
 exec --no-startup-id nm-applet
-exec --no-startup-id dunst
 exec --no-startup-id fcitx5
 # exec --no-startup-id parcellite
 exec --no-startup-id volumeicon
