@@ -11,3 +11,8 @@
 * Terminal:Alacritty
 * Editor:vim
 * IDE:Visual Studio Code
+
+# Apps
+* WindowManager:i3
+* Desktop notifications:dunst
+
