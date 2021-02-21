@@ -56,7 +56,7 @@ inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-k>"" " " "
 "window
 nnoremap <Leader>s :<C-u>sp<CR>
 nnoremap <Leader>v :<C-u>vs<CR>
-nnoremap <Leader>x :q<CR>
+nnoremap <Leader>x :close<CR>
 nnoremap <leader>w  :<c-u>wa<cr>
 nnoremap <leader>q  :<c-u>qa<cr>
 
