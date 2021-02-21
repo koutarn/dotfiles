@@ -1,4 +1,4 @@
-ndow,drun,system:~/.config/rofi/rofi_system.sh
+rofi.modi:window,drun
 rofi.sidebar-mode:  true
 rofi.hide-scrollbar: true
 rofi.kb-cancel: Escape,Control+bracketleft

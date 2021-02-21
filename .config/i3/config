@@ -1,3 +1,6 @@
+#inspire
+#http://dotshare.it/dots/307/
+
 #Mod Key
 set $mod Mod4
 
@@ -7,6 +10,18 @@ font pango:HackGen35Nerd Console 10
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:HackGen35Nerd Console 8
+
+#colors
+client.focused          #4c7899 #285577 #ffffff #2e9ef4
+client.focused_inactive #333333 #5f676a #ffffff #484e50
+client.unfocused        #333333 #222222 #888888 #292d2e
+client.urgent           #2f343a #900000 #ffffff #900000
+
+# client.focused #121212 #101010 #9e8a8e
+# client.focused_inactive #101010 #191919 #999999
+# client.unfocused #101010 #191919 #999999
+# client.urgent #cd989a #cd989a #2e3436
+# client.background #1d1d1d
 
 #============================================
 # Window config
@@ -35,7 +50,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 
 #menu
-bindsym $mod+semicolon exec --no-startup-id rofi -show window
+bindsym $mod+semicolon exec --no-startup-id rofi -show window -show-icons -icon-theme "Papirus"
 
 # change focus
 bindsym $mod+j focus down
@@ -53,12 +68,12 @@ bindsym $mod+Shift+l move right
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
+# bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+# bindsym $mod+Shift+space floating toggle
 
 #============================================
 #WorkSpace
@@ -68,9 +83,9 @@ bindsym $mod+y workspace prev
 bindsym $mod+u workspace next
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
+bindsym $mod+1 workspace 1: main
+bindsym $mod+2 workspace 2: sub
+bindsym $mod+3 workspace 3: back
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
@@ -80,16 +95,16 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move workspace 1: main
+bindsym $mod+Shift+2 move workspace 2: sub
+bindsym $mod+Shift+3 move workspace 3: back
+bindsym $mod+Shift+4 move workspace 4
+bindsym $mod+Shift+5 move workspace 5
+bindsym $mod+Shift+6 move workspace 6
+bindsym $mod+Shift+7 move workspace 7
+bindsym $mod+Shift+8 move workspace 8
+bindsym $mod+Shift+9 move workspace 9
+bindsym $mod+Shift+0 move workspace 10
 
 #============================================
 #Optional
@@ -117,20 +132,32 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# bindsym $mod+c mode "Commando"
-# mode "Commando"{
-#     bindsym f exec nautilus; mode "default"
-#     bindsym Escape mode "default"
-# }
+#bars
+bar {
+    mode dock
+    position top
+    font HackGen
+	workspace_buttons yes
+    colors {
+        background #101010
+        statusline #999999
+        focused_workspace #825969 #191919
+        active_workspace #825969 #101010
+        inactive_workspace #9a878f #191919
+        urgent_workspace #2e3436 #9a878f
+    }
+}
 
-
-# Mouse
-bindsym button2 kill
+#assign application to workspace
+assign [class="Google-chrome"] → 1: main
+assign [class="Alacritty"] → 1: main
+assign [class="Spotify"] → 2: sub
+assign [class="notion-nativefier-46aee8"] → 3: back
 
 # Startup apps
-# exec --no-startup-id dunst
-exec --no-startup-id xfce4-panel --disable-wm-check
-exec --no-startup-id nm-applet
+exec --no-startup-id dunst
+# exec --no-startup-id xfce4-panel --disable-wm-check
+# exec --no-startup-id nm-applet
 exec --no-startup-id fcitx5
 # exec --no-startup-id parcellite
 exec --no-startup-id volumeicon
