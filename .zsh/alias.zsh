@@ -59,3 +59,6 @@ alias touch="${ZSH_VERSION:+nocorrect} touch"
 
 #trash
 alias rm="trash"
+
+#xprop
+alias xprop="xprop | grep WM_CLASS"

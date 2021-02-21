@@ -11,7 +11,7 @@ font pango:HackGen35Nerd Console 8
 #============================================
 # Window config
 #============================================
-for_window [class="mpv"] floating enable
+# for_window [class="wine"] floating enable
 
 #タイトルバーを無効化
 for_window [class="^.*"] border pixel 1
