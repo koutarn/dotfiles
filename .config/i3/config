@@ -4,7 +4,7 @@ focus_follows_mouse  yes
 workspace_auto_back_and_forth yes
 set $mod Mod4
 floating_modifier $mod
-font pango:HackGen35Nerd Console 10
+font pango:HackGen35Nerd Console Normal 10
 
 #Gap
 gaps inner 5
@@ -76,7 +76,8 @@ for_window [class="^.*"] border pixel 1
 # for_window [workspace=$ws2] layout tabbed
 for_window [workspace=$ws3] layout stacking
 # for_window [workspace=$ws2] floating enable, resize set 1280 960,move position center
-# for_window [workspace=$ws4] floating enable,resize set 1600 900,move position center
+for_window [workspace=$ws4] floating enable,resize set 1280 960,move position center
+for_window [workspace=$ws5] floating enable,resize set 800 600
 
 ## Specific workspaces
 # assign [window_role="browser"] $ws1
@@ -86,6 +87,7 @@ assign [class="Spotify"] $ws2
 assign [window_role="browser-window"] $ws3
 assign [class="(?i).exe"] $ws4
 assign [class="Thunar"] $ws5
+assign [class="pavucontrol"] $ws5
 
 ##Misc
 bindsym $mod+Shift+c reload
