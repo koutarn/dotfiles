@@ -1,124 +1,98 @@
-#inspire
-#http://dotshare.it/dots/307/
-
-#Mod Key
+#General
+new_window pixel 3
+focus_follows_mouse  yes
+workspace_auto_back_and_forth yes
 set $mod Mod4
-
-# Font for window titles. Will also be used by the bar unless a different font
+floating_modifier $mod
 font pango:HackGen35Nerd Console 10
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:HackGen35Nerd Console 8
-
-#colors
-client.focused          #4c7899 #285577 #ffffff #2e9ef4
-client.focused_inactive #333333 #5f676a #ffffff #484e50
-client.unfocused        #333333 #222222 #888888 #292d2e
-client.urgent           #2f343a #900000 #ffffff #900000
-
-# client.focused #121212 #101010 #9e8a8e
-# client.focused_inactive #101010 #191919 #999999
-# client.unfocused #101010 #191919 #999999
-# client.urgent #cd989a #cd989a #2e3436
-# client.background #1d1d1d
-
-#============================================
-# Window config
-#============================================
-# for_window [class="wine"] floating enable
-
-#タイトルバーを無効化
-for_window [class="^.*"] border pixel 1
-
-#============================================
 #Gap
-#============================================
-# gaps inner all set 20
-# gaps outer current plus 5
-# gaps horizontal current plus 40
-# gaps outer current toggle 60
+gaps inner 5
+gaps outer 5
+smart_gaps on
 smart_borders on
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+# Color
+set $cbg "#f26262"
+set $ccolor "#efebe0"
+set $cunfo "#cb8b8b"
+set $cindi "#145ba7"
+set $cindiu "#8a9db1"
 
-# start a terminal
+#<colorclass>           <border> <background> <text> <indicator> <child_border>
+client.focused          $cbg    $cbg    $ccolor $cindi   $cbg
+client.focused_inactive $cbg    $cunfo  $ccolor $cindiu   $cunfo
+client.unfocused        $cbg    $cunfo  $ccolor $cindiu   $cunfo
+client.urgent           $cbg    $cunfo  $ccolor $cindi   $cunfo
+
+
+#Keybindings
+##Quick Launch
 bindsym $mod+Return exec alacritty
-
-# kill focused window
-bindsym $mod+q kill
-
-#menu
 bindsym $mod+semicolon exec --no-startup-id rofi -show window -show-icons -icon-theme "Papirus"
 
-# change focus
+##kill focused window
+bindsym $mod+q kill
+
+##change focus
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+h focus left
 bindsym $mod+l focus right
 
-# move focused window
+##move focused window
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+l move right
 
-# enter fullscreen mode for the focused container
+##enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
-# bindsym $mod+s layout stacking
-# bindsym $mod+w layout tabbed
-# bindsym $mod+e layout toggle split
+# Workspace
+set $ws1 "1:MAIN"
+set $ws2 "2:MEDIA"
+set $ws3 "3:WORK"
+set $ws4 "4:GAME"
+set $ws5 "5:SYSTEM"
 
-# toggle tiling / floating
-# bindsym $mod+Shift+space floating toggle
+## Workspace keybinding
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
 
-#============================================
-#WorkSpace
-#============================================
-#switch prev or next
-bindsym $mod+y workspace prev
-bindsym $mod+u workspace next
+## Move to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
 
-# switch to workspace
-bindsym $mod+1 workspace 1: main
-bindsym $mod+2 workspace 2: sub
-bindsym $mod+3 workspace 3: back
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+## Specific window
+no_focus [window_role="pop-up"]
+for_window [class="^.*"] border pixel 1
+# for_window [workspace=$ws2] layout tabbed
+for_window [workspace=$ws3] layout stacking
+# for_window [workspace=$ws2] floating enable, resize set 1280 960,move position center
+# for_window [workspace=$ws4] floating enable,resize set 1600 900,move position center
 
-# move focused container to workspace
-bindsym $mod+Shift+1 move workspace 1: main
-bindsym $mod+Shift+2 move workspace 2: sub
-bindsym $mod+Shift+3 move workspace 3: back
-bindsym $mod+Shift+4 move workspace 4
-bindsym $mod+Shift+5 move workspace 5
-bindsym $mod+Shift+6 move workspace 6
-bindsym $mod+Shift+7 move workspace 7
-bindsym $mod+Shift+8 move workspace 8
-bindsym $mod+Shift+9 move workspace 9
-bindsym $mod+Shift+0 move workspace 10
+## Specific workspaces
+# assign [window_role="browser"] $ws1
+assign [class="google-chrome"] $ws1
+assign [class="Alacritty"] $ws1
+assign [class="Spotify"] $ws2
+assign [window_role="browser-window"] $ws3
+assign [class="(?i).exe"] $ws4
+assign [class="Thunar"] $ws5
 
-#============================================
-#Optional
-#============================================
-# reload the configuration file
+##Misc
 bindsym $mod+Shift+c reload
-# restarj i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec --no-startup-id \
-	"i3-nagbar -t warning -m 'Do you really want to exit i3?' -b 'Shutdown' 'systemctl poweroff' -b 'Reboot' 'systemctl reboot' -b 'Logout' 'i3-msg exit'"
-
-# resize window (you can also use the mouse for that)
+# Mode
+#resize window (you can also use the mouse for that)
 mode "resize" {
         bindsym l resize shrink width 10 px or 10 ppt
         bindsym h resize grow width 10 px or 10 ppt
@@ -132,76 +106,24 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-#bars
 bar {
-    mode dock
-    position top
-    font HackGen
+	mode dock
+	position top
+	font HackGen
 	workspace_buttons yes
-    colors {
-        background #101010
-        statusline #999999
-        focused_workspace #825969 #191919
-        active_workspace #825969 #101010
-        inactive_workspace #9a878f #191919
-        urgent_workspace #2e3436 #9a878f
-    }
-	height 15
+	colors {
+		background #101010
+		statusline #999999
+		focused_workspace #825969 #191919
+		active_workspace #825969 #101010
+		inactive_workspace #9a878f #191919
+		urgent_workspace #2e3436 #9a878f
+	}
 }
 
-#assign application to workspace
-assign [class="Google-chrome"] → 1: main
-assign [class="Alacritty"] → 1: main
-assign [class="Spotify"] → 2: sub
-assign [class="notion-nativefier-46aee8"] → 3: back
-assign [class="ticktick-nativefier-a173fa"] → 3: back
 
 # Startup apps
 exec --no-startup-id dunst
-# exec --no-startup-id xfce4-panel --disable-wm-check
-# exec --no-startup-id nm-applet
 exec --no-startup-id fcitx5
-# exec --no-startup-id parcellite
 exec --no-startup-id volumeicon
-exec --no-startup-id "feh --bg-scale $HOME/.config/i3/wallpaper.jpg"
-# exec --no-startup-id compton -cbm 0.75
-
-
-#============================================
-# Don't use this
-#============================================
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-# bar {
-# 	status_command i3status
-# }
-
-# Multimedia keys
-# Pulse Audio controls
-# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-# bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
-
-# Sleep key
-# bindsym XF86Sleep exec --no-startup-id systemctl suspend
-
-# Screen brightness controls
-# bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-# bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
-
-# Media player controls
-# bindsym XF86AudioPlay exec playerctl play
-# bindsym XF86AudioPause exec playerctl pause
-# bindsym XF86AudioNext exec playerctl next
-# bindsym XF86AudioPrev exec playerctl previous
-
-# change focus between tiling / floating windows
-# bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-# bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
-
+# exec --no-startup-id "feh --bg-scale $HOME/Pictures/wallpaper/2.jpeg"
