@@ -4,7 +4,7 @@ focus_follows_mouse  yes
 workspace_auto_back_and_forth yes
 set $mod Mod4
 floating_modifier $mod
-font pango:HackGen35Nerd Console Normal 10
+font pango:HackGen35NerdConsole Regular 10
 
 #Gap
 gaps inner 15
@@ -73,6 +73,7 @@ bindsym $mod+Shift+5 move container to workspace $ws5
 
 ## Specific window
 no_focus [window_role="pop-up"]
+for_window [window_role="pop-up"] floating enable
 for_window [class="^.*"] border pixel 1
 # for_window [workspace=$ws2] layout tabbed
 for_window [workspace=$ws3] layout stacking
@@ -81,11 +82,11 @@ for_window [workspace=$ws4] floating enable,resize set 1280 960,move position ce
 for_window [workspace=$ws5] floating enable,resize set 800 600,move position center
 
 ## Specific workspaces
-assign [class="google-chrome"] $ws1
+assign [class="Google-chrome"] $ws1
 assign [class="Alacritty"] $ws1
 assign [class="Spotify"] $ws2
-assign [window_role="browser-window"] $ws3
-assign [class="(?i).exe"] $ws4
+assign [window_role="^browser-window"] $ws3
+assign [class="^.*exe"] $ws4
 assign [class="Thunar"] $ws5
 assign [class="pavucontrol"] $ws5
 

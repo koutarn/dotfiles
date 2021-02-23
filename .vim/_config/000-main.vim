@@ -9,6 +9,7 @@ elseif has('win64')
   set shell=cmd
 endif
 
+set fileformats=unix,dos
 set title                                                           "編集中のファイル名の表示
 set showcmd                                                         "入力中のコマンドをステータスに表示する
 set number                                                          "行番号を表示
@@ -98,7 +99,7 @@ set ttyfast                                                          "高速タ�
 set timeout timeoutlen=1000 ttimeoutlen=50                           "キー操作高速化
 set shortmess+=I                                                     "shortメッセージを無効化
 set nofoldenable                                                     "foldingを無効化
-set history=500                                                      "履歴を保存
+set history=1000                                                      "履歴を保存
 set noerrorbells                                                     "音無効化
 set novisualbell                                                     "音無効化
 set t_vb=                                                            "音無効化
@@ -109,7 +110,7 @@ if has('unix')
   set clipboard^=unnamedplus
 endif
 
-if has('win64')
+if has('win32') && has('win64')
   set clipboard+=unnamed"                                              "コピーしたときにどうするか
 endif
 
