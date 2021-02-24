@@ -31,7 +31,6 @@ client.urgent           $cbg    $cunfo  $ccolor $cindi   $cunfo
 bindsym $mod+Return exec alacritty
 bindsym $mod+semicolon exec --no-startup-id rofi -show window -show-icons -icon-theme "Papirus"
 
-
 ##kill focused window
 bindsym $mod+q kill
 
@@ -52,10 +51,11 @@ bindsym $mod+f fullscreen toggle
 
 # Workspace
 set $ws1 "1:MAIN"
-set $ws2 "2:MEDIA"
+set $ws2 "2:SUB"
 set $ws3 "3:WORK"
-set $ws4 "4:GAME"
-set $ws5 "5:SYSTEM"
+set $ws2 "4:MEDIA"
+set $ws4 "5:GAME"
+set $ws5 "6:SYSTEM"
 set $ws9 "9:OPTION"
 
 ## Workspace keybinding
@@ -64,6 +64,7 @@ bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
 bindsym $mod+9 workspace $ws9
 
 ## Move to workspace
@@ -72,27 +73,26 @@ bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+9 move container to workspace $ws9
 
 ## Specific window
 no_focus [window_role="pop-up"]
 for_window [window_role="pop-up"] floating enable
 for_window [class="^.*"] border pixel 1
-# for_window [workspace=$ws2] layout tabbed
 for_window [workspace=$ws3] layout stacking
-# for_window [workspace=$ws2] floating enable, resize set 1280 960,move position center
-for_window [workspace=$ws4] floating enable,resize set 1280 960,move position center
-for_window [workspace=$ws5] floating enable,resize set 800 600,move position center
+for_window [workspace=$ws5] floating enable,resize set 1280 960,move position center
+for_window [workspace=$ws6] floating enable,resize set 800 600,move position center
 for_window [workspace=$ws9] layout stacking
 
 ## Specific workspaces
 assign [class="Google-chrome"] $ws1
 assign [class="Alacritty"] $ws1
-assign [class="Spotify"] $ws2
+assign [class="Spotify"] $ws4
 assign [window_role="^browser-window"] $ws3
-assign [class="^.*exe"] $ws4
-assign [class="Thunar"] $ws5
-assign [class="pavucontrol"] $ws5
+assign [class="^.*exe"] $ws5
+assign [class="Thunar"] $ws6
+assign [class="pavucontrol"] $ws6
 
 ##Misc
 bindsym $mod+Shift+c reload

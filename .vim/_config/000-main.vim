@@ -42,6 +42,7 @@ set smartcase                                                       "検索文�
 set wrapscan                                                        "検索時に最後まで移動したら最初に戻る
 set incsearch                                                       "インクリメンタルサーチを有効にする
 set matchtime=1                                                     "カーソルが飛ぶ時間を変更
+set ignorecase smartcase
 "================================
 "インデント
 "================================
@@ -77,6 +78,7 @@ set virtualedit=block
 "================================
 "ファイル処理関連の設定
 "================================
+set nrformats=alpha,bin,hex
 set confirm                                                         "保存されていないファイルがあるときは終了前に保存確認
 set hidden                                                          "保存されていないファイルがあるときでも別のファイルを開くことが出来る
 set autoread                                                        "外部でファイルに変更がされた場合は読みなおす
