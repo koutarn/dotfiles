@@ -30,5 +30,6 @@ excludesfile = ~/.gitignore-global
 ui = auto
 
 [commit]
+	verbose = true
 #template
 # template = ~/.git-template
