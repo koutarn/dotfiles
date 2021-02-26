@@ -30,7 +30,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'hrsh7th/vim-vsnip-integ'
 
   "Coding
-  Plug 'bronson/vim-trailing-whitespace'            " 無駄な空白を可視化する
+  " Plug 'bronson/vim-trailing-whitespace'            " 無駄な空白を可視化する
   Plug 'godlygeek/tabular'                          " 整形する
   Plug 'mhinz/vim-sayonara'                         " buff削除用
   Plug 'luochen1990/rainbow'                        " 括弧を虹色にする。
@@ -43,8 +43,8 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'simeji/winresizer'
 
   "Writ
+  Plug 'skanehira/preview-markdown.vim'
   Plug 'plasticboy/vim-markdown'                    " markdown用のsyntax
-  Plug 'tmrekk121/prev-md.vim'
 
   "Rooting
   Plug 'itchyny/lightline.vim'                      " LightLine

@@ -4,4 +4,4 @@ rofi.hide-scrollbar: true
 rofi.kb-cancel: Escape,Control+bracketleft
 rofi.kb-mode-previous: Alt+h
 rofi.kb-mode-next: Alt+l
-rofi.theme: /usr/share/rofi/themes/lb.rasi
+rofi.theme: /usr/share/rofi/themes/Monokai.rasi

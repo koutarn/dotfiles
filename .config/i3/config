@@ -30,7 +30,7 @@ client.urgent           $cbg    $cunfo  $ccolor $cindi   $cunfo
 ##Quick Launch
 bindsym $mod+Return exec alacritty
 bindsym $mod+semicolon exec --no-startup-id rofi -show window -show-icons -icon-theme "Papirus"
-bindsym $mod+p exec --no-startup-id rofi -show drun -show-icons -icon-theme "Monokai"
+bindsym $mod+p exec --no-startup-id rofi -show drun -show-icons -icon-theme "Papirus"
 
 ##kill focused window
 bindsym $mod+q kill
@@ -87,6 +87,8 @@ for_window [workspace=$ws5] floating enable,resize set 1280 960,move position ce
 for_window [workspace=$ws6] floating enable,resize set 800 600,move position center
 for_window [workspace=$ws9] layout stacking
 
+for_window [class="^viewnior$"] floating enable,resize set 1600 900,move position center
+
 ## Specific workspaces
 assign [class="Google-chrome"] $ws1
 assign [class="Alacritty"] $ws1
@@ -136,5 +138,4 @@ bar {
 exec --no-startup-id dunst
 exec --no-startup-id fcitx5
 exec --no-startup-id volumeicon
-exec --no-startup-id albert
 # exec --no-startup-id "feh --bg-scale $HOME/Pictures/wallpaper/2.jpeg"
