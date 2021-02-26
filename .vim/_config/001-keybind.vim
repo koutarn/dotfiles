@@ -49,15 +49,15 @@ inoremap <C-e> <END>
 inoremap <C-l> <DEL>
 
 " 補完表示時のEnterで改行をしない
-inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-j>"
-inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-k>"" " " "
+" inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-j>"
+" inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-k>"" " " "
 
 
 "window
 nnoremap <Leader>s :<C-u>sp<CR>
 nnoremap <Leader>v :<C-u>vs<CR>
 nnoremap <Leader>x :close<CR>
-nnoremap <leader>w  :<c-u>wa<cr>
+nnoremap <leader>w  :<c-u>w<cr>
 nnoremap <leader>q  :<c-u>qa<cr>
 
 "ウィンドウ間を移動

@@ -54,9 +54,9 @@ bindsym $mod+f fullscreen toggle
 set $ws1 "1:MAIN"
 set $ws2 "2:SUB"
 set $ws3 "3:WORK"
-set $ws2 "4:MEDIA"
-set $ws4 "5:GAME"
-set $ws5 "6:SYSTEM"
+set $ws4 "4:MEDIA"
+set $ws5 "5:GAME"
+set $ws6 "6:SYSTEM"
 set $ws9 "9:OPTION"
 
 ## Workspace keybinding
