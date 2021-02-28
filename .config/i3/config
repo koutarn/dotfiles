@@ -25,7 +25,6 @@ client.focused_inactive $cbg    $cunfo  $ccolor $cindiu   $cunfo
 client.unfocused        $cbg    $cunfo  $ccolor $cindiu   $cunfo
 client.urgent           $cbg    $cunfo  $ccolor $cindi   $cunfo
 
-
 #Keybindings
 ##Quick Launch
 bindsym $mod+Return exec alacritty
@@ -87,7 +86,7 @@ for_window [workspace=$ws5] floating enable,resize set 1280 960,move position ce
 for_window [workspace=$ws6] floating enable,resize set 800 600,move position center
 for_window [workspace=$ws9] layout stacking
 
-for_window [class="^viewnior$"] floating enable,resize set 1600 900,move position center
+for_window [class="Viewnior"] floating enable,resize set 1600 900,move position center
 
 ## Specific workspaces
 assign [class="Google-chrome"] $ws1
@@ -101,22 +100,6 @@ assign [class="pavucontrol"] $ws6
 ##Misc
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-
-# Mode
-#resize window (you can also use the mouse for that)
-mode "resize" {
-        bindsym l resize shrink width 10 px or 10 ppt
-        bindsym h resize grow width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym j resize shrink height 10 px or 10 ppt
-
-        #back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-bindsym $mod+r mode "resize"
-
 
 bar {
 	mode dock
