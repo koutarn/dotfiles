@@ -27,10 +27,10 @@ alias -g G='| grep'
 alias c="cd"
 alias ..="cd .."
 alias reload-zsh="source $ZSHRC"
-alias fish-config="vi $FISH_CFG"
-alias vi='vim'
-alias vim-configs="vi $VIM_CONFIGS"
-alias zsh-configs="vi $ZSH_CONFIGS"
+alias vi='nvim'
+alias vim='nvim'
+alias vim-configs="nvim $VIM_CONFIGS"
+alias zsh-configs="nvim $ZSH_CONFIGS"
 
 #lsとついでにexaの設定もしておく
 alias l="ls -p -v -w 150 -A --color=always"
@@ -41,9 +41,6 @@ alias el="exa -al --icons"
 alias et="exa -T --icons"
 
 alias tmux-cfg="vi $TMUX_CFG"
-alias vim-key-cfg="vi $VIM_KEY_CFG"
-alias vim-plug-cfg="vi $VIM_PLUG_CFG"
-alias vim-plug-key-cfg="vi $VIM_PLUG_KEY_CFG"
 alias ala-cfg="vi $ALA_CFG"
 alias configs="vi $ZSH_CONFIGS $VIM_CONFIGS $TMUX_CFG $ALA_CFG" #all configs open
 

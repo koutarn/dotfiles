@@ -44,14 +44,16 @@ vnoremap <S-j> 10gj
 nnoremap <silent><Leader>o  :<C-u>for i in range(v:count1) \| call append(line('.'), '') \| endfor<CR>
 nnoremap <silent><Leader>O  :<C-u>for i in range(v:count1) \| call append(line('.')-1, '') \| endfor<CR>
 inoremap <silent>jj <ESC>
+
 inoremap <C-a> <HOME>
 inoremap <C-e> <END>
-inoremap <C-l> <DEL>
+inoremap <C-o> <DEL>
+inoremap <C-u> <BS>
 
-" 補完表示時のEnterで改行をしない
-" inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-j>"
-" inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-k>"" " " "
-
+inoremap <C-h> <LEFT>
+inoremap <C-l> <RIGHT>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
 
 "window
 nnoremap <Leader>s :<C-u>sp<CR>
@@ -72,15 +74,6 @@ nnoremap <Leader>l <C-w>l
 nnoremap <silent> <Leader>y :bprev<CR>
 nnoremap <silent> <Leader>u :bnext<CR>
 
-"===========================================================
-"その他
-"===========================================================
-"検索結果を画面中央に
-nmap n nzz
-nmap N Nzz
-nmap * *zz
-nmap # #zz
-
 "インデント整形
 vnoremap > >gv
 vnoremap < <gv
@@ -88,14 +81,9 @@ nnoremap == gg=G
 
 "検索と置換
 nnoremap / /\v
-" nnoremap sh :<C-u>%s///g<Left><Left><Left>
-" vnoremap sh :s///g<Left><Left><Left>
 "===========================================================
 "alias
 "===========================================================
-"空のバッファ作成
-nnoremap Leaderfn :hide enew<CR>
-
 "読み込み
 if has('win32') || has('win64')
   command! Source source ~/_vimrc
@@ -115,4 +103,5 @@ function! Put_text_without_override_register()
     execute 'normal! P'
   endif
 endfunction
+
 xnoremap <silent> p :call Put_text_without_override_register()<CR>
