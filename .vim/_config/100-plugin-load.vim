@@ -9,7 +9,7 @@ if has('unix')
   Plug 'b4b4r07/vim-shellutils'
 endif
 
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "Coding
 Plug 'ghifarit53/tokyonight-vim'
@@ -29,6 +29,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'mattn/vim-findroot'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'phaazon/hop.nvim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 "Filer
 Plug 'lambdalisue/fern.vim'

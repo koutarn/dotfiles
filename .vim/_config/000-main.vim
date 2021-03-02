@@ -89,6 +89,8 @@ if !has('nvim')
   set ttymouse=xterm2
 endif
 
+set termguicolors
+
 "================================
 "その他
 "================================
