@@ -9,28 +9,25 @@ if has('unix')
   Plug 'b4b4r07/vim-shellutils'
 endif
 
+if has('nvim')
+  Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'romgrk/barbar.nvim'
+endif
+
 "color scheme
 Plug 'ghifarit53/tokyonight-vim'
 
 "LSP
-Plug 'prabirshrestha/vim-lsp'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'mattn/vim-lsp-icons'
-" Plug 'hrsh7th/vim-vsnip'
-" Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "Coding
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'godlygeek/tabular'
-Plug 'mhinz/vim-sayonara'
+Plug 'moll/vim-bbye'
 Plug 'luochen1990/rainbow'
 Plug 'tyru/capture.vim'
 Plug 't9md/vim-quickhl'
 Plug 'Townk/vim-autoclose'
-Plug 'ap/vim-buftabline'
 Plug 'mg979/vim-visual-multi'
 Plug 'scrooloose/nerdcommenter'
 Plug 'simeji/winresizer'
@@ -38,12 +35,14 @@ Plug 'simeji/winresizer'
 "Writ
 Plug 'skanehira/preview-markdown.vim'
 Plug 'plasticboy/vim-markdown'
+Plug 'glepnir/indent-guides.nvim'
 
 "Rooting
 Plug 'itchyny/lightline.vim'
 Plug 'mattn/vim-findroot'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'mattn/vim-molder'
+Plug 'phaazon/hop.nvim'
 
 "Joke
 Plug 'monaqa/vim-duzzle'
@@ -52,6 +51,7 @@ Plug 'monaqa/vim-duzzle'
 Plug 'twitvim/twitvim'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'xolox/vim-misc'
+" Plug 'numtostr/FTerm.nvim'
 
 "operator
 Plug 'kana/vim-operator-user'

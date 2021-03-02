@@ -5,10 +5,12 @@ set stal=0
 
 if has('unix')
   set shell=zsh
+  set encoding=utf-8
 elseif has('win64')
   set shell=cmd
 endif
 
+set updatetime=300
 set fileformats=unix,dos
 set title
 set showcmd
@@ -78,6 +80,7 @@ set noswapfile
 set splitbelow
 set splitright
 set undolevels=1000"
+set shortmess+=c
 
 "mouse
 set mouse=a

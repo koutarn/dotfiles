@@ -71,8 +71,8 @@ nnoremap <Leader>l <C-w>l
 "===========================================================
 "バッファ
 "===========================================================
-nnoremap <silent> <Leader>y :bprev<CR>
-nnoremap <silent> <Leader>u :bnext<CR>
+" nnoremap <silent> <Leader>y :bprev<CR>
+" nnoremap <silent> <Leader>u :bnext<CR>
 
 "インデント整形
 vnoremap > >gv
