@@ -9,21 +9,12 @@ if has('unix')
   Plug 'b4b4r07/vim-shellutils'
 endif
 
-if has('nvim')
-  Plug 'kyazdani42/nvim-web-devicons'
-  Plug 'romgrk/barbar.nvim'
-endif
-
-"color scheme
-Plug 'ghifarit53/tokyonight-vim'
-
-"LSP
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "Coding
+Plug 'ghifarit53/tokyonight-vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'godlygeek/tabular'
-Plug 'moll/vim-bbye'
 Plug 'luochen1990/rainbow'
 Plug 'tyru/capture.vim'
 Plug 't9md/vim-quickhl'
@@ -31,26 +22,28 @@ Plug 'Townk/vim-autoclose'
 Plug 'mg979/vim-visual-multi'
 Plug 'scrooloose/nerdcommenter'
 Plug 'simeji/winresizer'
-
-"Writ
 Plug 'skanehira/preview-markdown.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'glepnir/indent-guides.nvim'
-
-"Rooting
 Plug 'itchyny/lightline.vim'
 Plug 'mattn/vim-findroot'
 Plug 'MattesGroeger/vim-bookmarks'
-Plug 'mattn/vim-molder'
 Plug 'phaazon/hop.nvim'
+
+"Filer
+Plug 'lambdalisue/fern.vim'
+Plug 'mattn/vim-molder'
+Plug 'romgrk/barbar.nvim'
+Plug 'moll/vim-bbye'
 
 "Joke
 Plug 'monaqa/vim-duzzle'
 
-"ather
+"Others
 Plug 'twitvim/twitvim'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'xolox/vim-misc'
+Plug 'kyazdani42/nvim-web-devicons'
 " Plug 'numtostr/FTerm.nvim'
 
 "operator
@@ -70,7 +63,6 @@ Plug 'deton/textobj-nonblankchars.vim'
 
 call plug#end()
 
-"Are you using plugins?
 let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
 function! FindPlugin(name) abort
   return has_key(s:plugs, a:name) ? isdirectory(s:plugs[a:name].dir) : 0
