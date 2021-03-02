@@ -63,9 +63,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   "operator
   Plug 'kana/vim-operator-user'
   Plug 'kana/vim-operator-replace'
-  Plug 'rhysd/vim-operator-surround'
-  " Plug 'osyo-manga/vim-operator-search'
-  " Plug 'vimtaku/vim-operator-mdurl'
+  Plug 'machakann/vim-sandwich'
 
   "text object
   Plug 'kana/vim-textobj-user'
