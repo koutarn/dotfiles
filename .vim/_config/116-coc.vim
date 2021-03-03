@@ -32,6 +32,7 @@ endif
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-nnoremap <Leader>[ :CocCommand<CR>
+nnoremap <Leader>' :CocCommand<CR>
+nnoremap <Leader>[ :CocCommand fzf-preview.ProjectFiles<CR>
 nnoremap <Leader>; :CocCommand fzf-preview.Buffers<CR>
 

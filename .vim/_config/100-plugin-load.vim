@@ -9,9 +9,16 @@ if has('unix')
   Plug 'b4b4r07/vim-shellutils'
 endif
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+if has('nvim')
+  Plug 'romgrk/barbar.nvim'
+  Plug 'glepnir/indent-guides.nvim'
+  Plug 'phaazon/hop.nvim'
+  Plug 'kyazdani42/nvim-web-devicons'
+endif
 
 "Coding
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'godlygeek/tabular'
@@ -24,17 +31,16 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'simeji/winresizer'
 Plug 'skanehira/preview-markdown.vim'
 Plug 'plasticboy/vim-markdown'
-Plug 'glepnir/indent-guides.nvim'
 Plug 'itchyny/lightline.vim'
 Plug 'mattn/vim-findroot'
 Plug 'MattesGroeger/vim-bookmarks'
-Plug 'phaazon/hop.nvim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 "Filer
 Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'LumaKernel/fern-mapping-fzf.vim'
 Plug 'mattn/vim-molder'
-Plug 'romgrk/barbar.nvim'
 Plug 'moll/vim-bbye'
 
 "Joke
@@ -44,7 +50,6 @@ Plug 'monaqa/vim-duzzle'
 Plug 'twitvim/twitvim'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'xolox/vim-misc'
-Plug 'kyazdani42/nvim-web-devicons'
 " Plug 'numtostr/FTerm.nvim'
 
 "operator

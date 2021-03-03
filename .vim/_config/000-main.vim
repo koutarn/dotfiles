@@ -4,12 +4,14 @@
 set stal=0
 
 if has('unix')
-  set shell=zsh
+  set shell=/bin/zsh
+  let $SHELL='/bin/zsh'
   set encoding=utf-8
 elseif has('win64')
   set shell=cmd
 endif
 
+set pumblend=40
 set updatetime=300
 set fileformats=unix,dos
 set title
