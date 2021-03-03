@@ -99,7 +99,7 @@ function! Put_text_without_override_register()
   execute 'normal! gv"_x'
   if line_len == col_loc
     execute 'normal! p'
-  else 
+  else
     execute 'normal! P'
   endif
 endfunction
