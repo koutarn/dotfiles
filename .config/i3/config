@@ -1,5 +1,4 @@
 #General
-new_window pixel 1
 focus_follows_mouse  yes
 workspace_auto_back_and_forth yes
 set $mod Mod4
@@ -7,23 +6,23 @@ floating_modifier $mod
 font pango:HackGen35NerdConsole Regular 10
 
 #Gap
-gaps inner 15
-gaps outer 0
+gaps inner 10
+gaps outer 10
 smart_gaps on
 smart_borders on
 
 # Color
-set $cbg "#f26262"
-set $ccolor "#efebe0"
+set $mediumvioletred "#c71585"
+set $lightslategray "#1e90ff"
 set $cunfo "#cb8b8b"
 set $cindi "#145ba7"
 set $cindiu "#8a9db1"
 
-#<colorclass>           <border> <background> <text> <indicator> <child_border>
-client.focused          $cbg    $cbg    $ccolor $cindi   $cbg
-client.focused_inactive $cbg    $cunfo  $ccolor $cindiu   $cunfo
-client.unfocused        $cbg    $cunfo  $ccolor $cindiu   $cunfo
-client.urgent           $cbg    $cunfo  $ccolor $cindi   $cunfo
+#<colorclass>           $<border>        $<background>    $<text>         $<indicator> $<child_border>
+client.focused          $mediumvioletred $mediumvioletred $lightslategray $cindi       $mediumvioletred
+client.focused_inactive $mediumvioletred $cunfo           $lightslategray $cindiu      $lightslategray
+client.unfocused        $mediumvioletred $cunfo           $lightslategray $cindiu      $lightslategray
+client.urgent           $mediumvioletred $cunfo           $lightslategray $cindi       $lightslategray
 
 #Keybindings
 ##Quick Launch
@@ -79,7 +78,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 ## Specific window
 no_focus [window_role="pop-up"]
 for_window [window_role="pop-up"] floating enable
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
 for_window [class="^albert$"] floating enable
 for_window [workspace=$ws3] layout stacking
 for_window [workspace=$ws5] floating enable,resize set 1280 960,move position center
@@ -89,8 +88,8 @@ for_window [workspace=$ws9] layout stacking
 for_window [class="Viewnior"] floating enable,resize set 1600 900,move position center
 
 ## Specific workspaces
-assign [class="Google-chrome"] $ws1
-assign [class="Alacritty"] $ws1
+# assign [class="Google-chrome"] $ws1
+# assign [class="Alacritty"] $ws1
 assign [class="Spotify"] $ws4
 assign [window_role="^browser-window"] $ws3
 assign [class="^.*exe"] $ws5
@@ -102,23 +101,19 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 bar {
-	mode dock
+	font pango:HackGen35NerdConsole 11
 	position top
-	font HackGen
-	workspace_buttons yes
-	colors {
-		background #101010
-		statusline #999999
-		focused_workspace #825969 #191919
-		active_workspace #825969 #101010
-		inactive_workspace #9a878f #191919
-		urgent_workspace #2e3436 #9a878f
-	}
+	tray_output none
+
+	status_command ~/Projects/bumblebee-status/bumblebee-status \
+		-m arch-update title spotify memory pasink date time dunst \
+		-p title.max=32 time.format="%H:%M" date.format="%Y/%m/%d(%a)" \
+		   spotify.format='{title} - {artist}' spotify.layout='spotify.song'\
+		-t dracula-powerline
 }
 
 
 # Startup apps
 exec --no-startup-id dunst
 exec --no-startup-id fcitx5
-exec --no-startup-id volumeicon
-# exec --no-startup-id "feh --bg-scale $HOME/Pictures/wallpaper/2.jpeg"
+exec --no-startup-id "feh --bg-scale $HOME/Pictures/wallpaper/1.png"

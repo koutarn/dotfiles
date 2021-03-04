@@ -1,7 +1,19 @@
 rofi.modi:window,drun
 rofi.sidebar-mode:  true
 rofi.hide-scrollbar: true
+rofi.opacity:100
+rofi.width:65
+rofi.lines:20
+rofi.columns:2
+rofi.cycle:true
+rofi.fuzzy:true
+rofi.font:HackGen35NerdConsole Normal 16
 rofi.kb-cancel: Escape,Control+bracketleft
-rofi.kb-mode-previous: Alt+h
-rofi.kb-mode-next: Alt+l
-rofi.theme: /usr/share/rofi/themes/Monokai.rasi
+rofi.theme: /home/ez/.config/rofi/themes/iceberg-dark.rasi
+
+rofi.kb-move-front:Control+a
+rofi.kb-move-end:Control+e
+rofi.kb-row-up:Super+k
+rofi.kb-row-down:Super+j
+rofi.kb-mode-previous: Super+h
+rofi.kb-mode-next: Super+l
