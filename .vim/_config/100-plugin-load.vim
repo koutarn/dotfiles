@@ -17,6 +17,10 @@ if has('nvim')
   Plug 'kyazdani42/nvim-web-devicons'
 endif
 
+if has('win32') || has('win64')
+  Plug 'hachibeeDI/vim-vbnet'
+endif
+
 "Coding
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ghifarit53/tokyonight-vim'

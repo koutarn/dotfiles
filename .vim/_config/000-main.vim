@@ -7,10 +7,11 @@ if has('unix')
   set shell=/bin/zsh
   let $SHELL='/bin/zsh'
   set encoding=utf-8
-elseif has('win64')
+elseif has('win32') || has('win64')
   set shell=cmd
 endif
 
+set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
 set pumblend=40
 set updatetime=300
 set fileformats=unix,dos
@@ -152,5 +153,8 @@ augroup vimrc
   autocmd FileType bash       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
   autocmd FileType zsh        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
   autocmd FileType fish       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+  autocmd BufNewFile,BufRead *.vb setfiletype vbnet
+  autocmd BufNewFile,BufRead *.cls setfiletype vbnet
+  autocmd BufNewFile,BufRead *.bas setfiletype vbnet
 augroup END
 
