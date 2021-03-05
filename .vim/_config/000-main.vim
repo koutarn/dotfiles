@@ -11,7 +11,7 @@ elseif has('win32') || has('win64')
   set shell=cmd
 endif
 
-set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
+set fileencodings=utf-8,cp932,sjis
 set pumblend=40
 set updatetime=300
 set fileformats=unix,dos

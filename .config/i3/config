@@ -101,7 +101,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 bar {
-	font pango:HackGen35NerdConsole 11
+	font pango:HackGen35NerdConsole 12
 	position top
 	tray_output none
 
