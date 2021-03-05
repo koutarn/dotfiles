@@ -19,6 +19,7 @@ endif
 
 if has('win32') || has('win64')
   Plug 'hachibeeDI/vim-vbnet'
+  Plug 'jeetsukumaran/vim-buffergator'
 endif
 
 "Coding
