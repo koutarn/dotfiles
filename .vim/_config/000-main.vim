@@ -45,7 +45,7 @@ set matchtime=1
 set ignorecase smartcase
 set breakindent
 set showbreak=>\ 
-set noexpandtab
+set expandtab
 set tabstop=4
 set smarttab
 set wildmenu

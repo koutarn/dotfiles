@@ -40,6 +40,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'mattn/vim-findroot'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'thinca/vim-quickrun'
 
 "Filer
 Plug 'lambdalisue/fern.vim'
