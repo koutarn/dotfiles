@@ -41,6 +41,7 @@ Plug 'mattn/vim-findroot'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'thinca/vim-quickrun'
+Plug 'tyru/eskk.vim'
 
 "Filer
 Plug 'lambdalisue/fern.vim'

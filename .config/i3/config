@@ -26,7 +26,7 @@ client.urgent           $mediumvioletred $cunfo           $lightslategray $cindi
 
 #Keybindings
 ##Quick Launch
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec XMODIFIERS= alacritty
 bindsym $mod+semicolon exec --no-startup-id rofi -show window -show-icons -icon-theme "Papirus"
 bindsym $mod+p exec --no-startup-id rofi -show drun -show-icons -icon-theme "Papirus"
 
