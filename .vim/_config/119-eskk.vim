@@ -17,4 +17,4 @@ imap <C-o> <Plug>(eskk:toggle)
 cmap <C-o> <Plug>(eskk:toggle)
 let g:eskk#kakutei_when_unique_candidate = 1
 let g:eskk#enable_completion = 0
-
+let g:eskk#no_default_mappings = 0
