@@ -3,11 +3,11 @@ focus_follows_mouse  yes
 workspace_auto_back_and_forth yes
 set $mod Mod4
 floating_modifier $mod
-font pango:HackGen35NerdConsole Regular 10
+font pango:Cica Regular 10
 
 #Gap
-gaps inner 10
-gaps outer 10
+gaps inner 20
+gaps outer 15
 smart_gaps on
 smart_borders on
 
@@ -47,6 +47,13 @@ bindsym $mod+Shift+l move right
 
 ##enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
+
+
+# split in horizontal orientation
+bindsym Mod4+s split h
+
+# split in vertical orientation
+bindsym Mod4+v split v
 
 # Workspace
 set $ws1 "1:MAIN"
@@ -93,7 +100,7 @@ for_window [class="Viewnior"] floating enable,resize set 1600 900,move position 
 assign [class="Spotify"] $ws4
 assign [window_role="^browser-window"] $ws3
 assign [class="^.*exe"] $ws5
-assign [class="Thunar"] $ws6
+# assign [class="Thunar"] $ws6
 assign [class="pavucontrol"] $ws6
 
 ##Misc
@@ -101,7 +108,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 bar {
-	font pango:HackGen35NerdConsole 12
+	font pango:Cica 14
 	position top
 	tray_output none
 
@@ -116,4 +123,5 @@ bar {
 # Startup apps
 exec --no-startup-id dunst
 exec --no-startup-id fcitx5
-exec --no-startup-id "feh --bg-scale $HOME/Pictures/wallpaper/1.png"
+exec --no-startup-id "feh --bg-scale $HOME/Pictures/wallpaper/cyberpunk.jpg"
+exec --no-startup-id picom --config ~/.picom.conf --experimental-backends --backend glx --xrender-sync-fence
