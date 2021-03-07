@@ -8,11 +8,12 @@
 # Read
 * OS:Manjaro Linux
 * Shell:zsh
-* Terminal:Alacritty
-* Editor:vim
+* Terminal:alacritty
+* Editor:neovim
 * IDE:Visual Studio Code
 
 # Apps
 * WindowManager:i3
 * Desktop notifications:dunst
-
+* bar:bumblebee-status-bar
+* composite manger:picom-jonaburg(picom fork)
