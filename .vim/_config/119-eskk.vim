@@ -9,12 +9,19 @@ let g:eskk#large_dictionary = {'path': "~/.config/eskk/SKK-JISYO.L", 'sorted': 1
 
 autocmd User eskk-initialize-post call s:eskk_initial_pre()
 function! s:eskk_initial_pre() abort
-    EskkUnmap -type=sticky ;
-    EskkMap -type=sticky Q
+    EskkUnmap -type=sticky Q
+    EskkMap -type=sticky ;
 endfunction
 
 imap <C-o> <Plug>(eskk:toggle)
 cmap <C-o> <Plug>(eskk:toggle)
 let g:eskk#kakutei_when_unique_candidate = 1
 let g:eskk#enable_completion = 0
-let g:eskk#no_default_mappings = 0
+let g:eskk#no_default_mappings = 1
+
+let g:eskk#marker_henkan = "[H]"
+let g:eskk#marker_henkan_select = "[S]"
+let g:eskk#marker_okuri = "[O]"
+let g:eskk#marker_jisyo_touroku = "[D]"
+
+

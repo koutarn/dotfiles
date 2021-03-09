@@ -4,24 +4,26 @@
 set stal=0
 
 if has('unix')
-  set shell=/bin/zsh
   let $SHELL='/bin/zsh'
+  set shell=/bin/zsh
   set encoding=utf-8
 elseif has('win32') || has('win64')
   set shell=cmd
 endif
 
+
+set pumheight=10
+set pumblend=10
+
 set fileencodings=utf-8,cp932,sjis
-set pumblend=40
-set updatetime=300
 set fileformats=unix,dos
+set updatetime=300
 set title
 set showcmd
 set number
 set cursorline
 set showmatch
 set display=lastline
-set laststatus=1
 set ruler
 set laststatus=2
 set list
@@ -31,10 +33,9 @@ set ambiwidth=double
 syntax enable
 
 "補完の表示色を変更する
-highlight Pmenu ctermfg=white ctermbg=black
-highlight PmenuSel ctermfg=white ctermbg=gray
+" highlight Pmenu ctermfg=white ctermbg=black
+" highlight PmenuSel ctermfg=white ctermbg=gray
 set t_Co=256
-
 set iminsert=0
 set imsearch=-1
 
@@ -56,24 +57,13 @@ set shiftwidth=4
 set softtabstop=0
 set autoindent
 set smartindent
-"================================
-"補完
-"================================
-set pumheight=10
 set infercase
-"================================
-"文字移動
-"================================
 set backspace=indent,eol,start
 set whichwrap=b,<,>,[,]
 set scrolloff=30
 set sidescrolloff=16
 set sidescroll=1
-
 set virtualedit=block
-"================================
-"ファイル処理関連の設定
-"================================
 set nrformats=alpha,bin,hex
 set confirm
 set hidden
@@ -85,7 +75,6 @@ set splitright
 set undolevels=1000"
 set shortmess+=c
 
-"mouse
 set mouse=a
 
 if !has('nvim')
@@ -94,9 +83,6 @@ endif
 
 set termguicolors
 
-"================================
-"その他
-"================================
 set helplang=ja,en
 set lazyredraw
 set ttyfast
@@ -153,8 +139,7 @@ augroup vimrc
   autocmd FileType bash       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
   autocmd FileType zsh        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
   autocmd FileType fish       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-  autocmd BufNewFile,BufRead *.vb setfiletype vbnet
-  autocmd BufNewFile,BufRead *.cls setfiletype vbnet
-  autocmd BufNewFile,BufRead *.bas setfiletype vbnet
+  autocmd BufNewFile,BufRead *.vb setfiletype vb
+  autocmd BufNewFile,BufRead *.cls setfiletype vb
+  autocmd BufNewFile,BufRead *.bas setfiletype vb
 augroup END
-

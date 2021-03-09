@@ -27,6 +27,7 @@ client.urgent           $mediumvioletred $cunfo           $lightslategray $cindi
 #Keybindings
 ##Quick Launch
 bindsym $mod+Return exec XMODIFIERS= alacritty
+bindsym $mod+o exec alacritty
 bindsym $mod+semicolon exec --no-startup-id rofi -show window -show-icons -icon-theme "Papirus"
 bindsym $mod+p exec --no-startup-id rofi -show drun -show-icons -icon-theme "Papirus"
 
@@ -47,7 +48,6 @@ bindsym $mod+Shift+l move right
 
 ##enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-
 
 # split in horizontal orientation
 bindsym Mod4+s split h
@@ -83,9 +83,9 @@ bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+9 move container to workspace $ws9
 
 ## Specific window
+for_window [class="^.*"] border pixel 2
 no_focus [window_role="pop-up"]
 for_window [window_role="pop-up"] floating enable
-for_window [class="^.*"] border pixel 2
 for_window [class="^albert$"] floating enable
 for_window [workspace=$ws3] layout stacking
 for_window [workspace=$ws5] floating enable,resize set 1280 960,move position center
@@ -108,7 +108,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 bar {
-	font pango:Cica 14
+	font pango:Inconsolata 13
 	position top
 	tray_output none
 
@@ -116,12 +116,12 @@ bar {
 		-m arch-update title spotify memory pasink date time dunst \
 		-p title.max=32 time.format="%H:%M" date.format="%Y/%m/%d(%a)" \
 		   spotify.format='{title} - {artist}' spotify.layout='spotify.song'\
-		-t dracula-powerline
+        -t solarized-powerline
 }
 
 
 # Startup apps
 exec --no-startup-id dunst
 exec --no-startup-id fcitx5
-exec --no-startup-id "feh --bg-scale $HOME/Pictures/wallpaper/cyberpunk.jpg"
+exec --no-startup-id "feh --bg-fill $HOME/Pictures/wallpaper/DegitalArt/6.jpg --bg-fill $HOME/Pictures/wallpaper/DegitalArt/11.jpg"
 exec --no-startup-id picom --config ~/.picom.conf --experimental-backends --backend glx --xrender-sync-fence
