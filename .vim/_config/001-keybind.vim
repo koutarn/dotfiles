@@ -23,6 +23,15 @@ cnoremap <C-j> <DOWN>
 cnoremap <C-l> <RIGHT>
 cnoremap <C-p> <C-r>0
 
+nnoremap ) t)
+nnoremap ( t(
+nnoremap [ t[
+nnoremap ] t]
+vnoremap ) t)
+vnoremap ( t(
+vnoremap [ t[
+vnoremap ] t]
+
 "Move
 nnoremap k gk
 nnoremap j gj
@@ -43,7 +52,10 @@ vnoremap <S-j> 10gj
 "input
 nnoremap <silent><Leader>o  :<C-u>for i in range(v:count1) \| call append(line('.'), '') \| endfor<CR>
 nnoremap <silent><Leader>O  :<C-u>for i in range(v:count1) \| call append(line('.')-1, '') \| endfor<CR>
-inoremap <silent>jj <ESC>
+
+inoremap jj <ESC>
+onoremap jj <Esc>
+cnoremap jj <C-c>
 
 inoremap <C-a> <HOME>
 inoremap <C-e> <END>
