@@ -11,9 +11,11 @@ elseif has('win32') || has('win64')
   set shell=cmd
 endif
 
+if has ('nvim')
+  set pumblend=10
+endif
 
 set pumheight=10
-set pumblend=10
 
 set fileencodings=utf-8,cp932,sjis
 set fileformats=unix,dos
