@@ -24,6 +24,7 @@ let g:eskk#marker_henkan_select = "[S]"
 let g:eskk#marker_okuri = "[O]"
 let g:eskk#marker_jisyo_touroku = "[D]"
 let g:eskk#keep_state = 1
+let g:eskk#keep_state_beyond_buffer = 1
 let g:eskk#egg_like_newline = 1
 
 
