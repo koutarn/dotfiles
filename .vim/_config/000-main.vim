@@ -109,7 +109,6 @@ endif
 set cmdheight=1
 
 "File Type
-
 augroup vimrc
   filetype on
   filetype plugin on

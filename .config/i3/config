@@ -27,9 +27,11 @@ client.urgent           $mediumvioletred $cunfo           $lightslategray $cindi
 #Keybindings
 ##Quick Launch
 bindsym $mod+Return exec XMODIFIERS= alacritty
-bindsym $mod+o exec alacritty
 bindsym $mod+semicolon exec --no-startup-id rofi -show window -show-icons -icon-theme "Papirus"
 bindsym $mod+p exec --no-startup-id rofi -show drun -show-icons -icon-theme "Papirus"
+
+#layout toggle
+bindsym $mod+o layout toggle all
 
 ##kill focused window
 bindsym $mod+q kill
@@ -46,6 +48,10 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+l move right
 
+##move container to output
+bindsym $mod+u move workspace to output right
+bindsym $mod+y move workspace to output left
+
 ##enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
@@ -56,52 +62,58 @@ bindsym Mod4+s split h
 bindsym Mod4+v split v
 
 # Workspace
-set $ws1 "1:MAIN"
-set $ws2 "2:SUB"
-set $ws3 "3:WORK"
-set $ws4 "4:MEDIA"
-set $ws5 "5:GAME"
-set $ws6 "6:SYSTEM"
-set $ws9 "9:OPTION"
+set $main "💻"
+set $sub "📱"
+set $work "📝"
+set $media "🎵"
+set $game "🎮"
+set $system "📂 "
+set $option "🍭"
+
+# output monitor settings
+workspace $main output DVI-I-1
+workspace $sub output HDMI-0
+workspace $work output DVI-I-1
+workspace $media output HDMI-0
+workspace $game output DVI-I-1
+workspace $system output DVI-I-1
+workspace $option output DVI-I-1
 
 ## Workspace keybinding
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+9 workspace $ws9
+bindsym $mod+1 workspace $main
+bindsym $mod+2 workspace $sub
+bindsym $mod+3 workspace $work
+bindsym $mod+4 workspace $media
+bindsym $mod+5 workspace $game
+bindsym $mod+6 workspace $system
+bindsym $mod+9 workspace $option
 
 ## Move to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+9 move container to workspace $ws9
+# NOTE:xrandr --listmonitors
+bindsym $mod+Shift+1 move container to workspace $main
+bindsym $mod+Shift+2 move container to workspace $sub
+bindsym $mod+Shift+3 move container to workspace $work
+bindsym $mod+Shift+4 move container to workspace $media
+bindsym $mod+Shift+5 move container to workspace $game
+bindsym $mod+Shift+6 move container to workspace $system
+bindsym $mod+Shift+9 move container to workspace $option
 
 ## Specific window
 for_window [class="^.*"] border pixel 2
 no_focus [window_role="pop-up"]
 for_window [window_role="pop-up"] floating enable
 for_window [class="^albert$"] floating enable
-for_window [workspace=$ws3] layout stacking
-for_window [workspace=$ws5] floating enable,resize set 1280 960,move position center
-for_window [workspace=$ws6] floating enable,resize set 800 600,move position center
-for_window [workspace=$ws9] layout stacking
-
+for_window [workspace=$work] layout stacking
+for_window [workspace=$game] floating enable,resize set 1280 960,move position center
+for_window [workspace=$option] layout stacking
 for_window [class="Viewnior"] floating enable,resize set 1600 900,move position center
 
 ## Specific workspaces
-# assign [class="Google-chrome"] $ws1
-# assign [class="Alacritty"] $ws1
-assign [class="Spotify"] $ws4
-assign [window_role="^browser-window"] $ws3
-assign [class="^.*exe"] $ws5
-# assign [class="Thunar"] $ws6
-assign [class="pavucontrol"] $ws6
+assign [class="Spotify"] $media
+assign [window_role="^browser-window"] $work
+assign [class="^.*exe"] $game
+assign [class="Thunar"] $system
+assign [class="pavucontrol"] $system
 
 ##Misc
 bindsym $mod+Shift+c reload
@@ -110,13 +122,23 @@ bindsym $mod+Shift+r restart
 bar {
 	font pango:Inconsolata 13
 	position top
+    tray_padding 0
 	tray_output none
-
 	status_command ~/Projects/bumblebee-status/bumblebee-status \
-		-m arch-update title spotify memory pasink date time dunst \
-		-p title.max=32 time.format="%H:%M" date.format="%Y/%m/%d(%a)" \
-		   spotify.format='{title} - {artist}' spotify.layout='spotify.song'\
-        -t solarized-powerline
+        -m title spotify memory pasink date time dunst \
+        -p title.max=32 time.format="%H:%M" date.format="%Y/%m/%d(%a)" \
+           spotify.format='{title} - {artist}' spotify.layout='spotify.song'\
+        -t cyberpunk
+
+    colors {
+            background #00000000 #00000000 #00000000
+            statusline #00000000 #00000000 #00000000
+            separator #00000000 #00000000 #00000000
+    }
+    i3bar_command i3bar --transparency
+    workspace_min_width 80
+    binding_mode_indicator no
+    mode dock
 }
 
 
@@ -124,4 +146,4 @@ bar {
 exec --no-startup-id dunst
 exec --no-startup-id fcitx5
 exec --no-startup-id "feh --bg-fill $HOME/Pictures/wallpaper/DegitalArt/6.jpg --bg-fill $HOME/Pictures/wallpaper/DegitalArt/11.jpg"
-exec --no-startup-id picom --config ~/.picom.conf --experimental-backends --backend glx --xrender-sync-fence
+exec --no-startup-id picom --config ~/.picom.conf --experimental-backends --backend glx --xrender-sync-fence -b
