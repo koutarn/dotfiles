@@ -6,7 +6,7 @@
      \____|\___/ \__|_| |_|_|\___||___/
 
 # Read
-* OS:Manjaro Linux
+* OS:Manjaro Linux ⛰
 * Shell:zsh
 * Terminal:alacritty
 * Editor:neovim
