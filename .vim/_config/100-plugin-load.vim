@@ -10,42 +10,44 @@ if has('unix')
 endif
 
 
- if has('nvim')
-   Plug 'romgrk/barbar.nvim'
-   Plug 'glepnir/indent-guides.nvim'
-   Plug 'phaazon/hop.nvim'
-   Plug 'kyazdani42/nvim-web-devicons'
- endif
-
- if has('win32') || has('win64')
-   Plug 'hachibeeDI/vim-vbnet'
-   Plug 'jeetsukumaran/vim-buffergator'
- endif
-
- "Coding
+if has('nvim')
+  " Plug 'romgrk/barbar.nvim'
+  " Plug 'akinsho/nvim-bufferline.lua'
+  Plug 'glepnir/indent-guides.nvim'
+  Plug 'phaazon/hop.nvim'
+  Plug 'kyazdani42/nvim-web-devicons'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'ghifarit53/tokyonight-vim'
-  Plug 'bronson/vim-trailing-whitespace'
-  Plug 'godlygeek/tabular'
-  Plug 'luochen1990/rainbow'
-  Plug 'tyru/capture.vim'
-  Plug 't9md/vim-quickhl'
-  Plug 'Townk/vim-autoclose'
-  Plug 'mg979/vim-visual-multi'
-  Plug 'scrooloose/nerdcommenter'
-  Plug 'simeji/winresizer'
-  Plug 'skanehira/preview-markdown.vim'
-  Plug 'plasticboy/vim-markdown'
-  Plug 'itchyny/lightline.vim'
-  Plug 'mattn/vim-findroot'
-  Plug 'MattesGroeger/vim-bookmarks'
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'thinca/vim-quickrun'
-  Plug 'tyru/eskk.vim'
   Plug 'tversteeg/registers.nvim'
+endif
 
-  "deno
-  Plug 'vim-denops/denops.vim'
+if has('win32') || has('win64')
+  Plug 'hachibeeDI/vim-vbnet'
+  Plug 'jeetsukumaran/vim-buffergator'
+endif
+
+"Coding
+Plug 'ghifarit53/tokyonight-vim'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'godlygeek/tabular'
+Plug 'luochen1990/rainbow'
+Plug 'tyru/capture.vim'
+Plug 't9md/vim-quickhl'
+Plug 'Townk/vim-autoclose'
+Plug 'mg979/vim-visual-multi'
+Plug 'scrooloose/nerdcommenter'
+Plug 'simeji/winresizer'
+Plug 'skanehira/preview-markdown.vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'itchyny/lightline.vim'
+Plug 'mattn/vim-findroot'
+Plug 'MattesGroeger/vim-bookmarks'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'thinca/vim-quickrun'
+Plug 'tyru/eskk.vim'
+" Plug 'kuuote/dps-scrap'
+
+"deno
+Plug 'vim-denops/denops.vim'
 
 "Filer
 Plug 'lambdalisue/fern.vim'
@@ -61,7 +63,7 @@ Plug 'monaqa/vim-duzzle'
 Plug 'twitvim/twitvim'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'xolox/vim-misc'
-" Plug 'numtostr/FTerm.nvim'
+Plug 'tyru/open-browser.vim'
 
 "operator
 Plug 'kana/vim-operator-user'

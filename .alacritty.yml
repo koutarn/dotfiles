@@ -103,54 +103,19 @@ scrolling:
 
 # Font configuration
 font:
-  # Normal (roman) font face
   normal:
-    # Font family
-    #
-    # Default:
-    #   - (macOS) Menlo
-    #   - (Linux/BSD) monospace
-    #   - (Windows) Consolas
-    family: Cica
-
-    # The `style` can be specified to pick a specific face.
+    family: monospace
     style: Regular
-
-  # Bold font face
   bold:
-    # Font family
-    #
-    # If the bold family is not specified, it will fall back to the
-    # value specified for the normal font.
-    fCicamily: Cica
-
-    # The `style` can be specified to pick a specific face.
+    family: monospace
     style: Bold
-
-  # Italic font face
   italic:
-    # Font family
-    #
-    # If the italic family is not specified, it will fall back to the
-    # value specified for the normCical font.
-    family: Cica
-
-    # The `style` can be specified to pick a specific face.
+    family: monospace
     style: Italic
-
-  # Bold italic font face
   bold_italic:
-    # Font family
-    #
-    # If the bold italic family is not specified, it will fall back to the
-    # value specifieCica for the normal font.
-    family: Cica
-
-    # The `style` can be specified to pick a specific face.
+    family: monospace
     style: Bold Italic
-
-  # Point size
-  size: 11
+  size: 10
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter

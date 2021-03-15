@@ -5,7 +5,7 @@ set stal=0
 
 if has('unix')
   let $SHELL='/bin/zsh'
-  set shell=/bin/zsh
+  set shell=/bin/bash
   set encoding=utf-8
 elseif has('win32') || has('win64')
   set shell=cmd
@@ -22,21 +22,18 @@ set fileformats=unix,dos
 set updatetime=300
 set title
 set showcmd
-set number
+set nonumber
 set cursorline
 set showmatch
 set display=lastline
 set ruler
 set laststatus=2
-set list
+set nolist
 set listchars=tab:\|\ ,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
 set ambiwidth=double
 syntax enable
 
-"補完の表示色を変更する
-" highlight Pmenu ctermfg=white ctermbg=black
-" highlight PmenuSel ctermfg=white ctermbg=gray
 set t_Co=256
 set iminsert=0
 set imsearch=-1
@@ -143,4 +140,5 @@ augroup vimrc
   autocmd BufNewFile,BufRead *.vb setfiletype vb
   autocmd BufNewFile,BufRead *.cls setfiletype vb
   autocmd BufNewFile,BufRead *.bas setfiletype vb
+  autocmd BufNewFile,BufRead *.scp setlocal filetype=markdown
 augroup END

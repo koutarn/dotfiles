@@ -22,8 +22,8 @@ if zplug check "denysdovhan/spaceship-prompt";then
 
   #ユーザー名
   export SPACESHIP_USER_SHOW=always                                                     #ユーザー名を常に表示する
-  #export SPACESHIP_USER_PREFIX="with "                                                  #ユーザー名の前の文字
-  #export SPACESHIP_USER_SUFFIX=" 🚀 "                                                   #ユーザー名の後の文字
+  export SPACESHIP_USER_PREFIX="with "                                                  #ユーザー名の前の文字
+  export SPACESHIP_USER_SUFFIX=" 🚀 "                                                   #ユーザー名の後の文字
 
   #time
   export SPACESHIP_TIME_SHOW=true                                                       #時間を表示

@@ -3,7 +3,7 @@ focus_follows_mouse  yes
 workspace_auto_back_and_forth yes
 set $mod Mod4
 floating_modifier $mod
-font pango:Cica Regular 10
+font pango:monospace Regular 10
 
 #Gap
 gaps inner 20
@@ -120,7 +120,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 bar {
-	font pango:Inconsolata 13
+	font pango:monospace 13
 	position top
     tray_padding 0
 	tray_output none

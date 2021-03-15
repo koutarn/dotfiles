@@ -1,0 +1,1 @@
+UsePlugin 'preview-markdown.vim'
