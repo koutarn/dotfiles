@@ -4,12 +4,12 @@ UsePlug 'coc.nvim'
 "=======================
 set statusline^=%{coc#status()}
 
-nnoremap <Leader>' :CocCommand<CR>
-nnoremap <silent>gd <Plug>(coc-definition)
-nnoremap <silent>gi <Plug>(coc-implementation)
-nnoremap <silent>gy <Plug>(coc-type-definition)
-nnoremap <silent>gr <Plug>(coc-references)
-nnoremap <silent>gh :call <SID>show_documentation()<CR>
+nmap <Leader>' :CocCommand<CR>
+nmap <silent>gd <Plug>(coc-definition)
+nmap <silent>gi <Plug>(coc-implementation)
+nmap <silent>gy <Plug>(coc-type-definition)
+nmap <silent>gr <Plug>(coc-references)
+nmap <silent>gh :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
