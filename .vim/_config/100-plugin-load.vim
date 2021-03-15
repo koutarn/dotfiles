@@ -42,7 +42,10 @@ endif
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'thinca/vim-quickrun'
   Plug 'tyru/eskk.vim'
-Plug 'tversteeg/registers.nvim'
+  Plug 'tversteeg/registers.nvim'
+
+  "deno
+  Plug 'vim-denops/denops.vim'
 
 "Filer
 Plug 'lambdalisue/fern.vim'
