@@ -17,6 +17,7 @@ endif
 
 set pumheight=10
 
+set autochdir
 set fileencodings=utf-8,cp932,sjis
 set fileformats=unix,dos
 set updatetime=300
@@ -59,7 +60,7 @@ set smartindent
 set infercase
 set backspace=indent,eol,start
 set whichwrap=b,<,>,[,]
-set scrolloff=30
+set scrolloff=40
 set sidescrolloff=16
 set sidescroll=1
 set virtualedit=block
@@ -140,5 +141,4 @@ augroup vimrc
   autocmd BufNewFile,BufRead *.vb setfiletype vb
   autocmd BufNewFile,BufRead *.cls setfiletype vb
   autocmd BufNewFile,BufRead *.bas setfiletype vb
-  autocmd BufNewFile,BufRead *.scp setlocal filetype=markdown
 augroup END

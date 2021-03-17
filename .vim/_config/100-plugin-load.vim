@@ -44,10 +44,10 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'thinca/vim-quickrun'
 Plug 'tyru/eskk.vim'
-" Plug 'kuuote/dps-scrap'
 
 "deno
-Plug 'vim-denops/denops.vim'
+" Plug 'vim-denops/denops.vim'
+" Plug 'kuuote/dps-scrap'
 
 "Filer
 Plug 'lambdalisue/fern.vim'
@@ -64,6 +64,7 @@ Plug 'twitvim/twitvim'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'xolox/vim-misc'
 Plug 'tyru/open-browser.vim'
+" Plug 'edluffy/specs.nvim'
 
 "operator
 Plug 'kana/vim-operator-user'
