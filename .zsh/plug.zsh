@@ -2,23 +2,22 @@
 bindkey -e
 
 source ~/.zplug/init.zsh
-zplug 'zsh-users/zsh-autosuggestions'                                                   #fishっぽい表示をしてくれる
-# zplug "zsh-users/zsh-syntax-highlighting", defer:2                                    #syntax highlight
-zplug "zdharma/fast-syntax-highlighting"                                                #こっちのほうが早いらしいので乗り換え
-zplug "zsh-users/zsh-completions"                                                       #補完強化
-zplug "plugins/git",   from:oh-my-zsh                                                   #git
-zplug "peterhurford/git-aliases.zsh"                                                    #git用alias
-zplug "mrowa44/emojify", as:command                                                     #コマンドライン上の文字リテラルの絵文字を emoji 化するフィルタコマンド。
-zplug "hlissner/zsh-autopair", defer:2                                                  #カッコを自動で閉じる
-zplug "mollifier/cd-gitroot"                                                            #gitのルートへ飛ぶ
-zplug "hchbaw/auto-fu.zsh"                                                              #補完候補を自動出だしてくれる
+zplug 'zsh-users/zsh-autosuggestions'    # fishっぽい表示をしてくれる
+zplug "zdharma/fast-syntax-highlighting" # こっちのほうが早いらしいので乗り換え
+zplug "zsh-users/zsh-completions"        # 補完強化
+zplug "plugins/git",   from:oh-my-zsh    # git
+zplug "peterhurford/git-aliases.zsh"     # git用alias
+zplug "mrowa44/emojify", as:command      # コマンドライン上の文字リテラルの絵文字を emoji 化するフィルタコマンド。
+# zplug "hlissner/zsh-autopair", defer:2   # カッコを自動で閉じる
+zplug "mollifier/cd-gitroot"             # gitのルートへ飛ぶ
+zplug "hchbaw/auto-fu.zsh"               # 補完候補を自動でだしてくれる
 
 #prompt
 zplug "denysdovhan/spaceship-prompt"
 if zplug check "denysdovhan/spaceship-prompt";then
 
   #シンボル
-  export SPACESHIP_CHAR_SYMBOL="→ "                                                   #ロケットを表示
+  export SPACESHIP_CHAR_SYMBOL="» "
 
   #ユーザー名
   export SPACESHIP_USER_SHOW=always                                                     #ユーザー名を常に表示する
@@ -45,7 +44,7 @@ if zplug check "denysdovhan/spaceship-prompt";then
   #promptの表示順番を決定する
   SPACESHIP_PROMPT_ORDER=(
     dir           # Current directory section
-    user          # Username section
+    # user          # Username section
     host          # Hostname section
     git           # Git section (git_branch + git_status)
     hg            # Mercurial section (hg_branch  + hg_status)

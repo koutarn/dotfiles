@@ -16,7 +16,7 @@ if has ('nvim')
 endif
 
 set pumheight=10
-
+set autoread
 set autochdir
 set fileencodings=utf-8,cp932,sjis
 set fileformats=unix,dos
@@ -39,6 +39,7 @@ set t_Co=256
 set iminsert=0
 set imsearch=-1
 
+set wrap
 set hlsearch
 set wrapscan
 set incsearch

@@ -46,7 +46,7 @@ set viminfo='1000
 
 let g:fzf_preview_floating_window_rate = 0.9
 let g:fzf_preview_direct_window_option = ''
-let g:fzf_preview_default_fzf_options = { '--reverse': v:true, '--preview-window': 'wrap' }
+let g:fzf_preview_default_fzf_options = { '--reverse': v:true, '--preview-window': 'nowrap' }
 let g:fzf_preview_quit_map = 1
 let g:fzf_preview_buffers_jump = 0
 let g:fzf_preview_command = 'cat'                               " Not installed bat

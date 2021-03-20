@@ -4,21 +4,10 @@
 
 call plug#begin()
 
-"linux環境のみ
-if has('unix')
-  Plug 'b4b4r07/vim-shellutils'
-endif
-
-
-if has('nvim')
-  " Plug 'romgrk/barbar.nvim'
-  " Plug 'akinsho/nvim-bufferline.lua'
-  Plug 'glepnir/indent-guides.nvim'
-  Plug 'phaazon/hop.nvim'
-  Plug 'kyazdani42/nvim-web-devicons'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'tversteeg/registers.nvim'
-endif
+Plug 'glepnir/indent-guides.nvim'
+Plug 'phaazon/hop.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tversteeg/registers.nvim'
 
 if has('win32') || has('win64')
   Plug 'hachibeeDI/vim-vbnet'
@@ -61,10 +50,15 @@ Plug 'monaqa/vim-duzzle'
 
 "Others
 Plug 'twitvim/twitvim'
-Plug 'vim-jp/vimdoc-ja'
 Plug 'xolox/vim-misc'
 Plug 'tyru/open-browser.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
 " Plug 'edluffy/specs.nvim'
+
+"help見る用
+Plug 'vim-jp/vimdoc-ja'
+Plug 'notomo/helpeek.vim'
 
 "operator
 Plug 'kana/vim-operator-user'

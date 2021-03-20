@@ -1,3 +1,19 @@
+" +--------------------------------------------------------------------------------------+
+" | Commands \ Modes | Normal | Insert | Command | Visual | Select | Operator | Terminal |
+" |------------------|--------|--------|---------|--------|--------|----------|----------|
+" | map  / noremap   |    @   |   -    |    -    |   @    |   @    |    @     |    -     |
+" | nmap / nnoremap  |    @   |   -    |    -    |   -    |   -    |    -     |    -     |
+" | vmap / vnoremap  |    -   |   -    |    -    |   @    |   @    |    -     |    -     |
+" | omap / onoremap  |    -   |   -    |    -    |   -    |   -    |    @     |    -     |
+" | xmap / xnoremap  |    -   |   -    |    -    |   @    |   -    |    -     |    -     |
+" | smap / snoremap  |    -   |   -    |    -    |   -    |   @    |    -     |    -     |
+" | map! / noremap!  |    -   |   @    |    @    |   -    |   -    |    -     |    -     |
+" | imap / inoremap  |    -   |   @    |    -    |   -    |   -    |    -     |    -     |
+" | lmap / lnoremap  |    -   |   @    |    @    |   -    |   -    |    -     |    -     | (Lang-Arg)
+" | cmap / cnoremap  |    -   |   -    |    @    |   -    |   -    |    -     |    -     |
+" | tmap / tnoremap  |    -   |   -    |    -    |   -    |   -    |    -     |    @     |
+" +--------------------------------------------------------------------------------------+
+
 "unbind
 nnoremap ZZ <Nop>
 nnoremap ZQ <Nop>

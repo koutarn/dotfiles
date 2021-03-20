@@ -6,8 +6,8 @@ floating_modifier $mod
 font pango:monospace Regular 10
 
 #Gap
-gaps inner 20
-gaps outer 15
+gaps inner 13
+gaps outer 2
 smart_gaps on
 smart_borders on
 
@@ -104,7 +104,7 @@ no_focus [window_role="pop-up"]
 for_window [window_role="pop-up"] floating enable
 for_window [class="^albert$"] floating enable
 for_window [workspace=$work] layout stacking
-for_window [workspace=$game] floating enable,resize set 1280 960,move position center
+for_window [workspace=$game] floating enable,move position center
 for_window [workspace=$option] layout stacking
 for_window [class="Viewnior"] floating enable,resize set 1600 900,move position center
 
@@ -112,8 +112,6 @@ for_window [class="Viewnior"] floating enable,resize set 1600 900,move position 
 assign [class="Spotify"] $media
 assign [window_role="^browser-window"] $work
 assign [class="^.*exe"] $game
-assign [class="Thunar"] $system
-assign [class="pavucontrol"] $system
 
 ##Misc
 bindsym $mod+Shift+c reload
@@ -138,7 +136,7 @@ bar {
     i3bar_command i3bar --transparency
     workspace_min_width 80
     binding_mode_indicator no
-    mode dock
+    mode invisible
 }
 
 
