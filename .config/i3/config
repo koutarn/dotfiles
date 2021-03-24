@@ -39,6 +39,7 @@ bindsym $mod+q kill
 ##change focus
 bindsym $mod+j focus down
 bindsym $mod+k focus up
+
 bindsym $mod+h focus left
 bindsym $mod+l focus right
 
@@ -118,7 +119,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 bar {
-	font pango:monospace 13
+	font pango:monospace 11
 	position top
     tray_padding 0
 	tray_output none
@@ -126,7 +127,7 @@ bar {
         -m title spotify memory pasink date time dunst \
         -p title.max=32 time.format="%H:%M" date.format="%Y/%m/%d(%a)" \
            spotify.format='{title} - {artist}' spotify.layout='spotify.song'\
-        -t cyberpunk
+        -t iceberg
 
     colors {
             background #00000000 #00000000 #00000000
@@ -136,12 +137,13 @@ bar {
     i3bar_command i3bar --transparency
     workspace_min_width 80
     binding_mode_indicator no
-    mode invisible
+    mode hide
 }
 
 
 # Startup apps
 exec --no-startup-id dunst
+exec --no-startup-id ~/.screenlayout/layout.sh
 exec --no-startup-id fcitx5
 exec --no-startup-id "feh --bg-fill $HOME/Pictures/wallpaper/DegitalArt/6.jpg --bg-fill $HOME/Pictures/wallpaper/DegitalArt/11.jpg"
 exec --no-startup-id picom --config ~/.picom.conf --experimental-backends --backend glx --xrender-sync-fence -b
