@@ -6,14 +6,18 @@ floating_modifier $mod
 font pango:monospace Regular 10
 
 #Gap
-gaps inner 13
-gaps outer 2
-smart_gaps on
+gaps top 30
+gaps bottom 10
+gaps right 10
+gaps left 10
+gaps inner 10
+# gaps outer 2
+# smart_gaps on
 smart_borders on
 
 # Color
 set $mediumvioletred "#c71585"
-set $lightslategray "#1e90ff"
+set $lightslategray "#0CFFF1"
 set $cunfo "#cb8b8b"
 set $cindi "#145ba7"
 set $cindiu "#8a9db1"
@@ -100,7 +104,7 @@ bindsym $mod+Shift+6 move container to workspace $system
 bindsym $mod+Shift+9 move container to workspace $option
 
 ## Specific window
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 1
 no_focus [window_role="pop-up"]
 for_window [window_role="pop-up"] floating enable
 for_window [class="^albert$"] floating enable
@@ -111,8 +115,8 @@ for_window [class="Viewnior"] floating enable,resize set 1600 900,move position 
 
 ## Specific workspaces
 assign [class="Spotify"] $media
-assign [window_role="^browser-window"] $work
 assign [class="^.*exe"] $game
+# assign [window_role="^browser-window"] $work
 
 ##Misc
 bindsym $mod+Shift+c reload

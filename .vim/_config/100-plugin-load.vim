@@ -14,8 +14,11 @@ if has('win32') || has('win64')
   Plug 'jeetsukumaran/vim-buffergator'
 endif
 
-"Coding
+"color scheme
 Plug 'ghifarit53/tokyonight-vim'
+Plug 'jaredgorski/spacecamp'
+
+"Coding
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'godlygeek/tabular'
 Plug 'luochen1990/rainbow'
@@ -33,6 +36,7 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'thinca/vim-quickrun'
 Plug 'tyru/eskk.vim'
+Plug 'nvim-lua/popup.nvim'
 
 "deno
 " Plug 'vim-denops/denops.vim'
