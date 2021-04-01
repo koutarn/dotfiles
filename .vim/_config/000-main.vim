@@ -139,6 +139,7 @@ augroup vimrc
   autocmd FileType bash       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
   autocmd FileType zsh        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
   autocmd FileType fish       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+  autocmd FileType help       setlocal number
   autocmd BufNewFile,BufRead *.vb setfiletype vb
   autocmd BufNewFile,BufRead *.cls setfiletype vb
   autocmd BufNewFile,BufRead *.bas setfiletype vb

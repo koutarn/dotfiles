@@ -30,13 +30,15 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'simeji/winresizer'
 Plug 'skanehira/preview-markdown.vim'
 Plug 'plasticboy/vim-markdown'
-Plug 'itchyny/lightline.vim'
 Plug 'mattn/vim-findroot'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'thinca/vim-quickrun'
 Plug 'tyru/eskk.vim'
 Plug 'nvim-lua/popup.nvim'
+Plug 'itchyny/lightline.vim'
+" Plug 'itchyny/vim-cursorword'
+Plug 'itchyny/vim-highlighturl'
 
 "deno
 " Plug 'vim-denops/denops.vim'

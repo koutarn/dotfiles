@@ -123,15 +123,15 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 bar {
-	font pango:monospace 11
-	position top
+    font pango:monospace 11
+    position top
     tray_padding 0
-	tray_output none
-	status_command ~/Projects/bumblebee-status/bumblebee-status \
+    tray_output none
+    status_command ~/Projects/bumblebee-status/bumblebee-status \
         -m title spotify memory pasink date time dunst \
         -p title.max=32 time.format="%H:%M" date.format="%Y/%m/%d(%a)" \
            spotify.format='{title} - {artist}' spotify.layout='spotify.song'\
-        -t iceberg
+        -t cyberpunk
 
     colors {
             background #00000000 #00000000 #00000000
@@ -141,11 +141,12 @@ bar {
     i3bar_command i3bar --transparency
     workspace_min_width 80
     binding_mode_indicator no
-    mode hide
+    # mode hide
 }
 
 
 # Startup apps
+# exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id dunst
 exec --no-startup-id ~/.screenlayout/layout.sh
 exec --no-startup-id fcitx5

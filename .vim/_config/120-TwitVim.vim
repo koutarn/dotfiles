@@ -8,5 +8,5 @@ let twitvim_timestamp_format = '%Y/%m/%d %R'
 let twitvim_browser_cmd = 'google-chrome'
 
 augroup twitvim
-  autocmd FileType twitvim    setlocal wrap wrapmargin=60
+  autocmd FileType twitvim setlocal wrap wrapmargin=60
 augroup END
