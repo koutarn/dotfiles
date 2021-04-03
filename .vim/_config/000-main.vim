@@ -1,12 +1,17 @@
-"================================
-"表示設定
-"================================
-set stal=0
+set encoding=utf-8
+set fileencodings=utf-8,cp932,sjis
+set fileformats=unix,dos,mac
+scriptencoding utf8
+
+" コマンド初期化
+augroup vimrc_init
+  autocmd!
+augroup END
+
 
 if has('unix')
   let $SHELL='/bin/zsh'
   set shell=/bin/bash
-  set encoding=utf-8
 elseif has('win32') || has('win64')
   set shell=cmd
 endif
@@ -15,19 +20,17 @@ if has ('nvim')
   set pumblend=10
 endif
 
-set pumheight=10
+"自動で読み込み直す。
 set autoread
+
 set autochdir
-set fileencodings=utf-8,cp932,sjis
-set fileformats=unix,dos
+set stal=0
+set pumheight=10
 set updatetime=300
 set title
 set showcmd
-set nonumber
 set cursorline
-set showmatch
 set display=lastline
-set ruler
 set laststatus=2
 set nolist
 set listchars=tab:\|\ ,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
@@ -39,27 +42,44 @@ set t_Co=256
 set iminsert=0
 set imsearch=-1
 
-set wrap
-set hlsearch
-set wrapscan
-set incsearch
-set matchtime=1
-set ignorecase smartcase
-set breakindent
-set showbreak=>\ 
+"tab
 set expandtab
 set tabstop=4
+set shiftwidth=4
+set softtabstop=-1
 set smarttab
+set shiftround
+
+"indent
+set breakindent
+set autoindent
+set smartindent
+set copyindent
+set preserveindent
+set backspace=indent,eol,start
+
+"行番号もルーラーも表示しない
+set nonumber
+set noruler
+
+"折り返し
+set wrap
+set wrapmargin=0
+
+"検索
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set wrapscan
+
+set showmatch
+set matchtime=1
+set showbreak=>\ 
 set wildmenu
 set wildmode=list:longest,full
 set matchpairs& matchpairs+=<:>
-set shiftround
-set shiftwidth=4
-set softtabstop=0
-set autoindent
-set smartindent
 set infercase
-set backspace=indent,eol,start
 set whichwrap=b,<,>,[,]
 set scrolloff=40
 set sidescrolloff=16
@@ -107,40 +127,12 @@ endif
 
 set cmdheight=1
 
-"File Type
-augroup vimrc
-  filetype on
-  filetype plugin on
-  filetype indent on
-
-  autocmd!
-  autocmd BufNewFile,BufRead *.c setfiletype c syntax=c
-  autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
-  autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
-  autocmd BufNewFile,BufRead *.txt setlocal filetype=markdown
-  autocmd BufNewFile,BufRead *.fish setlocal filetype=fish
-  autocmd FileType markdown   setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
-  autocmd FileType apache     setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
-  autocmd FileType css        setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
-  autocmd FileType diff       setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
-  autocmd FileType xml        setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
-  autocmd FileType java       setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
-  autocmd FileType sql        setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
-  autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-  autocmd FileType ruby       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-  autocmd FileType eruby      setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-  autocmd FileType yaml       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-  autocmd FileType coffee     setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-  autocmd FileType tex        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-  autocmd FileType html       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-  autocmd FileType sql        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-  autocmd FileType sh         setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-  autocmd FileType vim        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-  autocmd FileType bash       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-  autocmd FileType zsh        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-  autocmd FileType fish       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-  autocmd FileType help       setlocal number
-  autocmd BufNewFile,BufRead *.vb setfiletype vb
-  autocmd BufNewFile,BufRead *.cls setfiletype vb
-  autocmd BufNewFile,BufRead *.bas setfiletype vb
-augroup END
+"thx tsuyoshicho
+"https://github.com/tsuyoshicho/vimrc-reading/blob/7451171f07e88d6d1dcd73deb792aff115d2c94e/.vimrc
+command! Utf8  edit ++encoding=utf-8 %
+command! Cp932 edit ++encoding=cp932 %
+command! Unix  edit ++fileformat=unix   %
+command! Dos   edit ++fileformat=dos    %
+command! AsUtf8 set 'fileencoding'=utf-8 | w
+command! AsDos  set fileformat=dos     | w
+command! AsUnix set fileformat=unix    | w

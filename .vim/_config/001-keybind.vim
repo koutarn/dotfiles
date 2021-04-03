@@ -1,3 +1,4 @@
+" map早見表 by vim.jp slack
 " +--------------------------------------------------------------------------------------+
 " | Commands \ Modes | Normal | Insert | Command | Visual | Select | Operator | Terminal |
 " |------------------|--------|--------|---------|--------|--------|----------|----------|
@@ -25,6 +26,7 @@ nnoremap <C-z> <Nop>
 let mapleader = "\<Space>"
 let maplocalleader = ','
 
+"xキーを保持しない
 nnoremap x "_x
 vnoremap x "_x
 nnoremap X "_X

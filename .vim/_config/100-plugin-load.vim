@@ -19,6 +19,7 @@ Plug 'ghifarit53/tokyonight-vim'
 Plug 'jaredgorski/spacecamp'
 
 "Coding
+Plug 'Shougo/context_filetype.vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'godlygeek/tabular'
 Plug 'luochen1990/rainbow'
