@@ -1,7 +1,7 @@
 set encoding=utf-8
-set fileencodings=utf-8,cp932,sjis
-set fileformats=unix,dos,mac
 scriptencoding utf8
+set fileencodings=cp932,sjis,utf-8
+set fileformats=dos,unix,mac
 
 " コマンド初期化
 augroup vimrc_init
@@ -16,18 +16,19 @@ elseif has('win32') || has('win64')
   set shell=cmd
 endif
 
-if has ('nvim')
+if has (&pumblend)
   set pumblend=10
 endif
 
 "自動で読み込み直す。
 set autoread
 
+set startofline
 set autochdir
 set stal=0
 set pumheight=10
 set updatetime=300
-set title
+set notitle
 set showcmd
 set cursorline
 set display=lastline
@@ -54,6 +55,7 @@ set shiftround
 set breakindent
 set autoindent
 set smartindent
+set tm=500
 set copyindent
 set preserveindent
 set backspace=indent,eol,start
@@ -66,12 +68,13 @@ set noruler
 set wrap
 set wrapmargin=0
 
-"検索
+"検索/置換
 set hlsearch
 set incsearch
-set ignorecase
-set smartcase
+set ignorecase smartcase
 set wrapscan
+set nogdefault
+
 
 set showmatch
 set matchtime=1
@@ -109,12 +112,14 @@ set lazyredraw
 set ttyfast
 set timeout timeoutlen=1000 ttimeoutlen=50
 set shortmess+=I
+set tm=500
 set nofoldenable
 set history=1000
+set tm=500
+
+"beep
 set noerrorbells
 set novisualbell
-set t_vb=
-set tm=500
 
 if has('unix')
   set clipboard&

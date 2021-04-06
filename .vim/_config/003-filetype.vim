@@ -34,4 +34,11 @@ augroup vimrc_filetype
   autocmd BufNewFile,BufRead *.vb setfiletype vb
   autocmd BufNewFile,BufRead *.cls setfiletype vb
   autocmd BufNewFile,BufRead *.bas setfiletype vb
+
+  " from kuuote's vimrc
+  " helpのタグ移動を楽にするやつ
+  autocmd FileType help nested if &l:buftype ==# 'help'
+    \ |             nnoremap <buffer> <CR> <C-]>
+    \ |             nnoremap <buffer> <BS> <C-T>
+    \ |           endif
 augroup END

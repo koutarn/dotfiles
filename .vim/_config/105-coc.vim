@@ -39,7 +39,7 @@ let g:coc_snippet_next = '<c-j>'
 let g:coc_snippet_prev = '<c-k>'
 
 " coc-fzf-preview
-nnoremap <Leader>[ :CocCommand fzf-preview.ProjectFiles<CR>
+nnoremap <Leader>p :CocCommand fzf-preview.ProjectFiles<CR>
 nnoremap <Leader>; :CocCommand fzf-preview.Buffers<CR>
 
 set viminfo='1000

@@ -41,14 +41,15 @@ cnoremap <C-j> <DOWN>
 cnoremap <C-l> <RIGHT>
 cnoremap <C-p> <C-r>0
 
-nnoremap ) t)
-nnoremap ( t(
-nnoremap [ t[
-nnoremap ] t]
-vnoremap ) t)
-vnoremap ( t(
-vnoremap [ t[
-vnoremap ] t]
+" そんなに使わないので
+" nnoremap ) t)
+" nnoremap ( t(
+" nnoremap [ t[
+" nnoremap ] t]
+" vnoremap ) t)
+" vnoremap ( t(
+" vnoremap [ t[
+" vnoremap ] t]
 
 "Move
 nnoremap k gk
@@ -86,8 +87,8 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 
 "window
-nnoremap <Leader>s :<C-u>sp<CR>
-nnoremap <Leader>v :<C-u>vs<CR>
+nnoremap <Leader>[ :<C-u>split<CR>
+nnoremap <Leader>] :<C-u>vsplit<CR>
 nnoremap <Leader>x :close<CR>
 nnoremap <leader>w  :<c-u>w<cr>
 nnoremap <leader>q  :<c-u>qa<cr>
@@ -97,6 +98,11 @@ nnoremap <Leader>h <C-w>h
 nnoremap <leader>j <C-w>j
 nnoremap <leader>k  <C-w>k
 nnoremap <Leader>l <C-w>l
+
+" タグ先複数選択を常に
+" thx tsuyoshicho
+" https://github.com/tsuyoshicho/vimrc-reading/blob/7451171f07e88d6d1dcd73deb792aff115d2c94e/.vimrc#L597-L598
+nnoremap <C-]> g<C-]>
 
 "===========================================================
 "バッファ

@@ -16,7 +16,6 @@ endif
 
 "color scheme
 Plug 'ghifarit53/tokyonight-vim'
-Plug 'jaredgorski/spacecamp'
 
 "Coding
 Plug 'Shougo/context_filetype.vim'
