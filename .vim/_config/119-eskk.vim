@@ -13,6 +13,17 @@ function! s:eskk_initial_pre() abort
     EskkMap -type=sticky ;
 endfunction
 
+augroup eskk-markdown
+  autocmd FileType markdown call s:markdown_eskk()
+augroup END
+
+function! s:markdown_eskk() abort
+  "markdown‚Íeskk‚Ì‚Ü‚Ü‚Å‚¢‚½‚¢
+  let g:eskk#keep_state = 1
+  let g:eskk#keep_state_beyond_buffer = 1
+  call eskk#enable()
+endfunction
+
 imap <C-o> <Plug>(eskk:toggle)
 cmap <C-o> <Plug>(eskk:toggle)
 let g:eskk#kakutei_when_unique_candidate = 1
@@ -26,4 +37,3 @@ let g:eskk#marker_jisyo_touroku = "[D]"
 let g:eskk#keep_state = 0
 let g:eskk#keep_state_beyond_buffer = 0
 let g:eskk#egg_like_newline = 1
-
