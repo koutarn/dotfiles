@@ -8,7 +8,6 @@ augroup vimrc_init
   autocmd!
 augroup END
 
-
 if has('unix')
   let $SHELL='/bin/zsh'
   set shell=/bin/bash
@@ -16,7 +15,7 @@ elseif has('win32') || has('win64')
   set shell=cmd
 endif
 
-if has (&pumblend)
+if has('nvim')
   set pumblend=10
 endif
 

@@ -13,8 +13,9 @@ function! s:eskk_initial_pre() abort
     EskkMap -type=sticky ;
 endfunction
 
-augroup eskk-markdown
+augroup my-eskk
   autocmd FileType markdown call s:markdown_eskk()
+  autocmd FileType gitcommit call s:markdown_eskk()
 augroup END
 
 function! s:markdown_eskk() abort
