@@ -1,3 +1,8 @@
+UsePlugin 'eskk.vim'
+"=========================
+" 'tyru/eskk.vim'
+"=========================
+
 if !filereadable(expand('~/.config/eskk/jisyo'))
     call system('mkdir -p ~/.config/eskk')
     call system('cd ~/.config/eskk/ && wget http://openlab.jp/skk/dic/SKK-JISYO.L.gz && gzip -d SKK-JISYO.L.gz && nkf -Ew SKK-JISYO.L > jisyo && rm -f SKK-JISYO.L')

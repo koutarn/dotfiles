@@ -10,7 +10,7 @@ augroup vimrc_filetype
   autocmd BufNewFile,BufRead *.c    setfiletype c syntax=c
   autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
 
-  autocmd FileType markdown   setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+  autocmd FileType markdown setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
   autocmd FileType apache     setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
   autocmd FileType css        setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
   autocmd FileType diff       setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab

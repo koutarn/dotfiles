@@ -1,7 +1,8 @@
 set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8,cp932,sjis
+set fileformats=unix,dos,mac
 scriptencoding utf8
-set fileencodings=cp932,sjis,utf-8
-set fileformats=dos,unix,mac
 
 " コマンド初期化
 augroup vimrc_init
@@ -15,6 +16,8 @@ elseif has('win32') || has('win64')
   set shell=cmd
 endif
 
+"補完
+set completeopt+=menuone,menu,preview
 if has('nvim')
   set pumblend=10
 endif
@@ -43,10 +46,10 @@ set iminsert=0
 set imsearch=-1
 
 "tab
-set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=-1
+set expandtab
 set smarttab
 set shiftround
 
@@ -70,9 +73,11 @@ set wrapmargin=0
 "検索/置換
 set hlsearch
 set incsearch
-set ignorecase smartcase
+set ignorecase
+set smartcase
 set wrapscan
 set nogdefault
+set magic
 
 
 set showmatch
@@ -104,7 +109,10 @@ if !has('nvim')
   set ttymouse=xterm2
 endif
 
+"terminal
 set termguicolors
+set t_ZH=
+set t_ZR=
 
 set helplang=ja,en
 set lazyredraw
@@ -119,6 +127,7 @@ set tm=500
 "beep
 set noerrorbells
 set novisualbell
+set t_vb=
 
 if has('unix')
   set clipboard&
@@ -140,3 +149,21 @@ command! Dos   edit ++fileformat=dos    %
 command! AsUtf8 set 'fileencoding'=utf-8 | w
 command! AsDos  set fileformat=dos     | w
 command! AsUnix set fileformat=unix    | w
+
+"edit dotfile
+command! EditVim :edit ~/.vim/_config
+command! EditZsh :edit ~/.zsh/
+command! EditTmux :edit ~/.tmux.conf
+
+"disable defult plugins
+"https://github.com/wass88/dotfiles/blob/62ad8bca0a494c45294164fb9df27ee440b23e87/.vimrc
+let g:loaded_gzip              = 1
+let g:loaded_tar               = 1
+let g:loaded_tarPlugin         = 1
+let g:loaded_zip               = 1
+let g:loaded_zipPlugin         = 1
+let g:loaded_rrhelper          = 1
+let g:loaded_vimball           = 1
+let g:loaded_vimballPlugin     = 1
+let g:loaded_getscript         = 1
+let g:loaded_getscriptPlugin   = 1

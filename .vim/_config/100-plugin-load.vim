@@ -49,7 +49,9 @@ Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'LumaKernel/fern-mapping-fzf.vim'
 Plug 'mattn/vim-molder'
+Plug 'mattn/vim-molder-operations'
 Plug 'moll/vim-bbye'
+
 
 "Joke
 Plug 'monaqa/vim-duzzle'
