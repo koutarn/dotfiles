@@ -4,6 +4,26 @@ set fileencodings=utf-8,cp932,sjis
 set fileformats=unix,dos,mac
 scriptencoding utf8
 
+"disable defult plugins
+"https://lambdalisue.hatenablog.com/entry/2015/12/25/000046
+let g:loaded_gzip            = 1
+let g:loaded_tar             = 1
+let g:loaded_tarPlugin       = 1
+let g:loaded_zip             = 1
+let g:loaded_zipPlugin       = 1
+let g:loaded_rrhelper        = 1
+let g:loaded_vimball         = 1
+let g:loaded_vimballPlugin   = 1
+let g:loaded_getscript       = 1
+let g:loaded_getscriptPlugin = 1
+let g:loaded_logiPat         = 1
+
+"Terminalではmatchparenを停止
+"https://lambdalisue.hatenablog.com/entry/2015/12/25/000046
+if !has('gui_running')
+  let g:loaded_matchparen = 1
+endif
+
 " コマンド初期化
 augroup vimrc_init
   autocmd!
@@ -18,7 +38,7 @@ endif
 
 "補完
 set completeopt+=menuone,menu,preview
-if has('nvim')
+if exists("&pumblend")
   set pumblend=10
 endif
 
@@ -155,15 +175,5 @@ command! EditVim :edit ~/.vim/_config
 command! EditZsh :edit ~/.zsh/
 command! EditTmux :edit ~/.tmux.conf
 
-"disable defult plugins
-"https://github.com/wass88/dotfiles/blob/62ad8bca0a494c45294164fb9df27ee440b23e87/.vimrc
-let g:loaded_gzip              = 1
-let g:loaded_tar               = 1
-let g:loaded_tarPlugin         = 1
-let g:loaded_zip               = 1
-let g:loaded_zipPlugin         = 1
-let g:loaded_rrhelper          = 1
-let g:loaded_vimball           = 1
-let g:loaded_vimballPlugin     = 1
-let g:loaded_getscript         = 1
-let g:loaded_getscriptPlugin   = 1
+"set filetype
+command! MarkDown set filetype=markdown
