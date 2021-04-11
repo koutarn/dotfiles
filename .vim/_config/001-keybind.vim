@@ -87,8 +87,8 @@ nnoremap [f :bprevious<CR>
 nnoremap ]f :bnext<CR>
 
 "window
-nnoremap <Leader>[ :<C-u>split<CR>
-nnoremap <Leader>] :<C-u>vsplit<CR>
+nnoremap <Leader>- :<C-u>split<CR>
+nnoremap <Leader>\ :<C-u>vsplit<CR>
 nnoremap <Leader>x :close<CR>
 nnoremap <leader>w  :<c-u>w<cr>
 nnoremap <leader>q  :<c-u>qa<cr>
