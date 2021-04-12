@@ -80,9 +80,11 @@ inoremap <C-l> <RIGHT>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 
-"タブ移動
+"QuickFix
 nnoremap [c :cprevious<CR>
 nnoremap ]c :cnext<CR>
+
+"Buffer
 nnoremap [f :bprevious<CR>
 nnoremap ]f :bnext<CR>
 

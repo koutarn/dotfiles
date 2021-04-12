@@ -38,6 +38,8 @@ endif
 
 "補完
 set completeopt+=menuone,menu,preview
+set pumheight=10
+set wildignorecase
 if exists("&pumblend")
   set pumblend=10
 endif
@@ -48,7 +50,6 @@ set autoread
 set startofline
 set autochdir
 set stal=0
-set pumheight=10
 set updatetime=300
 set notitle
 set showcmd
@@ -60,6 +61,7 @@ set listchars=tab:\|\ ,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
 set ambiwidth=double
 syntax enable
+set background=dark
 
 set t_Co=256
 set iminsert=0
@@ -135,6 +137,8 @@ set t_ZH=
 set t_ZR=
 
 set helplang=ja,en
+set spelllang=en,cjk
+set spelloptions=camel
 set lazyredraw
 set ttyfast
 set timeout timeoutlen=1000 ttimeoutlen=50
@@ -158,9 +162,10 @@ if has('win32') && has('win64')
   set clipboard+=unnamed"
 endif
 
+"command line
 set cmdheight=1
 
-"thx tsuyoshicho
+"文字コード絡み
 "https://github.com/tsuyoshicho/vimrc-reading/blob/7451171f07e88d6d1dcd73deb792aff115d2c94e/.vimrc
 command! Utf8  edit ++encoding=utf-8 %
 command! Cp932 edit ++encoding=cp932 %
