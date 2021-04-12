@@ -92,8 +92,10 @@ nnoremap ]f :bnext<CR>
 nnoremap <Leader>- :<C-u>split<CR>
 nnoremap <Leader>\ :<C-u>vsplit<CR>
 nnoremap <Leader>x :close<CR>
-nnoremap <leader>w  :<c-u>w<cr>
-nnoremap <leader>q  :<c-u>qa<cr>
+
+" 無駄にキーを使っている気がするので
+" nnoremap <leader>w  :<c-u>w<cr>
+" nnoremap <leader>q  :<c-u>qa<cr>
 
 "ウィンドウ間を移動
 nnoremap <Leader>h <C-w>h
