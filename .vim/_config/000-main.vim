@@ -181,4 +181,4 @@ command! EditZsh :edit ~/.zsh/
 command! EditTmux :edit ~/.tmux.conf
 
 "set filetype
-command! MarkDown set filetype=markdown
+command! Memo new <bar> set filetype=markdown
