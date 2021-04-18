@@ -2,6 +2,15 @@ UsePlug 'coc.nvim'
 "=======================
 "'neoclide/coc.nvim'
 "=======================
+
+let g:coc_global_extensions = [
+  \ 'coc-json',
+  \ 'coc-tsserver',
+  \ 'coc-python',
+  \ 'coc-snippets',
+  \ 'coc-vimlsp'
+  \]
+
 set statusline^=%{coc#status()}
 
 nmap <Leader>' :CocCommand<CR>
