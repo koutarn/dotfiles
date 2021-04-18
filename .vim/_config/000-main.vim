@@ -182,3 +182,12 @@ command! EditTmux :edit ~/.tmux.conf
 
 "set filetype
 command! Memo new <bar> set filetype=markdown
+
+"動作検証
+"thx https://github.com/kato-k/vim-tips/blob/main/articles/vim-tips-no004.md
+command! Profile call s:command_profile()
+function! s:command_profile() abort
+  profile start ~/profile.txt
+  profile func *
+  profile file *
+endfunction
