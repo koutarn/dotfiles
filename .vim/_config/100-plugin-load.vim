@@ -40,6 +40,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'itchyny/lightline.vim'
 " Plug 'itchyny/vim-cursorword'
 Plug 'itchyny/vim-highlighturl'
+Plug 'lambdalisue/gina.vim'
 
 "deno
 " Plug 'vim-denops/denops.vim'
