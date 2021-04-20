@@ -44,6 +44,8 @@ cnoremap <C-p> <C-r>0
 "USキーボード用に入れ替える。
 nnoremap : ;
 nnoremap ; :
+vnoremap : ;
+vnoremap ; :
 
 "Move
 nnoremap k gk
