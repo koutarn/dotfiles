@@ -124,8 +124,11 @@ set splitbelow
 set splitright
 set undolevels=1000"
 set shortmess+=c
-
 set mouse=a
+
+"terminal
+set t_ZH=
+set t_ZR=
 
 if !has('nvim')
   set ttymouse=xterm2
