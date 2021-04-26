@@ -18,17 +18,15 @@ function! s:eskk_initial_pre() abort
     EskkMap -type=sticky ;
 endfunction
 
-augroup my-eskk
-  autocmd FileType markdown call s:markdown_eskk()
-  " autocmd FileType gitcommit call s:markdown_eskk()
-augroup END
-
-function! s:markdown_eskk() abort
-  "markdown‚Íeskk‚Ì‚Ü‚Ü‚Å‚¢‚½‚¢
-  let g:eskk#keep_state = 1
-  let g:eskk#keep_state_beyond_buffer = 1
-  call eskk#enable()
-endfunction
+" augroup my-eskk
+"   autocmd FileType markdown call s:markdown_eskk()
+" augroup END
+"
+" function! s:markdown_eskk() abort
+"   "markdown‚Íeskk‚Ì‚Ü‚Ü‚Å‚¢‚½‚¢
+"   let g:eskk#keep_state = 1
+"   let g:eskk#keep_state_beyond_buffer = 1
+" endfunction
 
 imap <C-o> <Plug>(eskk:toggle)
 cmap <C-o> <Plug>(eskk:toggle)

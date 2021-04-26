@@ -16,6 +16,7 @@
 " +--------------------------------------------------------------------------------------+
 
 "unbind
+nnoremap Q <Nop>
 nnoremap ZZ <Nop>
 nnoremap ZQ <Nop>
 nnoremap s <Nop>
