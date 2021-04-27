@@ -7,10 +7,9 @@
 
 # Read
 * OS:Manjaro Linux ⛰
-* Shell:zsh
-* Terminal:alacritty
-* Editor:neovim
-* IDE:Visual Studio Code
+* Shell:zsh 🇿
+* Terminal:alacritty 💻
+* Editor:neovim 📝
 
 # Apps
 * WindowManager:i3
