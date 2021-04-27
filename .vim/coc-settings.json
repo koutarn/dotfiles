@@ -1,4 +1,15 @@
 {
+    "suggest.enablePreview": true,
+    "suggest.detailField":"preview",
+    "suggest.maxCompleteItemCount": 50,
+    "suggest.detailMaxLength": 200,
+    "suggest.autoTrigger": "always",
+    "coc.preferences.formatOnSaveFiletypes": [
+        "*"
+    ],
+
+    "snippets.priority": 99,
+    "suggest.languageSourcePriority": 90,
     "suggest.completionItemKindLabels": {
         "variable"      : "🔸変数",
         "constant"      : "🔸コンスト",
