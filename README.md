@@ -8,8 +8,8 @@
 # Read
 * ⛰ OS:Manjaro Linux
 * 🇿 Shell:zsh
-* 💻Terminal:alacritty
-* 📝Editor:neovim
+* 💻 Terminal:alacritty
+* 📝 Editor:neovim
 
 # Apps
 * WindowManager:i3
