@@ -5,10 +5,13 @@ UsePlug 'coc.nvim'
 let g:coc_global_extensions = [
   \ 'coc-json',
   \ 'coc-tsserver',
-  \ 'coc-python',
   \ 'coc-snippets',
   \ 'coc-vimlsp'
   \]
+
+if has('python')
+  add('g:coc_global_extensions','coc-python')
+endif
 
 nnoremap <Leader>' :CocCommand<CR>
 nmap <silent>gd <Plug>(coc-definition)
@@ -36,19 +39,19 @@ else
   set signcolumn=yes
 endif
 
-"tabで選択
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
+" "tabで選択
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 inoremap <silent><expr> ;; pumvisible() ? coc#_select_confirm() : coc#refresh()
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
 
 " =========================
 " coc-snippets
