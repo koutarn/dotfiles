@@ -42,6 +42,10 @@ cnoremap <C-j> <DOWN>
 cnoremap <C-l> <RIGHT>
 cnoremap <C-p> <C-r>0
 
+"インデントに合せてペースト
+nnoremap p ]p
+nnoremap ]p p
+
 "USキーボード用に入れ替える。
 nnoremap : ;
 nnoremap ; :
