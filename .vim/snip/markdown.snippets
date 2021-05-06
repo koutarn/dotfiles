@@ -1,0 +1,113 @@
+# A valid snippet should starts with:
+#
+#		snippet trigger_word [ "description" [ options ] ]
+#
+# and end with:
+#
+#		endsnippet
+#
+# Snippet options:
+#
+#		b - Beginning of line.
+#		i - In-word expansion.
+#		w - Word boundary.
+#		r - Regular expression
+#		e - Custom context snippet
+#		A - Snippet will be triggered automatically, when condition matches.
+#
+# Basic example:
+#
+#		snippet emitter "emitter properties" b
+#		private readonly ${1} = new Emitter<$2>()
+#		public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
+#		endsnippet
+#
+# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+
+snippet b "bold" w
+**${1}**
+endsnippet
+
+snippet ci "code(inline)" w
+\`${1}\`
+endsnippet
+
+snippet cb "code(block)" w
+\`\`\`${1:language}
+${2}
+\`\`\`
+endsnippet
+
+snippet c "comment" w
+<!-- ${1:comment} -->
+endsnippet
+
+snippet h "header" w
+#${1}
+endsnippet
+
+snippet h2 "header2" w
+##${1}
+endsnippet
+
+snippet hh "header2" w
+##${1}
+endsnippet
+
+snippet h3 "header3" w
+###${1}
+endsnippet
+
+snippet hhh "header3" w
+###${1}
+endsnippet
+
+snippet h4 "header4" w
+####${1}
+endsnippet
+
+snippet h5 "header5" w
+#####${1}
+endsnippet
+
+snippet h6 "header5" w
+######${1}
+endsnippet
+
+snippet hr "horizontal rule" w
+__________
+endsnippet
+
+snippet img "image" w
+![${1:filename}](${2:url})
+endsnippet
+
+snippet i "italic" w
+*${1}*
+endsnippet
+
+snippet l "link" w
+[${1:Text}](${2:URL})
+endsnippet
+
+snippet st "strikethrough" w
+~~${1}~~
+endsnippet
+
+snippet ch "check box" w
+- [ ]
+endsnippet
+
+
+snippet journal "journal note" b
+# `!v strftime("%Y-%m-%d")`
+Date: `!v strftime("%Y-%m-%d")`
+
+## 感じたこと 🥺
+
+## メモ 📝
+* ${1}
+
+## 学んだ事 🧠
+
+endsnippet
