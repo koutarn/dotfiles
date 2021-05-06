@@ -6,12 +6,9 @@ let g:coc_global_extensions = [
   \ 'coc-json',
   \ 'coc-tsserver',
   \ 'coc-snippets',
-  \ 'coc-vimlsp'
+  \ 'coc-vimlsp',
+  \ 'coc-python'
   \]
-
-if has('python')
-  add('g:coc_global_extensions','coc-python')
-endif
 
 nnoremap <Leader>' :CocCommand<CR>
 nmap <silent>gd <Plug>(coc-definition)
