@@ -9,7 +9,6 @@ rofi.cycle:true
 rofi.fuzzy:true
 rofi.font:HackGen35NerdConsole Normal 16
 rofi.kb-cancel: Escape,Control+bracketleft
-rofi.theme: /home/ez/.config/rofi/themes/iceberg-dark.rasi
 
 rofi.kb-move-front:Control+a
 rofi.kb-move-end:Control+e
@@ -17,3 +16,4 @@ rofi.kb-row-up:Super+k
 rofi.kb-row-down:Super+j
 rofi.kb-mode-previous: Super+h
 rofi.kb-mode-next: Super+l
+rofi.theme: /usr/share/rofi/themes/gruvbox-dark.rasi

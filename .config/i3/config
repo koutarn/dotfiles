@@ -150,5 +150,5 @@ bar {
 exec --no-startup-id dunst
 exec --no-startup-id ~/.screenlayout/layout.sh
 exec --no-startup-id fcitx5
-exec --no-startup-id "feh --bg-fill $HOME/Pictures/wallpaper/DegitalArt/6.jpg --bg-fill $HOME/Pictures/wallpaper/DegitalArt/11.jpg"
+# exec --no-startup-id "feh --bg-fill $HOME/Pictures/wallpaper/DegitalArt/6.jpg --bg-fill $HOME/Pictures/wallpaper/DegitalArt/11.jpg"
 exec --no-startup-id picom --config ~/.picom.conf --experimental-backends --backend glx --xrender-sync-fence -b
