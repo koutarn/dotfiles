@@ -8,7 +8,7 @@
         "*"
     ],
     "snippets.textmateSnippetsRoots": [],
-    "snippets.userSnippetsDirectory": "~/.vim/snip",
+    "snippets.userSnippetsDirectory": "~/.config/nvim/snip",
     "snippets.ultisnips.directories": [],
     "snippets.priority": 99,
     "suggest.languageSourcePriority": 90,

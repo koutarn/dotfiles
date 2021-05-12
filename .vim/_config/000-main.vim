@@ -179,7 +179,7 @@ command! AsDos  set fileformat=dos     | w
 command! AsUnix set fileformat=unix    | w
 
 "edit dotfile
-command! EditVim :edit ~/.vim/_config
+command! EditVim :edit ~/.config/nvim/_config
 command! EditZsh :edit ~/.zsh/
 command! EditTmux :edit ~/.tmux.conf
 

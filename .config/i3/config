@@ -131,7 +131,7 @@ bar {
         -m title spotify memory pasink date time dunst \
         -p title.max=32 time.format="%H:%M" date.format="%Y/%m/%d(%a)" \
            spotify.format='{title} - {artist}' spotify.layout='spotify.song'\
-        -t cyberpunk
+        -t iceberg
 
     colors {
             background #00000000 #00000000 #00000000
@@ -150,5 +150,5 @@ bar {
 exec --no-startup-id dunst
 exec --no-startup-id ~/.screenlayout/layout.sh
 exec --no-startup-id fcitx5
+# exec --no-startup-id picom --config ~/.picom.conf --experimental-backends --backend glx --xrender-sync-fence -b
 # exec --no-startup-id "feh --bg-fill $HOME/Pictures/wallpaper/DegitalArt/6.jpg --bg-fill $HOME/Pictures/wallpaper/DegitalArt/11.jpg"
-exec --no-startup-id picom --config ~/.picom.conf --experimental-backends --backend glx --xrender-sync-fence -b

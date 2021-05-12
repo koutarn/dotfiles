@@ -141,7 +141,7 @@ nnoremap / /\v
 if has('win32') || has('win64')
   command! Source source ~/_vimrc
 elseif has('unix')
-  command! Source source ~/.vimrc
+  command! Source source ~/.config/nvim/vimrc
 endif
 
 "vモードの置換連続ペースト用
