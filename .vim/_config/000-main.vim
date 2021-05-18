@@ -101,7 +101,7 @@ set wrapscan
 set nogdefault
 set magic
 
-
+set colorcolumn=0
 set showmatch
 set matchtime=1
 set showbreak=>\ 

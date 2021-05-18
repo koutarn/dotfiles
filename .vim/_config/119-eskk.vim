@@ -2,12 +2,6 @@ UsePlugin 'eskk.vim'
 "=========================
 " 'tyru/eskk.vim'
 "=========================
-
-if !filereadable(expand('~/.config/eskk/jisyo'))
-    call system('mkdir -p ~/.config/eskk')
-    call system('cd ~/.config/eskk/ && wget http://openlab.jp/skk/dic/SKK-JISYO.L.gz && gzip -d SKK-JISYO.L.gz')
-endif
-
 let g:eskk#directory = "~/.config/eskk"
 let g:eskk#dictionary = { 'path': "~/.config/eskk/my_jisyo", 'sorted': 1, 'encoding': 'utf-8',}
 let g:eskk#large_dictionary = {'path': "~/.config/eskk/SKK-JISYO.L", 'sorted': 1, 'encoding': 'euc-jp',}

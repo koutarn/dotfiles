@@ -4,44 +4,44 @@
 
 call plug#begin()
 
-Plug 'glepnir/indent-guides.nvim'
-Plug 'phaazon/hop.nvim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'tversteeg/registers.nvim'
+ Plug 'glepnir/indent-guides.nvim'
+ Plug 'phaazon/hop.nvim'
+ Plug 'neoclide/coc.nvim', {'branch': 'release'}
+ Plug 'tversteeg/registers.nvim'
 
-if has('win32') || has('win64')
-  Plug 'hachibeeDI/vim-vbnet'
-  Plug 'jeetsukumaran/vim-buffergator'
-endif
+ if has('win32') || has('win64')
+   Plug 'hachibeeDI/vim-vbnet'
+   Plug 'jeetsukumaran/vim-buffergator'
+ endif
 
-"color scheme
-Plug 'ghifarit53/tokyonight-vim'
-
-"Coding
-Plug 'Shougo/context_filetype.vim'
-Plug 'bronson/vim-trailing-whitespace'
-Plug 'godlygeek/tabular'
-Plug 'luochen1990/rainbow'
-Plug 'tyru/capture.vim'
-Plug 't9md/vim-quickhl'
-" Plug 'Townk/vim-autoclose'
-Plug 'cohama/lexima.vim'
-Plug 'mg979/vim-visual-multi'
-Plug 'scrooloose/nerdcommenter'
-Plug 'simeji/winresizer'
-Plug 'skanehira/preview-markdown.vim'
-Plug 'plasticboy/vim-markdown'
-Plug 'mattn/vim-findroot'
-Plug 'MattesGroeger/vim-bookmarks'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'thinca/vim-quickrun'
-Plug 'tyru/eskk.vim'
-Plug 'nvim-lua/popup.nvim'
-Plug 'itchyny/lightline.vim'
-" Plug 'itchyny/vim-cursorword'
-Plug 'itchyny/vim-highlighturl'
-Plug 'lambdalisue/gina.vim'
-
+ "color scheme
+  Plug 'ghifarit53/tokyonight-vim'
+ "
+ " "Coding
+ Plug 'Shougo/context_filetype.vim'
+ Plug 'bronson/vim-trailing-whitespace'
+ Plug 'godlygeek/tabular'
+ Plug 'luochen1990/rainbow'
+ Plug 'tyru/capture.vim'
+ Plug 't9md/vim-quickhl'
+ " Plug 'Townk/vim-autoclose'
+ Plug 'cohama/lexima.vim'
+ Plug 'mg979/vim-visual-multi'
+ Plug 'scrooloose/nerdcommenter'
+ Plug 'simeji/winresizer'
+ Plug 'skanehira/preview-markdown.vim'
+ Plug 'plasticboy/vim-markdown'
+ Plug 'mattn/vim-findroot'
+ Plug 'MattesGroeger/vim-bookmarks'
+ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+ Plug 'thinca/vim-quickrun'
+ Plug 'tyru/eskk.vim'
+ Plug 'nvim-lua/popup.nvim'
+ Plug 'itchyny/lightline.vim'
+ " Plug 'itchyny/vim-cursorword'
+ Plug 'itchyny/vim-highlighturl'
+ Plug 'lambdalisue/gina.vim'
+"
 "deno
 " Plug 'vim-denops/denops.vim'
 " Plug 'kuuote/dps-scrap'
