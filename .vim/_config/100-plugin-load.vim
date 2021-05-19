@@ -15,8 +15,9 @@ call plug#begin()
  endif
 
  "color scheme
-  Plug 'ghifarit53/tokyonight-vim'
- "
+ " Plug 'ghifarit53/tokyonight-vim'
+ Plug 'joshdick/onedark.vim'
+
  " "Coding
  Plug 'Shougo/context_filetype.vim'
  Plug 'bronson/vim-trailing-whitespace'

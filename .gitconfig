@@ -21,7 +21,7 @@ compactionHeuristic = true
 [core]
 attributesfile = ~/.gitattributes-global
 excludesfile = ~/.gitignore-global
-	editor = nvim
+editor = nvim
 #true = チェックアウト時にLF⇛CRLF
 #input = コミット時にCRLF⇛LF
 #false 無効

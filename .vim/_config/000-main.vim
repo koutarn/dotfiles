@@ -63,7 +63,6 @@ set ambiwidth=double
 syntax enable
 set background=dark
 
-set t_Co=256
 set iminsert=0
 set imsearch=-1
 
@@ -126,10 +125,6 @@ set undolevels=1000"
 set shortmess+=c
 set mouse=a
 
-"terminal
-set t_ZH=
-set t_ZR=
-
 if !has('nvim')
   set ttymouse=xterm2
 endif
@@ -138,6 +133,7 @@ endif
 set termguicolors
 set t_ZH=
 set t_ZR=
+set t_Co=256
 
 set helplang=ja,en
 set spelllang=en,cjk
