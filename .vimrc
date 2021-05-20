@@ -7,7 +7,12 @@
 "
 "=================================================================================
 
+filetype on
+filetype plugin on
+filetype indent on
+syntax on
+set background=dark
+
 "読み込みファイル設定
 set runtimepath+=~/.vim/
 runtime! _config/*.vim             "設定読み込み
-runtime! after/ftplugin/*.vim   "設定読み込み

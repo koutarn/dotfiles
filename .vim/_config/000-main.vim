@@ -60,8 +60,6 @@ set nolist
 set listchars=tab:\|\ ,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
 set ambiwidth=double
-syntax enable
-set background=dark
 
 set iminsert=0
 set imsearch=-1
