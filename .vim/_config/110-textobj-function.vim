@@ -7,3 +7,4 @@ omap iF <Plug>(textobj-function-i)
 omap aF <Plug>(textobj-function-a)
 vmap iF <Plug>(textobj-function-i)
 vmap aF <Plug>(textobj-function-a)
+
