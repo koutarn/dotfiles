@@ -5,7 +5,7 @@ UsePlug 'lightline.vim'
 " let g:lightline = {'colorscheme' : 'tokyonight'}
 
 let g:lightline = {
-\ 'colorscheme': 'onedark',
+\ 'colorscheme': 'tokyonight',
 \ 'active': {
 \   'left': [ [ 'mode', 'paste' ],
 \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]

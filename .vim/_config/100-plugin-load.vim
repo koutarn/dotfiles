@@ -14,9 +14,10 @@ call plug#begin()
    Plug 'jeetsukumaran/vim-buffergator'
  endif
 
+
  "color scheme
- " Plug 'ghifarit53/tokyonight-vim'
- Plug 'joshdick/onedark.vim'
+ Plug 'ghifarit53/tokyonight-vim'
+ " Plug 'joshdick/onedark.vim'
 
  " "Coding
  Plug 'Shougo/context_filetype.vim'
@@ -49,10 +50,15 @@ call plug#begin()
 
 "Filer
 Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'LumaKernel/fern-mapping-fzf.vim'
-Plug 'mattn/vim-molder'
-Plug 'mattn/vim-molder-operations'
+Plug 'lambdalisue/fern-git-status.vim'
+Plug 'lambdalisue/fern-mapping-project-top.vim'
+Plug 'lambdalisue/fern-hijack.vim'
+Plug 'lambdalisue/glyph-palette.vim'
+" Plug 'mattn/vim-molder'
+" Plug 'mattn/vim-molder-operations'
 Plug 'moll/vim-bbye'
 
 
