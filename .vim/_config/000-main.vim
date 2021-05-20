@@ -53,7 +53,7 @@ set stal=0
 set updatetime=300
 set notitle
 set showcmd
-set cursorline
+set nocursorline
 set display=lastline
 set laststatus=2
 set nolist
@@ -82,10 +82,8 @@ set tm=500
 set copyindent
 set preserveindent
 set backspace=indent,eol,start
-
-"行番号もルーラーも表示しない
-set nonumber
-set noruler
+set number
+set ruler
 
 "折り返し
 set wrap
@@ -178,6 +176,13 @@ command! AsUnix set fileformat=unix    | w
 command! EditVim :edit ~/.config/nvim/_config
 command! EditZsh :edit ~/.zsh/
 command! EditTmux :edit ~/.tmux.conf
+command! Root :edit ~/
+
+if has('unix')
+  command! Desktop :edit ~/Desktop/
+elseif has('win32') || has('win64')
+ command! Desktop :edit %USERPROFILE%\デスクトップ
+endif
 
 "set filetype
 command! Memo new <bar> set filetype=markdown
@@ -190,3 +195,9 @@ function! s:command_profile() abort
   profile func *
   profile file *
 endfunction
+
+"ripgrepがあればデフォルトに設定
+if executable('rg')
+set grepprg=rg\ --vimgrep\ --no-heading
+set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
