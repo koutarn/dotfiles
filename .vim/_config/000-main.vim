@@ -31,7 +31,7 @@ augroup END
 
 if has('unix')
   let $SHELL='/bin/zsh'
-  set shell=/bin/bash
+  set shell=/bin/zsh
 elseif has('win32') || has('win64')
   set shell=cmd
 endif
@@ -82,7 +82,9 @@ set tm=500
 set copyindent
 set preserveindent
 set backspace=indent,eol,start
-set number
+
+"file
+set nonumber
 set ruler
 
 "折り返し

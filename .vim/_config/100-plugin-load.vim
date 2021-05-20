@@ -4,10 +4,15 @@
 
 call plug#begin()
 
+if has('nvim')
  Plug 'glepnir/indent-guides.nvim'
- Plug 'phaazon/hop.nvim'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
  Plug 'tversteeg/registers.nvim'
+ Plug 'nvim-lua/popup.nvim'
+ " Plug 'phaazon/hop.nvim'
+ Plug 'kyazdani42/nvim-web-devicons'
+ " Plug 'edluffy/specs.nvim'
+endif
 
  if has('win32') || has('win64')
    Plug 'hachibeeDI/vim-vbnet'
@@ -38,7 +43,6 @@ call plug#begin()
  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
  Plug 'thinca/vim-quickrun'
  Plug 'tyru/eskk.vim'
- Plug 'nvim-lua/popup.nvim'
  Plug 'itchyny/lightline.vim'
  " Plug 'itchyny/vim-cursorword'
  Plug 'itchyny/vim-highlighturl'
@@ -70,8 +74,6 @@ Plug 'twitvim/twitvim'
 Plug 'xolox/vim-misc'
 Plug 'tyru/open-browser.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'kyazdani42/nvim-web-devicons'
-" Plug 'edluffy/specs.nvim'
 
 "help見る用
 Plug 'vim-jp/vimdoc-ja'
