@@ -5,7 +5,7 @@
 call plug#begin()
 
 if has('nvim')
- Plug 'glepnir/indent-guides.nvim'
+ " Plug 'glepnir/indent-guides.nvim'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
  Plug 'tversteeg/registers.nvim'
  Plug 'nvim-lua/popup.nvim'

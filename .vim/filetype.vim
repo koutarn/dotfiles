@@ -1,17 +1,23 @@
-"File Type
-augroup vimrc_filetype
-  filetype on
-  filetype plugin on
-  filetype indent on
+if exists('did_load_filetypes')
+  finish
+endif
 
-
+augroup filetypedetect
   autocmd BufNewFile,BufRead *.mkd   setfiletype markdown
   autocmd BufNewFile,BufRead *.markdown   setfiletype markdown
   autocmd BufNewFile,BufRead *.md   setfiletype markdown
   autocmd BufNewFile,BufRead *.txt  setfiletype markdown
+
+  autocmd BufNewFile,BufRead *.less     setfiletype less
+  autocmd BufNewFile,BufRead *.sass     setfiletype sass
+  autocmd BufNewFile,BufRead *.scss     setfiletype scss
+  autocmd BufNewFile,BufRead *.ts       setfiletype typescript
   autocmd BufNewFile,BufRead *.fish setfiletype fish
-  autocmd BufNewFile,BufRead *.c    setfiletype c syntax=c
-  autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
+  autocmd BufNewFile,BufRead *.c    setfiletype c
+  autocmd BufNewFile,BufRead *.json setfiletype json
+  autocmd BufNewFile,BufRead *.vb setfiletype vb
+  autocmd BufNewFile,BufRead *.cls setfiletype vb
+  autocmd BufNewFile,BufRead *.bas setfiletype vb
 
   autocmd FileType apache     setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
   autocmd FileType css        setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
@@ -32,6 +38,4 @@ augroup vimrc_filetype
   autocmd FileType bash       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
   autocmd FileType zsh        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
   autocmd FileType fish       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-  autocmd BufNewFile,BufRead *.vb setfiletype vb
-  autocmd BufNewFile,BufRead *.cls setfiletype vb
-  autocmd BufNewFile,BufRead *.bas setfiletype vb
+augroup END
