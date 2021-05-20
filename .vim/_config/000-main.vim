@@ -201,3 +201,10 @@ if executable('rg')
 set grepprg=rg\ --vimgrep\ --no-heading
 set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
+
+"読み込み
+if has('win32') || has('win64')
+  command! Source source ~/_vimrc
+elseif has('unix')
+  command! Source source ~/.config/nvim/init.vim
+endif

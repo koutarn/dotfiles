@@ -9,4 +9,6 @@ let g:NERDAltDelims_java         = 1
 let g:NERDCommentEmptyLines      = 1
 let g:NERDTrimTrailingWhitespace = 1
 let g:NERDToggleCheckAllLines    = 1
-let g:NERDCreateDefaultMappings  = 1
+let g:NERDCreateDefaultMappings  = 0
+vmap <leader>c<space> <plug>NERDCommenterToggle
+nmap <leader>c<space> <plug>NERDCommenterToggle
