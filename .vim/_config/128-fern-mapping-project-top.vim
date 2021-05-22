@@ -11,6 +11,6 @@ function! s:init_fern_project_top()
         \ <Plug>(fern-action-tcd:root)
 endfunction
 
-augroup my-fern-project-top
+augroup vimrc_fern_project_top
   autocmd FileType fern call s:init_fern_project_top()
 augroup END

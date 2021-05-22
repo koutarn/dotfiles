@@ -10,7 +10,7 @@ function! s:init_fern_mapping_fzf() abort
   nmap <buffer><Leader>frd <Plug>(fern-action-fzf-root-dirs)
 endfunction
 
-augroup my-fern-mapping-fzf
-	  autocmd! *
+augroup vimrc_fern_mapping_fzf
+	  autocmd!
 	  autocmd FileType fern call s:init_fern_mapping_fzf()
 augroup END

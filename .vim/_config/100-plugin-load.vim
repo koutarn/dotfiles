@@ -16,11 +16,12 @@ if has('nvim')
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'code-biscuits/nvim-biscuits'
   Plug 'p00f/nvim-ts-rainbow'
+  Plug 'romgrk/barbar.nvim'
 endif
 
  if has('win32') || has('win64')
    Plug 'hachibeeDI/vim-vbnet'
-   Plug 'jeetsukumaran/vim-buffergator'
+   " Plug 'jeetsukumaran/vim-buffergator'
  endif
 
 
@@ -54,8 +55,11 @@ endif
  Plug 'lambdalisue/gina.vim'
 "
 "deno
-" Plug 'vim-denops/denops.vim'
-" Plug 'kuuote/dps-scrap'
+if executable('deno')
+  " Plug 'vim-denops/denops.vim'
+  " Plug 'skanehira/command.vim'
+  " Plug 'kuuote/dps-scrap'
+endif
 
 "Filer
 Plug 'lambdalisue/fern.vim'
@@ -68,8 +72,6 @@ Plug 'lambdalisue/fern-hijack.vim'
 Plug 'lambdalisue/glyph-palette.vim'
 " Plug 'mattn/vim-molder'
 " Plug 'mattn/vim-molder-operations'
-Plug 'moll/vim-bbye'
-
 
 "Joke
 Plug 'monaqa/vim-duzzle'
@@ -79,6 +81,7 @@ Plug 'twitvim/twitvim'
 Plug 'xolox/vim-misc'
 Plug 'tyru/open-browser.vim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'voldikss/vim-floaterm'
 
 "help見る用
 Plug 'vim-jp/vimdoc-ja'

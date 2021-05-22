@@ -7,6 +7,6 @@ let twitvim_count = 150
 let twitvim_timestamp_format = '%Y/%m/%d %R'
 let twitvim_browser_cmd = 'google-chrome-stable'
 
-augroup my_twitvim
+augroup vimrc_twitvim
   autocmd  FileType twitvim setlocal wrap wrapmargin=60 nonumber
 augroup END

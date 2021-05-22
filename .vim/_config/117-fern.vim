@@ -49,6 +49,6 @@ function! s:init_fern() abort
 
 endfunction
 
-augroup my-fern
+augroup vimrc_fern
 	autocmd FileType fern call s:init_fern()
 augroup END

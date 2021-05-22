@@ -12,7 +12,7 @@ function! s:eskk_initial_pre() abort
     EskkMap -type=sticky ;
 endfunction
 
-" augroup my-eskk
+" augroup vimrc_eskk
 "   autocmd FileType markdown call s:markdown_eskk()
 " augroup END
 "

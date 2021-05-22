@@ -1,5 +1,5 @@
 UsePlugin 'nvim-biscuits'
-"============================
+"===========================
 "code-biscuits/nvim-biscuits
 "============================
 
@@ -18,4 +18,6 @@ require('nvim-biscuits').setup({
 })
 EOF
 
-autocmd VimEnter,ColorScheme * highlight BiscuitColor ctermfg=grey guifg=grey
+augroup vimrc_biscuits
+  autocmd VimEnter,ColorScheme * highlight BiscuitColor ctermfg=grey guifg=grey
+augroup END
