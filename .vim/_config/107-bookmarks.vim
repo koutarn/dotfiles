@@ -11,7 +11,7 @@ let g:bookmark_show_warning = 0
 
 "sign
 let g:bookmark_sign = '🔖'
-let g:bookmark_annotation_sign = '📋'
+let g:bookmark_annotation_sign = '🪧'
 
 "key mappings
 silent! nmap mm <Plug>BookmarkToggle

@@ -8,8 +8,8 @@ let g:eskk#large_dictionary = {'path': "~/.config/eskk/SKK-JISYO.L", 'sorted': 1
 
 autocmd User eskk-initialize-post call s:eskk_initial_pre()
 function! s:eskk_initial_pre() abort
-    EskkUnmap -type=sticky Q
-    EskkMap -type=sticky ;
+  EskkUnmap -type=sticky Q
+  EskkMap -type=sticky ;
 endfunction
 
 " augroup vimrc_eskk

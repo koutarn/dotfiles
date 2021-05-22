@@ -3,7 +3,7 @@ UsePlugin 'barbar.nvim'
 "
 "==================================
 " Magic buffer-picking mode
-nnoremap <Leader>q <Cmd>BufferClose<CR>
+nnoremap <Leader>q <Cmd>BufferClose!<CR>
 
 " Move to previous/next
 noremap <silent><Leader>y :BufferPrevious<CR>

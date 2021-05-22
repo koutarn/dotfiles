@@ -34,7 +34,6 @@ endif
  Plug 'Shougo/context_filetype.vim'
  Plug 'bronson/vim-trailing-whitespace'
  Plug 'godlygeek/tabular'
- Plug 'luochen1990/rainbow'
  Plug 'tyru/capture.vim'
  Plug 't9md/vim-quickhl'
  " Plug 'Townk/vim-autoclose'
@@ -53,6 +52,7 @@ endif
  " Plug 'itchyny/vim-cursorword'
  Plug 'itchyny/vim-highlighturl'
  Plug 'lambdalisue/gina.vim'
+ Plug 'thinca/vim-ambicmd'
 "
 "deno
 if executable('deno')
