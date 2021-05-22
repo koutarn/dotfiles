@@ -59,7 +59,7 @@ set laststatus=2
 set nolist
 set listchars=tab:\|\ ,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
-set ambiwidth=double
+set ambiwidth=single
 
 set iminsert=0
 set imsearch=-1

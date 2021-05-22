@@ -5,13 +5,17 @@
 call plug#begin()
 
 if has('nvim')
- " Plug 'glepnir/indent-guides.nvim'
- Plug 'neoclide/coc.nvim', {'branch': 'release'}
- Plug 'tversteeg/registers.nvim'
- Plug 'nvim-lua/popup.nvim'
- " Plug 'phaazon/hop.nvim'
- Plug 'kyazdani42/nvim-web-devicons'
- " Plug 'edluffy/specs.nvim'
+  " Plug 'glepnir/indent-guides.nvim'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'tversteeg/registers.nvim'
+  Plug 'nvim-lua/popup.nvim'
+  " Plug 'phaazon/hop.nvim'
+  Plug 'kyazdani42/nvim-web-devicons'
+  " Plug 'edluffy/specs.nvim'
+
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'code-biscuits/nvim-biscuits'
+  Plug 'p00f/nvim-ts-rainbow'
 endif
 
  if has('win32') || has('win64')
@@ -21,8 +25,9 @@ endif
 
 
  "color scheme
- Plug 'ghifarit53/tokyonight-vim'
- " Plug 'joshdick/onedark.vim'
+ Plug 'joshdick/onedark.vim'
+
+ " Plug 'ghifarit53/tokyonight-vim'
 
  " "Coding
  Plug 'Shougo/context_filetype.vim'
