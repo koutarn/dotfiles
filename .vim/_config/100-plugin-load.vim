@@ -53,6 +53,7 @@ endif
  Plug 'itchyny/vim-highlighturl'
  Plug 'lambdalisue/gina.vim'
  Plug 'thinca/vim-ambicmd'
+ Plug 'thinca/vim-qfreplace'
 "
 "deno
 if executable('deno')
