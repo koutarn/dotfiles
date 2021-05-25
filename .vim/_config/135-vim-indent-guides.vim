@@ -11,7 +11,7 @@ require('indent_guides').setup({
   indent_space_guides = true;
   indent_tab_guides = true;
   indent_soft_pattern = '\\s';
-  exclude_filetypes = {'help','dashboard','dashpreview','NvimTree','vista','sagahover','qf','TwitVim'};
+  exclude_filetypes = {'help','qf','TwitVim','fern'};
   even_colors = { fg ='#2a3834',bg='#332b36' };
   odd_colors = {fg='#332b36',bg='#2a3834'};
 })

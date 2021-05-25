@@ -92,8 +92,8 @@ nnoremap [c :cprevious<CR>
 nnoremap ]c :cnext<CR>
 
 "Buffer
-nnoremap [f :bprevious<CR>
-nnoremap ]f :bnext<CR>
+nnoremap [b :bprevious<CR>
+nnoremap ]b :bnext<CR>
 
 "window
 nnoremap <Leader>- :<C-u>split<CR>
