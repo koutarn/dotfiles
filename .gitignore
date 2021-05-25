@@ -1,5 +1,7 @@
 #pluginを読み込まないようにする
 .vim/plugged/
-.zsh/.zcompdump
 .config/rofi/themes
-
+zcompdump
+**/zcompdump
+zcompdump.zwc
+**/zcompdump.zwc
