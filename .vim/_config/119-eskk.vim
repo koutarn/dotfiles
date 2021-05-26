@@ -12,15 +12,17 @@ function! s:eskk_initial_pre() abort
   EskkMap -type=sticky ;
 endfunction
 
-" augroup vimrc_eskk
-"   autocmd FileType markdown call s:markdown_eskk()
-" augroup END
-"
-" function! s:markdown_eskk() abort
-"   "markdown��eskk�̂܂܂ł�����
-"   let g:eskk#keep_state = 1
-"   let g:eskk#keep_state_beyond_buffer = 1
-" endfunction
+augroup vimrc_eskk
+  autocmd!
+  "markdownは日本語を打つ前提で行っておく
+  autocmd InsertEnter * call s:markdown_eskk()
+augroup END
+
+function! s:markdown_eskk() abort
+  if &filetype == 'markdown'
+    call eskk#enable()
+  endif
+endfunction
 
 imap <C-o> <Plug>(eskk:toggle)
 cmap <C-o> <Plug>(eskk:toggle)

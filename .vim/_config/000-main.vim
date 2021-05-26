@@ -138,7 +138,7 @@ set spelllang=en,cjk
 set spelloptions=camel
 set lazyredraw
 set ttyfast
-set timeout timeoutlen=1000 ttimeoutlen=50
+set timeout timeoutlen=100 ttimeoutlen=50
 set shortmess+=I
 set tm=500
 set nofoldenable

@@ -17,6 +17,7 @@ if has('nvim')
   Plug 'code-biscuits/nvim-biscuits'
   Plug 'p00f/nvim-ts-rainbow'
   Plug 'romgrk/barbar.nvim'
+  Plug 'folke/which-key.nvim'
 endif
 
  if has('win32') || has('win64')
@@ -86,7 +87,6 @@ Plug 'voldikss/vim-floaterm'
 
 "help見る用
 Plug 'vim-jp/vimdoc-ja'
-Plug 'notomo/helpeek.vim'
 
 "operator
 Plug 'kana/vim-operator-user'

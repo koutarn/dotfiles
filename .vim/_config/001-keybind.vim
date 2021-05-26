@@ -95,6 +95,13 @@ nnoremap ]c :cnext<CR>
 nnoremap [b :bprevious<CR>
 nnoremap ]b :bnext<CR>
 
+"location list
+nnoremap [l           :lprevious<CR>
+nnoremap ]l           :lnext<CR>
+
+nnoremap <leader>ll :lopen<CR>
+nnoremap <leader>cc :copen<CR>
+
 "window
 nnoremap <Leader>- :<C-u>split<CR>
 nnoremap <Leader>\ :<C-u>vsplit<CR>
