@@ -2,6 +2,4 @@
 .vim/plugged/
 .config/rofi/themes
 zcompdump
-**/zcompdump
-zcompdump.zwc
-**/zcompdump.zwc
+**/.zcompdump

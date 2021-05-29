@@ -26,36 +26,37 @@ endif
  endif
 
 
- "color scheme
- Plug 'joshdick/onedark.vim'
+"color scheme
+Plug 'joshdick/onedark.vim'
 
- " Plug 'ghifarit53/tokyonight-vim'
+" Plug 'ghifarit53/tokyonight-vim'
 
- " "Coding
- Plug 'Shougo/context_filetype.vim'
- Plug 'bronson/vim-trailing-whitespace'
- Plug 'godlygeek/tabular'
- Plug 'tyru/capture.vim'
- Plug 't9md/vim-quickhl'
- " Plug 'Townk/vim-autoclose'
- Plug 'cohama/lexima.vim'
- Plug 'mg979/vim-visual-multi'
- Plug 'scrooloose/nerdcommenter'
- Plug 'simeji/winresizer'
- Plug 'skanehira/preview-markdown.vim'
- Plug 'plasticboy/vim-markdown'
- Plug 'mattn/vim-findroot'
- Plug 'MattesGroeger/vim-bookmarks'
- Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
- Plug 'thinca/vim-quickrun'
- Plug 'tyru/eskk.vim'
- Plug 'itchyny/lightline.vim'
- " Plug 'itchyny/vim-cursorword'
- Plug 'itchyny/vim-highlighturl'
- Plug 'lambdalisue/gina.vim'
- Plug 'thinca/vim-ambicmd'
- Plug 'thinca/vim-qfreplace'
-"
+" "Coding
+Plug 'Shougo/context_filetype.vim'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'godlygeek/tabular'
+Plug 'tyru/capture.vim'
+Plug 't9md/vim-quickhl'
+" Plug 'Townk/vim-autoclose'
+Plug 'cohama/lexima.vim'
+Plug 'mg979/vim-visual-multi'
+Plug 'scrooloose/nerdcommenter'
+Plug 'simeji/winresizer'
+Plug 'skanehira/preview-markdown.vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'mattn/vim-findroot'
+Plug 'MattesGroeger/vim-bookmarks'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'thinca/vim-quickrun'
+Plug 'tyru/eskk.vim'
+Plug 'itchyny/lightline.vim'
+" Plug 'itchyny/vim-cursorword'
+Plug 'itchyny/vim-highlighturl'
+Plug 'lambdalisue/gina.vim'
+Plug 'thinca/vim-ambicmd'
+Plug 'thinca/vim-qfreplace'
+Plug 'haya14busa/is.vim'
+
 "deno
 if executable('deno')
   " Plug 'vim-denops/denops.vim'
