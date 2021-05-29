@@ -96,8 +96,8 @@ nnoremap [b :bprevious<CR>
 nnoremap ]b :bnext<CR>
 
 "location list
-nnoremap [l           :lprevious<CR>
-nnoremap ]l           :lnext<CR>
+nnoremap [l :lprevious<CR>
+nnoremap ]l :lnext<CR>
 
 nnoremap <leader>ll :lopen<CR>
 nnoremap <leader>cc :copen<CR>
@@ -128,12 +128,6 @@ inoremap <silent><C-m> <C-g>u<C-m>
 " https://github.com/tsuyoshicho/vimrc-reading/blob/7451171f07e88d6d1dcd73deb792aff115d2c94e/.vimrc#L597-L598
 nnoremap <C-]> g<C-]>
 
-"===========================================================
-"バッファ
-"===========================================================
-" nnoremap <silent> <Leader>y :bprev<CR>
-" nnoremap <silent> <Leader>u :bnext<CR>
-
 "インデント整形
 vnoremap > >gv
 vnoremap < <gv
@@ -141,9 +135,6 @@ nnoremap == gg=G
 
 "検索と置換
 nnoremap / /\v
-"===========================================================
-"alias
-"===========================================================
 
 "vモードの置換連続ペースト用
 function! Put_text_without_override_register()

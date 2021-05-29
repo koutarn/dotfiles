@@ -26,11 +26,6 @@ if !has('gui_running')
   let g:loaded_matchparen = 1
 endif
 
-" コマンド初期化
-augroup vimrc_init
-  autocmd!
-augroup END
-
 if has('unix')
   let $SHELL='/bin/zsh'
   set shell=/bin/zsh
@@ -135,6 +130,13 @@ set t_ZH=
 set t_ZR=
 set t_Co=256
 
+"thx kato-k
+"https://github.com/kato-k/dotfiles/blob/5ea47516f3b9f5a425c827a1ebd859beb2ad4835/vimrc#L182
+augroup vimrc_terminal
+  autocmd!
+  autocmd TermOpen * if &buftype == "terminal" | silent! set nobuflisted | endif
+augroup END
+
 set helplang=ja,en
 set spelllang=en,cjk
 set spelloptions=camel
@@ -179,12 +181,6 @@ command! EditVim :edit ~/.config/nvim/_config
 command! EditZsh :edit ~/.zsh/
 command! EditTmux :edit ~/.tmux.conf
 command! Root :edit ~/
-
-if has('unix')
-  command! Desktop :edit ~/Desktop/
-elseif has('win32') || has('win64')
- command! Desktop :edit %USERPROFILE%\デスクトップ
-endif
 
 "set filetype
 command! Memo new <bar> set filetype=markdown
