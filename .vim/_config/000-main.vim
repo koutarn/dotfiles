@@ -1,10 +1,3 @@
-"encoding
-set encoding=utf-8
-set fileencoding=utf-8
-set fileencodings=utf-8,cp932,sjis
-set fileformats=unix,dos,mac
-scriptencoding utf8
-set nobomb
 
 "disable defult plugins
 "https://lambdalisue.hatenablog.com/entry/2015/12/25/000046

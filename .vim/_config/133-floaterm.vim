@@ -7,7 +7,7 @@ let g:floaterm_title = 'terminal'
 let g:floaterm_height = 0.6
 let g:floaterm_width = 0.6
 
-nnoremap   <silent><leader>to   :FloatermToggle<CR>
+nnoremap <silent><leader>to :<C-u>FloatermToggle<CR>
 augroup vimrc_floaterm
   autocmd!
   autocmd User FloatermOpen tnoremap <buffer> <silent> <Esc> <Cmd>FloatermToggle<CR>

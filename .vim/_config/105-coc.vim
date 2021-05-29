@@ -10,7 +10,7 @@ let g:coc_global_extensions = [
   \ 'coc-python'
   \]
 
-nnoremap <Leader>' :CocCommand<CR>
+nnoremap <Leader>' :<C-u>CocCommand<CR>
 nmap <silent>gd <Plug>(coc-definition)
 nmap <silent>gi <Plug>(coc-implementation)
 nmap <silent>gy <Plug>(coc-type-definition)
@@ -61,9 +61,9 @@ let g:coc_snippet_prev = '<c-k>'
 " =========================
 " coc-fzf-preview
 " =========================
-nnoremap <Leader>p :CocCommand fzf-preview.ProjectFiles<CR>
-nnoremap <Leader>d :CocCommand fzf-preview.DirectoryFiles<CR>
-nnoremap <Leader>; :CocCommand fzf-preview.Buffers<CR>
+nnoremap <Leader>p :<C-u>CocCommand fzf-preview.ProjectFiles<CR>
+nnoremap <Leader>d :<C-u>CocCommand fzf-preview.DirectoryFiles<CR>
+nnoremap <Leader>; :<C-u>CocCommand fzf-preview.Buffers<CR>
 
 set viminfo='1000
 

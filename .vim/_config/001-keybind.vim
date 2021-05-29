@@ -24,8 +24,8 @@ nnoremap S <Nop>
 nnoremap <C-z> <Nop>
 
 "Leader
-let mapleader = "\<Space>"
-let maplocalleader = ','
+let g:mapleader = "\<Space>"
+let g:maplocalleader = ','
 
 "xキーを保持しない
 nnoremap x "_x
@@ -88,28 +88,24 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 
 "QuickFix
-nnoremap [c :cprevious<CR>
-nnoremap ]c :cnext<CR>
+nnoremap [c :<C-u>cprevious<CR>
+nnoremap ]c :<C-u>cnext<CR>
 
 "Buffer
-nnoremap [b :bprevious<CR>
-nnoremap ]b :bnext<CR>
+nnoremap [b :<C-u>bprevious<CR>
+nnoremap ]b :<C-u>bnext<CR>
 
 "location list
-nnoremap [l :lprevious<CR>
-nnoremap ]l :lnext<CR>
+nnoremap [l :<C-u>lprevious<CR>
+nnoremap ]l :<C-u>lnext<CR>
 
-nnoremap <leader>ll :lopen<CR>
-nnoremap <leader>cc :copen<CR>
+nnoremap <leader>ll :<C-u>lopen<CR>
+nnoremap <leader>cc :<C-u>copen<CR>
 
 "window
 nnoremap <Leader>- :<C-u>split<CR>
 nnoremap <Leader>\ :<C-u>vsplit<CR>
-nnoremap <Leader>x :close<CR>
-
-" 無駄にキーを使っている気がするので
-" nnoremap <leader>w  :<c-u>w<cr>
-" nnoremap <leader>q  :<c-u>qa<cr>
+nnoremap <Leader>x :<C-u>close<CR>
 
 "ウィンドウ間を移動
 nnoremap <Leader>h <C-w>h
@@ -149,4 +145,4 @@ function! Put_text_without_override_register()
   endif
 endfunction
 
-xnoremap <silent> p :call Put_text_without_override_register()<CR>
+xnoremap <silent> p :<C-u>call Put_text_without_override_register()<CR>

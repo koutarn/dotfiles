@@ -7,12 +7,23 @@
 "
 "=================================================================================
 
+"encoding
+set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8,cp932,sjis
+set fileformats=unix,dos,mac
+scriptencoding utf-8
+set nobomb
+
+"filetype
 filetype on
 filetype plugin on
 filetype indent on
-syntax on
-set background=dark
 
 "読み込みファイル設定
 set runtimepath+=~/.vim/
 runtime! _config/*.vim             "設定読み込み
+
+"syntax
+syntax on
+set background=dark

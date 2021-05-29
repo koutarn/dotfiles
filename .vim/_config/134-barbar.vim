@@ -6,8 +6,8 @@ UsePlugin 'barbar.nvim'
 nnoremap <Leader>q <Cmd>BufferClose!<CR>
 
 " Move to previous/next
-nnoremap <silent>[b :BufferPrevious<CR>
-nnoremap <silent>]b :BufferNext<CR>
+nnoremap <silent>[b :<C-u>BufferPrevious<CR>
+nnoremap <silent>]b :<C-u>BufferNext<CR>
 
 if !exists('bufferline')
   let bufferline = {}
