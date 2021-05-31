@@ -9,9 +9,7 @@ if has('nvim')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'tversteeg/registers.nvim'
   Plug 'nvim-lua/popup.nvim'
-  " Plug 'phaazon/hop.nvim'
   Plug 'kyazdani42/nvim-web-devicons'
-  " Plug 'edluffy/specs.nvim'
 
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'code-biscuits/nvim-biscuits'
@@ -59,6 +57,8 @@ Plug 'haya14busa/is.vim'
 Plug 'lambdalisue/vim-findent'
 Plug 'lambdalisue/suda.vim'
 Plug 'rhysd/vim-gfm-syntax'
+Plug 'mattn/vim-maketable'
+Plug 'dhruvasagar/vim-table-mode'
 
 "deno
 if executable('deno')
@@ -91,10 +91,29 @@ Plug 'voldikss/vim-floaterm'
 "help見る用
 Plug 'vim-jp/vimdoc-ja'
 
+" | Operator Name        | Bind | 効果     |
+" | -------------------- | ---- | -------- |
+" | vim-operator-replace | R    | 置換     |
+" | vim-sandwich         | sa   | 囲み追加 |
+" | vim-sandwich         | sr   | 囲み置換 |
+" | vim-sandwich         | sd   | 囲み削除 |
+
+
 "operator
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-operator-replace'
 Plug 'machakann/vim-sandwich'
+
+" | Object Name           | Bind    | 範囲                           |
+" | -------------------   | ------- | ------------------------------ |
+" | vim-textobj-comment   | c       | コメント                       |
+" | vim-textobj-function  | F       | 関数                           |
+" | vim-textobj-parameter | ,       | 関数の引数                     |
+" | vim-textobj-indent    | i       | インデント                     |
+" | vim-textobj-line'     | l       | 行                             |
+" | vim-textobj-anyblock  | b       | 複数ブロック対応               |
+" | vim-textobj-between   | f{char} | 任意の{char}で囲まれている文字 |
+" | vim-textobj-url       | u       | URL                            |
 
 "text object
 Plug 'kana/vim-textobj-user'
@@ -104,7 +123,8 @@ Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-line'
 Plug 'rhysd/vim-textobj-anyblock'
 Plug 'thinca/vim-textobj-between'
-Plug 'deton/textobj-nonblankchars.vim'
+Plug 'mattn/vim-textobj-url'
+Plug 'sgur/vim-textobj-parameter'
 
 call plug#end()
 

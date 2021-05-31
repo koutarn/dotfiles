@@ -31,6 +31,7 @@ client.urgent           $mediumvioletred $cunfo           $lightslategray $cindi
 #Keybindings
 ##Quick Launch
 bindsym $mod+Return exec XMODIFIERS= alacritty
+# bindsym $mod+Return exec alacritty
 bindsym $mod+semicolon exec --no-startup-id rofi -show window -show-icons -icon-theme "Papirus"
 bindsym $mod+p exec --no-startup-id rofi -show drun -show-icons -icon-theme "Papirus"
 
@@ -67,13 +68,13 @@ bindsym Mod4+s split h
 bindsym Mod4+v split v
 
 # Workspace
-set $main "💻"
-set $sub "📱"
-set $work "📝"
-set $media "🎵"
-set $game "🎮"
-set $system "📂 "
-set $option "🍭"
+set $main "💻:Main"
+set $sub "📱:Sub"
+set $work "📝:Memo"
+set $media "🎵:Music"
+set $game "🎮:Game"
+set $system "📂:File"
+set $option "🍭:etc"
 
 # output monitor settings
 workspace $main output DVI-I-1
