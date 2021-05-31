@@ -12,5 +12,6 @@ function! s:init_fern_project_top()
 endfunction
 
 augroup vimrc_fern_project_top
+  autocmd!
   autocmd FileType fern call s:init_fern_project_top()
 augroup END

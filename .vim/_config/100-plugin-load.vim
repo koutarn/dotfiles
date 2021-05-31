@@ -56,6 +56,9 @@ Plug 'lambdalisue/gina.vim'
 Plug 'thinca/vim-ambicmd'
 Plug 'thinca/vim-qfreplace'
 Plug 'haya14busa/is.vim'
+Plug 'lambdalisue/vim-findent'
+Plug 'lambdalisue/suda.vim'
+Plug 'rhysd/vim-gfm-syntax'
 
 "deno
 if executable('deno')
@@ -72,9 +75,8 @@ Plug 'LumaKernel/fern-mapping-fzf.vim'
 Plug 'lambdalisue/fern-git-status.vim'
 Plug 'lambdalisue/fern-mapping-project-top.vim'
 Plug 'lambdalisue/fern-hijack.vim'
+Plug 'yuki-yano/fern-preview.vim'
 Plug 'lambdalisue/glyph-palette.vim'
-" Plug 'mattn/vim-molder'
-" Plug 'mattn/vim-molder-operations'
 
 "Joke
 Plug 'monaqa/vim-duzzle'
