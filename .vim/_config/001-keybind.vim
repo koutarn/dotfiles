@@ -77,15 +77,6 @@ inoremap jj <ESC>
 onoremap jj <Esc>
 cnoremap jj <C-c>
 
-inoremap <C-a> <HOME>
-inoremap <C-e> <END>
-inoremap <C-o> <DEL>
-inoremap <C-u> <BS>
-
-inoremap <C-h> <LEFT>
-inoremap <C-l> <RIGHT>
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
 
 "QuickFix
 nnoremap [c :<C-u>cprevious<CR>
@@ -118,6 +109,14 @@ nnoremap <Leader>l <C-w>l
 inoremap <silent><C-w> <C-g>u<C-w>
 inoremap <silent><C-u> <C-g>u<C-u>
 inoremap <silent><C-m> <C-g>u<C-m>
+
+inoremap <C-a> <HOME>
+inoremap <C-e> <END>
+inoremap <C-o> <DEL>
+inoremap <C-h> <LEFT>
+inoremap <C-l> <RIGHT>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
 
 " タグ先複数選択を常に
 " thx tsuyoshicho
