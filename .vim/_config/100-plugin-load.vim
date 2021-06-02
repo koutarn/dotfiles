@@ -59,6 +59,7 @@ Plug 'lambdalisue/suda.vim'
 Plug 'rhysd/vim-gfm-syntax'
 Plug 'mattn/vim-maketable'
 Plug 'dhruvasagar/vim-table-mode'
+Plug 'skanehira/translate.vim'
 
 "deno
 if executable('deno')
