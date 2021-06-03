@@ -60,6 +60,8 @@ Plug 'rhysd/vim-gfm-syntax'
 Plug 'mattn/vim-maketable'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'skanehira/translate.vim'
+Plug 'thinca/vim-localrc'
+Plug 'liuchengxu/vista.vim'
 
 "deno
 if executable('deno')
