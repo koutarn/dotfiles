@@ -4,8 +4,11 @@ UsePlugin 'fern.vim'
 " =========================
 noremap <silent><Leader>fo :Fern . -stay -drawer -keep -toggle -reveal=% -width=40<CR>
 
+let g:fern#keepalt_on_edit = 1
 let g:fern#disable_default_mappings = 1
 let g:fern#default_hidden = 1
+let g:fern#hide_cursor = 0
+let g:fern#disable_drawer_auto_resize = 1
 " let g:fern#mark_symbol                       = '●'
 " let g:fern#renderer#default#collapsed_symbol = '▷ '
 " let g:fern#renderer#default#expanded_symbol  = '▼ '
@@ -50,5 +53,6 @@ function! s:init_fern() abort
 endfunction
 
 augroup vimrc_fern
+  autocmd!
 	autocmd FileType fern call s:init_fern()
 augroup END

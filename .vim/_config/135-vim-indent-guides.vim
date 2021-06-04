@@ -6,12 +6,12 @@ lua<<EOF
 require('indent_guides').setup({
   indent_levels = 30;
   indent_guide_size = 1;
-  indent_start_level = 1;
+  indent_start_level = 4;
   indent_enable = true;
   indent_space_guides = true;
   indent_tab_guides = true;
   indent_soft_pattern = '\\s';
-  exclude_filetypes = {'help','qf','TwitVim','fern'};
+  exclude_filetypes = {'help','qf','TwitVim','fern','vista','vista_markdown'};
   even_colors = { fg ='#2a3834',bg='#332b36' };
   odd_colors = {fg='#332b36',bg='#2a3834'};
 })

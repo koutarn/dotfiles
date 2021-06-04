@@ -10,24 +10,32 @@ if has('nvim')
   Plug 'tversteeg/registers.nvim'
   Plug 'nvim-lua/popup.nvim'
   Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'kevinhwang91/nvim-hlslens'
 
+  Plug 'romgrk/barbar.nvim'
+  Plug 'folke/which-key.nvim'
+  Plug 'monaqa/dial.nvim'
+
+
+  "treesitter依存
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'code-biscuits/nvim-biscuits'
   Plug 'p00f/nvim-ts-rainbow'
-  Plug 'romgrk/barbar.nvim'
-  Plug 'folke/which-key.nvim'
+  Plug 'winston0410/smart-cursor.nvim'
+  Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+
+  "qucifix
+  Plug 'kevinhwang91/nvim-bqf'
+
 endif
 
  if has('win32') || has('win64')
    Plug 'hachibeeDI/vim-vbnet'
-   " Plug 'jeetsukumaran/vim-buffergator'
  endif
 
 
 "color scheme
 Plug 'joshdick/onedark.vim'
-
-" Plug 'ghifarit53/tokyonight-vim'
 
 " "Coding
 Plug 'Shougo/context_filetype.vim'
@@ -48,12 +56,10 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'thinca/vim-quickrun'
 Plug 'tyru/eskk.vim'
 Plug 'itchyny/lightline.vim'
-" Plug 'itchyny/vim-cursorword'
 Plug 'itchyny/vim-highlighturl'
 Plug 'lambdalisue/gina.vim'
 Plug 'thinca/vim-ambicmd'
 Plug 'thinca/vim-qfreplace'
-Plug 'haya14busa/is.vim'
 Plug 'lambdalisue/vim-findent'
 Plug 'lambdalisue/suda.vim'
 Plug 'rhysd/vim-gfm-syntax'
