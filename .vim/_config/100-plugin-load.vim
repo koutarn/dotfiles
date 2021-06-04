@@ -15,7 +15,8 @@ if has('nvim')
   Plug 'romgrk/barbar.nvim'
   Plug 'folke/which-key.nvim'
   Plug 'monaqa/dial.nvim'
-
+  Plug 'b3nj5m1n/kommentary'
+  Plug 'folke/todo-comments.nvim'
 
   "treesitter依存
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -46,7 +47,6 @@ Plug 't9md/vim-quickhl'
 " Plug 'Townk/vim-autoclose'
 Plug 'cohama/lexima.vim'
 Plug 'mg979/vim-visual-multi'
-Plug 'scrooloose/nerdcommenter'
 Plug 'simeji/winresizer'
 Plug 'skanehira/preview-markdown.vim'
 Plug 'plasticboy/vim-markdown'
