@@ -9,7 +9,7 @@ require('nvim-biscuits').setup({
   default_config = {
     max_length = 10,
     min_distance = 7,
-    prefix_string = "=> ",
+    prefix_string = '=> ',
   },
   language_config = {
     python = {

@@ -1,4 +1,3 @@
-
 "disable defult plugins
 "thx https://lambdalisue.hatenablog.com/entry/2015/12/25/000046
 let g:loaded_gzip            = 1
@@ -30,13 +29,11 @@ endif
 set completeopt+=menuone,menu,preview
 set pumheight=10
 set wildignorecase
-if exists("&pumblend")
+if exists('&pumblend')
   set pumblend=10
 endif
 
-"自動で読み込み直す。
 set autoread
-
 set startofline
 set autochdir
 set stal=0
@@ -48,9 +45,7 @@ set display=lastline
 set laststatus=2
 set nolist
 set listchars=tab:\|\ ,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
-
 set ambiwidth=single
-
 set iminsert=0
 set imsearch=-1
 
@@ -122,11 +117,10 @@ set t_ZH=
 set t_ZR=
 set t_Co=256
 
-"thx kato-k
-"https://github.com/kato-k/dotfiles/blob/5ea47516f3b9f5a425c827a1ebd859beb2ad4835/vimrc#L182
+"thx https://github.com/kato-k/dotfiles/blob/5ea47516f3b9f5a425c827a1ebd859beb2ad4835/vimrc#L182
 augroup vimrc_terminal
   autocmd!
-  autocmd TermOpen * if &buftype == "terminal" | silent! set nobuflisted | endif
+  autocmd TermOpen * if &buftype == 'terminal' | silent! set nobuflisted | endif
 augroup END
 
 set helplang=ja,en
@@ -169,22 +163,17 @@ command! AsDos  set fileformat=dos     | w
 command! AsUnix set fileformat=unix    | w
 
 "edit dotfile
-command! EditVim :edit ~/.config/nvim/_config
+if has('nvim')
+  command! EditVim :edit ~/.config/nvim/_config/
+else
+  command! EditVim :edit ~/.vim/_config/
+endif
 command! EditZsh :edit ~/.zsh/
-command! EditTmux :edit ~/.tmux.conf
+command! EditTmux :edit ~/.tmux.conf/
 command! Root :edit ~/
 
 "set filetype
 command! Memo new <bar> set filetype=markdown
-
-"動作検証
-"thx https://github.com/kato-k/vim-tips/blob/main/articles/vim-tips-no004.md
-command! Profile call s:command_profile()
-function! s:command_profile() abort
-  profile start ~/profile.txt
-  profile func *
-  profile file *
-endfunction
 
 "ripgrepがあればデフォルトに設定
 if executable('rg')
@@ -198,16 +187,3 @@ if has('win32') || has('win64')
 elseif has('unix')
   command! Source source ~/.config/nvim/init.vim
 endif
-
-" Auto mkdir
-" https://vim-jp.org/vim-users-jp/2011/02/20/Hack-202.html
-augroup vimrc-auto-mkdir
-  autocmd!
-  autocmd BufWritePre * call s:auto_mkdir(expand('<afile>:p:h'), v:cmdbang)
-  function! s:auto_mkdir(dir, force)  " {{{
-    if !isdirectory(a:dir) && (a:force ||
-    \    input(printf('"%s" does not exist. Create? [y/N]', a:dir)) =~? '^y\%[es]$')
-      call mkdir(iconv(a:dir, &encoding, &termencoding), 'p')
-    endif
-  endfunction
-augroup END

@@ -2,14 +2,7 @@ UsePlug 'coc.nvim'
 "=======================
 "'neoclide/coc.nvim'
 "=======================
-let g:coc_global_extensions = [
-  \ 'coc-json',
-  \ 'coc-tsserver',
-  \ 'coc-snippets',
-  \ 'coc-vimlsp',
-  \ 'coc-python'
-  \]
-
+" TODO:ここらへん全部デフォなので後から頑張る。
 nnoremap <Leader>' :<C-u>CocCommand<CR>
 nmap <silent>gd <Plug>(coc-definition)
 nmap <silent>gi <Plug>(coc-implementation)
@@ -37,19 +30,7 @@ else
   set signcolumn=yes
 endif
 
-" function! s:check_back_space() abort
-"   let col = col('.') - 1
-"   return !col || getline('.')[col - 1]  =~# '\s'
-" endfunction
-" "tabで選択
-" inoremap <silent><expr> <TAB>
-"       \ pumvisible() ? "\<C-n>" :
-"       \ <SID>check_back_space() ? "\<TAB>" :
-"       \ coc#refresh()
-" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
 inoremap <silent><expr> ;; pumvisible() ? coc#_select_confirm() : coc#refresh()
-
 
 " =========================
 " coc-snippets
@@ -66,7 +47,6 @@ nnoremap <Leader>d :<C-u>CocCommand fzf-preview.DirectoryFiles<CR>
 nnoremap <Leader>; :<C-u>CocCommand fzf-preview.Buffers<CR>
 
 set viminfo='1000
-
 let g:fzf_preview_floating_window_rate          = 0.9
 let g:fzf_preview_direct_window_option          = ''
 let g:fzf_preview_default_fzf_options           = { '--reverse': v:true, '--preview-window': 'nowrap' }

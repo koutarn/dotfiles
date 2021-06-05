@@ -38,7 +38,7 @@ endif
 "color scheme
 Plug 'joshdick/onedark.vim'
 
-" "Coding
+"Coding
 Plug 'Shougo/context_filetype.vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'godlygeek/tabular'
@@ -62,12 +62,15 @@ Plug 'thinca/vim-ambicmd'
 Plug 'thinca/vim-qfreplace'
 Plug 'lambdalisue/vim-findent'
 Plug 'lambdalisue/suda.vim'
-Plug 'rhysd/vim-gfm-syntax'
 Plug 'mattn/vim-maketable'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'skanehira/translate.vim'
 Plug 'thinca/vim-localrc'
 Plug 'liuchengxu/vista.vim'
+
+"syntax
+Plug 'rhysd/vim-gfm-syntax'
+Plug 'mboughaba/i3config.vim'
 
 "deno
 if executable('deno')

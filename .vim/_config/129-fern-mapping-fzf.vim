@@ -11,6 +11,6 @@ function! s:init_fern_mapping_fzf() abort
 endfunction
 
 augroup vimrc_fern_mapping_fzf
-	  autocmd!
-	  autocmd FileType fern call s:init_fern_mapping_fzf()
+	autocmd!
+	autocmd FileType fern call s:init_fern_mapping_fzf()
 augroup END

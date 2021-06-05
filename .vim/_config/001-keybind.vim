@@ -25,9 +25,9 @@ nnoremap <C-z> <Nop>
 
 "Leader
 let g:mapleader = "\<Space>"
-let g:maplocalleader = ','
+let g:maplocalleader = ","
 
-"xキーを保持しない
+"保持しない
 nnoremap x "_x
 vnoremap x "_x
 nnoremap X "_X
@@ -74,7 +74,6 @@ nnoremap <silent><Leader>O  :<C-u>for i in range(v:count1) \| call append(line('
 inoremap jj <ESC>
 onoremap jj <Esc>
 cnoremap jj <C-c>
-
 
 "QuickFix
 nnoremap [c :<C-u>cprevious<CR>
@@ -126,7 +125,7 @@ vnoremap > >gv
 vnoremap < <gv
 nnoremap == gg=G
 
-"検索と置換
+"検索
 nnoremap / /\v
 
 "vモードの置換連続ペースト用
@@ -141,5 +140,4 @@ function! Put_text_without_override_register()
     execute 'normal! P'
   endif
 endfunction
-
 xnoremap <silent> p :<C-u>call Put_text_without_override_register()<CR>
