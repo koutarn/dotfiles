@@ -55,8 +55,6 @@ vnoremap ; :
 "Move
 nnoremap k gk
 nnoremap j gj
-nnoremap sh 0
-nnoremap sl $
 vnoremap k gk
 vnoremap j gj
 nnoremap gk k
@@ -105,7 +103,7 @@ nnoremap <leader>k  <C-w>k
 nnoremap <Leader>l <C-w>l
 
 " Undoポイントの設置
-" https://zenn.dev/kato_k/articles/vim-tips-no006
+" thx https://zenn.dev/kato_k/articles/vim-tips-no006
 inoremap <silent><C-w> <C-g>u<C-w>
 inoremap <silent><C-u> <C-g>u<C-u>
 inoremap <silent><C-m> <C-g>u<C-m>

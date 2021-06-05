@@ -1,6 +1,6 @@
 
 "disable defult plugins
-"https://lambdalisue.hatenablog.com/entry/2015/12/25/000046
+"thx https://lambdalisue.hatenablog.com/entry/2015/12/25/000046
 let g:loaded_gzip            = 1
 let g:loaded_tar             = 1
 let g:loaded_tarPlugin       = 1
@@ -14,7 +14,7 @@ let g:loaded_getscriptPlugin = 1
 let g:loaded_logiPat         = 1
 
 "Terminalではmatchparenを停止
-"https://lambdalisue.hatenablog.com/entry/2015/12/25/000046
+"thx https://lambdalisue.hatenablog.com/entry/2015/12/25/000046
 if !has('gui_running')
   let g:loaded_matchparen = 1
 endif
@@ -104,7 +104,6 @@ set virtualedit=block
 set nrformats=alpha,bin,hex
 set confirm
 set hidden
-set autoread
 set nobackup
 set noswapfile
 set splitbelow
@@ -160,7 +159,7 @@ endif
 set cmdheight=1
 
 "文字コード絡み
-"https://github.com/tsuyoshicho/vimrc-reading/blob/7451171f07e88d6d1dcd73deb792aff115d2c94e/.vimrc
+"thx https://github.com/tsuyoshicho/vimrc-reading/blob/7451171f07e88d6d1dcd73deb792aff115d2c94e/.vimrc
 command! Utf8  edit ++encoding=utf-8 %
 command! Cp932 edit ++encoding=cp932 %
 command! Unix  edit ++fileformat=unix   %
@@ -199,3 +198,16 @@ if has('win32') || has('win64')
 elseif has('unix')
   command! Source source ~/.config/nvim/init.vim
 endif
+
+" Auto mkdir
+" https://vim-jp.org/vim-users-jp/2011/02/20/Hack-202.html
+augroup vimrc-auto-mkdir
+  autocmd!
+  autocmd BufWritePre * call s:auto_mkdir(expand('<afile>:p:h'), v:cmdbang)
+  function! s:auto_mkdir(dir, force)  " {{{
+    if !isdirectory(a:dir) && (a:force ||
+    \    input(printf('"%s" does not exist. Create? [y/N]', a:dir)) =~? '^y\%[es]$')
+      call mkdir(iconv(a:dir, &encoding, &termencoding), 'p')
+    endif
+  endfunction
+augroup END

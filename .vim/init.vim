@@ -1,1 +1,1 @@
-/home/ez/Projects/dotfile/.vimrc
+../.vimrc
