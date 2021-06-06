@@ -12,6 +12,7 @@ space
     floaterm t
 
 Vim Bookmark <Leader> + m
+Gina <Leader> + g
 
 [Operator]
 | Operator Name        | Bind | 効果     |
