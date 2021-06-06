@@ -9,14 +9,16 @@ if has('nvim')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'tversteeg/registers.nvim'
   Plug 'nvim-lua/popup.nvim'
+  Plug 'nvim-lua/plenary.nvim'
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'kevinhwang91/nvim-hlslens'
-
   Plug 'romgrk/barbar.nvim'
   Plug 'folke/which-key.nvim'
   Plug 'monaqa/dial.nvim'
   Plug 'b3nj5m1n/kommentary'
   Plug 'folke/todo-comments.nvim'
+  Plug 'kevinhwang91/nvim-bqf'
+  Plug 'windwp/nvim-spectre'
 
   "treesitter依存
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -24,10 +26,6 @@ if has('nvim')
   Plug 'p00f/nvim-ts-rainbow'
   Plug 'winston0410/smart-cursor.nvim'
   Plug 'JoosepAlviste/nvim-ts-context-commentstring'
-
-  "qucifix
-  Plug 'kevinhwang91/nvim-bqf'
-
 endif
 
  if has('win32') || has('win64')
@@ -44,7 +42,6 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'godlygeek/tabular'
 Plug 'tyru/capture.vim'
 Plug 't9md/vim-quickhl'
-" Plug 'Townk/vim-autoclose'
 Plug 'cohama/lexima.vim'
 Plug 'mg979/vim-visual-multi'
 Plug 'simeji/winresizer'
@@ -67,6 +64,7 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'skanehira/translate.vim'
 Plug 'thinca/vim-localrc'
 Plug 'liuchengxu/vista.vim'
+Plug 'reireias/vim-cheatsheet'
 
 "syntax
 Plug 'rhysd/vim-gfm-syntax'
@@ -103,29 +101,10 @@ Plug 'voldikss/vim-floaterm'
 "help見る用
 Plug 'vim-jp/vimdoc-ja'
 
-" | Operator Name        | Bind | 効果     |
-" | -------------------- | ---- | -------- |
-" | vim-operator-replace | R    | 置換     |
-" | vim-sandwich         | sa   | 囲み追加 |
-" | vim-sandwich         | sr   | 囲み置換 |
-" | vim-sandwich         | sd   | 囲み削除 |
-
-
 "operator
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-operator-replace'
 Plug 'machakann/vim-sandwich'
-
-" | Object Name           | Bind    | 範囲                           |
-" | -------------------   | ------- | ------------------------------ |
-" | vim-textobj-comment   | c       | コメント                       |
-" | vim-textobj-function  | F       | 関数                           |
-" | vim-textobj-parameter | ,       | 関数の引数                     |
-" | vim-textobj-indent    | i       | インデント                     |
-" | vim-textobj-line'     | l       | 行                             |
-" | vim-textobj-anyblock  | b       | 複数ブロック対応               |
-" | vim-textobj-between   | f{char} | 任意の{char}で囲まれている文字 |
-" | vim-textobj-url       | u       | URL                            |
 
 "text object
 Plug 'kana/vim-textobj-user'

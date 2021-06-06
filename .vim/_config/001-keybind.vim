@@ -76,19 +76,18 @@ onoremap jj <Esc>
 cnoremap jj <C-c>
 
 "QuickFix
-nnoremap [c :<C-u>cprevious<CR>
-nnoremap ]c :<C-u>cnext<CR>
+nnoremap <leader>fqh :<C-u>cprevious<CR>
+nnoremap <leader>fql :<C-u>cnext<CR>
+nnoremap <leader>fqq :<C-u>copen<CR>
 
 "Buffer
-nnoremap [b :<C-u>bprevious<CR>
-nnoremap ]b :<C-u>bnext<CR>
+nnoremap <leader>fbh :<C-u>bprevious<CR>
+nnoremap <leader>fbl :<C-u>bnext<CR>
 
 "location list
-nnoremap [l :<C-u>lprevious<CR>
-nnoremap ]l :<C-u>lnext<CR>
+nnoremap <leader>flh :<C-u>lprevious<CR>
+nnoremap <leader>fll :<C-u>lnext<CR>
 
-nnoremap <leader>ll :<C-u>lopen<CR>
-nnoremap <leader>cc :<C-u>copen<CR>
 
 "window
 nnoremap <Leader>- :<C-u>split<CR>

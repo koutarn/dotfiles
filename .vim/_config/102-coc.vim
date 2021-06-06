@@ -21,7 +21,10 @@ function! s:show_documentation()
   endif
 endfunction
 
-autocmd CursorHold * silent call CocActionAsync('highlight')
+augroup vimrc_coc
+  autocmd!
+  autocmd CursorHold * silent call CocActionAsync('highlight')
+augroup END
 
 if has("patch-8.1.1564")
   " Recently vim can merge signcolumn and number column into one

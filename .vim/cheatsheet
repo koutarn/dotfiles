@@ -1,0 +1,34 @@
+[Leader]
+space
+
+[Prefix]
+データ操作 <leader> + f
+    QuickFix q
+    Buffer b
+    LocationList l
+    fern f
+    vista v
+    spectre s
+    floaterm t
+
+Vim Bookmark <Leader> + m
+
+[Operator]
+| Operator Name        | Bind | 効果     |
+| -------------------- | ---- | -------- |
+| vim-fperator-replace | R    | 置換     |
+| vim-sandwich         | sa   | 囲み追加 |
+| vim-sandwich         | sr   | 囲み置換 |
+| vim-sandwich         | sd   | 囲み削除 |
+
+[Text Object]
+| Object Name           | Bind    | 範囲                           |
+| -------------------   | ------- | ------------------------------ |
+| vim-textobj-comment   | c       | コメント                       |
+| vim-textobj-function  | F       | 関数                           |
+| vim-textobj-parameter | ,       | 関数の引数                     |
+| vim-textobj-indent    | i       | インデント                     |
+| vim-textobj-line'     | l       | 行                             |
+| vim-textobj-anyblock  | b       | 複数ブロック対応               |
+| vim-textobj-between   | f{char} | 任意の{char}で囲まれている文字 |
+| vim-textobj-url       | u       | URL                            |

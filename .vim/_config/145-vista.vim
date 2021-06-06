@@ -30,6 +30,7 @@ augroup vimrc_vista
   autocmd!
   autocmd Filetype vista,vista_markdown nnoremap <buffer>o :<C-U>call vista#cursor#FoldOrJump()<CR>
   autocmd Filetype vista,vista_markdown nnoremap <buffer>q :<C-u>close<CR>
+  autocmd Filetype vista,vista_markdown nnoremap <buffer><leader>sv :<C-u>close<CR>
 augroup END
 
 nnoremap <leader>fv <C-u>:Vista<CR>

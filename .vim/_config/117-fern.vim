@@ -2,7 +2,7 @@ UsePlugin 'fern.vim'
 " =========================
 " 'lambdalisue/fern.vim'
 " =========================
-noremap <silent><Leader>fo :Fern . -stay -drawer -keep -toggle -reveal=% -width=40<CR>
+noremap <silent><Leader>ff :Fern . -stay -drawer -keep -toggle -reveal=% -width=40<CR>
 
 let g:fern#keepalt_on_edit = 1
 let g:fern#disable_default_mappings = 1
