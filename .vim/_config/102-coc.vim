@@ -3,13 +3,13 @@ UsePlug 'coc.nvim'
 "'neoclide/coc.nvim'
 "=======================
 " TODO:ここらへん全部デフォなので後から頑張る。
-nnoremap <Leader>' :<C-u>CocCommand<CR>
+nnoremap <Leader>' <Cmd>CocCommand<CR>
 nmap <silent>gd <Plug>(coc-definition)
 nmap <silent>gi <Plug>(coc-implementation)
 nmap <silent>gy <Plug>(coc-type-definition)
 nmap <silent>gr <Plug>(coc-references)
 
-nnoremap <silent>gh :call <SID>show_documentation()<CR>
+nnoremap <silent>gh <Cmd>call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -45,9 +45,9 @@ let g:coc_snippet_prev = '<c-k>'
 " =========================
 " coc-fzf-preview
 " =========================
-nnoremap <Leader>p :<C-u>CocCommand fzf-preview.ProjectFiles<CR>
-nnoremap <Leader>d :<C-u>CocCommand fzf-preview.DirectoryFiles<CR>
-nnoremap <Leader>; :<C-u>CocCommand fzf-preview.Buffers<CR>
+nnoremap <Leader>p <Cmd>CocCommand fzf-preview.ProjectFiles<CR>
+nnoremap <Leader>d <Cmd>CocCommand fzf-preview.DirectoryFiles<CR>
+nnoremap <Leader>; <Cmd>CocCommand fzf-preview.Buffers<CR>
 
 set viminfo='1000
 let g:fzf_preview_floating_window_rate          = 0.9

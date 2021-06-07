@@ -12,7 +12,7 @@ let g:eskk#large_dictionary = {'path': '~/.config/eskk/SKK-JISYO.L', 'sorted': 1
   " EskkMap -type=sticky ;
 " endfunction
 
-let g:toggle_markdown_eskk = 1
+let g:toggle_markdown_eskk = 0
 function! s:markdown_eskk() abort
   if &filetype == 'markdown' && g:toggle_markdown_eskk ==# 1
     call eskk#enable()
@@ -47,5 +47,5 @@ augroup vimrc_eskk
   "markdownは日本語を打つ前提で行っておく
   autocmd InsertEnter * call s:markdown_eskk()
   autocmd User eskk-enable-post lmap <buffer> l <Plug>(eskk:disable)
-  autocmd Filetype markdown nnoremap <buffer><silent> <F1> :call <SID>markdown_eskk_toggle()<CR>
+  autocmd Filetype markdown nnoremap <buffer><silent> <F1> <Cmd>call <SID>markdown_eskk_toggle()<CR>
 augroup END

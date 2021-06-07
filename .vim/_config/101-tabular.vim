@@ -2,4 +2,4 @@ UsePlugin 'tabular'
 "====================================================================
 "'godlygeek/tabular'
 "====================================================================
-vnoremap <Leader><Leader> :<C-u>Tabularize /
+vnoremap <Leader><Leader> <Cmd>Tabularize /

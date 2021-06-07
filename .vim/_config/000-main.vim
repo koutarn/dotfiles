@@ -153,38 +153,8 @@ endif
 "command line
 set cmdheight=1
 
-"文字コード絡み
-"thx https://github.com/tsuyoshicho/vimrc-reading/blob/7451171f07e88d6d1dcd73deb792aff115d2c94e/.vimrc
-command! Utf8  edit ++encoding=utf-8 %
-command! Cp932 edit ++encoding=cp932 %
-command! Unix  edit ++fileformat=unix   %
-command! Dos   edit ++fileformat=dos    %
-command! AsUtf8 set 'fileencoding'=utf-8 | w
-command! AsDos  set fileformat=dos     | w
-command! AsUnix set fileformat=unix    | w
-
-"edit dotfile
-if has('nvim')
-  command! EditVim :edit ~/.config/nvim/_config/
-else
-  command! EditVim :edit ~/.vim/_config/
-endif
-command! EditZsh :edit ~/.zsh/
-command! EditTmux :edit ~/.tmux.conf/
-command! Root :edit ~/
-
-"set filetype
-command! Memo new <bar> set filetype=markdown
-
 "ripgrepがあればデフォルトに設定
 if executable('rg')
 set grepprg=rg\ --vimgrep\ --no-heading
 set grepformat=%f:%l:%c:%m,%f:%l:%m
-endif
-
-"読み込み
-if has('win32') || has('win64')
-  command! Source source ~/_vimrc
-elseif has('unix')
-  command! Source source ~/.config/nvim/init.vim
 endif

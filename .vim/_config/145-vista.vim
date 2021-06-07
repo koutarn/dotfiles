@@ -28,9 +28,9 @@ let g:vista_executive_for = {
 
 augroup vimrc_vista
   autocmd!
-  autocmd Filetype vista,vista_markdown nnoremap <buffer>o :<C-U>call vista#cursor#FoldOrJump()<CR>
-  autocmd Filetype vista,vista_markdown nnoremap <buffer>q :<C-u>close<CR>
-  autocmd Filetype vista,vista_markdown nnoremap <buffer><leader>sv :<C-u>close<CR>
+  autocmd Filetype vista,vista_markdown nnoremap <buffer>o <Cmd>call vista#cursor#FoldOrJump()<CR>
+  autocmd Filetype vista,vista_markdown nnoremap <buffer>q <Cmd>close<CR>
+  autocmd Filetype vista,vista_markdown nnoremap <buffer><leader>sv <Cmd>close<CR>
 augroup END
 
-nnoremap <leader>fv <C-u>:Vista<CR>
+nnoremap <silent><leader>fv <Cmd>Vista<CR>

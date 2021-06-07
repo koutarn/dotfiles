@@ -15,6 +15,10 @@
 " | tmap / tnoremap  |    -   |   -    |    -    |   -    |   -    |    -     |    @     |
 " +--------------------------------------------------------------------------------------+
 
+"Leader
+let g:mapleader = "\<Space>"
+let g:maplocalleader = ","
+
 "unbind
 nnoremap Q <Nop>
 nnoremap ZZ <Nop>
@@ -22,10 +26,6 @@ nnoremap ZQ <Nop>
 nnoremap s <Nop>
 nnoremap S <Nop>
 nnoremap <C-z> <Nop>
-
-"Leader
-let g:mapleader = "\<Space>"
-let g:maplocalleader = ","
 
 "保持しない
 nnoremap x "_x
@@ -68,31 +68,30 @@ vnoremap <S-k> 10gk
 vnoremap <S-j> 10gj
 
 "input
-nnoremap <silent><Leader>o  :<C-u>for i in range(v:count1) \| call append(line('.'), '') \| endfor<CR>
-nnoremap <silent><Leader>O  :<C-u>for i in range(v:count1) \| call append(line('.')-1, '') \| endfor<CR>
+nnoremap <silent><Leader>o  <Cmd>for i in range(v:count1) \| call append(line('.'), '') \| endfor<CR>
+nnoremap <silent><Leader>O  <Cmd>for i in range(v:count1) \| call append(line('.')-1, '') \| endfor<CR>
 
 inoremap jj <ESC>
 onoremap jj <Esc>
 cnoremap jj <C-c>
 
 "QuickFix
-nnoremap <leader>fqh :<C-u>cprevious<CR>
-nnoremap <leader>fql :<C-u>cnext<CR>
-nnoremap <leader>fqq :<C-u>copen<CR>
+nnoremap <leader>fqh <Cmd>cprevious<CR>
+nnoremap <leader>fql <Cmd>cnext<CR>
+nnoremap <leader>fqq <Cmd>copen<CR>
 
 "Buffer
-nnoremap <leader>fbh :<C-u>bprevious<CR>
-nnoremap <leader>fbl :<C-u>bnext<CR>
+nnoremap <leader>fbh <Cmd>bprevious<CR>
+nnoremap <leader>fbl <Cmd>bnext<CR>
 
 "location list
-nnoremap <leader>flh :<C-u>lprevious<CR>
-nnoremap <leader>fll :<C-u>lnext<CR>
-
+nnoremap <leader>flh <Cmd>lprevious<CR>
+nnoremap <leader>fll <Cmd>lnext<CR>
 
 "window
-nnoremap <Leader>- :<C-u>split<CR>
-nnoremap <Leader>\ :<C-u>vsplit<CR>
-nnoremap <Leader>x :<C-u>close<CR>
+nnoremap <Leader>- <Cmd>split<CR>
+nnoremap <Leader>\ <Cmd>vsplit<CR>
+nnoremap <Leader>x <Cmd>close<CR>
 
 "ウィンドウ間を移動
 nnoremap <Leader>h <C-w>h
@@ -139,4 +138,4 @@ function! Put_text_without_override_register()
     execute 'normal! P'
   endif
 endfunction
-xnoremap <silent> p :<C-u>call Put_text_without_override_register()<CR>
+xnoremap <silent> p <Cmd>call Put_text_without_override_register()<CR>

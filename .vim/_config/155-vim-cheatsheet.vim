@@ -3,7 +3,7 @@ UsePlugin 'vim-cheatsheet'
 "reireias/vim-cheatsheet
 "==================================
 
-nnoremap <leader>? :<C-u>Cheat<CR>
+nnoremap <leader>? <Cmd>Cheat<CR>
 command! EditCheat edit ~/.config/nvim/cheatsheet
 let g:cheatsheet#cheat_file = '~/.config/nvim/cheatsheet'
 

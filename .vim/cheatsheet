@@ -3,15 +3,17 @@ space
 
 [Prefix]
 データ操作 <leader> + f
+
     QuickFix q
     Buffer b
     LocationList l
+
     fern f
     vista v
     spectre s
     floaterm t
 
-Vim Bookmark <Leader> + m
+Bookmark <Leader> + m
 Gina <Leader> + g
 
 [Operator]

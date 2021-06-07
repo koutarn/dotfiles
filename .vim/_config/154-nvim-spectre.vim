@@ -3,11 +3,11 @@ UsePlugin 'nvim-spectre'
 "windwp/nvim-spectre
 "==================================
 "search in current file
-nnoremap <leader>fp viw:lua require('spectre').open_file_search()<cr>
+nnoremap <silent><leader>fp viw:lua require('spectre').open_file_search()<cr>
 
 augroup vimrc_spectre
   autocmd!
-  autocmd Filetype spectre_panel nnoremap <buffer>q :<C-u>quit<CR>
+  autocmd Filetype spectre_panel nnoremap <buffer>q <Cmd>quit<CR>
 augroup END
 
 lua<<EOF
