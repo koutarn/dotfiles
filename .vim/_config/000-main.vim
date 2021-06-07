@@ -48,7 +48,6 @@ set listchars=tab:\|\ ,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 set ambiwidth=single
 set iminsert=0
 set imsearch=-1
-set splitright
 
 "tab
 set tabstop=4

@@ -5,11 +5,13 @@
 call plug#begin()
 
 if has('nvim')
+  "library
+  Plug 'nvim-lua/popup.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+
   Plug 'glepnir/indent-guides.nvim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'tversteeg/registers.nvim'
-  Plug 'nvim-lua/popup.nvim'
-  Plug 'nvim-lua/plenary.nvim'
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'kevinhwang91/nvim-hlslens'
   Plug 'romgrk/barbar.nvim'
@@ -18,7 +20,14 @@ if has('nvim')
   Plug 'b3nj5m1n/kommentary'
   Plug 'folke/todo-comments.nvim'
   Plug 'kevinhwang91/nvim-bqf'
-  Plug 'windwp/nvim-spectre'
+
+  Plug 'mfussenegger/nvim-dap'
+  Plug 'Pocco81/DAPInstall.nvim'
+  Plug 'rcarriga/nvim-dap-ui'
+
+  if executable('rg') && executable('sed')
+    Plug 'windwp/nvim-spectre'
+  endif
 
   "treesitter依存
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -49,7 +58,7 @@ Plug 'skanehira/preview-markdown.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'mattn/vim-findroot'
 Plug 'MattesGroeger/vim-bookmarks'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf'
 Plug 'thinca/vim-quickrun'
 Plug 'tyru/eskk.vim'
 Plug 'itchyny/lightline.vim'

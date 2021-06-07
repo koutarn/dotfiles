@@ -7,9 +7,9 @@ UsePlugin 'nvim-biscuits'
 lua <<EOF
 require('nvim-biscuits').setup({
   default_config = {
-    max_length = 10,
-    min_distance = 7,
-    prefix_string = '=> ',
+    max_length = 12,
+    min_distance = 5,
+    prefix_string = '📎 ',
   },
   language_config = {
     python = {
