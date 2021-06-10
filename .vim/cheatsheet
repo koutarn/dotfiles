@@ -2,21 +2,18 @@
 space
 
 [Prefix]
-データ操作 <leader> + f
-
+データ操作(汎用) <leader> + f
     QuickFix q
-    Buffer b
     LocationList l
-
     fern f
     vista v
     spectre s
     floaterm t
+    設定の再読み込み r
 
 Bookmark <Leader> + m
 Gina <Leader> + g
 Debug(nvim-dap) <Leader> + d
-
 coc <Leader> + ;
 
 cheatsheet表示 <leader>?

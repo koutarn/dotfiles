@@ -21,3 +21,14 @@ function! s:command_profile() abort
   profile file *
 endfunction
 
+"vimrcの再読み込み
+function! s:reload_vimrc()
+  if has('win32') || has('win64')
+    command! Source source ~/_vimrc
+  elseif has('unix')
+    command! Source source ~/.config/nvim/init.vim
+  endif
+
+  nohl
+  echomsg('Reload vimrc!!!')
+endfunction

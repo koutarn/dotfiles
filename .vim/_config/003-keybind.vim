@@ -33,6 +33,9 @@ vnoremap x "_x
 nnoremap X "_X
 vnoremap X "_X
 
+"設定の再読み込み
+nnoremap <silent><Leader>fr :Source<CR>
+
 "cmd
 cnoremap <C-e> <End>
 cnoremap <C-a> <Home>
@@ -75,14 +78,14 @@ inoremap jj <ESC>
 onoremap jj <Esc>
 cnoremap jj <C-c>
 
+"Buffer
+nnoremap <leader>y <Cmd>bprevious<CR>
+nnoremap <leader>u <Cmd>bnext<CR>
+
 "QuickFix
 nnoremap <leader>fqh <Cmd>cprevious<CR>
 nnoremap <leader>fql <Cmd>cnext<CR>
 nnoremap <leader>fqq <Cmd>copen<CR>
-
-"Buffer
-nnoremap <leader>fbh <Cmd>bprevious<CR>
-nnoremap <leader>fbl <Cmd>bnext<CR>
 
 "location list
 nnoremap <leader>flh <Cmd>lprevious<CR>

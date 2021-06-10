@@ -2,9 +2,9 @@ UsePlugin 'gina.vim'
 "====================================================================
 " lambdalisue/gina.vim'
 "====================================================================
-noremap <leader>gl <Cmd>Gina log<CR>
-nnoremap <leader>ga <Cmd>Gina add -A<CR>
-nnoremap <leader>gc <Cmd>Gina commit -m ''<Left>
-nnoremap <leader>gp <Cmd>Gina push origin master<CR>
-nnoremap <leader>gs <Cmd>Gina status<CR>
-nnoremap <leader>gd <Cmd>Gina diff<CR>
+noremap <leader>gl :Gina log
+nnoremap <leader>ga :Gina add -A
+nnoremap <leader>gc :Gina commit -m ''<Left>
+nnoremap <leader>gp :Gina push origin master
+nnoremap <leader>gs :Gina status
+nnoremap <leader>gd :Gina diff

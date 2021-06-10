@@ -22,8 +22,4 @@ command! Root :edit ~/
 command! Memo new <bar> set filetype=markdown
 
 "読み込み
-if has('win32') || has('win64')
-  command! Source source ~/_vimrc
-elseif has('unix')
-  command! Source source ~/.config/nvim/init.vim
-endif
+command! Source :call <SID>reload_vimrc()<CR>

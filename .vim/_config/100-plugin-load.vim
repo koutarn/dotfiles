@@ -20,6 +20,7 @@ if has('nvim')
   Plug 'b3nj5m1n/kommentary'
   Plug 'folke/todo-comments.nvim'
   Plug 'kevinhwang91/nvim-bqf'
+  Plug 'Pocco81/AbbrevMan.nvim'
 
   Plug 'mfussenegger/nvim-dap'
   Plug 'Pocco81/DAPInstall.nvim'
