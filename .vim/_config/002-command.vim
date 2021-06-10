@@ -23,3 +23,9 @@ command! Memo new <bar> set filetype=markdown
 
 "読み込み
 command! Source :call <SID>reload_vimrc()<CR>
+
+if has('win32') || has('win64')
+  command! Source source ~/_vimrc <bar> :nohl <bar> echomsg('Reload vimrc!!!')
+elseif has('unix')
+  command! Source source ~/.config/nvim/init.vim <bar> :nohl <bar> echomsg('Reload vimrc!!!')
+endif
