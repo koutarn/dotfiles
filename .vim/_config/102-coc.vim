@@ -5,8 +5,6 @@ UsePlug 'coc.nvim'
 
 "coc command
 nnoremap <Leader>;<space> <Cmd>CocCommand<CR>
-
-" TODO:ここらへん全部デフォなので後から頑張る。
 nmap <silent>gd <Plug>(coc-definition)
 nmap <silent>gi <Plug>(coc-implementation)
 nmap <silent>gy <Plug>(coc-type-definition)

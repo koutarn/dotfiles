@@ -10,6 +10,7 @@ space
     spectre s
     floaterm t
     設定の再読み込み r
+    バックアップの表示(aho-backup) b
 
 Bookmark <Leader> + m
 Gina <Leader> + g

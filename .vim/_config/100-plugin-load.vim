@@ -5,10 +5,8 @@
 call plug#begin()
 
 if has('nvim')
-  "library
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
-
   Plug 'glepnir/indent-guides.nvim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'tversteeg/registers.nvim'
@@ -20,7 +18,6 @@ if has('nvim')
   Plug 'b3nj5m1n/kommentary'
   Plug 'folke/todo-comments.nvim'
   Plug 'kevinhwang91/nvim-bqf'
-
   Plug 'mfussenegger/nvim-dap'
   Plug 'Pocco81/DAPInstall.nvim'
   Plug 'rcarriga/nvim-dap-ui'
