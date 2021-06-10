@@ -2,8 +2,11 @@ UsePlug 'coc.nvim'
 "=======================
 "'neoclide/coc.nvim'
 "=======================
+
+"coc command
+nnoremap <Leader>;<space> <Cmd>CocCommand<CR>
+
 " TODO:ここらへん全部デフォなので後から頑張る。
-nnoremap <Leader>' <Cmd>CocCommand<CR>
 nmap <silent>gd <Plug>(coc-definition)
 nmap <silent>gi <Plug>(coc-implementation)
 nmap <silent>gy <Plug>(coc-type-definition)
@@ -45,9 +48,10 @@ let g:coc_snippet_prev = '<c-k>'
 " =========================
 " coc-fzf-preview
 " =========================
-nnoremap <Leader>p <Cmd>CocCommand fzf-preview.ProjectFiles<CR>
-" nnoremap <Leader>d <Cmd>CocCommand fzf-preview.DirectoryFiles<CR>
-nnoremap <Leader>; <Cmd>CocCommand fzf-preview.Buffers<CR>
+nnoremap <Leader>;z <Cmd>CocCommand fzf-preview.OldFiles<CR>
+nnoremap <Leader>;p <Cmd>CocCommand fzf-preview.ProjectFiles<CR>
+nnoremap <Leader>;d <Cmd>CocCommand fzf-preview.DirectoryFiles<CR>
+nnoremap <Leader>;; <Cmd>CocCommand fzf-preview.Buffers<CR>
 
 set viminfo='1000
 let g:fzf_preview_floating_window_rate          = 0.9
@@ -55,13 +59,19 @@ let g:fzf_preview_direct_window_option          = ''
 let g:fzf_preview_default_fzf_options           = { '--reverse': v:true, '--preview-window': 'nowrap' }
 let g:fzf_preview_quit_map                      = 1
 let g:fzf_preview_buffers_jump                  = 0
-let g:fzf_preview_command                       = 'cat' " Not installed bat
-let g:fzf_preview_if_binary_command             = '[[ "$(file --mime {})" = ~ binary ]]'
+
+if executable('bat')
+  let g:fzf_preview_command                     = 'bat'
+else
+  let g:fzf_preview_command                     = 'cat'
+endif
+
+let g:fzf_preview_if_binary_command             = '[[ "$(file --mime {})"                                   = ~ binary ]]'
 let g:fzf_binary_preview_command                = 'echo "{} is a binary file"'
 let g:fzf_preview_filelist_command              = 'git ls-files --exclude-standard' " Not Installed ripgrep
 let g:fzf_preview_git_files_command             = 'git ls-files --exclude-standard'
 let g:fzf_preview_directory_files_command       = 'rg --files --hidden --follow --no-messages -g \!"* *"'
-let g:fzf_preview_git_status_command            = 'git -c color.status = always status --short --untracked-files = all'
+let g:fzf_preview_git_status_command            = 'git -c color.status                                      = always status --short --untracked-files = all'
 let g:fzf_preview_cache_directory               = expand('~/.cache/vim/fzf_preview')
 let g:fzf_preview_disable_mru                   = 0
 let g:fzf_preview_mru_limit                     = 1000

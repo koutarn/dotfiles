@@ -15,7 +15,7 @@ else
   command! EditVim :edit ~/.vim/_config/
 endif
 command! EditZsh :edit ~/.zsh/
-command! EditTmux :edit ~/.tmux.conf/
+command! EditTmux :edit ~/.tmux.conf
 command! Root :edit ~/
 
 "set filetype

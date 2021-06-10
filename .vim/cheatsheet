@@ -15,6 +15,11 @@ space
 
 Bookmark <Leader> + m
 Gina <Leader> + g
+Debug(nvim-dap) <Leader> + d
+
+coc <Leader> + ;
+
+cheatsheet表示 <leader>?
 
 [Operator]
 | Operator Name        | Bind | 効果     |
