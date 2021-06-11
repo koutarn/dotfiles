@@ -12,16 +12,16 @@ let g:eskk#large_dictionary = {'path': '~/.config/eskk/SKK-JISYO.L', 'sorted': 1
   " EskkMap -type=sticky ;
 " endfunction
 
-let g:toggle_markdown_eskk = 0
+let s:toggle_markdown_eskk = 0
 function! s:markdown_eskk() abort
-  if &filetype == 'markdown' && g:toggle_markdown_eskk ==# 1
+  if &filetype == 'markdown' && s:toggle_markdown_eskk ==# 1
     call eskk#enable()
   endif
 endfunction
 
 function! s:markdown_eskk_toggle() abort
-  let g:toggle_markdown_eskk = g:toggle_markdown_eskk == 1 ? 0 : 1
-  if g:toggle_markdown_eskk ==# 1
+  let s:toggle_markdown_eskk = s:toggle_markdown_eskk == 1 ? 0 : 1
+  if s:toggle_markdown_eskk ==# 1
     echomsg 'Markdown日本語入力モードON'
   else
     echomsg 'Markdown日本語入力モードOFF'

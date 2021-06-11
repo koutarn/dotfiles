@@ -143,9 +143,7 @@ set t_vb=
 if has('unix')
   set clipboard&
   set clipboard^=unnamedplus
-endif
-
-if has('win32') && has('win64')
+elseif has('win32') && has('win64')
   set clipboard+=unnamed"
 endif
 
