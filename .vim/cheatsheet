@@ -40,9 +40,11 @@ cheatsheet表示 <leader>?
 | vim-textobj-url       | u       | URL                            |
 
 [今後]
+nvim-hlslensがたまにエラーを吐くのを直す。
 luaとvimで分離させる。
 fzf-previewのgrepでプレビューが効かないのを直す。
 nvim-dapでlaunch.jsonの使いかたを調べる。
+quickrunのヘルプを読んで使いかたを理解する
 
 ここらへんを試す。
 https://github.com/Shougo/dein.vim
