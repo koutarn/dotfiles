@@ -1,4 +1,3 @@
-
 " Auto mkdir
 " https://vim-jp.org/vim-users-jp/2011/02/20/Hack-202.html
 augroup vimrc-auto-mkdir

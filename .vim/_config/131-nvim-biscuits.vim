@@ -3,7 +3,6 @@ UsePlugin 'nvim-biscuits'
 "code-biscuits/nvim-biscuits
 "============================
 
-
 lua <<EOF
 require('nvim-biscuits').setup({
   default_config = {
@@ -19,6 +18,7 @@ require('nvim-biscuits').setup({
 })
 EOF
 
+"文字色を変更
 augroup vimrc_biscuits
   autocmd!
   autocmd VimEnter,ColorScheme * highlight BiscuitColor ctermfg=grey guifg=grey

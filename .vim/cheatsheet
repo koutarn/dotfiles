@@ -38,3 +38,13 @@ cheatsheet表示 <leader>?
 | vim-textobj-anyblock  | b       | 複数ブロック対応               |
 | vim-textobj-between   | f{char} | 任意の{char}で囲まれている文字 |
 | vim-textobj-url       | u       | URL                            |
+
+[今後]
+luaとvimで分離させる。
+fzf-previewのgrepでプレビューが効かないのを直す。
+nvim-dapでlaunch.jsonの使いかたを調べる。
+
+ここらへんを試す。
+https://github.com/Shougo/dein.vim
+https://github.com/NTBBloodbath/doom-one.nvim
+https://github.com/mhinz/vim-startify
