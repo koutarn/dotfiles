@@ -14,10 +14,10 @@ let g:bookmark_sign = '🔖'
 let g:bookmark_annotation_sign = '🪧'
 
 "key mappings
-nmap <silent><leader>mm <Plug>BookmarkToggle
-nmap <silent><leader>mi <Plug>BookmarkAnnotate
-nmap <silent><leader>ma <Plug>BookmarkShowAll
-nmap <silent><leader>mw <Plug>BookmarkNext
-nmap <silent><leader>mb <Plug>BookmarkPrev
-nmap <silent><leader>mx <Plug>BookmarkClear
-nmap <silent><leader>md <Plug>BookmarkClearAll
+nmap <silent><Leader>mm <Plug>BookmarkToggle
+nmap <silent><Leader>mi <Plug>BookmarkAnnotate
+nmap <silent><Leader>ma <Plug>BookmarkShowAll
+nmap <silent><Leader>mw <Plug>BookmarkNext
+nmap <silent><Leader>mb <Plug>BookmarkPrev
+nmap <silent><Leader>mx <Plug>BookmarkClear
+nmap <silent><Leader>md <Plug>BookmarkClearAll

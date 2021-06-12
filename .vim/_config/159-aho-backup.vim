@@ -5,7 +5,7 @@ UsePlugin 'aho-bakaup.vim'
 let g:bakaup_backup_dir = expand('~/.cache/nvim/aho-bakaup')
 let g:bakaup_auto_backup = 1
 
-nnoremap <silent><leader>fb <Cmd>BakaupExplore<CR>
+nnoremap <silent><Leader>fb <Cmd>BakaupExplore<CR>
 
 "use aho backup with Fern
 "https://github.com/aiya000/aho-bakaup.vim/wiki/Use-aho-bakaup-with-Fern

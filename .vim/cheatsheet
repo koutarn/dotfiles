@@ -40,6 +40,7 @@ cheatsheet表示 <leader>?
 | vim-textobj-url       | u       | URL                            |
 
 [今後]
+中途半端にvim対応しているのを止める。
 nvim-hlslensがたまにエラーを吐くのを直す。
 luaとvimで分離させる。
 fzf-previewのgrepでプレビューが効かないのを直す。

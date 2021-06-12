@@ -76,20 +76,20 @@ onoremap jj <Esc>
 cnoremap jj <C-c>
 
 "Buffer
-nnoremap <leader>y <Cmd>bprevious<CR>
-nnoremap <leader>u <Cmd>bnext<CR>
+nnoremap <Leader>y <Cmd>bprevious<CR>
+nnoremap <Leader>u <Cmd>bnext<CR>
 
 "設定の再読み込み
 nnoremap <silent><Leader>fr :Source<CR>
 
 "QuickFix
-nnoremap <leader>fqh <Cmd>cprevious<CR>
-nnoremap <leader>fql <Cmd>cnext<CR>
-nnoremap <leader>fqq <Cmd>copen<CR>
+nnoremap <Leader>fqh <Cmd>cprevious<CR>
+nnoremap <Leader>fql <Cmd>cnext<CR>
+nnoremap <Leader>fqq <Cmd>copen<CR>
 
 "location list
-nnoremap <leader>flh <Cmd>lprevious<CR>
-nnoremap <leader>fll <Cmd>lnext<CR>
+nnoremap <Leader>flh <Cmd>lprevious<CR>
+nnoremap <Leader>fll <Cmd>lnext<CR>
 
 "window
 nnoremap <Leader>- <Cmd>split<CR>
@@ -98,8 +98,8 @@ nnoremap <Leader>x <Cmd>close<CR>
 
 "ウィンドウ間を移動
 nnoremap <Leader>h <C-w>h
-nnoremap <leader>j <C-w>j
-nnoremap <leader>k  <C-w>k
+nnoremap <Leader>j <C-w>j
+nnoremap <Leader>k  <C-w>k
 nnoremap <Leader>l <C-w>l
 
 " Undoポイントの設置

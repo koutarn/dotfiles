@@ -3,7 +3,7 @@ UsePlugin 'nvim-spectre'
 "windwp/nvim-spectre
 "==================================
 "search in current file
-nnoremap <silent><leader>fp viw:lua require('spectre').open_file_search()<cr>
+nnoremap <silent><Leader>fp viw:lua require('spectre').open_file_search()<cr>
 
 augroup vimrc_spectre
   autocmd!
@@ -33,27 +33,27 @@ require('spectre').setup({
         desc = "goto current file"
     },
     ['send_to_qf'] = {
-        map = "<leader>q",
+        map = "<Leader>q",
         cmd = "<cmd>lua require('spectre.actions').send_to_qf()<CR>",
         desc = "send all item to quickfix"
     },
     ['replace_cmd'] = {
-        map = "<leader>c",
+        map = "<Leader>c",
         cmd = "<cmd>lua require('spectre.actions').replace_cmd()<CR>",
         desc = "input replace vim command"
     },
     ['show_option_menu'] = {
-        map = "<leader>o",
+        map = "<Leader>o",
         cmd = "<cmd>lua require('spectre').show_options()<CR>",
         desc = "show option"
     },
     ['run_replace'] = {
-        map = "<leader>R",
+        map = "<Leader>R",
         cmd = "<cmd>lua require('spectre.actions').run_replace()<CR>",
         desc = "replace all"
     },
     ['change_view_mode'] = {
-        map = "<leader>v",
+        map = "<Leader>v",
         cmd = "<cmd>lua require('spectre').change_view()<CR>",
         desc = "change result view mode"
     },

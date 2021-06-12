@@ -11,5 +11,5 @@ UsePlugin 'vim-quickhl'
 "====================================================================
 "t9md/vim-quickhl
 "====================================================================
-nmap <leader><space> <Plug>(quickhl-manual-this)
+nmap <Leader><space> <Plug>(quickhl-manual-this)
 nmap <ESC><ESC> <Plug>(quickhl-manual-reset)

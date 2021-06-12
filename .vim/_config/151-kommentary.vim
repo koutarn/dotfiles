@@ -21,7 +21,7 @@ require('kommentary.config').configure_language('lua', {
 end,
 })
 
-vim.api.nvim_set_keymap('n', '<leader>cc', '<Plug>kommentary_line_default', {})
-vim.api.nvim_set_keymap('n', '<leader>c', '<Plug>kommentary_motion_default', {})
-vim.api.nvim_set_keymap('v', '<leader>c', '<Plug>kommentary_visual_default', {})
+vim.api.nvim_set_keymap('n', '<Leader>cc', '<Plug>kommentary_line_default', {})
+vim.api.nvim_set_keymap('n', '<Leader>c', '<Plug>kommentary_motion_default', {})
+vim.api.nvim_set_keymap('v', '<Leader>c', '<Plug>kommentary_visual_default', {})
 EOF

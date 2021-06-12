@@ -53,11 +53,11 @@ nnoremap <Leader>;d <Cmd>CocCommand fzf-preview.DirectoryFiles<CR>
 nnoremap <Leader>;; <Cmd>CocCommand fzf-preview.Buffers<CR>
 nnoremap <Leader>;q <Cmd>CocCommand fzf-preview.QuickFix<CR>
 nnoremap <Leader>;c <Cmd>CocCommand fzf-preview.CommandPalette<CR>
-nnoremap <leader>;t <Cmd>CocCommand fzf-preview.TodoComments<CR>
-nnoremap <leader>;ff :CocCommand fzf-preview.ProjectGrep<Space>
-nnoremap <leader>;f; <Cmd>CocCommand fzf-preview.ProjectGrepRecall<CR>
-nnoremap <leader>;gl <Cmd>CocCommand fzf-preview.GitLogs<CR>
-nnoremap <leader>;ga <Cmd>CocCommand fzf-preview.GitActions<CR>
+nnoremap <Leader>;t <Cmd>CocCommand fzf-preview.TodoComments<CR>
+nnoremap <Leader>;ff :CocCommand fzf-preview.ProjectGrep<Space>
+nnoremap <Leader>;f; <Cmd>CocCommand fzf-preview.ProjectGrepRecall<CR>
+nnoremap <Leader>;gl <Cmd>CocCommand fzf-preview.GitLogs<CR>
+nnoremap <Leader>;ga <Cmd>CocCommand fzf-preview.GitActions<CR>
 
 
 set viminfo='1000
