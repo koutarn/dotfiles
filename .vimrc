@@ -12,7 +12,6 @@ set encoding=utf-8
 set fileencodings=utf-8,cp932,sjis
 set fileformats=unix,dos,mac
 scriptencoding utf-8
-set nobomb
 
 "filetype
 filetype on

@@ -4,9 +4,9 @@ command! Utf8  edit ++encoding=utf-8 %
 command! Cp932 edit ++encoding=cp932 %
 command! Unix  edit ++fileformat=unix   %
 command! Dos   edit ++fileformat=dos    %
-command! AsUtf8 set 'fileencoding'=utf-8 | w
-command! AsDos  set fileformat=dos     | w
-command! AsUnix set fileformat=unix    | w
+command! AsUtf8 setlocal fileencoding=utf-8 | w
+command! AsDos  setlocal fileformat=dos     | w
+command! AsUnix setlocal fileformat=unix    | w
 
 "edit dotfile
 if has('nvim')

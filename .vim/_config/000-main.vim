@@ -128,17 +128,20 @@ set spelllang=en,cjk
 set spelloptions=camel
 set lazyredraw
 set ttyfast
-set timeout timeoutlen=100 ttimeoutlen=50
+set timeoutlen=500
+set ttimeoutlen=50
 set shortmess+=I
-set tm=500
 set nofoldenable
 set history=1000
-set tm=500
 
-"beep
-set noerrorbells
-set novisualbell
-set t_vb=
+"vimrc読書会でTsuyoshiさんに教えてもらった
+if exists('+belloff')
+    set belloff=all
+else
+    set noerrorbells
+    set novisualbell
+    set t_vb=
+endif
 
 if has('unix')
   set clipboard&
@@ -146,9 +149,6 @@ if has('unix')
 elseif has('win32') && has('win64')
   set clipboard+=unnamed"
 endif
-
-"command line
-set cmdheight=1
 
 "ripgrepがあればデフォルトに設定
 if executable('rg')
