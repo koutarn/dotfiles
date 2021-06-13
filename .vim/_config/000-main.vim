@@ -33,9 +33,11 @@ if exists('&pumblend')
   set pumblend=10
 endif
 
+" プラグインの挙動を優先させたいので切る。
+" set autochdir
+
 set autoread
 set startofline
-set autochdir
 set stal=0
 set updatetime=300
 set notitle

@@ -46,6 +46,7 @@ let g:coc_snippet_prev = '<c-k>'
 " =========================
 " coc-fzf-preview
 " =========================
+nnoremap <Leader>;m <Cmd>CocCommand fzf-preview.Bookmarks<CR>
 nnoremap <Leader>;l <Cmd>CocCommand fzf-preview.Lines<CR>
 nnoremap <Leader>;z <Cmd>CocCommand fzf-preview.OldFiles<CR>
 nnoremap <Leader>;p <Cmd>CocCommand fzf-preview.ProjectFiles<CR>
@@ -100,8 +101,11 @@ let g:fzf_preview_if_binary_command = '[[ "$(file --mime {})" =~ binary ]]'
 let g:fzf_binary_preview_command = 'echo "{} is a binary file"'
 
 " Commands used to get the file list from project
-let g:fzf_preview_filelist_command = 'git ls-files --exclude-standard'               " Not Installed ripgrep
-" let g:fzf_preview_filelist_command = 'rg --files --hidden --follow --no-messages -g \!"* *"' " Installed ripgrep
+if executable('rg')
+    let g:fzf_preview_filelist_command = 'rg --files --hidden --follow --no-messages -g \!"* *"'
+else
+    let g:fzf_preview_filelist_command = 'git ls-files --exclude-standard'
+endif
 
 " Commands used to get the file list from git repository
 let g:fzf_preview_git_files_command = 'git ls-files --exclude-standard'
