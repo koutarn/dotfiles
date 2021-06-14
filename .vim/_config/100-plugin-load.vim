@@ -72,6 +72,8 @@ Plug 'thinca/vim-localrc'
 Plug 'liuchengxu/vista.vim'
 Plug 'reireias/vim-cheatsheet'
 Plug 'aiya000/aho-bakaup.vim'
+Plug 'obcat/vim-ipos'
+Plug 'osyo-manga/vim-precious'
 
 "syntax
 Plug 'rhysd/vim-gfm-syntax'
