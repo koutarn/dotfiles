@@ -40,7 +40,7 @@ cheatsheet表示 <leader>?
 | vim-textobj-between   | f{char} | 任意の{char}で囲まれている文字 |
 | vim-textobj-url       | u       | URL                            |
 
-[今後]
+[TODO]
 中途半端にvim対応しているのを止める。
 nvim-hlslensがたまにエラーを吐くのを直す。
 luaとvimで分離させる。
@@ -48,6 +48,7 @@ fzf-previewのgrepでプレビューが効かないのを直す。
 nvim-dapでlaunch.jsonの使いかたを調べる。
 quickrunのヘルプを読んで使いかたを理解する
 vim-splashを入れてみる(気分転換)
+lightlineからgalaxylineかlualineに変更する。
 
 ここらへんを試す。
 https://github.com/Shougo/dein.vim
