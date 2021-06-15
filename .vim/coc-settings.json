@@ -1,4 +1,7 @@
 {
+    "diagnostic.errorSign": "🚨",
+    "diagnostic.infoSign": "ℹ️ ",
+    "diagnostic.hintSign": "💡",
     "suggest.enablePreview": true,
     "suggest.detailField": "preview",
     "suggest.maxCompleteItemCount": 50,

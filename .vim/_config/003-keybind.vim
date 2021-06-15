@@ -82,6 +82,9 @@ nnoremap <Leader>u <Cmd>bnext<CR>
 "設定の再読み込み
 nnoremap <silent><Leader>fr :Source<CR>
 
+"vimrcの編集
+nnoremap <silent><Leader>f, :EditVim<CR>
+
 "QuickFix
 nnoremap <Leader>fqh <Cmd>cprevious<CR>
 nnoremap <Leader>fql <Cmd>cnext<CR>
