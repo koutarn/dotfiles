@@ -1,5 +1,6 @@
 #pluginを読み込まないようにする
 .config/nvim/plugged/
+.config/nvim/plugged/*
 .config/rofi/themes
 zcompdump
 **/.zcompdump
