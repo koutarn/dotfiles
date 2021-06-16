@@ -11,6 +11,7 @@ space
     floaterm t
     設定の再読み込み r
     vimrcの編集 ,
+    cheatsheetの編集 .
     バックアップの表示(aho-backup) b
 
 Bookmark <Leader> + m
@@ -49,6 +50,7 @@ nvim-dapでlaunch.jsonの使いかたを調べる。
 quickrunのヘルプを読んで使いかたを理解する
 vim-splashを入れてみる(気分転換)
 lightlineからgalaxylineかlualineに変更する。
+telescopeも結構良さそうだから試してみる。
 
 ここらへんを試す。
 https://github.com/Shougo/dein.vim

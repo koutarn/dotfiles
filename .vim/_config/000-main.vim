@@ -126,6 +126,7 @@ augroup vimrc_terminal
 augroup END
 
 set helplang=ja,en
+set nospell
 set spelllang=en,cjk
 set spelloptions=camel
 set lazyredraw

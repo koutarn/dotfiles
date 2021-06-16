@@ -1,5 +1,6 @@
-setl shiftwidth=4
-setl softtabstop=4
-setl tabstop=4
-setl expandtab
-setl colorcolumn=80
+setlocal shiftwidth=4
+setlocal softtabstop=4
+setlocal tabstop=4
+setlocal expandtab
+setlocal colorcolumn=80
+setlocal spell
