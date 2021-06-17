@@ -15,6 +15,8 @@
 " | tmap / tnoremap  |    -   |   -    |    -    |   -    |   -    |    -     |    @     |
 " +--------------------------------------------------------------------------------------+
 
+
+
 "Leader
 let g:mapleader = "\<Space>"
 let g:maplocalleader = ","
@@ -40,7 +42,6 @@ cnoremap <C-h> <LEFT>
 cnoremap <C-k> <UP>
 cnoremap <C-j> <DOWN>
 cnoremap <C-l> <RIGHT>
-cnoremap <C-p> <C-r>0
 
 "インデントに合せてペースト
 nnoremap p ]p
@@ -132,6 +133,10 @@ nnoremap == gg=G
 "検索
 nnoremap / /\v
 
+"clipboard paste
+nnoremap <Leader>p "+]p
+inoremap <C-v> <C-r><C-p>+
+cnoremap <C-v> <C-r><C-p>+
 
 "digraphs
 "thx https://qiita.com/monaqa/items/dcd43a53d3040293142a

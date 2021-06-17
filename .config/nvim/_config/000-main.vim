@@ -146,12 +146,9 @@ else
     set t_vb=
 endif
 
-if has('unix')
-  set clipboard&
-  set clipboard^=unnamedplus
-elseif has('win32') && has('win64')
-  set clipboard+=unnamed"
-endif
+"clipboard paste有効化(+レジスタに入れる)
+set clipboard&
+set clipboard^=unnamedplus
 
 "ripgrepがあればデフォルトに設定
 if executable('rg')
