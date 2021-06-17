@@ -16,6 +16,7 @@ else
 endif
 command! EditZsh :edit ~/.zsh/
 command! EditTmux :edit ~/.tmux.conf
+command! EditAlacritty :edit ~/.alacritty.yml
 command! Root :edit ~/
 
 command! Memo new <bar> set filetype=markdown

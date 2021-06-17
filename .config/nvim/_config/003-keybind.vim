@@ -27,6 +27,12 @@ nnoremap s <Nop>
 nnoremap S <Nop>
 nnoremap <C-z> <Nop>
 
+"仮想置換モード
+nnoremap gR <Nop>
+
+"多分今後も選択モードは使用しない
+vnoremap <C-g> <Nop>
+
 "保持しない
 nnoremap x "_x
 vnoremap x "_x
@@ -44,6 +50,8 @@ cnoremap <C-l> <RIGHT>
 "インデントに合せてペースト
 nnoremap p ]p
 nnoremap ]p p
+nnoremap P ]P
+nnoremap ]P P
 
 "USキーボード用に入れ替える。
 nnoremap : ;
@@ -70,6 +78,7 @@ vnoremap <S-j> 10gj
 nnoremap <silent><Leader>o  <Cmd>for i in range(v:count1) \| call append(line('.'), '') \| endfor<CR>
 nnoremap <silent><Leader>O  <Cmd>for i in range(v:count1) \| call append(line('.')-1, '') \| endfor<CR>
 
+"ノーマルモードに戻す
 inoremap jj <ESC>
 onoremap jj <Esc>
 cnoremap jj <C-c>
@@ -112,11 +121,6 @@ inoremap <silent><C-m> <C-g>u<C-m>
 
 inoremap <C-a> <HOME>
 inoremap <C-e> <END>
-inoremap <C-o> <DEL>
-inoremap <C-h> <LEFT>
-inoremap <C-l> <RIGHT>
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
 
 " タグ先複数選択を常に
 " thx tsuyoshicho

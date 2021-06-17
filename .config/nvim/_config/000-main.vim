@@ -52,10 +52,10 @@ set iminsert=0
 set imsearch=-1
 
 "tab
+set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=-1
-set expandtab
 set smarttab
 set shiftround
 
