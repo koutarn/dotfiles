@@ -2,8 +2,8 @@ UsePlugin 'vim-cheatsheet'
 "==================================
 "reireias/vim-cheatsheet
 "==================================
-let g:cheatsheet#cheat_file = '~/.config/nvim/cheatsheet.md'
-command! EditCheat :edit '~/.config/nvim/cheatsheet.md'
+let g:cheatsheet#cheat_file = '~/.config/nvim/cheatsheet'
+command! EditCheat :edit ~/.config/nvim/cheatsheet
 
 let g:cheatsheet#float_window = 1
 let g:cheatsheet#float_window_width_ratio = 0.8

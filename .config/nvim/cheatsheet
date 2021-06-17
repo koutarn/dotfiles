@@ -42,15 +42,13 @@ cheatsheet表示 <leader>?
 | vim-textobj-url       | u       | URL                            |
 
 [TODO]
-中途半端にvim対応しているのを止める。
 nvim-hlslensがたまにエラーを吐くのを直す。
-luaとvimで分離させる。
-fzf-previewのgrepでプレビューが効かないのを直す。
 nvim-dapでlaunch.jsonの使いかたを調べる。
 quickrunのヘルプを読んで使いかたを理解する
 vim-splashを入れてみる(気分転換)
 lightlineからgalaxylineかlualineに変更する。
 telescopeも結構良さそうだから試してみる。
+    telescopeがよさげならいらんかも fzf-previewのgrepでプレビューが効かないのを直す。
 
 ここらへんを試す。
 https://github.com/Shougo/dein.vim
