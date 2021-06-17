@@ -15,8 +15,6 @@
 " | tmap / tnoremap  |    -   |   -    |    -    |   -    |   -    |    -     |    @     |
 " +--------------------------------------------------------------------------------------+
 
-
-
 "Leader
 let g:mapleader = "\<Space>"
 let g:maplocalleader = ","
@@ -134,9 +132,8 @@ nnoremap == gg=G
 nnoremap / /\v
 
 "clipboard paste
-nnoremap <Leader>p "+]p
 inoremap <C-v> <C-r><C-p>+
-cnoremap <C-v> <C-r><C-p>+
+cnoremap <C-v> <C-r>+
 
 "digraphs
 "thx https://qiita.com/monaqa/items/dcd43a53d3040293142a
