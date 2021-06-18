@@ -41,14 +41,22 @@ cheatsheet表示 <leader>?
 | vim-textobj-between   | f{char} | 任意の{char}で囲まれている文字 |
 | vim-textobj-url       | u       | URL                            |
 
+[さがしもの]
+:h function-list    vim関数一覧
+:h ex-cmd-index     exコマンド一覧
+:options            オプションをインタラクティブに設定出来る。
+
 [TODO]
 nvim-hlslensがたまにエラーを吐くのを直す。
 nvim-dapでlaunch.jsonの使いかたを調べる。
 quickrunのヘルプを読んで使いかたを理解する
-vim-splashを入れてみる(気分転換)
 lightlineからgalaxylineかlualineに変更する。
 telescopeも結構良さそうだから試してみる。
     telescopeがよさげならいらんかも fzf-previewのgrepでプレビューが効かないのを直す。
+@:と@@を押しやすい箇所にバインドする
+windows(職場)対応を厳格にする
+    pluginの読み込みを早める(dein導入?)
+    eskkを入れる。
 
 ここらへんを試す。
 https://github.com/Shougo/dein.vim
@@ -58,3 +66,7 @@ https://github.com/mhinz/vim-startify
 参考にしていくリポジトリ
 https://github.com/yutkat/dotfiles/tree/master/.config/nvim
 https://github.com/monaqa/dotfiles/tree/master/.config/nvim
+
+[作りたい]
+* 複数画面で<C-o>の戻る先を確認しながらジャンプ出来る(floating window)
+* バッファを簡単に管理出来る機能(floating window)
