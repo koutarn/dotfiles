@@ -1,6 +1,7 @@
 setlocal cursorline
 setlocal nospell
 setlocal nolist
+setlocal nohlsearch
 
 nnoremap <buffer><CR> <C-]>
 nnoremap <buffer><BS> <C-T>

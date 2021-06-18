@@ -121,6 +121,8 @@ inoremap <silent><C-m> <C-g>u<C-m>
 
 inoremap <C-a> <HOME>
 inoremap <C-e> <END>
+inoremap <C-k> <UP>
+inoremap <C-j> <DOWN>
 
 " タグ先複数選択を常に
 " thx tsuyoshicho
