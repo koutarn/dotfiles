@@ -50,6 +50,7 @@ set listchars=tab:\|\ ,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 set ambiwidth=single
 set iminsert=0
 set imsearch=-1
+set inccommand=split
 
 "tab
 set expandtab
@@ -108,6 +109,9 @@ set splitright
 set undolevels=1000"
 set shortmess+=c
 set mouse=a
+
+"cmd window
+set cmdwinheight=16
 
 if !has('nvim')
   set ttymouse=xterm2

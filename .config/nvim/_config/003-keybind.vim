@@ -196,6 +196,12 @@ call s:register_digraph('jo','と')
 call s:register_digraph('jn','の')
 call s:register_digraph('jk','か')
 
+"cmd window用
+augroup vimrc_cmdwindow
+    autocmd!
+    autocmd CmdwinEnter * nnoremap <buffer><silent>q <Cmd>:close<CR>
+augroup END
+
 "vモードの置換連続ペースト用
 function! Put_text_without_override_register()
   let line_len = strlen(getline('.'))
