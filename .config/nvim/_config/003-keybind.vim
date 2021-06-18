@@ -202,6 +202,20 @@ augroup vimrc_cmdwindow
     autocmd CmdwinEnter * nnoremap <buffer><silent>q <Cmd>:close<CR>
 augroup END
 
+"help確認用
+nnoremap <Leader>fhI <Cmd>h index<CR>
+nnoremap <Leader>fhn <Cmd>h normal-index<CR>
+nnoremap <Leader>fhi <Cmd>h insert-index<CR>
+nnoremap <Leader>fhv <Cmd>h visual-index<CR>
+nnoremap <Leader>fhce <Cmd>h ex-edit-index<CR>
+nnoremap <Leader>fhcc <Cmd>h ex-cmd-index<CR>
+nnoremap <Leader>fht <Cmd>h terminal-job-index<CR>
+nnoremap <Leader>fho <Cmd>h option-list<CR>
+nnoremap <Leader>fhf <Cmd>h function-list<CR>
+nnoremap <Leader>fhT <Cmd>h help-tags<CR>
+nnoremap <Leader>fhV <Cmd>h vim-variable<CR>
+
+
 "vモードの置換連続ペースト用
 function! Put_text_without_override_register()
   let line_len = strlen(getline('.'))

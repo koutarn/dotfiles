@@ -38,7 +38,7 @@ font:
   bold_italic:
     family: monospace
     style: Bold Italic
-  size: 9.5
+  size: 10
 
   offset:
     x: 0

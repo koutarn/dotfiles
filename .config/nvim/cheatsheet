@@ -13,13 +13,13 @@ space
     vimrcの編集 ,
     cheatsheetの編集 .
     バックアップの表示(aho-backup) b
+    ヘルプ表示 h
 
 Bookmark <Leader> + m
 Gina <Leader> + g
 Debug(nvim-dap) <Leader> + d
 coc <Leader> + ;
-
-cheatsheet表示 <leader>?
+cheatsheet表示 ?
 
 [Operator]
 | Operator Name        | Bind | 効果     |
