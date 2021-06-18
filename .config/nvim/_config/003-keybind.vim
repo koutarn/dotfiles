@@ -203,7 +203,6 @@ augroup vimrc_cmdwindow
 augroup END
 
 "help確認用
-nnoremap <Leader>fhI <Cmd>h index<CR>
 nnoremap <Leader>fhn <Cmd>h normal-index<CR>
 nnoremap <Leader>fhi <Cmd>h insert-index<CR>
 nnoremap <Leader>fhv <Cmd>h visual-index<CR>
@@ -214,6 +213,7 @@ nnoremap <Leader>fho <Cmd>h option-list<CR>
 nnoremap <Leader>fhf <Cmd>h function-list<CR>
 nnoremap <Leader>fhT <Cmd>h help-tags<CR>
 nnoremap <Leader>fhV <Cmd>h vim-variable<CR>
+nnoremap <Leader>fhI <Cmd>h index<CR>
 
 
 "vモードの置換連続ペースト用

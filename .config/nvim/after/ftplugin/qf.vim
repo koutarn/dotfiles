@@ -3,4 +3,4 @@ setlocal nospell
 setlocal nolist
 
 nnoremap <buffer>o <CR>
-nnoremap <buffer>q :<C-u>close<CR>
+nnoremap <buffer>q :<C-u>cclose<CR>
