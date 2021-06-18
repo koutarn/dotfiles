@@ -4,7 +4,7 @@ export LANG="${LANGUAGE}"
 export LC_ALL="${LANGUAGE}"
 
 #エディタ、ページャ
-export EDITOR="vim"
+export EDITOR="nvim"
 export CVSEDITOR="${EDITOR}"
 export SVN_EDITOR="${EDITOR}"
 export GIT_EDITOR="${EDITOR}"
@@ -21,6 +21,12 @@ promptinit
 prompt suse
 autoload -Uz colors;colors
 
+#GO
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+#BROWSER
+export BROWSER="/usr/bin/google-chrome-stable"
 
 #補完機能
 autoload -Uz compinit;compinit
