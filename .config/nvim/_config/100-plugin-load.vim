@@ -74,6 +74,7 @@ Plug 'reireias/vim-cheatsheet'
 Plug 'aiya000/aho-bakaup.vim'
 Plug 'obcat/vim-ipos'
 Plug 'osyo-manga/vim-precious'
+Plug 'markonm/traces.vim'
 
 "syntax
 Plug 'rhysd/vim-gfm-syntax'
