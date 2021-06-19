@@ -46,6 +46,7 @@ cnoremap <C-h> <LEFT>
 cnoremap <C-k> <UP>
 cnoremap <C-j> <DOWN>
 cnoremap <C-l> <RIGHT>
+cnoremap <expr> %h getcmdtype() == ':' ? expand('%:h') . '/' : '%h'
 
 "インデントに合せてペースト
 nnoremap p ]p
