@@ -19,7 +19,7 @@ command! EditTmux :edit ~/.tmux.conf
 command! EditAlacritty :edit ~/.alacritty.yml
 command! Root :edit ~/
 
-command! Memo new <bar> set filetype=markdown
+command! Memo new | set filetype=markdown
 
 "読み込み
 if has('win32') || has('win64')

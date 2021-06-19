@@ -3,8 +3,8 @@ UsePlugin 'eskk.vim'
 " 'tyru/eskk.vim'
 "=========================
 let g:eskk#directory = '~/.config/eskk'
-let g:eskk#dictionary = { 'path': '~/.config/eskk/my_jisyo', 'sorted': 1, 'encoding': 'utf-8',}
-let g:eskk#large_dictionary = {'path': '~/.config/eskk/SKK-JISYO.L', 'sorted': 1, 'encoding': 'euc-jp',}
+let g:eskk#dictionary = { 'path': '~/.config/eskk/my_jisyo', 'sorted': 1, 'encoding': 'utf-8'}
+let g:eskk#large_dictionary = {'path': '~/.config/eskk/SKK-JISYO.L', 'sorted': 1, 'encoding': 'euc-jp'}
 
 " autocmd User eskk-initialize-post call s:eskk_initial_pre()
 " function! s:eskk_initial_pre() abort
