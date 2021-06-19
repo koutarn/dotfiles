@@ -118,8 +118,10 @@ Plug 'machakann/vim-sandwich'
 
 "text object
 Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-entire'
 Plug 'glts/vim-textobj-comment'
 Plug 'kana/vim-textobj-function'
+Plug 'machakann/vim-textobj-functioncall'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-line'
 Plug 'rhysd/vim-textobj-anyblock'

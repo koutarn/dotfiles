@@ -59,7 +59,7 @@ nnoremap <Leader>;ff :CocCommand fzf-preview.ProjectGrep<Space>
 nnoremap <Leader>;f; <Cmd>CocCommand fzf-preview.ProjectGrepRecall<CR>
 nnoremap <Leader>;gl <Cmd>CocCommand fzf-preview.GitLogs<CR>
 nnoremap <Leader>;ga <Cmd>CocCommand fzf-preview.GitActions<CR>
-
+nnoremap <Leader>;j <Cmd>CocCommand fzf-preview.Jumps<CR>
 
 set viminfo='1000
 

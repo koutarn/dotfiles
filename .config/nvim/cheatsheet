@@ -30,29 +30,30 @@ cheatsheet表示 ?
 | vim-sandwich         | sd   | 囲み削除 |
 
 [Text Object]
-| Object Name           | Bind    | 範囲                           |
-| -------------------   | ------- | ------------------------------ |
-| vim-textobj-comment   | c       | コメント                       |
-| vim-textobj-function  | F       | 関数                           |
-| vim-textobj-parameter | ,       | 関数の引数                     |
-| vim-textobj-indent    | i       | インデント                     |
-| vim-textobj-line'     | l       | 行                             |
-| vim-textobj-anyblock  | b       | 複数ブロック対応               |
-| vim-textobj-between   | f{char} | 任意の{char}で囲まれている文字 |
-| vim-textobj-url       | u       | URL                            |
+| Object Name               | Bind    | 範囲                           |
+| -------------------       | ------- | ------------------------------ |
+| vim-textobj-entire        | e       | バッファ                       |
+| vim-textobj-comment       | c       | コメント                       |
+| vim-textobj-function      | F       | 関数の内部                     |
+| vim-textobj-functioncall  | C       | 関数の呼びだし部分             |
+| vim-textobj-parameter     | ,       | 関数の引数                     |
+| vim-textobj-indent        | i       | インデント                     |
+| vim-textobj-line'         | l       | 行                             |
+| vim-textobj-anyblock      | b       | 複数ブロック対応               |
+| vim-textobj-between       | f{char} | 任意の{char}で囲まれている文字 |
+| vim-textobj-url           | u       | URL                            |
 
 [さがしもの]
-:h function-list    vim関数一覧
-:h ex-cmd-index     exコマンド一覧
-:options            オプションをインタラクティブに設定出来る。
+cmdline-special コマンドライン用の特別な文字
 
 [TODO]
+タブについてもっと有効活用出来るようにする。
+barbarのタブについて設定する。
 nvim-hlslensがたまにエラーを吐くのを直す。
 nvim-dapでlaunch.jsonの使いかたを調べる。
 quickrunのヘルプを読んで使いかたを理解する
 lightlineからgalaxylineかlualineに変更する。
-telescopeも結構良さそうだから試してみる。
-    telescopeがよさげならいらんかも fzf-previewのgrepでプレビューが効かないのを直す。
+fzf-previewのgrepでプレビューが効かないのを直す。
 @:と@@を押しやすい箇所にバインドする
 windows(職場)対応を厳格にする
     pluginの読み込みを早める(dein導入?)
