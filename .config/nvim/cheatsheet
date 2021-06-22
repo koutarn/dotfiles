@@ -47,9 +47,10 @@ cheatsheet表示 ?
 cmdline-special コマンドライン用の特別な文字
 
 [TODO]
+;qa
+qa
 タブについてもっと有効活用出来るようにする。
 barbarのタブについて設定する。
-nvim-hlslensがたまにエラーを吐くのを直す。
 nvim-dapでlaunch.jsonの使いかたを調べる。
 quickrunのヘルプを読んで使いかたを理解する
 lightlineからgalaxylineかlualineに変更する。
@@ -69,5 +70,9 @@ https://github.com/yutkat/dotfiles/tree/master/.config/nvim
 https://github.com/monaqa/dotfiles/tree/master/.config/nvim
 
 [作りたい]
-* 複数画面で<C-o>の戻る先を確認しながらジャンプ出来る(floating window)
 * バッファを簡単に管理出来る機能(floating window)
+* vim-operator-useでひらがな、カタカナ、半角カタカナをトグルするやつ
+* vim-operator-useでeskkで再度変換をかけれるようにする。 vim-operator-saihenkan
+    * 渡された文字列が日本語かを正規表現で判定する。
+    * ひらがなに変換する。
+    * 変換待機モードに入る。 

@@ -38,7 +38,6 @@ endif
    Plug 'hachibeeDI/vim-vbnet'
  endif
 
-
 "color scheme
 Plug 'joshdick/onedark.vim'
 
@@ -128,6 +127,11 @@ Plug 'rhysd/vim-textobj-anyblock'
 Plug 'thinca/vim-textobj-between'
 Plug 'mattn/vim-textobj-url'
 Plug 'sgur/vim-textobj-parameter'
+
+"kouratn
+Plug 'LeafCage/vimhelpgenerator'
+Plug ('~/Projects/koutarn/vim-operator-saihenkan')
+Plug 'koutarn/HelloWorld.vim'
 
 call plug#end()
 
