@@ -72,7 +72,6 @@ Plug 'liuchengxu/vista.vim'
 Plug 'reireias/vim-cheatsheet'
 Plug 'aiya000/aho-bakaup.vim'
 Plug 'obcat/vim-ipos'
-Plug 'osyo-manga/vim-precious'
 Plug 'markonm/traces.vim'
 
 "syntax
@@ -118,20 +117,22 @@ Plug 'machakann/vim-sandwich'
 "text object
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-line'
 Plug 'glts/vim-textobj-comment'
 Plug 'kana/vim-textobj-function'
 Plug 'machakann/vim-textobj-functioncall'
-Plug 'kana/vim-textobj-indent'
-Plug 'kana/vim-textobj-line'
+Plug 'sgur/vim-textobj-parameter'
 Plug 'rhysd/vim-textobj-anyblock'
 Plug 'thinca/vim-textobj-between'
 Plug 'mattn/vim-textobj-url'
-Plug 'sgur/vim-textobj-parameter'
 
 "kouratn
-Plug 'LeafCage/vimhelpgenerator'
+Plug ('~/Projects/koutarn/dasen-kunda.vim')
 Plug ('~/Projects/koutarn/vim-operator-saihenkan')
 Plug 'koutarn/HelloWorld.vim'
+Plug 'LeafCage/vimhelpgenerator'
+Plug 'mopp/layoutplugin.vim'
 
 call plug#end()
 
