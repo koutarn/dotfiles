@@ -238,14 +238,13 @@ nnoremap <expr><Leader>sno <SID>set_number_settings('nonumber')
 
 "vモードの置換連続ペースト用
 function! Put_text_without_override_register()
-  let line_len = strlen(getline('.'))
-  execute "normal! `>"
-  let col_loc = col('.')
-  execute 'normal! gv"_x'
-  if line_len == col_loc
-    execute 'normal! p'
-  else
-    execute 'normal! P'
-  endif
+    let is_line_end = virtcol("'>") == virtcol("$") - 1
+    execute 'normal! "_x'
+    if is_line_end
+        execute 'normal! p'
+    else
+        execute 'normal! P'
+    endif
 endfunction
+
 xnoremap <silent> p <Cmd>call Put_text_without_override_register()<CR>
