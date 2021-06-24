@@ -15,6 +15,7 @@ space
     バックアップの表示(aho-backup) b
     便利ヘルプ表示 h
 
+設定 <Leader> + s
 Bookmark <Leader> + m
 Gina <Leader> + g
 Debug(nvim-dap) <Leader> + d
@@ -75,4 +76,10 @@ https://github.com/monaqa/dotfiles/tree/master/.config/nvim
 * vim-operator-useでeskkで再度変換をかけれるようにする。 vim-operator-saihenkan
     * 渡された文字列が日本語かを正規表現で判定する。
     * ひらがなに変換する。
-    * 変換待機モードに入る。 
+    * 変換待機モードに入る。
+* 文字列操作を覚えたいので打線を組むやつ
+
+現在のカーソルの位置の直前までの文字列 getline('.')[0:col('.') - 2]
+
+* vimscript 写経シリーズ
+    https://www.kaoriya.net/blog/2012/02/19/
