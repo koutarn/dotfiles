@@ -39,6 +39,10 @@ vnoremap x "_x
 nnoremap X "_X
 vnoremap X "_X
 
+"先頭に空白文字があるかどうかで処理を変える。
+"thx https://github.com/yuki-yano/zero.vim/tree/main/plugin
+noremap <silent><expr> 0 getline('.')[0 : col('.') - 2] =~# '^\s\+$' ? '0' : '^'
+
 "cmd
 cnoremap <C-e> <End>
 cnoremap <C-a> <Home>
@@ -61,14 +65,14 @@ vnoremap : ;
 vnoremap ; :
 
 "Move
-nnoremap k gk
-nnoremap j gj
-vnoremap k gk
-vnoremap j gj
-nnoremap gk k
-nnoremap gj j
-vnoremap gk k
-vnoremap gj j
+
+"基本は表示行で移動。ただしカウントで飛びたい場合は論理行で移動する。
+"thx monaqa
+nnoremap <expr> j v:count == 0 ? 'gj' : 'j'
+xnoremap <expr> j (v:count == 0 && mode() ==# 'v' && mode() ==# 'V' && mode() ==# 'CTRL-V') ? 'gj' : 'j'
+nnoremap <expr> k v:count == 0 ? 'gk' : 'k'
+xnoremap <expr> k (v:count == 0 && mode() ==# 'v' && mode() ==# 'V' && mode() ==# 'CTRL-V') ? 'gk' : 'k'
+
 vnoremap v $h
 nnoremap <S-k> 10gk
 nnoremap <S-j> 10gj
@@ -218,6 +222,19 @@ nnoremap <Leader>fhT <Cmd>h help-tags<CR>
 nnoremap <Leader>fhV <Cmd>h vim-variable<CR>
 nnoremap <Leader>fhI <Cmd>h index<CR>
 
+"設定
+function! s:set_number_settings(set_option) abort
+    if a:set_option ==# 'number'
+       set number | set norelativenumber
+    elseif a:set_option ==# 'relative'
+        set number | set relativenumber
+    elseif a:set_option ==# 'nonumber'
+        set nonumber | set norelativenumber
+    endif
+endfunction
+nnoremap <expr><Leader>snn <SID>set_number_settings('number')
+nnoremap <expr><Leader>snr <SID>set_number_settings('relative')
+nnoremap <expr><Leader>sno <SID>set_number_settings('nonumber')
 
 "vモードの置換連続ペースト用
 function! Put_text_without_override_register()

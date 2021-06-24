@@ -34,8 +34,19 @@ else
   set signcolumn=yes
 endif
 
-inoremap <silent><expr> ;; pumvisible() ? coc#_select_confirm() : coc#refresh()
+"インテリセンスをうまいことやるやつ
+function! s:coc_select_settings()
+    let pre_str = getline('.')[col('.') - 2]
+    if pumvisible()
+        return coc#_select_confirm()
+    elseif pre_str ==# ' ' || pre_str ==# ''
+        return ';;'
+    else
+        return coc#refresh()
+    endif
+endfunction
 
+inoremap <silent><expr> ;; <SID>coc_select_settings()
 " =========================
 " coc-snippets
 " =========================
