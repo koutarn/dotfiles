@@ -25,7 +25,7 @@ cheatsheet表示 ?
 [Operator]
 | Operator Name        | Bind | 効果     |
 | -------------------- | ---- | -------- |
-| vim-fperator-replace | R    | 置換     |
+| vim-operator-replace | R    | 置換     |
 | vim-sandwich         | sa   | 囲み追加 |
 | vim-sandwich         | sr   | 囲み置換 |
 | vim-sandwich         | sd   | 囲み削除 |

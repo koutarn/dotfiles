@@ -45,8 +45,8 @@ function! s:coc_select_settings()
         return coc#refresh()
     endif
 endfunction
-
 inoremap <silent><expr> ;; <SID>coc_select_settings()
+
 " =========================
 " coc-snippets
 " =========================
