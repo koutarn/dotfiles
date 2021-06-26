@@ -84,9 +84,14 @@ nnoremap <silent><Leader>o  <Cmd>for i in range(v:count1) \| call append(line('.
 nnoremap <silent><Leader>O  <Cmd>for i in range(v:count1) \| call append(line('.')-1, '') \| endfor<CR>
 
 "ノーマルモードに戻す
-inoremap jj <ESC>
-onoremap jj <Esc>
-cnoremap jj <C-c>
+"thx https://thinca.hatenablog.com/entry/20120716/1342374586
+inoremap <expr> j getline('.')[col('.') - 2] ==# 'j' ? "\<BS>\<ESC>" : 'j'
+onoremap <expr> j getline('.')[col('.') - 2] ==# 'j' ? "\<BS>\<ESC>" : 'j'
+cnoremap <expr> j getline('.')[col('.') - 2] ==# 'j' ? "\<BS>\<ESC>" : 'j'
+" inoremap jj <ESC>
+" onoremap jj <Esc>
+" cnoremap jj <C-c>
+
 
 "Buffer
 nnoremap <Leader>y <Cmd>bprevious<CR>
@@ -224,17 +229,22 @@ nnoremap <Leader>fhI <Cmd>h index<CR>
 
 "設定
 function! s:set_number_settings(set_option) abort
-    if a:set_option ==# 'number'
-       set number | set norelativenumber
-    elseif a:set_option ==# 'relative'
-        set number | set relativenumber
-    elseif a:set_option ==# 'nonumber'
+    if &number ==# 1 || &relativenumber ==# 1
         set nonumber | set norelativenumber
+        return
+    endif
+
+    set number
+    if a:set_option ==# 'number'
+        set norelativenumber
+    elseif a:set_option ==# 'relative'
+        set relativenumber
     endif
 endfunction
+
 nnoremap <expr><Leader>snn <SID>set_number_settings('number')
 nnoremap <expr><Leader>snr <SID>set_number_settings('relative')
-nnoremap <expr><Leader>sno <SID>set_number_settings('nonumber')
+nnoremap <Leader>sl <Cmd>set list!<CR>
 
 "vモードの置換連続ペースト用
 function! Put_text_without_override_register()
