@@ -84,13 +84,9 @@ nnoremap <silent><Leader>o  <Cmd>for i in range(v:count1) \| call append(line('.
 nnoremap <silent><Leader>O  <Cmd>for i in range(v:count1) \| call append(line('.')-1, '') \| endfor<CR>
 
 "ノーマルモードに戻す
-"thx https://thinca.hatenablog.com/entry/20120716/1342374586
-inoremap <expr> j getline('.')[col('.') - 2] ==# 'j' ? "\<BS>\<ESC>" : 'j'
-onoremap <expr> j getline('.')[col('.') - 2] ==# 'j' ? "\<BS>\<ESC>" : 'j'
-cnoremap <expr> j getline('.')[col('.') - 2] ==# 'j' ? "\<BS>\<ESC>" : 'j'
-" inoremap jj <ESC>
-" onoremap jj <Esc>
-" cnoremap jj <C-c>
+inoremap jj <ESC>
+onoremap jj <Esc>
+cnoremap jj <C-c>
 
 
 "Buffer
