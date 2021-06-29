@@ -38,8 +38,8 @@ endif
     Plug 'hachibeeDI/vim-vbnet'
  endif
 
-"color scheme
-    Plug 'joshdick/onedark.vim'
+    "color scheme
+    Plug 'ful1e5/onedark.nvim'
 
 "Coding
 Plug 'MattesGroeger/vim-bookmarks'

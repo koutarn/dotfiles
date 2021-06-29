@@ -1,5 +1,17 @@
-UsePlugin 'onedark.vim'
+UsePlugin 'onedark.nvim'
 "================================
-" Plug 'joshdick/onedark.vim'
+" Plug 'ful1e5/onedark.nvim'
 "================================
-colorscheme onedark
+
+lua<<EOF
+require("onedark").setup({
+    commentStyle = "NONE",
+    keywordStyle = "NONE",
+    functionStyle = "bold",
+    variableStyle = "NONE",
+    sidebars = {"fern", "vista_kind"},
+    darkSidebar = true,
+    darkFloat = true,
+})
+vim.g.lightline = {colorscheme = "onedark"}
+EOF

@@ -48,8 +48,6 @@ cheatsheet表示 ?
 cmdline-special コマンドライン用の特別な文字
 
 [TODO]
-;qa
-qa
 タブについてもっと有効活用出来るようにする。
 barbarのタブについて設定する。
 nvim-dapでlaunch.jsonの使いかたを調べる。
@@ -63,7 +61,6 @@ windows(職場)対応を厳格にする
 
 ここらへんを試す。
 https://github.com/Shougo/dein.vim
-https://github.com/NTBBloodbath/doom-one.nvim
 https://github.com/mhinz/vim-startify
 https://github.com/rhysd/clever-f.vim
 

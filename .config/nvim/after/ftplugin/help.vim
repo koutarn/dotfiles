@@ -2,6 +2,7 @@ setlocal cursorline
 setlocal nospell
 setlocal nolist
 setlocal nohlsearch
+setlocal colorcolumn=
 
 "編集中は置き換えないようにする。
 if &buftype ==# 'help'
