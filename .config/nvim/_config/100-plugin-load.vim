@@ -73,6 +73,7 @@ Plug 'thinca/vim-qfreplace'
 Plug 'thinca/vim-quickrun'
 Plug 'tyru/capture.vim'
 Plug 'tyru/eskk.vim'
+Plug 'kuuote/gina-preview.vim'
 
 "syntax
 Plug 'rhysd/vim-gfm-syntax'

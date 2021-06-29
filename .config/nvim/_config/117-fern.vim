@@ -2,7 +2,7 @@ UsePlugin 'fern.vim'
 " =========================
 " 'lambdalisue/fern.vim'
 " =========================
-noremap <silent><Leader>ff <Cmd>Fern . -stay -drawer -keep -toggle -reveal=% -width=40<CR>
+noremap <silent><Leader>ff <Cmd>Fern . -stay -drawer -keep -toggle -reveal=%<CR>
 
 let g:fern#keepalt_on_edit = 1
 let g:fern#disable_default_mappings = 1
@@ -15,6 +15,7 @@ let g:fern#renderer#default#expanded_symbol  = '▼ '
 let g:fern#renderer#default#leading          = ' '
 let g:fern#renderer#default#leaf_symbol      = ' '
 let g:fern#renderer#default#root_symbol      = '~ '
+let g:fern#drawer_width = 40
 
 function! s:init_fern() abort
     nmap <buffer><Leader>r <Plug>(fern-action-rename)

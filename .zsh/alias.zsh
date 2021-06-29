@@ -27,6 +27,7 @@ alias -g G='| grep'
 alias c="cd"
 alias ..="cd .."
 alias reload-zsh="source $ZSHRC"
+alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
 alias vim-configs="nvim $VIM_CONFIGS"

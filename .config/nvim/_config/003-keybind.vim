@@ -225,17 +225,29 @@ nnoremap <Leader>fhI <Cmd>h index<CR>
 
 "設定
 function! s:set_number_settings(set_option) abort
-    if &number ==# 1 || &relativenumber ==# 1
+    if &number ==# 0
+        set number
+        if a:set_option ==# 'number'
+            set norelativenumber
+        else
+            set relativenumber
+        endif
+    else
         set nonumber | set norelativenumber
-        return
     endif
 
-    set number
-    if a:set_option ==# 'number'
-        set norelativenumber
-    elseif a:set_option ==# 'relative'
-        set relativenumber
-    endif
+
+    " if &number ==# 1 || &relativenumber ==# 1
+    "     set nonumber | set norelativenumber
+    "     return
+    " endif
+
+    " set number
+    " if a:set_option ==# 'number'
+    "     set norelativenumber
+    " elseif a:set_option ==# 'relative'
+    "     set relativenumber
+    " endif
 endfunction
 
 nnoremap <expr><Leader>snn <SID>set_number_settings('number')
