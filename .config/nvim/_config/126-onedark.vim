@@ -13,5 +13,4 @@ require("onedark").setup({
     darkSidebar = true,
     darkFloat = true,
 })
-vim.g.lightline = {colorscheme = "onedark"}
 EOF
