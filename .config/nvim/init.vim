@@ -18,17 +18,6 @@ augroup vimrc
   autocmd!
 augroup END
 
-"filetypeを一旦OFFにする
-"thx https://wiredool.hatenadiary.org/entry/20120618/1340019962
-filetype off
-filetype plugin off
-filetype indent off
-
-"filetype
-filetype on
-filetype plugin on
-filetype indent on
-
 "読み込みファイル設定
 " set runtimepath+=~/.vim/
 runtime! _config/*.vim             "設定読み込み

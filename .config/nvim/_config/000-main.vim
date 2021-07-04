@@ -70,7 +70,8 @@ set preserveindent
 set backspace=indent,eol,start
 
 "file
-set nonumber
+set number
+set relativenumber
 set ruler
 
 "折り返し
@@ -109,6 +110,7 @@ set splitright
 set undolevels=1000"
 set shortmess+=c
 set mouse=a
+set isfname-==
 
 "cmd window
 set cmdwinheight=16

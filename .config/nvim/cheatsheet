@@ -44,17 +44,13 @@ cheatsheet表示 ?
 | vim-textobj-between       | f{char} | 任意の{char}で囲まれている文字 |
 | vim-textobj-url           | u       | URL                            |
 
-[さがしもの]
-cmdline-special コマンドライン用の特別な文字
-
 [TODO]
 タブについてもっと有効活用出来るようにする。
 barbarのタブについて設定する。
 nvim-dapでlaunch.jsonの使いかたを調べる。
 quickrunのヘルプを読んで使いかたを理解する
 lightlineからgalaxylineかlualineに変更する。
-fzf-previewのgrepでプレビューが効かないのを直す。
-@:と@@を押しやすい箇所にバインドする
+
 windows(職場)対応を厳格にする
     pluginの読み込みを早める(dein導入?)
     eskkを入れる。
@@ -77,6 +73,7 @@ https://github.com/monaqa/dotfiles/tree/master/.config/nvim
     * 変換待機モードに入る。
 * 文字列操作を覚えたいので打線を組むやつ
 * マクロの出力、修正が簡単に出来るやつ
+* verboseの情報が全件でてくれるやつ(function,autocmd,map,command)
 
 * vimscript 写経シリーズ
     https://www.kaoriya.net/blog/2012/02/19/
