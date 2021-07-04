@@ -20,7 +20,12 @@ endfunction
 
 call s:make_abbrev_rule([
 \   {'from': 'c', 'to': 'CocCommand'},
+\   {'from': 'cu', 'to': 'CocUpdate'},
 \   {'from': 'cc', 'to': 'CocConfig'},
+\   {'prepose': 'CocCommand', 'from': 's', 'to': 'snippets.editSnippets'},
+\   {'from': 'cl', 'to': 'CocList'},
+\   {'prepose': 'CocList', 'from': 'm', 'to': 'marketplace'},
+\   {'prepose': 'CocList', 'from': 'e', 'to': 'extensions'},
 \   {'from': 'g', 'to': 'Gina'},
 \   {'from': 'gina', 'to': 'Gina'},
 \   {'from': 'ga', 'to': 'Gina add'},
@@ -41,9 +46,13 @@ call s:make_abbrev_rule([
 \   {'prepose': 'Gina', 'from': 's', 'to': 'status -s --opener=split'},
 \   {'from': 'gl', 'to': 'Gina log -s --opener=split'},
 \   {'prepose': 'Gina', 'from': 'l', 'to': 'log -s --opener=split'},
-\   {'prepose': 'CocCommand', 'from': 's', 'to': 'snippets.editSnippets'},
 \   {'from': 'ver', 'to': 'verbose'},
 \   {'prepose': 'verbose', 'from': 'a', 'to': 'autocmd'},
 \   {'prepose': 'verbose', 'from': 'f', 'to': 'function'},
-\   {'prepose': 'verbose', 'from': 'c', 'to': 'command'}
+\   {'prepose': 'verbose', 'from': 'c', 'to': 'command'},
+\   {'from': 'plugstatus', 'to': 'PlugStatus'},
+\   {'from': 'plugupdate', 'to': 'PlugUpdate'},
+\   {'from': 'pu', 'to': 'PlugUpdate'},
+\   {'from': 'utf', 'to': 'Utf8'},
+\   {'from': 'cp', 'to': 'Cp932'},
 \ ])

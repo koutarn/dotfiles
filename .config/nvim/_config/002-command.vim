@@ -20,8 +20,8 @@ command! Memo new | set filetype=markdown
 "読み込み
 command! Source source ~/.config/nvim/init.vim <bar> :nohl <bar> echomsg('Reload vimrc!!!')
 
-"https://github.com/monaqa/dotfiles/blob/424b0ab2d7623005f4b79544570b0f07a76e921a/.config/nvim/scripts/command.vim#L50-L58
 "今開いているファイルをリネーム
+"thx https://github.com/monaqa/dotfiles/blob/424b0ab2d7623005f4b79544570b0f07a76e921a/.config/nvim/scripts/command.vim#L50-L58
 command! -nargs=1 RenameMe call RenameMe(<q-args>)
 function! RenameMe(newFileName)
   let currentFileName = expand('%')
