@@ -18,8 +18,15 @@ command! Root :edit ~/
 command! Memo new | set filetype=markdown
 
 "読み込み
-if has('win32') || has('win64')
-  command! Source source ~/_vimrc <bar> :nohl <bar> echomsg('Reload vimrc!!!')
-elseif has('unix')
-  command! Source source ~/.config/nvim/init.vim <bar> :nohl <bar> echomsg('Reload vimrc!!!')
-endif
+command! Source source ~/.config/nvim/init.vim <bar> :nohl <bar> echomsg('Reload vimrc!!!')
+
+"https://github.com/monaqa/dotfiles/blob/424b0ab2d7623005f4b79544570b0f07a76e921a/.config/nvim/scripts/command.vim#L50-L58
+"今開いているファイルをリネーム
+command! -nargs=1 RenameMe call RenameMe(<q-args>)
+function! RenameMe(newFileName)
+  let currentFileName = expand('%')
+  execute 'saveas ' . a:newFileName
+  bdelete! #
+  call delete(currentFileName)
+endfunction
+cnoreabbrev <expr> RenameMe "RenameMe " . expand('%')
