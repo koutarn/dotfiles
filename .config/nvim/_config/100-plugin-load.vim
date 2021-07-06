@@ -133,8 +133,9 @@ Plug 'thinca/vim-textobj-between'
 Plug 'LeafCage/vimhelpgenerator'
 Plug 'mopp/layoutplugin.vim'
 Plug 'koutarn/HelloWorld.vim'
-Plug ('~/Projects/koutarn/dasen-kunda.vim')
-Plug ('~/Projects/koutarn/vim-operator-saihenkan')
+
+" Plug ('~/Projects/koutarn/dasen-kunda.vim')
+" Plug ('~/Projects/koutarn/vim-operator-saihenkan')
 
 call plug#end()
 
