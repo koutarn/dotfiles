@@ -19,9 +19,8 @@ function! s:make_abbrev_rule(rules)
 endfunction
 
 call s:make_abbrev_rule([
-\   {'from': 'c', 'to': 'CocCommand'},
+\   {'from': 'co', 'to': 'CocCommand'},
 \   {'from': 'cu', 'to': 'CocUpdate'},
-\   {'from': 'cc', 'to': 'CocConfig'},
 \   {'prepose': 'CocCommand', 'from': 's', 'to': 'snippets.editSnippets'},
 \   {'from': 'cl', 'to': 'CocList'},
 \   {'prepose': 'CocList', 'from': 'm', 'to': 'marketplace'},
@@ -57,6 +56,5 @@ call s:make_abbrev_rule([
 \   {'from': 'plugstatus', 'to': 'PlugStatus'},
 \   {'from': 'plugupdate', 'to': 'PlugUpdate'},
 \   {'from': 'pu', 'to': 'PlugUpdate'},
-\   {'from': 'utf', 'to': 'Utf8'},
-\   {'from': 'cp', 'to': 'Cp932'},
+\   {'from': 'repo', 'to': 'Repo'},
 \ ])
