@@ -39,7 +39,7 @@ endif
  endif
 
     "color scheme
-    Plug 'ful1e5/onedark.nvim'
+    " Plug 'ful1e5/onedark.nvim'
     Plug 'sainnhe/edge'
 
 "Coding

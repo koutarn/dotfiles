@@ -47,13 +47,16 @@ alias configs="vi $ZSH_CONFIGS $VIM_CONFIGS $TMUX_CFG $ALA_CFG" #all configs ope
 
 #no correct
 #nyaみたいなのをださない
-alias cp="${ZSH_VERSION:+nocorrect} cp -i"
-alias mv="${ZSH_VERSION:+nocorrect} mv -i"
-alias mkdir="${ZSH_VERSION:+nocorrect} mkdir"
-alias touch="${ZSH_VERSION:+nocorrect} touch"
+alias cp='${ZSH_VERSION:+nocorrect} cp -i'
+alias mv='${ZSH_VERSION:+nocorrect} mv -i'
+alias mkdir='${ZSH_VERSION:+nocorrect} mkdir'
+alias touch='${ZSH_VERSION:+nocorrect} touch'
 
 #trash
 alias rm="trash"
 
 #xprop
-alias xprop_class="xprop | grep WM_CLASS"
+alias xprop_class='xprop | grep WM_CLASS'
+
+#ghq
+alias f='ghq list -p | fzf | cd'
