@@ -13,8 +13,8 @@ setopt auto_menu                    #補完キー連打で順に補完候補を�
 setopt auto_list                    #補完候補を一覧表示にする
 setopt auto_param_keys              #カッコの対応などを自動的に補完
 setopt auto_param_slash             #ディレクトリ名の補完で末尾の / を自動的に付加し、次の補完に備える
-setopt correct                      #入力しているコマンド名が間違っている場合にもしかして：を出す。
-setopt correct_all                  #コマンド補完を全てで出す
+# setopt correct                      #入力しているコマンド名が間違っている場合にもしかして：を出す。
+# setopt correct_all                  #コマンド補完を全てで出す
 setopt mark_dirs                    #ファイル名の展開でディレクトリにマッチした場合 末尾に / を付加
 setopt list_types                   #補完候補一覧でファイルの種別を識別マーク表示 (訳注:ls -F の記号)
 setopt list_packed                  #補完結果をできるだけ詰める

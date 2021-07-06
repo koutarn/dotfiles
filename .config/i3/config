@@ -128,7 +128,7 @@ bar {
     position top
     tray_padding 0
     tray_output none
-    status_command ~/Projects/bumblebee-status/bumblebee-status \
+    status_command ~/ghq/github.com/tobi-wan-kenobi/bumblebee-status/bumblebee-status \
         -m title spotify memory pasink date time dunst \
         -p title.max=32 time.format="%H:%M" date.format="%Y/%m/%d(%a)" \
            spotify.format='{title} - {artist}' spotify.layout='spotify.song'\

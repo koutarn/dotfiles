@@ -40,6 +40,7 @@ endif
 
     "color scheme
     Plug 'ful1e5/onedark.nvim'
+    Plug 'sainnhe/edge'
 
 "Coding
 Plug 'MattesGroeger/vim-bookmarks'
