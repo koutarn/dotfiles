@@ -75,6 +75,14 @@ https://github.com/monaqa/dotfiles/tree/master/.config/nvim
 * マクロの出力、修正が簡単に出来るやつ
 * verboseの情報が全件でてくれるやつ(function,autocmd,map,command)
 
+* 鬼軍曹vim 
+    * 矢印を使用不可にする(またはキレる)
+    * マウスを使用不可にする(またはキレる)
+    * 一定時間放置するとキレる(normal,input)
+    * 何もしなくてもたまにキレる
+    * Cmdを間違えるとキレる
+    * キレるメッセージは外部で設定可能
+
 * vimscript 写経シリーズ
     https://www.kaoriya.net/blog/2012/02/19/
     https://thinca.hatenablog.com/entry/20100205/1265307642
