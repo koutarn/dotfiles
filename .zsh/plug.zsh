@@ -11,6 +11,7 @@ zplug "mrowa44/emojify", as:command      # コマンドライン上の文字リ�
 # zplug "hlissner/zsh-autopair", defer:2   # カッコを自動で閉じる
 zplug "mollifier/cd-gitroot"             # gitのルートへ飛ぶ
 zplug "hchbaw/auto-fu.zsh"               # 補完候補を自動でだしてくれる
+zplug "yuki-yano/zeno.zsh"               # 補完やabbrevなどの機能提供
 
 #prompt
 zplug "denysdovhan/spaceship-prompt"
