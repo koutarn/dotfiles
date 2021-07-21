@@ -59,4 +59,4 @@ alias rm="trash"
 alias xprop_class='xprop | grep WM_CLASS'
 
 #ghq
-alias f='ghq list -p | fzf | cd'
+alias f="ghq list -p | fzf | cd"
