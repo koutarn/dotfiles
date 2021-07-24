@@ -24,9 +24,9 @@ let s:toggle_markdown_eskk = 0
 function! s:markdown_eskk_toggle() abort
   let s:toggle_markdown_eskk = s:toggle_markdown_eskk == 1 ? 0 : 1
   if s:toggle_markdown_eskk ==# 1
-    echomsg 'Markdown日本語入力モードON'
+    echomsg  '日本語入力モードON'
   else
-    echomsg 'Markdown日本語入力モードOFF'
+    echomsg  '日本語入力モードOFF'
   endif
 endfunction
 
