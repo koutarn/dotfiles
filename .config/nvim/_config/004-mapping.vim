@@ -250,6 +250,26 @@ function! s:set_number_settings(set_option) abort
     " endif
 endfunction
 
+"terminal
+"thx monaqa
+tnoremap jj <C-\><C-n>
+
+augroup vimrc
+  autocmd TermOpen * call s:terminal_init()
+  autocmd TermOpen * setlocal wrap
+  autocmd TermOpen * setlocal nonumber
+  autocmd TermOpen * setlocal signcolumn=no
+  autocmd TermOpen * setlocal foldcolumn=0
+augroup END
+function! s:terminal_init()
+  nnoremap <buffer> <CR> i<CR><C-\><C-n>
+  nnoremap <expr><buffer> u "i" . repeat("<Up>", v:count1) . "<C-\><C-n>"
+  nnoremap <expr><buffer> <C-r> "i" . repeat("<Down>", v:count1) . "<C-\><C-n>"
+  nnoremap <buffer> dd i<C-u><C-\><C-n>
+  nnoremap <buffer> A i<C-e>
+  nnoremap <buffer> p pi
+endfunction
+
 nnoremap <expr><Leader>snn <SID>set_number_settings('number')
 nnoremap <expr><Leader>snr <SID>set_number_settings('relative')
 nnoremap <Leader>sl <Cmd>set list!<CR>

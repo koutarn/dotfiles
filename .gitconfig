@@ -35,3 +35,5 @@ ui = auto
 	verbose = true
 #template
 # template = ~/.git-template
+[init]
+	defaultBranch = main
