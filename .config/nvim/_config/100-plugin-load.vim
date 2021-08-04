@@ -21,6 +21,7 @@ if has('nvim')
     Plug 'rcarriga/nvim-dap-ui'
     Plug 'romgrk/barbar.nvim'
     Plug 'tversteeg/registers.nvim'
+    Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 
     if executable('rg') && executable('sed')
         Plug 'windwp/nvim-spectre'
