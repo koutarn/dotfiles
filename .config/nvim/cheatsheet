@@ -46,7 +46,6 @@ cheatsheet表示 ?
 
 [TODO]
 タブについてもっと有効活用出来るようにする。
-barbarのタブについて設定する。
 nvim-dapでlaunch.jsonの使いかたを調べる。
 quickrunのヘルプを読んで使いかたを理解する
 lightlineからgalaxylineかlualineに変更する。
@@ -74,14 +73,6 @@ https://github.com/monaqa/dotfiles/tree/master/.config/nvim
 * 文字列操作を覚えたいので打線を組むやつ
 * マクロの出力、修正が簡単に出来るやつ
 * verboseの情報が全件でてくれるやつ(function,autocmd,map,command)
-
-* 鬼軍曹vim 
-    * 矢印を使用不可にする(またはキレる)
-    * マウスを使用不可にする(またはキレる)
-    * 一定時間放置するとキレる(normal,input)
-    * 何もしなくてもたまにキレる
-    * Cmdを間違えるとキレる
-    * キレるメッセージは外部で設定可能
 
 * vimscript 写経シリーズ
     https://www.kaoriya.net/blog/2012/02/19/

@@ -1,14 +1,3 @@
-function! GetEnvironment() abort
-    let env = {}
-    let env.is_win = has('win32') || has('win64')
-    let env.is_mac = has('mac')
-    let env.is_gui = has('gui_running')
-    let env.is_rg = executable('rg')
-
-    return env
-endfunction
-
-
 " Auto mkdir
 " https://vim-jp.org/vim-users-jp/2011/02/20/Hack-202.html
 augroup vimrc-auto-mkdir
