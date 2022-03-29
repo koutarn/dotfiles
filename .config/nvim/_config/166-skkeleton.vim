@@ -2,5 +2,17 @@
 "=======================
 "'vim-skk/skkeleton'
 "=======================
-imap <C-j> <Plug>(skkeleton-toggle)
-cmap <C-j> <Plug>(skkeleton-toggle)
+imap jk <Plug>(skkeleton-toggle)
+cmap jk <Plug>(skkeleton-toggle)
+
+call skkeleton#config({
+\ 'globalJisyo': '~/.config/SKK-JISYO.L',
+\ 'eggLikeNewline': v:true,
+\ 'registerConvertResult': v:true,
+\ 'markerHenkan': '[H]',
+\ 'markerHenkanSelect': '[S]',
+\ })
+
+call skkeleton#register_kanatable('rom', {
+      \ 'jj': 'escape',
+      \ })

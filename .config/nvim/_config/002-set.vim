@@ -36,6 +36,7 @@ endif
 " プラグインの挙動を優先させたいので切る。
 " set autochdir
 
+set imdisable
 set autoread
 set startofline
 set stal=0

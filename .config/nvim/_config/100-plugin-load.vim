@@ -5,9 +5,8 @@
 call plug#begin()
 
 if has('nvim')
-    Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-lua/popup.nvim'
-    Plug 'Pocco81/DAPInstall.nvim'
+    " Plug 'nvim-lua/plenary.nvim'
+    " Plug 'nvim-lua/popup.nvim'
     Plug 'b3nj5m1n/kommentary'
     Plug 'folke/todo-comments.nvim'
     Plug 'folke/which-key.nvim'
@@ -16,6 +15,7 @@ if has('nvim')
     Plug 'kevinhwang91/nvim-hlslens'
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'mfussenegger/nvim-dap'
+    Plug 'Pocco81/DAPInstall.nvim'
     Plug 'monaqa/dial.nvim'
     " Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Plug 'rcarriga/nvim-dap-ui'
@@ -24,7 +24,7 @@ if has('nvim')
 "    Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 
     if executable('rg') && executable('sed')
-        Plug 'windwp/nvim-spectre'
+        " Plug 'windwp/nvim-spectre'
     endif
 
     "treesitter依存
@@ -46,7 +46,7 @@ endif
 "Coding
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'Shougo/context_filetype.vim'
-Plug 'aiya000/aho-bakaup.vim'
+" Plug 'aiya000/aho-bakaup.vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'cohama/lexima.vim'
 Plug 'dhruvasagar/vim-table-mode'
@@ -78,14 +78,15 @@ Plug 'tyru/capture.vim'
 Plug 'kuuote/gina-preview.vim'
 
 "syntax
-Plug 'rhysd/vim-gfm-syntax'
-Plug 'mboughaba/i3config.vim'
+Plug 'rhysd/vim-gfm-syntax' "markdownをもっとハイライトする
+" Plug 'mboughaba/i3config.vim'
 
 "deno
 if executable('deno')
     Plug 'vim-denops/denops.vim'
     Plug 'skanehira/command.vim'
     Plug 'vim-skk/skkeleton'
+    Plug 'delphinus/skkeleton_indicator.nvim'
 endif
 
 "Filer
@@ -109,7 +110,7 @@ Plug 'tyru/open-browser.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'voldikss/vim-floaterm'
 
-"help見る用
+"help
 Plug 'vim-jp/vimdoc-ja'
 
 "operator

@@ -1,4 +1,4 @@
-" UsePlugin 'eskk.vim'
+UsePlugin 'eskk.vim'
 "=========================
 " 'tyru/eskk.vim'
 "=========================
@@ -30,8 +30,8 @@ function! s:markdown_eskk_toggle() abort
   endif
 endfunction
 
-imap jk <Plug>(eskk:toggle)
-cmap jk <Plug>(eskk:toggle)
+" imap jk <Plug>(eskk:toggle)
+" cmap jk <Plug>(eskk:toggle)
 let g:eskk#kakutei_when_unique_candidate = 1
 let g:eskk#enable_completion = 0
 let g:eskk#no_default_mappings = 1
