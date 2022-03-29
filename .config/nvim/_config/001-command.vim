@@ -36,13 +36,3 @@ function! s:cd_repo(shell, repo) abort
 " call s:open_terminal('new', '', a:shell)
 " exe 'wincmd k'
 endfunction
-
-"とりあえず暫定的なghqでcdするコマンド
-function! s:cd_repo() abort
-    if !executable('ghq')
-        echoerr 'plz install ghq'
-        return 1
-    endif
-    call fzf#run({'source': 'ghq list -p','sink': 'lcd'})
-endfunction
-command! Repo :call <SID>cd_repo()

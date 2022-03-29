@@ -1,4 +1,4 @@
-" UsePlugin 'which-key.nvim'
+UsePlugin 'which-key.nvim'
 "==================================
 "'folke/which-key.nvim'
 "==================================

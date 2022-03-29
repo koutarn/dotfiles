@@ -1,4 +1,4 @@
-UsePlug 'coc.nvim'
+"UsePlug 'coc.nvim'
 "=======================
 "'neoclide/coc.nvim'
 "=======================
@@ -24,7 +24,7 @@ endfunction
 
 augroup vimrc_coc
   autocmd!
-  autocmd CursorHold * silent call CocActionAsync('highlight')
+  " autocmd CursorHold * silent call CocActionAsync('highlight')
 augroup END
 
 if has("patch-8.1.1564")

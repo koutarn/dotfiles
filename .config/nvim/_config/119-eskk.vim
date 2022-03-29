@@ -1,4 +1,4 @@
-UsePlugin 'eskk.vim'
+" UsePlugin 'eskk.vim'
 "=========================
 " 'tyru/eskk.vim'
 "=========================

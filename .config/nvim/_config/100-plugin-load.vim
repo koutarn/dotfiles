@@ -17,11 +17,11 @@ if has('nvim')
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'mfussenegger/nvim-dap'
     Plug 'monaqa/dial.nvim'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'rcarriga/nvim-dap-ui'
+    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " Plug 'rcarriga/nvim-dap-ui'
     Plug 'romgrk/barbar.nvim'
     Plug 'tversteeg/registers.nvim'
-    Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
+"    Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 
     if executable('rg') && executable('sed')
         Plug 'windwp/nvim-spectre'
@@ -74,7 +74,7 @@ Plug 'thinca/vim-localrc'
 Plug 'thinca/vim-qfreplace'
 Plug 'thinca/vim-quickrun'
 Plug 'tyru/capture.vim'
-Plug 'tyru/eskk.vim'
+" Plug 'tyru/eskk.vim'
 Plug 'kuuote/gina-preview.vim'
 
 "syntax
@@ -83,9 +83,9 @@ Plug 'mboughaba/i3config.vim'
 
 "deno
 if executable('deno')
-    " Plug 'vim-denops/denops.vim'
-    " Plug 'skanehira/command.vim'
-    " Plug 'kuuote/dps-scrap'
+    Plug 'vim-denops/denops.vim'
+    Plug 'skanehira/command.vim'
+    Plug 'vim-skk/skkeleton'
 endif
 
 "Filer
@@ -100,7 +100,7 @@ Plug 'LumaKernel/fern-mapping-fzf.vim'
 Plug 'yuki-yano/fern-preview.vim'
 
 "Joke
-Plug 'monaqa/vim-duzzle'
+"Plug 'monaqa/vim-duzzle'
 
 "Others
 Plug 'twitvim/twitvim'
@@ -129,14 +129,6 @@ Plug 'mattn/vim-textobj-url'
 Plug 'rhysd/vim-textobj-anyblock'
 Plug 'sgur/vim-textobj-parameter'
 Plug 'thinca/vim-textobj-between'
-
-"kouratn
-Plug 'LeafCage/vimhelpgenerator'
-Plug 'mopp/layoutplugin.vim'
-Plug 'koutarn/HelloWorld.vim'
-
-" Plug ('~/Projects/koutarn/dasen-kunda.vim')
-" Plug ('~/Projects/koutarn/vim-operator-saihenkan')
 
 call plug#end()
 
