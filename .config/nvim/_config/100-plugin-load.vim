@@ -84,9 +84,15 @@ Plug 'rhysd/vim-gfm-syntax' "markdownをもっとハイライトする
 "deno
 if executable('deno')
     Plug 'vim-denops/denops.vim'
-    Plug 'skanehira/command.vim'
+    " Plug 'vim-denops/denops-helloworld.vim'
+    " Plug 'skanehira/command.vim'
     Plug 'vim-skk/skkeleton'
     Plug 'delphinus/skkeleton_indicator.nvim'
+    Plug 'Shougo/ddc.vim'
+
+    "ddc
+    Plug 'Shougo/ddc-matcher_head'
+    Plug 'Shougo/ddc-sorter_rank'
 endif
 
 "Filer
