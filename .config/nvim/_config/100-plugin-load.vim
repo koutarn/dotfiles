@@ -17,7 +17,6 @@ if has('nvim')
     Plug 'mfussenegger/nvim-dap'
     Plug 'Pocco81/DAPInstall.nvim'
     Plug 'monaqa/dial.nvim'
-    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Plug 'rcarriga/nvim-dap-ui'
     Plug 'romgrk/barbar.nvim'
     Plug 'tversteeg/registers.nvim'
@@ -28,7 +27,7 @@ if has('nvim')
     endif
 
     "treesitter依存
-    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/nvim-treesitter'
     Plug 'code-biscuits/nvim-biscuits'
     Plug 'p00f/nvim-ts-rainbow'
     Plug 'winston0410/smart-cursor.nvim'
@@ -44,6 +43,9 @@ endif
     Plug 'sainnhe/edge'
 
 "Coding
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'Shougo/context_filetype.vim'
 " Plug 'aiya000/aho-bakaup.vim'
@@ -88,11 +90,32 @@ if executable('deno')
     " Plug 'skanehira/command.vim'
     Plug 'vim-skk/skkeleton'
     Plug 'delphinus/skkeleton_indicator.nvim'
-    Plug 'Shougo/ddc.vim'
 
     "ddc
+    Plug 'Shougo/ddc.vim'
+    Plug 'Shougo/pum.vim'
+    Plug 'tani/ddc-fuzzy'
     Plug 'Shougo/ddc-matcher_head'
     Plug 'Shougo/ddc-sorter_rank'
+    Plug 'Shougo/ddc-around'
+    Plug 'LumaKernel/ddc-file'
+    Plug 'Shougo/ddc-converter_remove_overlap'
+    Plug 'shun/ddc-vim-lsp'
+    Plug 'Shougo/ddc-cmdline-history'
+    Plug 'Shougo/ddc-cmdline'
+
+    "ddu
+    Plug 'Shougo/ddu.vim'
+    Plug 'Shougo/ddu-ui-ff'
+    Plug 'Shougo/ddu-source-file'
+    Plug 'Shougo/ddu-source-file_rec'
+    Plug 'Shougo/ddu-source-register'
+    Plug 'shun/ddu-source-buffer'
+    Plug 'Shougo/ddu-filter-matcher_substring'
+    Plug 'Shougo/ddu-commands.vim'
+    Plug 'shun/ddu-source-rg'
+    Plug 'Shougo/ddu-kind-file'
+    Plug 'yuki-yano/ddu-filter-fzf'
 endif
 
 "Filer
