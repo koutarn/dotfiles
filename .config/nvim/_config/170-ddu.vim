@@ -35,13 +35,14 @@ call ddu#custom#patch_global({
 call ddu#custom#patch_local('grep', {
 \   'sourceParams' : {
 \     'rg' : {
-\       'args': ['--column', '--no-heading', '--color', 'never'],
+\       'args': ['--column', '--no-heading', '--color', 'never','--json'],
+\       'options': {'matchers': []},
+\       'volatile':v:true,
 \     },
-\   },
-\   'uiParams': {
-\     'ff': {
-\       'startFilter': v:false,
-\     }
+\   'uiParams': {'ff': {
+\     'ignoreEmpty': v:false,
+\     'autoResize': v:false,
+\   }},
 \   },
 \ })
 
@@ -86,4 +87,4 @@ endfunction
 
 nmap <silent> <Leader>;; <Cmd>call ddu#start({'sources':[{'name': 'file_rec'}]})<CR>
 nmap <silent> <Leader>;f <Cmd>call ddu#start({'sources':[{'name': 'file'}]})<CR>
-" nmap <silent> <Leader>;b <Cmd>call ddu#start({'sources':[{'name': 'buffer'}]})<CR>
+nmap <silent> <Leader>;b <Cmd>call ddu#start({'sources':[{'name': 'buffer'}]})<CR>
