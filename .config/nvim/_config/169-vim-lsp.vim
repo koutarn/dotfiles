@@ -11,7 +11,6 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> gh <plug>(lsp-hover)
     nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
     nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
-
     let g:lsp_format_sync_timeout = 1000
     autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
 

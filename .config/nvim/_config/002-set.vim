@@ -72,7 +72,7 @@ set backspace=indent,eol,start
 
 "file
 set number
-set relativenumber
+set norelativenumber
 set ruler
 
 "折り返し
