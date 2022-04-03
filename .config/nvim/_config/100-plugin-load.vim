@@ -1,188 +1,192 @@
 "================================
-"vim plug settings
+"Jetpack settings
 "===============================
 
-call plug#begin()
+"fast install and starupt
+let g:jetpack#optimization=2
+
+call jetpack#begin()
 
 if has('nvim')
-    " Plug 'nvim-lua/plenary.nvim'
-    " Plug 'nvim-lua/popup.nvim'
-    Plug 'b3nj5m1n/kommentary'
-    Plug 'folke/todo-comments.nvim'
-    Plug 'folke/which-key.nvim'
-    Plug 'glepnir/indent-guides.nvim'
-    Plug 'kevinhwang91/nvim-bqf'
-    Plug 'kevinhwang91/nvim-hlslens'
-    Plug 'kyazdani42/nvim-web-devicons'
-    Plug 'mfussenegger/nvim-dap'
-    Plug 'Pocco81/DAPInstall.nvim'
-    Plug 'monaqa/dial.nvim'
-    " Plug 'rcarriga/nvim-dap-ui'
-    Plug 'romgrk/barbar.nvim'
-    Plug 'tversteeg/registers.nvim'
-"    Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
+" Jetpack'nvim-lua/plenary.nvim'
+" Jetpack'nvim-lua/popup.nvim'
+Jetpack'b3nj5m1n/kommentary'
+Jetpack'folke/todo-comments.nvim'
+Jetpack'folke/which-key.nvim'
+Jetpack'glepnir/indent-guides.nvim'
+Jetpack'kevinhwang91/nvim-bqf'
+Jetpack'kevinhwang91/nvim-hlslens'
+Jetpack'kyazdani42/nvim-web-devicons'
+Jetpack'mfussenegger/nvim-dap'
+Jetpack'Pocco81/DAPInstall.nvim'
+Jetpack'monaqa/dial.nvim'
+" Jetpack'rcarriga/nvim-dap-ui'
+Jetpack'romgrk/barbar.nvim'
+Jetpack'tversteeg/registers.nvim'
+"Jetpack'gelguy/wilder.nvim', { 'do': ':UpdateRemoteJetPackins' }
 
-    if executable('rg') && executable('sed')
-        " Plug 'windwp/nvim-spectre'
-    endif
+if executable('rg') && executable('sed')
+" Jetpack'windwp/nvim-spectre'
+endif
 
-    "treesitter依存
-    Plug 'nvim-treesitter/nvim-treesitter'
-    Plug 'code-biscuits/nvim-biscuits'
-    Plug 'p00f/nvim-ts-rainbow'
-    Plug 'winston0410/smart-cursor.nvim'
-    Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+"treesitter依存
+Jetpack'nvim-treesitter/nvim-treesitter'
+Jetpack'code-biscuits/nvim-biscuits'
+Jetpack'p00f/nvim-ts-rainbow'
+Jetpack'winston0410/smart-cursor.nvim'
+Jetpack'JoosepAlviste/nvim-ts-context-commentstring'
 endif
 
  if has('win32') || has('win64')
-    Plug 'hachibeeDI/vim-vbnet'
+    Jetpack'hachibeeDI/vim-vbnet'
  endif
 
-    "color scheme
-    " Plug 'ful1e5/onedark.nvim'
-    Plug 'sainnhe/edge'
+"color scheme
+" Jetpack'ful1e5/onedark.nvim'
+Jetpack'sainnhe/edge'
 
 "Coding
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
+Jetpack'prabirshrestha/vim-lsp'
+Jetpack'mattn/vim-lsp-settings'
 
-Plug 'MattesGroeger/vim-bookmarks'
-Plug 'Shougo/context_filetype.vim'
-" Plug 'aiya000/aho-bakaup.vim'
-Plug 'bronson/vim-trailing-whitespace'
-Plug 'cohama/lexima.vim'
-Plug 'dhruvasagar/vim-table-mode'
-Plug 'godlygeek/tabular'
-Plug 'itchyny/lightline.vim'
-Plug 'itchyny/vim-highlighturl'
-Plug 'junegunn/fzf'
-Plug 'lambdalisue/gina.vim'
-Plug 'lambdalisue/suda.vim'
-Plug 'lambdalisue/vim-findent'
-Plug 'liuchengxu/vista.vim'
-Plug 'markonm/traces.vim'
-Plug 'mattn/vim-findroot'
-Plug 'mattn/vim-maketable'
-Plug 'mg979/vim-visual-multi'
-Plug 'obcat/vim-ipos'
-Plug 'plasticboy/vim-markdown'
-Plug 'reireias/vim-cheatsheet'
-Plug 'simeji/winresizer'
-Plug 'skanehira/preview-markdown.vim'
-Plug 'skanehira/translate.vim'
-Plug 't9md/vim-quickhl'
-" Plug 'thinca/vim-ambicmd'
-Plug 'thinca/vim-localrc'
-Plug 'thinca/vim-qfreplace'
-Plug 'thinca/vim-quickrun'
-Plug 'tyru/capture.vim'
-" Plug 'tyru/eskk.vim'
-Plug 'kuuote/gina-preview.vim'
+Jetpack'MattesGroeger/vim-bookmarks'
+Jetpack'Shougo/context_filetype.vim'
+" Jetpack'aiya000/aho-bakaup.vim'
+Jetpack'bronson/vim-trailing-whitespace'
+Jetpack'cohama/lexima.vim'
+Jetpack'dhruvasagar/vim-table-mode'
+Jetpack'godlygeek/tabular'
+Jetpack'itchyny/lightline.vim'
+Jetpack'itchyny/vim-highlighturl'
+Jetpack'junegunn/fzf'
+Jetpack'lambdalisue/gina.vim'
+Jetpack'lambdalisue/suda.vim'
+Jetpack'lambdalisue/vim-findent'
+Jetpack'liuchengxu/vista.vim'
+Jetpack'markonm/traces.vim'
+Jetpack'mattn/vim-findroot'
+Jetpack'mattn/vim-maketable'
+Jetpack'mg979/vim-visual-multi'
+Jetpack'obcat/vim-ipos'
+Jetpack'plasticboy/vim-markdown', {'for':'markdown'}
+Jetpack'reireias/vim-cheatsheet'
+Jetpack'simeji/winresizer'
+Jetpack'skanehira/preview-markdown.vim', {'for':'markdown'}
+Jetpack'skanehira/translate.vim'
+Jetpack't9md/vim-quickhl'
+Jetpack'thinca/vim-localrc'
+Jetpack'thinca/vim-qfreplace'
+Jetpack'thinca/vim-quickrun'
+Jetpack'tyru/capture.vim'
+" Jetpack'tyru/eskk.vim'
+Jetpack'kuuote/gina-preview.vim'
 
 "syntax
-Plug 'rhysd/vim-gfm-syntax' "markdownをもっとハイライトする
-" Plug 'mboughaba/i3config.vim'
+Jetpack'rhysd/vim-gfm-syntax', {'for':'markdown'} "markdownをもっとハイライトする
+" Jetpack'mboughaba/i3config.vim'
 
 "deno
 if executable('deno')
-    Plug 'vim-denops/denops.vim'
-    " Plug 'vim-denops/denops-helloworld.vim'
-    " Plug 'skanehira/command.vim'
-    Plug 'vim-skk/skkeleton'
-    Plug 'delphinus/skkeleton_indicator.nvim'
+Jetpack'vim-denops/denops.vim'
+" Jetpack'vim-denops/denops-helloworld.vim'
+" Jetpack'skanehira/command.vim'
+Jetpack'vim-skk/skkeleton'
+Jetpack'delphinus/skkeleton_indicator.nvim'
 
-    "ddc
-    Plug 'Shougo/ddc.vim'
-    Plug 'Shougo/pum.vim'
+"ddc
+Jetpack'Shougo/ddc.vim'
+Jetpack'Shougo/pum.vim'
 
-        "source
-        Plug 'Shougo/ddc-around'
-        Plug 'LumaKernel/ddc-file'
-        Plug 'shun/ddc-vim-lsp'
-        Plug 'Shougo/ddc-cmdline-history'
-        Plug 'Shougo/ddc-cmdline'
-        Plug 'Shougo/neco-vim'
-        Plug 'ippachi/ddc-yank'
+"source
+Jetpack'Shougo/ddc-around'
+Jetpack'LumaKernel/ddc-file'
+Jetpack'shun/ddc-vim-lsp'
+Jetpack'Shougo/ddc-cmdline-history'
+Jetpack'Shougo/ddc-cmdline'
+Jetpack'Shougo/neco-vim'
+Jetpack'ippachi/ddc-yank'
 
-        "matcher
-        Plug 'Shougo/ddc-matcher_head'
-        Plug 'matsui54/ddc-matcher_fuzzy'
-        Plug 'tani/ddc-fuzzy'
+"matcher
+Jetpack'Shougo/ddc-matcher_head'
+Jetpack'matsui54/ddc-matcher_fuzzy'
+Jetpack'tani/ddc-fuzzy'
 
-        "sorter
-        Plug 'Shougo/ddc-sorter_rank'
+"sorter
+Jetpack'Shougo/ddc-sorter_rank'
 
-        "converter
-        Plug 'Shougo/ddc-converter_remove_overlap'
+"converter
+Jetpack'Shougo/ddc-converter_remove_overlap'
 
-    "ddu
-    Plug 'Shougo/ddu.vim'
-    Plug 'Shougo/ddu-ui-ff'
-    Plug 'Shougo/ddu-commands.vim'
+"ddu
+Jetpack'Shougo/ddu.vim'
+Jetpack'Shougo/ddu-ui-ff'
+Jetpack'Shougo/ddu-commands.vim'
 
-        "ui
+"ui
 
-        "kind
-        Plug 'Shougo/ddu-kind-file'
+"kind
+Jetpack'Shougo/ddu-kind-file'
 
-        "source
-        Plug 'Shougo/ddu-source-file'
-        Plug 'Shougo/ddu-source-file_rec'
-        Plug 'Shougo/ddu-source-register'
-        Plug 'shun/ddu-source-buffer'
-        Plug 'shun/ddu-source-rg'
+"source
+Jetpack'Shougo/ddu-source-file'
+Jetpack'Shougo/ddu-source-file_rec'
+Jetpack'Shougo/ddu-source-register'
+Jetpack'shun/ddu-source-buffer'
+Jetpack'shun/ddu-source-rg'
 
-        "matcher
-        Plug 'Shougo/ddu-filter-matcher_substring'
-        Plug 'yuki-yano/ddu-filter-fzf'
+"matcher
+Jetpack'Shougo/ddu-filter-matcher_substring'
+Jetpack'yuki-yano/ddu-filter-fzf'
 endif
 
 "Filer
-Plug 'lambdalisue/fern.vim'
-Plug 'lambdalisue/nerdfont.vim'
-Plug 'lambdalisue/fern-renderer-nerdfont.vim'
-Plug 'lambdalisue/fern-git-status.vim'
-Plug 'lambdalisue/fern-mapping-project-top.vim'
-Plug 'lambdalisue/fern-hijack.vim'
-Plug 'lambdalisue/glyph-palette.vim'
-Plug 'LumaKernel/fern-mapping-fzf.vim'
-Plug 'yuki-yano/fern-preview.vim'
+Jetpack'lambdalisue/fern.vim'
+Jetpack'lambdalisue/nerdfont.vim'
+Jetpack'lambdalisue/fern-renderer-nerdfont.vim'
+Jetpack'lambdalisue/fern-git-status.vim'
+Jetpack'lambdalisue/fern-mapping-project-top.vim'
+Jetpack'lambdalisue/fern-hijack.vim'
+Jetpack'lambdalisue/glyph-palette.vim'
+Jetpack'LumaKernel/fern-mapping-fzf.vim'
+Jetpack'yuki-yano/fern-preview.vim'
 
 "Joke
-"Plug 'monaqa/vim-duzzle'
+"Jetpack'monaqa/vim-duzzle'
 
 "Others
-Plug 'twitvim/twitvim'
-Plug 'xolox/vim-misc'
-Plug 'tyru/open-browser.vim'
-Plug 'ryanoasis/vim-devicons'
-Plug 'voldikss/vim-floaterm'
+Jetpack'twitvim/twitvim'
+Jetpack'xolox/vim-misc'
+Jetpack'tyru/open-browser.vim'
+Jetpack'ryanoasis/vim-devicons'
+Jetpack'voldikss/vim-floaterm'
 
 "help
-Plug 'vim-jp/vimdoc-ja'
+Jetpack'vim-jp/vimdoc-ja'
 
 "operator
-Plug 'kana/vim-operator-user'
-Plug 'kana/vim-operator-replace'
-Plug 'machakann/vim-sandwich'
+Jetpack'kana/vim-operator-user'
+Jetpack'kana/vim-operator-replace'
+Jetpack'machakann/vim-sandwich'
 
 "text object
-Plug 'glts/vim-textobj-comment'
-Plug 'kana/vim-textobj-entire'
-Plug 'kana/vim-textobj-function'
-Plug 'kana/vim-textobj-indent'
-Plug 'kana/vim-textobj-line'
-Plug 'kana/vim-textobj-user'
-Plug 'machakann/vim-textobj-functioncall'
-Plug 'mattn/vim-textobj-url'
-Plug 'rhysd/vim-textobj-anyblock'
-Plug 'sgur/vim-textobj-parameter'
-Plug 'thinca/vim-textobj-between'
+Jetpack'glts/vim-textobj-comment'
+Jetpack'kana/vim-textobj-entire'
+Jetpack'kana/vim-textobj-function'
+Jetpack'kana/vim-textobj-indent'
+Jetpack'kana/vim-textobj-line'
+Jetpack'kana/vim-textobj-user'
+Jetpack'machakann/vim-textobj-functioncall'
+Jetpack'mattn/vim-textobj-url'
+Jetpack'rhysd/vim-textobj-anyblock'
+Jetpack'sgur/vim-textobj-parameter'
+Jetpack'thinca/vim-textobj-between'
 
-call plug#end()
+call jetpack#end()
 
-let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
-function! FindPlugin(name) abort
-    return has_key(s:plugs, a:name) ? isdirectory(s:plugs[a:name].dir) : 0
-endfunction
-command! -nargs=1 UsePlugin if !FindPlugin(<args>) | finish | endif
+let data_dir = has('nvim') ? stdpath('config') : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/tani/vim-plug/master/autoload/plug.vim'
+  autocmd VimEnter * JetpackSync | source $MYVIMRC
+endi
+
+command! -nargs=1 UsePlugin if !jetpack#tap(<args>) | finish | endif

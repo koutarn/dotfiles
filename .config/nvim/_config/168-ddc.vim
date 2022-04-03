@@ -1,6 +1,5 @@
 UsePlugin 'ddc.vim'
-
-"保管を出すイベント
+"補完を出すイベント
 call ddc#custom#patch_global('autoCompleteEvents', [
 \ 'InsertEnter', 'TextChangedI', 'TextChangedP',
 \ 'CmdlineEnter', 'CmdlineChanged',

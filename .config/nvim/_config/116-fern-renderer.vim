@@ -1,4 +1,4 @@
-UsePlug 'fern-renderer-nerdfont.vim'
+UsePlugin 'fern-renderer-nerdfont.vim'
 " =======================================
 " lambdalisue/fern-renderer-nerdfont.vim
 " =======================================

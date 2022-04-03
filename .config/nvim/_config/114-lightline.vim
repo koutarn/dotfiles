@@ -1,4 +1,4 @@
-UsePlug 'lightline.vim'
+UsePlugin 'lightline.vim'
 "=============================
 "'itchyny/lightline.vim'
 "=============================

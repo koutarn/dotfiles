@@ -1,4 +1,4 @@
-UsePlugin 'aho-bakaup.vim'
+UsePlugin 'aho-backup.vim'
 "==================================
 "aiya000/aho-backup.vim
 "==================================

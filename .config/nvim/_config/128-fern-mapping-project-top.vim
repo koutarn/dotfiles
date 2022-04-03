@@ -2,8 +2,6 @@ UsePlugin 'fern-mapping-project-top.vim'
 " ===========================================
 " 'lambdalisue/fern-mapping-project-top.vim'
 " ===========================================
-
-
 function! s:init_fern_project_top()
   nmap <buffer> <Plug>(fern-project-top-and-tcd)
         \ <Plug>(fern-action-project-top)

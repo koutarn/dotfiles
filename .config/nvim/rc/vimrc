@@ -50,8 +50,8 @@ call map(g:dein#inline_vimrcs, { _, val -> s:base_dir . val })
 
 let s:dein_toml = s:base_dir . 'dein.toml'
 let s:dein_lazy_toml = s:base_dir . 'dein_lazy.toml'
-let s:dein_ddc_toml = s:base_dir . 'ddc.toml'
-let s:dein_ddu_toml = s:base_dir . 'ddu.toml'
+" let s:dein_ddc_toml = s:base_dir . 'ddc.toml'
+" let s:dein_ddu_toml = s:base_dir . 'ddu.toml'
 
 call dein#begin(s:path, [
       \ expand('<sfile>'), s:dein_toml, s:dein_lazy_toml
@@ -59,16 +59,23 @@ call dein#begin(s:path, [
 
 call dein#load_toml(s:dein_toml, {'lazy': 0})
 call dein#load_toml(s:dein_lazy_toml, {'lazy' : 1})
-call dein#load_toml(s:dein_ddc_toml, {'lazy' : 1})
-call dein#load_toml(s:dein_ddu_toml, {'lazy' : 1})
+" call dein#load_toml(s:dein_ddc_toml, {'lazy' : 1})
+" call dein#load_toml(s:dein_ddu_toml, {'lazy' : 1})
 
 call dein#end()
 call dein#save_state()
-endif
+" endif
 
 " もし、未インストールものものがあったらインストール
 if dein#check_install()
   call dein#install()
+endif
+
+" plugin remove check
+" let s:removed_plugins = dein#check_clean()
+" if len(s:removed_plugins) > 0
+"   call map(s:removed_plugins, "delete(v:val, 'rf')")
+"   call dein#recache_runtimepath()
 endif
 
 "---------------------------------------------------------------------------
