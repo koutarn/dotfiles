@@ -235,19 +235,6 @@ function! s:set_number_settings(set_option) abort
     else
         set nonumber | set norelativenumber
     endif
-
-
-    " if &number ==# 1 || &relativenumber ==# 1
-    "     set nonumber | set norelativenumber
-    "     return
-    " endif
-
-    " set number
-    " if a:set_option ==# 'number'
-    "     set norelativenumber
-    " elseif a:set_option ==# 'relative'
-    "     set relativenumber
-    " endif
 endfunction
 
 "terminal
