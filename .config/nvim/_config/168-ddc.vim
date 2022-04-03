@@ -9,8 +9,6 @@ call ddc#custom#patch_global('autoCompleteEvents', [
 "pum.vimを使用
 call ddc#custom#patch_global('completionMenu', 'pum.vim')
 
-"skkeletonは別枠で設定しておく
-call ddc#custom#patch_global('sources','skkeleton')
 
 "sourcesの設定
 call ddc#custom#patch_global('sources', [
@@ -19,6 +17,13 @@ call ddc#custom#patch_global('sources', [
  \ 'file'
  \ ])
 
+"特定のファイルのみ補完
+call ddc#custom#patch_filetype(['vim','toml'],'sources',['necovim'])
+
+"skkeletonは別枠で設定しておく
+call ddc#custom#patch_global('sources','skkeleton')
+
+
 call ddc#custom#patch_global('sourceOptions', {
  \ '_': {
  \   'matchers': ['matcher_fuzzy'],
@@ -26,21 +31,25 @@ call ddc#custom#patch_global('sourceOptions', {
  \   'converters': ['converter_remove_overlap'],
  \ },
  \ 'around': {'mark': 'Around'},
+ \ 'necovim':{'mark':'vim'},
  \ 'vim-lsp': {
  \   'mark': 'LSP',
  \   'forceCompletionPattern': '\.|:|->|"\w+/*'
  \ },
- \   'skkeleton': {
- \     'mark': 'skk',
- \     'matchers': ['skkeleton'],
- \     'sorters': [],
- \     'minAutoCompleteLength': 1,
- \   },
  \ 'file': {
  \   'mark': 'file',
  \   'isVolatile': v:true,
  \   'forceCompletionPattern': '\S/\S*'
  \ }})
+
+call ddc#custom#patch_global('sourceOptions', {
+\   'skkeleton': {
+\     'mark': 'skk',
+\     'matchers': ['skkeleton'],
+\     'sorters': [],
+\     'minAutoCompleteLength': 1,
+\   },
+\})
 
 call ddc#enable()
 
@@ -71,7 +80,7 @@ function! CommandlinePre() abort
     " Overwrite sources
     let s:prev_buffer_config = ddc#custom#get_buffer()
     call ddc#custom#patch_buffer('sources',
-        \ ['cmdline', 'cmdline-history', 'around'])
+        \ ['cmdline', 'cmdline-history','around','git-file'])
 
     call ddc#custom#patch_buffer('sourceOptions', {
     \ '_': {
@@ -82,6 +91,7 @@ function! CommandlinePre() abort
     \ 'cmdline': {'mark': 'cmdline'},
     \ 'cmdline-history': {'mark': 'cmd-histroy'},
     \ 'around': {'mark': 'Around'},
+    \ 'git-file': {'mark': 'git'},
     \ })
 
     autocmd User DDCCmdlineLeave ++once call CommandlinePost()
@@ -96,6 +106,3 @@ function! CommandlinePost() abort
     call ddc#custom#set_buffer(s:prev_buffer_config)
     cunmap <Tab>
 endfunction
-
-
-call ddc#enable()
