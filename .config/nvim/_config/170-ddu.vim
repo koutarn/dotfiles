@@ -1,3 +1,4 @@
+UsePlugin 'ddu.vim'
 call ddu#custom#patch_global({
 \   'ui': 'ff',
 \   'sources': [

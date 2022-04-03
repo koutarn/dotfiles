@@ -1,4 +1,4 @@
-" UsePlug 'Shougo/ddc.vim'
+UsePlugin 'ddc.vim'
 
 "保管を出すイベント
 call ddc#custom#patch_global('autoCompleteEvents', [
@@ -9,19 +9,16 @@ call ddc#custom#patch_global('autoCompleteEvents', [
 "pum.vimを使用
 call ddc#custom#patch_global('completionMenu', 'pum.vim')
 
-
 "sourcesの設定
 call ddc#custom#patch_global('sources', [
- \ 'around',
- \ 'vim-lsp',
- \ 'file'
- \ ])
+\ 'around',
+\ 'vim-lsp',
+\ 'yank',
+\ 'file'
+\ ])
 
 "特定のファイルのみ補完
 call ddc#custom#patch_filetype(['vim','toml'],'sources',['necovim'])
-
-"skkeletonは別枠で設定しておく
-call ddc#custom#patch_global('sources','skkeleton')
 
 
 call ddc#custom#patch_global('sourceOptions', {
@@ -32,6 +29,7 @@ call ddc#custom#patch_global('sourceOptions', {
  \ },
  \ 'around': {'mark': 'Around'},
  \ 'necovim':{'mark':'vim'},
+ \ 'yank':{'mark':'yank'},
  \ 'vim-lsp': {
  \   'mark': 'LSP',
  \   'forceCompletionPattern': '\.|:|->|"\w+/*'
@@ -42,19 +40,21 @@ call ddc#custom#patch_global('sourceOptions', {
  \   'forceCompletionPattern': '\S/\S*'
  \ }})
 
-call ddc#custom#patch_global('sourceOptions', {
-\   'skkeleton': {
-\     'mark': 'skk',
-\     'matchers': ['skkeleton'],
-\     'sorters': [],
-\     'minAutoCompleteLength': 1,
-\   },
-\})
+" "skkeletonは別枠で設定しておく
+" call ddc#custom#patch_global('sources','skkeleton')
+
+" call ddc#custom#patch_global('sourceOptions', {
+" \   'skkeleton': {
+" \     'mark': 'skk',
+" \     'matchers': ['skkeleton'],
+" \     'sorters': [],
+" \     'minAutoCompleteLength': 1,
+" \   },
+" \})
 
 call ddc#enable()
 
 inoremap <expr>;; pum#visible() ? '<Cmd>call pum#map#confirm()<CR>':''
-
 inoremap <C-n>   <Cmd>call pum#map#select_relative(+1)<CR>
 inoremap <C-p>   <Cmd>call pum#map#select_relative(-1)<CR>
 inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
@@ -80,7 +80,7 @@ function! CommandlinePre() abort
     " Overwrite sources
     let s:prev_buffer_config = ddc#custom#get_buffer()
     call ddc#custom#patch_buffer('sources',
-        \ ['cmdline', 'cmdline-history','around','git-file'])
+        \ ['cmdline', 'cmdline-history','around'])
 
     call ddc#custom#patch_buffer('sourceOptions', {
     \ '_': {
@@ -91,7 +91,6 @@ function! CommandlinePre() abort
     \ 'cmdline': {'mark': 'cmdline'},
     \ 'cmdline-history': {'mark': 'cmd-histroy'},
     \ 'around': {'mark': 'Around'},
-    \ 'git-file': {'mark': 'git'},
     \ })
 
     autocmd User DDCCmdlineLeave ++once call CommandlinePost()

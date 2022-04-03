@@ -1,2 +1,2 @@
-UsePlug 'delphinus/skkeleton_indicator.nvim'
+UsePlugin 'skkeleton_indicator.nvim'
 lua require('skkeleton_indicator').setup{}

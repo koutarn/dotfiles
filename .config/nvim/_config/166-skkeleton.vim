@@ -1,4 +1,4 @@
-" UsePlug 'vim-skk/skkeleton'
+UsePlugin 'skkeleton'
 "=======================
 "'vim-skk/skkeleton'
 "=======================

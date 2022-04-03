@@ -102,7 +102,7 @@ if executable('deno')
         Plug 'Shougo/ddc-cmdline-history'
         Plug 'Shougo/ddc-cmdline'
         Plug 'Shougo/neco-vim'
-        Plug 'tani/ddc-git'
+        Plug 'ippachi/ddc-yank'
 
         "matcher
         Plug 'Shougo/ddc-matcher_head'
