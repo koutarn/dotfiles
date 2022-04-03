@@ -4,7 +4,7 @@ call ddu#custom#patch_global({
 \     {
 \       'name': 'file_rec',
 \       'params': {
-\         'ignoredDirectories': ['.svn','.git', 'node_modules', 'vendor', '.next','build']
+\         'ignoredDirectories': ['.svn','.git', 'node_modules', 'vendor', '.next','build','.config']
 \       }
 \     },
 \     {
@@ -16,7 +16,7 @@ call ddu#custom#patch_global({
 \   ],
 \   'sourceOptions': {
 \     '_': {
-\       'matchers': ['matcher_fzf'],
+\       'matchers': ['matcher_substring'],
 \     },
 \   },
 \   'kindOptions': {
@@ -32,19 +32,19 @@ call ddu#custom#patch_global({
 \   },
 \ })
 
-call ddu#custom#patch_local('grep', {
-\   'sourceParams' : {
-\     'rg' : {
-\       'args': ['--column', '--no-heading', '--color', 'never','--json'],
-\       'options': {'matchers': []},
-\       'volatile':v:true,
-\     },
-\   'uiParams': {'ff': {
-\     'ignoreEmpty': v:false,
-\     'autoResize': v:false,
-\   }},
-\   },
-\ })
+" call ddu#custom#patch_local('grep', {
+" \   'sourceParams' : {
+" \     'rg' : {
+" \       'args': ['--column', '--no-heading', '--color', 'never','--json'],
+" \       'options': {'matchers': []},
+" \       'volatile':v:true,
+" \     },
+" \   'uiParams': {'ff': {
+" \     'ignoreEmpty': v:false,
+" \     'autoResize': v:false,
+" \   }},
+" \   },
+" \ })
 
 
 autocmd FileType ddu-ff call s:ddu_my_settings()
@@ -82,7 +82,6 @@ function! s:ddu_filter_my_settings() abort
 
   nnoremap <buffer><silent> <Space>
       \ <Esc><Cmd>close<CR>
-
 endfunction
 
 nmap <silent> <Leader>;; <Cmd>call ddu#start({'sources':[{'name': 'file_rec'}]})<CR>

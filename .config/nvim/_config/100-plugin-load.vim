@@ -94,28 +94,45 @@ if executable('deno')
     "ddc
     Plug 'Shougo/ddc.vim'
     Plug 'Shougo/pum.vim'
-    Plug 'tani/ddc-fuzzy'
-    Plug 'Shougo/ddc-matcher_head'
-    Plug 'Shougo/ddc-sorter_rank'
-    Plug 'Shougo/ddc-around'
-    Plug 'LumaKernel/ddc-file'
-    Plug 'Shougo/ddc-converter_remove_overlap'
-    Plug 'shun/ddc-vim-lsp'
-    Plug 'Shougo/ddc-cmdline-history'
-    Plug 'Shougo/ddc-cmdline'
+
+        "source
+        Plug 'Shougo/ddc-around'
+        Plug 'LumaKernel/ddc-file'
+        Plug 'shun/ddc-vim-lsp'
+        Plug 'Shougo/ddc-cmdline-history'
+        Plug 'Shougo/ddc-cmdline'
+
+        "matcher
+        Plug 'Shougo/ddc-matcher_head'
+        Plug 'matsui54/ddc-matcher_fuzzy'
+        Plug 'tani/ddc-fuzzy'
+
+        "sorter
+        Plug 'Shougo/ddc-sorter_rank'
+
+        "converter
+        Plug 'Shougo/ddc-converter_remove_overlap'
 
     "ddu
     Plug 'Shougo/ddu.vim'
     Plug 'Shougo/ddu-ui-ff'
-    Plug 'Shougo/ddu-source-file'
-    Plug 'Shougo/ddu-source-file_rec'
-    Plug 'Shougo/ddu-source-register'
-    Plug 'shun/ddu-source-buffer'
-    Plug 'Shougo/ddu-filter-matcher_substring'
     Plug 'Shougo/ddu-commands.vim'
-    Plug 'shun/ddu-source-rg'
-    Plug 'Shougo/ddu-kind-file'
-    Plug 'yuki-yano/ddu-filter-fzf'
+
+        "ui
+
+        "kind
+        Plug 'Shougo/ddu-kind-file'
+
+        "source
+        Plug 'Shougo/ddu-source-file'
+        Plug 'Shougo/ddu-source-file_rec'
+        Plug 'Shougo/ddu-source-register'
+        Plug 'shun/ddu-source-buffer'
+        Plug 'shun/ddu-source-rg'
+
+        "matcher
+        Plug 'Shougo/ddu-filter-matcher_substring'
+        Plug 'yuki-yano/ddu-filter-fzf'
 endif
 
 "Filer

@@ -1,17 +1,24 @@
 " UsePlug 'Shougo/ddc.vim'
 
+"保管を出すイベント
 call ddc#custom#patch_global('autoCompleteEvents', [
 \ 'InsertEnter', 'TextChangedI', 'TextChangedP',
 \ 'CmdlineEnter', 'CmdlineChanged',
 \ ])
 
+"pum.vimを使用
 call ddc#custom#patch_global('completionMenu', 'pum.vim')
+
+"skkeletonは別枠で設定しておく
+call ddc#custom#patch_global('sources','skkeleton')
+
+"sourcesの設定
 call ddc#custom#patch_global('sources', [
- \ 'skkeleton',
  \ 'around',
  \ 'vim-lsp',
  \ 'file'
  \ ])
+
 call ddc#custom#patch_global('sourceOptions', {
  \ '_': {
  \   'matchers': ['matcher_fuzzy'],
@@ -24,7 +31,7 @@ call ddc#custom#patch_global('sourceOptions', {
  \   'forceCompletionPattern': '\.|:|->|"\w+/*'
  \ },
  \   'skkeleton': {
- \     'mark': 'skkeleton',
+ \     'mark': 'skk',
  \     'matchers': ['skkeleton'],
  \     'sorters': [],
  \     'minAutoCompleteLength': 1,
@@ -38,6 +45,7 @@ call ddc#custom#patch_global('sourceOptions', {
 call ddc#enable()
 
 inoremap <expr>;; pum#visible() ? '<Cmd>call pum#map#confirm()<CR>':''
+
 inoremap <C-n>   <Cmd>call pum#map#select_relative(+1)<CR>
 inoremap <C-p>   <Cmd>call pum#map#select_relative(-1)<CR>
 inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
@@ -45,13 +53,16 @@ inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
 
 "command line completion
 nnoremap ; <Cmd>call CommandlinePre()<CR>:
+
 function! CommandlinePre() abort
     " Note: It disables default command line completion!
     cnoremap <expr>;; pum#visible() ? '<Cmd>call pum#map#confirm()<CR>':''
     cnoremap <expr> <Tab>
     \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>':
     \ ddc#manual_complete()
-    inoremap <expr><S-Tab> pum#visible() ? '<Cmd>call pum#map#insert_relative(-1)<CR>' :
+    cnoremap <expr> <S-Tab>
+    \ pum#visible() ? '<Cmd>call pum#map#insert_relative(-1)<CR>':
+    \ ddc#manual_complete()
     cnoremap <C-n>   <Cmd>call pum#map#select_relative(+1)<CR>
     cnoremap <C-p>   <Cmd>call pum#map#select_relative(-1)<CR>
     cnoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
@@ -61,7 +72,6 @@ function! CommandlinePre() abort
     let s:prev_buffer_config = ddc#custom#get_buffer()
     call ddc#custom#patch_buffer('sources',
         \ ['cmdline', 'cmdline-history', 'around'])
-
 
     call ddc#custom#patch_buffer('sourceOptions', {
     \ '_': {
