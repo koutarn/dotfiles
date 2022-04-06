@@ -38,6 +38,7 @@ endif
 
 if has('win32') || has('win64')
     Jetpack 'hachibeeDI/vim-vbnet',{'for':'vb'}
+    Jetpack 'pprovost/vim-ps1'
 endif
 
 "color scheme
@@ -129,10 +130,15 @@ if executable('deno')
     Jetpack 'Shougo/ddu-source-register'
     Jetpack 'shun/ddu-source-buffer'
     Jetpack 'shun/ddu-source-rg'
+    Jetpack 'Shougo/ddu-source-line'
+    Jetpack 'matsui54/ddu-source-file_external'
+    Jetpack 'matsui54/ddu-source-command_history'
 
     "matcher
     Jetpack 'Shougo/ddu-filter-matcher_substring'
     Jetpack 'yuki-yano/ddu-filter-fzf'
+    Jetpack 'Shougo/ddu-filter-matcher_relative'
+    Jetpack 'Shougo/ddu-filter-matcher_hidden'
 endif
 
 "Filer

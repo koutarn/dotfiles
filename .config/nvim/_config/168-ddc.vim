@@ -1,4 +1,5 @@
 UsePlugin 'ddc.vim'
+
 "補完を出すイベント
 call ddc#custom#patch_global('autoCompleteEvents', [
 \ 'InsertEnter', 'TextChangedI', 'TextChangedP',
@@ -13,43 +14,38 @@ call ddc#custom#patch_global('sources', [
 \ 'around',
 \ 'vim-lsp',
 \ 'yank',
-\ 'file'
+\ 'file',
+\ 'skkeleton'
 \ ])
 
 "特定のファイルのみ補完
 call ddc#custom#patch_filetype(['vim','toml'],'sources',['necovim'])
 
-
 call ddc#custom#patch_global('sourceOptions', {
  \ '_': {
- \   'matchers': ['matcher_fuzzy'],
+ \   'ignoreCase':v:true,
+ \   'matchers': ['matcher_head'],
  \   'sorters': ['sorter_rank'],
  \   'converters': ['converter_remove_overlap'],
  \ },
- \ 'around': {'mark': 'Around'},
+ \ 'around': {'mark': 'around'},
  \ 'necovim':{'mark':'vim'},
  \ 'yank':{'mark':'yank'},
  \ 'vim-lsp': {
  \   'mark': 'LSP',
  \   'forceCompletionPattern': '\.|:|->|"\w+/*'
  \ },
+ \ 'skkeleton': {
+ \   'mark': 'skk',
+ \   'matchers': ['skkeleton'],
+ \   'sorters': [],
+ \   'minAutoCompleteLength': 1,
+ \ },
  \ 'file': {
  \   'mark': 'file',
  \   'isVolatile': v:true,
  \   'forceCompletionPattern': '\S/\S*'
  \ }})
-
-" "skkeletonは別枠で設定しておく
-" call ddc#custom#patch_global('sources','skkeleton')
-
-" call ddc#custom#patch_global('sourceOptions', {
-" \   'skkeleton': {
-" \     'mark': 'skk',
-" \     'matchers': ['skkeleton'],
-" \     'sorters': [],
-" \     'minAutoCompleteLength': 1,
-" \   },
-" \})
 
 call ddc#enable()
 
