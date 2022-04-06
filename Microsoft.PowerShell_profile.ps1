@@ -1,11 +1,11 @@
-#補完
-Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
-
 #ロケーション
 Set-Location C:
 
 #alias
 $desktop = [System.Environment]::GetFolderPath("Desktop")
+$user = [System.Environment]::GetFolderPath("UserProfile")
+$dotfiles = $user + "\dotfiles"
+Set-Alias o Invoke-Item
 
 function edit{nvim $profile}
 function .. {cd ../}
@@ -24,6 +24,9 @@ $PSReadlineOptions = @{
 }
 
 Set-PSReadlineOption @PSReadlineOptions
+
+#補完
+Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 
 function prompt {
 $isRoot = (([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator"))
