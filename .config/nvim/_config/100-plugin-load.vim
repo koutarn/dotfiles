@@ -8,8 +8,6 @@ let g:jetpack#optimization=2
 call jetpack#begin()
 
 if has('nvim')
-    " Jetpack'nvim-lua/plenary.nvim'
-    " Jetpack'nvim-lua/popup.nvim'
     Jetpack 'b3nj5m1n/kommentary'
     Jetpack 'folke/todo-comments.nvim'
     Jetpack 'folke/which-key.nvim'
@@ -24,16 +22,14 @@ if has('nvim')
     Jetpack 'romgrk/barbar.nvim'
     Jetpack 'tversteeg/registers.nvim'
 
-    if executable('rg') && executable('sed')
-    " Jetpack 'windwp/nvim-spectre'
-    endif
-
     "treesitter依存
-    Jetpack 'nvim-treesitter/nvim-treesitter'
-    Jetpack 'code-biscuits/nvim-biscuits'
-    Jetpack 'p00f/nvim-ts-rainbow'
-    Jetpack 'winston0410/smart-cursor.nvim'
-    Jetpack 'JoosepAlviste/nvim-ts-context-commentstring'
+    if executable('node')
+        Jetpack 'nvim-treesitter/nvim-treesitter'
+        Jetpack 'code-biscuits/nvim-biscuits'
+        Jetpack 'p00f/nvim-ts-rainbow'
+        Jetpack 'winston0410/smart-cursor.nvim'
+        Jetpack 'JoosepAlviste/nvim-ts-context-commentstring'
+    endif
 endif
 
 if has('win32') || has('win64')
@@ -44,21 +40,23 @@ endif
 "color scheme
 Jetpack 'sainnhe/edge'
 
-"Coding
-Jetpack 'prabirshrestha/vim-lsp'
-Jetpack 'mattn/vim-lsp-settings'
-Jetpack 'mattn/vim-lsp-icons'
+"Lsp
+Jetpack 'prabirshrestha/vim-lsp'            " LSP
+Jetpack 'mattn/vim-lsp-settings'            " LSP設定
+Jetpack 'matsui54/denops-popup-preview.vim' " 補完候補のプレビュー
+Jetpack 'matsui54/denops-signature_help'    " signature help
+Jetpack 'hrsh7th/vim-vsnip'                 " snippet
+Jetpack 'hrsh7th/vim-vsnip-integ'           " vim-vsnipを他プラグインと連携するようにする
+Jetpack 'rafamadriz/friendly-snippets'      " 色んな言語のsnippet集
 
 Jetpack 'MattesGroeger/vim-bookmarks'
 Jetpack 'Shougo/context_filetype.vim'
-" Jetpack 'aiya000/aho-bakaup.vim'
 Jetpack 'bronson/vim-trailing-whitespace'
 Jetpack 'cohama/lexima.vim'
 Jetpack 'dhruvasagar/vim-table-mode'
 Jetpack 'godlygeek/tabular'
 Jetpack 'itchyny/lightline.vim'
 Jetpack 'itchyny/vim-highlighturl'
-" Jetpack 'junegunn/fzf'
 Jetpack 'lambdalisue/gina.vim'
 Jetpack 'lambdalisue/suda.vim'
 Jetpack 'lambdalisue/vim-findent'
@@ -78,7 +76,6 @@ Jetpack 'thinca/vim-localrc'
 Jetpack 'thinca/vim-qfreplace'
 Jetpack 'thinca/vim-quickrun'
 Jetpack 'tyru/capture.vim'
-" Jetpack 'tyru/eskk.vim'
 Jetpack 'kuuote/gina-preview.vim'
 
 "syntax
@@ -149,7 +146,6 @@ Jetpack 'lambdalisue/fern-git-status.vim'
 Jetpack 'lambdalisue/fern-mapping-project-top.vim'
 Jetpack 'lambdalisue/fern-hijack.vim'
 Jetpack 'lambdalisue/glyph-palette.vim'
-" Jetpack 'LumaKernel/fern-mapping-fzf.vim'
 Jetpack 'yuki-yano/fern-preview.vim'
 
 "Others
@@ -179,6 +175,12 @@ Jetpack 'mattn/vim-textobj-url'
 Jetpack 'rhysd/vim-textobj-anyblock'
 Jetpack 'sgur/vim-textobj-parameter'
 Jetpack 'thinca/vim-textobj-between'
+
+" 未使用
+" Jetpack 'LumaKernel/fern-mapping-fzf.vim'
+" Jetpack 'tyru/eskk.vim'   "eskk
+" Jetpack 'junegunn/fzf'
+" Jetpack 'aiya000/aho-bakaup.vim'
 
 call jetpack#end()
 

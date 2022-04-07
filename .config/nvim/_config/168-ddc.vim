@@ -11,11 +11,11 @@ call ddc#custom#patch_global('completionMenu', 'pum.vim')
 
 "sourcesの設定
 call ddc#custom#patch_global('sources', [
-\ 'around',
 \ 'vim-lsp',
-\ 'yank',
+\ 'around',
 \ 'file',
-\ 'skkeleton'
+\ 'skkeleton',
+\ 'yank',
 \ ])
 
 "特定のファイルのみ補完
@@ -33,7 +33,7 @@ call ddc#custom#patch_global('sourceOptions', {
  \ 'yank':{'mark':'yank'},
  \ 'vim-lsp': {
  \   'mark': 'LSP',
- \   'forceCompletionPattern': '\.|:|->|"\w+/*'
+ \   'forceCompletionPattern': '\.|:|->|"\w+/*',
  \ },
  \ 'skkeleton': {
  \   'mark': 'skk',
@@ -49,7 +49,23 @@ call ddc#custom#patch_global('sourceOptions', {
 
 call ddc#enable()
 
-inoremap <expr>;; pum#visible() ? '<Cmd>call pum#map#confirm()<CR>':''
+" function s:lsp() abort
+"     if pum#visible() ==# v:true
+"         if vsnip#expandable() ==# v:true
+"             return '<Plug>(vsnip-expand)'
+"         else
+"             return '<Cmd>call pum#map#confirm()<CR>'
+"         endif
+"     else
+"         return ';;'
+"     endif
+" endfunction
+
+" inoremap <expr>;; <Cmd>call s:lsp_enter()<CR>
+
+inoremap <expr><Tab> pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>':'<Tab>'
+inoremap <expr><S-Tab> pum#visible() ? '<Cmd>call pum#map#insert_relative(-1)<CR>':'<S-Tab>'
+inoremap <expr>;; pum#visible() ? '<Cmd>call pum#map#confirm()<CR>':';;'
 inoremap <C-n>   <Cmd>call pum#map#select_relative(+1)<CR>
 inoremap <C-p>   <Cmd>call pum#map#select_relative(-1)<CR>
 inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>

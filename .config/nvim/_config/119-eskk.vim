@@ -51,3 +51,4 @@ augroup vimrc_eskk
   autocmd User eskk-enable-post lmap <buffer> l <Plug>(eskk:disable)
   autocmd Filetype markdown nnoremap <buffer><silent> <F1> <Cmd>call <SID>markdown_eskk_toggle()<CR>
 augroup END
+

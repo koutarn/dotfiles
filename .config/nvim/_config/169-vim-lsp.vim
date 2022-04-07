@@ -22,3 +22,6 @@ au!
 " call s:on_lsp_buffer_enabled only for languages that has the server registered.
 autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
+
+"vim-lspのsignature_helpを無効化する
+let g:lsp_signature_help_enabled = 0
