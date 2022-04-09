@@ -69,7 +69,6 @@ Jetpack 'obcat/vim-ipos'
 Jetpack 'plasticboy/vim-markdown', {'for':'markdown'}
 Jetpack 'reireias/vim-cheatsheet'
 Jetpack 'simeji/winresizer'
-Jetpack 'skanehira/preview-markdown.vim', {'for':'markdown'}
 Jetpack 'skanehira/translate.vim'
 Jetpack 't9md/vim-quickhl'
 Jetpack 'thinca/vim-localrc'
@@ -77,6 +76,10 @@ Jetpack 'thinca/vim-qfreplace'
 Jetpack 'thinca/vim-quickrun'
 Jetpack 'tyru/capture.vim'
 Jetpack 'kuuote/gina-preview.vim'
+
+if executable('yarn')
+    Jetpack 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install','for':'markdown'}
+endif
 
 "syntax
 Jetpack 'rhysd/vim-gfm-syntax', {'for':'markdown'} "markdownをもっとハイライトする
