@@ -5,6 +5,7 @@ UsePlugin 'todo-comments.nvim'
 lua << EOF
 require('todo-comments').setup {
   signs = true, -- show icons in the signs column
+
   -- keywords recognized as todo comments
   keywords = {
     FIX = {icon = ' ',color = 'error',alt = { 'FIXME', 'BUG', 'FIXIT', 'FIX', 'ISSUE' }},

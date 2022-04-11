@@ -8,87 +8,92 @@ let g:jetpack#optimization=2
 call jetpack#begin()
 
 if has('nvim')
-    Jetpack 'b3nj5m1n/kommentary'
-    Jetpack 'folke/todo-comments.nvim'
-    Jetpack 'folke/which-key.nvim'
-    Jetpack 'glepnir/indent-guides.nvim'
-    Jetpack 'kevinhwang91/nvim-bqf'
-    Jetpack 'kevinhwang91/nvim-hlslens'
-    Jetpack 'kyazdani42/nvim-web-devicons'
-    Jetpack 'mfussenegger/nvim-dap'
-    Jetpack 'Pocco81/DAPInstall.nvim'
-    Jetpack 'monaqa/dial.nvim'
-    Jetpack 'rcarriga/nvim-dap-ui'
-    Jetpack 'romgrk/barbar.nvim'
-    Jetpack 'tversteeg/registers.nvim'
+    Jetpack 'b3nj5m1n/kommentary'          " コメントを追加
+    Jetpack 'folke/todo-comments.nvim'     " TODOコメントの色を変更
+    Jetpack 'folke/which-key.nvim'         " キーの案内を表示
+    Jetpack 'glepnir/indent-guides.nvim'   " インデントに色を付ける
+    Jetpack 'kevinhwang91/nvim-bqf'        " QuickFixウィンドウをカッコよくしれくれる
+    Jetpack 'kevinhwang91/nvim-hlslens'    " 検索で何文字進めばいいのかを表示してくれる
+    Jetpack 'kyazdani42/nvim-web-devicons' " 色々なプラグインでiconを表示してくれる
+    Jetpack 'romgrk/barbar.nvim'           " バッファの可視化
+    Jetpack 'tversteeg/registers.nvim'     " registerの表示
+
+    " Jetpack 'mfussenegger/nvim-dap'         "デバッガ
+    " Jetpack 'Pocco81/DAPInstall.nvim'       "デバッガのインストール
+    " Jetpack 'rcarriga/nvim-dap-ui'         " デバッガのUI拡張
+    " Jetpack 'monaqa/dial.nvim'           " dps-dial.vimに移行
 
     "treesitter依存
     if executable('node')
-        Jetpack 'nvim-treesitter/nvim-treesitter'
-        Jetpack 'code-biscuits/nvim-biscuits'
-        Jetpack 'p00f/nvim-ts-rainbow'
-        Jetpack 'winston0410/smart-cursor.nvim'
-        Jetpack 'JoosepAlviste/nvim-ts-context-commentstring'
+        Jetpack 'nvim-treesitter/nvim-treesitter'             " treesitter
+        " Jetpack 'code-biscuits/nvim-biscuits'               " ブロックの末尾に何のブロックかを表示する
+        Jetpack 'p00f/nvim-ts-rainbow'                        " カッコの色を付ける
+        Jetpack 'winston0410/smart-cursor.nvim'               " 行追加の際にインデントとかを上手いことしてくれる
+        Jetpack 'JoosepAlviste/nvim-ts-context-commentstring' " カーソル位置に基づいてコメント文字を設定してくれる
     endif
+
+    if executable('yarn')
+        "markdownのプレビューとかをよしなにやってくれる
+        Jetpack 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install','for':'markdown'}
+    endif
+
 endif
 
 if has('win32') || has('win64')
-    Jetpack 'hachibeeDI/vim-vbnet',{'for':'vb'}
-    Jetpack 'pprovost/vim-ps1'
+    Jetpack 'hachibeeDI/vim-vbnet', {'for':'vb'} " VB.NET用のシンタックスとインデントを追加する
+    Jetpack 'pprovost/vim-ps1'                  " PowerShellのFileTypeの追加等を行ってくれる
 endif
 
 "color scheme
-Jetpack 'sainnhe/edge'
+Jetpack 'sainnhe/edge'                                  " 色々設定出来るクールなcolor scheme
 
-"Lsp
-Jetpack 'prabirshrestha/vim-lsp'            " LSP
-Jetpack 'mattn/vim-lsp-settings'            " LSP設定
-Jetpack 'matsui54/denops-popup-preview.vim' " 補完候補のプレビュー
-Jetpack 'matsui54/denops-signature_help'    " signature help
-Jetpack 'hrsh7th/vim-vsnip'                 " snippet
-Jetpack 'hrsh7th/vim-vsnip-integ'           " vim-vsnipを他プラグインと連携するようにする
-Jetpack 'rafamadriz/friendly-snippets'      " 色んな言語のsnippet集
+" Lsp
+Jetpack 'prabirshrestha/vim-lsp'                        " LSP
+Jetpack 'mattn/vim-lsp-settings'                        " LSPの設定をよしなにやってくれる
+Jetpack 'hrsh7th/vim-vsnip'                             " snippet
+Jetpack 'hrsh7th/vim-vsnip-integ'                       " vim-vsnipを他プラグインと連携するようにする
+Jetpack 'rafamadriz/friendly-snippets'                  " 色んな言語のsnippet集
 
-Jetpack 'MattesGroeger/vim-bookmarks'
-Jetpack 'Shougo/context_filetype.vim'
-Jetpack 'bronson/vim-trailing-whitespace'
-Jetpack 'cohama/lexima.vim'
-Jetpack 'dhruvasagar/vim-table-mode'
-Jetpack 'godlygeek/tabular'
-Jetpack 'itchyny/lightline.vim'
-Jetpack 'itchyny/vim-highlighturl'
-Jetpack 'lambdalisue/gina.vim'
-Jetpack 'lambdalisue/suda.vim'
-Jetpack 'lambdalisue/vim-findent'
-Jetpack 'liuchengxu/vista.vim'
-Jetpack 'markonm/traces.vim'
-Jetpack 'mattn/vim-findroot'
-Jetpack 'mattn/vim-maketable'
-Jetpack 'mg979/vim-visual-multi'
-Jetpack 'obcat/vim-ipos'
-Jetpack 'plasticboy/vim-markdown', {'for':'markdown'}
-Jetpack 'reireias/vim-cheatsheet'
-Jetpack 'simeji/winresizer'
-Jetpack 'skanehira/translate.vim'
-Jetpack 't9md/vim-quickhl'
-Jetpack 'thinca/vim-localrc'
-Jetpack 'thinca/vim-qfreplace'
-Jetpack 'thinca/vim-quickrun'
-Jetpack 'tyru/capture.vim'
+Jetpack 'MattesGroeger/vim-bookmarks'                   " 行にブックマークを設定してくれる
+Jetpack 'Shougo/context_filetype.vim'                   " 埋め込みのコードでカーソルからfiletypeを認識してくれる
+Jetpack 'bronson/vim-trailing-whitespace'               " 空白の削除
+Jetpack 'cohama/lexima.vim'                             " 閉じカッコの補完をしてくれる
+Jetpack 'godlygeek/tabular'                             " 文字揃えをうまいことしてくれる
+Jetpack 'itchyny/lightline.vim'                         " ステータスバーの所にカッコいいラインを表示する
+Jetpack 'itchyny/vim-highlighturl'                      " URLのハイライトを行う
+Jetpack 'lambdalisue/gina.vim'                          " git操作を出来るようにする
+Jetpack 'lambdalisue/suda.vim'                          " 読み書きをsuduでしてくれる
+Jetpack 'lambdalisue/vim-findent'                       " fileから適切なインデントを読み取ってくれる
+Jetpack 'liuchengxu/vista.vim'                          " コードの変数やオブジェクト等を表示してくれる
+Jetpack 'markonm/traces.vim'                            " 置換結果を変換前に表示する
+Jetpack 'mattn/vim-findroot'                            " プロジェクトのルートを設定してくれる
+Jetpack 'dhruvasagar/vim-table-mode',{'for':'markdown'} " markdownで上手い事テーブルを作れるモードを追加してくれる
+Jetpack 'mattn/vim-maketable',{'for':'markdown'}        " セパレータからテーブルを作成してくれる
+Jetpack 'mg979/vim-visual-multi'                        " マルチカーソル
+Jetpack 'obcat/vim-ipos'                                " 直前の入力まで戻ってくれる
+Jetpack 'plasticboy/vim-markdown', {'for':'markdown'}   " markdownのsyntax highlightを提供する
+Jetpack 'reireias/vim-cheatsheet'                       " 自分で設定したチートシートを表示する
+Jetpack 'simeji/winresizer'                             " windowのリサイズをおこなう
+Jetpack 'skanehira/translate.vim'                       " 選択文字の翻訳をしてくれる
+Jetpack 't9md/vim-quickhl'                              " 選択文字のハイライトをしてくれる
+Jetpack 'thinca/vim-localrc'                            " ローカル設定のvimrcを読み込む
+Jetpack 'thinca/vim-qfreplace'                          " quick fixで置換を行う
+Jetpack 'thinca/vim-quickrun'                           " バッファのコードをシュッと実行してくれる
+Jetpack 'tyru/capture.vim'                              " Exコマンドをバッファに書きだしてくれる
 Jetpack 'kuuote/gina-preview.vim'
 
-if executable('yarn')
-    Jetpack 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install','for':'markdown'}
-endif
 
 "syntax
 Jetpack 'rhysd/vim-gfm-syntax', {'for':'markdown'} "markdownをもっとハイライトする
 
 "deno
 if executable('deno')
-    Jetpack 'vim-denops/denops.vim'
-    Jetpack 'vim-skk/skkeleton'
-    Jetpack 'delphinus/skkeleton_indicator.nvim'
+    Jetpack 'vim-denops/denops.vim'             " denoのランタイム
+    Jetpack 'vim-skk/skkeleton'                 " deno版skk
+    Jetpack 'delphinus/skkeleton_indicator.nvim'" skkeletonの状態を表示してくれる
+    Jetpack 'matsui54/denops-popup-preview.vim' " 補完候補のプレビュー
+    Jetpack 'matsui54/denops-signature_help'    " signature help
+    Jetpack 'monaqa/dps-dial.vim'               " インクリメント、デクリメント拡張
 
     "ddc
     Jetpack 'Shougo/ddc.vim'

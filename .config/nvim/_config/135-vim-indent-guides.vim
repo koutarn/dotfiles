@@ -5,8 +5,8 @@ UsePlugin 'indent-guides.nvim'
 lua<<EOF
 require('indent_guides').setup({
   indent_levels = 30;
-  indent_guide_size = 1;
-  indent_start_level = 4;
+  indent_guide_size = 4;
+  indent_start_level = 1;
   indent_enable = true;
   indent_space_guides = true;
   indent_tab_guides = true;

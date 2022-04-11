@@ -1,10 +1,9 @@
-UsePlugin 'dial.nvim'
-"==================================
-"monaqa/dial.nvim
-"==================================
-nmap <C-a> <Plug>(dial-increment)
-nmap <C-x> <Plug>(dial-decrement)
-vmap <C-a> <Plug>(dial-increment)
-vmap <C-x> <Plug>(dial-decrement)
-vmap g<C-a> <Plug>(dial-increment-additional)
-vmap g<C-x> <Plug>(dial-decrement-additional)
+UsePlugin 'dps-dial.vim'
+
+nmap  <C-a>  <Plug>(dps-dial-increment)
+nmap  <C-x>  <Plug>(dps-dial-decrement)
+xmap  <C-a>  <Plug>(dps-dial-increment)
+xmap  <C-x>  <Plug>(dps-dial-decrement)
+xmap g<C-a> g<Plug>(dps-dial-increment)
+xmap g<C-x> g<Plug>(dps-dial-decrement)
+
