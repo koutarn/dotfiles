@@ -9,5 +9,5 @@ require'nvim-treesitter.configs'.setup {
       enable = true,  -- syntax highlightを有効にする
   }
 }
-
+require 'nvim-treesitter.install'.compilers = { "gcc","clang"}
 EOF

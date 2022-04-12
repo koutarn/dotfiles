@@ -7,14 +7,22 @@ let g:jetpack#optimization=2
 
 call jetpack#begin()
 
+    Jetpack 'tpope/vim-repeat'
+
 if has('nvim')
+    "Library
+    Jetpack 'nvim-lua/popup.nvim'
+    Jetpack 'nvim-lua/plenary.nvim'
+    Jetpack 'MunifTanjim/nui.nvim'
+    Jetpack 'rcarriga/nvim-notify'
+    Jetpack 'kyazdani42/nvim-web-devicons' " 色々なプラグインでiconを表示してくれる
+
     Jetpack 'b3nj5m1n/kommentary'          " コメントを追加
     Jetpack 'folke/todo-comments.nvim'     " TODOコメントの色を変更
     Jetpack 'folke/which-key.nvim'         " キーの案内を表示
     Jetpack 'glepnir/indent-guides.nvim'   " インデントに色を付ける
     Jetpack 'kevinhwang91/nvim-bqf'        " QuickFixウィンドウをカッコよくしれくれる
     Jetpack 'kevinhwang91/nvim-hlslens'    " 検索で何文字進めばいいのかを表示してくれる
-    Jetpack 'kyazdani42/nvim-web-devicons' " 色々なプラグインでiconを表示してくれる
     Jetpack 'romgrk/barbar.nvim'           " バッファの可視化
     Jetpack 'tversteeg/registers.nvim'     " registerの表示
 
@@ -88,12 +96,12 @@ Jetpack 'rhysd/vim-gfm-syntax', {'for':'markdown'} "markdownをもっとハイ�
 
 "deno
 if executable('deno')
-    Jetpack 'vim-denops/denops.vim'             " denoのランタイム
-    Jetpack 'vim-skk/skkeleton'                 " deno版skk
-    Jetpack 'delphinus/skkeleton_indicator.nvim'" skkeletonの状態を表示してくれる
-    Jetpack 'matsui54/denops-popup-preview.vim' " 補完候補のプレビュー
-    Jetpack 'matsui54/denops-signature_help'    " signature help
-    Jetpack 'monaqa/dps-dial.vim'               " インクリメント、デクリメント拡張
+    Jetpack 'vim-denops/denops.vim'                     " denoのランタイム
+    Jetpack 'vim-skk/skkeleton'                         " deno版skk
+    Jetpack 'delphinus/skkeleton_indicator.nvim'        " skkeletonの状態を表示してくれる
+    Jetpack 'matsui54/denops-popup-preview.vim'         " 補完候補のプレビュー
+    Jetpack 'matsui54/denops-signature_help'            " signature help
+    Jetpack 'monaqa/dps-dial.vim'                       " インクリメント、デクリメント拡張
 
     "ddc
     Jetpack 'Shougo/ddc.vim'
