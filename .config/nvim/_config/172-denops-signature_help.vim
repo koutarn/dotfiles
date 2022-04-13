@@ -4,7 +4,7 @@ let g:signature_help_config = {
 \ 'border': v:true,
 \ 'maxWidth': 80,
 \ 'maxHeight': 30,
-\ 'style': "full",
+\ 'style': "currentLabelOnly",
 \ 'onTriggerChar': v:false,
 \ 'multiLabel': v:false,
 \ }
