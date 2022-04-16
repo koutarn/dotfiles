@@ -1,10 +1,4 @@
-UsePlugin 'nvim-biscuits'
-"===========================
-"code-biscuits/nvim-biscuits
-"============================
-
-lua <<EOF
-require('nvim-biscuits').setup({
+--[[ require('nvim-biscuits').setup({
   default_config = {
     max_length = 12,
     min_distance = 5,
@@ -16,10 +10,9 @@ require('nvim-biscuits').setup({
     }
   }
 })
-EOF
 
-"文字色を変更
+-- 文字色を変更
 augroup vimrc_biscuits
   autocmd!
   autocmd VimEnter,ColorScheme * highlight BiscuitColor ctermfg=grey guifg=grey
-augroup END
+augroup END ]]

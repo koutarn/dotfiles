@@ -17,7 +17,8 @@ augroup vimrc
 augroup END
 
 "読み込みファイル設定
-runtime! _config/*.vim
+runtime! rc/*.vim
+runtime! lua/*.lua
 
 "deinに移行中
 " execute 'source' fnamemodify(expand('<sfile>'), ':h').'/rc/vimrc'

@@ -1,10 +1,4 @@
-UsePlugin 'nvim-dap'
-"==================================
-"mfussenegger/nvim-dap
-"==================================
-
-lua<<EOF
-local dap = require('dap')
+--[[ local dap = require('dap')
 dap.adapters.lldb = {
   type = 'executable',
   command = '/usr/bin/lldb-vscode', -- adjust as needed
@@ -43,5 +37,4 @@ vim.api.nvim_set_keymap('n', '<Leader>dR', "<Cmd>lua require'dap'.repl.open()<CR
 vim.api.nvim_set_keymap('n', '<Leader>dB', "<Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",{noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<Leader>dl', "<Cmd>lua require'dap'.load_launchjs()<CR>",{noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<Leader>dg', "<Cmd>lua require'dap'.run()<CR>",{noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>dG', "<Cmd>lua require'dap'.run_last()<CR>",{noremap = true, silent = true})
-EOF
+vim.api.nvim_set_keymap('n', '<Leader>dG', "<Cmd>lua require'dap'.run_last()<CR>",{noremap = true, silent = true}) ]]

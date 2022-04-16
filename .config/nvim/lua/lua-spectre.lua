@@ -1,9 +1,4 @@
-UsePlugin 'nvim-spectre'
-
-"==================================
-"windwp/nvim-spectre
-"==================================
-"search in current file
+--[[ -- search in current file
 nnoremap <silent><Leader>fp viw:lua require('spectre').open_file_search()<cr>
 
 augroup vimrc_spectre
@@ -11,7 +6,6 @@ augroup vimrc_spectre
   autocmd Filetype spectre_panel nnoremap <buffer>q <Cmd>quit<CR>
 augroup END
 
-lua<<EOF
 require('spectre').setup({
   color_devicons = true,
   line_sep_start = '┌--------------------------------------------------------------',
@@ -144,5 +138,4 @@ require('spectre').setup({
   replace_vim_cmd = "cfdo",
   is_open_target_win = true,
   is_insert_mode = false,
-})
-EOF
+}) ]]

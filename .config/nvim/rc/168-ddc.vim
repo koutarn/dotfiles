@@ -22,46 +22,32 @@ call ddc#custom#patch_global('sources', [
 call ddc#custom#patch_filetype(['vim','toml'],'sources',['necovim'])
 
 call ddc#custom#patch_global('sourceOptions', {
- \ '_': {
- \   'ignoreCase':v:true,
- \   'matchers': ['matcher_head'],
- \   'sorters': ['sorter_rank'],
- \   'converters': ['converter_remove_overlap'],
- \ },
- \ 'around': {'mark': 'around'},
- \ 'necovim':{'mark':'vim'},
- \ 'yank':{'mark':'yank'},
- \ 'vim-lsp': {
- \   'mark': 'LSP',
- \   'forceCompletionPattern': '\.|:|->|"\w+/*',
- \ },
- \ 'skkeleton': {
- \   'mark': 'skk',
- \   'matchers': ['skkeleton'],
- \   'sorters': [],
- \   'minAutoCompleteLength': 1,
- \ },
- \ 'file': {
- \   'mark': 'file',
- \   'isVolatile': v:true,
- \   'forceCompletionPattern': '\S/\S*'
- \ }})
+\ '_': {
+\   'ignoreCase':v:true,
+\   'matchers': ['matcher_head'],
+\   'sorters': ['sorter_rank'],
+\   'converters': ['converter_remove_overlap'],
+\ },
+\ 'around': {'mark': 'around'},
+\ 'necovim':{'mark':'vim'},
+\ 'yank':{'mark':'yank'},
+\ 'skkeleton': {
+\   'mark': 'skk',
+\   'matchers': ['skkeleton'],
+\   'sorters': [],
+\   'minAutoCompleteLength': 1,
+\ },
+\ 'file': {
+\   'mark': 'file',
+\   'isVolatile': v:true,
+\   'forceCompletionPattern': '\S/\S*',
+\ },
+\   'vim-lsp': {
+\   'mark': 'lsp',
+\   'forceCompletionPattern': '\.\w*|:\w*|->\w*' },
+ \})
 
 call ddc#enable()
-
-" function s:lsp() abort
-"     if pum#visible() ==# v:true
-"         if vsnip#expandable() ==# v:true
-"             return '<Plug>(vsnip-expand)'
-"         else
-"             return '<Cmd>call pum#map#confirm()<CR>'
-"         endif
-"     else
-"         return ';;'
-"     endif
-" endfunction
-
-" inoremap <expr>;; <Cmd>call s:lsp_enter()<CR>
 
 inoremap <expr><Tab> pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>':'<Tab>'
 inoremap <expr><S-Tab> pum#visible() ? '<Cmd>call pum#map#insert_relative(-1)<CR>':'<S-Tab>'

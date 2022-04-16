@@ -1,8 +1,3 @@
-UsePlugin 'nvim-bqf'
-"==================================
-"kevinhwang91/nvim-bqf
-"==================================
-lua << EOF
 require('bqf').setup({
   auto_enable = true,
   preview = {
@@ -19,4 +14,3 @@ require('bqf').setup({
     pscrolldown = '<C-j>'
   },
  })
-EOF
