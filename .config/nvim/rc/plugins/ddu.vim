@@ -46,8 +46,8 @@ function! s:ddu_filter_my_settings() abort
   nnoremap <buffer><silent><Space> <Esc><Cmd>close<CR>
 endfunction
 
-nnoremap <Leader>;; <Cmd>Ddu file_rec<CR>
-nnoremap <Leader>;f <Cmd>Ddu file<CR>
+nnoremap <Leader>;; <Cmd>Ddu -name files file_rec<CR>
+nnoremap <Leader>;f <Cmd>Ddu -name files file<CR>
 nnoremap <Leader>;b <Cmd>Ddu buffer<CR>
 nnoremap <Leader>;g <Cmd>Ddu -name=search rg -ui-param-ignoreEmpty -source-param-input=`input('Pattern: ')`<CR>
 nnoremap <Leader>/ <Cmd>Ddu -name=search line -ui-param-startFilter<CR>

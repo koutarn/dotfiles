@@ -29,9 +29,9 @@ call jetpack#begin()
     " Jetpack 'mfussenegger/nvim-dap'         "デバッガ
     " Jetpack 'Pocco81/DAPInstall.nvim'       "デバッガのインストール
     " Jetpack 'rcarriga/nvim-dap-ui'         " デバッガのUI拡張
-    " Jetpack 'monaqa/dial.nvim'           " dps-dial.vimに移行
+    Jetpack 'monaqa/dial.nvim'           " dps-dial.vimに移行
 
-    "treesitter依存
+    " treesitter依存
     if executable('node')
         Jetpack 'nvim-treesitter/nvim-treesitter'             " treesitter
         " Jetpack 'code-biscuits/nvim-biscuits'               " ブロックの末尾に何のブロックかを表示する
