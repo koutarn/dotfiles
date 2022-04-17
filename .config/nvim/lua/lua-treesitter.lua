@@ -52,7 +52,7 @@ keymaps = {
 	["."] = "textsubjects-smart",
 	["<Tab>"] = "textsubjects-container-outer",
 	["<S-Tab>"] = "textsubjects-container-inner",
-},
+    },
 },
 
 }

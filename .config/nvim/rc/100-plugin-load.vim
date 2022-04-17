@@ -24,6 +24,7 @@ call jetpack#begin()
     Jetpack 'kevinhwang91/nvim-hlslens'    " 検索で何文字進めばいいのかを表示してくれる
     Jetpack 'romgrk/barbar.nvim'           " バッファの可視化
     Jetpack 'tversteeg/registers.nvim'     " registerの表示
+    Jetpack 'nvim-lualine/lualine.nvim'    " status line
 
     " Jetpack 'mfussenegger/nvim-dap'         "デバッガ
     " Jetpack 'Pocco81/DAPInstall.nvim'       "デバッガのインストール
@@ -41,6 +42,7 @@ call jetpack#begin()
         Jetpack 'yioneko/nvim-yati'                           " treesitterのインデントのバグを直してくれるらしい
         Jetpack 'romgrk/nvim-treesitter-context'              " 画面に収まらない関数を表示してくれる
         Jetpack 'nvim-treesitter-textobjects'                 " treesitterを使ってテキストオブジェクトを作成出来るようにする
+        Jetpack 'm-demare/hlargs.nvim'                        "引数に色を付ける
     endif
 
     if executable('yarn')
@@ -68,7 +70,7 @@ call jetpack#begin()
     Jetpack 'bronson/vim-trailing-whitespace'               " 空白の削除
     Jetpack 'cohama/lexima.vim'                             " 閉じカッコの補完をしてくれる
     Jetpack 'godlygeek/tabular'                             " 文字揃えをうまいことしてくれる
-    Jetpack 'itchyny/lightline.vim'                         " ステータスバーの所にカッコいいラインを表示する
+    " Jetpack 'itchyny/lightline.vim'                         " ステータスバーの所にカッコいいラインを表示する
     Jetpack 'itchyny/vim-highlighturl'                      " URLのハイライトを行う
     Jetpack 'lambdalisue/gina.vim'                          " git操作を出来るようにする
     Jetpack 'lambdalisue/suda.vim'                          " 読み書きをsuduでしてくれる
@@ -208,7 +210,7 @@ endif
 call jetpack#end()
 
 let data_dir = has('nvim') ? stdpath('config') : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
+if empty(glob(data_dir . '/autoload/jetpack.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/tani/vim-plug/master/autoload/plug.vim'
   autocmd VimEnter * JetpackSync | source $MYVIMRC
 endi
