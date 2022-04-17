@@ -1,8 +1,6 @@
-UsePlugin 'todo-comments.nvim'
-"==================================
-"folka/todo-comments.nvim
-"==================================
-lua << EOF
+-- ==================================
+-- folka/todo-comments.nvim
+-- ==================================
 require('todo-comments').setup {
   signs = true, -- show icons in the signs column
 
@@ -50,4 +48,3 @@ require('todo-comments').setup {
     -- pattern = [[\b(KEYWORDS)\b]], -- match without the extra colon. You'll likely get false positives
   },
 }
-EOF

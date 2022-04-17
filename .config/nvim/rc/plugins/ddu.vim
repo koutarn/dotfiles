@@ -1,19 +1,34 @@
 UsePlugin 'ddu.vim'
+
 call ddu#custom#patch_global({
 \   'ui': 'ff',
+\   'sources': [
+\     {
+\       'name': 'file_rec',
+\       'params': {
+\         'ignoredDirectories': ['.git', 'node_modules', 'vendor', '.next']
+\       }
+\     },
+\     {
+\        'name': 'file',
+\     },
+\     {
+\        'name': 'buffer',
+\     },
+\   ],
 \   'sourceOptions': {
 \     '_': {
 \       'ignoreCase':v:true,
-\       'matchers': ['matcher_substring'],
+\       'matchers': ['matcher_fzf'],
 \     },
-\     'file_rec':{
-\       'matchers':[
-\           'matcher_relative','matcher_hidden',
-\       ],
+\     'file_rec': {
+\       'ignoreCase':v:true,
+\       'matchers': ['matcher_fzf','matcher_relative','matcher_hidden'],
+\       'path':expand('.'),
 \     },
 \   },
 \   'kindOptions': {
-\     'file': {
+\     '_': {
 \       'defaultAction': 'open',
 \     },
 \   },
@@ -46,8 +61,8 @@ function! s:ddu_filter_my_settings() abort
   nnoremap <buffer><silent><Space> <Esc><Cmd>close<CR>
 endfunction
 
-nnoremap <Leader>;; <Cmd>Ddu -name files file_rec<CR>
-nnoremap <Leader>;f <Cmd>Ddu -name files file<CR>
+nnoremap <Leader>;; <Cmd>Ddu file_rec<CR>
+nnoremap <Leader>f, <Cmd>Ddu file_rec -source-option-path=`fnamemodify($MYVIMRC, ':h')` <CR>
 nnoremap <Leader>;b <Cmd>Ddu buffer<CR>
 nnoremap <Leader>;g <Cmd>Ddu -name=search rg -ui-param-ignoreEmpty -source-param-input=`input('Pattern: ')`<CR>
 nnoremap <Leader>/ <Cmd>Ddu -name=search line -ui-param-startFilter<CR>

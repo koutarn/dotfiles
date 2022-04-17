@@ -1,8 +1,6 @@
-UsePlugin 'kommentary'
-"==================================
-"b3nj5m1n/kommentary
-"==================================
-lua << EOF
+-- =================================
+-- b3nj5m1n/kommentary
+-- ==================================
 require('kommentary.config').configure_language('c', {
     prefer_single_line_comments = false,
     prefer_multi_line_comments = true,
@@ -24,4 +22,3 @@ end,
 vim.api.nvim_set_keymap('n', '<Leader>cc', '<Plug>kommentary_line_default', {})
 vim.api.nvim_set_keymap('n', '<Leader>c', '<Plug>kommentary_motion_default', {})
 vim.api.nvim_set_keymap('v', '<Leader>c', '<Plug>kommentary_visual_default', {})
-EOF

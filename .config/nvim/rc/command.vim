@@ -9,7 +9,7 @@ command! AsDos  setlocal fileformat=dos     | w
 command! AsUnix setlocal fileformat=unix    | w
 
 "edit dotfile
-command! EditVim :edit ~/.config/nvim/rc/
+command! EditVim :edit ~/.config/nvim/
 command! EditZsh :edit ~/.zsh/
 command! EditTmux :edit ~/.tmux.conf
 command! EditAlacritty :edit ~/.alacritty.yml

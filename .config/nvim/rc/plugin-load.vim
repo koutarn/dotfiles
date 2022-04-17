@@ -26,10 +26,6 @@ call jetpack#begin()
     Jetpack 'tversteeg/registers.nvim'     " registerの表示
     Jetpack 'nvim-lualine/lualine.nvim'    " status line
 
-    " Jetpack 'mfussenegger/nvim-dap'         "デバッガ
-    " Jetpack 'Pocco81/DAPInstall.nvim'       "デバッガのインストール
-    " Jetpack 'rcarriga/nvim-dap-ui'         " デバッガのUI拡張
-    Jetpack 'monaqa/dial.nvim'           " dps-dial.vimに移行
 
     " treesitter依存
     if executable('node')
@@ -202,10 +198,14 @@ endif
     endif
 
     " 未使用
-    " Jetpack 'LumaKernel/fern-mapping-fzf.vim'
-    " Jetpack 'tyru/eskk.vim'   "eskk
-    " Jetpack 'junegunn/fzf'
+    " Jetpack 'LumaKernel/fern-mapping-fzf.vim' "fernのfzf拡張
+    " Jetpack 'tyru/eskk.vim'                   "eskk
+    " Jetpack 'junegunn/fzf'                    "fzf
     " Jetpack 'aiya000/aho-bakaup.vim'
+    " Jetpack 'mfussenegger/nvim-dap'           "デバッガ
+    " Jetpack 'Pocco81/DAPInstall.nvim'         "デバッガのインストール
+    " Jetpack 'rcarriga/nvim-dap-ui'            "デバッガのUI拡張
+    " Jetpack 'monaqa/dial.nvim'                "dps-dial.vimに移行
 
 call jetpack#end()
 
