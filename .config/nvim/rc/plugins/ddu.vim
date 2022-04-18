@@ -1,5 +1,7 @@
 UsePlugin 'ddu.vim'
 
+call ddu#custom#alias('source','dot_rec','file_rec')
+
 call ddu#custom#patch_global({
 \   'ui': 'ff',
 \   'sources': [
@@ -9,12 +11,8 @@ call ddu#custom#patch_global({
 \         'ignoredDirectories': ['.git', 'node_modules', 'vendor', '.next']
 \       }
 \     },
-\     {
-\        'name': 'file',
-\     },
-\     {
-\        'name': 'buffer',
-\     },
+\     {'name': 'file'},
+\     {'name': 'buffer'},
 \   ],
 \   'sourceOptions': {
 \     '_': {
@@ -26,6 +24,11 @@ call ddu#custom#patch_global({
 \       'matchers': ['matcher_fzf','matcher_relative','matcher_hidden'],
 \       'path':expand('.'),
 \     },
+\     'dot_rec':{
+\       'ignoreCase':v:true,
+\       'matchers': ['matcher_fzf','matcher_relative','matcher_hidden'],
+\       'path':expand('~/.config/nvim'),
+\     },
 \   },
 \   'kindOptions': {
 \     '_': {
@@ -36,6 +39,15 @@ call ddu#custom#patch_global({
 \     'ff': {
 \       'startFilter': v:true,
 \       'prompt': '> ',
+\       'previewFloating':v:false,
+\       'previewHeight':30,
+\       'previewVertical':v:true,
+\       'floatingBorder':'single',
+\       'split':'floating',
+\       'winHeight':30,
+\       'winRow':&lines / 2 - 15,
+\       'winWidth':&columns / 2,
+\       'reversed': v:false,
 \     }
 \   },
 \ })
@@ -62,7 +74,8 @@ function! s:ddu_filter_my_settings() abort
 endfunction
 
 nnoremap <Leader>;; <Cmd>Ddu file_rec<CR>
-nnoremap <Leader>f, <Cmd>Ddu file_rec -source-option-path=`fnamemodify($MYVIMRC, ':h')` <CR>
+nnoremap <Leader>;' <Cmd>Ddu mr<CR>
+" nnoremap <Leader>f, <Cmd>Ddu dot_rec<CR>
 nnoremap <Leader>;b <Cmd>Ddu buffer<CR>
 nnoremap <Leader>;g <Cmd>Ddu -name=search rg -ui-param-ignoreEmpty -source-param-input=`input('Pattern: ')`<CR>
 nnoremap <Leader>/ <Cmd>Ddu -name=search line -ui-param-startFilter<CR>

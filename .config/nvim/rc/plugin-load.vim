@@ -146,6 +146,8 @@ if executable('deno')
     Jetpack 'Shougo/ddu-source-line'
     Jetpack 'matsui54/ddu-source-file_external'
     Jetpack 'matsui54/ddu-source-command_history'
+    Jetpack 'lambdalisue/mr.vim'
+    Jetpack 'kuuote/ddu-source-mr'
 
     "matcher
     Jetpack 'Shougo/ddu-filter-matcher_substring'
