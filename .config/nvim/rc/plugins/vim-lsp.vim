@@ -26,3 +26,7 @@ augroup END
 "vim-lspのsignature_helpを無効化する
 let g:lsp_signature_help_enabled = 0
 let g:lsp_diagnostics_enabled = 1
+
+"diagnoticsを無効化
+let g:lsp_diagnostics_signs_enabled = 0
+let g:lsp_document_highlight_enabled = 0

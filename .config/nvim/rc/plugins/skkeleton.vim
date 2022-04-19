@@ -9,8 +9,8 @@ call skkeleton#config({
 \ 'globalJisyo': '~/.config/SKK-JISYO.L',
 \ 'eggLikeNewline': v:true,
 \ 'registerConvertResult': v:true,
-\ 'markerHenkan': '[H]',
-\ 'markerHenkanSelect': '[S]',
+\ 'markerHenkan': '@',
+\ 'markerHenkanSelect': '@',
 \ })
 
 call skkeleton#register_kanatable('rom', {
