@@ -11,11 +11,12 @@ call ddc#custom#patch_global('completionMenu', 'pum.vim')
 
 "sourcesの設定
 call ddc#custom#patch_global('sources', [
-\ 'vim-lsp',
+\ 'nvim-lsp',
+\ 'vsnip',
 \ 'around',
 \ 'file',
-\ 'skkeleton',
 \ 'yank',
+\ 'skkeleton',
 \ ])
 
 "特定のファイルのみ補完
@@ -28,6 +29,10 @@ call ddc#custom#patch_global('sourceOptions', {
 \   'sorters': ['sorter_rank'],
 \   'converters': ['converter_remove_overlap'],
 \ },
+\ 'vsnip':{
+\   'mark':'snippet',
+\   'dup':v:true,
+\   },
 \ 'around': {'mark': 'around'},
 \ 'necovim':{'mark':'vim'},
 \ 'yank':{'mark':'yank'},
@@ -42,18 +47,26 @@ call ddc#custom#patch_global('sourceOptions', {
 \   'isVolatile': v:true,
 \   'forceCompletionPattern': '\S/\S*',
 \ },
-\   'vim-lsp': {
+\   'nvim-lsp': {
 \   'mark': 'lsp',
-\   'forceCompletionPattern': '\.\w*|:\w*|->\w*' },
+\   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
+\ },
  \})
+
+call ddc#custom#patch_global('sourceParams', {
+\ 'nvim-lsp': {'maxSize': 500},
+\ })
+
 
 call ddc#enable()
 
-inoremap <expr><Tab> pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>':'<Tab>'
-inoremap <expr><S-Tab> pum#visible() ? '<Cmd>call pum#map#insert_relative(-1)<CR>':'<S-Tab>'
 inoremap <expr>;; pum#visible() ? '<Cmd>call pum#map#confirm()<CR>':';;'
-inoremap <C-n>   <Cmd>call pum#map#select_relative(+1)<CR>
-inoremap <C-p>   <Cmd>call pum#map#select_relative(-1)<CR>
+inoremap <silent><expr> <TAB>   pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' : vsnip#jumpable(+1) ? '<Plug>(vsnip-jump-next)' : '<TAB>'
+inoremap <silent><expr> <S-TAB> pum#visible() ? '<Cmd>call pum#map#insert_relative(-1)<CR>' : vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-TAB>'
+inoremap <silent><expr> <C-n>   (pum#visible() ? '' : '<Cmd>call ddc#map#manual_complete()<CR>') . '<Cmd>call pum#map#select_relative(+1)<CR>'
+inoremap <silent><expr> <C-p>   (pum#visible() ? '' : '<Cmd>call ddc#map#manual_complete()<CR>') . '<Cmd>call pum#map#select_relative(-1)<CR>'
+autocmd User PumCompleteDone call vsnip_integ#on_complete_done(g:pum#completed_item)
+
 inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
 inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
 

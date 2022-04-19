@@ -26,7 +26,6 @@ call jetpack#begin()
     Jetpack 'tversteeg/registers.nvim'     " registerの表示
     Jetpack 'nvim-lualine/lualine.nvim'    " status line
 
-
     " treesitter依存
     if executable('node')
         Jetpack 'nvim-treesitter/nvim-treesitter'             " treesitter
@@ -51,11 +50,14 @@ call jetpack#begin()
     Jetpack 'sainnhe/edge'                                  " 色々設定出来るクールなcolor scheme
 
     " Lsp
-    Jetpack 'prabirshrestha/vim-lsp'                        " LSP
-    Jetpack 'mattn/vim-lsp-settings'                       " LSPインストール 
+    " Jetpack 'prabirshrestha/vim-lsp'                        " LSP
+    " Jetpack 'mattn/vim-lsp-settings'                       " LSPインストール 
 
-    " Jetpack 'neovim/nvim-lspconfig'                         " LSP
-    " Jetpack 'williamboman/nvim-lsp-installer'               " LSPインストール
+    Jetpack 'neovim/nvim-lspconfig'                         " LSP
+    Jetpack 'williamboman/nvim-lsp-installer'               " LSPインストール
+    Jetpack 'folke/lsp-colors.nvim'                         " 色設定を追加してくれる
+    Jetpack 'folke/trouble.nvim'                            " 警告等を良い感じに表示してくれる
+    Jetpack 'j-hui/fidget.nvim'                             " LSPの状態等を表示してくれる
 
     Jetpack 'hrsh7th/vim-vsnip'                             " snippet
     Jetpack 'hrsh7th/vim-vsnip-integ'                       " vim-vsnipを他プラグインと連携するようにする
@@ -110,7 +112,7 @@ if executable('deno')
     Jetpack 'Shougo/ddc-around'
     Jetpack 'LumaKernel/ddc-file'
     Jetpack 'Shougo/ddc-nvim-lsp'
-    Jetpack 'shun/ddc-vim-lsp'
+    " Jetpack 'shun/ddc-vim-lsp'
     Jetpack 'Shougo/ddc-cmdline-history'
     Jetpack 'Shougo/ddc-cmdline'
     Jetpack 'Shougo/neco-vim'
@@ -148,6 +150,9 @@ if executable('deno')
     Jetpack 'matsui54/ddu-source-command_history'
     Jetpack 'lambdalisue/mr.vim'
     Jetpack 'kuuote/ddu-source-mr'
+    Jetpack 'matsui54/ddu-source-help'
+    Jetpack '4513ECHO/ddu-source-colorscheme'
+    Jetpack '4513ECHO/ddu-source-source'
 
     "matcher
     Jetpack 'Shougo/ddu-filter-matcher_substring'

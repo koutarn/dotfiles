@@ -11,6 +11,7 @@ call ddu#custom#patch_global({
 \     },
 \     {'name': 'file'},
 \     {'name': 'buffer'},
+\     {'name': 'help'},
 \   ],
 \   'sourceOptions': {
 \     '_': {
@@ -27,6 +28,9 @@ call ddu#custom#patch_global({
 \     '_': {
 \       'defaultAction': 'open',
 \     },
+\       'source': {
+\           'defultAction':'execute',
+\       },
 \   },
 \   'uiParams': {
 \     'ff': {
@@ -69,8 +73,9 @@ endfunction
 
 nnoremap <Leader>;; <Cmd>Ddu file_rec -source-option-path=.<CR>
 nnoremap <Leader>;' <Cmd>Ddu mr<CR>
-nnoremap <Leader>;p <Cmd>Ddu -name=files -ui-param-displaySourceName=long file_rec file<CR>
+nnoremap <Leader>;p <Cmd>Ddu -name=files -ui-param-displaySourceName=long source<CR>
 nnoremap <Leader>f, <Cmd>Ddu -name=vimrc file_rec -source-option-path='`fnamemodify($MYVIMRC, ':h')`'<CR>
 nnoremap <Leader>;b <Cmd>Ddu buffer<CR>
 nnoremap <Leader>;g <Cmd>Ddu -name=search rg -ui-param-ignoreEmpty -source-param-input=`input('Pattern:')`<CR>
+nnoremap <Leader>;h <Cmd>Ddu -name=help help<CR>
 nnoremap <Leader>/ <Cmd>Ddu -name=search line -ui-param-startFilter<CR>

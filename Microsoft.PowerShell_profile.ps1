@@ -8,8 +8,8 @@ $nvim = $user + "\dotfiles\.config\nvim"
 Set-Alias o Invoke-Item
 Set-Alias poweroff! Stop-Computer -Force
 Set-Alias poweroff Stop-Computer
-Set-Alias restart! Restart-Computer
-Set-Alias restart Restart-Computer -Force
+Set-Alias reboot! Restart-Computer
+Set-Alias reboot Restart-Computer -Force
 
 
 #ロケーション
