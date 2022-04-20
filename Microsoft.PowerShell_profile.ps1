@@ -3,8 +3,10 @@
 $workspace = 'C:\workspace'
 $desktop = [System.Environment]::GetFolderPath("Desktop")
 $user = [System.Environment]::GetFolderPath("UserProfile")
-$dotfiles = $user + "\dotfiles"
-$nvim = $user + "\dotfiles\.config\nvim"
+$dotfiles = $user + "/dotfiles"
+$nvim = $user + "/dotfiles/.config/nvim"
+$wezterm = $user + '/.config/wezterm'
+
 Set-Alias o Invoke-Item
 Set-Alias poweroff! Stop-Computer -Force
 Set-Alias poweroff Stop-Computer
