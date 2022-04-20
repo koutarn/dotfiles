@@ -50,14 +50,14 @@ call jetpack#begin()
     Jetpack 'sainnhe/edge'                                  " 色々設定出来るクールなcolor scheme
 
     " Lsp
-    " Jetpack 'prabirshrestha/vim-lsp'                        " LSP
-    " Jetpack 'mattn/vim-lsp-settings'                       " LSPインストール 
+    Jetpack 'prabirshrestha/vim-lsp'                        " LSP
+    Jetpack 'mattn/vim-lsp-settings'                       " LSPインストール 
 
-    Jetpack 'neovim/nvim-lspconfig'                         " LSP
-    Jetpack 'williamboman/nvim-lsp-installer'               " LSPインストール
-    Jetpack 'folke/lsp-colors.nvim'                         " 色設定を追加してくれる
-    Jetpack 'folke/trouble.nvim'                            " 警告等を良い感じに表示してくれる
-    Jetpack 'j-hui/fidget.nvim'                             " LSPの状態等を表示してくれる
+    " Jetpack 'neovim/nvim-lspconfig'                         " LSP
+    " Jetpack 'williamboman/nvim-lsp-installer'               " LSPインストール
+    " Jetpack 'folke/lsp-colors.nvim'                         " 色設定を追加してくれる
+    " Jetpack 'folke/trouble.nvim'                            " 警告等を良い感じに表示してくれる
+    " Jetpack 'j-hui/fidget.nvim'                             " LSPの状態等を表示してくれる
 
     Jetpack 'hrsh7th/vim-vsnip'                             " snippet
     Jetpack 'hrsh7th/vim-vsnip-integ'                       " vim-vsnipを他プラグインと連携するようにする
@@ -111,8 +111,8 @@ if executable('deno')
     "source
     Jetpack 'Shougo/ddc-around'
     Jetpack 'LumaKernel/ddc-file'
-    Jetpack 'Shougo/ddc-nvim-lsp'
-    " Jetpack 'shun/ddc-vim-lsp'
+    " Jetpack 'Shougo/ddc-nvim-lsp'
+    Jetpack 'shun/ddc-vim-lsp'
     Jetpack 'Shougo/ddc-cmdline-history'
     Jetpack 'Shougo/ddc-cmdline'
     Jetpack 'Shougo/neco-vim'
@@ -187,17 +187,17 @@ endif
     Jetpack 'machakann/vim-sandwich'
 
     "text object
-    " Jetpack 'kana/vim-textobj-user'
-    " " Jetpack 'glts/vim-textobj-comment'
-    " Jetpack 'kana/vim-textobj-entire'
-    " " Jetpack 'kana/vim-textobj-function'
-    " Jetpack 'kana/vim-textobj-indent'
-    " Jetpack 'kana/vim-textobj-line'
-    " Jetpack 'machakann/vim-textobj-functioncall'
-    " Jetpack 'mattn/vim-textobj-url'
-    " Jetpack 'rhysd/vim-textobj-anyblock'
-    " Jetpack 'sgur/vim-textobj-parameter'
-    " Jetpack 'thinca/vim-textobj-between'
+    Jetpack 'kana/vim-textobj-user'
+    " Jetpack 'glts/vim-textobj-comment'
+    Jetpack 'kana/vim-textobj-entire'
+    " Jetpack 'kana/vim-textobj-function'
+    Jetpack 'kana/vim-textobj-indent'
+    Jetpack 'kana/vim-textobj-line'
+    Jetpack 'machakann/vim-textobj-functioncall'
+    Jetpack 'mattn/vim-textobj-url'
+    Jetpack 'rhysd/vim-textobj-anyblock'
+    Jetpack 'sgur/vim-textobj-parameter'
+    Jetpack 'thinca/vim-textobj-between'
 
     if has('win32') || has('win64')
         Jetpack 'hachibeeDI/vim-vbnet', {'for':'vb'} " VB.NET用のシンタックスとインデントを追加する

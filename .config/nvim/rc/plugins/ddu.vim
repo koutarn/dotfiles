@@ -1,61 +1,67 @@
 UsePlugin 'ddu.vim'
 
 call ddu#custom#patch_global({
-\   'ui': 'ff',
-\   'sources': [
-\     {
-\       'name': 'file_rec',
-\       'params': {
-\         'ignoredDirectories': ['.git', 'node_modules', 'vendor', '.next']
-\       }
-\     },
-\     {'name': 'file'},
-\     {'name': 'buffer'},
-\     {'name': 'help'},
-\   ],
-\   'sourceOptions': {
-\     '_': {
-\       'ignoreCase':v:true,
-\       'matchers': ['matcher_fzf'],
-\     },
-\     'file_rec': {
-\       'ignoreCase':v:true,
-\       'matchers': ['matcher_fzf','matcher_hidden'],
-\       'maxItems':5000
-\     },
-\   },
-\   'kindOptions': {
-\     '_': {
-\       'defaultAction': 'open',
-\     },
-\       'source': {
-\           'defultAction':'execute',
-\       },
-\   },
-\   'uiParams': {
-\     'ff': {
-\       'startFilter': v:true,
-\       'prompt': '> ',
-\       'previewFloating':v:false,
-\       'previewHeight':30,
-\       'previewVertical':v:true,
-\       'floatingBorder':'single',
-\       'split':'floating',
-\       'winHeight':30,
-\       'winRow':&lines / 2 - 15,
-\       'winWidth':&columns / 2,
-\       'reversed': v:false,
-\     }
-\   },
-\ })
+\'ui': 'ff',
+\    'sources': [
+\        {
+\            'name': 'file_rec',
+\            'params': {
+\                'ignoredDirectories': ['.svn','.git', 'node_modules', 'vendor', '.next']
+\            }
+\        },
+\        {'name': 'file'},
+\        {'name': 'buffer'},
+\        {'name': 'help'},
+\        {'name': 'source'},
+\    ],
+\
+\    'sourceOptions': {
+\        '_': {
+\            'ignoreCase':v:true,
+\            'matchers': ['matcher_fzf'],
+\        },
+\        'file_rec': {
+\            'ignoreCase':v:true,
+\            'matchers': ['matcher_fzf','matcher_hidden'],
+\            'maxItems':5000
+\        },
+\    },
+\    'kindOptions': {
+\        '_': {
+\            'defaultAction': 'open',
+\        },
+\        'source': {
+\            'defultAction':'execute',
+\        },
+\        'colorscheme': {
+\            'defultAction':'set',
+\        },
+\    },
+\    'uiParams': {
+\        'ff': {
+\            'startFilter': v:true,
+\            'prompt': '> ',
+\            'previewFloating':v:false,
+\            'previewHeight':30,
+\            'previewVertical':v:true,
+\            'floatingBorder':'single',
+\            'split':'floating',
+\            'winHeight':30,
+\            'winRow':&lines / 2 - 15,
+\            'winWidth':&columns / 2,
+\            'reversed': v:false,
+\        }
+\    },
+\})
 
 autocmd FileType ddu-ff call s:ddu_my_settings()
 function! s:ddu_my_settings() abort
-    nnoremap <buffer><silent><Space> <Cmd>call ddu#ui#ff#do_action('itemAction', {'name': 'open'})<CR>
+    nnoremap <buffer><silent><Space> <Cmd>call ddu#ui#ff#do_action('itemAction',{'name':'default'})<CR>
     nnoremap <buffer><silent><CR> <Cmd>call ddu#ui#ff#do_action('itemAction', {'name': 'open'})<CR>
     nnoremap <buffer><silent>o <Cmd>call ddu#ui#ff#do_action('itemAction', {'name': 'open'})<CR>
     nnoremap <buffer><silent>c <Cmd>call ddu#ui#ff#do_action('itemAction', {'name': 'cd'})<CR>
     nnoremap <buffer><silent>i <Cmd>call ddu#ui#ff#do_action('openFilterWindow')<CR>
+    nnoremap <buffer><silent>/ <Cmd>call ddu#ui#ff#do_action('openFilterWindow')<CR>
     nnoremap <buffer><silent>p <Cmd>call ddu#ui#ff#do_action('preview')<CR>
     nnoremap <buffer><silent>q <Cmd>call ddu#ui#ff#do_action('quit')<CR>
     nnoremap <buffer><silent><ESC> <Cmd>call ddu#ui#ff#do_action('quit')<CR>
@@ -71,11 +77,11 @@ function! s:ddu_filter_my_settings() abort
   nnoremap <buffer><silent><Space> <Esc><Cmd>close<CR>
 endfunction
 
-nnoremap <Leader>;; <Cmd>Ddu file_rec -source-option-path=.<CR>
-nnoremap <Leader>;' <Cmd>Ddu mr<CR>
-nnoremap <Leader>;p <Cmd>Ddu -name=files -ui-param-displaySourceName=long source<CR>
+nnoremap <Leader>;; <Cmd>Ddu -name=file_rec file_rec -source-option-path=.<CR>
+nnoremap <Leader>;' <Cmd>Ddu -name=mr mr<CR>
+nnoremap <Leader>;p <Cmd>Ddu -name=source source<CR>
 nnoremap <Leader>f, <Cmd>Ddu -name=vimrc file_rec -source-option-path='`fnamemodify($MYVIMRC, ':h')`'<CR>
-nnoremap <Leader>;b <Cmd>Ddu buffer<CR>
+nnoremap <Leader>;b <Cmd>Ddu -name=buffer buffer<CR>
 nnoremap <Leader>;g <Cmd>Ddu -name=search rg -ui-param-ignoreEmpty -source-param-input=`input('Pattern:')`<CR>
 nnoremap <Leader>;h <Cmd>Ddu -name=help help<CR>
 nnoremap <Leader>/ <Cmd>Ddu -name=search line -ui-param-startFilter<CR>

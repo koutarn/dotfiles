@@ -11,7 +11,7 @@ call ddc#custom#patch_global('completionMenu', 'pum.vim')
 
 "sourcesの設定
 call ddc#custom#patch_global('sources', [
-\ 'nvim-lsp',
+\ 'vim-lsp',
 \ 'vsnip',
 \ 'around',
 \ 'file',
@@ -47,16 +47,11 @@ call ddc#custom#patch_global('sourceOptions', {
 \   'isVolatile': v:true,
 \   'forceCompletionPattern': '\S/\S*',
 \ },
-\   'nvim-lsp': {
+\   'vim-lsp': {
 \   'mark': 'lsp',
 \   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
 \ },
  \})
-
-call ddc#custom#patch_global('sourceParams', {
-\ 'nvim-lsp': {'maxSize': 500},
-\ })
-
 
 call ddc#enable()
 
