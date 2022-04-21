@@ -5,14 +5,8 @@
     | (_| | (_) | |_| | | | |  __/\__ \
      \____|\___/ \__|_| |_|_|\___||___/
 
-# Read
-* ⛰ OS:Manjaro Linux
-* 🇿 Shell:zsh
-* 💻 Terminal:alacritty
-* 📝 Editor:neovim
-
-# Apps
-* WindowManager:i3
-* Desktop notifications:dunst
-* bar:bumblebee-status-bar
-* composite manger:picom-jonaburg(picom fork)
+# Spec
+* OS:Manjaro Linux
+* Shell:zsh
+* Terminal:wezterm
+* Editor:neovim
