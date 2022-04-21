@@ -1,5 +1,7 @@
 UsePlugin 'ddu.vim'
 
+
+call ddu#custom#alias('source', 'git_ls', 'file_external')
 call ddu#custom#patch_global({
 \'ui': 'ff',
 \    'sources': [
@@ -13,6 +15,14 @@ call ddu#custom#patch_global({
 \        {'name': 'buffer'},
 \        {'name': 'help'},
 \        {'name': 'source'},
+\        {'name': 'external'},
+\        {'name': 'colorscheme'},
+\        {
+\            'name': 'git_ls',
+\            'params': {
+\               'cmd': ['git', 'ls-files'],
+\            }
+\        },
 \    ],
 \
 \    'sourceOptions': {
@@ -23,7 +33,7 @@ call ddu#custom#patch_global({
 \        'file_rec': {
 \            'ignoreCase':v:true,
 \            'matchers': ['matcher_fzf','matcher_hidden'],
-\            'maxItems':5000
+\            'maxItems':20000,
 \        },
 \    },
 \    'kindOptions': {
@@ -31,10 +41,10 @@ call ddu#custom#patch_global({
 \            'defaultAction': 'open',
 \        },
 \        'source': {
-\            'defultAction':'execute',
+\            'defaultAction':'execute',
 \        },
 \        'colorscheme': {
-\            'defultAction':'set',
+\            'defaultAction':'set',
 \        },
 \    },
 \    'uiParams': {
@@ -56,9 +66,10 @@ call ddu#custom#patch_global({
 
 autocmd FileType ddu-ff call s:ddu_my_settings()
 function! s:ddu_my_settings() abort
-    nnoremap <buffer><silent><Space> <Cmd>call ddu#ui#ff#do_action('itemAction',{'name':'default'})<CR>
-    nnoremap <buffer><silent><CR> <Cmd>call ddu#ui#ff#do_action('itemAction', {'name': 'open'})<CR>
-    nnoremap <buffer><silent>o <Cmd>call ddu#ui#ff#do_action('itemAction', {'name': 'open'})<CR>
+    nnoremap <buffer><Leader><space> <Nop>
+    nnoremap <buffer><silent><CR> <Cmd>call ddu#ui#ff#do_action('itemAction', {'name': 'default'})<CR>
+    nnoremap <buffer><silent><Space> <Cmd>call ddu#ui#ff#do_action('itemAction', {'name': 'default'})<CR>
+    nnoremap <buffer><silent>o <Cmd>call ddu#ui#ff#do_action('itemAction', {'name': 'default'})<CR>
     nnoremap <buffer><silent>c <Cmd>call ddu#ui#ff#do_action('itemAction', {'name': 'cd'})<CR>
     nnoremap <buffer><silent>i <Cmd>call ddu#ui#ff#do_action('openFilterWindow')<CR>
     nnoremap <buffer><silent>/ <Cmd>call ddu#ui#ff#do_action('openFilterWindow')<CR>
@@ -77,11 +88,12 @@ function! s:ddu_filter_my_settings() abort
   nnoremap <buffer><silent><Space> <Esc><Cmd>close<CR>
 endfunction
 
-nnoremap <Leader>;; <Cmd>Ddu -name=file_rec file_rec -source-option-path=.<CR>
-nnoremap <Leader>;' <Cmd>Ddu -name=mr mr<CR>
-nnoremap <Leader>;p <Cmd>Ddu -name=source source<CR>
+nnoremap <Leader>;; <Cmd>Ddu -name=file_rec file_rec -source-option-path='`fnamemodify(getcwd(), ':p')`'<CR>
 nnoremap <Leader>f, <Cmd>Ddu -name=vimrc file_rec -source-option-path='`fnamemodify($MYVIMRC, ':h')`'<CR>
+nnoremap <Leader>;' <Cmd>Ddu -name=mr mr<CR>
+nnoremap <Leader>;[ <Cmd>Ddu -name=git-ls git_ls<CR>
+nnoremap <Leader>;p <Cmd>Ddu -name=source source<CR>
 nnoremap <Leader>;b <Cmd>Ddu -name=buffer buffer<CR>
 nnoremap <Leader>;g <Cmd>Ddu -name=search rg -ui-param-ignoreEmpty -source-param-input=`input('Pattern:')`<CR>
-nnoremap <Leader>;h <Cmd>Ddu -name=help help<CR>
+nnoremap <Leader>;h <Cmd>Ddu -name=other help colorscheme<CR>
 nnoremap <Leader>/ <Cmd>Ddu -name=search line -ui-param-startFilter<CR>

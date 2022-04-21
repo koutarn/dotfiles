@@ -12,6 +12,11 @@ require('kommentary.config').configure_language('cpp', {
     prefer_multi_line_comments = true,
     multi_line_comment_strings = {'/*', '*/'},
 })
+
+require('kommentary.config').configure_language('javascript', {
+    prefer_single_line_comments = true,
+})
+
 require('kommentary.config').configure_language('lua', {
     prefer_single_line_comments = true,
     hook_function = function()
