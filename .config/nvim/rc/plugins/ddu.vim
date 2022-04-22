@@ -66,7 +66,7 @@ call ddu#custom#patch_global({
 
 autocmd FileType ddu-ff call s:ddu_my_settings()
 function! s:ddu_my_settings() abort
-    nnoremap <buffer><Leader><space> <Nop>
+    " nunmap <Leader><Space>
     nnoremap <buffer><silent><CR> <Cmd>call ddu#ui#ff#do_action('itemAction', {'name': 'default'})<CR>
     nnoremap <buffer><silent><Space> <Cmd>call ddu#ui#ff#do_action('itemAction', {'name': 'default'})<CR>
     nnoremap <buffer><silent>o <Cmd>call ddu#ui#ff#do_action('itemAction', {'name': 'default'})<CR>

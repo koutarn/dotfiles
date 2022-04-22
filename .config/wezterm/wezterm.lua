@@ -9,7 +9,7 @@ local default_keys = {
     { key = "r", mods = "ALT", action = "ReloadConfiguration" },
     { key = "c", mods = "CTRL|SHIFT", action = wezterm.action{CopyTo="ClipboardAndPrimarySelection"} },
     { key = "v", mods = "CTRL|SHIFT", action = wezterm.action{PasteFrom="Clipboard"} },
-    { key = "q", mods = "CMD", action = "QuitApplication" },
+    { key = "w", mods = "ALT", action = "QuitApplication" },
     { key = "o", mods = "ALT", action = "QuickSelect" },
     { key = "Enter", mods = "ALT", action = "ToggleFullScreen" },
 
@@ -38,18 +38,18 @@ local default_keys = {
 
 }
 
+
 local config = {
 
     -- weztermの更新を確認する
     check_for_updates = true,
-    check_for_updates_interval_seconds = 86400,
+    check_for_updates_interval_seconds = 86400, -- 60 *  60 * 24 == 1日
 
     -- default shell
     default_prog = {"powershell.exe", "-nologo"},
 
     -- color scheme
-    color_scheme = "Monokai Remastered",
-
+    color_scheme = "Dracula+",
 
     -- font
     use_ime = true,
@@ -58,9 +58,11 @@ local config = {
         "Cica",
         "JetBrains Mono",
     }),
-    font_size = 10.0,
+    font_size = 11.0,
     adjust_window_size_when_changing_font_size = false, -- フォントサイズ変更時にウィンドウサイズを変更しないようにする
+    harfbuzz_features = {"calt=0", "clig=0", "liga=0"}, -- 合字フォントを無効化
 
+    -- window
 	window_padding = {
         left = 0,
         right = 0,
