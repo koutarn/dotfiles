@@ -11,8 +11,8 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> gh <plug>(lsp-hover)
     nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
     nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
-    let g:lsp_format_sync_timeout = 1000
-    autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+    " let g:lsp_format_sync_timeout = 1000
+    " autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
 
     " refer to doc to add more commands
 endfunction
@@ -28,5 +28,13 @@ let g:lsp_signature_help_enabled = 0
 let g:lsp_diagnostics_enabled = 1
 
 "diagnoticsを無効化
-let g:lsp_diagnostics_signs_enabled = 0
+let g:lsp_diagnostics_signs_enabled = 1
 let g:lsp_document_highlight_enabled = 0
+
+"sing
+" let g:lsp_signs_error = {'text': 'E'}
+" let g:lsp_signs_warning = {'text': 'W'}
+
+"ログを無効化
+let g:lsp_log_file = """"
+let g:lsp_log_verbose = 0

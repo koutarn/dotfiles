@@ -117,6 +117,7 @@ if executable('deno')
     Jetpack 'Shougo/ddc-cmdline'
     Jetpack 'Shougo/neco-vim'
     Jetpack 'ippachi/ddc-yank'
+    Jetpack 'gamoutatsumi/ddc-emoji'
 
     "matcher
     Jetpack 'Shougo/ddc-matcher_head'

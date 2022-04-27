@@ -14,9 +14,10 @@ call ddc#custom#patch_global('sources', [
 \ 'vim-lsp',
 \ 'vsnip',
 \ 'around',
-\ 'file',
-\ 'yank',
 \ 'skkeleton',
+\ 'file',
+\ 'emoji',
+\ 'yank',
 \ ])
 
 "特定のファイルのみ補完
@@ -50,6 +51,11 @@ call ddc#custom#patch_global('sourceOptions', {
 \   'vim-lsp': {
 \   'mark': 'lsp',
 \   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
+\ },
+\   'emoji': {
+\   'mark': 'emoji',
+\	'matchers': ['emoji'],
+\	'sorters': [],
 \ },
  \})
 

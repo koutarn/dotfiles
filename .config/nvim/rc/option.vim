@@ -22,7 +22,12 @@ if has('unix')
   let $SHELL='/bin/zsh'
   set shell=/bin/zsh
 elseif has('win32') || has('win64')
-  set shell=cmd
+    " set shell=cmd
+    set shell=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+    set shellcmdflag=-c
+    set shellquote=\"
+    set shellxquote=
+
 endif
 
 "補完

@@ -17,6 +17,10 @@ require('kommentary.config').configure_language('javascript', {
     prefer_single_line_comments = true,
 })
 
+require('kommentary.config').configure_language('go', {
+    prefer_single_line_comments = true,
+})
+
 require('kommentary.config').configure_language('lua', {
     prefer_single_line_comments = true,
     hook_function = function()
