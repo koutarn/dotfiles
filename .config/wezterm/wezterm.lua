@@ -40,7 +40,6 @@ local default_keys = {
 
 
 local config = {
-
     -- weztermの更新を確認する
     check_for_updates = true,
     check_for_updates_interval_seconds = 86400, -- 60 *  60 * 24 == 1日
@@ -50,6 +49,10 @@ local config = {
 
     -- color scheme
     color_scheme = "Dracula+",
+
+    -- weztermのサイズを指定
+    initial_rows = 45,
+    initial_cols = 120,
 
     -- font
     use_ime = true,

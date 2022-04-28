@@ -147,62 +147,62 @@ nnoremap / /\v
 inoremap <C-v> <C-r><C-p>+
 cnoremap <C-v> <C-r>+
 
-"digraphs
-"thx https://qiita.com/monaqa/items/dcd43a53d3040293142a
-noremap fj f<C-k>j
-noremap Fj F<C-k>j
-noremap tj t<C-k>j
-noremap Tj T<C-k>j
+" "digraphs
+" "thx https://qiita.com/monaqa/items/dcd43a53d3040293142a
+" noremap fj f<C-k>j
+" noremap Fj F<C-k>j
+" noremap tj t<C-k>j
+" noremap Tj T<C-k>j
 
-"register digraph
-"thx https://github.com/monaqa/dotfiles/blob/9861ff9b516786f5c3f6f6595eba2a9dab73c084/.config/nvim/scripts/keymap.vim#L192
-function s:register_digraph(key_pair,char)
-    execute('digraphs ' .. a:key_pair .. ' ' .. char2nr(a:char))
-endfunction
+" "register digraph
+" "thx https://github.com/monaqa/dotfiles/blob/9861ff9b516786f5c3f6f6595eba2a9dab73c084/.config/nvim/scripts/keymap.vim#L192
+" function s:register_digraph(key_pair,char)
+"     execute('digraphs ' .. a:key_pair .. ' ' .. char2nr(a:char))
+" endfunction
 
-call s:register_digraph('j(','（')
-call s:register_digraph('j)','）')
-call s:register_digraph('j[','「')
-call s:register_digraph('j]','」')
-call s:register_digraph('j<','【')
-call s:register_digraph('j>','】')
+" call s:register_digraph('j(','（')
+" call s:register_digraph('j)','）')
+" call s:register_digraph('j[','「')
+" call s:register_digraph('j]','」')
+" call s:register_digraph('j<','【')
+" call s:register_digraph('j>','】')
 
-" 句読点
-call s:register_digraph('j,','、')
-call s:register_digraph('j.','。')
-call s:register_digraph('j!','！')
-call s:register_digraph('j?','？')
-call s:register_digraph('j:','：')
+" " 句読点
+" call s:register_digraph('j,','、')
+" call s:register_digraph('j.','。')
+" call s:register_digraph('j!','！')
+" call s:register_digraph('j?','？')
+" call s:register_digraph('j:','：')
 
-" 数字
-call s:register_digraph('j0','０')
-call s:register_digraph('j1','１')
-call s:register_digraph('j2','２')
-call s:register_digraph('j3','３')
-call s:register_digraph('j4','４')
-call s:register_digraph('j5','５')
-call s:register_digraph('j6','６')
-call s:register_digraph('j7','７')
-call s:register_digraph('j8','８')
-call s:register_digraph('j9','９')
+" " 数字
+" call s:register_digraph('j0','０')
+" call s:register_digraph('j1','１')
+" call s:register_digraph('j2','２')
+" call s:register_digraph('j3','３')
+" call s:register_digraph('j4','４')
+" call s:register_digraph('j5','５')
+" call s:register_digraph('j6','６')
+" call s:register_digraph('j7','７')
+" call s:register_digraph('j8','８')
+" call s:register_digraph('j9','９')
 
-" その他の記号
-call s:register_digraph('j~','〜')
-call s:register_digraph('j/','・')
+" " その他の記号
+" call s:register_digraph('j~','〜')
+" call s:register_digraph('j/','・')
 
-"jにもいけるように
-call s:register_digraph('jj','j')
+" "jにもいけるように
+" call s:register_digraph('jj','j')
 
-"てにおは
-call s:register_digraph('jt','て')
-call s:register_digraph('ji','に')
-call s:register_digraph('jw','を')
-call s:register_digraph('jh','は')
-call s:register_digraph('jg','が')
-call s:register_digraph('jd','で')
-call s:register_digraph('jo','と')
-call s:register_digraph('jn','の')
-call s:register_digraph('jk','か')
+" "てにおは
+" call s:register_digraph('jt','て')
+" call s:register_digraph('ji','に')
+" call s:register_digraph('jw','を')
+" call s:register_digraph('jh','は')
+" call s:register_digraph('jg','が')
+" call s:register_digraph('jd','で')
+" call s:register_digraph('jo','と')
+" call s:register_digraph('jn','の')
+" call s:register_digraph('jk','か')
 
 "cmd window用
 augroup vimrc_cmdwindow

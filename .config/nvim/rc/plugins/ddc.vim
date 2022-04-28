@@ -9,6 +9,8 @@ call ddc#custom#patch_global('autoCompleteEvents', [
 "pum.vimを使用
 call ddc#custom#patch_global('completionMenu', 'pum.vim')
 
+call ddc#custom#patch_global('keywordPattern', '[a-zA-Z_:]\w*')
+
 "sourcesの設定
 call ddc#custom#patch_global('sources', [
 \ 'vim-lsp',
@@ -31,29 +33,28 @@ call ddc#custom#patch_global('sourceOptions', {
 \   'converters': ['converter_remove_overlap'],
 \ },
 \ 'vsnip':{
-\   'mark':'snippet',
+\   'mark':'🍕',
 \   'dup':v:true,
 \   },
-\ 'around': {'mark': 'around'},
-\ 'necovim':{'mark':'vim'},
-\ 'yank':{'mark':'yank'},
+\ 'around': {'mark':'💡'},
+\ 'necovim':{'mark':'🐱'},
+\ 'yank':{'mark':'📋'},
 \ 'skkeleton': {
-\   'mark': 'skk',
+\   'mark': '🍺',
 \   'matchers': ['skkeleton'],
 \   'sorters': [],
 \   'minAutoCompleteLength': 1,
 \ },
 \ 'file': {
-\   'mark': 'file',
+\   'mark': '📁',
 \   'isVolatile': v:true,
 \   'forceCompletionPattern': '\S/\S*',
 \ },
 \   'vim-lsp': {
-\   'mark': 'lsp',
-\   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
+\   'mark': '🔥',
 \ },
 \   'emoji': {
-\   'mark': 'emoji',
+\   'mark': '😎',
 \	'matchers': ['emoji'],
 \	'sorters': [],
 \ },

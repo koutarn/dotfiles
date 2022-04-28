@@ -48,6 +48,7 @@ call jetpack#begin()
 
     "color scheme
     Jetpack 'sainnhe/edge'                                  " 色々設定出来るクールなcolor scheme
+    Jetpack 'sainnhe/sonokai'                               " monokaiProベースのcolor scheme
 
     " Lsp
     Jetpack 'prabirshrestha/vim-lsp'                        " LSP
@@ -71,6 +72,7 @@ call jetpack#begin()
     " Jetpack 'itchyny/lightline.vim'                         " ステータスバーの所にカッコいいラインを表示する
     Jetpack 'itchyny/vim-highlighturl'                      " URLのハイライトを行う
     Jetpack 'lambdalisue/gina.vim'                          " git操作を出来るようにする
+    Jetpack 'kuuote/gina-preview.vim'                       " gina拡張
     Jetpack 'lambdalisue/suda.vim'                          " 読み書きをsuduでしてくれる
     Jetpack 'lambdalisue/vim-findent'                       " fileから適切なインデントを読み取ってくれる
     Jetpack 'liuchengxu/vista.vim'                          " コードの変数やオブジェクト等を表示してくれる
@@ -89,8 +91,9 @@ call jetpack#begin()
     Jetpack 'thinca/vim-qfreplace'                          " quick fixで置換を行う
     Jetpack 'thinca/vim-quickrun'                           " バッファのコードをシュッと実行してくれる
     Jetpack 'tyru/capture.vim'                              " Exコマンドをバッファに書きだしてくれる
-    Jetpack 'kuuote/gina-preview.vim'
-
+    Jetpack 'norcalli/nvim-colorizer.lua'                   " colorcodeに色を付けてくれる
+    Jetpack 'mvllow/modes.nvim'                             " modeをカーソルの色でわかるようにする
+    Jetpack 'unblevable/quick-scope'                        " fを押すとハイライトしてくれるようになる
 
     "syntax
     Jetpack 'rhysd/vim-gfm-syntax', {'for':'markdown'} "markdownをもっとハイライトする

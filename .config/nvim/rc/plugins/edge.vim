@@ -1,8 +1,4 @@
-UsePlugin 'edge'
-"================================
-"'sainnhe/edge'
-"================================
-"Available values: `'default'`, `'aura'`, `'neon'`
+" Available values: `'default'`, `'aura'`, `'neon'`
 let g:edge_style = 'aura'
 
 let g:edge_enable_italic = 1
@@ -17,4 +13,7 @@ let g:edge_diagnostic_virtual_text = 'grey'
 let g:edge_current_word = 'bold'
 let g:edge_lightline_disable_bold = 0
 
-colorscheme edge
+" colorscheme edge
+
+
+colorscheme sonokai
