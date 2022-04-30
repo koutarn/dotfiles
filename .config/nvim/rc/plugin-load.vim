@@ -94,6 +94,7 @@ call jetpack#begin()
     Jetpack 'norcalli/nvim-colorizer.lua'                   " colorcodeに色を付けてくれる
     Jetpack 'mvllow/modes.nvim'                             " modeをカーソルの色でわかるようにする
     Jetpack 'unblevable/quick-scope'                        " fを押すとハイライトしてくれるようになる
+    Jetpack 'AndrewRadev/linediff.vim'                      " 選択範囲のdiffを取ってくれる
 
     "syntax
     Jetpack 'rhysd/vim-gfm-syntax', {'for':'markdown'} "markdownをもっとハイライトする

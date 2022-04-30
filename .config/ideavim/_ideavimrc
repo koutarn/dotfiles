@@ -1,0 +1,150 @@
+set surround
+set clipboard=unnamedplus
+set smartcase
+set incsearch
+set hlsearch
+set timeout
+set timeoutlen=1000
+set multiple-cursors
+
+"Leader
+let g:mapleader = "\<Space>"
+let g:maplocalleader = ","
+
+"unbind
+nnoremap Q <Nop>
+nnoremap ZZ <Nop>
+nnoremap ZQ <Nop>
+nnoremap s <Nop>
+nnoremap S <Nop>
+nnoremap <C-z> <Nop>
+
+"再読み込み
+nnoremap <Leader>fr :source ~/.ideavimrc<CR>
+
+"保持しない
+nnoremap x "_x
+vnoremap x "_x
+nnoremap X "_X
+vnoremap X "_X
+
+"cmd
+cnoremap <C-e> <End>
+cnoremap <C-a> <Home>
+cnoremap <C-h> <LEFT>
+cnoremap <C-k> <UP>
+cnoremap <C-j> <DOWN>
+cnoremap <C-l> <RIGHT>
+cnoremap <expr> %h getcmdtype() == ':' ? expand('%:h') . '/' : '%h'
+
+"インデントに合せてペースト
+nnoremap p ]p
+nnoremap ]p p
+nnoremap P ]P
+nnoremap ]P P
+
+"USキーボード用に入れ替える。
+nnoremap : ;
+nnoremap ; :
+vnoremap : ;
+vnoremap ; :
+
+"タブ移動
+nnoremap <Leader>y :<C-u>action PreviousTab<CR>
+nnoremap <Leader>u :<C-u>action NextTab<CR>
+
+"移動
+vnoremap v $h
+nnoremap <S-k> 10gk
+nnoremap <S-j> 10gj
+vnoremap <S-k> 10gk
+vnoremap <S-j> 10gj
+
+"ノーマルモードに戻す
+inoremap jj <ESC>
+onoremap jj <Esc>
+cnoremap jj <C-c>
+
+inoremap <C-a> <HOME>
+inoremap <C-e> <END>
+inoremap <C-k> <UP>
+inoremap <C-j> <DOWN>
+
+
+"インデント整形
+vnoremap > >gv
+vnoremap < <gv
+nnoremap == gg=G
+
+"コードの折り込みを無効化
+nnoremap zM <Nop>
+nnoremap zc <Nop>
+nnoremap zC <Nop>
+nnoremap zR <Nop>
+nnoremap zo <Nop>
+nnoremap zO <Nop>
+
+"検索をIDEA純正に寄せる
+nnoremap / :<C-u>action Find<CR>
+
+"ジャンプをIDEA純正に寄せる
+nnoremap <C-o> :<C-u>action Back<CR>
+nnoremap <C-i> :<C-u>action Forward<CR>
+nnoremap <C-S-o> <C-o>
+nnoremap <C-S-i> <C-i>
+
+"LSP関連
+nnoremap gh :<C-u>action QuickJavaDoc<CR>
+nnoremap gi :<C-u>action GotoDeclaration<CR>
+nnoremap gd :<C-u>action GotoTypeDeclaration<CR>
+" nnoremap gji :<C-u>action GotoImplementation<CR>
+" nnoremap gjs :<C-u>action GotoSuperMethod<CR>
+" nnoremap gt :<C-u>action GotoTest<CR>
+" nnoremap <C-k> :<C-u>action ShowUsages<CR>
+
+"コードアクション
+nnoremap <Space>a :<C-u>action GotoAction<CR>
+
+" Git
+nnoremap \\gm :<C-u>action Vcs.QuickListPopupAction<CR>
+nnoremap \\gc :<C-u>action CheckinProject<CR>
+
+" History
+nnoremap \\h  :<C-u>action RecentChanges<CR>
+nnoremap \\hl  :<C-u>action LocalHistory.ShowHistory<CR>
+
+
+" Build
+nnoremap <F8> :<C-u>action Build<CR>
+nnoremap <S-F8> :<C-u>action CMake.ReloadCMakeProject<CR>
+nnoremap <C-F8> :<C-u>action StopBackgroundProcesses<CR>
+nnoremap <C-S-F8> :<C-u>action Clean<CR>
+
+" Debug
+nnoremap <Leader>dd :<C-u>action Debug<CR>
+nnoremap <Leader>dc :<C-u>action ChooseDebugConfiguration<CR>
+nnoremap <F9>       :<C-u>action ChooseDebugConfiguration<CR>
+nnoremap <S-F9>     :<C-u>action Debug<CR>
+nnoremap <C-F9>     :<C-u>action DebugClass<CR>
+
+" Run
+nnoremap <Leader>rr :<C-u>action Run<CR>
+nnoremap <Leader>rc :<C-u>action ChooseRunConfiguration<CR>
+nnoremap <Leader>tn :<C-u>action RunClass<CR>
+nnoremap <F10>      :<C-u>action ChooseRunConfiguration<CR>
+nnoremap <S-F10>    :<C-u>action Run<CR>
+nnoremap <C-F10>    :<C-u>action RunClass<CR>
+
+" Test
+nnoremap <C-F10>  :<C-u>action Rerun<CR>
+nnoremap <A-F10>  :<C-u>action RerunFailedTests<CR>
+nnoremap <Leader>tr  :<C-u>action Rerun<CR>
+nnoremap <Leader>tf  :<C-u>action RerunFailedTests<CR>
+
+" Debugger
+nnoremap <Leader>b  :<C-u>action ToggleLineBreakpoint<CR>
+
+" Refresh
+nnoremap <F5>  :<C-u>action Synchronize<CR>
+nnoremap <S-F5>  :<C-u>action ReformatCode<CR>
+nnoremap <C-F5>  :<C-u>action Refresh<CR>
