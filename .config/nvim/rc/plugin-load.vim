@@ -95,6 +95,7 @@ call jetpack#begin()
     Jetpack 'mvllow/modes.nvim'                             " modeをカーソルの色でわかるようにする
     Jetpack 'unblevable/quick-scope'                        " fを押すとハイライトしてくれるようになる
     Jetpack 'AndrewRadev/linediff.vim'                      " 選択範囲のdiffを取ってくれる
+    Jetpack 'glidenote/memolist.vim'                        " メモ取り用
 
     "syntax
     Jetpack 'rhysd/vim-gfm-syntax', {'for':'markdown'} "markdownをもっとハイライトする

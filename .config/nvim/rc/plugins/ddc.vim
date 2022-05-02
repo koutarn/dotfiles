@@ -1,11 +1,5 @@
 UsePlugin 'ddc.vim'
 
-"補完を出すイベント
-call ddc#custom#patch_global('autoCompleteEvents', [
-\ 'InsertEnter', 'TextChangedI', 'TextChangedP',
-\ 'CmdlineEnter', 'CmdlineChanged',
-\ ])
-
 "pum.vimを使用
 call ddc#custom#patch_global('completionMenu', 'pum.vim')
 
@@ -72,27 +66,31 @@ autocmd User PumCompleteDone call vsnip_integ#on_complete_done(g:pum#completed_i
 inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
 inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
 
-"command line completion
+"command line complete
+call ddc#custom#patch_global('autoCompleteEvents',
+    \ ['InsertEnter', 'TextChangedI', 'TextChangedP', 'CmdlineChanged'])
 nnoremap ; <Cmd>call CommandlinePre()<CR>:
 
 function! CommandlinePre() abort
-    " Note: It disables default command line completion!
     cnoremap <expr>;; pum#visible() ? '<Cmd>call pum#map#confirm()<CR>':''
     cnoremap <expr> <Tab>
-    \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>':
-    \ ddc#manual_complete()
+        \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>':
+        \ ddc#manual_complete()
     cnoremap <expr> <S-Tab>
-    \ pum#visible() ? '<Cmd>call pum#map#insert_relative(-1)<CR>':
-    \ ddc#manual_complete()
+        \ pum#visible() ? '<Cmd>call pum#map#insert_relative(-1)<CR>':
+        \ ddc#manual_complete()
     cnoremap <C-n>   <Cmd>call pum#map#select_relative(+1)<CR>
     cnoremap <C-p>   <Cmd>call pum#map#select_relative(-1)<CR>
     cnoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
     cnoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
 
     " Overwrite sources
-    let s:prev_buffer_config = ddc#custom#get_buffer()
+    if !exists('b:prev_buffer_config')
+        let b:prev_buffer_config = ddc#custom#get_buffer()
+    endif
+
     call ddc#custom#patch_buffer('sources',
-        \ ['cmdline', 'cmdline-history','around'])
+            \ ['cmdline', 'cmdline-history','around'])
 
     call ddc#custom#patch_buffer('sourceOptions', {
     \ '_': {
@@ -100,20 +98,24 @@ function! CommandlinePre() abort
     \   'sorters': ['sorter_rank'],
     \   'converters': ['converter_remove_overlap'],
     \ },
-    \ 'cmdline': {'mark': 'cmdline'},
-    \ 'cmdline-history': {'mark': 'cmd-histroy'},
-    \ 'around': {'mark': 'Around'},
+    \ 'cmdline': {'mark': '💻'},
+    \ 'cmdline-history': {'mark': '📓'},
+    \ 'around': {'mark': '💡'},
     \ })
 
     autocmd User DDCCmdlineLeave ++once call CommandlinePost()
+    autocmd InsertEnter <buffer> ++once call CommandlinePost()
 
     " Enable command line completion
     call ddc#enable_cmdline_completion()
-    call ddc#enable()
 endfunction
 
 function! CommandlinePost() abort
-    " Restore source
-    call ddc#custom#set_buffer(s:prev_buffer_config)
-    cunmap <Tab>
+    " Restore sources
+    if exists('b:prev_buffer_config')
+        call ddc#custom#set_buffer(b:prev_buffer_config)
+        unlet b:prev_buffer_config
+    else
+        call ddc#custom#set_buffer({})
+    endif
 endfunction

@@ -32,8 +32,8 @@ local default_keys = {
     { key = "k", mods = "ALT|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Up", 5 } }) },
     { key = "j", mods = "ALT|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Down", 5} }) },
 
-    { key = "\\", mods = "ALT",action=wezterm.action{SplitHorizontal={domain="DefaultDomain"}}},
-    { key = "-", mods = "ALT",action=wezterm.action{SplitVertical={domain="DefaultDomain"}}},
+    { key = "\\", mods = "ALT",action=wezterm.action{SplitHorizontal={domain="CurrentPaneDomain"}}},
+    { key = "-", mods = "ALT",action=wezterm.action{SplitVertical={domain="CurrentPaneDomain"}}},
     { key = "x", mods = "ALT", action = wezterm.action({CloseCurrentPane={confirm=false} }) },
 
 }
@@ -77,7 +77,7 @@ local config = {
     selection_word_boundary = " \t\n{}[]()\"'`,;:",
 
     -- カーソルの形
-    default_cursor_style = "SteadyBar",
+    default_cursor_style = "SteadyBlock",
 
     -- デフォルトキーを無効化
     disable_default_key_bindings = true,

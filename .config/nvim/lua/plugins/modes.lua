@@ -21,5 +21,5 @@ require('modes').setup({
 
 	-- Disable modes highlights in specified filetypes
 	-- Please PR commonly ignored filetypes
-	ignore_filetypes = { 'fern', 'ddu-ff' }
+	ignore_filetypes = { 'fern', 'ddu-ff','ddu-ff-filter','qf' }
 })

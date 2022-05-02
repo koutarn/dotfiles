@@ -1,6 +1,10 @@
 [TODO]
 * LSP
 * 行にnoteをかくやつ
+* meomlistをdduで利用する
+* weztermでマウスでコピー出来るようにする
+* クレーバーFを入れる
+* :newするとddcがバグるのを直す
 
 vimscript 写経シリーズ
 https://www.kaoriya.net/blog/2012/02/19/
