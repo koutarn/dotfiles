@@ -5,7 +5,11 @@ UsePlugin 'twitvim'
 let twitvim_show_header = 0
 let twitvim_count = 150
 let twitvim_timestamp_format = '%Y/%m/%d %R'
-let twitvim_browser_cmd = 'vivaldi-stable'
+
+" let twitvim_browser_cmd = 'vivaldi-stable'
+
+let twitvim_force_ssl = 1
+let twitvim_browser_cmd = 'google-chrome' " for Windows
 
 augroup vimrc_twitvim
   autocmd!

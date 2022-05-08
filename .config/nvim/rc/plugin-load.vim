@@ -69,7 +69,6 @@ call jetpack#begin()
     Jetpack 'bronson/vim-trailing-whitespace'               " 空白の削除
     Jetpack 'cohama/lexima.vim'                             " 閉じカッコの補完をしてくれる
     Jetpack 'godlygeek/tabular'                             " 文字揃えをうまいことしてくれる
-    " Jetpack 'itchyny/lightline.vim'                         " ステータスバーの所にカッコいいラインを表示する
     Jetpack 'itchyny/vim-highlighturl'                      " URLのハイライトを行う
     Jetpack 'lambdalisue/gina.vim'                          " git操作を出来るようにする
     Jetpack 'kuuote/gina-preview.vim'                       " gina拡張
@@ -93,9 +92,14 @@ call jetpack#begin()
     Jetpack 'tyru/capture.vim'                              " Exコマンドをバッファに書きだしてくれる
     Jetpack 'norcalli/nvim-colorizer.lua'                   " colorcodeに色を付けてくれる
     Jetpack 'mvllow/modes.nvim'                             " modeをカーソルの色でわかるようにする
-    Jetpack 'unblevable/quick-scope'                        " fを押すとハイライトしてくれるようになる
     Jetpack 'AndrewRadev/linediff.vim'                      " 選択範囲のdiffを取ってくれる
     Jetpack 'glidenote/memolist.vim'                        " メモ取り用
+    Jetpack 'andymass/vim-matchup'                          " 括弧をマッチさせる
+    Jetpack 'rhysd/clever-f.vim'                            " f移動を簡単にする(f移動後に;ではなくfで移動出来るようにする)
+
+    if executable('goimports')
+        Jetpack 'mattn/vim-goimports'                           " Goでimportsとfmtを書き込み時に実行する
+    endif
 
     "syntax
     Jetpack 'rhysd/vim-gfm-syntax', {'for':'markdown'} "markdownをもっとハイライトする
@@ -219,6 +223,8 @@ endif
     " Jetpack 'Pocco81/DAPInstall.nvim'         "デバッガのインストール
     " Jetpack 'rcarriga/nvim-dap-ui'            "デバッガのUI拡張
     " Jetpack 'monaqa/dial.nvim'                "dps-dial.vimに移行
+    " Jetpack 'itchyny/lightline.vim'                         " ステータスバーの所にカッコいいラインを表示する
+    " Jetpack 'unblevable/quick-scope'                        " fを押すとハイライトしてくれるようになる
 
 call jetpack#end()
 

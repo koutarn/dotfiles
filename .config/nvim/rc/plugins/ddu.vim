@@ -90,6 +90,7 @@ endfunction
 
 nnoremap <Leader>;; <Cmd>Ddu -name=file_rec file_rec -source-option-path='`fnamemodify(getcwd(), ':p')`'<CR>
 nnoremap <Leader>f, <Cmd>Ddu -name=vimrc file_rec -source-option-path='`fnamemodify($MYVIMRC, ':h')`'<CR>
+nnoremap <Leader>fm <Cmd>Ddu -name=vimrc file_rec -source-option-path='~/memo'<CR>
 nnoremap <Leader>;' <Cmd>Ddu -name=mr mr<CR>
 nnoremap <Leader>;[ <Cmd>Ddu -name=git-ls git_ls<CR>
 nnoremap <Leader>;p <Cmd>Ddu -name=source source<CR>

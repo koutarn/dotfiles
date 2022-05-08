@@ -29,5 +29,5 @@ let g:sonokai_diagnostic_line_highlight = 1
 let g:sonokai_diagnostic_virtual_text = 'grey'
 let g:sonokai_current_word = 'bold'
 let g:sonokai_lightline_disable_bold = 0
-let g:sonokai_style = 'atlantis'
+let g:sonokai_style = 'shusia'
 colorscheme sonokai

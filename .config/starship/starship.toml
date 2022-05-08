@@ -1,0 +1,119 @@
+[character]
+success_symbol = "🚀 "
+error_symbol = "👾 "
+
+[username]
+style_root = "green bold"
+style_user = "yellow bold"
+format = "[$user]($style) in "
+show_always = true
+disabled = false
+
+[directory]
+truncation_length = 8
+truncate_to_repo = false
+truncation_symbol = "…/"
+
+[line_break]
+# プロンプトを2行に分割するかどうか
+disabled = false
+
+# 言語関連のシンボルをすべて文字にする
+[aws]
+symbol = "AWS "
+
+[c]
+symbol = "C "
+
+[cobol]
+symbol = "COBOL "
+
+[conda]
+symbol = "Conda "
+
+[crystal]
+symbol = "Crystal "
+
+[cmake]
+symbol = "Cmake "
+
+[dart]
+symbol = "Dart "
+
+[deno]
+symbol = "Deno "
+
+[dotnet]
+symbol = ".NET "
+
+[docker_context]
+symbol = "Docker "
+
+[elixir]
+symbol = "Elixir "
+
+[elm]
+symbol = "elm "
+
+[golang]
+symbol = "Go "
+
+[hg_branch]
+symbol = "Hg "
+
+[java]
+symbol = "Java "
+
+[julia]
+symbol = "Julia "
+
+[kotlin]
+symbol = "Kotlin "
+
+[nodejs]
+symbol = "Node.js "
+
+[nim]
+symbol = "Nim "
+
+[nix_shell]
+symbol = "nix "
+
+[ocaml]
+symbol = "ml "
+
+[package]
+symbol = "pkg "
+
+[perl]
+symbol = "Perl "
+
+[php]
+symbol = "PHP "
+
+[pulumi]
+symbol = "pulumi "
+
+[purescript]
+symbol = "purs "
+
+[python]
+symbol = "Python "
+
+[ruby]
+symbol = "Ruby "
+
+[rust]
+symbol = "Rust "
+
+[scala]
+symbol = "Scala "
+
+[spack]
+symbol = "spack "
+
+[sudo]
+symbol = "sudo "
+
+[swift]
+symbol = "Swift "

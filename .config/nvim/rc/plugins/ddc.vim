@@ -22,7 +22,7 @@ call ddc#custom#patch_filetype(['vim','toml'],'sources',['necovim'])
 call ddc#custom#patch_global('sourceOptions', {
 \ '_': {
 \   'ignoreCase':v:true,
-\   'matchers': ['matcher_head'],
+\   'matchers': ['matcher_fuzzy'],
 \   'sorters': ['sorter_rank'],
 \   'converters': ['converter_remove_overlap'],
 \ },
@@ -30,6 +30,8 @@ call ddc#custom#patch_global('sourceOptions', {
 \   'mark':'🍕',
 \   'dup':v:true,
 \   },
+\ 'cmdline': {'mark': '💻'},
+\ 'cmdline-history': {'mark': '📓'},
 \ 'around': {'mark':'💡'},
 \ 'necovim':{'mark':'🐱'},
 \ 'yank':{'mark':'📋'},
@@ -53,6 +55,19 @@ call ddc#custom#patch_global('sourceOptions', {
 \	'sorters': [],
 \ },
  \})
+
+cnoremap <expr>;; pum#visible() ? '<Cmd>call pum#map#confirm()<CR>':''
+cnoremap <expr> <Tab>
+    \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>':
+    \ ddc#manual_complete()
+cnoremap <expr> <S-Tab>
+    \ pum#visible() ? '<Cmd>call pum#map#insert_relative(-1)<CR>':
+    \ ddc#manual_complete()
+cnoremap <C-n>   <Cmd>call pum#map#select_relative(+1)<CR>
+cnoremap <C-p>   <Cmd>call pum#map#select_relative(-1)<CR>
+cnoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
+cnoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
+
 
 call ddc#enable()
 
@@ -89,19 +104,8 @@ function! CommandlinePre() abort
         let b:prev_buffer_config = ddc#custom#get_buffer()
     endif
 
-    call ddc#custom#patch_buffer('sources',
+    call ddc#custom#patch_buffer('cmdlineSources',
             \ ['cmdline', 'cmdline-history','around'])
-
-    call ddc#custom#patch_buffer('sourceOptions', {
-    \ '_': {
-    \   'matchers': ['matcher_fuzzy'],
-    \   'sorters': ['sorter_rank'],
-    \   'converters': ['converter_remove_overlap'],
-    \ },
-    \ 'cmdline': {'mark': '💻'},
-    \ 'cmdline-history': {'mark': '📓'},
-    \ 'around': {'mark': '💡'},
-    \ })
 
     autocmd User DDCCmdlineLeave ++once call CommandlinePost()
     autocmd InsertEnter <buffer> ++once call CommandlinePost()

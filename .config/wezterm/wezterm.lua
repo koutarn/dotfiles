@@ -45,7 +45,7 @@ local config = {
     check_for_updates_interval_seconds = 86400, -- 60 *  60 * 24 == 1日
 
     -- default shell
-    default_prog = {"powershell.exe", "-nologo"},
+    default_prog = {"pwsh.exe", "-nologo"},
 
     -- color scheme
     color_scheme = "Dracula+",

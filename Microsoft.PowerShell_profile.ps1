@@ -40,3 +40,10 @@ Set-PSReadLineKeyHandler -Key Ctrl+p -Function Paste
 Set-PSReadLineKeyHandler -Key Ctrl+d -Function DeleteChar
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 # Set-PSReadLineOption -PredictionSource History
+
+# PowerShell Core7でもConsoleのデフォルトエンコーディングはsjisなので必要
+[System.Console]::OutputEncoding = [System.Text.Encoding]::GetEncoding("utf-8")
+[System.Console]::InputEncoding = [System.Text.Encoding]::GetEncoding("utf-8")
+
+# git logなどのマルチバイト文字を表示させるため (絵文字含む)
+$env:LESSCHARSET = "utf-8"
