@@ -117,3 +117,6 @@ symbol = "sudo "
 
 [swift]
 symbol = "Swift "
+
+[lua]
+symbol = "Lua "
