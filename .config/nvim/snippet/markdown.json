@@ -1,0 +1,9 @@
+{
+    "Check Box": {
+      "prefix": "che",
+      "body": [
+        "- [ ] $1"
+      ],
+      "description": "Insert Check Box"
+    }
+}
