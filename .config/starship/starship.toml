@@ -5,7 +5,7 @@ error_symbol = "👾 "
 [username]
 style_root = "green bold"
 style_user = "yellow bold"
-format = "[$user]($style) in "
+format = "[$user]($style) in 📁 "
 show_always = true
 disabled = false
 

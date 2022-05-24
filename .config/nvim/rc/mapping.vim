@@ -26,12 +26,16 @@ nnoremap ZQ <Nop>
 nnoremap s <Nop>
 nnoremap S <Nop>
 nnoremap <C-z> <Nop>
-
-"仮想置換モード
 nnoremap gR <Nop>
-
-"多分今後も選択モードは使用しない
 vnoremap <C-g> <Nop>
+
+"map prefix
+nnoremap [quickfix] <Nop>
+xnoremap [quickfix] <Nop>
+nmap <Leader>fq [quickfix]
+
+nnoremap [location] <Nop>
+xnoremap [location] <Nop>
 
 "保持しない
 nnoremap x "_x
@@ -88,7 +92,6 @@ inoremap jj <ESC>
 onoremap jj <Esc>
 cnoremap jj <C-c>
 
-
 "Buffer
 nnoremap <Leader>y <Cmd>bprevious<CR>
 nnoremap <Leader>u <Cmd>bnext<CR>
@@ -100,13 +103,14 @@ nnoremap <silent><Leader>fr :Source<CR>
 nnoremap <silent><Leader>f, :EditVim<CR>
 
 "QuickFix
-nnoremap <Leader>fqh <Cmd>cprevious<CR>
-nnoremap <Leader>fql <Cmd>cnext<CR>
-nnoremap <Leader>fqq <Cmd>copen<CR>
+nnoremap [quickfix]h <Cmd>cprevious<CR>
+nnoremap [quickfix]l <Cmd>cnext<CR>
+nnoremap [quickfix]q <Cmd>copen<CR>
 
 "location list
-nnoremap <Leader>flh <Cmd>lprevious<CR>
-nnoremap <Leader>fll <Cmd>lnext<CR>
+nmap <Leader>fl [location]
+nnoremap [location]h <Cmd>lprevious<CR>
+nnoremap [location]l <Cmd>lnext<CR>
 
 "window
 nnoremap <Leader>- <Cmd>split<CR>
@@ -147,98 +151,13 @@ nnoremap / /\v
 inoremap <C-v> <C-r><C-p>+
 cnoremap <C-v> <C-r>+
 
-" "digraphs
-" "thx https://qiita.com/monaqa/items/dcd43a53d3040293142a
-" noremap fj f<C-k>j
-" noremap Fj F<C-k>j
-" noremap tj t<C-k>j
-" noremap Tj T<C-k>j
-
-" "register digraph
-" "thx https://github.com/monaqa/dotfiles/blob/9861ff9b516786f5c3f6f6595eba2a9dab73c084/.config/nvim/scripts/keymap.vim#L192
-" function s:register_digraph(key_pair,char)
-"     execute('digraphs ' .. a:key_pair .. ' ' .. char2nr(a:char))
-" endfunction
-
-" call s:register_digraph('j(','（')
-" call s:register_digraph('j)','）')
-" call s:register_digraph('j[','「')
-" call s:register_digraph('j]','」')
-" call s:register_digraph('j<','【')
-" call s:register_digraph('j>','】')
-
-" " 句読点
-" call s:register_digraph('j,','、')
-" call s:register_digraph('j.','。')
-" call s:register_digraph('j!','！')
-" call s:register_digraph('j?','？')
-" call s:register_digraph('j:','：')
-
-" " 数字
-" call s:register_digraph('j0','０')
-" call s:register_digraph('j1','１')
-" call s:register_digraph('j2','２')
-" call s:register_digraph('j3','３')
-" call s:register_digraph('j4','４')
-" call s:register_digraph('j5','５')
-" call s:register_digraph('j6','６')
-" call s:register_digraph('j7','７')
-" call s:register_digraph('j8','８')
-" call s:register_digraph('j9','９')
-
-" " その他の記号
-" call s:register_digraph('j~','〜')
-" call s:register_digraph('j/','・')
-
-" "jにもいけるように
-" call s:register_digraph('jj','j')
-
-" "てにおは
-" call s:register_digraph('jt','て')
-" call s:register_digraph('ji','に')
-" call s:register_digraph('jw','を')
-" call s:register_digraph('jh','は')
-" call s:register_digraph('jg','が')
-" call s:register_digraph('jd','で')
-" call s:register_digraph('jo','と')
-" call s:register_digraph('jn','の')
-" call s:register_digraph('jk','か')
-
 "cmd window用
 augroup vimrc_cmdwindow
     autocmd!
     autocmd CmdwinEnter * nnoremap <buffer><silent>q <Cmd>:close<CR>
 augroup END
 
-"help確認用
-nnoremap <Leader>fhn <Cmd>h normal-index<CR>
-nnoremap <Leader>fhi <Cmd>h insert-index<CR>
-nnoremap <Leader>fhv <Cmd>h visual-index<CR>
-nnoremap <Leader>fhce <Cmd>h ex-edit-index<CR>
-nnoremap <Leader>fhcc <Cmd>h ex-cmd-index<CR>
-nnoremap <Leader>fht <Cmd>h terminal-job-index<CR>
-nnoremap <Leader>fho <Cmd>h option-list<CR>
-nnoremap <Leader>fhf <Cmd>h function-list<CR>
-nnoremap <Leader>fhT <Cmd>h help-tags<CR>
-nnoremap <Leader>fhV <Cmd>h vim-variable<CR>
-nnoremap <Leader>fhI <Cmd>h index<CR>
-
-"設定
-function! s:set_number_settings(set_option) abort
-    if &number ==# 0
-        set number
-        if a:set_option ==# 'number'
-            set norelativenumber
-        else
-            set relativenumber
-        endif
-    else
-        set nonumber | set norelativenumber
-    endif
-endfunction
-
 "terminal
-"thx monaqa
 tnoremap jj <C-\><C-n>
 
 augroup vimrc
@@ -256,10 +175,6 @@ function! s:terminal_init()
   nnoremap <buffer> A i<C-e>
   nnoremap <buffer> p pi
 endfunction
-
-nnoremap <expr><Leader>snn <SID>set_number_settings('number')
-nnoremap <expr><Leader>snr <SID>set_number_settings('relative')
-nnoremap <Leader>sl <Cmd>set list!<CR>
 
 "vモードの置換連続ペースト用
 function! Put_text_without_override_register()

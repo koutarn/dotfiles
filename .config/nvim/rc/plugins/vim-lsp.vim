@@ -17,7 +17,7 @@ function! s:on_lsp_buffer_enabled() abort
     nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
     nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
     let g:lsp_format_sync_timeout = 1000
-    autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+    autocmd! BufWritePre *.rs call execute('LspDocumentFormatSync')
 
     " refer to doc to add more commands
 endfunction
@@ -34,10 +34,10 @@ let g:lsp_diagnostics_enabled = 1
 
 "diagnoticsを無効化
 let g:lsp_diagnostics_signs_enabled = 1
-let g:lsp_document_highlight_enabled = 0
+let g:lsp_document_highlight_enabled = 1
 
 "sing
-let g:lsp_diagnostics_signs_error = {'text': '😱'}
+let g:lsp_diagnostics_signs_error = {'text': '❌'}
 let g:lsp_diagnostics_signs_warning = {'text': '⚠'} " icons require GUI
 let g:lsp_diagnostics_signs_hint = {'text': '💡'} " icons require GUI
 

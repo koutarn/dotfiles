@@ -98,7 +98,7 @@ call jetpack#begin()
     Jetpack 'rhysd/clever-f.vim'                            " f移動を簡単にする(f移動後に;ではなくfで移動出来るようにする)
 
     if executable('goimports')
-        Jetpack 'mattn/vim-goimports'                           " Goでimportsとfmtを書き込み時に実行する
+        Jetpack 'mattn/vim-goimports',{'for':'go'}          " Goでimportsとfmtを書き込み時に実行する
     endif
 
     "syntax

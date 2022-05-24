@@ -1,12 +1,8 @@
 [TODO]
 * LSP
+* Grepのやつをいれる
 * 行にnoteをかくやつ
 * meomlistをdduで利用する
-* weztermでマウスでコピー出来るようにする
-* :newするとddcがバグるのを直す→なおったかも?
-
-* long long キリン.go
-
-vimscript 写経シリーズ
-https://www.kaoriya.net/blog/2012/02/19/
-https://thinca.hatenablog.com/entry/20100205/1265307642
+* templateプラグインを入れる
+* 一文字入力ですぐ補完が出るようにする
+* translate.vimが使えない問題を直す
