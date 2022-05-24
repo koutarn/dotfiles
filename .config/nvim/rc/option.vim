@@ -49,7 +49,7 @@ set notitle
 set showcmd
 set nocursorline
 set display=lastline
-set laststatus=2
+set laststatus=3
 set nolist
 set listchars=tab:\|\ ,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 set ambiwidth=single

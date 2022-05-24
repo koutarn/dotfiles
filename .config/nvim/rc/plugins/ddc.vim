@@ -2,17 +2,18 @@ UsePlugin 'ddc.vim'
 
 "pum.vimを使用
 call ddc#custom#patch_global('completionMenu', 'pum.vim')
+call ddc#custom#patch_global('backspaceCompletion',v:true)
 
 call ddc#custom#patch_global('keywordPattern', '[a-zA-Z_:]\w*')
 
 "sourcesの設定
 call ddc#custom#patch_global('sources', [
-\ 'vim-lsp',
 \ 'vsnip',
-\ 'around',
+\ 'vim-lsp',
 \ 'skkeleton',
-\ 'file',
 \ 'emoji',
+\ 'file',
+\ 'around',
 \ 'yank',
 \ ])
 
@@ -25,6 +26,8 @@ call ddc#custom#patch_global('sourceOptions', {
 \   'matchers': ['matcher_fuzzy'],
 \   'sorters': ['sorter_rank'],
 \   'converters': ['converter_remove_overlap'],
+\   'isVolatile': v:true,
+\   'minAutoCompleteLength':1,
 \ },
 \ 'vsnip':{
 \   'mark':'🍕',
@@ -32,19 +35,25 @@ call ddc#custom#patch_global('sourceOptions', {
 \   },
 \ 'cmdline': {'mark': '💻'},
 \ 'cmdline-history': {'mark': '📓'},
-\ 'around': {'mark':'💡'},
+\ 'around': {
+\   'mark':'💡',
+\   'minAutoCompleteLength':3,
+\   'matchers': ['matcher_head'],
+\   },
 \ 'necovim':{'mark':'🐱'},
-\ 'yank':{'mark':'📋'},
+\ 'yank':{
+\   'mark':'📋',
+\   'minAutoCompleteLength':3,
+\   },
 \ 'skkeleton': {
-\   'mark': '🍺',
+\   'mark': '🍣',
 \   'matchers': ['skkeleton'],
 \   'sorters': [],
-\   'minAutoCompleteLength': 1,
 \ },
 \ 'file': {
 \   'mark': '📁',
-\   'isVolatile': v:true,
 \   'forceCompletionPattern': '\S/\S*',
+\   'matchers': ['matcher_head'],
 \ },
 \   'vim-lsp': {
 \   'mark': '🔥',
