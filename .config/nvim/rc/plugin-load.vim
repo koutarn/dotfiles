@@ -131,8 +131,8 @@ if executable('deno')
 
     "matcher
     Jetpack 'Shougo/ddc-matcher_head'
-    Jetpack 'matsui54/ddc-matcher_fuzzy'
     Jetpack 'tani/ddc-fuzzy'
+    Jetpack 'takker99/ddc-bitap'
 
     "sorter
     Jetpack 'Shougo/ddc-sorter_rank'

@@ -6,7 +6,7 @@
      \____|\___/ \__|_| |_|_|\___||___/
 
 # Spec
-* OS:Manjaro Linux
-* Shell:zsh
+* OS:Manjaro Linux,Windows
+* Shell:zsh,powershell
 * Terminal:wezterm
 * Editor:neovim

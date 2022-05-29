@@ -13,7 +13,6 @@ Set-Alias poweroff Stop-Computer
 Set-Alias reboot! Restart-Computer
 Set-Alias reboot Restart-Computer -Force
 
-
 #ロケーション
 Set-Location $workspace
 
@@ -22,6 +21,14 @@ function .. {cd ../}
 function ... {cd ../../}
 function e {explorer .}
 function pwdc() {Set-Clipboard "$pwd"}
+
+function qz($arg,$mode="created",$page=4) {
+    qiitaz -n $page -p -s $mode $arg
+}
+
+function wiki($arg){
+    fzwiki -l ja -o $arg
+}
 
 function prompt {
 $isRoot = (([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator"))
@@ -47,3 +54,6 @@ Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 
 # git logなどのマルチバイト文字を表示させるため (絵文字含む)
 $env:LESSCHARSET = "utf-8"
+
+# startshipを有効化
+Invoke-Expression (&starship init powershell)

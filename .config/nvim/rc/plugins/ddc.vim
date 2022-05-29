@@ -3,7 +3,6 @@ UsePlugin 'ddc.vim'
 "pum.vimを使用
 call ddc#custom#patch_global('completionMenu', 'pum.vim')
 call ddc#custom#patch_global('backspaceCompletion',v:true)
-
 call ddc#custom#patch_global('keywordPattern', '[a-zA-Z_:]\w*')
 
 "sourcesの設定
@@ -12,10 +11,11 @@ call ddc#custom#patch_global('sources', [
 \ 'vim-lsp',
 \ 'skkeleton',
 \ 'emoji',
-\ 'file',
 \ 'around',
+\ 'file',
 \ 'yank',
 \ ])
+
 
 "特定のファイルのみ補完
 call ddc#custom#patch_filetype(['vim','toml'],'sources',['necovim'])
@@ -24,7 +24,7 @@ call ddc#custom#patch_global('sourceOptions', {
 \ '_': {
 \   'ignoreCase':v:true,
 \   'matchers': ['matcher_fuzzy'],
-\   'sorters': ['sorter_rank'],
+\   'sorters': ['sorter_fuzzy'],
 \   'converters': ['converter_remove_overlap'],
 \   'isVolatile': v:true,
 \   'minAutoCompleteLength':1,
@@ -56,7 +56,7 @@ call ddc#custom#patch_global('sourceOptions', {
 \   'matchers': ['matcher_head'],
 \ },
 \   'vim-lsp': {
-\   'mark': '🔥',
+\   'mark': '🧊',
 \ },
 \   'emoji': {
 \   'mark': '😎',
@@ -64,6 +64,12 @@ call ddc#custom#patch_global('sourceOptions', {
 \	'sorters': [],
 \ },
  \})
+
+"     call ddc#custom#patch_global('filterParams', {
+" \   'converter_fuzzy': {
+" \     'hlGroup': 'MatchParen'
+" \   }
+" \ })
 
 cnoremap <expr>;; pum#visible() ? '<Cmd>call pum#map#confirm()<CR>':''
 cnoremap <expr> <Tab>
@@ -85,7 +91,6 @@ inoremap <silent><expr> <TAB>   pum#visible() ? '<Cmd>call pum#map#insert_relati
 inoremap <silent><expr> <S-TAB> pum#visible() ? '<Cmd>call pum#map#insert_relative(-1)<CR>' : vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-TAB>'
 inoremap <silent><expr> <C-n>   (pum#visible() ? '' : '<Cmd>call ddc#map#manual_complete()<CR>') . '<Cmd>call pum#map#select_relative(+1)<CR>'
 inoremap <silent><expr> <C-p>   (pum#visible() ? '' : '<Cmd>call ddc#map#manual_complete()<CR>') . '<Cmd>call pum#map#select_relative(-1)<CR>'
-autocmd User PumCompleteDone call vsnip_integ#on_complete_done(g:pum#completed_item)
 
 inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
 inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
