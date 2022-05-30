@@ -16,7 +16,6 @@ call ddc#custom#patch_global('sources', [
 \ 'yank',
 \ ])
 
-
 "特定のファイルのみ補完
 call ddc#custom#patch_filetype(['vim','toml'],'sources',['necovim'])
 

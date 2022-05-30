@@ -57,3 +57,9 @@ $env:LESSCHARSET = "utf-8"
 
 # startshipを有効化
 Invoke-Expression (&starship init powershell)
+
+#scoopの補完
+Import-Module "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.FullName)\modules\scoop-completion"
+
+# ghコマンドの補完
+Invoke-Expression -Command $(gh completion -s powershell | Out-String)

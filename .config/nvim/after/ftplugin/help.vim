@@ -1,4 +1,5 @@
 setlocal cursorline
+
 setlocal nospell
 setlocal nolist
 setlocal nohlsearch

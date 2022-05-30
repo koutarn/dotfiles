@@ -4,8 +4,8 @@ require('kanagawa').setup({
     commentStyle = "NONE",
     functionStyle = "bold",
     keywordStyle = "NONE",
-    statementStyle = "bold",
-    typeStyle = "bold",
+    statementStyle = "NONE",
+    typeStyle = "NONE",
     variablebuiltinStyle = "NONE",
     specialReturn = true,       -- special highlight for the return keyword
     specialException = true,    -- special highlight for exception handling keywords
