@@ -47,9 +47,10 @@ call jetpack#begin()
 
 
     "color scheme
-    Jetpack 'sainnhe/edge'                                  " 色々設定出来るクールなcolor scheme
-    Jetpack 'sainnhe/sonokai'                               " monokaiProベースのcolor scheme
-    Jetpack 'rebelot/kanagawa.nvim'                         " なんかよさげなカラースキーム
+    Jetpack 'navarasu/onedark.nvim'                         " onedarkこそ神
+    " Jetpack 'sainnhe/edge'                                  " 色々設定出来るクールなcolor scheme
+    " Jetpack 'sainnhe/sonokai'                               " monokaiProベースのcolor scheme
+    " Jetpack 'rebelot/kanagawa.nvim'                         " なんかよさげなカラースキーム
 
     " Lsp
     Jetpack 'prabirshrestha/vim-lsp'                        " LSP
