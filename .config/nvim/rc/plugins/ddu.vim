@@ -90,7 +90,7 @@ endfunction
 
 " nnoremap <Leader>;; <Cmd>Ddu -name=file_rec file_rec -source-option-path='`fnamemodify(getcwd(), ':p')`'<CR>
 nnoremap <Leader>;; <Cmd>call ddu#start({'sources': [
-   \ {'name': 'file_rec', 'params': {'path': expand('%:p:h')}}
+   \ {'name': 'file_rec', 'params': {'path': expand("%:p:h")}}
    \ ]})<CR>
 
 nnoremap <Leader>fm <Cmd>call ddu#start({'sources': [
