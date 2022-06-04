@@ -10,14 +10,22 @@ call ddc#custom#patch_global('sources', [
 \ 'vsnip',
 \ 'vim-lsp',
 \ 'skkeleton',
+\ 'file',
+\ ])
+
+"特定のファイルのみ補完
+call ddc#custom#patch_filetype(['vim','toml'],'sources',[
+\ 'necovim',
+\ ])
+
+call ddc#custom#patch_filetype(['markdown'],'sources',[
+\ 'skkeleton',
+\ 'vsnip',
 \ 'emoji',
 \ 'around',
 \ 'file',
 \ 'yank',
 \ ])
-
-"特定のファイルのみ補完
-call ddc#custom#patch_filetype(['vim','toml'],'sources',['necovim'])
 
 call ddc#custom#patch_global('sourceOptions', {
 \ '_': {
@@ -32,8 +40,12 @@ call ddc#custom#patch_global('sourceOptions', {
 \   'mark':'🍕',
 \   'dup':v:true,
 \   },
-\ 'cmdline': {'mark': '💻'},
-\ 'cmdline-history': {'mark': '📓'},
+\ 'cmdline': {
+\   'mark': '💻',
+\   },
+\ 'cmdline-history': {
+\   'mark': '📓',
+\  },
 \ 'around': {
 \   'mark':'💡',
 \   'minAutoCompleteLength':3,
@@ -62,7 +74,7 @@ call ddc#custom#patch_global('sourceOptions', {
 \	'matchers': ['emoji'],
 \	'sorters': [],
 \ },
- \})
+\})
 
 "     call ddc#custom#patch_global('filterParams', {
 " \   'converter_fuzzy': {
@@ -91,8 +103,8 @@ inoremap <silent><expr> <S-TAB> pum#visible() ? '<Cmd>call pum#map#insert_relati
 inoremap <silent><expr> <C-n>   (pum#visible() ? '' : '<Cmd>call ddc#map#manual_complete()<CR>') . '<Cmd>call pum#map#select_relative(+1)<CR>'
 inoremap <silent><expr> <C-p>   (pum#visible() ? '' : '<Cmd>call ddc#map#manual_complete()<CR>') . '<Cmd>call pum#map#select_relative(-1)<CR>'
 
-inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
-inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
+inoremap <C-y> <Cmd>call pum#map#confirm()<CR>
+inoremap <C-e> <Cmd>call pum#map#cancel()<CR>
 
 "command line complete
 call ddc#custom#patch_global('autoCompleteEvents',
@@ -118,7 +130,7 @@ function! CommandlinePre() abort
     endif
 
     call ddc#custom#patch_buffer('cmdlineSources',
-            \ ['cmdline', 'cmdline-history','around'])
+            \ ['cmdline', 'cmdline-history'])
 
     autocmd User DDCCmdlineLeave ++once call CommandlinePost()
     autocmd InsertEnter <buffer> ++once call CommandlinePost()

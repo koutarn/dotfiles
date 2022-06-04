@@ -23,10 +23,6 @@ if has('unix')
   set shell=/bin/zsh
 elseif has('win32') || has('win64')
     set shell=cmd
-    " set shell=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
-    " set shellcmdflag=-c
-    " set shellquote=\"
-    " set shellxquote=
 endif
 
 "補完
@@ -75,7 +71,7 @@ set preserveindent
 set backspace=indent,eol,start
 
 "file
-set number
+set nonumber
 set norelativenumber
 set ruler
 

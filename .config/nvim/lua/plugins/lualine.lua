@@ -54,29 +54,31 @@ require'lualine'.setup {
             },
         },
         lualine_c = {
+            {
+                -- 'diagnostics',
+                -- source = 'vim_lsp',
+                -- always_visible = true,
+                -- update_in_insert = true,
+            }
         },
         lualine_x = {
-            -- getPath,
-            function() return '📁 ' .. vim.fn.expand("%:p:h") end
+            function() return '📁 ' .. vim.fn.expand("%:p:h") end,
         },
         lualine_y = {
             'branch',
             'diff',
-            -- 上手く動かないので一旦保留
-            -- {
-            --     'diagnostics',
-            --     source = {'vim_lsp'},
-            --     always_visible = true,
-            -- }
+            -- 'location',
+            -- 'progress',
         },
         lualine_z = {
-            'progress',
-        }
+            function() return os.date("%F(%A) %H:%M") end,
+        },
     },
     inactive_sections = {
         lualine_a = {},
         lualine_b = {},
         lualine_c = {},
+        lualine_w = {},
         lualine_x = {},
         lualine_y = {},
         lualine_z = {}

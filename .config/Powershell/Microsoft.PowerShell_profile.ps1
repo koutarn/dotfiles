@@ -1,11 +1,12 @@
 
 #alias
-$workspace = 'C:\workspace'
 $desktop = [System.Environment]::GetFolderPath("Desktop")
 $user = [System.Environment]::GetFolderPath("UserProfile")
 $dotfiles = $user + "/dotfiles"
 $nvim = $user + "/dotfiles/.config/nvim"
 $wezterm = $user + '/.config/wezterm'
+$env:GOPATH = $user + "/repo"
+$workspace = $user + '/repo'
 
 Set-Alias o Invoke-Item
 Set-Alias poweroff! Stop-Computer -Force
@@ -28,6 +29,10 @@ function qz($arg,$mode="created",$page=4) {
 
 function wiki($arg){
     fzwiki -l ja -o $arg
+}
+
+function q {
+    cd $(ghq list -p | fzf)
 }
 
 function prompt {

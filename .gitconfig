@@ -37,3 +37,7 @@ ui = auto
 # template = ~/.git-template
 [init]
 	defaultBranch = main
+[ghq]
+	root = ~/repo/src
+[url "git@github.com:"]
+	insteadOf = https://github.com/
