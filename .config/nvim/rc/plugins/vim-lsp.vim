@@ -40,7 +40,7 @@ let g:lsp_document_highlight_enabled = 1
 
 "sing
 let g:lsp_diagnostics_signs_error = {'text': '👾'}
-let g:lsp_diagnostics_signs_warning = {'text': '👻'}
+let g:lsp_diagnostics_signs_warning = {'text': '💣'}
 let g:lsp_diagnostics_signs_hint = {'text': '💡'}
 
 "ログを無効化
