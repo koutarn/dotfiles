@@ -1,12 +1,12 @@
-
 #alias
 $desktop = [System.Environment]::GetFolderPath("Desktop")
 $user = [System.Environment]::GetFolderPath("UserProfile")
 $dotfiles = $user + "/dotfiles"
 $nvim = $user + "/dotfiles/.config/nvim"
 $wezterm = $user + '/.config/wezterm'
+$workspace = $user + '/repo/src/github.com/koutarn/'
 $env:GOPATH = $user + "/repo"
-$workspace = $user + '/repo'
+$env:GOBIN = $env:GOPATH + '/bin'
 
 Set-Alias o Invoke-Item
 Set-Alias poweroff! Stop-Computer -Force
@@ -32,7 +32,8 @@ function wiki($arg){
 }
 
 function q {
-    cd $(ghq list -p | fzf)
+    $select = $(ghq list | fzf)
+    cd $($(ghq root) + "/" + $select) 
 }
 
 function prompt {
@@ -68,3 +69,6 @@ Import-Module "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.Full
 
 # ghコマンドの補完
 Invoke-Expression -Command $(gh completion -s powershell | Out-String)
+
+# posh git
+Import-Module posh-git

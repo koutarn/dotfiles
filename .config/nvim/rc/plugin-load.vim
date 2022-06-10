@@ -83,7 +83,7 @@ call jetpack#begin()
     Jetpack 'plasticboy/vim-markdown', {'for':'markdown'}   " markdownのsyntax highlightを提供する
     Jetpack 'reireias/vim-cheatsheet'                       " 自分で設定したチートシートを表示する
     Jetpack 'simeji/winresizer'                             " windowのリサイズをおこなう
-    " Jetpack 'skanehira/translate.vim'                       " 選択文字の翻訳をしてくれる
+    Jetpack 'voldikss/vim-translator'                       " 選択文字の翻訳をしてくれる
     Jetpack 't9md/vim-quickhl'                              " 選択文字のハイライトをしてくれる
     " Jetpack 'thinca/vim-localrc'                            " ローカル設定のvimrcを読み込む
     Jetpack 'thinca/vim-qfreplace'                          " quick fixで置換を行う

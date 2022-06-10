@@ -2,7 +2,7 @@ UsePlugin 'ddc.vim'
 
 "pum.vimを使用
 call ddc#custom#patch_global('completionMenu', 'pum.vim')
-call ddc#custom#patch_global('backspaceCompletion',v:true)
+" call ddc#custom#patch_global('backspaceCompletion',v:true)
 call ddc#custom#patch_global('keywordPattern', '[a-zA-Z_:]\w*')
 
 "sourcesの設定
@@ -42,9 +42,11 @@ call ddc#custom#patch_global('sourceOptions', {
 \   },
 \ 'cmdline': {
 \   'mark': '💻',
+\   'minAutoCompleteLength':2,
 \   },
 \ 'cmdline-history': {
 \   'mark': '📓',
+\   'minAutoCompleteLength':2,
 \  },
 \ 'around': {
 \   'mark':'💡',
@@ -109,7 +111,7 @@ inoremap <C-e> <Cmd>call pum#map#cancel()<CR>
 "command line complete
 call ddc#custom#patch_global('autoCompleteEvents',
     \ ['InsertEnter', 'TextChangedI', 'TextChangedP', 'CmdlineChanged'])
-nnoremap ; <Cmd>call CommandlinePre()<CR>:
+" nnoremap ; <Cmd>call CommandlinePre()<CR>:
 
 function! CommandlinePre() abort
     cnoremap <expr>;; pum#visible() ? '<Cmd>call pum#map#confirm()<CR>':''

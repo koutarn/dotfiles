@@ -10,10 +10,14 @@ function! s:on_lsp_buffer_enabled() abort
 
     if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
 
-    nmap <buffer> gd <plug>(lsp-definition)
-    nmap <buffer> g;: <Cmd>LspWorkspaceSymbol<CR>
-    nmap <buffer> g;; <Cmd>LspDocumentSymbol<CR>
-    nmap <buffer> gh <plug>(lsp-hover)
+    " nmap <buffer> zz <plug>(lsp-implementation)
+    nmap <buffer> z[ <plug>(lsp-definition)
+    nmap <buffer> z] <plug>(lsp-references)
+    nmap <buffer> z= <plug>(lsp-document-diagnostics)
+    nmap <buffer> z- <plug>(lsp-workspace-symbol)
+    nmap <buffer> z\ <plug>(lsp-document-symbol)
+    nmap <buffer> zh <plug>(lsp-hover)
+    nmap <buffer> zH <plug>(lsp-hover-preview)
     nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
     nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
     let g:lsp_format_sync_timeout = 1000
@@ -35,9 +39,9 @@ let g:lsp_diagnostics_signs_enabled = 1
 let g:lsp_document_highlight_enabled = 1
 
 "sing
-let g:lsp_diagnostics_signs_error = {'text': '❌'}
-let g:lsp_diagnostics_signs_warning = {'text': '⚠'} " icons require GUI
-let g:lsp_diagnostics_signs_hint = {'text': '💡'} " icons require GUI
+let g:lsp_diagnostics_signs_error = {'text': '👾'}
+let g:lsp_diagnostics_signs_warning = {'text': '👻'}
+let g:lsp_diagnostics_signs_hint = {'text': '💡'}
 
 "ログを無効化
 let g:lsp_log_file = """"
