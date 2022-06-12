@@ -1,3 +1,7 @@
+require("nvim-gps").setup()
+
+local gps = require("nvim-gps")
+
 local function skk()
     local skk_mark = ''
     local is_enabled = vim.fn['skkeleton#is_enabled']()
@@ -55,11 +59,9 @@ require'lualine'.setup {
         },
         lualine_c = {
             {
-                -- 'diagnostics',
-                -- source = 'vim_lsp',
-                -- always_visible = true,
-                -- update_in_insert = true,
-            }
+                gps.get_location,
+                cond = gps.is_available,
+            },
         },
         lualine_x = {
             function() return '📁 ' .. vim.fn.expand("%:p:h") end,

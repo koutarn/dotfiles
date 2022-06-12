@@ -95,6 +95,7 @@ call jetpack#begin()
     Jetpack 'glidenote/memolist.vim'                        " メモ取り用
     Jetpack 'andymass/vim-matchup'                          " 括弧をマッチさせる
     Jetpack 'rhysd/clever-f.vim'                            " f移動を簡単にする(f移動後に;ではなくfで移動出来るようにする)
+    Jetpack 'SmiteshP/nvim-gps'                             " 現在の行の情報を表示してくれる
 
     Jetpack 'mattn/vim-goimports',{'for':'go'}              " Goでimportsとfmtを書き込み時に実行する
     Jetpack 'mattn/vim-goimpl',{'for':'go'}                 " interfaceを作成してくれる
