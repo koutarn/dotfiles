@@ -38,6 +38,6 @@ ui = auto
 [init]
 	defaultBranch = main
 [ghq]
-	root = ~/repo/src
+	root = ~/workspace/src
 [url "git@github.com:"]
 	insteadOf = https://github.com/

@@ -1,0 +1,146 @@
+{
+  "main": {
+    "id": "05e896f0dcfd97b6",
+    "type": "split",
+    "children": [
+      {
+        "id": "ee4cd2bb31248f0e",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "javascript/doc/functionExpression.md",
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "455035c81988aeef",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "javascript/doc/functionExpression.md",
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "886b82a546a9373c",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "javascript/doc/functionExpression.md",
+            "mode": "preview"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b6021367eea0247e",
+    "type": "split",
+    "children": [
+      {
+        "id": "7fe9e8c0779d5d58",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "14df9d70275ce946",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "0fec9b4479547a0a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "a933cb068374c6a2",
+    "type": "split",
+    "children": [
+      {
+        "id": "0b6d599b61a1c657",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c696951d2ca3aba5",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "javascript/doc/functionExpression.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "1a589cf8426762f0",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "javascript/doc/functionExpression.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "886b82a546a9373c",
+  "lastOpenFiles": [
+    "javascript/doc/functionExpression.md",
+    "javascript/doc/functionDeclaration.md",
+    "javascript/doc/highOrderFunction.md",
+    "javascript/doc/anonymousFunction.md",
+    "javascript/doc/variableArguments.md",
+    "javascript/doc/undefined.md",
+    "codePrinciple/namedIf.md",
+    "codePrinciple/switchStatementIsFunction.md",
+    "codePrinciple/notReAssignment.md",
+    "c++/doc/mixedOperation.md"
+  ]
+}

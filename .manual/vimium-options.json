@@ -1,0 +1,21 @@
+{
+  "settingsVersion": "1.67",
+  "exclusionRules": [],
+  "filterLinkHints": false,
+  "waitForEnterForFilteredHints": true,
+  "hideHud": true,
+  "keyMappings": "#初期化\nunmap d\nunmap X\nunmap gs\nunmap gt\nunmap gT\n\n#設定\nmap u restoreTab\nmap H goBack\nmap L goForward\nmap h previousTab\nmap l nextTab\nmap J scrollPageDown\nmap K scrollPageUp\nmap <c-[> passNextKey",
+  "linkHintCharacters": "asdfjkl;",
+  "linkHintNumbers": "0123456789",
+  "newTabUrl": "https://www.google.com/search?q=",
+  "nextPatterns": "next,more,newer,>,›,→,»,≫,>>,次へ",
+  "previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<,前へ",
+  "regexFindMode": true,
+  "ignoreKeyboardLayout": false,
+  "scrollStepSize": 100,
+  "smoothScroll": true,
+  "grabBackFocus": true,
+  "searchEngines": "#グーグル系\ng: http://www.google.com/search?q=%s Google\ngm: https://www.google.com/maps?q=%s Google maps\ny: https://www.google.com/search?q=%s&tbs=qdr:y Google1year\nm: https://www.google.com/search?q=%s&tbs=qdr:m Google1month\nw: https://www.google.com/search?q=%s&tbs=qdr:w Google1week\nt: https://trends.google.co.jp/trends/explore?date=today%205-y&q=%s GoogleTrends\nt: https://translate.google.com/#en/ja/%s Google translate\n\n#Qiita\nq: https://qiita.com/search?q=%s Qiita\nqs: https://qiita.com/search?stocked=1&q=%s Qiita stock\n\n#その他\nwiki: https://ja.wikipedia.org/wiki/?title=Special:Search&search=%s  Wikipedia\na: http://www.amazon.co.jp/s/?field-keywords=%s Amazon\ns: http://www.thesaurus.com/browse/%s?s=t Thesaurus\nc: https://codic.jp/engine?text=%s codic",
+  "searchUrl": "https://www.google.com/search?q=",
+  "userDefinedLinkHintCss": "div > .vimiumHintMarker {\n  background: #000;\n  border: 0;\n  border-radius: 0px;\n  box-shadow: RGBA(0, 0, 0, .5) 0 2px 10px;\n  padding: 4px;\n}\n\ndiv > .vimiumHintMarker span {\n  color: #FFF;\n  font-family: monospace;\n  font-size: 11px;\n  font-weight: 100; \n  margin: 0 2px;\n  text-shadow: none;\n}\n\ndiv > .vimiumHintMarker > .matchingCharacter {\n  color: #00ff00;\n}"
+}

@@ -115,6 +115,7 @@ set isfname-==
 
 "cmd window
 set cmdwinheight=16
+set cmdheight=0
 
 if !has('nvim')
   set ttymouse=xterm2

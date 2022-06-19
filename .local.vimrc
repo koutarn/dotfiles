@@ -1,1 +1,0 @@
-" echomsg 'load local vimrc'
