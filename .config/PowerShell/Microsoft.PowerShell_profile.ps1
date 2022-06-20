@@ -8,6 +8,8 @@ $workspace = $user + '/workspace/src/github.com/koutarn/'
 $env:GOPATH = $user + "/workspace"
 $env:GOBIN = $env:GOPATH + '/bin'
 
+$env:PATH = $env:GOBIN + ';' + $env:PATH
+
 Set-Alias o Invoke-Item
 Set-Alias poweroff! Stop-Computer -Force
 Set-Alias poweroff Stop-Computer
