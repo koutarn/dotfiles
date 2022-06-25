@@ -74,3 +74,6 @@ Invoke-Expression -Command $(gh completion -s powershell | Out-String)
 
 # posh git
 Import-Module posh-git
+
+# labコマンド補完
+lab completion | Out-String | Invoke-Expression

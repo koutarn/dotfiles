@@ -42,6 +42,7 @@ $TOOLS = @(
     "fd"
     "fzf"
     "gh"
+    "lab"
     "ghq"
     "llvm"
     "mingw"
@@ -63,6 +64,7 @@ if(canUse("scoop")){
     scoop install $UTILS
     scoop bucket add extras
     scoop bucket add versions
+    scoop bucket add zaquestion https://github.com/zaquestion/scoop-bucket.git
     scoop update *
     scoop install $PROGRAMMING_ENV
     scoop install $TOOLS
