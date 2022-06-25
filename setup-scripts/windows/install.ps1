@@ -57,6 +57,7 @@ $TOOLS = @(
     "vscode"
     "wezterm"
     "wget"
+    "delta"
 )
 
 # scoopが使用出来るなら実行
