@@ -46,3 +46,7 @@ let g:lsp_diagnostics_signs_hint = {'text': '💡'}
 "ログを無効化
 let g:lsp_log_file = """"
 let g:lsp_log_verbose = 0
+
+"highlight
+" highlight link LspErrorVirtualText Comment
+" highlight link LspWarningVirtualText Comment
