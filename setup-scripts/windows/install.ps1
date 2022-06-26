@@ -37,9 +37,7 @@ $PROGRAMMING_ENV = @(
 )
 
 $TOOLS = @(
-    "bat"
     "cacert"
-    "fd"
     "fzf"
     "gh"
     "lab"
@@ -48,25 +46,28 @@ $TOOLS = @(
     "mingw"
     "neovim-nightly"
     "posh-git"
-    "ripgrep"
-    "rga"
     "scoop-completion"
     "slack"
-    "starship"
     "terminal-icons"
     "ueli"
     "vscode"
     "wezterm"
     "wget"
+    "ripgrep"
+    "rga"
+    "starship"
+    "bat"
+    "fd"
     "delta"
     "zoxide"
     "lsd"
-    "navi"
     "csview"
     "broot"
     "tokei"
     "pastel"
     "gitui"
+    "sd"
+    "tealdeer"
 )
 
 # scoopが使用出来るなら実行

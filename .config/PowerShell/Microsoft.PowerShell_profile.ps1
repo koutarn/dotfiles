@@ -7,14 +7,17 @@ $wezterm = $user + '/.config/wezterm'
 $workspace = $user + '/workspace/src/github.com/koutarn/'
 $env:GOPATH = $user + "/workspace"
 $env:GOBIN = $env:GOPATH + '/bin'
-
 $env:PATH = $env:GOBIN + ';' + $env:PATH
+
+$EDITOR = "nvim"
 
 Set-Alias o Invoke-Item
 Set-Alias poweroff! Stop-Computer -Force
 Set-Alias poweroff Stop-Computer
 Set-Alias reboot! Restart-Computer
 Set-Alias reboot Restart-Computer -Force
+Set-Alias br broot
+Set-Alias ls lsd
 
 #ロケーション
 Set-Location $workspace
