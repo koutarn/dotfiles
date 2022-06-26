@@ -49,6 +49,7 @@ $TOOLS = @(
     "neovim-nightly"
     "posh-git"
     "ripgrep"
+    "rga"
     "scoop-completion"
     "slack"
     "starship"
@@ -58,6 +59,14 @@ $TOOLS = @(
     "wezterm"
     "wget"
     "delta"
+    "zoxide"
+    "lsd"
+    "navi"
+    "csview"
+    "broot"
+    "tokei"
+    "pastel"
+    "gitui"
 )
 
 # scoopが使用出来るなら実行
