@@ -48,5 +48,7 @@ let g:lsp_log_file = """"
 let g:lsp_log_verbose = 0
 
 "highlight
-" highlight link LspErrorVirtualText Comment
-" highlight link LspWarningVirtualText Comment
+highlight link LspErrorHighlight ALEErrorSign
+highlight link LspWarningHighlight ALEWarningSign
+highlight link LspErrorVirtualText Comment
+highlight link LspWarningVirtualText Comment

@@ -48,7 +48,7 @@ local config = {
     default_prog = {"pwsh.exe", "-nologo"},
 
     -- color scheme
-    color_scheme = "Dracula+",
+    color_scheme = "Operator Mono Dark",
 
     -- weztermのサイズを指定
     initial_rows = 45,
@@ -77,7 +77,7 @@ local config = {
     selection_word_boundary = " \t\n{}[]()\"'`,;:",
 
     -- カーソルの形
-    default_cursor_style = "SteadyBlock",
+    default_cursor_style = "SteadyBar",
 
     -- デフォルトキーを無効化
     disable_default_key_bindings = true,
@@ -88,6 +88,11 @@ local config = {
     -- タブ
     tab_bar_at_bottom = true,                           -- tabを下に表示
     hide_tab_bar_if_only_one_tab = true,                -- tabが一つなら隠す
+
+    -- QuickSelectModeの時のパターン
+    quick_select_patterns = {
+        "[0-9a-zA-Z@.]{7,40}",
+    }
 
 }
 
