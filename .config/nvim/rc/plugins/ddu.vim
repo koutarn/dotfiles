@@ -93,15 +93,15 @@ nnoremap <Leader>;; <Cmd>call ddu#start({'sources': [
    \ {'name': 'file_rec', 'params': {'path': expand("%:p:h")}}
    \ ]})<CR>
 
-nnoremap <Leader>fm <Cmd>call ddu#start({'sources': [
-   \ {'name': 'file_rec', 'params': {'path':expand('~') . "/memo"}}
-   \ ]})<CR>
+" nnoremap <Leader>fm <Cmd>call ddu#start({'sources': [
+"    \ {'name': 'file_rec', 'params': {'path':expand('~') . "/memo"}}
+"    \ ]})<CR>
 
 nnoremap <Leader>f, <Cmd>Ddu -name=vimrc file_rec -source-option-path='`fnamemodify($MYVIMRC, ':h')`'<CR>
 nnoremap <Leader>;' <Cmd>Ddu -name=mr mr<CR>
-nnoremap <Leader>;[ <Cmd>Ddu -name=git-ls git_ls<CR>
-nnoremap <Leader>;p <Cmd>Ddu -name=source source<CR>
+" nnoremap <Leader>;[ <Cmd>Ddu -name=git-ls git_ls<CR>
+" nnoremap <Leader>;p <Cmd>Ddu -name=source source<CR>
 nnoremap <Leader>;b <Cmd>Ddu -name=buffer buffer<CR>
 nnoremap <Leader>;g <Cmd>Ddu -name=search rg -ui-param-ignoreEmpty -source-param-input=`input('Pattern:')`<CR>
-nnoremap <Leader>;h <Cmd>Ddu -name=other help colorscheme<CR>
+nnoremap <Leader>;h <Cmd>Ddu -name=other help<CR>
 nnoremap <Leader>/ <Cmd>Ddu -name=search line -ui-param-startFilter<CR>

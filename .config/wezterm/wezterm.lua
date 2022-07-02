@@ -77,7 +77,7 @@ local config = {
     selection_word_boundary = " \t\n{}[]()\"'`,;:",
 
     -- カーソルの形
-    default_cursor_style = "SteadyBar",
+    default_cursor_style = "SteadyBlock",
 
     -- デフォルトキーを無効化
     disable_default_key_bindings = true,
