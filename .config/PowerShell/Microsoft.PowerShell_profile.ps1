@@ -1,7 +1,7 @@
 #alias
 $desktop = [System.Environment]::GetFolderPath("Desktop")
 $user = [System.Environment]::GetFolderPath("UserProfile")
-$dotfiles = $user + "/dotfiles"
+# $dotfiles = $user + "/dotfiles"
 $nvim = $user + "/dotfiles/.config/nvim"
 $wezterm = $user + '/.config/wezterm'
 $workspace = $user + '/workspace/src/github.com/koutarn/'

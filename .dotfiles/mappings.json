@@ -1,0 +1,8 @@
+{
+    ".home/.gitconfig"               : "~/.gitconfig",
+    ".home/.gitignore-global"        : "~/.gitignore-global",
+    ".config/wezterm"                : "~/.config/wezterm",
+    ".config/starship/starship.toml" : "~/.config/starship.toml",
+    ".config/nvim"                   : "~/.config/nvim",
+    ".config/spotify-tui"            : "~/.config/spotify-tui"
+}
