@@ -121,6 +121,9 @@ if (canUse("nodejs")){
 $GOPACKAGES = @(
   "golang.org/x/tools/cmd/goimports@latest"
   "golang.org/x/tools/cmd/godoc@latest"
+  "github.com/rhysd/dotfiles@latest"
+  "github.com/sheepla/qiitaz@latest"
+  "github.com/sheepla/fzwiki@latest"
 )
 
 foreach ($GOPACKAGE in $GOPACKAGES) {
