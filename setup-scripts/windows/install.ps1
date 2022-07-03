@@ -24,6 +24,7 @@ $UTILS = @(
     "aria2"
     "7zip"
     "dark"
+    "lessmsi"
     "git"
     "gzip"
     "openssl"
@@ -40,7 +41,6 @@ $TOOLS = @(
     "cacert"
     "fzf"
     "gh"
-    "lab"
     "ghq"
     "llvm"
     "mingw"
@@ -68,6 +68,9 @@ $TOOLS = @(
     "gitui"
     "sd"
     "tealdeer"
+    "powershell"
+    "nkf"
+    "winmerge-jp"
 )
 
 # scoopが使用出来るなら実行
@@ -75,26 +78,11 @@ if(canUse("scoop")){
     scoop install $UTILS
     scoop bucket add extras
     scoop bucket add versions
-    scoop bucket add zaquestion https://github.com/zaquestion/scoop-bucket.git
+    scoop bucket add dorado https://github.com/chawyehsu/dorado
+    scoop bucket add jp https://github.com/dooteeen/scoop-for-jp
     scoop update *
     scoop install $PROGRAMMING_ENV
     scoop install $TOOLS
-}
-
-if(canUse("git")){
-    #CRLFに変換しない
-    git config --global core.autoCRLF false
-
-    # SSH認証を必ず有効にする
-    git config --global url.git@github.com:.insteadOf https://github.com/
-}
-
-#dotfilesを配置する
-if (Test-Path ("$DOTFILES")) {
-  # Set-Location $DOTFILES
-  # git pull
-} else {
-  # git clone https://github.com/koutarn/dotfiles.git $DOTFILES
 }
 
 $GHPACKAGES = @(
@@ -117,6 +105,12 @@ if (canUse("nodejs")){
     npm install -g $NPMPACKAGES
 }
 
+# GOPATHを設定
+$user = [System.Environment]::GetFolderPath("UserProfile")
+$env:GOPATH = $user + "/workspace"
+$env:GOBIN = $env:GOPATH + '/bin'
+$env:PATH = $env:GOBIN + ';' + $env:PATH
+
 # go
 $GOPACKAGES = @(
   "golang.org/x/tools/cmd/goimports@latest"
@@ -126,7 +120,17 @@ $GOPACKAGES = @(
   "github.com/sheepla/fzwiki@latest"
 )
 
-foreach ($GOPACKAGE in $GOPACKAGES) {
-  go install $GOPACKAGE
+if (canUse("go")){
+    foreach ($GOPACKAGE in $GOPACKAGES) {
+        go install $GOPACKAGE
+    }
 }
 
+#後からglobal configを使うだろうけど一旦設定
+if(canUse("git")){
+    #SSH認証を必ず有効にする
+    git config --global url.git@github.com:.insteadOf https://github.com/
+
+    #workspaceの設定
+    git config --global ghq.root '~/workspace/src'
+}
