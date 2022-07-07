@@ -6,7 +6,7 @@ local function skk()
     local skk_mark = ''
     local is_enabled = vim.fn['skkeleton#is_enabled']()
     if is_enabled == vim.api.nvim_eval('v:true') then
-        skk_mark = '🇯🇵'
+        skk_mark = '🍣🇵'
     end
 
     return skk_mark
