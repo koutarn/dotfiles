@@ -39,6 +39,7 @@ $PROGRAMMING_ENV = @(
 
 $TOOLS = @(
     "cacert"
+    "sourcetree"
     "fzf"
     "gh"
     "ghq"

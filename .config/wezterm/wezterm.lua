@@ -41,8 +41,11 @@ local default_keys = {
 
 local config = {
     -- weztermの更新を確認する
-    check_for_updates = true,
-    check_for_updates_interval_seconds = 86400, -- 60 *  60 * 24 == 1日
+    check_for_updates = false,
+    -- check_for_updates_interval_seconds = 86400, -- 60 *  60 * 24 == 1日
+
+    use_ime = true,
+    warn_about_missing_glyphs = false,
 
     -- default shell
     default_prog = {"pwsh.exe", "-nologo"},
@@ -55,12 +58,7 @@ local config = {
     initial_cols = 120,
 
     -- font
-    use_ime = true,
-    font = wezterm.font_with_fallback({
-        "UDEV Gothic 35NFLG",
-        "Cica",
-        "JetBrains Mono",
-    }),
+ 	font = wezterm.font("UDEV Gothic 35NFLG"),
     font_size = 11.0,
     adjust_window_size_when_changing_font_size = false, -- フォントサイズ変更時にウィンドウサイズを変更しないようにする
     harfbuzz_features = {"calt=0", "clig=0", "liga=0"}, -- 合字フォントを無効化
@@ -74,7 +72,7 @@ local config = {
     },
 
     -- 文字選択
-    selection_word_boundary = " \t\n{}[]()\"'`,;:",
+    selection_word_boundary = " \t\n{}[]()\"'`,;:│=&!%",
 
     -- カーソルの形
     default_cursor_style = "SteadyBlock",
