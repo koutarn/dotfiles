@@ -1,10 +1,9 @@
 #alias
 $desktop = [System.Environment]::GetFolderPath("Desktop")
 $user = [System.Environment]::GetFolderPath("UserProfile")
-# $dotfiles = $user + "/dotfiles"
 $nvim = $user + "/dotfiles/.config/nvim"
 $wezterm = $user + '/.config/wezterm'
-$workspace = $user + '/workspace/src/github.com/koutarn/'
+# $workspace = $user + '/workspace/src/github.com/koutarn/'
 $env:GOPATH = $user + "/workspace"
 $env:GOBIN = $env:GOPATH + '/bin'
 $env:PATH = $env:GOBIN + ';' + $env:PATH
@@ -20,7 +19,7 @@ Set-Alias br broot
 Set-Alias ls lsd
 
 #ロケーション
-Set-Location $workspace
+# Set-Location $workspace
 
 function edit{nvim $profile}
 function .. {cd ../}

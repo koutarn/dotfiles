@@ -70,7 +70,6 @@ inoremap <C-e> <END>
 inoremap <C-k> <UP>
 inoremap <C-j> <DOWN>
 
-
 "インデント整形
 vnoremap > >gv
 vnoremap < <gv
@@ -94,16 +93,16 @@ nnoremap <C-S-o> <C-o>
 nnoremap <C-S-i> <C-i>
 
 "LSP関連
-nnoremap gh :<C-u>action QuickJavaDoc<CR>
-nnoremap gi :<C-u>action GotoDeclaration<CR>
-nnoremap gd :<C-u>action GotoTypeDeclaration<CR>
+nnoremap zh :<C-u>action QuickJavaDoc<CR>
+nnoremap z[ :<C-u>action GotoTypeDeclaration<CR>
+" nnoremap zi :<C-u>action GotoDeclaration<CR>
 " nnoremap gji :<C-u>action GotoImplementation<CR>
 " nnoremap gjs :<C-u>action GotoSuperMethod<CR>
 " nnoremap gt :<C-u>action GotoTest<CR>
 " nnoremap <C-k> :<C-u>action ShowUsages<CR>
 
 "コードアクション
-nnoremap <Space>a :<C-u>action GotoAction<CR>
+nnoremap <Leader><Space> :<C-u>action GotoAction<CR>
 
 " Git
 nnoremap \\gm :<C-u>action Vcs.QuickListPopupAction<CR>
@@ -148,3 +147,6 @@ nnoremap <Leader>b  :<C-u>action ToggleLineBreakpoint<CR>
 nnoremap <F5>  :<C-u>action Synchronize<CR>
 nnoremap <S-F5>  :<C-u>action ReformatCode<CR>
 nnoremap <C-F5>  :<C-u>action Refresh<CR>
+
+" Flutterで保存時にHot Reloadをかける
+nnoremap <Space>w :w<CR>:action Flutter.Toolbar.ReloadAction<CR>
