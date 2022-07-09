@@ -7,6 +7,11 @@ set timeout
 set timeoutlen=1000
 set multiple-cursors
 
+" nnoremap <silent><Leader>o  <Cmd>for i in range(v:count1) \| call append(line('.'), '') \| endfor<CR>
+" nnoremap <silent><Leader>O  <Cmd>for i in range(v:count1) \| call append(line('.')-1, '') \| endfor<CR>
+noremap <Leader>o o<ESC>
+noremap <Leader>O O<ESC>
+
 "Leader
 let g:mapleader = "\<Space>"
 let g:maplocalleader = ","
@@ -20,7 +25,7 @@ nnoremap S <Nop>
 nnoremap <C-z> <Nop>
 
 "再読み込み
-nnoremap <Leader>fr :source ~/.ideavimrc<CR>
+nnoremap <Leader>fr :source ~/_ideavimrc<CR>
 
 "保持しない
 nnoremap x "_x
@@ -94,8 +99,8 @@ nnoremap <C-S-i> <C-i>
 
 "LSP関連
 nnoremap zh :<C-u>action QuickJavaDoc<CR>
-nnoremap z[ :<C-u>action GotoTypeDeclaration<CR>
-" nnoremap zi :<C-u>action GotoDeclaration<CR>
+nnoremap z[ :<C-u>action GotoDeclaration<CR>
+nnoremap z] :<C-u>action GotoTypeDeclaration<CR>
 " nnoremap gji :<C-u>action GotoImplementation<CR>
 " nnoremap gjs :<C-u>action GotoSuperMethod<CR>
 " nnoremap gt :<C-u>action GotoTest<CR>
