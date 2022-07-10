@@ -1,84 +1,20 @@
 set surround
+set multiple-cursors
 set clipboard=unnamedplus
 set smartcase
 set incsearch
 set hlsearch
 set timeout
 set timeoutlen=1000
-set multiple-cursors
+set showcmd
 
-" nnoremap <silent><Leader>o  <Cmd>for i in range(v:count1) \| call append(line('.'), '') \| endfor<CR>
-" nnoremap <silent><Leader>O  <Cmd>for i in range(v:count1) \| call append(line('.')-1, '') \| endfor<CR>
+source ~/.config/nvim/rc/mapping-basic.vim
+
 noremap <Leader>o o<ESC>
 noremap <Leader>O O<ESC>
 
-"Leader
-let g:mapleader = "\<Space>"
-let g:maplocalleader = ","
-
-"unbind
-nnoremap Q <Nop>
-nnoremap ZZ <Nop>
-nnoremap ZQ <Nop>
-nnoremap s <Nop>
-nnoremap S <Nop>
-nnoremap <C-z> <Nop>
-
 "再読み込み
 nnoremap <Leader>fr :source ~/_ideavimrc<CR>
-
-"保持しない
-nnoremap x "_x
-vnoremap x "_x
-nnoremap X "_X
-vnoremap X "_X
-
-"cmd
-cnoremap <C-e> <End>
-cnoremap <C-a> <Home>
-cnoremap <C-h> <LEFT>
-cnoremap <C-k> <UP>
-cnoremap <C-j> <DOWN>
-cnoremap <C-l> <RIGHT>
-cnoremap <expr> %h getcmdtype() == ':' ? expand('%:h') . '/' : '%h'
-
-"インデントに合せてペースト
-nnoremap p ]p
-nnoremap ]p p
-nnoremap P ]P
-nnoremap ]P P
-
-"USキーボード用に入れ替える。
-nnoremap : ;
-nnoremap ; :
-vnoremap : ;
-vnoremap ; :
-
-"タブ移動
-nnoremap <Leader>y :<C-u>action PreviousTab<CR>
-nnoremap <Leader>u :<C-u>action NextTab<CR>
-
-"移動
-vnoremap v $h
-nnoremap <S-k> 10gk
-nnoremap <S-j> 10gj
-vnoremap <S-k> 10gk
-vnoremap <S-j> 10gj
-
-"ノーマルモードに戻す
-inoremap jj <ESC>
-onoremap jj <Esc>
-cnoremap jj <C-c>
-
-inoremap <C-a> <HOME>
-inoremap <C-e> <END>
-inoremap <C-k> <UP>
-inoremap <C-j> <DOWN>
-
-"インデント整形
-vnoremap > >gv
-vnoremap < <gv
-nnoremap == gg=G
 
 "コードの折り込みを無効化
 nnoremap zM <Nop>
@@ -108,6 +44,7 @@ nnoremap z] :<C-u>action GotoTypeDeclaration<CR>
 
 "コードアクション
 nnoremap <Leader><Space> :<C-u>action GotoAction<CR>
+nnoremap <Leader>;; :<C-u>action GotoFile<CR>
 
 " Git
 nnoremap \\gm :<C-u>action Vcs.QuickListPopupAction<CR>

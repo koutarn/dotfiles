@@ -15,20 +15,6 @@
 " | tmap / tnoremap  |    -   |   -    |    -    |   -    |   -    |    -     |    @     |
 " +--------------------------------------------------------------------------------------+
 
-"Leader
-let g:mapleader = "\<Space>"
-let g:maplocalleader = ","
-
-"unbind
-nnoremap Q <Nop>
-nnoremap ZZ <Nop>
-nnoremap ZQ <Nop>
-nnoremap s <Nop>
-nnoremap S <Nop>
-nnoremap <C-z> <Nop>
-nnoremap gR <Nop>
-vnoremap <C-g> <Nop>
-
 "map prefix
 nnoremap [quickfix] <Nop>
 xnoremap [quickfix] <Nop>
@@ -37,38 +23,13 @@ nmap <Leader>fq [quickfix]
 nnoremap [location] <Nop>
 xnoremap [location] <Nop>
 
-"保持しない
-nnoremap x "_x
-vnoremap x "_x
-nnoremap X "_X
-vnoremap X "_X
 
 "先頭に空白文字があるかどうかで処理を変える。
 "thx https://github.com/yuki-yano/zero.vim/tree/main/plugin
 noremap <silent><expr> 0 getline('.')[0 : col('.') - 2] =~# '^\s\+$' ? '0' : '^'
 
 "cmd
-cnoremap <C-e> <End>
-cnoremap <C-a> <Home>
-cnoremap <C-h> <LEFT>
-cnoremap <C-k> <UP>
-cnoremap <C-j> <DOWN>
-cnoremap <C-l> <RIGHT>
 cnoremap <expr> %h getcmdtype() == ':' ? expand('%:h') . '/' : '%h'
-
-"インデントに合せてペースト
-nnoremap p ]p
-nnoremap ]p p
-nnoremap P ]P
-nnoremap ]P P
-
-"USキーボード用に入れ替える。
-nnoremap : ;
-nnoremap ; :
-vnoremap : ;
-vnoremap ; :
-
-"Move
 
 "基本は表示行で移動。ただしカウントで飛びたい場合は論理行で移動する。
 "thx monaqa
@@ -77,24 +38,9 @@ xnoremap <expr> j (v:count == 0 && mode() ==# 'v' && mode() ==# 'V' && mode() ==
 nnoremap <expr> k v:count == 0 ? 'gk' : 'k'
 xnoremap <expr> k (v:count == 0 && mode() ==# 'v' && mode() ==# 'V' && mode() ==# 'CTRL-V') ? 'gk' : 'k'
 
-vnoremap v $h
-nnoremap <S-k> 10gk
-nnoremap <S-j> 10gj
-vnoremap <S-k> 10gk
-vnoremap <S-j> 10gj
-
 "input
 nnoremap <silent><Leader>o  <Cmd>for i in range(v:count1) \| call append(line('.'), '') \| endfor<CR>
 nnoremap <silent><Leader>O  <Cmd>for i in range(v:count1) \| call append(line('.')-1, '') \| endfor<CR>
-
-"ノーマルモードに戻す
-inoremap jj <ESC>
-onoremap jj <Esc>
-cnoremap jj <C-c>
-
-"Buffer
-nnoremap <Leader>y <Cmd>bprevious<CR>
-nnoremap <Leader>u <Cmd>bnext<CR>
 
 "設定の再読み込み
 nnoremap <silent><Leader>fr :Source<CR>
@@ -112,37 +58,16 @@ nmap <Leader>fl [location]
 nnoremap [location]h <Cmd>lprevious<CR>
 nnoremap [location]l <Cmd>lnext<CR>
 
-"window
-nnoremap <Leader>- <Cmd>split<CR>
-nnoremap <Leader>\ <Cmd>vsplit<CR>
-nnoremap <Leader>x <Cmd>close<CR>
-
-"ウィンドウ間を移動
-nnoremap <Leader>h <C-w>h
-nnoremap <Leader>j <C-w>j
-nnoremap <Leader>k  <C-w>k
-nnoremap <Leader>l <C-w>l
-
 " Undoポイントの設置
 " thx https://zenn.dev/kato_k/articles/vim-tips-no006
 inoremap <silent><C-w> <C-g>u<C-w>
 inoremap <silent><C-u> <C-g>u<C-u>
 inoremap <silent><C-m> <C-g>u<C-m>
 
-inoremap <C-a> <HOME>
-inoremap <C-e> <END>
-inoremap <C-k> <UP>
-inoremap <C-j> <DOWN>
-
 " タグ先複数選択を常に
 " thx tsuyoshicho
 " https://github.com/tsuyoshicho/vimrc-reading/blob/7451171f07e88d6d1dcd73deb792aff115d2c94e/.vimrc#L597-L598
 nnoremap <C-]> g<C-]>
-
-"インデント整形
-vnoremap > >gv
-vnoremap < <gv
-nnoremap == gg=G
 
 "検索
 nnoremap / /\v
@@ -167,6 +92,7 @@ augroup vimrc
   autocmd TermOpen * setlocal signcolumn=no
   autocmd TermOpen * setlocal foldcolumn=0
 augroup END
+
 function! s:terminal_init()
   nnoremap <buffer> <CR> i<CR><C-\><C-n>
   nnoremap <expr><buffer> u "i" . repeat("<Up>", v:count1) . "<C-\><C-n>"

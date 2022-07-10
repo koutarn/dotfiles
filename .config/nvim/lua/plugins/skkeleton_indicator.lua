@@ -8,5 +8,5 @@ hi SkkeletonIndicatorZenkaku guifg=#2e3440 guibg=#88c0d0 gui=bold
 
 require('skkeleton_indicator').setup{
     alwaysShown = true,
-    fadeOutMs = 2000,
+    fadeOutMs = 300,
 }
