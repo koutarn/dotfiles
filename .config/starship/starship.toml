@@ -1,10 +1,10 @@
 format = """
-[┌── ](bold white)$shlvl$status$username$directory$git_branch$git_status$git_commit$golang$python$deno$cmd_duration$memory_usage$battery$time
-[└─](bold white)$character"""
+[┌── ](white)$shlvl$status$username$directory$git_branch$git_status$git_commit$golang$python$deno$cmd_duration$memory_usage$battery$time
+[└─](white)$character"""
 
 [character]
-success_symbol = "[▶](bold white)"
-error_symbol = "[▶](bold white)"
+success_symbol = "[▶](white)"
+error_symbol = "[▶](white)"
 
 [username]
 style_root = "green bold"
@@ -66,9 +66,9 @@ symbol = " "
 style = "bold underline white"
 
 [[battery.display]]
+disabled = true
 threshold = 10
-style = "bold red"
-
+style = "bold blue"
 
 [line_break]
 # プロンプトを2行に分割するかどうか

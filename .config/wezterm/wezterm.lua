@@ -58,8 +58,14 @@ local config = {
     initial_cols = 120,
 
     -- font
- 	font = wezterm.font("UDEV Gothic 35NFLG"),
-    font_size = 11.0,
+ 	-- font = wezterm.font("UDEV Gothic 35NFLG"),
+  --   font_size = 11.0,
+
+    font = wezterm.font_with_fallback({
+    {family="PlemolJP Console NF", weight="Medium"},
+    }),
+    font_size = 13.0,
+
     adjust_window_size_when_changing_font_size = false, -- フォントサイズ変更時にウィンドウサイズを変更しないようにする
     harfbuzz_features = {"calt=0", "clig=0", "liga=0"}, -- 合字フォントを無効化
 
@@ -70,6 +76,7 @@ local config = {
         top = 0,
         bottom = 0,
     },
+    -- window_background_opacity = 0.8,
 
     -- 文字選択
     selection_word_boundary = " \t\n{}[]()\"'`,;:│=&!%",
