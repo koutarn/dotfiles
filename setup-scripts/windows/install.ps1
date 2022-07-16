@@ -19,7 +19,6 @@ catch [System.Management.Automation.CommandNotFoundException] {
   Invoke-Expression (new-object net.webclient).downloadstring("https://get.scoop.sh")
 }
 
-
 $UTILS = @(
     "aria2"
     "7zip"

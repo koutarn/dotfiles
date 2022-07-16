@@ -3,11 +3,6 @@ $desktop = [System.Environment]::GetFolderPath("Desktop")
 $user = [System.Environment]::GetFolderPath("UserProfile")
 $nvim = $user + "/dotfiles/.config/nvim"
 $wezterm = $user + '/.config/wezterm'
-# $workspace = $user + '/workspace/src/github.com/koutarn/'
-$env:GOPATH = $user + "/workspace"
-$env:GOBIN = $env:GOPATH + '/bin'
-$env:PATH = $env:GOBIN + ';' + $env:PATH
-
 $EDITOR = "nvim"
 
 Set-Alias o Invoke-Item
@@ -17,9 +12,6 @@ Set-Alias restart! Restart-Computer
 Set-Alias restart Restart-Computer -Force
 Set-Alias br broot
 Set-Alias ls lsd
-
-#ロケーション
-# Set-Location $workspace
 
 function edit{nvim $profile}
 function .. {cd ../}
@@ -77,18 +69,8 @@ Invoke-Expression -Command $(gh completion -s powershell | Out-String)
 # posh git
 Import-Module posh-git
 
-# labコマンド補完
-lab completion | Out-String | Invoke-Expression
-
-#zoxide 
-# For zoxide v0.8.0+
+#zoxide
 Invoke-Expression (& {
     $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
     (zoxide init --hook $hook powershell | Out-String)
 })
-
-# For older versions of zoxide
-# Invoke-Expression (& {
-#     $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
-#     (zoxide init --hook $hook powershell) -join "`n"
-# })

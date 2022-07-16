@@ -1,8 +1,9 @@
 {
-    "./.home/.pam_environment" : "~/.pam_environment",
-    "./.home/.tmux.conf"       : "~/.tmux.conf",
-    "./.home/.zsh"             : "~/.zsh",
-    "./.home/.zshenv"          : "~/.zshenv",
-    "./.config/alacritty"      : "~/.config/alacritty",
-    "./.config/fish"           : "~/.config/fish",
+    ".home/.pam_environment" : "~/.pam_environment",
+    ".home/.tmux.conf"       : "~/.tmux.conf",
+    ".home/.zsh"             : "~/.zsh",
+    ".home/.zshenv"          : "~/.zshenv",
+    ".home/.ideavimrc"         : "~/.ideavimrc",
+    ".config/alacritty"      : "~/.config/alacritty",
+    ".config/fish"           : "~/.config/fish",
 }
