@@ -9,7 +9,7 @@ error_symbol = "[▶](white)"
 [username]
 style_root = "green bold"
 style_user = "yellow bold"
-format = "[ $user]($style) in 📁 "
+format = "[ $user]($style)"
 show_always = true
 disabled = true
 
@@ -30,11 +30,11 @@ modified   = " "
 staged     = " "
 renamed    = " "
 deleted    = "✖ "
-style = "bold yellow"
+style = "bold #ffff00"
 ahead = "▲ ${count}"
 behind = "▼ ${count}"
 diverged = "▲ ${ahead_count} ▼ ${behind_count}"
-format = '([$all_status$ahead_behind]($style) )'
+format = '([$all_status$ahead_behind]($style))'
 
 [git_branch]
 format = "on [$symbol$branch](bold purple) "
@@ -64,6 +64,11 @@ disabled = true
 threshold = -1
 symbol = " "
 style = "bold underline white"
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "🔌"
+discharging_symbol = "⚡"
 
 [[battery.display]]
 disabled = true
