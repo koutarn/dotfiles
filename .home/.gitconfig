@@ -42,7 +42,7 @@ ui = auto
 	insteadOf = https://gitlab.com/
 
 [interactive]
-diffFilter = delta --color-only
+    diffFilter = delta --color-only
 
 [delta]
     navigate = true  # use n and N to move between diff sections
@@ -51,4 +51,4 @@ diffFilter = delta --color-only
     line-numbers = true
 
 [merge]
-conflictstyle = diff3
+    conflictstyle = diff3

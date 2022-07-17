@@ -1,10 +1,15 @@
-#alias
+#-------------------------
+#env
+#-------------------------
 $desktop = [System.Environment]::GetFolderPath("Desktop")
 $user = [System.Environment]::GetFolderPath("UserProfile")
 $nvim = $user + "/dotfiles/.config/nvim"
 $wezterm = $user + '/.config/wezterm'
 $EDITOR = "nvim"
 
+#-------------------------
+#alas
+#-------------------------
 Set-Alias o Invoke-Item
 Set-Alias poweroff! Stop-Computer -Force
 Set-Alias poweroff Stop-Computer
@@ -13,6 +18,9 @@ Set-Alias restart Restart-Computer -Force
 Set-Alias br broot
 Set-Alias ls lsd
 
+#-------------------------
+#function
+#-------------------------
 function edit{nvim $profile}
 function .. {cd ../}
 function ... {cd ../../}
@@ -29,26 +37,26 @@ function wiki($arg){
 
 function q {
     $select = $(ghq list | fzf)
-    cd $($(ghq root) + "/" + $select) 
+    cd $($(ghq root) + "/" + $select)
 }
 
-function prompt {
-$isRoot = (([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator"))
-$marker = if ($isRoot) {"[root]$"}   else {"$"}
-
-Write-Host "$env:USERNAME " -ForegroundColor White -NoNewline
-  Write-Host "$pwd " -ForegroundColor Green -NoNewline
-  Write-Host $marker -ForegroundColor Yellow -NoNewline
-  return " "
-}
-
-Set-PSReadLineOption -EditMode Emacs -BellStyle None
+#-------------------------
+# PSReadLine Option
+#-------------------------
+Set-PSReadLineOption -EditMode Emacs
+Set-PSReadLineOption -BellStyle None
+Set-PSReadLineOption -PredictionSource History
+Set-PSReadlineOption -HistoryNoDuplicates
 Set-PSReadLineKeyHandler -Key Ctrl+i -Function Complete
 Set-PSReadLineKeyHandler -Key Ctrl+j -Function AcceptLine
 Set-PSReadLineKeyHandler -Key Ctrl+p -Function Paste
 Set-PSReadLineKeyHandler -Key Ctrl+d -Function DeleteChar
+Set-PSReadLineKeyHandler -Key Ctrl+o -Function ForwardWord
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
-# Set-PSReadLineOption -PredictionSource History
+
+Set-PSReadLineOption -Colors @{
+    InlinePrediction = "#363636"
+}
 
 # PowerShell Core7でもConsoleのデフォルトエンコーディングはsjisなので必要
 [System.Console]::OutputEncoding = [System.Text.Encoding]::GetEncoding("utf-8")
@@ -74,3 +82,8 @@ Invoke-Expression (& {
     $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
     (zoxide init --hook $hook powershell | Out-String)
 })
+
+#PSFzf
+Import-Module PSFzf
+Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t'
+Set-PsFzfOption -PSReadlineChordReverseHistory 'Ctrl+r'

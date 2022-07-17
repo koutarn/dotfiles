@@ -71,6 +71,7 @@ $TOOLS = @(
     "powershell"
     "nkf"
     "winmerge-jp"
+    "less"
 )
 
 # scoopが使用出来るなら実行
