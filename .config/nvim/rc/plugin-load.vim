@@ -52,14 +52,15 @@ call jetpack#begin()
     " Jetpack 'rebelot/kanagawa.nvim'                         " なんかよさげなカラースキーム
 
     " Lsp
-    Jetpack 'prabirshrestha/vim-lsp'                        " LSP
-    Jetpack 'mattn/vim-lsp-settings'                       " LSPインストール 
+    " Jetpack 'prabirshrestha/vim-lsp'                        " LSP
+    " Jetpack 'mattn/vim-lsp-settings'                       " LSPインストール 
 
-    " Jetpack 'neovim/nvim-lspconfig'                         " LSP
-    " Jetpack 'williamboman/nvim-lsp-installer'               " LSPインストール
-    " Jetpack 'folke/lsp-colors.nvim'                         " 色設定を追加してくれる
-    " Jetpack 'folke/trouble.nvim'                            " 警告等を良い感じに表示してくれる
-    " Jetpack 'j-hui/fidget.nvim'                             " LSPの状態等を表示してくれる
+    Jetpack 'neovim/nvim-lspconfig'                         " LSP
+    Jetpack 'williamboman/nvim-lsp-installer'               " LSPインストール
+    Jetpack 'folke/lsp-colors.nvim'                         " 色設定を追加してくれる
+    Jetpack 'folke/trouble.nvim'                            " 警告等を良い感じに表示してくれる
+    Jetpack 'j-hui/fidget.nvim'                             " LSPの状態等を表示してくれる
+    Jetpack 'kkharji/lspsaga.nvim'                          " UIとかコマンドの追加
 
     Jetpack 'hrsh7th/vim-vsnip'                             " snippet
     Jetpack 'hrsh7th/vim-vsnip-integ'                       " vim-vsnipを他プラグインと連携するようにする
@@ -103,6 +104,8 @@ call jetpack#begin()
     Jetpack 'mattn/vim-gomod',{'for':'go'}                  " modファイルのsyntax highlight
     Jetpack 'mattn/vim-goaddtags',{'for':'go'}              " tagを自動で付けてくれる
 
+    Jetpack 'akinsho/flutter-tools.nvim',{'for':'dart'}     " flutterで開発出来るようにするプラグイン
+
     "syntax
     Jetpack 'rhysd/vim-gfm-syntax', {'for':'markdown'} "markdownをもっとハイライトする
 
@@ -123,7 +126,7 @@ if executable('deno')
     "source
     Jetpack 'Shougo/ddc-around'
     Jetpack 'LumaKernel/ddc-file'
-    " Jetpack 'Shougo/ddc-nvim-lsp'
+    Jetpack 'Shougo/ddc-nvim-lsp'
     Jetpack 'shun/ddc-vim-lsp'
     Jetpack 'Shougo/ddc-cmdline-history'
     Jetpack 'Shougo/ddc-cmdline'

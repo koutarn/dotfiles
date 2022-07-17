@@ -6,7 +6,7 @@ call ddc#custom#patch_global('keywordPattern', '[A-Za-z:]\w*')
 
 "sourcesの設定
 call ddc#custom#patch_global('sources', [
-\ 'vim-lsp',
+\ 'nvim-lsp',
 \ 'vsnip',
 \ 'skkeleton',
 \ 'file',
@@ -38,7 +38,7 @@ call ddc#custom#patch_global('sourceOptions', {
 \ 'vsnip':{
 \   'mark':'🍕',
 \   },
-\ 'vim-lsp': {
+\ 'nvim-lsp': {
 \   'mark': '🧊',
 \   'minAutoCompleteLength':2,
 \ },

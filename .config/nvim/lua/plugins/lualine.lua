@@ -56,6 +56,22 @@ require'lualine'.setup {
                     unnamed = '無名ファイル',
                 },
             },
+            {
+                'diagnostics',
+                sources = { 'nvim_diagnostic'},
+                sections = { 'error', 'warn', 'info', 'hint' },
+
+                diagnostics_color = {
+                    Error = "#db4b4b",
+                    Warning = "#e0af68",
+                    Information = "#0db9d7",
+                    Hint = "#10B981"
+                },
+                symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '},
+                colored = true,           -- Displays diagnostics status in color if set to true.
+                update_in_insert = false, -- Update diagnostics in insert mode.
+                always_visible = true,   -- Show diagnostics even if there are none.
+            },
         },
         lualine_c = {
             {
