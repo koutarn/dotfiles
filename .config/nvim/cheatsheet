@@ -1,7 +1,6 @@
 [TODO]
-* LSP
-* Grepのやつをいれる
 * 行にnoteをかくやつ
 * meomlistをdduで利用する
-* templateプラグインを入れる
-* 一文字入力ですぐ補完が出るようにする
+* flutterの時にnvim-lspが呼ばれていないのを直す
+    * たぶんcustom_configを渡すようにしたら直るはず
+
