@@ -1,3 +1,4 @@
+"=================================================================================
 "               | |  / /   (_)   ____ ___    _____  _____
 "               | | / /   / /   / __ `__ \  / ___/ / ___/
 "               | |/ /   / /   / / / / / / / /    / /__
@@ -20,9 +21,6 @@ augroup END
 runtime! rc/*.vim
 runtime! rc/plugins/*.vim
 runtime! lua/plugins/*.lua
-
-"deinに移行中
-" execute 'source' fnamemodify(expand('<sfile>'), ':h').'/rc/vimrc'
 
 "filetype
 filetype on
