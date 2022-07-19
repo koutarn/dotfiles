@@ -107,12 +107,6 @@ if (canUse("nodejs")){
     npm install -g $NPMPACKAGES
 }
 
-# GOPATHを設定
-$user = [System.Environment]::GetFolderPath("UserProfile")
-$env:GOPATH = $user + "/workspace"
-$env:GOBIN = $env:GOPATH + '/bin'
-$env:PATH = $env:GOBIN + ';' + $env:PATH
-
 # go
 $GOPACKAGES = @(
   "golang.org/x/tools/cmd/goimports@latest"

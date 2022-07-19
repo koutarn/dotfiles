@@ -10,6 +10,7 @@
 * Shell:zsh,powershell
 * Terminal:wezterm
 * Editor:neovim
+* Font:[PlemolJP Console NF](https://github.com/yuru7/PlemolJP)
 
 ## setup
 
