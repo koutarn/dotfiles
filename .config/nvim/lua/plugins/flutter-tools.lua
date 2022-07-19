@@ -37,7 +37,7 @@ require("flutter-tools").setup {
       enabled = true
   },
   closing_tags = {
-    prefix = "// ", -- character to use for close tag e.g. > Widget
+    prefix = "-> ", -- character to use for close tag e.g. > Widget
     enabled = true -- set to false to disable
   },
   dev_log = {

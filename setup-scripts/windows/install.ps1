@@ -34,6 +34,7 @@ $PROGRAMMING_ENV = @(
     "go"
     "nodejs"
     "python"
+    "lua"
 )
 
 $TOOLS = @(

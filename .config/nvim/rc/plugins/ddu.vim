@@ -104,4 +104,4 @@ nnoremap <Leader>;' <Cmd>Ddu -name=mr mr<CR>
 nnoremap <Leader>;b <Cmd>Ddu -name=buffer buffer<CR>
 nnoremap <Leader>;g <Cmd>Ddu -name=search rg -ui-param-ignoreEmpty -source-param-input=`input('Pattern:')`<CR>
 nnoremap <Leader>;h <Cmd>Ddu -name=other help<CR>
-nnoremap <Leader>/ <Cmd>Ddu -name=search line -ui-param-startFilter<CR>
+nnoremap <Leader>/a <Cmd>Ddu -name=search line -ui-param-startFilter<CR>

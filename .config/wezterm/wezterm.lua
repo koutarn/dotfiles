@@ -64,7 +64,7 @@ local config = {
     font = wezterm.font_with_fallback({
     {family="PlemolJP Console NF", weight="Medium"},
     }),
-    font_size = 13.0,
+    font_size = 12.0,
 
     adjust_window_size_when_changing_font_size = false, -- フォントサイズ変更時にウィンドウサイズを変更しないようにする
     harfbuzz_features = {"calt=0", "clig=0", "liga=0"}, -- 合字フォントを無効化
