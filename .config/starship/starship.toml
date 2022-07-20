@@ -71,7 +71,7 @@ charging_symbol = "🔌"
 discharging_symbol = "⚡"
 
 [[battery.display]]
-disabled = true
+# disabled = true
 threshold = 10
 style = "bold blue"
 
