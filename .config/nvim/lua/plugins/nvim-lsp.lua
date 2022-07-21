@@ -36,7 +36,13 @@ lsp_installer.settings({
             server_uninstalled = "✗"
         },
         border = "double",
-    }
+    },
+    keymaps = {
+        toggle_server_expand = '<CR>',
+        install_server = 'i',
+        update_server = 'u',
+        uninstall_server = 'x',
+    },
 })
 lsp_installer.on_server_ready(function(server)
     local opts = {}

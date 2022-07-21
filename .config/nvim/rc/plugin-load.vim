@@ -107,6 +107,9 @@ call jetpack#begin()
 
     Jetpack 'akinsho/flutter-tools.nvim'                    " flutterで開発出来るようにするプラグイン
 
+    Jetpack 'junegunn/fzf'                                  " zoxide.vimで使うために入れておく
+    Jetpack 'nanotee/zoxide.vim'                            " Zoxideをvimで使えるようにする
+
     "syntax
     Jetpack 'rhysd/vim-gfm-syntax', {'for':'markdown'} "markdownをもっとハイライトする
 
