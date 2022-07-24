@@ -11,7 +11,7 @@ ddu.alias('source', 'current_files', 'file_external')
 ddu.alias('source', 'current_directorys', 'file_external')
 ddu.alias('source', 'memolist', 'file_external')
 
-local lines = vim.o.lines / 4
+local lines = vim.o.lines / 3
 
 ddu.patch_global({
     ui = 'ff',
@@ -121,7 +121,6 @@ local function ddu_ff_enter()
     vim.keymap.set('n', '/', function() return ddu.do_action('openFilterWindow') end, bufopts)
     vim.keymap.set('n', 'p', function() return ddu.do_action('preview') end, bufopts)
     vim.keymap.set('n', 'c', function() return ddu.do_action('itemAction',{name = 'cd'}) end, bufopts)
-    vim.keymap.set('n', 'e', function() return ddu.do_action('itemAction', { name = 'edit' }) end, bufopts)
     vim.keymap.set('n', 'd', function() return ddu.do_action('itemAction', { name = 'delete' }) end, bufopts)
     vim.keymap.set('n', '<Esc>', function() return ddu.do_action('quit') end, bufopts)
     vim.keymap.set('n', 'q', function() return ddu.do_action('quit') end, bufopts)
@@ -158,7 +157,7 @@ vim.keymap.set('n', '<Leader>;h', '<Cmd>Ddu -name=other help<CR>', bufopts)
 
 vim.api.nvim_create_autocmd('VimResized', {
     callback = function()
-        local lines = vim.o.lines / 4
+        local lines = vim.o.lines / 3
 
         vim.fn['ddu#custom#patch_global']('uiParams', {
         ff = {

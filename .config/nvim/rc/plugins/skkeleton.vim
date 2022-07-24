@@ -4,6 +4,7 @@ UsePlugin 'skkeleton'
 "=======================
 imap jk <Plug>(skkeleton-toggle)
 cmap jk <Plug>(skkeleton-toggle)
+autocmd User skkeleton-mode-changed redrawstatus
 
 call skkeleton#config({
 \ 'globalJisyo': '~/.config/SKK-JISYO.L',
