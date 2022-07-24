@@ -2,7 +2,7 @@ UsePlugin 'ddc.vim'
 
 "pum.vimを使用
 call ddc#custom#patch_global('completionMenu', 'pum.vim')
-call ddc#custom#patch_global('keywordPattern', '[A-Za-z:]\w*')
+call ddc#custom#patch_global('keywordPattern', '[0-9A-Za-z_:#]*')
 
 "sourcesの設定
 call ddc#custom#patch_global('sources', [
@@ -41,6 +41,7 @@ call ddc#custom#patch_global('sourceOptions', {
 \ 'nvim-lsp': {
 \   'mark': '🧊',
 \   'minAutoCompleteLength':2,
+\   'forceCompletionPattern':'\.\w*|:\w*|->\w*'
 \ },
 \ 'cmdline': {
 \   'mark': '💻',

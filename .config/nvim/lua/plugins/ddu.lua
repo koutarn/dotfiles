@@ -7,13 +7,11 @@ local ddu = {
 -- alias
 ddu.alias('source', 'ghq', 'file_external')
 ddu.alias('source', 'zoxide', 'file_external')
-ddu.alias('source', 'git_ls', 'file_external')
+ddu.alias('source', 'current_files', 'file_external')
+ddu.alias('source', 'current_directorys', 'file_external')
+ddu.alias('source', 'memolist', 'file_external')
 
-local lines = vim.o.lines - 6
-local winh = math.floor(lines)
-local houter = math.floor(vim.o.columns * 0.1)
-local inner = 3
-local winw = math.floor((vim.o.columns - houter * 2 - inner) / 2)
+local lines = vim.o.lines / 4
 
 ddu.patch_global({
     ui = 'ff',
@@ -36,14 +34,20 @@ ddu.patch_global({
         ghq = {
             cmd = {'ghq', 'list', '-p'},
         },
-        git_ls = {
-            cmd = {'git', 'ls-files', '-co', '--exclude-standard'}
+        current_files = {
+            cmd = {'fd', '.', '-H','--type','file','--type','symlink','-E','*git'}
+        },
+        current_directorys = {
+            cmd = {'fd', '.', '-H','--type','directory','--type','symlink','-E','*git'}
         },
         zoxide = {
             cmd = {'zoxide', 'query', '--list'}
         },
+        memolist = {
+            cmd = { 'fd','*','~/memo/*', '-H', '-t'}
+        },
         rg = {
-            args = {'--hidden','--ignore-case','--column', '--no-heading','--color', 'never',}
+            args = {'--hidden','--ignore-case','--column', '--no-heading','--color', 'never'}
         },
     },
     sourceOptions = {
@@ -89,8 +93,9 @@ ddu.patch_global({
             startFilter = true,
             floatingBorder = 'none',
             previewFloating = false,
-            previewHeight = 50,
+            previewHeight = 9,
             prompt = '> ',
+            winHeight = lines,
         },
     },
     filterParams = {
@@ -103,6 +108,7 @@ ddu.patch_global({
 local function ddu_ff_enter()
     local bufopts = { noremap = true, silent = true, buffer = 0 }
 
+    -- ディレクトリ検索ならファイルを開くのではなくcdにする
     if vim.fn.expand('%:t') == 'ddu-ff-cd' then
         vim.keymap.set('n', 'o', function() return ddu.do_action('itemAction',{name =  'cd'}) end, bufopts)
         vim.keymap.set('n', '<CR>', function() return ddu.do_action('itemAction',{name =  'cd'}) end, bufopts)
@@ -110,15 +116,15 @@ local function ddu_ff_enter()
         -- vim.keymap.set('n', '<CR>', function() return ddu.do_action('chooseAction') end, bufopts)
         vim.keymap.set('n', 'o', function() return ddu.do_action('itemAction',{name =  'open'}) end, bufopts)
         vim.keymap.set('n', '<CR>', function() return ddu.do_action('itemAction',{name =  'open'}) end, bufopts)
-        vim.keymap.set('n', 'i', function() return ddu.do_action('openFilterWindow') end, bufopts)
-        vim.keymap.set('n', '/', function() return ddu.do_action('openFilterWindow') end, bufopts)
-        vim.keymap.set('n', 'p', function() return ddu.do_action('preview') end, bufopts)
-        vim.keymap.set('n', 'c', function() return ddu.do_action('itemAction',{name = 'cd'}) end, bufopts)
-        vim.keymap.set('n', 'e', function() return ddu.do_action('itemAction', { name = 'edit' }) end, bufopts)
-        vim.keymap.set('n', 'd', function() return ddu.do_action('itemAction', { name = 'delete' }) end, bufopts)
-        vim.keymap.set('n', '<Esc>', function() return ddu.do_action('quit') end, bufopts)
-        vim.keymap.set('n', 'q', function() return ddu.do_action('quit') end, bufopts)
     end
+    vim.keymap.set('n', 'i', function() return ddu.do_action('openFilterWindow') end, bufopts)
+    vim.keymap.set('n', '/', function() return ddu.do_action('openFilterWindow') end, bufopts)
+    vim.keymap.set('n', 'p', function() return ddu.do_action('preview') end, bufopts)
+    vim.keymap.set('n', 'c', function() return ddu.do_action('itemAction',{name = 'cd'}) end, bufopts)
+    vim.keymap.set('n', 'e', function() return ddu.do_action('itemAction', { name = 'edit' }) end, bufopts)
+    vim.keymap.set('n', 'd', function() return ddu.do_action('itemAction', { name = 'delete' }) end, bufopts)
+    vim.keymap.set('n', '<Esc>', function() return ddu.do_action('quit') end, bufopts)
+    vim.keymap.set('n', 'q', function() return ddu.do_action('quit') end, bufopts)
 end
 
 local function ddu_ff_filter_enter()
@@ -138,35 +144,26 @@ vim.api.nvim_create_autocmd('FileType', {
     callback = function() ddu_ff_filter_enter() end,
 })
 
-vim.keymap.set('n', [[<Leader>;;]], [[<Cmd>Ddu -name=files `finddir('.git', ';') != '' ? 'git_ls' : 'file_rec'` -sync <CR>]], bufopts)
+vim.keymap.set('n', [[<Leader>;;]], [[<Cmd>Ddu -name=files current_files -sync <CR>]], bufopts)
 vim.keymap.set('n', [[<Leader>;']], '<Cmd>Ddu -name=files mr<CR>', bufopts)
+vim.keymap.set('n', '<Leader>;m', '<Cmd>Ddu -name=files memolist<CR>', bufopts)
 vim.keymap.set('n', '<Leader>;j', '<Cmd>Ddu -name=files buffer<CR>', bufopts)
 vim.keymap.set('n', '<Leader>;p', '<Cmd>Ddu -name=cd ghq<CR>', bufopts)
 vim.keymap.set('n', '<Leader>;[', '<Cmd>Ddu -name=cd zoxide<CR>', bufopts)
+vim.keymap.set('n', '<Leader>;l', '<Cmd>Ddu -name=cd current_directorys<CR>', bufopts)
 
 vim.keymap.set('n', '<Leader>;g', [[<Cmd>Ddu -name=line rg -ui-param-ignoreEmpty -source-param-input=`input('Pattern:')`<CR>]], bufopts)
 vim.keymap.set('n', '<Leader>/a', '<Cmd>Ddu -name=line line -ui-param-startFilter<CR>', bufopts)
 vim.keymap.set('n', '<Leader>;h', '<Cmd>Ddu -name=other help<CR>', bufopts)
 
--- vim.api.nvim_create_autocmd('VimResized', {
---     callback = function()
---         local lines = vim.o.lines - 6
---         local winh = math.floor(lines)
---         local houter = math.floor(vim.o.columns * 0.1)
---         local inner = 3
---         local winw = math.floor((vim.o.columns - houter * 2 - inner) / 2)
+vim.api.nvim_create_autocmd('VimResized', {
+    callback = function()
+        local lines = vim.o.lines / 4
 
---         vim.fn['ddu#custom#patch_global']('uiParams', {
---         ff = {
---             winRow = 0.5,
---             winCol = houter,
---             winHeight = winh,
---             winWidth = winw,
---             previewRow = 0.5,
---             previewCol = houter + winw + inner,
---             previewHeight = winh,
---             previewWidth = winw,
---         }
---     })
---     end
--- })
+        vim.fn['ddu#custom#patch_global']('uiParams', {
+        ff = {
+            winHeight = lines,
+        }
+    })
+    end
+})
