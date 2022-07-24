@@ -15,6 +15,10 @@ local custom_attach = function(client, bufnr)
     buf_set_keymap('n', 'zh', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
     buf_set_keymap('n', 'z-', '<cmd>lua vim.lsp.buf.document_symbol()<CR>', opts)
     buf_set_keymap('n', 'z=', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>', opts)
+    buf_set_keymap("n", "zr", "<cmd>Lspsaga rename<cr>", {silent = true, noremap = true})
+    buf_set_keymap("n", "za", "<cmd>Lspsaga code_action<cr>", {silent = true, noremap = true})
+    buf_set_keymap("x", "za", ":<c-u>Lspsaga range_code_action<cr>", {silent = true, noremap = true})
+    -- map(0, "n", "zh",  "<cmd>Lspsaga hover_doc<cr>", {silent = true, noremap = true})
 end
 
 
@@ -67,6 +71,7 @@ require("flutter-tools").setup {
       config.specificThingIDontWant = false
       return config
     end,
+
     -- see the link below for details on each option:
     -- https://github.com/dart-lang/sdk/blob/master/pkg/analysis_server/tool/lsp_spec/README.md#client-workspace-configuration
     settings = {

@@ -110,40 +110,40 @@ inoremap <C-e> <Cmd>call pum#map#cancel()<CR>
 " "command line complete
 " call ddc#custom#patch_global('autoCompleteEvents',
 "     \ ['InsertEnter', 'TextChangedI', 'TextChangedP', 'CmdlineChanged'])
-nnoremap ; <Cmd>call CommandlinePre()<CR>:
+" nnoremap ; <Cmd>call CommandlinePre()<CR>:
 
-function! CommandlinePre() abort
-    cnoremap <expr>;; pum#visible() ? '<Cmd>call pum#map#confirm()<CR>':''
-    cnoremap <expr> <Tab>
-        \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>':
-        \ ddc#manual_complete()
-    cnoremap <expr> <S-Tab>
-        \ pum#visible() ? '<Cmd>call pum#map#insert_relative(-1)<CR>':
-        \ ddc#manual_complete()
-    cnoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
-    cnoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
+" function! CommandlinePre() abort
+"     cnoremap <expr>;; pum#visible() ? '<Cmd>call pum#map#confirm()<CR>':''
+"     cnoremap <expr> <Tab>
+"         \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>':
+"         \ ddc#manual_complete()
+"     cnoremap <expr> <S-Tab>
+"         \ pum#visible() ? '<Cmd>call pum#map#insert_relative(-1)<CR>':
+"         \ ddc#manual_complete()
+"     cnoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
+"     cnoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
 
-    " Overwrite sources
-    if !exists('b:prev_buffer_config')
-        let b:prev_buffer_config = ddc#custom#get_buffer()
-    endif
+"     " Overwrite sources
+"     if !exists('b:prev_buffer_config')
+"         let b:prev_buffer_config = ddc#custom#get_buffer()
+"     endif
 
-    call ddc#custom#patch_buffer('cmdlineSources',
-            \ ['cmdline', 'cmdline-history'])
+"     call ddc#custom#patch_buffer('cmdlineSources',
+"             \ ['cmdline', 'cmdline-history'])
 
-    autocmd User DDCCmdlineLeave ++once call CommandlinePost()
-    autocmd InsertEnter <buffer> ++once call CommandlinePost()
+"     autocmd User DDCCmdlineLeave ++once call CommandlinePost()
+"     autocmd InsertEnter <buffer> ++once call CommandlinePost()
 
-    " Enable command line completion
-    call ddc#enable_cmdline_completion()
-endfunction
+"     " Enable command line completion
+"     call ddc#enable_cmdline_completion()
+" endfunction
 
-function! CommandlinePost() abort
-    " Restore sources
-    if exists('b:prev_buffer_config')
-        call ddc#custom#set_buffer(b:prev_buffer_config)
-        unlet b:prev_buffer_config
-    else
-        call ddc#custom#set_buffer({})
-    endif
-endfunction
+" function! CommandlinePost() abort
+"     " Restore sources
+"     if exists('b:prev_buffer_config')
+"         call ddc#custom#set_buffer(b:prev_buffer_config)
+"         unlet b:prev_buffer_config
+"     else
+"         call ddc#custom#set_buffer({})
+"     endif
+" endfunction

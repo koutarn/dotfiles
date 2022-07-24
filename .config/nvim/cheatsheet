@@ -1,6 +1,13 @@
 [TODO]
 * 行にnoteをかくやつ
 * meomlistをdduで利用する
-* flutterの時にnvim-lspが呼ばれていないのを直す
-    * たぶんcustom_configを渡すようにしたら直るはず
+* flutter
+    * flutterの時はスニペットを先に表示したい
+    * flutterの時にエラーがめちゃくちゃ出るのを抑制したい
+        * FlutterRunしたら出る。HotReloadの影響っぽい
+            * HotReloadしてたらやりづらいとか本末転倒なのでなんとかしたい
+    * flutterのsnippetを設定したい
+    * カッコが正しく設定されないのを直したい
+    * ddcの表示が凄い横に出るのを直したい
+* lsp_sageの設定をしたい
 

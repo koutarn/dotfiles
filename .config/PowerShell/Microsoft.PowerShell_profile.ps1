@@ -47,6 +47,8 @@ Set-PSReadLineOption -EditMode Emacs
 Set-PSReadLineOption -BellStyle None
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadlineOption -HistoryNoDuplicates
+# Set-PSReadLineOption -WordDelimiters ";:,.[]{}()/\|^&*-=+'`" !?@#$%&_<>「」（）『』『』［］、，。：；／"
+
 Set-PSReadLineKeyHandler -Key Ctrl+i -Function Complete
 Set-PSReadLineKeyHandler -Key Ctrl+j -Function AcceptLine
 Set-PSReadLineKeyHandler -Key Ctrl+p -Function Paste

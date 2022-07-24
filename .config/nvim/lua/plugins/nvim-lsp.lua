@@ -78,8 +78,8 @@ lspsaga.setup { -- defaults ...
     -- code action title icon
     code_action_icon = "",
     code_action_prompt = {
-        enable = true,
-        sign = true,
+        enable = false,
+        sign = false,
         sign_priority = 40,
         virtual_text = false,
     },
@@ -142,6 +142,8 @@ require("trouble").setup {
         jump_close = "o",
         toggle_preview = "p",
         hover = "zh",
+
+        -- 無効化
         open_split = {},
         open_vsplit = {},
         open_tab = {},

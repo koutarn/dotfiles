@@ -84,7 +84,6 @@ call jetpack#begin()
     Jetpack 'plasticboy/vim-markdown', {'for':'markdown'}   " markdownのsyntax highlightを提供する
     Jetpack 'reireias/vim-cheatsheet'                       " 自分で設定したチートシートを表示する
     Jetpack 'simeji/winresizer'                             " windowのリサイズをおこなう
-    Jetpack 'voldikss/vim-translator'                       " 選択文字の翻訳をしてくれる
     Jetpack 't9md/vim-quickhl'                              " 選択文字のハイライトをしてくれる
     " Jetpack 'thinca/vim-localrc'                            " ローカル設定のvimrcを読み込む
     Jetpack 'thinca/vim-qfreplace'                          " quick fixで置換を行う
@@ -98,6 +97,8 @@ call jetpack#begin()
     Jetpack 'rhysd/clever-f.vim'                            " f移動を簡単にする(f移動後に;ではなくfで移動出来るようにする)
     Jetpack 'SmiteshP/nvim-gps'                             " 現在の行の情報を表示してくれる
     Jetpack 'notomo/reacher.nvim'                           " 見えている範囲で検索する
+
+    Jetpack 'voldikss/vim-translator'                       " 選択文字の翻訳をしてくれる
 
     Jetpack 'mattn/vim-goimports',{'for':'go'}              " Goでimportsとfmtを書き込み時に実行する
     Jetpack 'mattn/vim-goimpl',{'for':'go'}                 " interfaceを作成してくれる
