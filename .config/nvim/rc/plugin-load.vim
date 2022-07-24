@@ -184,7 +184,7 @@ if executable('deno')
 endif
 
     "Filer
-    Jetpack 'lambdalisue/fern.vim'
+    Jetpack 'lambdalisue/fern.vim',{ 'branch': 'main' }
     Jetpack 'lambdalisue/nerdfont.vim'
     Jetpack 'lambdalisue/fern-renderer-nerdfont.vim'
     Jetpack 'lambdalisue/fern-git-status.vim'
