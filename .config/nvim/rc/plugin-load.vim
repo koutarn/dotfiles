@@ -105,11 +105,7 @@ call jetpack#begin()
     Jetpack 'mattn/vim-godoc',{'for':'go'}                  " godoc
     Jetpack 'mattn/vim-gomod',{'for':'go'}                  " modファイルのsyntax highlight
     Jetpack 'mattn/vim-goaddtags',{'for':'go'}              " tagを自動で付けてくれる
-
     Jetpack 'akinsho/flutter-tools.nvim'                    " flutterで開発出来るようにするプラグイン
-
-    Jetpack 'junegunn/fzf'                                  " zoxide.vimで使うために入れておく
-    Jetpack 'nanotee/zoxide.vim'                            " Zoxideをvimで使えるようにする
 
     "syntax
     Jetpack 'rhysd/vim-gfm-syntax', {'for':'markdown'} "markdownをもっとハイライトする
@@ -157,12 +153,17 @@ if executable('deno')
     "ui
     Jetpack 'Shougo/ddu-ui-ff'
 
+    "column
+    Jetpack 'Shougo/ddu-column-filename'
+    Jetpack 'ryota2357/ddu-column-icon_filename'
+
     "kind
     Jetpack 'Shougo/ddu-kind-file'
 
     "source
     Jetpack 'Shougo/ddu-source-file'
     Jetpack 'Shougo/ddu-source-file_rec'
+    Jetpack 'Shougo/ddu-source-file_point'
     Jetpack 'Shougo/ddu-source-register'
     Jetpack 'shun/ddu-source-buffer'
     Jetpack 'shun/ddu-source-rg'

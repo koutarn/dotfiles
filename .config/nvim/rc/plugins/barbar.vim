@@ -12,11 +12,12 @@ endif
 
 let bufferline.shadow = v:true
 let bufferline.animation = v:false
-let bufferline.icons = 'both'
+let bufferline.icons = 'buffer_number_with_icon'
 let bufferline.closable = v:false
 let bufferline.clickable = v:false
-let bufferline.semantic_letters = v:true
+let bufferline.semantic_letters = v:false 
 let bufferline.maximum_padding = 0
+let g:bufferline.maximum_length = 15
 
 " " romgrk/doom-one.vim
 " function! s:barbar_highlight_doom()

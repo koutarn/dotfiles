@@ -14,5 +14,5 @@ call skkeleton#config({
 \ })
 
 call skkeleton#register_kanatable('rom', {
-      \ 'jj': 'escape',
-      \ })
+    \ 'jj': 'escape',
+\ })
