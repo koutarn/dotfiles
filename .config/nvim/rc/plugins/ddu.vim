@@ -22,10 +22,9 @@ call ddu#custom#patch_global('sourceParams', {
 \       },
 \ })
 
-"設定
+" 設定
 call ddu#custom#patch_global({
 \   'ui': 'ff',
-\   'sync':v:false,
 \   'columns': ['icon_filename'],
 \   'sources': [
 \       {
@@ -43,7 +42,7 @@ call ddu#custom#patch_global({
 \   ],
 \   'sourceOptions': {
 \       '_': {
-\           'ignoreCase':v:true,
+\           'ignoreCase': v:true,
 \           'matchers': [
 \               'matcher_fzf',
 \           ],
@@ -117,12 +116,9 @@ endfunction
 " フィルタ
 autocmd FileType ddu-ff-filter call s:ddu_filter_my_settings()
 function! s:ddu_filter_my_settings() abort
-    inoremap <buffer><silent><CR> <Esc><Cmd>close<CR>
-    inoremap <buffer><silent><Esc> <Esc><Cmd>close<CR>
-    inoremap <buffer><silent><Space> <Esc><Cmd>close<CR>
-    nnoremap <buffer><silent><CR> <Cmd>close<CR>
-    nnoremap <buffer><silent><Esc> <Cmd>close<CR>
-    nnoremap <buffer><silent><Space> <Esc><Cmd>close<CR>
+    inoremap <buffer><silent><ESC> <ESC><Cmd>call ddu#ui#ff#close()<CR>
+    inoremap <buffer><silent><CR> <ESC><Cmd>call ddu#ui#ff#close()<CR>
+    inoremap <buffer><silent><Space> <ESC><Cmd>call ddu#ui#ff#close()<CR>
 endfunction
 
 "ファイル
@@ -133,13 +129,13 @@ nnoremap <Leader>;;
 nnoremap <Leader>;' <Cmd>Ddu -name=files mr<CR>
 nnoremap <Leader>;j <Cmd>Ddu -name=files buffer<CR>
 
-"ディレクトリ
+" ディレクトリ
 nnoremap <Leader>;p <Cmd>Ddu -name=cd ghq<CR>
 nnoremap <Leader>;[ <Cmd>Ddu -name=cd zoxide<CR>
 
-"行
+" 行
 nnoremap <Leader>;g <Cmd>Ddu -name=line rg -ui-param-ignoreEmpty -source-param-input=`input('Pattern:')`<CR>
 nnoremap <Leader>/a <Cmd>Ddu -name=line line -ui-param-startFilter<CR>
 
-"その他
+" その他
 nnoremap <Leader>;h <Cmd>Ddu -name=other help<CR>
