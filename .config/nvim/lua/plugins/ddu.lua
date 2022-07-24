@@ -97,6 +97,9 @@ ddu.patch_global({
             prompt = '> ',
             winHeight = lines,
         },
+        filer = {
+            split = 'no'
+        }
     },
     filterParams = {
         matcher_fzf = {
@@ -143,17 +146,24 @@ vim.api.nvim_create_autocmd('FileType', {
     callback = function() ddu_ff_filter_enter() end,
 })
 
+-- file
 vim.keymap.set('n', [[<Leader>;;]], [[<Cmd>Ddu -name=files current_files -sync <CR>]], bufopts)
 vim.keymap.set('n', [[<Leader>;']], '<Cmd>Ddu -name=files mr<CR>', bufopts)
 vim.keymap.set('n', '<Leader>;m', '<Cmd>Ddu -name=files memolist<CR>', bufopts)
 vim.keymap.set('n', '<Leader>;j', '<Cmd>Ddu -name=files buffer<CR>', bufopts)
+
+-- directory
 vim.keymap.set('n', '<Leader>;p', '<Cmd>Ddu -name=cd ghq<CR>', bufopts)
 vim.keymap.set('n', '<Leader>;[', '<Cmd>Ddu -name=cd zoxide<CR>', bufopts)
 vim.keymap.set('n', '<Leader>;l', '<Cmd>Ddu -name=cd current_directorys<CR>', bufopts)
 
+-- line
 vim.keymap.set('n', '<Leader>;g', [[<Cmd>Ddu -name=line rg -ui-param-ignoreEmpty -source-param-input=`input('Pattern:')`<CR>]], bufopts)
 vim.keymap.set('n', '<Leader>/a', '<Cmd>Ddu -name=line line -ui-param-startFilter<CR>', bufopts)
 vim.keymap.set('n', '<Leader>;h', '<Cmd>Ddu -name=other help<CR>', bufopts)
+
+-- filer
+vim.keymap.set('n','<Leader>f;','<Cmd>Ddu -name=filer-`win_getid()` -ui=filer -source-option-columns=icon_filename file<CR>',bufopts)
 
 vim.api.nvim_create_autocmd('VimResized', {
     callback = function()

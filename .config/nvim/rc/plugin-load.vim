@@ -152,6 +152,7 @@ if executable('deno')
 
     "ui
     Jetpack 'Shougo/ddu-ui-ff'
+    Jetpack 'Shougo/ddu-ui-filer'
 
     "column
     Jetpack 'Shougo/ddu-column-filename'
