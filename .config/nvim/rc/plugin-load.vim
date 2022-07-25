@@ -69,7 +69,6 @@ call jetpack#begin()
     Jetpack 'MattesGroeger/vim-bookmarks'                   " 行にブックマークを設定してくれる
     Jetpack 'Shougo/context_filetype.vim'                   " 埋め込みのコードでカーソルからfiletypeを認識してくれる
     Jetpack 'bronson/vim-trailing-whitespace'               " 空白の削除
-    Jetpack 'cohama/lexima.vim'                             " 閉じカッコの補完をしてくれる
     Jetpack 'godlygeek/tabular'                             " 文字揃えをうまいことしてくれる
     Jetpack 'itchyny/vim-highlighturl'                      " URLのハイライトを行う
     " Jetpack 'kuuote/gina-preview.vim'                       " gina拡張
@@ -94,6 +93,8 @@ call jetpack#begin()
     Jetpack 'AndrewRadev/linediff.vim'                      " 選択範囲のdiffを取ってくれる
     Jetpack 'glidenote/memolist.vim'                        " メモ取り用
     Jetpack 'andymass/vim-matchup'                          " 括弧をマッチさせる
+    Jetpack 'cohama/lexima.vim'                             " 閉じカッコの補完をしてくれる
+    " Jetpack 'windwp/nvim-autopairs'                         " leximaみたいなやつ
     Jetpack 'rhysd/clever-f.vim'                            " f移動を簡単にする(f移動後に;ではなくfで移動出来るようにする)
     Jetpack 'SmiteshP/nvim-gps'                             " 現在の行の情報を表示してくれる
     Jetpack 'notomo/reacher.nvim'                           " 見えている範囲で検索する
