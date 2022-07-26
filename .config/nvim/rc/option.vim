@@ -61,14 +61,14 @@ set softtabstop=-1
 set smarttab
 set shiftround
 
-"indent
+" "indent
 set breakindent
 set autoindent
-set smartindent
 set tm=500
 set copyindent
 set preserveindent
 set backspace=indent,eol,start
+" set smartindent
 
 "file
 set nonumber

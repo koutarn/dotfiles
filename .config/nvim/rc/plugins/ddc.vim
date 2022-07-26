@@ -1,8 +1,8 @@
 UsePlugin 'ddc.vim'
 
 "pum.vimを使用
+call ddc#custom#patch_global('keywordPattern', '[A-Za-z:]*')
 call ddc#custom#patch_global('completionMenu', 'pum.vim')
-call ddc#custom#patch_global('keywordPattern', '[0-9A-Za-z_:#]*')
 
 "sourcesの設定
 call ddc#custom#patch_global('sources', [

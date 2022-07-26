@@ -3,12 +3,12 @@
 
 -- -- 括弧の中で改行を入れた際の補完
 -- vim.g.lexima_enable_newline_rules = 0
- 
+
 -- -- 対応するものを入れる補完
 -- vim.g.lexima_enable_endwise_rules = 0
 
 -- vim.g.lexima_no_default_rules = 0
--- vim.g.lexima_enable_newline_rules = 0
+vim.g.lexima_enable_newline_rules = 1
 
 local add_rule = vim.fn["lexima#add_rule"]
 

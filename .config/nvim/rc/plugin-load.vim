@@ -73,7 +73,7 @@ call jetpack#begin()
     Jetpack 'itchyny/vim-highlighturl'                      " URLのハイライトを行う
     " Jetpack 'kuuote/gina-preview.vim'                       " gina拡張
     Jetpack 'lambdalisue/suda.vim'                          " 読み書きをsuduでしてくれる
-    Jetpack 'lambdalisue/vim-findent'                       " fileから適切なインデントを読み取ってくれる
+    " Jetpack 'lambdalisue/vim-findent'                       " fileから適切なインデントを読み取ってくれる
     Jetpack 'liuchengxu/vista.vim'                          " コードの変数やオブジェクト等を表示してくれる
     Jetpack 'markonm/traces.vim'                            " 置換結果を変換前に表示する
     Jetpack 'mattn/vim-findroot'                            " プロジェクトのルートを設定してくれる
