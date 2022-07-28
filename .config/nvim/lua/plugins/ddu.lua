@@ -93,7 +93,7 @@ ddu.patch_global({
             startFilter = true,
             floatingBorder = 'none',
             previewFloating = false,
-            previewHeight = 9,
+            previewHeight = 30,
             prompt = '> ',
             winHeight = lines,
         },

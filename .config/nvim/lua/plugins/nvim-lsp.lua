@@ -10,7 +10,8 @@ local on_attach = function(client, bufnr)
     -- `vim.lsp.*`関数のマッピング（多いので省略）
     buf_set_keymap('n', 'z[', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
     buf_set_keymap('n', 'z]', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-    buf_set_keymap('n', 'zh', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+    buf_set_keymap('n', 'zh', '<cmd>lua vim.lsp.buf.hover<CR>', opts)
+    buf_set_keymap('n', 'zj', '<cmd>Lspsaga preview_definition<CR>', opts)
     buf_set_keymap('n', 'z-', '<cmd>lua vim.lsp.buf.document_symbol()<CR>', opts)
     buf_set_keymap('n', 'z=', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>', opts)
 end
