@@ -107,6 +107,9 @@ call jetpack#begin()
     Jetpack 'mattn/vim-gomod',{'for':'go'}                  " modファイルのsyntax highlight
     Jetpack 'mattn/vim-goaddtags',{'for':'go'}              " tagを自動で付けてくれる
     Jetpack 'akinsho/flutter-tools.nvim'                    " flutterで開発出来るようにするプラグイン
+    Jetpack 'previm/previm',{'for':'markdown'}              " markdownをpreviewする
+    Jetpack 'petertriho/nvim-scrollbar'                     " スクロールバーを表示する
+    Jetpack 'kristijanhusak/line-notes.nvim'                " 行にノートを埋めこむ
 
     "syntax
     Jetpack 'rhysd/vim-gfm-syntax', {'for':'markdown'} "markdownをもっとハイライトする
@@ -200,7 +203,8 @@ endif
     Jetpack 'xolox/vim-misc'
     Jetpack 'tyru/open-browser.vim'
     Jetpack 'ryanoasis/vim-devicons'
-    Jetpack 'voldikss/vim-floaterm'
+    Jetpack 'akinsho/toggleterm.nvim'
+    " Jetpack 'voldikss/vim-floaterm'
 
     "help
     Jetpack 'vim-jp/vimdoc-ja'

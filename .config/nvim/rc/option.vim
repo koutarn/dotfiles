@@ -22,7 +22,11 @@ if has('unix')
   let $SHELL='/bin/zsh'
   set shell=/bin/zsh
 elseif has('win32') || has('win64')
-    set shell=cmd
+    let &shell = has('win64') ? 'pwsh' : 'powershell'
+    let &shellcmdflag = '-NoLogo -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;'
+    let &shellredir = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
+    let &shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
+    set shellquote= shellxquote=
 endif
 
 "補完
