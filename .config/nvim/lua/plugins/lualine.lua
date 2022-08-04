@@ -80,7 +80,7 @@ require'lualine'.setup {
             },
         },
         lualine_x = {
-            function() return '📁 ' .. vim.fn.expand("%:p:h") end,
+            -- function() return '📁 ' .. vim.fn.expand("%:p:h") end,
         },
         lualine_y = {
             'branch',
