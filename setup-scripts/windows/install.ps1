@@ -27,6 +27,7 @@ $UTILS = @(
     "git"
     "gzip"
     "openssl"
+    "tar"
 )
 
 $PROGRAMMING_ENV = @(
