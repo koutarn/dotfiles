@@ -3,7 +3,8 @@
 "===============================
 
 "fast install and starupt
-let g:jetpack#optimization=2
+let g:jetpack_copy_method='symlink'
+
 
 call jetpack#begin()
 

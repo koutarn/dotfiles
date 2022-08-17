@@ -92,7 +92,7 @@ local config = {
 
     -- タブ
     tab_bar_at_bottom = true,                           -- tabを下に表示
-    hide_tab_bar_if_only_one_tab = true,                -- tabが一つなら隠す
+    hide_tab_bar_if_only_one_tab = false,                -- tabが一つなら隠す
 
     -- QuickSelectModeの時のパターン
     quick_select_patterns = {
