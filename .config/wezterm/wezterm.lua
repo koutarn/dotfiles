@@ -58,9 +58,6 @@ local config = {
     initial_cols = 120,
 
     -- font
- 	-- font = wezterm.font("UDEV Gothic 35NFLG"),
-  --   font_size = 11.0,
-
     font = wezterm.font_with_fallback({
     {family="PlemolJP Console NF", weight="Medium"},
     }),
@@ -76,7 +73,20 @@ local config = {
         top = 0,
         bottom = 0,
     },
-    -- window_background_opacity = 0.8,
+    window_background_opacity = 0.8,
+    window_background_image = '~/img/cyberpunk.jpg',
+    window_background_image_hsb = {
+        -- Darken the background image by reducing it to 1/3rd
+        brightness = 0.3,
+
+        -- You can adjust the hue by scaling its value.
+        -- a multiplier of 1.0 leaves the value unchanged.
+        hue = 1.0,
+
+        -- You can adjust the saturation also.
+        saturation = 1.0,
+    },
+
 
     -- 文字選択
     selection_word_boundary = " \t\n{}[]()\"'`,;:│=&!%",
