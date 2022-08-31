@@ -15,7 +15,9 @@
 ## setup
 
 ### windows
-`pwsh ./setup-scripts/windows/install.ps1` 
+`curl -fLo ./install.ps1 https://raw.githubusercontent.com/koutarn/dotfiles/master/setup-scripts/windows/install.ps1 -k
+` 
+`pwsh ./install.ps1` 
 
 ### linker
 All configuration files are linked as symbolic links with [rhysd/dotfiles](https://github.com/rhysd/dotfiles) 
