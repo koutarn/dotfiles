@@ -20,6 +20,7 @@ catch [System.Management.Automation.CommandNotFoundException] {
 }
 
 $UTILS = @(
+    "sudo"
     "aria2"
     "7zip"
     "dark"
@@ -74,7 +75,13 @@ $TOOLS = @(
     "nkf"
     "winmerge-jp"
     "less"
+    "source-han-code-jp"
+    "psfzf"
+    "sd"
+    "tealdeer"
+    "jp-util-font"
 )
+
 
 # scoopが使用出来るなら実行
 if(canUse("scoop")){
