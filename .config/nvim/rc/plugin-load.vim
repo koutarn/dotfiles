@@ -242,10 +242,6 @@ endif
 
 call jetpack#end()
 
-" let data_dir = has('nvim') ? stdpath('config') : '~/.vim'
-" if empty(glob(data_dir . '/autoload/jetpack.vim'))
-"   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/tani/vim-plug/master/autoload/plug.vim'
-"   autocmd VimEnter * JetpackSync | source $MYVIMRC
-" endi
+
 
 command! -nargs=1 UsePlugin if !jetpack#tap(<args>) | finish | endif
