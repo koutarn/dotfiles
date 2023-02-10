@@ -116,7 +116,6 @@ local function ddu_ff_enter()
         vim.keymap.set('n', 'o', function() return ddu.do_action('itemAction',{name =  'cd'}) end, bufopts)
         vim.keymap.set('n', '<CR>', function() return ddu.do_action('itemAction',{name =  'cd'}) end, bufopts)
     else
-        -- vim.keymap.set('n', '<CR>', function() return ddu.do_action('chooseAction') end, bufopts)
         vim.keymap.set('n', 'o', function() return ddu.do_action('itemAction',{name =  'open'}) end, bufopts)
         vim.keymap.set('n', '<CR>', function() return ddu.do_action('itemAction',{name =  'open'}) end, bufopts)
     end
