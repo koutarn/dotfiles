@@ -6,9 +6,6 @@
 [ghq]
 	root = ~/workspace/src
 
-[url "git@github.com.job"]
-    insteadOf = https://github.com/
-
 [includeIf "gitdir:~/workspace/src/github.com.job/"]
     path = ~/.gitconfig-job
 
