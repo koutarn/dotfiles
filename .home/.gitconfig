@@ -2,6 +2,22 @@
     email = fuse.kanrinin@gmail.com
 	name = koutarn
 
+# ghq default settings
+[ghq]
+	root = ~/workspace/src
+
+[url "git@github.com.job"]
+    insteadOf = https://github.com/
+
+[includeIf "gitdir:~/workspace/src/github.com.job/"]
+    path = ~/.gitconfig-job
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+
+[url "git@gitlab.com:"]
+	insteadOf = https://gitlab.com/
+
 [color "diff"]
     meta = 242 238
     frag = 239 236
@@ -20,33 +36,24 @@
 	editor = nvim
 	quotepath = false
     pager = delta
-#true = チェックアウト時にLF⇛CRLF
-#input = コミット時にCRLF⇛LF
-#false 無効
-#autocrlf = input
 
 [color]
 ui = auto
 
 [commit]
 	verbose = true
-#template
 # template = ~/.git-template
+
 [init]
+    #defaultブランチをメインにする
 	defaultBranch = main
-[ghq]
-	root = ~/workspace/src
-[url "git@github.com:"]
-	insteadOf = https://github.com/
-[url "git@gitlab.com:"]
-	insteadOf = https://gitlab.com/
 
 [interactive]
     diffFilter = delta --color-only
 
 [delta]
-    navigate = true  # use n and N to move between diff sections
-    light = false    # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+    navigate = true
+    light = false
     side-by-side = true
     line-numbers = true
 
