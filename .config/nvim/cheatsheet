@@ -1,8 +1,0 @@
-[TODO]
-* flutter
-    * flutterの時にエラーがめちゃくちゃ出るのを抑制したい
-        * FlutterRunしたら出る。HotReloadの影響っぽい
-            * HotReloadしてたらやりづらいとか本末転倒なのでなんとかしたい
-    * flutterのsnippetを設定したい
-* lsp_sageの設定をしたい
-* nvim-cmpに乗り変える
