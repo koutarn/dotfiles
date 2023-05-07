@@ -1,0 +1,371 @@
+{
+    "buckets": [
+        {
+            "Name": "dorado",
+            "Source": "https://github.com/chawyehsu/dorado",
+            "Updated": "2023-05-07T09:11:40+09:00",
+            "Manifests": 235
+        },
+        {
+            "Name": "extras",
+            "Source": "https://github.com/ScoopInstaller/Extras",
+            "Updated": "2023-05-07T21:29:35+09:00",
+            "Manifests": 1863
+        },
+        {
+            "Name": "java",
+            "Source": "https://github.com/ScoopInstaller/Java",
+            "Updated": "2023-05-06T17:17:58+09:00",
+            "Manifests": 253
+        },
+        {
+            "Name": "jp",
+            "Source": "https://github.com/dooteeen/scoop-for-jp",
+            "Updated": "2020-07-29T11:37:34+09:00",
+            "Manifests": 0
+        },
+        {
+            "Name": "main",
+            "Source": "https://github.com/ScoopInstaller/Main",
+            "Updated": "2023-05-07T17:25:20+09:00",
+            "Manifests": 1197
+        },
+        {
+            "Name": "versions",
+            "Source": "https://github.com/ScoopInstaller/Versions",
+            "Updated": "2023-05-07T21:43:22+09:00",
+            "Manifests": 424
+        }
+    ],
+    "apps": [
+        {
+            "Source": "main",
+            "Updated": "2022-10-13T00:54:28.8089484+09:00",
+            "Info": "",
+            "Version": "22.01",
+            "Name": "7zip"
+        },
+        {
+            "Source": "main",
+            "Updated": "2022-10-13T00:54:29.8754964+09:00",
+            "Info": "",
+            "Version": "1.36.0-1",
+            "Name": "aria2"
+        },
+        {
+            "Source": "main",
+            "Updated": "2023-04-18T17:26:06.7820979+09:00",
+            "Info": "",
+            "Version": "0.23.0",
+            "Name": "bat"
+        },
+        {
+            "Source": "extras",
+            "Updated": "2023-05-02T18:38:17.743518+09:00",
+            "Info": "",
+            "Version": "0.12.0",
+            "Name": "chatgpt"
+        },
+        {
+            "Source": "main",
+            "Updated": "2023-05-08T00:13:50.9586728+09:00",
+            "Info": "",
+            "Version": "0.4.2",
+            "Name": "d2"
+        },
+        {
+            "Source": "main",
+            "Updated": "2023-02-10T17:32:49.2086763+09:00",
+            "Info": "",
+            "Version": "0.15.1",
+            "Name": "delta"
+        },
+        {
+            "Source": "main",
+            "Updated": "2023-05-08T00:13:55.224249+09:00",
+            "Info": "",
+            "Version": "1.33.2",
+            "Name": "deno"
+        },
+        {
+            "Source": "main",
+            "Updated": "2023-04-18T17:26:12.7451878+09:00",
+            "Info": "",
+            "Version": "8.7.0",
+            "Name": "fd"
+        },
+        {
+            "Source": "main",
+            "Updated": "2023-05-08T00:14:12.7252186+09:00",
+            "Info": "",
+            "Version": "0.40.0",
+            "Name": "fzf"
+        },
+        {
+            "Source": "main",
+            "Updated": "2023-05-08T00:14:15.8352147+09:00",
+            "Info": "",
+            "Version": "2.28.0",
+            "Name": "gh"
+        },
+        {
+            "Source": "main",
+            "Updated": "2023-04-18T17:26:16.7058103+09:00",
+            "Info": "",
+            "Version": "1.4.2",
+            "Name": "ghq"
+        },
+        {
+            "Source": "main",
+            "Updated": "2023-05-08T00:14:40.5367223+09:00",
+            "Info": "",
+            "Version": "2.40.1.windows.1",
+            "Name": "git"
+        },
+        {
+            "Source": "main",
+            "Updated": "2023-05-08T00:15:14.1455258+09:00",
+            "Info": "",
+            "Version": "1.20.4",
+            "Name": "go"
+        },
+        {
+            "Source": "main",
+            "Updated": "2023-05-08T00:15:17.4236085+09:00",
+            "Info": "",
+            "Version": "633",
+            "Name": "less"
+        },
+        {
+            "Source": "main",
+            "Updated": "2022-10-13T00:57:46.3311416+09:00",
+            "Info": "",
+            "Version": "0.23.1",
+            "Name": "lsd"
+        },
+        {
+            "Source": "main",
+            "Updated": "2022-10-13T00:56:21.4697424+09:00",
+            "Info": "",
+            "Version": "5.4.2",
+            "Name": "lua"
+        },
+        {
+            "Source": "main",
+            "Updated": "2023-04-18T17:24:20.1616587+09:00",
+            "Info": "",
+            "Version": "3.9.1",
+            "Name": "maven"
+        },
+        {
+            "Source": "main",
+            "Updated": "2023-05-08T00:16:52.6321902+09:00",
+            "Info": "",
+            "Version": "8.0.33",
+            "Name": "mysql"
+        },
+        {
+            "Source": "main",
+            "Updated": "2023-04-18T17:28:25.3138267+09:00",
+            "Info": "",
+            "Version": "0.9.0",
+            "Name": "neovim"
+        },
+        {
+            "Source": "jp",
+            "Updated": "2022-10-13T00:58:23.4463247+09:00",
+            "Info": "",
+            "Version": "2.1.5.1",
+            "Name": "nkf"
+        },
+        {
+            "Source": "main",
+            "Updated": "2023-05-08T00:17:16.7555428+09:00",
+            "Info": "",
+            "Version": "20.1.0",
+            "Name": "nodejs"
+        },
+        {
+            "Source": "java",
+            "Updated": "2023-02-10T20:11:52.9706368+09:00",
+            "Info": "",
+            "Version": "19.0.2-7",
+            "Name": "openjdk"
+        },
+        {
+            "Source": "java",
+            "Updated": "2023-02-10T20:51:59.8609111+09:00",
+            "Info": "",
+            "Version": "18.0.2.1-1",
+            "Name": "openjdk18"
+        },
+        {
+            "Source": "java",
+            "Updated": "2023-02-10T20:14:31.5702853+09:00",
+            "Info": "",
+            "Version": "9.0.4-12",
+            "Name": "openjdk9"
+        },
+        {
+            "Source": "main",
+            "Updated": "2022-10-13T00:58:24.3645308+09:00",
+            "Info": "",
+            "Version": "0.9.0",
+            "Name": "pastel"
+        },
+        {
+            "Source": "extras",
+            "Updated": "2022-10-13T00:58:24.6025848+09:00",
+            "Info": "",
+            "Version": "1.1.0",
+            "Name": "posh-git"
+        },
+        {
+            "Source": "dorado",
+            "Updated": "2022-10-13T00:58:33.8884924+09:00",
+            "Info": "",
+            "Version": "7.2.6",
+            "Name": "powershell"
+        },
+        {
+            "Source": "extras",
+            "Updated": "2023-04-18T17:35:47.2717344+09:00",
+            "Info": "",
+            "Version": "2.5.16",
+            "Name": "psfzf"
+        },
+        {
+            "Source": "main",
+            "Updated": "2023-04-18T17:36:19.1118867+09:00",
+            "Info": "",
+            "Version": "3.11.3",
+            "Name": "python"
+        },
+        {
+            "Source": "main",
+            "Updated": "2022-10-13T00:58:35.9779626+09:00",
+            "Info": "",
+            "Version": "0.9.6",
+            "Name": "rga"
+        },
+        {
+            "Source": "main",
+            "Updated": "2022-10-13T00:58:36.9401802+09:00",
+            "Info": "",
+            "Version": "13.0.0",
+            "Name": "ripgrep"
+        },
+        {
+            "Source": "extras",
+            "Updated": "2022-10-13T00:58:37.6813461+09:00",
+            "Info": "",
+            "Version": "0.2.4",
+            "Name": "scoop-completion"
+        },
+        {
+            "Source": "main",
+            "Updated": "2022-10-13T00:58:42.5089903+09:00",
+            "Info": "",
+            "Version": "0.7.5",
+            "Name": "sd"
+        },
+        {
+            "Source": "extras",
+            "Updated": "2022-10-13T00:58:45.8686369+09:00",
+            "Info": "",
+            "Version": "4.28.184",
+            "Name": "slack"
+        },
+        {
+            "Source": "extras",
+            "Updated": "2023-04-18T17:36:22.5704605+09:00",
+            "Info": "",
+            "Version": "3.4.12",
+            "Name": "sourcetree"
+        },
+        {
+            "Source": "main",
+            "Updated": "2023-04-18T17:36:23.7068686+09:00",
+            "Info": "",
+            "Version": "1.14.2",
+            "Name": "starship"
+        },
+        {
+            "Source": "main",
+            "Updated": "2022-10-13T00:55:31.9428143+09:00",
+            "Info": "",
+            "Version": "0.2020.01.26",
+            "Name": "sudo"
+        },
+        {
+            "Source": "main",
+            "Updated": "2022-10-13T00:55:41.2617323+09:00",
+            "Info": "",
+            "Version": "1.23",
+            "Name": "tar"
+        },
+        {
+            "Source": "main",
+            "Updated": "2023-04-18T17:36:33.2761302+09:00",
+            "Info": "",
+            "Version": "1.6.1",
+            "Name": "tealdeer"
+        },
+        {
+            "Source": "extras",
+            "Updated": "2022-10-13T00:59:01.151181+09:00",
+            "Info": "",
+            "Version": "0.10.0",
+            "Name": "terminal-icons"
+        },
+        {
+            "Source": "main",
+            "Updated": "2022-10-13T00:59:02.2864372+09:00",
+            "Info": "",
+            "Version": "12.1.2",
+            "Name": "tokei"
+        },
+        {
+            "Source": "extras",
+            "Updated": "2023-05-08T00:21:15.019213+09:00",
+            "Info": "",
+            "Version": "8.24.0",
+            "Name": "ueli"
+        },
+        {
+            "Source": "extras",
+            "Updated": "2023-05-08T00:12:19.7016261+09:00",
+            "Info": "",
+            "Version": "1.78.0",
+            "Name": "vscode"
+        },
+        {
+            "Source": "extras",
+            "Updated": "2023-04-18T17:41:05.3932309+09:00",
+            "Info": "",
+            "Version": "20230408-112425-69ae8472",
+            "Name": "wezterm"
+        },
+        {
+            "Source": "main",
+            "Updated": "2022-10-13T00:59:33.2244552+09:00",
+            "Info": "",
+            "Version": "1.21.3",
+            "Name": "wget"
+        },
+        {
+            "Source": "extras",
+            "Updated": "2023-05-08T00:10:47.3188817+09:00",
+            "Info": "",
+            "Version": "1.7.1",
+            "Name": "wingetui"
+        },
+        {
+            "Source": "main",
+            "Updated": "2023-02-10T17:56:16.3029516+09:00",
+            "Info": "",
+            "Version": "0.9.0",
+            "Name": "zoxide"
+        }
+    ]
+}
