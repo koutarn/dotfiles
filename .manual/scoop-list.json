@@ -40,13 +40,6 @@
     "apps": [
         {
             "Source": "main",
-            "Updated": "2022-10-13T00:54:28.8089484+09:00",
-            "Info": "",
-            "Version": "22.01",
-            "Name": "7zip"
-        },
-        {
-            "Source": "main",
             "Updated": "2022-10-13T00:54:29.8754964+09:00",
             "Info": "",
             "Version": "1.36.0-1",
@@ -163,6 +156,13 @@
             "Info": "",
             "Version": "8.0.33",
             "Name": "mysql"
+        },
+        {
+            "Source": "main",
+            "Updated": "2023-05-08T01:11:39.8416058+09:00",
+            "Info": "",
+            "Version": "8.0.33",
+            "Name": "mysql-workbench"
         },
         {
             "Source": "main",

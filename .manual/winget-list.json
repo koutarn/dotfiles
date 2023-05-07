@@ -22,12 +22,6 @@
 					"PackageIdentifier" : "LINE.LINE"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.Edge"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.EdgeWebView2Runtime"
-				},
-				{
 					"PackageIdentifier" : "VivaldiTechnologies.Vivaldi"
 				},
 				{
@@ -37,32 +31,14 @@
 					"PackageIdentifier" : "Notion.Notion"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
-				},
-				{
 					"PackageIdentifier" : "Appest.TickTick"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2010.x64"
 				},
 				{
 					"PackageIdentifier" : "Google.JapaneseIME"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2012.x86"
-				},
-				{
 					"PackageIdentifier" : "Google.Drive"
 				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2013.x86"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2010.x86"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
-				}
 			],
 			"SourceDetails" : 
 			{
