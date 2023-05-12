@@ -20,6 +20,8 @@ augroup END
 "読み込みファイル設定
 runtime! rc/*.vim
 runtime! rc/plugins/*.vim
+
+" lua
 runtime! lua/plugins/*.lua
 
 "filetype

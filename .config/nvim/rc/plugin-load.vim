@@ -116,78 +116,78 @@ call jetpack#begin()
     Jetpack 'rhysd/vim-gfm-syntax', {'for':'markdown'} "markdownをもっとハイライトする
 
 "deno
-if executable('deno')
-    Jetpack 'vim-denops/denops.vim'                     " denoのランタイム
-    Jetpack 'vim-skk/skkeleton'                         " deno版skk
-    Jetpack 'delphinus/skkeleton_indicator.nvim'        " skkeletonの状態を表示してくれる
-    Jetpack 'matsui54/denops-popup-preview.vim'         " 補完候補のプレビュー
-    Jetpack 'matsui54/denops-signature_help'            " signature help
-    Jetpack 'monaqa/dps-dial.vim'                       " インクリメント、デクリメント拡張
-    Jetpack 'lambdalisue/gin.vim'                       " git操作を出来るようにする
+" if executable('deno')
+"     Jetpack 'vim-denops/denops.vim'                     " denoのランタイム
+"     Jetpack 'vim-skk/skkeleton'                         " deno版skk
+"     Jetpack 'delphinus/skkeleton_indicator.nvim'        " skkeletonの状態を表示してくれる
+"     Jetpack 'matsui54/denops-popup-preview.vim'         " 補完候補のプレビュー
+"     Jetpack 'matsui54/denops-signature_help'            " signature help
+"     Jetpack 'monaqa/dps-dial.vim'                       " インクリメント、デクリメント拡張
+"     Jetpack 'lambdalisue/gin.vim'                       " git操作を出来るようにする
 
-    "ddc
-    Jetpack 'Shougo/ddc.vim'
-    Jetpack 'Shougo/pum.vim'
+"     "ddc
+"     Jetpack 'Shougo/ddc.vim'
+"     Jetpack 'Shougo/pum.vim'
 
-    "source
-    Jetpack 'Shougo/ddc-around'
-    Jetpack 'LumaKernel/ddc-file'
-    Jetpack 'Shougo/ddc-nvim-lsp'
-    Jetpack 'shun/ddc-vim-lsp'
-    Jetpack 'Shougo/ddc-cmdline-history'
-    Jetpack 'Shougo/ddc-cmdline'
-    Jetpack 'Shougo/neco-vim'
-    Jetpack 'ippachi/ddc-yank'
-    Jetpack 'gamoutatsumi/ddc-emoji'
+"     "source
+"     Jetpack 'Shougo/ddc-around'
+"     Jetpack 'LumaKernel/ddc-file'
+"     Jetpack 'Shougo/ddc-nvim-lsp'
+"     Jetpack 'shun/ddc-vim-lsp'
+"     Jetpack 'Shougo/ddc-cmdline-history'
+"     Jetpack 'Shougo/ddc-cmdline'
+"     Jetpack 'Shougo/neco-vim'
+"     Jetpack 'ippachi/ddc-yank'
+"     Jetpack 'gamoutatsumi/ddc-emoji'
 
-    "matcher
-    Jetpack 'Shougo/ddc-matcher_head'
-    Jetpack 'tani/ddc-fuzzy'
-    Jetpack 'takker99/ddc-bitap'
+"     "matcher
+"     Jetpack 'Shougo/ddc-matcher_head'
+"     Jetpack 'tani/ddc-fuzzy'
+"     Jetpack 'takker99/ddc-bitap'
 
-    "sorter
-    Jetpack 'Shougo/ddc-sorter_rank'
+"     "sorter
+"     Jetpack 'Shougo/ddc-sorter_rank'
 
-    "converter
-    Jetpack 'Shougo/ddc-converter_remove_overlap'
+"     "converter
+"     Jetpack 'Shougo/ddc-converter_remove_overlap'
 
-    "ddu
-    Jetpack 'Shougo/ddu.vim'
-    Jetpack 'Shougo/ddu-commands.vim'
+"     "ddu
+"     Jetpack 'Shougo/ddu.vim'
+"     Jetpack 'Shougo/ddu-commands.vim'
 
-    "ui
-    Jetpack 'Shougo/ddu-ui-ff'
-    Jetpack 'Shougo/ddu-ui-filer'
+"     "ui
+"     Jetpack 'Shougo/ddu-ui-ff'
+"     Jetpack 'Shougo/ddu-ui-filer'
 
-    "column
-    Jetpack 'Shougo/ddu-column-filename'
-    Jetpack 'ryota2357/ddu-column-icon_filename'
+"     "column
+"     Jetpack 'Shougo/ddu-column-filename'
+"     Jetpack 'ryota2357/ddu-column-icon_filename'
 
-    "kind
-    Jetpack 'Shougo/ddu-kind-file'
+"     "kind
+"     Jetpack 'Shougo/ddu-kind-file'
 
-    "source
-    Jetpack 'Shougo/ddu-source-file'
-    Jetpack 'Shougo/ddu-source-file_rec'
-    Jetpack 'Shougo/ddu-source-file_point'
-    Jetpack 'Shougo/ddu-source-register'
-    Jetpack 'shun/ddu-source-buffer'
-    Jetpack 'shun/ddu-source-rg'
-    Jetpack 'Shougo/ddu-source-line'
-    Jetpack 'matsui54/ddu-source-file_external'
-    Jetpack 'matsui54/ddu-source-command_history'
-    Jetpack 'lambdalisue/mr.vim'
-    Jetpack 'kuuote/ddu-source-mr'
-    Jetpack 'matsui54/ddu-source-help'
-    Jetpack '4513ECHO/ddu-source-colorscheme'
-    Jetpack '4513ECHO/ddu-source-source'
+"     "source
+"     Jetpack 'Shougo/ddu-source-file'
+"     Jetpack 'Shougo/ddu-source-file_rec'
+"     Jetpack 'Shougo/ddu-source-file_point'
+"     Jetpack 'Shougo/ddu-source-register'
+"     Jetpack 'shun/ddu-source-buffer'
+"     Jetpack 'shun/ddu-source-rg'
+"     Jetpack 'Shougo/ddu-source-line'
+"     Jetpack 'matsui54/ddu-source-file_external'
+"     Jetpack 'matsui54/ddu-source-command_history'
+"     Jetpack 'lambdalisue/mr.vim'
+"     Jetpack 'kuuote/ddu-source-mr'
+"     Jetpack 'matsui54/ddu-source-help'
+"     Jetpack '4513ECHO/ddu-source-colorscheme'
+"     Jetpack '4513ECHO/ddu-source-source'
 
-    "matcher
-    Jetpack 'Shougo/ddu-filter-matcher_substring'
-    Jetpack 'yuki-yano/ddu-filter-fzf'
-    Jetpack 'Shougo/ddu-filter-matcher_relative'
-    Jetpack 'Shougo/ddu-filter-matcher_hidden'
-endif
+"     "matcher
+"     Jetpack 'Shougo/ddu-filter-matcher_substring'
+"     Jetpack 'yuki-yano/ddu-filter-fzf'
+"     Jetpack 'Shougo/ddu-filter-matcher_relative'
+"     Jetpack 'Shougo/ddu-filter-matcher_hidden'
+" endif
 
     "Filer
     Jetpack 'lambdalisue/fern.vim',{ 'branch': 'main' }
