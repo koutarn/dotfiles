@@ -1,4 +1,4 @@
-UsePlugin 'fern-mapping-fzf.vim'
+
 "===========================================
 " 'LumaKernel/fern-mapping-fzf.vim'
 "===========================================

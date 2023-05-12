@@ -1,4 +1,4 @@
--- UsePlugin 'smart-cursor.nvim'
+-- 
 -- ==================================
 -- 'winston0410/smart-cursor.nvim'
 -- ==================================

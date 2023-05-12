@@ -1,4 +1,4 @@
-UsePlugin 'glyph-palette.vim'
+
 "=================================
 "'lambdalisue/glyph-palette.vim'
 "=================================

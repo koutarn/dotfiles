@@ -1,4 +1,4 @@
-UsePlugin 'dps-dial.vim'
+
 
 nmap  <C-a>  <Plug>(dps-dial-increment)
 nmap  <C-x>  <Plug>(dps-dial-decrement)

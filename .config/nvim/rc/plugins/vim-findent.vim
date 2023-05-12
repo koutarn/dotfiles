@@ -1,4 +1,4 @@
-UsePlugin 'vim-findent'
+
 "==================================
 "lambdalisue/vim-findent
 "==================================

@@ -1,1 +1,1 @@
-UsePlugin 'friendly-snippets'
+

@@ -1,4 +1,4 @@
-UsePlugin 'barbar.nvim'
+
 " Magic buffer-picking mode
 nnoremap <Leader>q <Cmd>BufferClose!<CR>
 

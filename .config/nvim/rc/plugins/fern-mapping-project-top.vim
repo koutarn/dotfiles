@@ -1,4 +1,4 @@
-UsePlugin 'fern-mapping-project-top.vim'
+
 " ===========================================
 " 'lambdalisue/fern-mapping-project-top.vim'
 " ===========================================

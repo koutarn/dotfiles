@@ -1,4 +1,4 @@
-UsePlugin 'preview-markdown.vim'
+
 " ==================================
 " 'skanehira/preview-markdown.vim'
 " ==================================

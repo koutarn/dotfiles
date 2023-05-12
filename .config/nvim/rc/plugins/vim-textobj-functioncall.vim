@@ -1,4 +1,4 @@
-UsePlugin 'vim-textobj-functioncall'
+
 "==================================
 "machakann/vim-textobj-functioncall
 "==================================

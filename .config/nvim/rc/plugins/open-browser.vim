@@ -1,4 +1,4 @@
-UsePlugin 'open-browser.vim'
+
 " ================================
 " Plug 'tyru/open-browser.vim'
 " ================================

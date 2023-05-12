@@ -1,4 +1,4 @@
-UsePlugin 'clever-f.vim'
+
 
 "smart case
 let g:clever_f_smart_case = 1

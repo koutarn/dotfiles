@@ -1,4 +1,4 @@
-UsePlugin 'denops-signature_help'
+
 
 let g:signature_help_config = {
 \ 'border': v:true,

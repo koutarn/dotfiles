@@ -1,4 +1,4 @@
-UsePlugin 'vim-translator'
+
 
 
 augroup vimrc_translate

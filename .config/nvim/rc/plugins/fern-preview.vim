@@ -1,4 +1,4 @@
-UsePlugin 'fern-preview.vim'
+
 "==================================
 "yuki-yano/fern-preview.vim
 "==================================

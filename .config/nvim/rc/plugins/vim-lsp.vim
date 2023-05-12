@@ -1,4 +1,4 @@
-UsePlugin 'vim-lsp'
+
 function! s:on_lsp_buffer_enabled() abort
 
     if &filetype ==# 'ddu-ff'

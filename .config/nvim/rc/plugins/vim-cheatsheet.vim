@@ -1,4 +1,4 @@
-UsePlugin 'vim-cheatsheet'
+
 "==================================
 "reireias/vim-cheatsheet
 "==================================

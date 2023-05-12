@@ -1,4 +1,4 @@
-UsePlugin 'fern.vim'
+
 " =========================
 " 'lambdalisue/fern.vim'
 " =========================
