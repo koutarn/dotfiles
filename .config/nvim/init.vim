@@ -19,10 +19,10 @@ augroup END
 
 "読み込みファイル設定
 runtime! rc/*.vim
-"runtime! rc/plugins/*.vim
+"  runtime! rc/plugins/*.vim
 
 " lua
-"runtime! lua/plugins/*.lua
+runtime! lua/plugins/*.lua
 
 "filetype
 filetype on
@@ -35,14 +35,39 @@ set background=dark
 
 "dein Scripts-----------------------------
 
+let $CACHE = expand('~/.cache')
+if !isdirectory($CACHE)
+  call mkdir($CACHE, 'p')
+endif
+if &runtimepath !~# '/dein.vim'
+  let s:dein_dir = fnamemodify('dein.vim', ':p')
+  if !isdirectory(s:dein_dir)
+    let s:dein_dir = $CACHE .. '/dein/repos/github.com/Shougo/dein.vim'
+    if !isdirectory(s:dein_dir)
+      execute '!git clone https://github.com/Shougo/dein.vim' s:dein_dir
+    endif
+  endif
+  execute 'set runtimepath^=' .. substitute(
+        \ fnamemodify(s:dein_dir, ':p') , '[/\\]$', '', '')
+endif
+
+let g:dein#auto_remote_plugins = v:false
+let g:dein#enable_notification = v:true
+let g:dein#install_check_diff = v:true
+let g:dein#install_check_remote_threshold = 24 * 60 * 60
+let g:dein#install_progress_type = 'floating'
+let g:dein#lazy_rplugins = v:true
+let g:dein#types#git#enable_partial_clone = v:true
+
+
 " Set dein base path (required)
-let s:dein_base = '~/.cache/dein/'
+let s:dein_base = expand('~/.cache/dein')
 
 " Set dein source path (required)
-let s:dein_src = '~/.cache/dein/repos/github.com/Shougo/dein.vim'
+let s:dein_src = s:dein_base . '/repos/github.com/Shougo/dein.vim'
 
 " Set dein runtime path (required)
-execute 'set runtimepath+=' .. s:dein_src
+execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 
 " Call dein initialization (required)
 call dein#begin(s:dein_base)
@@ -70,7 +95,7 @@ call dein#add('tversteeg/registers.nvim')     " registerの表示
 call dein#add('nvim-lualine/lualine.nvim')    " status line
 
 " treesitter依存
-if executable('(node)')
+if executable('node')
     call dein#add('nvim-treesitter/nvim-treesitter')             " treesitter
     " call dein#add('code-biscuits/nvim-biscuits')               " ブロックの末尾に何のブロックかを表示する
     call dein#add('p00f/nvim-ts-rainbow')                        " カッコの色を付ける
@@ -84,7 +109,7 @@ if executable('(node)')
 endif
 
 if executable('(yarn)')
-    call dein#add('iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install','for':'markdown')}  "markdownのプレビューとかをよしなにやってくれる
+    call dein#add('iamcco/markdown-preview.nvim') "markdownのプレビューとかをよしなにやってくれる
 endif
 
 
@@ -134,7 +159,7 @@ call dein#add('thinca/vim-quickrun')                           " バッファの
 call dein#add('tyru/capture.vim')                              " Exコマンドをバッファに書きだしてくれる
 call dein#add('norcalli/nvim-colorizer.lua')                   " colorcodeに色を付けてくれる
 " call dein#add('mvllow/modes.nvim')                             " modeをカーソルの色でわかるようにする
-call dein#add('AndrewRadev/linediff.vim')                      " 選択範囲のdiffを取ってくれる
+
 call dein#add('glidenote/memolist.vim')                        " メモ取り用
 call dein#add('andymass/vim-matchup')                          " 括弧をマッチさせる
 call dein#add('cohama/lexima.vim')                             " 閉じカッコの補完をしてくれる
@@ -159,7 +184,7 @@ call dein#add('kristijanhusak/line-notes.nvim')                " 行にノート
 "call dein#add('rhysd/vim-gfm-syntax') "markdownをもっとハイライトする
 
 "deno
-" if executable('(deno)')
+if executable('deno')
      call dein#add('vim-denops/denops.vim')                     " denoのランタイム
      call dein#add('vim-skk/skkeleton')                         " deno版skk
      call dein#add('delphinus/skkeleton_indicator.nvim')        " skkeletonの状態を表示してくれる
@@ -169,68 +194,68 @@ call dein#add('kristijanhusak/line-notes.nvim')                " 行にノート
      call dein#add('lambdalisue/gin.vim')                       " git操作を出来るようにする
 
      "ddc
-     call dein#add('Shougo/ddc.vim')
+    "   call dein#add('Shougo/ddc.vim')
      call dein#add('Shougo/pum.vim')
 
-     "source
-     call dein#add('Shougo/ddc-around')
-     call dein#add('LumaKernel/ddc-file')
-     call dein#add('Shougo/ddc-nvim-lsp')
-     call dein#add('shun/ddc-vim-lsp')
-     call dein#add('Shougo/ddc-cmdline-history')
-     call dein#add('Shougo/ddc-cmdline')
-     call dein#add('Shougo/neco-vim')
-     call dein#add('ippachi/ddc-yank')
-     call dein#add('gamoutatsumi/ddc-emoji')
+    "   "source
+    "   call dein#add('Shougo/ddc-around')
+    "   call dein#add('LumaKernel/ddc-file')
+    "   call dein#add('Shougo/ddc-nvim-lsp')
+    "   call dein#add('shun/ddc-vim-lsp')
+    "   call dein#add('Shougo/ddc-cmdline-history')
+    "   call dein#add('Shougo/ddc-cmdline')
+    "   call dein#add('Shougo/neco-vim')
+    "   call dein#add('ippachi/ddc-yank')
+    "   call dein#add('gamoutatsumi/ddc-emoji')
 
-     "matcher
-     call dein#add('Shougo/ddc-matcher_head')
-     call dein#add('tani/ddc-fuzzy')
-     call dein#add('takker99/ddc-bitap')
+    "   "matcher
+    "   call dein#add('Shougo/ddc-matcher_head')
+    "   call dein#add('tani/ddc-fuzzy')
+    "   call dein#add('takker99/ddc-bitap')
 
-     "sorter
-     call dein#add('Shougo/ddc-sorter_rank')
+    "   "sorter
+    "   call dein#add('Shougo/ddc-sorter_rank')
 
-     "converter
-     call dein#add('Shougo/ddc-converter_remove_overlap')
+    "   "converter
+    "   call dein#add('Shougo/ddc-converter_remove_overlap')
 
-     "ddu
-     call dein#add('Shougo/ddu.vim')
-     call dein#add('Shougo/ddu-commands.vim')
+    "   "ddu
+    "   call dein#add('Shougo/ddu.vim')
+    "   call dein#add('Shougo/ddu-commands.vim')
 
-     "ui
-     call dein#add('Shougo/ddu-ui-ff')
-     call dein#add('Shougo/ddu-ui-filer')
+    "   "ui
+    "   call dein#add('Shougo/ddu-ui-ff')
+    "   call dein#add('Shougo/ddu-ui-filer')
 
-     "column
-     call dein#add('Shougo/ddu-column-filename')
-     call dein#add('ryota2357/ddu-column-icon_filename')
+    "   "column
+    "   call dein#add('Shougo/ddu-column-filename')
+    "   call dein#add('ryota2357/ddu-column-icon_filename')
 
-     "kind
-     call dein#add('Shougo/ddu-kind-file')
+    "   "kind
+    "   call dein#add('Shougo/ddu-kind-file')
 
-     "source
-     call dein#add('Shougo/ddu-source-file')
-     call dein#add('Shougo/ddu-source-file_rec')
-     call dein#add('Shougo/ddu-source-file_point')
-     call dein#add('Shougo/ddu-source-register')
-     call dein#add('shun/ddu-source-buffer')
-     call dein#add('shun/ddu-source-rg')
-     call dein#add('Shougo/ddu-source-line')
-     call dein#add('matsui54/ddu-source-file_external')
-     call dein#add('matsui54/ddu-source-command_history')
-     call dein#add('lambdalisue/mr.vim')
-     call dein#add('kuuote/ddu-source-mr')
-     call dein#add('matsui54/ddu-source-help')
-     call dein#add('4513ECHO/ddu-source-colorscheme')
-     call dein#add('4513ECHO/ddu-source-source')
+    "   "source
+    "   call dein#add('Shougo/ddu-source-file')
+    "   call dein#add('Shougo/ddu-source-file_rec')
+    "   call dein#add('Shougo/ddu-source-file_point')
+    "   call dein#add('Shougo/ddu-source-register')
+    "   call dein#add('shun/ddu-source-buffer')
+    "   call dein#add('shun/ddu-source-rg')
+    "   call dein#add('Shougo/ddu-source-line')
+    "   call dein#add('matsui54/ddu-source-file_external')
+    "   call dein#add('matsui54/ddu-source-command_history')
+    "   call dein#add('lambdalisue/mr.vim')
+    "   call dein#add('kuuote/ddu-source-mr')
+    "   call dein#add('matsui54/ddu-source-help')
+    "   call dein#add('4513ECHO/ddu-source-colorscheme')
+    "   call dein#add('4513ECHO/ddu-source-source')
 
-     "matcher
-     call dein#add('Shougo/ddu-filter-matcher_substring')
-     call dein#add('yuki-yano/ddu-filter-fzf')
-     call dein#add('Shougo/ddu-filter-matcher_relative')
-     call dein#add('Shougo/ddu-filter-matcher_hidden')
-" endif
+    "   "matcher
+    "   call dein#add('Shougo/ddu-filter-matcher_substring')
+    "   call dein#add('yuki-yano/ddu-filter-fzf')
+    "   call dein#add('Shougo/ddu-filter-matcher_relative')
+    "   call dein#add('Shougo/ddu-filter-matcher_hidden')
+endif
 
 "Filer
 call dein#add('lambdalisue/fern.vim')
@@ -271,16 +296,16 @@ call dein#add('rhysd/vim-textobj-anyblock')
 call dein#add('sgur/vim-textobj-parameter')
 call dein#add('thinca/vim-textobj-between')
 
-if has('(win32') || has('win64)')
+if has('win32') || has('win64')
     call dein#add('pprovost/vim-ps1') " PowerShellのFileTypeの追加等を行ってくれる
 endif
 
 " 未使用
-" call dein#add('aiya000/aho-bakaup.vim')
 " call dein#add('mfussenegger/nvim-dap')           "デバッガ
 " call dein#add('Pocco81/DAPInstall.nvim')         "デバッガのインストール
 " call dein#add('rcarriga/nvim-dap-ui')            "デバッガのUI拡張
 " call dein#add('unblevable/quick-scope')          " fを押すとハイライトしてくれるようになる
+"  call dein#add('AndrewRadev/linediff.vim')                      " 選択範囲のdiffを取ってくれる
 
 
 " Required:
