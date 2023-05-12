@@ -71,10 +71,7 @@ execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 
 " Call dein initialization (required)
 call dein#begin(s:dein_base)
-
 call dein#add(s:dein_src)
-
-" Call dein initialization (required)
 call dein#add('wsdjeg/dein-ui.vim')
 
 call dein#add('tpope/vim-repeat')
