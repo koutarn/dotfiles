@@ -147,9 +147,9 @@ call dein#add('mattn/vim-findroot')                            " プロジェク
 "call dein#add('mattn/vim-maketable',{'for':'markdown')}        " セパレータからテーブルを作成してくれる
 call dein#add('mg979/vim-visual-multi')                        " マルチカーソル
 "call dein#add('plasticboy/vim-markdown', {'for':'markdown')}   " markdownのsyntax highlightを提供する
-call dein#add('reireias/vim-cheatsheet')                       " 自分で設定したチートシートを表示する
-call dein#add('simeji/winresizer')                             " windowのリサイズをおこなう
-call dein#add('t9md/vim-quickhl')                              " 選択文字のハイライトをしてくれる
+" call dein#add('reireias/vim-cheatsheet')                       " 自分で設定したチートシートを表示する
+" call dein#add('simeji/winresizer')                             " windowのリサイズをおこなう
+" call dein#add('t9md/vim-quickhl')                              " 選択文字のハイライトをしてくれる
 " call dein#add('thinca/vim-localrc')                            " ローカル設定のvimrcを読み込む
 call dein#add('thinca/vim-qfreplace')                          " quick fixで置換を行う
 call dein#add('thinca/vim-quickrun')                           " バッファのコードをシュッと実行してくれる
@@ -278,7 +278,7 @@ call dein#add('vim-jp/vimdoc-ja')
 "operator
 call dein#add('kana/vim-operator-user')
 call dein#add('kana/vim-operator-replace')
-call dein#add('machakann/vim-sandwich')
+" call dein#add('machakann/vim-sandwich')
 
 "text object
 call dein#add('kana/vim-textobj-user')

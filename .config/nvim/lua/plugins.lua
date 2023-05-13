@@ -288,15 +288,88 @@ require('lazy').setup({
 
   {
     'nvim-lualine/lualine.nvim',
+    config = function()
+        require'lualine'.setup {
+            options = {
+                theme = 'onedark',
+                icons_enabled = true,
+                component_separators = { left = '', right = '' },
+                section_separators = { left = '', right = '' },
+                disabled_filetypes = {},
+                always_divide_middle = true,
+                colored = true,
+                globalstatus = true,
+            },
+            sections = {
+                lualine_a = {
+                    {
+                        'mode',
+                        -- 一文字にする
+                        fmt = function(str) return str:sub(1,1) end
+                    },
+                },
+                lualine_b = {
+                    {
+                        'filetype',
+                        icon_only = true,
+                    },
+                    {
+                        'filename',
+                        path = 0,
+                        file_status = true,
+                        symbols = {
+                            modified = ' [未保存]',
+                            readonly = ' [読み込み専用]',
+                            unnamed = '無名ファイル',
+                        },
+                    },
+                    {
+                        'diagnostics',
+                        sources = { 'nvim_diagnostic'},
+                        sections = { 'error', 'warn', 'info', 'hint' },
+
+                        diagnostics_color = {
+                            Error = "#db4b4b",
+                            Warning = "#e0af68",
+                            Information = "#0db9d7",
+                            Hint = "#10B981"
+                        },
+                        symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '},
+                        colored = true,           -- Displays diagnostics status in color if set to true.
+                        update_in_insert = false, -- Update diagnostics in insert mode.
+                        always_visible = true,   -- Show diagnostics even if there are none.
+                    },
+                },
+                lualine_y = {
+                    'branch',
+                    'diff',
+                },
+                lualine_z = {
+                    function() return os.date("%F(%A) %H:%M") end,
+                },
+            },
+            inactive_sections = {
+                lualine_a = {},
+                lualine_b = {},
+                lualine_c = {},
+                lualine_w = {},
+                lualine_x = {},
+                lualine_y = {},
+                lualine_z = {}
+            },
+            tabline = {},
+      }
+
+    end
     -- See `:help lualine.txt`
-    opts = {
-      options = {
-        icons_enabled = false,
-        theme = 'onedark',
-        component_separators = '|',
-        section_separators = '',
-      },
-    },
+    -- opts = {
+    --   options = {
+    --     icons_enabled = false,
+    --     theme = 'onedark',
+    --     component_separators = '|',
+    --     section_separators = '',
+    --   },
+    -- },
   },
 
   { -- バッファの可視化
@@ -387,8 +460,6 @@ require('lazy').setup({
       'romgrk/nvim-treesitter-context',
       -- 引数に色を付ける
       'm-demare/hlargs.nvim',
-
-      
     },
     build = ":TSUpdate",
     config = function()
@@ -568,8 +639,26 @@ require('lazy').setup({
     end
   },
 
+  -- 選択文字のハイライトをしてくれる
+  -- TODO:未設定
+  {'t9md/vim-quickhl'},
+
+  -- windowのリサイズをおこなう
+  -- TODO:未設定
+  {'simeji/winresizer'},
+
+  -- Exコマンドをバッファに書きだしてくれる
+  'tyru/capture.vim',
   -- =============================================
-  -- =              Language
+  --                Operator
+  -- =============================================
+  {
+    'machakann/vim-sandwich',
+    event = 'InsertEnter',
+  },
+
+  -- =============================================
+  --                Language
   -- =============================================
 
   -- Go lang 関連
@@ -583,7 +672,6 @@ require('lazy').setup({
   {'mattn/vim-gomod',ft = 'go',},
   -- tagを自動で付けてくれる
   {'mattn/vim-goaddtags',ft = 'go',},
- 
   -- D2
   {'terrastruct/d2-vim',ft = 'd2'}
 
