@@ -21,7 +21,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
 
   -- =============================================
-  -- =               Logic
+  -- =                Logic
   -- =============================================
 
   -- Git related plugins
@@ -363,7 +363,6 @@ require('lazy').setup({
     end
   },
 
-
   -- Fuzzy Finder Algorithm which requires local dependencies to be built.
   -- Only load if `make` is available. Make sure you have the system
   -- requirements installed.
@@ -389,8 +388,7 @@ require('lazy').setup({
       -- 引数に色を付ける
       'm-demare/hlargs.nvim',
 
-      -- ブロックの末尾に何のブロックかを表示する
-      'code-biscuits/nvim-biscuits'
+      
     },
     build = ":TSUpdate",
     config = function()
@@ -465,6 +463,22 @@ require('lazy').setup({
       vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
       vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
       vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
+    end
+  },
+
+  {-- ブロックの末尾に何のブロックかを表示する
+    'code-biscuits/nvim-biscuits',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+       build = ':TSUpdate'
+    },
+    config = function()
+      require('nvim-biscuits').setup({
+        cursor_line_only = true,
+        default_config = {
+          prefix_string = " -- "
+        },
+      })
     end
   },
 
@@ -554,33 +568,24 @@ require('lazy').setup({
     end
   },
 
-  -- Go lang 関連
-  { -- interfaceを作成してくれる
-    'mattn/vim-goimpl',
-    ft = 'go',
-  },
-  { -- Goでimportsとfmtを書き込み時に実行する
-    'mattn/vim-goimports',
-    ft = 'go',
-  },
-  { -- godoc
-    'mattn/vim-godoc',
-    ft = 'go',
-  },
-  { -- modファイルのsyntax highlight
-    'mattn/vim-gomod',
-    ft = 'go',
-  },
-  { -- tagを自動で付けてくれる
-    'mattn/vim-goaddtags',
-    ft = 'go',
-  },
+  -- =============================================
+  -- =              Language
+  -- =============================================
 
+  -- Go lang 関連
+  -- interfaceを作成してくれる
+  {'mattn/vim-goimpl',ft = 'go',},
+  -- Goでimportsとfmtを書き込み時に実行する
+  {'mattn/vim-goimports',ft = 'go',},
+  -- godoc
+  {'mattn/vim-godoc',ft = 'go',},
+  -- modファイルのsyntax highlight
+  {'mattn/vim-gomod',ft = 'go',},
+  -- tagを自動で付けてくれる
+  {'mattn/vim-goaddtags',ft = 'go',},
+ 
   -- D2
-  {
-    'terrastruct/d2-vim',
-    ft = 'd2'
-  }
+  {'terrastruct/d2-vim',ft = 'd2'}
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
