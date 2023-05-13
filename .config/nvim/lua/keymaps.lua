@@ -78,6 +78,8 @@ keymap('n','<Leader>u',':<C-u>bnext<CR>')
 -- 'window
 keymap('n','<Leader>-',':<C-u>split<CR>')
 keymap('n','<Leader>\\',':<C-u>vsplit<CR>')
+
+-- TODO:なんか動作しない
 keymap('n','<Leader>x',':<C-u>close<CR>')
 
 -- 'ウィンドウ間を移動

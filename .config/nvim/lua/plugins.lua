@@ -131,16 +131,20 @@ require('lazy').setup({
     end
   },
 
+
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
     event = "InsertEnter",
     dependencies = {
-      -- source
-      'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' ,
-      'hrsh7th/cmp-cmdline','hrsh7th/cmp-path','hrsh7th/cmp-emoji',
+      -- nvim cmp
+      'hrsh7th/cmp-nvim-lsp',
+      'L3MON4D3/LuaSnip',
+      'saadparwaiz1/cmp_luasnip',
+      'hrsh7th/cmp-cmdline',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-emoji',
       -- signature help
       'hrsh7th/cmp-nvim-lsp-signature-help',
-
       -- icons 
       'onsails/lspkind.nvim',
     },
@@ -215,8 +219,11 @@ require('lazy').setup({
   --   dependencies = 'hrsh7th/nvim-cmp',
   -- },
 
-  -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  { -- "gc" to comment visual regions/lines
+    'numToStr/Comment.nvim',
+    event = "InsertEnter",
+    opts = {},
+  },
 
 
   { -- auto pair
@@ -463,6 +470,7 @@ require('lazy').setup({
 
   { -- debbuger settings
     'mfussenegger/nvim-dap',
+    event = 'BufEnter',
     dependencies = {
       -- Creates a beautiful debugger UI
       'rcarriga/nvim-dap-ui',
@@ -536,7 +544,6 @@ require('lazy').setup({
     end
   },
 
-  -- Go lang 関連
   { -- TODOコメントの色を変更
     'folke/todo-comments.nvim',
     dependencies = "nvim-lua/plenary.nvim",
@@ -547,6 +554,7 @@ require('lazy').setup({
     end
   },
 
+  -- Go lang 関連
   { -- interfaceを作成してくれる
     'mattn/vim-goimpl',
     ft = 'go',
@@ -567,6 +575,12 @@ require('lazy').setup({
     'mattn/vim-goaddtags',
     ft = 'go',
   },
+
+  -- D2
+  {
+    'terrastruct/d2-vim',
+    ft = 'd2'
+  }
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
