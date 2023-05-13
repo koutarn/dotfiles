@@ -10,10 +10,11 @@
 --   term_mode = 't',
 --   command_mode = 'c',
 
-local function keymap(mode, lhs, rhs,opts)
+local nosilent_opts = { noremap=true, silent=false }
+local function keymap(mode, lhs, rhs, opts)
   local options = { noremap=true, silent=true }
   if opts then
-    options = vim.tbl_extend('force', options)
+    options = vim.tbl_extend('force',options, opts)
   end
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
@@ -37,13 +38,16 @@ keymap('', 'gR', '<Nop>')
 keymap('n', 'x', '\"_x')
 keymap('n', 'X', '\"_X')
 
--- command-modeでEmacs風のバインドにする
-keymap('c','<C-e>','<End>')
-keymap('c','<C-a>','<Home>')
-keymap('c','<C-h>','<LEFT>')
-keymap('c','<C-k>','<UP>')
-keymap('c','<C-j>','<DOWN>')
-keymap('c','<C-l>','<RIGHT>')
+keymap('c','<C-e>','<End>',nosilent_opts)
+keymap('c','<C-a>','<Home>',nosilent_opts)
+keymap('c','<C-h>','<LEFT>',nosilent_opts)
+keymap('c','<C-k>','<UP>',nosilent_opts)
+keymap('c','<C-j>','<DOWN>',nosilent_opts)
+keymap('c','<C-l>','<RIGHT>',nosilent_opts)
+keymap('n',':',';',nosilent_opts)
+keymap('n',';',':',nosilent_opts)
+keymap('v',':',';',nosilent_opts)
+keymap('v',';',':',nosilent_opts)
 keymap('i','<C-a>','<Home>')
 keymap('i','<C-h>','<LEFT>')
 keymap('i','<C-k>','<UP>')
@@ -54,11 +58,6 @@ keymap('i','<C-l>','<RIGHT>')
 keymap('n','p',']p')
 keymap('n','P',']P')
 
--- USキーボード用に入れ替える。
-keymap('n',':',';')
-keymap('n',';',':')
-keymap('v',':',';')
-keymap('v',';',':')
 
 -- 移動
 keymap('v','v','$h')
@@ -69,8 +68,8 @@ keymap('v','<S-j>','10gj')
 
 -- ノーマルモードに戻す
 keymap('i','jj','<ESC>')
--- keymap('v','jj','<ESC>')
 keymap('c','jj','<C-c>')
+keymap('t','jj','<C-\\><C-n>')
 
 -- 'Buffer
 keymap('n','<Leader>y',':<C-u>bprevious<CR>')
@@ -91,3 +90,19 @@ keymap('n','<Leader>l','<C-w>l')
 keymap('v','>','>gv')
 keymap('v','<','<gv')
 keymap('n','==','gg=G')
+
+keymap('n','/','/\\v',nosilent_opts)
+
+-- Undoポイントの設置
+-- thx https://zenn.dev/kato_k/articles/vim-tips-no006
+keymap('i','<C-w>','<C-g>u<C-w>')
+keymap('i','<C-u>','<C-g>u<C-u>')
+keymap('i','<C-m>','<C-g>u<C-m>')
+
+-- 設定の再読み込み
+-- TODO:うまく動作しない
+keymap('n','<Leader>fr',':Source<CR>')
+
+-- TODO: カウントが受け付けない
+keymap('n','<Leader>o',':for i in range(v:count1) | call append(line(\'.\'), \'\') | endfor<CR>')
+keymap('n','<Leader>O',':for i in range(v:count1) | call append(line(\'.\')-1, \'\') | endfor<CR>')

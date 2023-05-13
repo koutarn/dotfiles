@@ -30,6 +30,9 @@ require('options')
 -- basic keymp settings
 require('keymaps')
 
+-- basic autocmd settings
+require('autocmd')
+
 -- plugin settings(load and configuration)
 require('plugins')
 

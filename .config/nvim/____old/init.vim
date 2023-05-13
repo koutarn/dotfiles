@@ -82,31 +82,31 @@ set background=dark
 " call dein#add('kyazdani42/nvim-web-devicons') " 色々なプラグインでiconを表示してくれる
 
 " call dein#add('b3nj5m1n/kommentary')          " コメントを追加
-call dein#add('folke/todo-comments.nvim')     " TODOコメントの色を変更
+" call dein#add('folke/todo-comments.nvim')     " TODOコメントの色を変更
 " call dein#add('folke/which-key.nvim')         " キーの案内を表示
 " call dein#add('glepnir/indent-guides.nvim')   " インデントに色を付ける
-call dein#add('kevinhwang91/nvim-bqf')        " QuickFixウィンドウをカッコよくしれくれる
-call dein#add('kevinhwang91/nvim-hlslens')    " 検索で何文字進めばいいのかを表示してくれる
-call dein#add('romgrk/barbar.nvim')           " バッファの可視化
-call dein#add('tversteeg/registers.nvim')     " registerの表示
-call dein#add('nvim-lualine/lualine.nvim')    " status line
+" call dein#add('kevinhwang91/nvim-bqf')        " QuickFixウィンドウをカッコよくしれくれる
+" call dein#add('kevinhwang91/nvim-hlslens')    " 検索で何文字進めばいいのかを表示してくれる
+" call dein#add('romgrk/barbar.nvim')           " バッファの可視化
+" call dein#add('tversteeg/registers.nvim')     " registerの表示
+" call dein#add('nvim-lualine/lualine.nvim')    " status line
 
 " treesitter依存
 if executable('node')
-    call dein#add('nvim-treesitter/nvim-treesitter')             " treesitter
+    " call dein#add('nvim-treesitter/nvim-treesitter')             " treesitter
     " call dein#add('code-biscuits/nvim-biscuits')               " ブロックの末尾に何のブロックかを表示する
     " call dein#add('p00f/nvim-ts-rainbow')                        " カッコの色を付ける
-    call dein#add('winston0410/smart-cursor.nvim')               " 行追加の際にインデントとかを上手いことしてくれる
-    call dein#add('JoosepAlviste/nvim-ts-context-commentstring') " カーソル位置に基づいてコメント文字を設定してくれる
-    call dein#add('windwp/nvim-ts-autotag')
-    call dein#add('yioneko/nvim-yati')                           " treesitterのインデントのバグを直してくれるらしい
+    " call dein#add('winston0410/smart-cursor.nvim')               " 行追加の際にインデントとかを上手いことしてくれる
+    " call dein#add('JoosepAlviste/nvim-ts-context-commentstring') " カーソル位置に基づいてコメント文字を設定してくれる
+    " call dein#add('windwp/nvim-ts-autotag')
+    " call dein#add('yioneko/nvim-yati')                           " treesitterのインデントのバグを直してくれるらしい
     " call dein#add('romgrk/nvim-treesitter-context')              " 画面に収まらない関数を表示してくれる
     " call dein#add('nvim-treesitter-textobjects')                 " treesitterを使ってテキストオブジェクトを作成出来るようにする
     " call dein#add('m-demare/hlargs.nvim')                        " 引数に色を付ける
 endif
 
 if executable('(yarn)')
-    call dein#add('iamcco/markdown-preview.nvim') "markdownのプレビューとかをよしなにやってくれる
+    " call dein#add('iamcco/markdown-preview.nvim') "markdownのプレビューとかをよしなにやってくれる
 endif
 
 
@@ -167,11 +167,11 @@ call dein#add('notomo/reacher.nvim')                           " 見えている
 
 call dein#add('voldikss/vim-translator')                       " 選択文字の翻訳をしてくれる
 
-call dein#add('mattn/vim-goimports')              " Goでimportsとfmtを書き込み時に実行する
-call dein#add('mattn/vim-goimpl')                 " interfaceを作成してくれる
-call dein#add('mattn/vim-godoc')                  " godoc
-call dein#add('mattn/vim-gomod')                  " modファイルのsyntax highlight
-call dein#add('mattn/vim-goaddtags')              " tagを自動で付けてくれる
+" call dein#add('mattn/vim-goimports')              " Goでimportsとfmtを書き込み時に実行する
+" call dein#add('mattn/vim-goimpl')                 " interfaceを作成してくれる
+" call dein#add('mattn/vim-godoc')                  " godoc
+" call dein#add('mattn/vim-gomod')                  " modファイルのsyntax highlight
+" call dein#add('mattn/vim-goaddtags')              " tagを自動で付けてくれる
 call dein#add('akinsho/flutter-tools.nvim')                    " flutterで開発出来るようにするプラグイン
 call dein#add('previm/previm')                   " markdownをpreviewする
 call dein#add('petertriho/nvim-scrollbar')                     " スクロールバーを表示する
