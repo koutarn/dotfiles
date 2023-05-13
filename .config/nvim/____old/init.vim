@@ -33,58 +33,58 @@ filetype indent on
 syntax on
 set background=dark
 
-"dein Scripts-----------------------------
-
-let $CACHE = expand('~/.cache')
-if !isdirectory($CACHE)
-  call mkdir($CACHE, 'p')
-endif
-if &runtimepath !~# '/dein.vim'
-  let s:dein_dir = fnamemodify('dein.vim', ':p')
-  if !isdirectory(s:dein_dir)
-    let s:dein_dir = $CACHE .. '/dein/repos/github.com/Shougo/dein.vim'
-    if !isdirectory(s:dein_dir)
-      execute '!git clone https://github.com/Shougo/dein.vim' s:dein_dir
-    endif
-  endif
-  execute 'set runtimepath^=' .. substitute(
-        \ fnamemodify(s:dein_dir, ':p') , '[/\\]$', '', '')
-endif
-
-let g:dein#auto_remote_plugins = v:false
-let g:dein#enable_notification = v:true
-let g:dein#install_check_diff = v:true
-let g:dein#install_check_remote_threshold = 24 * 60 * 60
-let g:dein#install_progress_type = 'floating'
-let g:dein#lazy_rplugins = v:true
-let g:dein#types#git#enable_partial_clone = v:true
-
-
-" Set dein base path (required)
-let s:dein_base = expand('~/.cache/dein')
-
-" Set dein source path (required)
-let s:dein_src = s:dein_base . '/repos/github.com/Shougo/dein.vim'
-
-" Set dein runtime path (required)
-execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+" "dein Scripts-----------------------------
+"
+" let $CACHE = expand('~/.cache')
+" if !isdirectory($CACHE)
+"   call mkdir($CACHE, 'p')
+" endif
+" if &runtimepath !~# '/dein.vim'
+"   let s:dein_dir = fnamemodify('dein.vim', ':p')
+"   if !isdirectory(s:dein_dir)
+"     let s:dein_dir = $CACHE .. '/dein/repos/github.com/Shougo/dein.vim'
+"     if !isdirectory(s:dein_dir)
+"       execute '!git clone https://github.com/Shougo/dein.vim' s:dein_dir
+"     endif
+"   endif
+"   execute 'set runtimepath^=' .. substitute(
+"         \ fnamemodify(s:dein_dir, ':p') , '[/\\]$', '', '')
+" endif
+"
+" let g:dein#auto_remote_plugins = v:false
+" let g:dein#enable_notification = v:true
+" let g:dein#install_check_diff = v:true
+" let g:dein#install_check_remote_threshold = 24 * 60 * 60
+" let g:dein#install_progress_type = 'floating'
+" let g:dein#lazy_rplugins = v:true
+" let g:dein#types#git#enable_partial_clone = v:true
+"
+"
+" " Set dein base path (required)
+" let s:dein_base = expand('~/.cache/dein')
+"
+" " Set dein source path (required)
+" let s:dein_src = s:dein_base . '/repos/github.com/Shougo/dein.vim'
+"
+" " Set dein runtime path (required)
+" execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 
 " Call dein initialization (required)
-call dein#begin(s:dein_base)
-call dein#add(s:dein_src)
-call dein#add('wsdjeg/dein-ui.vim')
+" call dein#begin(s:dein_base)
+" call dein#add(s:dein_src)
+" call dein#add('wsdjeg/dein-ui.vim')
 
-call dein#add('tpope/vim-repeat')
-call dein#add('nvim-lua/popup.nvim')
-call dein#add('nvim-lua/plenary.nvim')
-call dein#add('MunifTanjim/nui.nvim')
-call dein#add('rcarriga/nvim-notify')
-call dein#add('kyazdani42/nvim-web-devicons') " 色々なプラグインでiconを表示してくれる
+" call dein#add('tpope/vim-repeat')
+" call dein#add('nvim-lua/popup.nvim')
+" call dein#add('nvim-lua/plenary.nvim')
+" call dein#add('MunifTanjim/nui.nvim')
+" call dein#add('rcarriga/nvim-notify')
+" call dein#add('kyazdani42/nvim-web-devicons') " 色々なプラグインでiconを表示してくれる
 
-call dein#add('b3nj5m1n/kommentary')          " コメントを追加
+" call dein#add('b3nj5m1n/kommentary')          " コメントを追加
 call dein#add('folke/todo-comments.nvim')     " TODOコメントの色を変更
-call dein#add('folke/which-key.nvim')         " キーの案内を表示
-call dein#add('glepnir/indent-guides.nvim')   " インデントに色を付ける
+" call dein#add('folke/which-key.nvim')         " キーの案内を表示
+" call dein#add('glepnir/indent-guides.nvim')   " インデントに色を付ける
 call dein#add('kevinhwang91/nvim-bqf')        " QuickFixウィンドウをカッコよくしれくれる
 call dein#add('kevinhwang91/nvim-hlslens')    " 検索で何文字進めばいいのかを表示してくれる
 call dein#add('romgrk/barbar.nvim')           " バッファの可視化
@@ -95,14 +95,14 @@ call dein#add('nvim-lualine/lualine.nvim')    " status line
 if executable('node')
     call dein#add('nvim-treesitter/nvim-treesitter')             " treesitter
     " call dein#add('code-biscuits/nvim-biscuits')               " ブロックの末尾に何のブロックかを表示する
-    call dein#add('p00f/nvim-ts-rainbow')                        " カッコの色を付ける
+    " call dein#add('p00f/nvim-ts-rainbow')                        " カッコの色を付ける
     call dein#add('winston0410/smart-cursor.nvim')               " 行追加の際にインデントとかを上手いことしてくれる
     call dein#add('JoosepAlviste/nvim-ts-context-commentstring') " カーソル位置に基づいてコメント文字を設定してくれる
     call dein#add('windwp/nvim-ts-autotag')
     call dein#add('yioneko/nvim-yati')                           " treesitterのインデントのバグを直してくれるらしい
-    call dein#add('romgrk/nvim-treesitter-context')              " 画面に収まらない関数を表示してくれる
-    call dein#add('nvim-treesitter-textobjects')                 " treesitterを使ってテキストオブジェクトを作成出来るようにする
-    call dein#add('m-demare/hlargs.nvim')                        " 引数に色を付ける
+    " call dein#add('romgrk/nvim-treesitter-context')              " 画面に収まらない関数を表示してくれる
+    " call dein#add('nvim-treesitter-textobjects')                 " treesitterを使ってテキストオブジェクトを作成出来るようにする
+    " call dein#add('m-demare/hlargs.nvim')                        " 引数に色を付ける
 endif
 
 if executable('(yarn)')
@@ -112,7 +112,7 @@ endif
 
 
 "color scheme
-call dein#add('navarasu/onedark.nvim')                         " onedarkこそ神
+" call dein#add('navarasu/onedark.nvim')                         " onedarkこそ神
 " call dein#add('sainnhe/edge')                                  " 色々設定出来るクールなcolor scheme
 " call dein#add('sainnhe/sonokai')                               " monokaiProベースのcolor scheme
 " call dein#add('rebelot/kanagawa.nvim')                         " なんかよさげなカラースキーム
@@ -121,8 +121,8 @@ call dein#add('navarasu/onedark.nvim')                         " onedarkこそ�
 " call dein#add('prabirshrestha/vim-lsp')                        " LSP
 " call dein#add('mattn/vim-lsp-settings')                       " LSPインストール 
 
-call dein#add('neovim/nvim-lspconfig')                         " LSP
-call dein#add('williamboman/nvim-lsp-installer')               " LSPインストール
+" call dein#add('neovim/nvim-lspconfig')                         " LSP
+" call dein#add('williamboman/nvim-lsp-installer')               " LSPインストール
 call dein#add('folke/lsp-colors.nvim')                         " 色設定を追加してくれる
 call dein#add('folke/trouble.nvim')                            " 警告等を良い感じに表示してくれる
 call dein#add('j-hui/fidget.nvim')                             " LSPの状態等を表示してくれる

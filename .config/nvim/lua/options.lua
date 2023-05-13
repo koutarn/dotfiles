@@ -1,9 +1,8 @@
 vim.cmd("autocmd!")
-
 vim.scriptencoding = "utf-8"
 
 -- [[ Setting options ]]
--- See `:help vim.o`
+-- See `:help vim.opt`
 local options = {
 	encoding = "utf-8",
 	fileencoding = "utf-8",
@@ -26,12 +25,10 @@ local options = {
 
 	title = false,
 	backup = false,
-	clipboard = "unnamedplus",
-
 	swapfile = false,
 
 	-- コマンドラインは通常時は非表示にする
-	cmdheight = 0,
+	cmdheight = 1,
 	completeopt = { "menuone", "noselect" },
 	conceallevel = 0,
 	mouse = "a",
@@ -61,17 +58,18 @@ local options = {
 	splitbelow = true,
 	splitright = true,
 	breakindent = true,
+	helplang = 'ja,en',
+	hidden = true,
+	autoread = true
 }
 
+vim.opt.clipboard:append{'unnamedplus'}
 vim.opt.shortmess:append("c")
 
 for k, v in pairs(options) do
 	vim.opt[k] = v
 end
 
-
--- vim.o.imdisable
--- vim.o.autoread
 -- vim.o.startofline
 -- vim.o.stal=0
 -- vim.o.updatetime=300
@@ -87,14 +85,6 @@ end
 -- vim.o.imsearch=-1
 -- vim.o.inccommand=split
 
--- "tab
--- vim.o.expandtab
--- vim.o.tabstop=4
--- vim.o.shiftwidth=4
--- vim.o.softtabstop=-1
--- vim.o.smarttab
--- vim.o.shiftround
-
 -- indent
 -- vim.o.breakindent
 -- vim.o.autoindent
@@ -104,23 +94,9 @@ end
 -- vim.o.backspace=indent,eol,start
 -- " vim.o.smartindent
 
--- "file
--- vim.o.nonumber
--- vim.o.norelativenumber
--- vim.o.ruler
-
 -- "折り返し
 -- vim.o.wrap
 -- vim.o.wrapmargin=0
---
--- "検索/置換
--- vim.o.hlsearch
--- vim.o.incsearch
--- vim.o.ignorecase
--- vim.o.smartcase
--- vim.o.wrapscan
--- vim.o.nogdefault
--- vim.o.magic
 --
 -- vim.o.colorcolumn=0
 -- vim.o.showmatch
@@ -139,16 +115,8 @@ end
 -- vim.o.confirm
 -- vim.o.hidden
 -- vim.o.noswapfile
--- vim.o.splitbelow
--- vim.o.splitright
 -- vim.o.undolevels=1000"
--- vim.o.shortmess+=c
--- vim.o.mouse=a
 -- vim.o.isfname-==
---
--- "cmd window
--- vim.o.cmdwinheight=16
--- vim.o.cmdheight=1
 --
 -- if !has('nvim')
 --   vim.o.ttymouse=xterm2
@@ -166,13 +134,11 @@ end
 --   autocmd TermOpen * if &buftype == 'terminal' | silent! vim.o.nobuflisted | endif
 -- augroup END
 --
--- vim.o.helplang=ja,en
 -- vim.o.nospell
 -- vim.o.spelllang=en,cjk
 -- vim.o.spelloptions=camel
 -- vim.o.lazyredraw
 -- vim.o.ttyfast
--- vim.o.timeoutlen=500
 -- vim.o.ttimeoutlen=50
 -- vim.o.shortmess+=I
 -- vim.o.nofoldenable

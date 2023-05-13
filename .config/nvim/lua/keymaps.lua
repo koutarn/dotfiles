@@ -16,7 +16,6 @@ end
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
-
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -34,7 +33,7 @@ keymap('', 'gR', '<Nop>')
 keymap('n', 'x', '\"_x')
 keymap('n', 'X', '\"_X')
 
--- Emacs風バインド
+-- command-modeでEmacs風のバインドにする
 keymap('c','<C-e>','<End>')
 keymap('c','<C-a>','<Home>')
 keymap('c','<C-h>','<LEFT>')
@@ -52,10 +51,10 @@ keymap('n','p',']p')
 keymap('n','P',']P')
 
 -- USキーボード用に入れ替える。
--- keymap('n',':',';')
--- keymap('n',';',':')
--- keymap('v',':',';')
--- keymap('v',';',':')
+keymap('n',':',';')
+keymap('n',';',':')
+keymap('v',':',';')
+keymap('v',';',':')
 
 -- 移動
 keymap('v','v','$h')
@@ -66,7 +65,7 @@ keymap('v','<S-j>','10gj')
 
 -- ノーマルモードに戻す
 keymap('i','jj','<ESC>')
-keymap('x','jj','<ESC>')
+-- keymap('v','jj','<ESC>')
 keymap('c','jj','<C-c>')
 
 -- 'Buffer
