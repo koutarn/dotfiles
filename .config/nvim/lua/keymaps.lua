@@ -1,3 +1,7 @@
+-- [[ Basic Keymaps ]]
+-- Keymaps for better default experience
+-- See `:help vim.keymap.set()`
+
 -- Modes
 --   normal_mode = 'n',
 --   insert_mode = 'i',

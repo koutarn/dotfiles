@@ -49,8 +49,22 @@ require('lazy').setup({
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
     event = "InsertEnter",
-    dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
+    dependencies = {
+      -- source
+      'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' ,
+      'hrsh7th/cmp-cmdline','hrsh7th/cmp-path','hrsh7th/cmp-emoji',
+      -- signature help
+      'hrsh7th/cmp-nvim-lsp-signature-help',
+
+      -- icons 
+      'onsails/lspkind.nvim',
+    },
   },
+  -- {
+  --   'tzachar/cmp-tabnine',
+  --   build = './install.ps1',
+  --   dependencies = 'hrsh7th/nvim-cmp',
+  -- },
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
@@ -126,7 +140,48 @@ require('lazy').setup({
   },
 
   -- Fuzzy Finder (files, lsp, etc)
-  { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
+  {
+    'nvim-telescope/telescope.nvim',
+    version = '*',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+
+    -- [[ Configure Telescope ]]
+    config = function()
+        -- See `:help telescope` and `:help telescope.setup()`
+        require('telescope').setup {
+          defaults = {
+            mappings = {
+              i = {
+          ['<C-u>'] = false,
+          ['<C-d>'] = false,
+              },
+            },
+          },
+        }
+
+        -- Enable telescope fzf native, if installed
+        pcall(require('telescope').load_extension, 'fzf')
+
+        -- See `:help telescope.builtin`
+        vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
+        vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
+        vim.keymap.set('n', '<leader>/', function()
+          -- You can pass additional configuration to telescope to change theme, layout, etc.
+          require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+            winblend = 10,
+            previewer = false,
+          })
+        end, { desc = '[/] Fuzzily search in current buffer' })
+
+        vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
+        vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
+        vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
+        vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
+        vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
+        vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
+    end
+  },
+
 
   -- Fuzzy Finder Algorithm which requires local dependencies to be built.
   -- Only load if `make` is available. Make sure you have the system
@@ -154,7 +209,155 @@ require('lazy').setup({
       'm-demare/hlargs.nvim',
     },
     build = ":TSUpdate",
+    config = function()
+      -- [[ Configure Treesitter ]]
+      -- See `:help nvim-treesitter`
+      require('nvim-treesitter.configs').setup {
+        -- Add languages to be installed here that you want installed for treesitter
+        ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim' },
+
+        -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
+        auto_install = false,
+
+        highlight = { enable = true },
+        indent = { enable = true, disable = { 'python' } },
+        incremental_selection = {
+          enable = true,
+          keymaps = {
+            init_selection = '<c-space>',
+            node_incremental = '<c-space>',
+            scope_incremental = '<c-s>',
+            node_decremental = '<M-space>',
+          },
+        },
+        textobjects = {
+          select = {
+            enable = true,
+            lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
+            keymaps = {
+        -- You can use the capture groups defined in textobjects.scm
+        ['aa'] = '@parameter.outer',
+        ['ia'] = '@parameter.inner',
+        ['af'] = '@function.outer',
+        ['if'] = '@function.inner',
+        ['ac'] = '@class.outer',
+        ['ic'] = '@class.inner',
+            },
+          },
+          move = {
+            enable = true,
+            set_jumps = true, -- whether to set jumps in the jumplist
+            goto_next_start = {
+        [']m'] = '@function.outer',
+        [']]'] = '@class.outer',
+            },
+            goto_next_end = {
+        [']M'] = '@function.outer',
+        [']['] = '@class.outer',
+            },
+            goto_previous_start = {
+        ['[m'] = '@function.outer',
+        ['[['] = '@class.outer',
+            },
+            goto_previous_end = {
+        ['[M'] = '@function.outer',
+        ['[]'] = '@class.outer',
+            },
+          },
+          swap = {
+            enable = true,
+            swap_next = {
+        ['<leader>a'] = '@parameter.inner',
+            },
+            swap_previous = {
+        ['<leader>A'] = '@parameter.inner',
+            },
+          },
+        },
+      }
+
+      -- Diagnostic keymaps
+      vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
+      vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
+      vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
+      vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
+    end
   },
+
+  {
+    'mfussenegger/nvim-dap',
+    dependencies = {
+      -- Creates a beautiful debugger UI
+      'rcarriga/nvim-dap-ui',
+      -- Installs the debug adapters for you
+      'williamboman/mason.nvim',
+      'jay-babu/mason-nvim-dap.nvim',
+
+      -- Add your own debuggers here
+      -- 'leoluz/nvim-dap-go',
+    },
+    config = function()
+      local dap = require 'dap'
+      local dapui = require 'dapui'
+
+      require('mason-nvim-dap').setup {
+        -- Makes a best effort to setup the various debuggers with
+        -- reasonable debug configurations
+        automatic_setup = true,
+
+        -- You can provide additional configuration to the handlers,
+        -- see mason-nvim-dap README for more information
+        handlers = {},
+
+        -- You'll need to check that you have the required things installed
+        -- online, please don't ask me how to install them :)
+        ensure_installed = {
+          -- Update this to ensure that you have the debuggers for the langs you want
+          'delve',
+        },
+      }
+
+      -- Basic debugging keymaps, feel free to change to your liking!
+      vim.keymap.set('n', '<F5>', dap.continue)
+      vim.keymap.set('n', '<F1>', dap.step_into)
+      vim.keymap.set('n', '<F2>', dap.step_over)
+      vim.keymap.set('n', '<F3>', dap.step_out)
+      vim.keymap.set('n', '<leader>b', dap.toggle_breakpoint)
+      vim.keymap.set('n', '<leader>B', function()
+        dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
+      end)
+
+      -- Dap UI setup
+      -- For more information, see |:help nvim-dap-ui|
+      dapui.setup {
+        -- Set icons to characters that are more likely to work in every terminal.
+        --    Feel free to remove or use ones that you like more! :)
+        --    Don't feel like these are good choices.
+        icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
+        controls = {
+          icons = {
+            pause = '⏸',
+            play = '▶',
+            step_into = '⏎',
+            step_over = '⏭',
+            step_out = '⏮',
+            step_back = 'b',
+            run_last = '▶▶',
+            terminate = '⏹',
+            disconnect = "⏏",
+          },
+        },
+      }
+      -- toggle to see last session result. Without this ,you can't see session output in case of unhandled exception.
+      vim.keymap.set("n", "<F7>", dapui.toggle)
+      dap.listeners.after.event_initialized['dapui_config'] = dapui.open
+      dap.listeners.before.event_terminated['dapui_config'] = dapui.close
+      dap.listeners.before.event_exited['dapui_config'] = dapui.close
+
+      -- Install golang specific config
+      -- require('dap-go').setup()
+    end
+  }
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
@@ -173,12 +376,6 @@ require('lazy').setup({
 --   { import = 'custom.plugins' },
 }, {})
 
-
--- [[ Basic Keymaps ]]
-
--- Keymaps for better default experience
--- See `:help vim.keymap.set()`
-
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
@@ -190,111 +387,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
--- [[ Configure Telescope ]]
--- See `:help telescope` and `:help telescope.setup()`
-require('telescope').setup {
-  defaults = {
-    mappings = {
-      i = {
-	['<C-u>'] = false,
-	['<C-d>'] = false,
-      },
-    },
-  },
-}
 
--- Enable telescope fzf native, if installed
-pcall(require('telescope').load_extension, 'fzf')
-
--- See `:help telescope.builtin`
-vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
-vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
-vim.keymap.set('n', '<leader>/', function()
-  -- You can pass additional configuration to telescope to change theme, layout, etc.
-  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-    winblend = 10,
-    previewer = false,
-  })
-end, { desc = '[/] Fuzzily search in current buffer' })
-
-vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
-vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
-vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
-vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
-vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
-vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
-
--- [[ Configure Treesitter ]]
--- See `:help nvim-treesitter`
-require('nvim-treesitter.configs').setup {
-  -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim' },
-
-  -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-  auto_install = false,
-
-  highlight = { enable = true },
-  indent = { enable = true, disable = { 'python' } },
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = '<c-space>',
-      node_incremental = '<c-space>',
-      scope_incremental = '<c-s>',
-      node_decremental = '<M-space>',
-    },
-  },
-  textobjects = {
-    select = {
-      enable = true,
-      lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
-      keymaps = {
-	-- You can use the capture groups defined in textobjects.scm
-	['aa'] = '@parameter.outer',
-	['ia'] = '@parameter.inner',
-	['af'] = '@function.outer',
-	['if'] = '@function.inner',
-	['ac'] = '@class.outer',
-	['ic'] = '@class.inner',
-      },
-    },
-    move = {
-      enable = true,
-      set_jumps = true, -- whether to set jumps in the jumplist
-      goto_next_start = {
-	[']m'] = '@function.outer',
-	[']]'] = '@class.outer',
-      },
-      goto_next_end = {
-	[']M'] = '@function.outer',
-	[']['] = '@class.outer',
-      },
-      goto_previous_start = {
-	['[m'] = '@function.outer',
-	['[['] = '@class.outer',
-      },
-      goto_previous_end = {
-	['[M'] = '@function.outer',
-	['[]'] = '@class.outer',
-      },
-    },
-    swap = {
-      enable = true,
-      swap_next = {
-	['<leader>a'] = '@parameter.inner',
-      },
-      swap_previous = {
-	['<leader>A'] = '@parameter.inner',
-      },
-    },
-  },
-}
-
--- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
@@ -427,6 +520,10 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    { name = 'emoji' },
+    { name = 'path' },
+    { name = 'cmd' },
+    { name = 'nvim_lsp_signature_help' },
   },
 }
 
