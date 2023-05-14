@@ -24,6 +24,7 @@ for k,v in pairs(default_plugins) do
   vim.g[k] = v
 end
 
+-- utility settings,function and more
 require('utility')
 
 -- basic option settings
@@ -31,9 +32,6 @@ require('options')
 
 -- basic keymp settings
 require('keymaps')
-
--- basic autocmd settings
-require('autocmd')
 
 -- plugin settings(load and configuration)
 require('plugins')
