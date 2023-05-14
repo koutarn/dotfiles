@@ -24,6 +24,8 @@ for k,v in pairs(default_plugins) do
   vim.g[k] = v
 end
 
+require('utility')
+
 -- basic option settings
 require('options')
 

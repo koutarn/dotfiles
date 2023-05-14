@@ -154,6 +154,7 @@ require('lazy').setup({
       local luasnip = require 'luasnip'
       luasnip.config.setup {}
 
+      -- TODO:文字数制限をつけたい
       cmp.setup {
         snippet = {
           expand = function(args)
@@ -176,7 +177,7 @@ require('lazy').setup({
             elseif luasnip.expand_or_jumpable() then
               luasnip.expand_or_jump()
             else
-        fallback()
+              fallback()
             end
           end, { 'i', 's' }),
           ['<S-Tab>'] = cmp.mapping(function(fallback)
@@ -213,6 +214,8 @@ require('lazy').setup({
       }
     end
   },
+
+  -- TODO:インストール出来るようにする
   -- {
   --   'tzachar/cmp-tabnine',
   --   build = './install.ps1',
@@ -264,26 +267,29 @@ require('lazy').setup({
     'kevinhwang91/nvim-bqf',
     -- lazy = true,
     ft = 'qf',
+    -- TODO:未設定
   },
-  { --検索で何文字進めばいいのかを表示してくれる
-    'kevinhwang91/nvim-hlslens',
-    event = 'BufEnter',
-    config = function()
-      require('hlslens').setup()
-      local opts = {noremap = true, silent = true}
-      vim.api.nvim_set_keymap('n', 'n',
-          [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
-          opts)
-      vim.api.nvim_set_keymap('n', 'N',
-          [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]],
-          opts)
-      vim.api.nvim_set_keymap('n', '*', [[*<Cmd>lua require('hlslens').start()<CR>]], opts)
-      vim.api.nvim_set_keymap('n', '#', [[#<Cmd>lua require('hlslens').start()<CR>]], opts)
-      vim.api.nvim_set_keymap('n', 'g*', [[g*<Cmd>lua require('hlslens').start()<CR>]], opts)
-      vim.api.nvim_set_keymap('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]], opts)
-      vim.api.nvim_set_keymap('n', '<Leader>x', ':noh<CR>', opts)
-    end,
-  },
+  -- noiceで代用できそうなので一旦切る
+  -- { --検索で何文字進めばいいのかを表示してくれる
+  --   'kevinhwang91/nvim-hlslens',
+  --   event = 'BufEnter',
+  --   config = function()
+  --     require('hlslens').setup()
+  --     local opts = {noremap = true, silent = true}
+  --     -- *TODO*:うまく動作しない
+  --     vim.api.nvim_set_keymap('n', 'n',
+  --         [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
+  --         opts)
+  --     vim.api.nvim_set_keymap('n', 'N',
+  --         [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]],
+  --         opts)
+  --     vim.api.nvim_set_keymap('n', '*', [[*<Cmd>lua require('hlslens').start()<CR>]], opts)
+  --     vim.api.nvim_set_keymap('n', '#', [[#<Cmd>lua require('hlslens').start()<CR>]], opts)
+  --     vim.api.nvim_set_keymap('n', 'g*', [[g*<Cmd>lua require('hlslens').start()<CR>]], opts)
+  --     vim.api.nvim_set_keymap('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]], opts)
+  --     vim.api.nvim_set_keymap('n', '<ESC><ESC>', ':noh<CR>', opts)
+  --   end,
+  -- },
 
 
   {
@@ -375,6 +381,24 @@ require('lazy').setup({
   { -- バッファの可視化
     'romgrk/barbar.nvim',
     dependencies = {'kyazdani42/nvim-web-devicons'},
+    -- config = function()
+      -- local opts = {noremap = true, silent = true},
+      -- Magic buffer-picking mode
+      -- vim.api.nvim_set_keymap('n', '<Leader>q',':<C-u>BufferClose!<CR>',opts),
+
+      -- Move to previous/next
+      -- vim.api.nvim_set_keymap('n', '<Leader>y',[[<Cmd>BufferPrevious<CR>]],opts),
+      -- vim.api.nvim_set_keymap('n', '<Leader>u',[[<Cmd>BufferNext<CR>]],opts),
+
+      -- vim.g.bufferline.shadow = true,
+      -- vim.g.bufferline.animation = false,
+      -- vim.g.bufferline.icons = 'buffer_number_with_icon',
+      -- vim.g.bufferline.closable = false,
+      -- vim.g.bufferline.clickable = false,
+      -- vim.g.bufferline.semantic_letters = false,
+      -- vim.g.bufferline.maximum_padding = 0,
+      -- vim.g.bufferline.maximum_length = 15,
+    -- end
   },
   { -- registerの可視化
     'tversteeg/registers.nvim'
@@ -391,6 +415,10 @@ require('lazy').setup({
   { -- Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
     'folke/noice.nvim',
     dependencies = { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify'},
+    event = 'BufEnter',
+    config = function()
+      require("noice").setup({})
+    end
   },
 
   -- Fuzzy Finder (files, lsp, etc)

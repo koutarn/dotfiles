@@ -10,14 +10,6 @@
 --   term_mode = 't',
 --   command_mode = 'c',
 
-local nosilent_opts = { noremap=true, silent=false }
-local function keymap(mode, lhs, rhs, opts)
-  local options = { noremap=true, silent=true }
-  if opts then
-    options = vim.tbl_extend('force',options, opts)
-  end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
@@ -78,8 +70,6 @@ keymap('n','<Leader>u',':<C-u>bnext<CR>')
 -- 'window
 keymap('n','<Leader>-',':<C-u>split<CR>')
 keymap('n','<Leader>\\',':<C-u>vsplit<CR>')
-
--- TODO:なんか動作しない
 keymap('n','<Leader>x',':<C-u>close<CR>')
 
 -- 'ウィンドウ間を移動
@@ -102,9 +92,8 @@ keymap('i','<C-u>','<C-g>u<C-u>')
 keymap('i','<C-m>','<C-g>u<C-m>')
 
 -- 設定の再読み込み
--- TODO:うまく動作しない
-keymap('n','<Leader>fr',':Source<CR>')
+-- keymap('n','<Leader>fr',':Source<CR>')
 
 -- TODO: カウントが受け付けない
-keymap('n','<Leader>o',':for i in range(v:count1) | call append(line(\'.\'), \'\') | endfor<CR>')
-keymap('n','<Leader>O',':for i in range(v:count1) | call append(line(\'.\')-1, \'\') | endfor<CR>')
+keymap('n','<Leader>o',':for i in range(v:count) | call append(line(\'.\'), \'\') | endfor<CR>')
+keymap('n','<Leader>O',':for i in range(v:count) | call append(line(\'.\')-1, \'\') | endfor<CR>')
