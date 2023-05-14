@@ -12,6 +12,7 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   }
 end
+
 vim.opt.rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 --  You can configure plugins using the `config` key.
@@ -40,7 +41,7 @@ require('lazy').setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', opts = {} },
+      { 'j-hui/fidget.nvim', event = 'LspAttach',opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -159,6 +160,7 @@ require('lazy').setup({
       'hrsh7th/vim-vsnip',
       'L3MON4D3/LuaSnip',
       'saadparwaiz1/cmp_luasnip',
+      'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-cmdline',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-emoji',
@@ -166,6 +168,7 @@ require('lazy').setup({
       'hrsh7th/cmp-nvim-lsp-signature-help',
       -- icons 
       'onsails/lspkind.nvim',
+      'hrsh7th/cmp-nvim-lsp-document-symbol',
     },
     config = function()
       -- nvim-cmp setup
@@ -179,6 +182,14 @@ require('lazy').setup({
           expand = function(args)
             luasnip.lsp_expand(args.body)
           end,
+        },
+        window = {
+          completion = cmp.config.window.bordered({
+            border = 'single'
+          }),
+          documentation = cmp.config.window.bordered({
+            border = 'single'
+          }),
         },
         mapping = cmp.mapping.preset.insert {
           ['<C-n>'] = cmp.mapping.select_next_item(),
@@ -233,6 +244,15 @@ require('lazy').setup({
             })
           }
       }
+      cmp.setup.cmdline({ '/', '?' }, {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({ { name = 'nvim_lsp_document_symbol' } }, { { name = 'buffer' } })
+      })
+
+     cmp.setup.cmdline(':', {
+       mapping = cmp.mapping.preset.cmdline(),
+       sources = cmp.config.sources({ { name = 'path' } }, { { name = 'cmdline', keyword_length = 2 } })
+      })
     end
   },
 
@@ -341,6 +361,7 @@ require('lazy').setup({
 
   {
     'nvim-lualine/lualine.nvim',
+    event = 'VeryLazy',
     config = function()
         require'lualine'.setup {
             options = {
@@ -425,6 +446,17 @@ require('lazy').setup({
     -- },
   },
 
+  -- TODO:未設定
+  { -- outline表示
+    'stevearc/aerial.nvim',
+    opts = {},
+    -- Optional dependencies
+    dependencies = {
+       "nvim-treesitter/nvim-treesitter",
+       "nvim-tree/nvim-web-devicons"
+    },
+  },
+
   { -- バッファの可視化
     'romgrk/barbar.nvim',
     dependencies = {'nvim-tree/nvim-web-devicons'},
@@ -480,24 +512,49 @@ require('lazy').setup({
   {
     'nvim-telescope/telescope.nvim',
     version = '*',
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'tsakirist/telescope-lazy.nvim',
+      'nvim-telescope/telescope-ghq.nvim',
+    },
 
     -- [[ Configure Telescope ]]
     config = function()
+        local actions = require("telescope.actions")
         -- See `:help telescope` and `:help telescope.setup()`
         require('telescope').setup {
           defaults = {
             mappings = {
               i = {
-          ['<C-u>'] = false,
-          ['<C-d>'] = false,
+                -- TODO:<C-j>,<C-k>で選択出来るようにする
+                ['<ESC>'] = actions.close
               },
+            },
+          },
+          extensions = {
+            lazy = {
+              -- Optional theme (the extension doesn't set a default theme)
+              -- theme = "ivy",
+              -- Whether or not to show the icon in the first column
+              show_icon = true,
+              -- Mappings for the actions
+              mappings = {
+                open_in_browser = "<C-o>",
+                -- open_in_file_browser = "<M-b>",
+                -- open_in_find_files = "<C-f>",
+                -- open_in_live_grep = "<C-g>",
+                -- open_plugins_picker = "<C-b>", -- Works only after having called first another action
+                -- open_lazy_root_find_files = "<C-r>f",
+                -- open_lazy_root_live_grep = "<C-r>g",
+              },
+              -- Other telescope configuration options
             },
           },
         }
 
-        -- Enable telescope fzf native, if installed
         pcall(require('telescope').load_extension, 'fzf')
+        pcall(require('telescope').load_extension, 'lazy')
+        pcall(require('telescope').load_extension, 'ghq')
 
         -- See `:help telescope.builtin`
         vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
@@ -516,6 +573,9 @@ require('lazy').setup({
         vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
         vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
         vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
+        vim.keymap.set('n', '<leader>sk', require('telescope.builtin').keymaps, { desc = '[S]earch [K]eymaps' })
+        vim.keymap.set('n', '<leader>sl', ':<C-u>Telescope lazy<CR>', { desc = '[S]earch [L]azy' })
+        vim.keymap.set('n', '<leader>sr', ':<C-u>Telescope ghq list<CR>', { desc = '[S]earch [R]epositories' })
     end
   },
 
@@ -524,8 +584,6 @@ require('lazy').setup({
   -- requirements installed.
   {
     'nvim-telescope/telescope-fzf-native.nvim',
-    -- NOTE: If you are having trouble with this installation,
-    --       refer to the README for telescope-fzf-native for more instructions.
     build = 'make',
     cond = function()
       return vim.fn.executable 'make' == 1
@@ -615,8 +673,8 @@ require('lazy').setup({
       -- Diagnostic keymaps
       vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
       vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
-      vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
-      vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
+      -- vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
+      -- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
     end
   },
 
@@ -727,10 +785,7 @@ require('lazy').setup({
   {'t9md/vim-quickhl'},
 
   -- windowのリサイズをおこなう
-  -- TODO:未設定
-  {
-    'simeji/winresizer'
-  },
+  {'simeji/winresizer'},
 
   -- Exコマンドをバッファに書きだしてくれる
   'tyru/capture.vim',
@@ -739,7 +794,19 @@ require('lazy').setup({
   {
     'vim-jp/vimdoc-ja',
     event = 'BufEnter',
+    ft = 'help',
   },
+  {
+    'itchyny/vim-highlighturl',
+    event = 'BufEnter',
+  },
+  -- {
+  --   'thinca/vim-ambicmd',
+  --   config = function()
+  --     keymap('c', '<space>', [[ambicmd#expand("\<Space>")]], {expr = true})
+  --     keymap('c', '<CR>', [[ambicmd#expand("\<CR>")]], {expr = true})
+  --   end,
+  -- },
   -- =============================================
   --                Operator
   -- =============================================

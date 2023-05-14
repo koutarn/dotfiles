@@ -1,148 +1,137 @@
-vim.cmd("autocmd!")
-vim.scriptencoding = "utf-8"
-
 -- [[ Setting options ]]
 -- See `:help vim.opt`
-local options = {
-	encoding = "utf-8",
-	fileencoding = "utf-8",
 
-	-- テキスト
-	number = true,
-	relativenumber = false,
-	ruler = true,
+-- encoding
+vim.scriptencoding = "utf-8"
+vim.opt.encoding = "utf-8"
+vim.opt.fileencoding = "utf-8"
 
-	-- 検索/置換
-	hlsearch = false,
-	ignorecase = true,
-	smartcase = true,
-	incsearch = true,
-	wrapscan = true,
+-- show line numbers bad not relative
+vim.opt.number = true
+vim.opt.relativenumber = false
+vim.opt.ruler = true
 
-	-- When on, the ":substitute" flag 'g' is default on.
-	gdefault = false,
-	magic = true,
+vim.opt.signcolumn = "yes"
+vim.opt.wrap = false
+vim.o.wrapmargin=0
+vim.opt.pumblend = 5 -- pseudo-transparency for popup-menu
+vim.opt.cursorline = false
+vim.opt.cursorcolumn   = false
 
-	title = false,
-	backup = false,
-	swapfile = false,
+-- インデント
+vim.opt.smartindent = true
+vim.opt.breakindent = true
 
-	-- コマンドラインは通常時は非表示にする
-	cmdheight = 1,
-	completeopt = { "menuone", "noselect" },
-	conceallevel = 0,
-	mouse = "a",
-	pumheight = 10,
-	showmode = false,
-	smartindent = true,
-	termguicolors = true,
-	timeout = true,
-	timeoutlen = 300,
-	undofile = false,
-	updatetime = 250,
-	writebackup = false,
-	backupskip = { "/tmp/*", "/private/tmp/*" },
-	cursorline = true,
+-- window
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+vim.o.splitkeep = "cursor"
+vim.o.equalalways = false -- windowの自動調整をしない
 
-	numberwidth = 4,
-	signcolumn = "yes",
-	wrap = false,
-	winblend = 0,
-	wildoptions = "pum",
-	pumblend = 5,
-	background = "dark",
-	scrolloff = 8,
-	sidescrolloff = 8,
-	guifont = "monospace:h17",
-	splitbelow = true,
-	splitright = true,
-	breakindent = true,
-	helplang = 'ja,en',
-	hidden = true,
-	autoread = true
-}
+-- 描画系
+-- nvim color
+vim.env.NVIM_TUI_ENABLE_TRUE_COLOR = 1
+vim.o.synmaxcolsynmaxcol = 200
+vim.cmd.syntax("enable")
+vim.o.background = "dark"
+
+-- true color support
+if vim.fn.exists("+termguicolors") == 1 then
+        -- vim.o.t_8f = "<Esc>[38;2;%lu;%lu;%lum"
+        -- vim.o.t_8b = "<Esc>[48;2;%lu;%lu;%lum"
+        vim.o.termguicolors = true
+end
+-- Set 256 color
+vim.o.t_Co = 256
+
+-- highlight Comment cterm = italic gui = italic
+vim.o.t_ZH = '^[[3m'
+vim.o.t_ZR = '^[[23m'
+vim.opt.lazyredraw = true
+vim.opt.ttyfast = true
+vim.opt.showmatch = false
+vim.opt.showcmd = false
+vim.o.display = "lastline" -- long lines fit on one line
+
+-- 検索/置換
+vim.opt.hlsearch = false
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.incsearch = true
+vim.opt.wrapscan = true
+vim.opt.gdefault = false
+vim.opt.magic = true
+
+-- file
+vim.opt.title = false
+vim.opt.backup = false
+vim.opt.swapfile = false
+vim.opt.autoread = true
+vim.opt.helplang = {'ja','en'}
+vim.o.spell = false
+vim.o.laststatus = 3
+vim.o.undolevels = 1000
+vim.o.formatoptions = vim.o.formatoptions .. "m" -- Add formatting options, multi-byte system
+
+-- cmd
+vim.opt.cmdheight = 0
+vim.opt.completeopt = { "menuone","noselect" }
+vim.opt.wildoptions = "pum"
+vim.o.history = 10000 -- numbers of entries in history for ':' commands and search patterns (10000 = max)
+vim.o.wildmenu = true -- Enhanced command completion
+vim.o.wildmode = "longest,list,full"
+
+-- mouse
+vim.opt.mouse = "a"
+
+-- メッセージ表示
+vim.opt.shortmess:append{ s = true, I = true}
+vim.o.confirm = true -- Prompt for options when the buffer is unread for unsafe operations
+vim.opt.conceallevel = 0
+vim.opt.pumheight = 10
+
+-- GUI font
+vim.opt.guifont = "monospace:h17"
+
+-- Terminal
+vim.o.shellslash = true -- Enable / as a directory path separator in Windows
+
+-- mode表示
+vim.opt.showmode = false
+vim.opt.timeout = true
+vim.opt.timeoutlen = 300
+vim.opt.undofile = false
+vim.opt.updatetime = 250
+vim.opt.writebackup = false
+vim.opt.numberwidth = 4
+vim.opt.winblend = 0
+vim.o.startofline = false
+vim.opt.scrolloff = 40
+vim.opt.sidescrolloff = 16
+
+-- Allow switching of unsaved buffers
+vim.opt.hidden = true
+
+-- No sound on errors
+vim.o.belloff = 'all'
 
 vim.opt.clipboard:append{'unnamedplus'}
-vim.opt.shortmess:append("c")
+vim.o.list = true
+vim.opt.listchars = {tab='»-', trail='-', eol='↲', extends='»', precedes='«', nbsp='%'}
 
 -- TODO:場合分けする
 vim.opt.shell = "pwsh"
+vim.o.inccommand=split
 
+-- singleにしないとバグるので
+vim.o.ambiwidth = 'single'
+vim.o.backspace = "indent,eol,start"
 
-for k, v in pairs(options) do
-	vim.opt[k] = v
-end
+-- 入力待ち時間
+vim.o.ttimeoutlen=10
 
--- vim.o.startofline
--- vim.o.stal=0
--- vim.o.updatetime=300
--- vim.o.notitle
--- vim.o.showcmd
--- vim.o.nocursorline
--- vim.o.display=lastline
--- vim.o.laststatus=3
--- vim.o.nolist
--- vim.o.listchars=tab:\|\ ,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
--- vim.o.ambiwidth=single
--- vim.o.iminsert=0
--- vim.o.imsearch=-1
--- vim.o.inccommand=split
-
--- indent
--- vim.o.breakindent
--- vim.o.autoindent
--- vim.o.tm=500
--- vim.o.copyindent
--- vim.o.preserveindent
--- vim.o.backspace=indent,eol,start
--- " vim.o.smartindent
-
--- "折り返し
--- vim.o.wrap
--- vim.o.wrapmargin=0
---
--- vim.o.colorcolumn=0
--- vim.o.showmatch
--- vim.o.matchtime=1
--- vim.o.showbreak=>\ 
--- vim.o.wildmenu
--- vim.o.wildmode=list:longest,full
--- vim.o.matchpairs& matchpairs+=<:>
--- vim.o.infercase
--- vim.o.whichwrap=b,<,>,[,]
--- vim.o.scrolloff=40
--- vim.o.sidescrolloff=16
--- vim.o.sidescroll=1
--- vim.o.virtualedit=block
--- vim.o.nrformats=alpha,bin,hex
--- vim.o.confirm
--- vim.o.hidden
--- vim.o.noswapfile
--- vim.o.undolevels=1000"
--- vim.o.isfname-==
---
--- if !has('nvim')
---   vim.o.ttymouse=xterm2
--- endif
---
--- "terminal
--- vim.o.termguicolors
--- vim.o.t_ZH=
--- vim.o.t_ZR=
--- vim.o.t_Co=256
---
--- "thx https://github.com/kato-k/dotfiles/blob/5ea47516f3b9f5a425c827a1ebd859beb2ad4835/vimrc#L182
--- augroup vimrc_terminal
---   autocmd!
---   autocmd TermOpen * if &buftype == 'terminal' | silent! vim.o.nobuflisted | endif
--- augroup END
---
--- vim.o.nospell
--- vim.o.spelllang=en,cjk
--- vim.o.spelloptions=camel
--- vim.o.lazyredraw
--- vim.o.ttyfast
--- vim.o.ttimeoutlen=50
--- vim.o.shortmess+=I
--- vim.o.nofoldenable
--- vim.o.history=1000
+-- Fold
+vim.o.foldmethod = "manual"
+vim.o.foldlevel = 1
+vim.o.foldlevelstart = 99
+vim.w.foldcolumn = "0:"

@@ -50,7 +50,6 @@ keymap('i','<C-l>','<RIGHT>')
 keymap('n','p',']p')
 keymap('n','P',']P')
 
-
 -- 移動
 keymap('v','v','$h')
 keymap('n','<S-k>','10gk')
@@ -83,8 +82,6 @@ keymap('v','>','>gv')
 keymap('v','<','<gv')
 keymap('n','==','gg=G')
 
-keymap('n','/','/\\v',nosilent_opts)
-
 -- Undoポイントの設置
 -- thx https://zenn.dev/kato_k/articles/vim-tips-no006
 keymap('i','<C-w>','<C-g>u<C-w>')
@@ -95,6 +92,6 @@ keymap('i','<C-m>','<C-g>u<C-m>')
 -- keymap('n','<Leader>fr',':Source<CR>')
 
 -- TODO: カウントが受け付けない
-keymap('n','<Leader>o',':for i in range(v:count) | call append(line(\'.\'), \'\') | endfor<CR>')
-keymap('n','<Leader>O',':for i in range(v:count) | call append(line(\'.\')-1, \'\') | endfor<CR>')
+keymap('n','<Leader>o',':for i in range(v:count1) | call append(line(\'.\'), \'\') | endfor<CR>')
+keymap('n','<Leader>O',':for i in range(v:count1) | call append(line(\'.\')-1, \'\') | endfor<CR>')
 

@@ -135,12 +135,12 @@ endif
 call dein#add('MattesGroeger/vim-bookmarks')                   " 行にブックマークを設定してくれる
 " call dein#add('Shougo/context_filetype.vim')                   " 埋め込みのコードでカーソルからfiletypeを認識してくれる
 " call dein#add('bronson/vim-trailing-whitespace')               " 空白の削除
-call dein#add('godlygeek/tabular')                             " 文字揃えをうまいことしてくれる
-call dein#add('itchyny/vim-highlighturl')                      " URLのハイライトを行う
+" call dein#add('godlygeek/tabular')                             " 文字揃えをうまいことしてくれる
+" call dein#add('itchyny/vim-highlighturl')                      " URLのハイライトを行う
 " call dein#add('kuuote/gina-preview.vim')                       " gina拡張
-call dein#add('lambdalisue/suda.vim')                          " 読み書きをsuduでしてくれる
+" call dein#add('lambdalisue/suda.vim')                          " 読み書きをsuduでしてくれる
 " call dein#add('lambdalisue/vim-findent')                       " fileから適切なインデントを読み取ってくれる
-call dein#add('liuchengxu/vista.vim')                          " コードの変数やオブジェクト等を表示してくれる
+" call dein#add('liuchengxu/vista.vim')                          " コードの変数やオブジェクト等を表示してくれる
 " call dein#add('markonm/traces.vim')                            " 置換結果を変換前に表示する
 " call dein#add('mattn/vim-findroot')                            " プロジェクトのルートを設定してくれる
 "call dein#add('dhruvasagar/vim-table-mode',{'for':'markdown')} " markdownで上手い事テーブルを作れるモードを追加してくれる

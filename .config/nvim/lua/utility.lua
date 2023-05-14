@@ -4,7 +4,7 @@ function keymap(mode, lhs, rhs, opts)
   if opts then
     options = vim.tbl_extend('force',options, opts)
   end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+  vim.keymap.set(mode, lhs, rhs, options)
 end
 
 -- [[ Highlight on yank ]]
@@ -16,4 +16,19 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
   group = highlight_group,
   pattern = '*',
+})
+
+function reload_settings()
+  for _, value in ipairs(setting_files) do
+    package.loaded[value] = nil
+  end
+  vim.cmd(':source ' .. init_path)
+end
+
+--カーソル位置の保存設定をLua化したもの。
+vim.api.nvim_create_autocmd({ 'BufReadPost' }, {
+    pattern = { '*' },
+    callback = function()
+        vim.api.nvim_exec('silent! normal! g`"zv', false)
+    end,
 })

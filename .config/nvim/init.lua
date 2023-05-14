@@ -24,17 +24,38 @@ for k,v in pairs(default_plugins) do
   vim.g[k] = v
 end
 
--- utility settings,function and more
+-- 高速ロード処理のおまじない
+if vim.loader then vim.loader.enable() end
+
+-- TODO:再読み込み出来るようにしたい
 require('utility')
-
--- basic option settings
 require('options')
-
--- basic keymp settings
 require('keymaps')
-
--- plugin settings(load and configuration)
 require('plugins')
 
+-- setting files
+-- setting_files = {
+--   -- utility settings,function and more
+--   'utility',
+--   -- basic option settings
+--   'options',
+--   -- basic keymp settings
+--   'keymaps',
+--   -- plugin settings(load and configuration)
+--   'plugins',
+-- }
+--
+-- for _, value in ipairs(setting_files) do
+--   require(value)
+-- end
+
+local init_path = '~/.config/nvim/init.lua'
+-- nvim.api.keymap('n', '<Leader>fr',reload_settings())
+-- function reload_settings()
+--   for _, value in ipairs(setting_files) do
+--     package.loaded[value] = nil
+--   end
+--   vim.cmd(':source ' .. init_path)
+-- end
 
 -- vim: ts=2 sts=2 sw=2 et
