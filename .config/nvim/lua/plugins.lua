@@ -276,6 +276,7 @@ require('lazy').setup({
   -- マルチカーソル
   {
     'mg979/vim-visual-multi',
+    event = "InsertEnter",
     -- init = function()
     --   local t = {}
     --   t["Find Under"] = "<C-k>"
@@ -350,6 +351,35 @@ require('lazy').setup({
     ft = 'markdown',
     dependencies = {'vim-denops/denops.vim'},
     build = 'deno task prepare',
+  },
+
+  { -- mode切り替えを色で判断出来るようにする
+    'mvllow/modes.nvim',
+    event = "VeryLazy",
+    config = function()
+      require('modes').setup({
+        colors = {
+          copy = "#f5c359",
+          delete = "#c75c6a",
+          insert = "#78ccc5",
+          visual = "#9745be",
+        },
+
+        -- Set opacity for cursorline and number background
+        line_opacity = 0.15,
+        -- Enable cursor highlights
+        set_cursor = false,
+        -- Enable cursorline initially, and disable cursorline for inactive windows
+        -- or ignored filetypes
+        set_cursorline = true,
+        -- Enable line number highlights to match cursorline
+        set_number = false,
+
+        -- Disable modes highlights in specified filetypes
+        -- Please PR commonly ignored filetypes
+        ignore_filetypes = { 'NvimTree', 'TelescopePrompt' }
+      })
+    end
   },
 
 -- =============================================
@@ -641,6 +671,7 @@ require('lazy').setup({
   {
     'nvim-telescope/telescope-fzf-native.nvim',
     build = 'make',
+    event = 'VeryLazy',
     cond = function()
       return vim.fn.executable 'make' == 1
     end,
