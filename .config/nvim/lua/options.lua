@@ -41,7 +41,6 @@ local options = {
 	undofile = false,
 	updatetime = 250,
 	writebackup = false,
-	shell = "zsh",
 	backupskip = { "/tmp/*", "/private/tmp/*" },
 	cursorline = true,
 
@@ -65,6 +64,10 @@ local options = {
 
 vim.opt.clipboard:append{'unnamedplus'}
 vim.opt.shortmess:append("c")
+
+-- TODO:場合分けする
+vim.opt.shell = "pwsh"
+
 
 for k, v in pairs(options) do
 	vim.opt[k] = v

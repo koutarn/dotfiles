@@ -19,7 +19,6 @@ vim.opt.rtp:prepend(lazypath)
 --  You can also configure plugins after the setup call,
 --    as they will be available in your neovim runtime.
 require('lazy').setup({
-
   -- =============================================
   -- =                Logic
   -- =============================================
@@ -130,7 +129,26 @@ require('lazy').setup({
       }
     end
   },
+  { --警告等を良い感じに表示してくれる
+    "folke/trouble.nvim",
+    requires = "nvim-tree/nvim-web-devicons",
+    config = function()
+    require("trouble").setup {
+    }
+    end
+  },
 
+  {
+    "glepnir/lspsaga.nvim",
+    event = "LspAttach",
+    config = function()
+        require("lspsaga").setup({})
+    end,
+    dependencies = {
+      {"nvim-tree/nvim-web-devicons"},
+      {"nvim-treesitter/nvim-treesitter"}
+    }
+  },
 
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
@@ -138,6 +156,7 @@ require('lazy').setup({
     dependencies = {
       -- nvim cmp
       'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/vim-vsnip',
       'L3MON4D3/LuaSnip',
       'saadparwaiz1/cmp_luasnip',
       'hrsh7th/cmp-cmdline',
@@ -166,12 +185,12 @@ require('lazy').setup({
           ['<C-p>'] = cmp.mapping.select_prev_item(),
           ['<C-d>'] = cmp.mapping.scroll_docs(-4),
           ['<C-f>'] = cmp.mapping.scroll_docs(4),
-          [';;'] = cmp.mapping.complete {},
-          ['<CR>'] = cmp.mapping.confirm {
+          -- [';;'] = cmp.mapping.complete {},
+          [';;'] = cmp.mapping.confirm {
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
           },
-          ['<Tab>'] = cmp.mapping(function(fallback)
+          ['<C-j>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
             elseif luasnip.expand_or_jumpable() then
@@ -180,7 +199,7 @@ require('lazy').setup({
               fallback()
             end
           end, { 'i', 's' }),
-          ['<S-Tab>'] = cmp.mapping(function(fallback)
+          ['<C-k>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_prev_item()
             elseif luasnip.jumpable(-1) then
@@ -190,7 +209,9 @@ require('lazy').setup({
             end
           end, { 'i', 's' }),
         },
+
         sources = {
+          { name = 'cmp_tabnine' },
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'emoji' },
@@ -215,12 +236,38 @@ require('lazy').setup({
     end
   },
 
+  -- 色んな言語のsnippet集
+  'rafamadriz/friendly-snippets',
+
+  -- 空白行の表示&削除
+  {
+    'lukoshkin/trailing-whitespace',
+    config = function ()
+       require'trailing-whitespace'.setup {
+          patterns = { '\\s\\+$' },
+          palette = { markdown = 'RosyBrown' },
+          default_color = 'PaleVioletRed',
+       }
+    end
+  },
+
+  -- マルチカーソル
+  {
+    'mg979/vim-visual-multi',
+    -- init = function()
+    --   local t = {}
+    --   t["Find Under"] = "<C-k>"
+    --   t["Find Subword Under"] = "<C-k>"
+    --   vim.g.VM_maps = t
+    -- end
+  },
+
   -- TODO:インストール出来るようにする
-  -- {
-  --   'tzachar/cmp-tabnine',
-  --   build = './install.ps1',
-  --   dependencies = 'hrsh7th/nvim-cmp',
-  -- },
+  {
+    'tzachar/cmp-tabnine',
+    build = './install.ps1',
+    dependencies = 'hrsh7th/nvim-cmp',
+  },
 
   { -- "gc" to comment visual regions/lines
     'numToStr/Comment.nvim',
@@ -380,25 +427,31 @@ require('lazy').setup({
 
   { -- バッファの可視化
     'romgrk/barbar.nvim',
-    dependencies = {'kyazdani42/nvim-web-devicons'},
-    -- config = function()
-      -- local opts = {noremap = true, silent = true},
+    dependencies = {'nvim-tree/nvim-web-devicons'},
+    config = function()
       -- Magic buffer-picking mode
-      -- vim.api.nvim_set_keymap('n', '<Leader>q',':<C-u>BufferClose!<CR>',opts),
+      keymap('n', '<Leader>q',':<C-u>BufferClose!<CR>')
 
       -- Move to previous/next
-      -- vim.api.nvim_set_keymap('n', '<Leader>y',[[<Cmd>BufferPrevious<CR>]],opts),
-      -- vim.api.nvim_set_keymap('n', '<Leader>u',[[<Cmd>BufferNext<CR>]],opts),
+      keymap('n', '<Leader>y','<Cmd>BufferPrevious<CR>')
+      keymap('n', '<Leader>u','<Cmd>BufferNext<CR>')
 
-      -- vim.g.bufferline.shadow = true,
-      -- vim.g.bufferline.animation = false,
-      -- vim.g.bufferline.icons = 'buffer_number_with_icon',
-      -- vim.g.bufferline.closable = false,
-      -- vim.g.bufferline.clickable = false,
-      -- vim.g.bufferline.semantic_letters = false,
-      -- vim.g.bufferline.maximum_padding = 0,
-      -- vim.g.bufferline.maximum_length = 15,
-    -- end
+      require('barbar').setup
+      {
+        -- settings
+        shadow = true,
+        animation = false,
+        icons = {
+          buffer_number = false,
+          buffer_index = false,
+        },
+        clickable = false,
+        semantic_letters = true,
+        maximum_padding = 1,
+        maximum_length = 30,
+        no_name_title = '無名ファイル',
+      }
+    end
   },
   { -- registerの可視化
     'tversteeg/registers.nvim'
@@ -412,13 +465,15 @@ require('lazy').setup({
     },
   },
 
+  -- TODO:設定したら色々できそう。
+  -- diagnosticが重いので一旦切る
   { -- Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
-    'folke/noice.nvim',
-    dependencies = { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify'},
-    event = 'BufEnter',
-    config = function()
-      require("noice").setup({})
-    end
+    -- 'folke/noice.nvim',
+    -- dependencies = { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify'},
+    -- event = 'BufEnter',
+    -- config = function()
+    --   require("noice").setup({})
+    -- end
   },
 
   -- Fuzzy Finder (files, lsp, etc)
@@ -673,13 +728,29 @@ require('lazy').setup({
 
   -- windowのリサイズをおこなう
   -- TODO:未設定
-  {'simeji/winresizer'},
+  {
+    'simeji/winresizer'
+  },
 
   -- Exコマンドをバッファに書きだしてくれる
   'tyru/capture.vim',
+
+  -- 日本語ドキュメント
+  {
+    'vim-jp/vimdoc-ja',
+    event = 'BufEnter',
+  },
   -- =============================================
   --                Operator
   -- =============================================
+  {
+    'machakann/vim-sandwich',
+    event = 'InsertEnter',
+  },
+  {
+    'machakann/vim-sandwich',
+    event = 'InsertEnter',
+  },
   {
     'machakann/vim-sandwich',
     event = 'InsertEnter',
@@ -701,7 +772,9 @@ require('lazy').setup({
   -- tagを自動で付けてくれる
   {'mattn/vim-goaddtags',ft = 'go',},
   -- D2
-  {'terrastruct/d2-vim',ft = 'd2'}
+  {'terrastruct/d2-vim',ft = 'd2'},
+  -- PowerShell
+  {'pprovost/vim-ps1',ft = 'ps1'},
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.

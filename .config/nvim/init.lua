@@ -38,4 +38,5 @@ require('autocmd')
 -- plugin settings(load and configuration)
 require('plugins')
 
+
 -- vim: ts=2 sts=2 sw=2 et

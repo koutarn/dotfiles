@@ -123,29 +123,29 @@ endif
 
 " call dein#add('neovim/nvim-lspconfig')                         " LSP
 " call dein#add('williamboman/nvim-lsp-installer')               " LSPインストール
-call dein#add('folke/lsp-colors.nvim')                         " 色設定を追加してくれる
-call dein#add('folke/trouble.nvim')                            " 警告等を良い感じに表示してくれる
-call dein#add('j-hui/fidget.nvim')                             " LSPの状態等を表示してくれる
-call dein#add('kkharji/lspsaga.nvim')                          " UIとかコマンドの追加
+" call dein#add('folke/lsp-colors.nvim')                         " 色設定を追加してくれる
+" call dein#add('folke/trouble.nvim')                            " 警告等を良い感じに表示してくれる
+" call dein#add('j-hui/fidget.nvim')                             " LSPの状態等を表示してくれる
+" call dein#add('kkharji/lspsaga.nvim')                          " UIとかコマンドの追加
 
-call dein#add('hrsh7th/vim-vsnip')                             " snippet
-call dein#add('hrsh7th/vim-vsnip-integ')                       " vim-vsnipを他プラグインと連携するようにする
-call dein#add('rafamadriz/friendly-snippets')                  " 色んな言語のsnippet集
+" call dein#add('hrsh7th/vim-vsnip')                             " snippet
+" call dein#add('hrsh7th/vim-vsnip-integ')                       " vim-vsnipを他プラグインと連携するようにする
+" call dein#add('rafamadriz/friendly-snippets')                  " 色んな言語のsnippet集
 
 call dein#add('MattesGroeger/vim-bookmarks')                   " 行にブックマークを設定してくれる
-call dein#add('Shougo/context_filetype.vim')                   " 埋め込みのコードでカーソルからfiletypeを認識してくれる
-call dein#add('bronson/vim-trailing-whitespace')               " 空白の削除
+" call dein#add('Shougo/context_filetype.vim')                   " 埋め込みのコードでカーソルからfiletypeを認識してくれる
+" call dein#add('bronson/vim-trailing-whitespace')               " 空白の削除
 call dein#add('godlygeek/tabular')                             " 文字揃えをうまいことしてくれる
 call dein#add('itchyny/vim-highlighturl')                      " URLのハイライトを行う
 " call dein#add('kuuote/gina-preview.vim')                       " gina拡張
 call dein#add('lambdalisue/suda.vim')                          " 読み書きをsuduでしてくれる
 " call dein#add('lambdalisue/vim-findent')                       " fileから適切なインデントを読み取ってくれる
 call dein#add('liuchengxu/vista.vim')                          " コードの変数やオブジェクト等を表示してくれる
-call dein#add('markonm/traces.vim')                            " 置換結果を変換前に表示する
-call dein#add('mattn/vim-findroot')                            " プロジェクトのルートを設定してくれる
+" call dein#add('markonm/traces.vim')                            " 置換結果を変換前に表示する
+" call dein#add('mattn/vim-findroot')                            " プロジェクトのルートを設定してくれる
 "call dein#add('dhruvasagar/vim-table-mode',{'for':'markdown')} " markdownで上手い事テーブルを作れるモードを追加してくれる
 "call dein#add('mattn/vim-maketable',{'for':'markdown')}        " セパレータからテーブルを作成してくれる
-call dein#add('mg979/vim-visual-multi')                        " マルチカーソル
+" call dein#add('mg979/vim-visual-multi')                        " マルチカーソル
 "call dein#add('plasticboy/vim-markdown', {'for':'markdown')}   " markdownのsyntax highlightを提供する
 " call dein#add('reireias/vim-cheatsheet')                       " 自分で設定したチートシートを表示する
 " call dein#add('simeji/winresizer')                             " windowのリサイズをおこなう
@@ -153,11 +153,11 @@ call dein#add('mg979/vim-visual-multi')                        " マルチカー
 " call dein#add('thinca/vim-localrc')                            " ローカル設定のvimrcを読み込む
 call dein#add('thinca/vim-qfreplace')                          " quick fixで置換を行う
 call dein#add('thinca/vim-quickrun')                           " バッファのコードをシュッと実行してくれる
-call dein#add('tyru/capture.vim')                              " Exコマンドをバッファに書きだしてくれる
+" call dein#add('tyru/capture.vim')                              " Exコマンドをバッファに書きだしてくれる
 call dein#add('norcalli/nvim-colorizer.lua')                   " colorcodeに色を付けてくれる
 " call dein#add('mvllow/modes.nvim')                             " modeをカーソルの色でわかるようにする
 
-call dein#add('glidenote/memolist.vim')                        " メモ取り用
+" call dein#add('glidenote/memolist.vim')                        " メモ取り用
 call dein#add('andymass/vim-matchup')                          " 括弧をマッチさせる
 call dein#add('cohama/lexima.vim')                             " 閉じカッコの補完をしてくれる
 "call dein#add('windwp/nvim-autopairs')                         " leximaみたいなやつ
@@ -172,9 +172,9 @@ call dein#add('voldikss/vim-translator')                       " 選択文字の
 " call dein#add('mattn/vim-godoc')                  " godoc
 " call dein#add('mattn/vim-gomod')                  " modファイルのsyntax highlight
 " call dein#add('mattn/vim-goaddtags')              " tagを自動で付けてくれる
-call dein#add('akinsho/flutter-tools.nvim')                    " flutterで開発出来るようにするプラグイン
-call dein#add('previm/previm')                   " markdownをpreviewする
-call dein#add('petertriho/nvim-scrollbar')                     " スクロールバーを表示する
+" call dein#add('akinsho/flutter-tools.nvim')                    " flutterで開発出来るようにするプラグイン
+" call dein#add('previm/previm')                   " markdownをpreviewする
+" call dein#add('petertriho/nvim-scrollbar')                     " スクロールバーを表示する
 call dein#add('kristijanhusak/line-notes.nvim')                " 行にノートを埋めこむ
 
 "syntax
@@ -183,10 +183,10 @@ call dein#add('kristijanhusak/line-notes.nvim')                " 行にノート
 "deno
 if executable('deno')
      call dein#add('vim-denops/denops.vim')                     " denoのランタイム
-     call dein#add('vim-skk/skkeleton')                         " deno版skk
-     call dein#add('delphinus/skkeleton_indicator.nvim')        " skkeletonの状態を表示してくれる
-     call dein#add('matsui54/denops-popup-preview.vim')         " 補完候補のプレビュー
-     call dein#add('matsui54/denops-signature_help')            " signature help
+     " call dein#add('vim-skk/skkeleton')                         " deno版skk
+     " call dein#add('delphinus/skkeleton_indicator.nvim')        " skkeletonの状態を表示してくれる
+     " call dein#add('matsui54/denops-popup-preview.vim')         " 補完候補のプレビュー
+     " call dein#add('matsui54/denops-signature_help')            " signature help
      call dein#add('monaqa/dps-dial.vim')                       " インクリメント、デクリメント拡張
      call dein#add('lambdalisue/gin.vim')                       " git操作を出来るようにする
 
@@ -268,12 +268,12 @@ call dein#add('yuki-yano/fern-preview.vim')
 call dein#add('twitvim/twitvim')
 call dein#add('xolox/vim-misc')
 call dein#add('tyru/open-browser.vim')
-call dein#add('ryanoasis/vim-devicons')
-call dein#add('akinsho/toggleterm.nvim')
+" call dein#add('ryanoasis/vim-devicons')
+" call dein#add('akinsho/toggleterm.nvim')
 " call dein#add('voldikss/vim-floaterm')
 
 "help
-call dein#add('vim-jp/vimdoc-ja')
+" call dein#add('vim-jp/vimdoc-ja')
 
 "operator
 call dein#add('kana/vim-operator-user')
@@ -294,7 +294,7 @@ call dein#add('sgur/vim-textobj-parameter')
 call dein#add('thinca/vim-textobj-between')
 
 if has('win32') || has('win64')
-    call dein#add('pprovost/vim-ps1') " PowerShellのFileTypeの追加等を行ってくれる
+    " call dein#add('pprovost/vim-ps1') " PowerShellのFileTypeの追加等を行ってくれる
 endif
 
 " 未使用
