@@ -97,3 +97,4 @@ keymap('i','<C-m>','<C-g>u<C-m>')
 -- TODO: カウントが受け付けない
 keymap('n','<Leader>o',':for i in range(v:count) | call append(line(\'.\'), \'\') | endfor<CR>')
 keymap('n','<Leader>O',':for i in range(v:count) | call append(line(\'.\')-1, \'\') | endfor<CR>')
+
