@@ -18,13 +18,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
-function reload_settings()
-  for _, value in ipairs(setting_files) do
-    package.loaded[value] = nil
-  end
-  vim.cmd(':source ' .. init_path)
-end
-
 --カーソル位置の保存設定をLua化したもの。
 vim.api.nvim_create_autocmd({ 'BufReadPost' }, {
     pattern = { '*' },

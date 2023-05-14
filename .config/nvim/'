@@ -297,6 +297,7 @@ require('lazy').setup({
     opts = {},
   },
 
+
   { -- auto pair
     "windwp/nvim-autopairs",
     event = 'InsertEnter',
@@ -305,7 +306,7 @@ require('lazy').setup({
 
   { -- deno関係のプラグインを使えるようにする
     'vim-denops/denops.vim',
-    lazy = false, -- denoはランタイムなので遅延を行わない
+    lazy = false,
     cond = function()
       return vim.fn.executable 'deno' == 1
     end
@@ -324,32 +325,15 @@ require('lazy').setup({
     keymap('c','<CR>','<Plug>(kensaku-search-replace)<CR>'),
   },
 
-  { -- 画面上にfzfで飛ぶ
+  {
     'yuki-yano/fuzzy-motion.vim',
     event = 'VeryLazy',
     dependencies = {'lambdalisue/kensaku.vim'},
     config = function()
       vim.keymap.set('n', 'S', '<cmd>FuzzyMotion<CR>')
       vim.cmd("let g:fuzzy_motion_matchers = ['kensaku', 'fzf']")
-      vim.cmd('let g:fuzzy_motion_auto_jump = v:true')
+      vim.cmd("let g:fuzzy_motion_auto_jump = true)
     end
-  },
-
-  { -- 翻訳をおこなう
-    'skanehira/denops-translate.vim',
-    event = 'VeryLazy',
-    dependencies = {'vim-denops/denops.vim'},
-    config = function()
-      keymap({'v','x'}, '<Leader>tr', ':Translate<CR>')
-    end
-  },
-  -- TODO:未設定
-  { -- markdown preview
-    'kat0h/bufpreview.vim',
-    event = 'VeryLazy',
-    ft = 'markdown',
-    dependencies = {'vim-denops/denops.vim'},
-    build = 'deno task prepare',
   },
 
 -- =============================================

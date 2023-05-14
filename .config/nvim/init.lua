@@ -1,3 +1,6 @@
+-- 高速ロード処理のおまじない
+if vim.loader then vim.loader.enable() end
+
 -- don't use default plugins
 local default_plugins = {
   did_install_default_menus = 1,
@@ -24,38 +27,29 @@ for k,v in pairs(default_plugins) do
   vim.g[k] = v
 end
 
--- 高速ロード処理のおまじない
-if vim.loader then vim.loader.enable() end
+setting_files = {
+  -- utility settings,function and more
+  'utility',
+  -- basic option settings
+  'options',
+  -- basic keymp settings
+  'keymaps',
+  -- plugin settings(load and configuration)
+  'plugins',
+}
+
+for _, value in ipairs(setting_files) do
+  require(value)
+end
 
 -- TODO:再読み込み出来るようにしたい
-require('utility')
-require('options')
-require('keymaps')
-require('plugins')
-
--- setting files
--- setting_files = {
---   -- utility settings,function and more
---   'utility',
---   -- basic option settings
---   'options',
---   -- basic keymp settings
---   'keymaps',
---   -- plugin settings(load and configuration)
---   'plugins',
--- }
---
--- for _, value in ipairs(setting_files) do
---   require(value)
--- end
-
-local init_path = '~/.config/nvim/init.lua'
--- nvim.api.keymap('n', '<Leader>fr',reload_settings())
+-- local init_path = '~/.config/nvim/init.lua'
 -- function reload_settings()
 --   for _, value in ipairs(setting_files) do
 --     package.loaded[value] = nil
 --   end
 --   vim.cmd(':source ' .. init_path)
 -- end
+-- vim.keymap.set('n', '<Leader>fr',reload_settings,{silent = true})
 
 -- vim: ts=2 sts=2 sw=2 et
