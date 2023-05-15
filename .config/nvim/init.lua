@@ -27,9 +27,7 @@ for k,v in pairs(default_plugins) do
   vim.g[k] = v
 end
 
-setting_files = {
-  -- -- set filetypes
-  -- 'filetype',
+for _, source in ipairs {
   -- utility settings,function and more
   'utility',
   -- basic option settings
@@ -38,10 +36,9 @@ setting_files = {
   'keymaps',
   -- plugin settings(load and configuration)
   'plugins',
-}
-
-for _, value in ipairs(setting_files) do
-  require(value)
+} do
+  local status_ok, fault = pcall(require,source)
+  if not status_ok then vim.api.nvim_err_write("Failed to load " .. source .. "\n\n" .. fault) end
 end
 
 -- TODO:再読み込み出来るようにしたい
