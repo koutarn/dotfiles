@@ -37,7 +37,7 @@ require('lazy').setup({
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
       { 'williamboman/mason.nvim', config = true },
-      'williamboman/mason-lspconfig.nvim',
+      {'williamboman/mason-lspconfig.nvim'},
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
@@ -67,11 +67,8 @@ require('lazy').setup({
         nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
         nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
         nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
-        nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
         nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
         nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
-        nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
-        nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
         nmap('gh', vim.lsp.buf.hover, 'Hover Documentation')
         nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
         nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
@@ -85,6 +82,11 @@ require('lazy').setup({
         vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
           vim.lsp.buf.format()
         end, { desc = 'Format current buffer with LSP' })
+
+        -- use telescope
+        nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+        nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+        nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
       end
 
       --
@@ -136,8 +138,54 @@ require('lazy').setup({
     event = 'VeryLazy',
     cmd = 'Trouble',
     config = function()
+      -- NOTE:設定をする
     require("trouble").setup {
-    }
+      position = "bottom",
+      height = 10,
+      width = 50,
+      icons = true,
+      mode = "workspace_diagnostics",
+      fold_open = "",
+      fold_closed = "",
+      group = true,
+      padding = false,
+      action_keys = {
+          previous = "k",
+          next = "j",
+          close = "q",
+          cancel = "<esc>",
+          refresh = "r",
+          jump = {"<cr>", "<tab>"},
+          jump_close = "o",
+          toggle_preview = "p",
+          hover = "zh",
+
+          -- 無効化
+          open_split = {},
+          open_vsplit = {},
+          open_tab = {},
+          toggle_mode = {},
+          preview = {},
+          close_folds = {},
+          open_folds = {},
+          toggle_fold = {},
+      },
+      indent_lines = true,
+      auto_open = false,
+      auto_close = false,
+      auto_preview = true,
+      auto_fold = false,
+      auto_jump = {"lsp_definitions"},
+      signs = {
+          error = "",
+          warning = "",
+          hint = "",
+          information = "",
+          other = "﫠"
+      },
+      use_diagnostic_signs = false
+      }
+      keymap("n", "zz", "<cmd>TroubleToggle<cr>",{silent = true, noremap = true})
     end
   },
 
@@ -262,6 +310,7 @@ require('lazy').setup({
   'rafamadriz/friendly-snippets',
 
   -- 空白行の表示&削除
+  -- TODO:ちょい微妙だから代替えを探したい機運
   {
     'lukoshkin/trailing-whitespace',
     config = function ()
@@ -594,6 +643,7 @@ require('lazy').setup({
   },
 
   -- Fuzzy Finder (files, lsp, etc)
+  -- extensions(https://github.com/nvim-telescope/telescope.nvim/wiki/Extensions)
   {
     'nvim-telescope/telescope.nvim',
     event = 'VeryLazy',
@@ -604,6 +654,10 @@ require('lazy').setup({
 
       -- TODO:後で設定する
       'nvim-telescope/telescope-file-browser.nvim',
+
+      -- TODO:zoxide extensionを入れる
+      --TODO: frecency extentionを入れる
+
       -- FIXME:echoが出来ないとかでエラーが出るので一旦いれない
       -- 'nvim-telescope/telescope-ghq.nvim',
     },
@@ -622,8 +676,16 @@ require('lazy').setup({
             },
             -- NOTE:履歴ファイルの作成でエラーが出るので一旦消す
             history = false,
+             file_ignore_patterns = { --検索対象に含めないファイルを指定
+              "^.git/",
+              "^node_modules/",
+            },
+            winblend = 4, --若干ウィンドウを透明に
           },
           extensions = {
+            fzf = {
+              fuzzy = true,
+            },
             lazy = {
               -- Optional theme (the extension doesn't set a default theme)
               -- theme = "ivy",
@@ -669,7 +731,7 @@ require('lazy').setup({
         vim.keymap.set('n', '<leader>sk', require('telescope.builtin').keymaps, { desc = '[S]earch [K]eymaps' })
         vim.keymap.set('n', '<leader>sl', ':<C-u>Telescope lazy<CR>', { desc = '[S]earch [L]azy' })
         -- vim.keymap.set('n', '<leader>sr', ':<C-u>Telescope ghq list<CR>', { desc = '[S]earch [R]epositories' })
-        vim.keymap.set('n', '<leader>sb', ':<C-u>Telescope file_browser <CR>', { desc = '[S]earch [F]ile [B]rowser' })
+        vim.keymap.set('n', '<leader>sb', ':<C-u>Telescope file_browser hidden=true<CR>', { desc = '[S]earch [F]ile [B]rowser' })
     end
   },
 
@@ -776,6 +838,7 @@ require('lazy').setup({
   },
 
   {-- ブロックの末尾に何のブロックかを表示する
+    -- TODO:helpファイルを読み込んだらエラーが出る
     'code-biscuits/nvim-biscuits',
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
@@ -900,7 +963,7 @@ require('lazy').setup({
   -- 日本語ドキュメント
   {
     'vim-jp/vimdoc-ja',
-    event = 'BufEnter',
+    event = 'BufRead',
     ft = 'help',
   },
 

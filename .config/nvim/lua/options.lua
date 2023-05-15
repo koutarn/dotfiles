@@ -121,7 +121,7 @@ vim.opt.listchars = {tab='»-', trail='-', eol='↲', extends='»', precedes='«
 
 -- TODO:場合分けする
 vim.opt.shell = "pwsh"
-vim.o.inccommand=split
+vim.o.inccommand='split'
 
 -- singleにしないとバグるので
 vim.o.ambiwidth = 'single'
