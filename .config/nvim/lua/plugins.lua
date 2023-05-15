@@ -658,8 +658,8 @@ require('lazy').setup({
       -- TODO:zoxide extensionを入れる
       --TODO: frecency extentionを入れる
 
-      -- FIXME:echoが出来ないとかでエラーが出るので一旦いれない
-      -- 'nvim-telescope/telescope-ghq.nvim',
+      -- FIXME:echoが出来ないとかでエラーが出る
+      'nvim-telescope/telescope-ghq.nvim',
     },
 
     -- [[ Configure Telescope ]]
@@ -724,13 +724,13 @@ require('lazy').setup({
 
         vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
         vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
-        vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
+        vim.keymap.set('n', '<leader>sH', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
         vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
         vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
         vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
         vim.keymap.set('n', '<leader>sk', require('telescope.builtin').keymaps, { desc = '[S]earch [K]eymaps' })
         vim.keymap.set('n', '<leader>sl', ':<C-u>Telescope lazy<CR>', { desc = '[S]earch [L]azy' })
-        -- vim.keymap.set('n', '<leader>sr', ':<C-u>Telescope ghq list<CR>', { desc = '[S]earch [R]epositories' })
+        vim.keymap.set('n', '<leader>sr', ':<C-u>Telescope ghq list<CR>', { desc = '[S]earch [R]epositories' })
         vim.keymap.set('n', '<leader>sb', ':<C-u>Telescope file_browser hidden=true<CR>', { desc = '[S]earch [F]ile [B]rowser' })
     end
   },
@@ -979,8 +979,7 @@ require('lazy').setup({
     event = 'VeryLazy',
   },
 
-  -- windowのリサイズをおこなう
-  {
+  { -- windowのリサイズをおこなう
     'simeji/winresizer',
     event = 'VeryLazy',
   },
@@ -1040,7 +1039,10 @@ require('lazy').setup({
   -- tagを自動で付けてくれる
   {'mattn/vim-goaddtags',ft = 'go',},
   -- D2
-  {'terrastruct/d2-vim',ft = 'd2'},
+  {'terrastruct/d2-vim',
+    event = 'BufReadPre',
+    ft = 'd2'
+  },
   -- PowerShell
   {'pprovost/vim-ps1',ft = 'ps1'},
 

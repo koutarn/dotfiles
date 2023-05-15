@@ -28,6 +28,8 @@ for k,v in pairs(default_plugins) do
 end
 
 setting_files = {
+  -- -- set filetypes
+  -- 'filetype',
   -- utility settings,function and more
   'utility',
   -- basic option settings
