@@ -10,7 +10,6 @@
 --   term_mode = 't',
 --   command_mode = 'c',
 
-
 -- Set <space> as the leader key
 -- See `:help mapleader`
 vim.g.mapleader = ' '
@@ -85,4 +84,3 @@ keymap('i','<C-m>','<C-g>u<C-m>')
 -- TODO: カウントが受け付けない
 keymap('n','<Leader>o',':for i in range(v:count1) | call append(line(\'.\'), \'\') | endfor<CR>')
 keymap('n','<Leader>O',':for i in range(v:count1) | call append(line(\'.\')-1, \'\') | endfor<CR>')
-

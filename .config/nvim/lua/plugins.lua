@@ -36,7 +36,20 @@ require('lazy').setup({
     event = {'BufReadPre', 'BufNewFile'},
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
-      { 'williamboman/mason.nvim', config = true },
+      {
+        'williamboman/mason.nvim', 
+        config = true,
+        cmd = {
+          "Mason",
+          "MasonInstall",
+          "MasonUninstall",
+          "MasonUninstallAll",
+          "MasonLog",
+          "MasonUpdate", -- AstroNvim extension here as well
+          "MasonUpdateAll", -- AstroNvim specific
+        },
+        build = ":MasonUpdate",
+      },
       {'williamboman/mason-lspconfig.nvim'},
 
       -- Useful status updates for LSP
@@ -539,7 +552,7 @@ require('lazy').setup({
                             Information = "#0db9d7",
                             Hint = "#10B981"
                         },
-                        symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '},
+                        symbols = {error = " ", warn = " ", info = "󰋼 ", hint = "󰌵 "},
                         colored = true,           -- Displays diagnostics status in color if set to true.
                         update_in_insert = false, -- Update diagnostics in insert mode.
                         always_visible = true,   -- Show diagnostics even if there are none.
@@ -670,8 +683,14 @@ require('lazy').setup({
           defaults = {
             mappings = {
               i = {
-                -- TODO:<C-j>,<C-k>で選択出来るようにする
-                ['<ESC>'] = actions.close
+                ['<ESC>'] = actions.close,
+                ["<C-n>"] = actions.move_selection_next,
+                ["<C-p>"] = actions.move_selection_previous,
+                ["<C-j>"] = actions.move_selection_next,
+                ["<C-k>"] = actions.move_selection_previous,
+              },
+              n = {
+                ["q"] = actions.close,
               },
             },
             -- NOTE:履歴ファイルの作成でエラーが出るので一旦消す
@@ -788,42 +807,42 @@ require('lazy').setup({
             enable = true,
             lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
             keymaps = {
-        -- You can use the capture groups defined in textobjects.scm
-        ['aa'] = '@parameter.outer',
-        ['ia'] = '@parameter.inner',
-        ['af'] = '@function.outer',
-        ['if'] = '@function.inner',
-        ['ac'] = '@class.outer',
-        ['ic'] = '@class.inner',
+              -- You can use the capture groups defined in textobjects.scm
+              ['aa'] = '@parameter.outer',
+              ['ia'] = '@parameter.inner',
+              ['af'] = '@function.outer',
+              ['if'] = '@function.inner',
+              ['ac'] = '@class.outer',
+              ['ic'] = '@class.inner',
             },
           },
           move = {
             enable = true,
             set_jumps = true, -- whether to set jumps in the jumplist
             goto_next_start = {
-        [']m'] = '@function.outer',
-        [']]'] = '@class.outer',
+              [']m'] = '@function.outer',
+              [']]'] = '@class.outer',
             },
             goto_next_end = {
-        [']M'] = '@function.outer',
-        [']['] = '@class.outer',
+              [']M'] = '@function.outer',
+              [']['] = '@class.outer',
             },
             goto_previous_start = {
-        ['[m'] = '@function.outer',
-        ['[['] = '@class.outer',
+              ['[m'] = '@function.outer',
+              ['[['] = '@class.outer',
             },
             goto_previous_end = {
-        ['[M'] = '@function.outer',
-        ['[]'] = '@class.outer',
+              ['[M'] = '@function.outer',
+              ['[]'] = '@class.outer',
             },
           },
           swap = {
             enable = true,
             swap_next = {
-        ['<leader>a'] = '@parameter.inner',
+              ['<leader>a'] = '@parameter.inner',
             },
             swap_previous = {
-        ['<leader>A'] = '@parameter.inner',
+              ['<leader>A'] = '@parameter.inner',
             },
           },
         },

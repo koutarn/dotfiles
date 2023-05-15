@@ -1,3 +1,4 @@
+-- TODO:後で消す
 -- vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
 --         pattern = {"*.d2"},
 --         command = 'setfiletype d2'
