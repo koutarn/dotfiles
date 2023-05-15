@@ -155,7 +155,7 @@ require('lazy').setup({
 
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
-    event = "InsertEnter",
+    event = "InsertEnter,CmdlineEnter",
     dependencies = {
       -- nvim cmp
       'hrsh7th/cmp-nvim-lsp',
@@ -601,7 +601,11 @@ require('lazy').setup({
     dependencies = {
       'nvim-lua/plenary.nvim',
       'tsakirist/telescope-lazy.nvim',
-      'nvim-telescope/telescope-ghq.nvim',
+
+      -- TODO:後で設定する
+      'nvim-telescope/telescope-file-browser.nvim',
+      -- FIXME:echoが出来ないとかでエラーが出るので一旦いれない
+      -- 'nvim-telescope/telescope-ghq.nvim',
     },
 
     -- [[ Configure Telescope ]]
@@ -616,6 +620,8 @@ require('lazy').setup({
                 ['<ESC>'] = actions.close
               },
             },
+            -- NOTE:履歴ファイルの作成でエラーが出るので一旦消す
+            history = false,
           },
           extensions = {
             lazy = {
@@ -641,6 +647,7 @@ require('lazy').setup({
         pcall(require('telescope').load_extension, 'fzf')
         pcall(require('telescope').load_extension, 'lazy')
         pcall(require('telescope').load_extension, 'ghq')
+        pcall(require("telescope").load_extension "file_browser")
 
         -- See `:help telescope.builtin`
         vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
@@ -661,7 +668,8 @@ require('lazy').setup({
         vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
         vim.keymap.set('n', '<leader>sk', require('telescope.builtin').keymaps, { desc = '[S]earch [K]eymaps' })
         vim.keymap.set('n', '<leader>sl', ':<C-u>Telescope lazy<CR>', { desc = '[S]earch [L]azy' })
-        vim.keymap.set('n', '<leader>sr', ':<C-u>Telescope ghq list<CR>', { desc = '[S]earch [R]epositories' })
+        -- vim.keymap.set('n', '<leader>sr', ':<C-u>Telescope ghq list<CR>', { desc = '[S]earch [R]epositories' })
+        vim.keymap.set('n', '<leader>sb', ':<C-u>Telescope file_browser <CR>', { desc = '[S]earch [F]ile [B]rowser' })
     end
   },
 
