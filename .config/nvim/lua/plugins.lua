@@ -706,9 +706,9 @@ require('lazy').setup({
           },
         }
 
+        pcall(require('telescope').load_extension, 'ghq')
         pcall(require('telescope').load_extension, 'fzf')
         pcall(require('telescope').load_extension, 'lazy')
-        pcall(require('telescope').load_extension, 'ghq')
         pcall(require("telescope").load_extension "file_browser")
 
         -- See `:help telescope.builtin`
