@@ -433,7 +433,7 @@ require('lazy').setup({
         set_cursor = false,
         -- Enable cursorline initially, and disable cursorline for inactive windows
         -- or ignored filetypes
-        set_cursorline = true,
+        set_cursorline = false,
         -- Enable line number highlights to match cursorline
         set_number = false,
 
@@ -451,10 +451,36 @@ require('lazy').setup({
   { -- colose scheme
     'navarasu/onedark.nvim',
     priority = 1000,
+    lazy = false,
     config = function()
       vim.cmd.colorscheme 'onedark'
     end,
   },
+
+  -- { --nvimを透過させる
+  --   -- 遅延読み込みは推奨されていないので行わない
+  --   'xiyaowong/transparent.nvim',
+  --
+  --   -- TODO:一旦止めておく
+  --   enable = false,
+  --   lazy = false,
+  --   config = function()
+  --     require("transparent").setup({
+  --     groups = { -- table: default groups
+  --       'Normal', 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
+  --       'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String', 'Function',
+  --       'Conditional', 'Repeat', 'Operator', 'Structure', 'LineNr', 'NonText',
+  --       'SignColumn', 'CursorLineNr', 'EndOfBuffer',
+  --     },
+  --     extra_groups = {
+  --         "NormalFloat", -- plugins which have float panel such as Lazy, Mason, LspInfo
+  --         "NvimTreeNormal", -- NvimTree}, -- table: additional groups that should be cleared
+  --         "TelescopePrompt",
+  --     },
+  --     exclude_groups = {}, -- table: groups you don't want to clear
+  --   })
+  --   end
+  -- },
 
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
@@ -673,6 +699,7 @@ require('lazy').setup({
 
       -- FIXME:echoが出来ないとかでエラーが出る
       'nvim-telescope/telescope-ghq.nvim',
+      "Allianaab2m/telescope-kensaku.nvim",
     },
 
     -- [[ Configure Telescope ]]
@@ -729,6 +756,7 @@ require('lazy').setup({
         pcall(require('telescope').load_extension, 'fzf')
         pcall(require('telescope').load_extension, 'lazy')
         pcall(require("telescope").load_extension "file_browser")
+        pcall(require("telescope").load_extension("kensaku"))
 
         -- See `:help telescope.builtin`
         vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
@@ -747,10 +775,11 @@ require('lazy').setup({
         vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
         vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
         vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
-        vim.keymap.set('n', '<leader>sk', require('telescope.builtin').keymaps, { desc = '[S]earch [K]eymaps' })
+        vim.keymap.set('n', '<leader>sK', require('telescope.builtin').keymaps, { desc = '[S]earch [K]eymaps' })
         vim.keymap.set('n', '<leader>sl', ':<C-u>Telescope lazy<CR>', { desc = '[S]earch [L]azy' })
         vim.keymap.set('n', '<leader>sr', ':<C-u>Telescope ghq list<CR>', { desc = '[S]earch [R]epositories' })
-        vim.keymap.set('n', '<leader>sb', ':<C-u>Telescope file_browser hidden=true<CR>', { desc = '[S]earch [F]ile [B]rowser' })
+        vim.keymap.set('n', '<leader>sb', ':<C-u>Telescope file_browser hidden=true<CR>', { desc = '[S]earch File [B]rowser' })
+        vim.keymap.set('n', '<leader>sk', ':<C-u>Telescope kensaku <CR>', { desc = '[S]earch [k]ensaku' })
     end
   },
 

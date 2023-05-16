@@ -9,7 +9,7 @@ vim.opt.fileencoding = "utf-8"
 -- show line numbers bad not relative
 vim.opt.number = true
 vim.opt.relativenumber = false
-vim.opt.ruler = true
+vim.opt.ruler = false
 
 vim.opt.signcolumn = "yes"
 vim.opt.wrap = false
