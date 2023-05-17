@@ -13,7 +13,7 @@ vim.opt.ruler = false
 
 vim.opt.signcolumn = "yes"
 vim.opt.wrap = false
-vim.o.wrapmargin=0
+vim.o.wrapmargin = 0
 vim.opt.pumblend = 5 -- pseudo-transparency for popup-menu
 vim.opt.cursorline = false
 vim.opt.cursorcolumn   = false
@@ -31,7 +31,7 @@ vim.o.equalalways = false -- windowの自動調整をしない
 -- 描画系
 -- nvim color
 vim.env.NVIM_TUI_ENABLE_TRUE_COLOR = 1
-vim.o.synmaxcolsynmaxcol = 200
+vim.o.synmaxcol = 200
 vim.cmd.syntax("enable")
 vim.o.background = "dark"
 
