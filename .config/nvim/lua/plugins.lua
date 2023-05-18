@@ -286,6 +286,7 @@ require('lazy').setup({
 
         sources = {
           { name = 'nvim_lsp' },
+          { name = 'skkeleton' },
           { name = 'cmp_tabnine' },
           { name = 'luasnip' },
           { name = 'emoji' },
@@ -318,7 +319,18 @@ require('lazy').setup({
       })
     end
   },
+  {
+    'rinx/cmp-skkeleton',
+    event = "InsertEnter",
+    dependencies = 'hrsh7th/nvim-cmp',
+  },
 
+  {
+    'tzachar/cmp-tabnine',
+    build = './install.ps1',
+    event = "InsertEnter",
+    dependencies = 'hrsh7th/nvim-cmp',
+  },
 
   -- 色んな言語のsnippet集
   'rafamadriz/friendly-snippets',
@@ -348,13 +360,6 @@ require('lazy').setup({
     -- end
   },
 
-  {
-    'tzachar/cmp-tabnine',
-    build = './install.ps1',
-    event = "InsertEnter",
-    dependencies = 'hrsh7th/nvim-cmp',
-  },
-
   { -- "gc" to comment visual regions/lines
     'numToStr/Comment.nvim',
     event = "InsertEnter",
@@ -375,22 +380,46 @@ require('lazy').setup({
     end
   },
 
+  -- NOTE:なんだかんだIMEで打つほうが楽かもしれん 
   -- { -- skk for denops
   --   'vim-skk/skkeleton',
   --   dependencies = 'vim-denops/denops.vim',
   --   event = 'InsertEnter',
-  --   -- TODO:SKK辞書をbuildでダウンロード出来るようにしたいけどうまくいかない
-  --   build = 'curl -fsL https://github.com/skk-dev/dict/master/SKK-JISYO.L > SKK-JISYO.L',
+  --   config = function()
+  --     vim.fn['skkeleton#config']({
+  --         eggLikeNewline = true,
+  --         globalJisyo = '~/.config/nvim/skk' .. '/SKK-JISYO.L',
+  --         registerConvertResult = true,
+  --         showCandidatesCount = 1,
+  --       -- マーカーやめられることだしやめる
+  --       markerHenkan = ';',
+  --       markerHenkanSelect = '',
+  --       keepState = true,
+  --     })
+  --     vim.fn['skkeleton#register_kanatable']('rom',{
+  --       ['jj'] = 'escape',
+  --     })
+  --     keymap('i','jk','<Plug>(skkeleton-toggle)')
+  --   end
   -- },
 
-  { -- skkで再変換を出来るようにする
-    'Matts966/skk-vconv.vim',
-    build = 'pip install pykakasi',
-    dependencies = 'vim-skk/skkeleton',
-    cond = function()
-      return vim.fn.executable 'python' == 1
-    end
-  },
+  -- { -- skkの状態を表示してくれる
+  --   'delphinus/skkeleton_indicator.nvim',
+  --   event = 'InsertEnter',
+  --   dependencies = 'vim-skk/skkeleton',
+  --   config = function()
+  --     require'skkeleton_indicator'.setup{}
+  --   end
+  -- },
+
+  -- { -- skkで再変換を出来るようにす
+  --   'Matts966/skk-vconv.vim',
+  --   build = 'pip install pykakasi',
+  --   dependencies = 'vim-skk/skkeleton',
+  --   cond = function()
+  --     return vim.fn.executable 'python' == 1
+  --   end
+  -- },
 
   { --  Migemo を利用してローマ字のまま日本語検索を行う最低限の機能を提供する
     'lambdalisue/kensaku.vim',
