@@ -37,7 +37,7 @@ require('lazy').setup({
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
       {
-        'williamboman/mason.nvim', 
+        'williamboman/mason.nvim',
         config = true,
         cmd = {
           "Mason",
@@ -50,7 +50,7 @@ require('lazy').setup({
         },
         build = ":MasonUpdate",
       },
-      {'williamboman/mason-lspconfig.nvim'},
+      'williamboman/mason-lspconfig.nvim',
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
@@ -148,10 +148,9 @@ require('lazy').setup({
   { --警告等を良い感じに表示してくれる
     'folke/trouble.nvim',
     requires = "nvim-tree/nvim-web-devicons",
-    event = 'VeryLazy',
+    event = {'BufReadPre', 'BufNewFile'},
     cmd = 'Trouble',
     config = function()
-      -- NOTE:設定をする
     require("trouble").setup {
       position = "bottom",
       height = 10,
@@ -202,9 +201,10 @@ require('lazy').setup({
     end
   },
 
-  {
+  { -- lsp表示を強化
     "glepnir/lspsaga.nvim",
     event = "LspAttach",
+    -- NOTE:コンフィグ設定をする
     config = function()
         require("lspsaga").setup({})
     end,
@@ -319,6 +319,7 @@ require('lazy').setup({
     end
   },
 
+
   -- 色んな言語のsnippet集
   'rafamadriz/friendly-snippets',
 
@@ -371,6 +372,23 @@ require('lazy').setup({
     lazy = false, -- denoはランタイムなので遅延を行わない
     cond = function()
       return vim.fn.executable 'deno' == 1
+    end
+  },
+
+  -- { -- skk for denops
+  --   'vim-skk/skkeleton',
+  --   dependencies = 'vim-denops/denops.vim',
+  --   event = 'InsertEnter',
+  --   -- TODO:SKK辞書をbuildでダウンロード出来るようにしたいけどうまくいかない
+  --   build = 'curl -fsL https://github.com/skk-dev/dict/master/SKK-JISYO.L > SKK-JISYO.L',
+  -- },
+
+  { -- skkで再変換を出来るようにする
+    'Matts966/skk-vconv.vim',
+    build = 'pip install pykakasi',
+    dependencies = 'vim-skk/skkeleton',
+    cond = function()
+      return vim.fn.executable 'python' == 1
     end
   },
 
@@ -699,6 +717,7 @@ require('lazy').setup({
 
       -- FIXME:echoが出来ないとかでエラーが出る
       'nvim-telescope/telescope-ghq.nvim',
+
       "Allianaab2m/telescope-kensaku.nvim",
     },
 
@@ -769,13 +788,13 @@ require('lazy').setup({
           })
         end, { desc = '[/] Fuzzily search in current buffer' })
 
-        vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
-        vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
-        vim.keymap.set('n', '<leader>sH', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
-        vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
-        vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
-        vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
-        vim.keymap.set('n', '<leader>sK', require('telescope.builtin').keymaps, { desc = '[S]earch [K]eymaps' })
+        vim.keymap.set('n', '<leader>gf', ':<C-u>Telescope git_files<CR>', { desc = 'Search [G]it [F]iles' })
+        vim.keymap.set('n', '<leader>sf', ':<C-u>Telescope find_files<CR>', { desc = '[S]earch [F]iles' })
+        vim.keymap.set('n', '<leader>sH', ':<C-u>Telescope help_tags<CR>', { desc = '[S]earch [H]elp' })
+        vim.keymap.set('n', '<leader>sw', ':<C-u>Telescope grep_string<CR>', { desc = '[S]earch current [W]ord' })
+        vim.keymap.set('n', '<leader>sg', ':<C-u>Telescope live_grep<CR>', { desc = '[S]earch by [G]rep' })
+        vim.keymap.set('n', '<leader>sd', ':<C-u>Telescope diagnostics<CR>', { desc = '[S]earch [D]iagnostics' })
+        vim.keymap.set('n', '<leader>sK', ':<C-u>Telescope keymaps<CR>', { desc = '[S]earch [K]eymaps' })
         vim.keymap.set('n', '<leader>sl', ':<C-u>Telescope lazy<CR>', { desc = '[S]earch [L]azy' })
         vim.keymap.set('n', '<leader>sr', ':<C-u>Telescope ghq list<CR>', { desc = '[S]earch [R]epositories' })
         vim.keymap.set('n', '<leader>sb', ':<C-u>Telescope file_browser hidden=true<CR>', { desc = '[S]earch File [B]rowser' })
