@@ -12,7 +12,7 @@ vim.opt.relativenumber = false
 vim.opt.ruler = false
 
 vim.opt.signcolumn = "yes"
-vim.opt.wrap = false
+vim.opt.wrap = true
 vim.o.wrapmargin = 0
 vim.opt.pumblend = 5 -- pseudo-transparency for popup-menu
 vim.opt.cursorline = false
