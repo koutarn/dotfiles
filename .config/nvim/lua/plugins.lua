@@ -286,7 +286,7 @@ require('lazy').setup({
 
         sources = {
           { name = 'nvim_lsp' },
-          { name = 'skkeleton' },
+          -- { name = 'skkeleton' },
           { name = 'cmp_tabnine' },
           { name = 'luasnip' },
           { name = 'emoji' },
@@ -319,11 +319,11 @@ require('lazy').setup({
       })
     end
   },
-  {
-    'rinx/cmp-skkeleton',
-    event = "InsertEnter",
-    dependencies = 'hrsh7th/nvim-cmp',
-  },
+  -- {
+  --   'rinx/cmp-skkeleton',
+  --   event = "InsertEnter",
+  --   dependencies = 'hrsh7th/nvim-cmp',
+  -- },
 
   {
     'tzachar/cmp-tabnine',
@@ -817,8 +817,8 @@ require('lazy').setup({
           })
         end, { desc = '[/] Fuzzily search in current buffer' })
 
-        vim.keymap.set('n', '<leader>gf', ':<C-u>Telescope git_files<CR>', { desc = 'Search [G]it [F]iles' })
-        vim.keymap.set('n', '<leader>sf', ':<C-u>Telescope find_files<CR>', { desc = '[S]earch [F]iles' })
+        -- vim.keymap.set('n', '<leader>gf', ':<C-u>Telescope git_files hidden=true<CR>', { desc = 'Search [G]it [F]iles' })
+        vim.keymap.set('n', '<leader>sf', ':<C-u>Telescope find_files hidden=true<CR>', { desc = '[S]earch [F]iles' })
         vim.keymap.set('n', '<leader>sH', ':<C-u>Telescope help_tags<CR>', { desc = '[S]earch [H]elp' })
         vim.keymap.set('n', '<leader>sw', ':<C-u>Telescope grep_string<CR>', { desc = '[S]earch current [W]ord' })
         vim.keymap.set('n', '<leader>sg', ':<C-u>Telescope live_grep<CR>', { desc = '[S]earch by [G]rep' })
