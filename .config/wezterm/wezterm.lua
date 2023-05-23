@@ -1,42 +1,42 @@
 local wezterm = require 'wezterm';
 
--- key mapping
-local default_keys = {
-    { key = "n", mods = "SHIFT|CTRL", action = "SpawnWindow"},
-    { key = "u", mods = "ALT", action = wezterm.action({ ActivateTabRelative = 1 }) },
-	{ key = "=", mods = "CTRL", action = "IncreaseFontSize" },
-    { key = "-", mods = "CTRL", action = "DecreaseFontSize" },
-    { key = "r", mods = "ALT", action = "ReloadConfiguration" },
-    { key = "c", mods = "CTRL|SHIFT", action = wezterm.action{CopyTo="ClipboardAndPrimarySelection"} },
-    { key = "v", mods = "CTRL|SHIFT", action = wezterm.action{PasteFrom="Clipboard"} },
-    { key = "w", mods = "ALT", action = "QuitApplication" },
-    { key = "o", mods = "ALT", action = "QuickSelect" },
-    { key = "Enter", mods = "ALT", action = "ToggleFullScreen" },
-
-    -- tab
-    { key = "n", mods = "ALT", action = wezterm.action({ SpawnTab = "DefaultDomain" }) },
-    { key = "q", mods = "ALT", action = wezterm.action({ CloseCurrentTab = { confirm = false } }) },
-    { key = "y", mods = "ALT", action = wezterm.action({ ActivateTabRelative = -1 }) },
-
-    -- pane
-
-    -- 移動
-	{ key = "h", mods = "ALT", action = wezterm.action({ ActivatePaneDirection = "Left" }) },
-    { key = "l", mods = "ALT", action = wezterm.action({ ActivatePaneDirection = "Right" }) },
-    { key = "k", mods = "ALT", action = wezterm.action({ ActivatePaneDirection = "Up" }) },
-    { key = "j", mods = "ALT", action = wezterm.action({ ActivatePaneDirection = "Down" }) },
-
-    -- サイズ変更
-    { key = "h", mods = "ALT|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Left", 5 } }) },
-    { key = "l", mods = "ALT|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Right", 5 } }) },
-    { key = "k", mods = "ALT|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Up", 5 } }) },
-    { key = "j", mods = "ALT|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Down", 5} }) },
-
-    { key = "\\", mods = "ALT",action=wezterm.action{SplitHorizontal={domain="CurrentPaneDomain"}}},
-    { key = "-", mods = "ALT",action=wezterm.action{SplitVertical={domain="CurrentPaneDomain"}}},
-    { key = "x", mods = "ALT", action = wezterm.action({CloseCurrentPane={confirm=false} }) },
-
-}
+-- -- key mapping
+-- local default_keys = {
+--     { key = "n", mods = "SHIFT|CTRL", action = "SpawnWindow"},
+--     { key = "u", mods = "ALT", action = wezterm.action({ ActivateTabRelative = 1 }) },
+-- 	{ key = "=", mods = "CTRL", action = "IncreaseFontSize" },
+--     { key = "-", mods = "CTRL", action = "DecreaseFontSize" },
+--     { key = "r", mods = "ALT", action = "ReloadConfiguration" },
+--     { key = "c", mods = "CTRL|SHIFT", action = wezterm.action{CopyTo="ClipboardAndPrimarySelection"} },
+--     { key = "v", mods = "CTRL|SHIFT", action = wezterm.action{PasteFrom="Clipboard"} },
+--     { key = "w", mods = "ALT", action = "QuitApplication" },
+--     { key = "o", mods = "ALT", action = "QuickSelect" },
+--     { key = "Enter", mods = "ALT", action = "ToggleFullScreen" },
+--
+--     -- tab
+--     { key = "n", mods = "ALT", action = wezterm.action({ SpawnTab = "DefaultDomain" }) },
+--     { key = "q", mods = "ALT", action = wezterm.action({ CloseCurrentTab = { confirm = false } }) },
+--     { key = "y", mods = "ALT", action = wezterm.action({ ActivateTabRelative = -1 }) },
+--
+--     -- pane
+--
+--     -- 移動
+-- 	{ key = "h", mods = "ALT", action = wezterm.action({ ActivatePaneDirection = "Left" }) },
+--     { key = "l", mods = "ALT", action = wezterm.action({ ActivatePaneDirection = "Right" }) },
+--     { key = "k", mods = "ALT", action = wezterm.action({ ActivatePaneDirection = "Up" }) },
+--     { key = "j", mods = "ALT", action = wezterm.action({ ActivatePaneDirection = "Down" }) },
+--
+--     -- サイズ変更
+--     { key = "h", mods = "ALT|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Left", 5 } }) },
+--     { key = "l", mods = "ALT|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Right", 5 } }) },
+--     { key = "k", mods = "ALT|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Up", 5 } }) },
+--     { key = "j", mods = "ALT|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Down", 5} }) },
+--
+--     { key = "\\", mods = "ALT",action=wezterm.action{SplitHorizontal={domain="CurrentPaneDomain"}}},
+--     { key = "-", mods = "ALT",action=wezterm.action{SplitVertical={domain="CurrentPaneDomain"}}},
+--     { key = "x", mods = "ALT", action = wezterm.action({CloseCurrentPane={confirm=false} }) },
+--
+-- }
 
 
 local config = {
@@ -94,11 +94,10 @@ local config = {
     -- カーソルの形
     default_cursor_style = "SteadyBlock",
 
-    -- デフォルトキーを無効化
-    disable_default_key_bindings = true,
-
     -- keyの設定
-    keys = default_keys,
+    disable_default_key_bindings = true, -- デフォルトキーを無効化
+    keys = require('keymaps').keys,
+    key_tables = require('keymaps').key_tables,
 
     -- タブ
     tab_bar_at_bottom = true,                           -- tabを下に表示
