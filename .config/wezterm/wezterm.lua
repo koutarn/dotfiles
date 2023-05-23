@@ -1,5 +1,9 @@
 local wezterm = require 'wezterm';
 
+-- format設定
+-- require 'format'
+
+
 -- -- key mapping
 -- local default_keys = {
 --     { key = "n", mods = "SHIFT|CTRL", action = "SpawnWindow"},
@@ -40,6 +44,7 @@ local wezterm = require 'wezterm';
 
 
 local config = {
+
     -- weztermの更新を確認する
     check_for_updates = false,
     -- check_for_updates_interval_seconds = 86400, -- 60 *  60 * 24 == 1日
@@ -106,7 +111,7 @@ local config = {
     -- QuickSelectModeの時のパターン
     quick_select_patterns = {
         "[0-9a-zA-Z@.]{7,40}",
-    }
+    },
 
 }
 

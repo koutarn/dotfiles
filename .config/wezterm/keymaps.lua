@@ -2,6 +2,10 @@ local wezterm = require 'wezterm'
 local act = wezterm.action
 
 return {
+  -- leader key
+  -- TODO:leaderは使っていない
+  -- leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 2000 },
+
   keys = {
     { key = 'Enter', mods = 'ALT', action = act.ToggleFullScreen },
     { key = '-', mods = 'ALT', action = act.SplitVertical{ domain =  'CurrentPaneDomain' } },
