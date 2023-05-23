@@ -1,6 +1,7 @@
 {
     ".home/.gitconfig"               : "~/.gitconfig",
     ".home/.gitignore-global"        : "~/.gitignore-global",
+    ".home/.myclirc"                 : "~/.myclirc",
     ".config/wezterm"                : "~/.config/wezterm",
     ".config/starship/starship.toml" : "~/.config/starship.toml",
     ".config/nvim"                   : "~/.config/nvim",

@@ -5,5 +5,5 @@
     ".home/.zshenv"          : "~/.zshenv",
     ".home/.ideavimrc"         : "~/.ideavimrc",
     ".config/alacritty"      : "~/.config/alacritty",
-    ".config/fish"           : "~/.config/fish",
+    ".config/fish"           : "~/.config/fish"
 }
