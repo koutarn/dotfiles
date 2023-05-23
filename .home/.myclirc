@@ -48,7 +48,7 @@ syntax_style = default
 key_bindings = emacs
 
 # Enabling this option will show the suggestions in a wider menu. Thus more items are suggested.
-wider_completion_menu = True
+wider_completion_menu = False
 
 # MySQL prompt
 # \D - The full current date
@@ -65,7 +65,7 @@ wider_completion_menu = True
 # \A - DSN alias name (from the [alias_dsn] section)
 # \u - Username
 # \x1b[...m - insert ANSI escape sequence
-prompt = '\t \u@\h:\d> '
+prompt = '[\t]\u@\h [Use]\d > '
 prompt_continuation = '->'
 
 # Skip intro info on startup and outro info on exit
