@@ -774,10 +774,11 @@ require('lazy').setup({
               "^.git/",
               "^node_modules/",
             },
-            winblend = 4, --若干ウィンドウを透明に
+            winblend = 5, --若干ウィンドウを透明に
           },
           extensions = {
             fzf = {
+              -- fzfを有効化する
               fuzzy = true,
             },
             lazy = {
@@ -800,6 +801,7 @@ require('lazy').setup({
           },
         }
 
+        -- load extensions
         pcall(require('telescope').load_extension, 'ghq')
         pcall(require('telescope').load_extension, 'fzf')
         pcall(require('telescope').load_extension, 'lazy')
@@ -807,19 +809,11 @@ require('lazy').setup({
         pcall(require("telescope").load_extension("kensaku"))
 
         -- See `:help telescope.builtin`
-        vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
         vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
-        vim.keymap.set('n', '<leader>/', function()
-          -- You can pass additional configuration to telescope to change theme, layout, etc.
-          require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-            winblend = 10,
-            previewer = false,
-          })
-        end, { desc = '[/] Fuzzily search in current buffer' })
 
         -- vim.keymap.set('n', '<leader>gf', ':<C-u>Telescope git_files hidden=true<CR>', { desc = 'Search [G]it [F]iles' })
         vim.keymap.set('n', '<leader>sf', ':<C-u>Telescope find_files hidden=true<CR>', { desc = '[S]earch [F]iles' })
-        vim.keymap.set('n', '<leader>sH', ':<C-u>Telescope help_tags<CR>', { desc = '[S]earch [H]elp' })
+        vim.keymap.set('n', '<leader>s?', ':<C-u>Telescope help_tags<CR>', { desc = '[S]earch [H]elp' })
         vim.keymap.set('n', '<leader>sw', ':<C-u>Telescope grep_string<CR>', { desc = '[S]earch current [W]ord' })
         vim.keymap.set('n', '<leader>sg', ':<C-u>Telescope live_grep<CR>', { desc = '[S]earch by [G]rep' })
         vim.keymap.set('n', '<leader>sd', ':<C-u>Telescope diagnostics<CR>', { desc = '[S]earch [D]iagnostics' })
@@ -828,6 +822,14 @@ require('lazy').setup({
         vim.keymap.set('n', '<leader>sr', ':<C-u>Telescope ghq list<CR>', { desc = '[S]earch [R]epositories' })
         vim.keymap.set('n', '<leader>sb', ':<C-u>Telescope file_browser hidden=true<CR>', { desc = '[S]earch File [B]rowser' })
         vim.keymap.set('n', '<leader>sk', ':<C-u>Telescope kensaku <CR>', { desc = '[S]earch [k]ensaku' })
+        -- vim.keymap.set('n', '<leader>s?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
+        vim.keymap.set('n', '<leader>s/', function()
+          -- You can pass additional configuration to telescope to change theme, layout, etc.
+          require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+            winblend = 10,
+            previewer = false,
+          })
+        end, { desc = '[/] Fuzzily search in current buffer' })
     end
   },
 
