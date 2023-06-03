@@ -1,5 +1,5 @@
 [user]
-    email = fuse.kanrinin@gmail.com
+	email = fuse.kanrinin@gmail.com
 	name = koutarn
 
 # ghq default settings
@@ -56,3 +56,8 @@ ui = auto
 
 [merge]
     conflictstyle = diff3
+[difftool "sourcetree"]
+	cmd = "'' "
+[mergetool "sourcetree"]
+	cmd = "'' "
+	trustExitCode = true
