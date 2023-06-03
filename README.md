@@ -6,10 +6,10 @@
      \____|\___/ \__|_| |_|_|\___||___/
 
 ## Spec
-* OS:Manjaro Linux,Windows
-* Shell:zsh,powershell
-* Terminal:wezterm
-* Editor:neovim
+* OS: Manjaro Linux,Windows
+* Shell: zsh,powershell
+* Terminal: wezterm
+* Editor: neovim
 * Font:[PlemolJP Console NF](https://github.com/yuru7/PlemolJP)
 
 ## setup
