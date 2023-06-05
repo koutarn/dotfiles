@@ -34,6 +34,7 @@
 	quotepath = false
     pager = delta
 
+	ignorecase = false
 [color]
 ui = auto
 
