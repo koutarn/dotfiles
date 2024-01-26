@@ -56,29 +56,13 @@ $TOOLS = @(
     "vscode"
     "wezterm"
     "wget"
-    "ripgrep"
-    "rga"
-    "starship"
-    "bat"
-    "fd"
-    "delta"
-    "zoxide"
-    "lsd"
-    "csview"
     "broot"
-    "tokei"
     "pastel"
-    "gitui"
-    "sd"
-    "tealdeer"
     "powershell"
-    "nkf"
     "winmerge-jp"
     "less"
     "source-han-code-jp"
     "psfzf"
-    "sd"
-    "tealdeer"
     "jp-util-font"
 )
 
@@ -113,21 +97,6 @@ $NPMPACKAGES = @(
 # nodejs
 if (canUse("nodejs")){
     npm install -g $NPMPACKAGES
-}
-
-# go
-$GOPACKAGES = @(
-  "golang.org/x/tools/cmd/goimports@latest"
-  "golang.org/x/tools/cmd/godoc@latest"
-  "github.com/rhysd/dotfiles@latest"
-  "github.com/sheepla/qiitaz@latest"
-  "github.com/sheepla/fzwiki@latest"
-)
-
-if (canUse("go")){
-    foreach ($GOPACKAGE in $GOPACKAGES) {
-        go install $GOPACKAGE
-    }
 }
 
 #後からglobal configを使うだろうけど一旦設定

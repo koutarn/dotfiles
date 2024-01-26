@@ -1,10 +1,11 @@
 {
-    ".home/.gitconfig"               : "~/.gitconfig",
-    ".home/.gitignore-global"        : "~/.gitignore-global",
-    ".home/.myclirc"                 : "~/.myclirc",
-    ".config/wezterm"                : "~/.config/wezterm",
-    ".config/starship/starship.toml" : "~/.config/starship.toml",
-    ".config/nvim"                   : "~/.config/nvim",
-    ".config/spotify-tui"            : "~/.config/spotify-tui",
-    ".config/gh/config.yml"          : "~/.config/gh/config.yml"
+  ".home/.gitconfig": "~/.gitconfig",
+  ".home/.gitignore-global": "~/.gitignore-global",
+  ".home/.myclirc": "~/.myclirc",
+  ".config/wezterm": "~/.config/wezterm",
+  ".config/starship/starship.toml": "~/.config/starship.toml",
+  ".config/nvim": "~/.config/nvim",
+  ".config/spotify-tui": "~/.config/spotify-tui",
+  ".config/gh/config.yml": "~/.config/gh/config.yml",
+  "./aqua.yaml": "~/aqua.yaml"
 }
