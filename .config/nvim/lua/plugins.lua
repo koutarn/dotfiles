@@ -337,16 +337,16 @@ require('lazy').setup({
 
   -- 空白行の表示&削除
   -- TODO:ちょい微妙だから代替えを探したい機運
-  {
-    'lukoshkin/trailing-whitespace',
-    config = function ()
-       require'trailing-whitespace'.setup {
-          patterns = { '\\s\\+$' },
-          palette = { markdown = 'RosyBrown' },
-          default_color = 'PaleVioletRed',
-       }
-    end
-  },
+  --{
+  --  'lukoshkin/trailing-whitespace',
+  --  config = function ()
+  --     require'trailing-whitespace'.setup {
+  --        patterns = { '\\s\\+$' },
+  --        palette = { markdown = 'RosyBrown' },
+  --        default_color = 'PaleVioletRed',
+  --     }
+  --  end
+  --},
 
   -- マルチカーソル
   {
@@ -709,14 +709,11 @@ require('lazy').setup({
     event = "InsertEnter",
   },
 
-  { -- Add indentation guides even on blank lines
-    'lukas-reineke/indent-blankline.nvim',
-    opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
-    },
-  },
-
+  --{ -- Add indentation guides even on blank lines
+  --'lukas-reineke/indent-blankline.nvim',
+  --  main "ibl",
+  --  opts = {},
+  --},
   -- TODO:設定したら色々できそう。
   -- 動作が重いので一旦切る
   { -- Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
