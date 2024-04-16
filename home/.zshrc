@@ -1,4 +1,7 @@
-MAIN="${ZDOTDIR}/main.zsh"
+export ZDOTDIR="${HOME}/.zsh"
+autoload -U compinit
+compinit -u
+
 if [ -f "$MAIN" ];then
   source "$MAIN"
 fi
@@ -23,14 +26,16 @@ if [ -f "$KEYBIND" ];then
   source "$KEYBIND"
 fi
 
-
-#初回シェル時のみ tmux実行
-if [ $SHLVL = 1 ]; then
-  tmux
+ENV="${ZDOTDIR}/ENV.zsh"
+if [ -f "$ENV" ];then
+  source "$ENV"
 fi
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 test -r /home/ez/.opam/opam-init/init.zsh && . /home/ez/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 export LESSCHARSET=utf-8
+
+eval "$(starship init zsh)"

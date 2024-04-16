@@ -3,7 +3,9 @@
     "home/.tmux.conf"       : "~/.tmux.conf",
     "home/.zsh"             : "~/.zsh",
     "home/.zshenv"          : "~/.zshenv",
+    "home/.zshrc"           : "~/.zshrc",
     "home/.ideavimrc"       : "~/.ideavimrc",
     "config/alacritty"      : "~/.config/alacritty",
-    "config/fish"           : "~/.config/fish"
+    "config/fish"           : "~/.config/fish",
+    "config/sheldon/plugins.toml" : "~/.config/sheldon/plugins.toml"
 }
