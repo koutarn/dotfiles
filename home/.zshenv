@@ -1,2 +1,3 @@
-#export ZDOTDIR="${HOME}/.zsh"
-# export LESS='--quit-if-one-screen'
+export PATH=/opt/homebrew/bin:$PATH
+export PATH=~/go/bin:$PATH
+eval "$(starship init zsh)"

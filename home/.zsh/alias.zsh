@@ -37,9 +37,9 @@ alias zsh-configs="nvim $ZSH_CONFIGS"
 alias l="ls -p -v -w 150 -A --color=always"
 alias ll="ls -p -v -w 150 -A --color=always"
 alias la='ls -vlpA'
-alias e="exa -a --icons"
-alias el="exa -al --icons"
-alias et="exa -T --icons"
+alias e="eza -a --icons"
+alias el="eza -al --icons"
+alias et="eza -T --icons"
 
 alias tmux-cfg="vi $TMUX_CFG"
 alias ala-cfg="vi $ALA_CFG"

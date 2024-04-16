@@ -3,6 +3,7 @@
     "home/.tmux.conf"       : "~/.tmux.conf",
     "home/.zsh"             : "~/.zsh",
     "home/.zshenv"          : "~/.zshenv",
+    "home/.zshenv"          : "~/.zshrc",
     "home/.ideavimrc"       : "~/.ideavimrc",
     "config/alacritty"      : "~/.config/alacritty",
     "config/fish"           : "~/.config/fish"
