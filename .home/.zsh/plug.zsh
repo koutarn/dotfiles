@@ -1,7 +1,7 @@
 #zplug
 bindkey -e
 
-source ~/.zplug/init.zsh
+#source ~/.zplug/init.zsh
 zplug 'zsh-users/zsh-autosuggestions'    # fishっぽい表示をしてくれる
 zplug "zdharma/fast-syntax-highlighting" # こっちのほうが早いらしいので乗り換え
 zplug "zsh-users/zsh-completions"        # 補完強化
