@@ -32,6 +32,6 @@ select-word-style default
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #cdしたときにlsする
-[ -z "$ENHANCD_ROOT" ] && function chpwd { ls -a } # enhancdがない場合
+[ -z "$ENHANCD_ROOT" ] && function chpwd { eza -a } # enhancdがない場合
 #[ -z "$ENHANCD_ROOT" ] || export ENHANCD_HOOK_AFTER_CD="ls -p -v -w 150 -A --color=always"  #enhancdがあるときはそのHook機構を使う
 [ -z "$ENHANCD_ROOT" ] || export ENHANCD_HOOK_AFTER_CD="exa -a --icons"  #enhancdがあるときはそのHook機構を使う
