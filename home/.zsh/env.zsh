@@ -8,3 +8,7 @@ export PATH=/opt/homebrew/bin:$PATH
 
 # zsh plugins
 eval "$(sheldon source)"
+
+# starship
+eval "$(starship init zsh)"
+
