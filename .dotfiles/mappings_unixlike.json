@@ -7,5 +7,6 @@
     "home/.ideavimrc"       : "~/.ideavimrc",
     "config/alacritty"      : "~/.config/alacritty",
     "config/fish"           : "~/.config/fish",
+    "config/sheldon"           : "~/.config/sheldon",
     "config/sheldon/plugins.toml" : "~/.config/sheldon/plugins.toml"
 }
