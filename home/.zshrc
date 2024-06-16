@@ -34,5 +34,3 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 test -r /home/ez/.opam/opam-init/init.zsh && . /home/ez/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
-export LESSCHARSET=utf-8
